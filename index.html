@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>최규범의 역사교육론 연구 자료실</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #fff;
+            padding: 30px 0;
+            border-bottom: 1px solid #e0e0e0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        h1 {
+            font-size: 1.8em;
+            margin-bottom: 5px;
+            color: #2c3e50;
+        }
+
+        .subtitle {
+            color: #666;
+            font-size: 0.95em;
+        }
+
+        .main-layout {
+            display: flex;
+            max-width: 1400px;
+            margin: 0 auto;
+            gap: 0;
+            min-height: calc(100vh - 150px);
+        }
+
+        .sidebar {
+            width: 280px;
+            background-color: #fff;
+            border-right: 1px solid #e0e0e0;
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        .content {
+            flex: 1;
+            padding: 30px;
+            background-color: #f8f9fa;
+            overflow-y: auto;
+        }
+
+        .language-group {
+            margin-bottom: 25px;
+        }
+
+        .language-title {
+            font-size: 0.95em;
+            font-weight: bold;
+            color: #2c3e50;
+            padding: 10px 0;
+            border-top: 1px solid #e0e0e0;
+            margin-top: 10px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            user-select: none;
+        }
+
+        .language-title:first-child {
+            border-top: none;
+            margin-top: 0;
+        }
+
+        .language-title::before {
+            content: '▼';
+            font-size: 0.7em;
+            display: inline-block;
+            transition: transform 0.2s;
+        }
+
+        .language-title.collapsed::before {
+            content: '▶';
+        }
+
+        .category-list {
+            margin-top: 8px;
+            padding-left: 8px;
+        }
+
+        .category-item {
+            padding: 8px 12px;
+            margin-bottom: 4px;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: all 0.2s ease;
+            font-size: 0.9em;
+            border-left: 2px solid transparent;
+            color: #666;
+        }
+
+        .category-item:hover {
+            background-color: #f0f7ff;
+            border-left-color: #3498db;
+            color: #2c3e50;
+        }
+
+        .category-item.active {
+            background-color: #e3f2fd;
+            border-left-color: #3498db;
+            color: #2c3e50;
+            font-weight: 500;
+        }
+
+        .post-list {
+            background-color: #fff;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+
+        .list-title {
+            font-size: 1.1em;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #2c3e50;
+            border-bottom: 1px solid #e0e0e0;
+            padding-bottom: 10px;
+        }
+
+        .post-item {
+            padding: 15px;
+            margin-bottom: 12px;
+            background-color: #f8f9fa;
+            border-left: 3px solid #3498db;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            gap: 15px;
+        }
+
+        .post-item:hover {
+            background-color: #e3f2fd;
+            border-left-color: #2980b9;
+        }
+
+        .post-number {
+            font-weight: 700;
+            color: #3498db;
+            min-width: 25px;
+            font-size: 0.95em;
+        }
+
+        .post-content-wrapper {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .post-header-row {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 6px;
+            flex-wrap: wrap;
+            align-items: baseline;
+        }
+
+        .post-title {
+            font-weight: 600;
+            color: #2c3e50;
+            font-size: 0.95em;
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .post-authors {
+            font-size: 0.85em;
+            color: #666;
+            font-weight: 500;
+        }
+
+        .post-year {
+            font-size: 0.85em;
+            color: #999;
+            white-space: nowrap;
+        }
+
+        .post-meta {
+            font-size: 0.85em;
+            color: #999;
+            margin-bottom: 8px;
+        }
+
+        .post-summary {
+            font-size: 0.85em;
+            color: #555;
+            line-height: 1.5;
+            margin-top: 8px;
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 60px 30px;
+            color: #999;
+        }
+
+        .empty-state-icon {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+
+        .empty-state-text {
+            font-size: 1em;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>최규범의 역사교육론 연구 자료실</h1>
+            <p class="subtitle">역사교육 연구 논문 및 자료 모음</p>
+        </div>
+    </header>
+
+    <div class="main-layout">
+        <div class="sidebar">
+            <div id="sidebar-content"></div>
+        </div>
+        <div class="content">
+            <div id="main-content"></div>
+        </div>
+    </div>
+
+    <script>
+        // 카테고리 정의
+        const CATEGORIES = {
+            korean: ['역사부정', '역사교과서', '다중시각서술', '역사적 사고', '언론 보도'],
+            spanish: ['민주적 기억과 역사부정', '역사교과서', '다중시각서술', '역사적 사고', '언론 보도'],
+            english: ['역사부정', '역사교과서', '다중시각서술', '역사적 사고', '언론 보도'],
+            'spanish-study': ['RTVE 뉴스']
+        };
+
+        const LABELS = {
+            korean: '국내 논문',
+            spanish: '스페인어권 논문',
+            english: '영어권 논문',
+            'spanish-study': '스페인어 공부'
+        };
+
+        // 게시글 데이터
+        let posts = {};
+        let currentCategory = null;
+
+        // 기본 데이터
+        const DEFAULT_POSTS = {"korean-역사부정": [], "korean-역사교과서": [], "korean-다중시각서술": [], "korean-역사적 사고": [], "korean-언론 보도": [], "spanish-민주적 기억과 역사부정": [{"title": "Memoria democrática en educación primaria", "authors": "Noelia Esquivel Martínez", "year": "2024", "date": "2026-04-23", "summary": "스페인의 LOMLOE 교육법과 민주적 기억법의 교육적 함의를 분석한 논문. 초등교육 단계에서 민주적 기억 교육의 법적 기초와 교육과정적 구현에 초점.", "url": "posts/post_2024_memoria-democratica-educacion-primaria.html"}], "spanish-역사교과서": [], "spanish-다중시각서술": [], "spanish-역사적 사고": [], "spanish-언론 보도": [], "english-역사부정": [], "english-역사교과서": [], "english-다중시각서술": [{"title": "You Hear about It for Real in School", "authors": "Alison Kitson, Alan McCully", "year": "2003", "date": "2026-04-23", "summary": "북아일랜드의 분단된 사회에서 역사 교육이 논쟁적 이슈를 다루는 방식을 연구한 논문.", "url": "posts/post_2003_kitson_mccully.html"}], "english-역사적 사고": [], "english-언론 보도": [], "spanish-study-RTVE 뉴스": [{"title": "2026년 4월 21일 - 기사 1 · 이란-미국 핵협상: 휴전 만료 위기", "date": "2026년 4월 21일", "url": "posts/rtve_20260421_0.html"}, {"title": "2026년 4월 21일 - 기사 2 · 우크라이나 전쟁: 최신 상황", "date": "2026년 4월 21일", "url": "posts/rtve_20260421_1.html"}, {"title": "2026년 4월 21일 - 기사 3 · 스페인 정치: 총선 결과 분석", "date": "2026년 4월 21일", "url": "posts/rtve_20260421_2.html"}, {"title": "2026년 4월 21일 - 기사 4 · 경제 뉴스: 물가 상승률", "date": "2026년 4월 21일", "url": "posts/rtve_20260421_3.html"}]};
+
+        posts = JSON.parse(JSON.stringify(DEFAULT_POSTS));
+
+        // 초기화
+        function init() {
+            renderSidebar();
+            showCategory('spanish-민주적 기억과 역사부정');
+        }
+
+        // 사이드바 렌더링
+        function renderSidebar() {
+            const sidebar = document.getElementById('sidebar-content');
+            let html = '';
+
+            for (const [lang, categories] of Object.entries(CATEGORIES)) {
+                html += `
+                    <div class="language-group">
+                        <div class="language-title" onclick="toggleLanguage(event, '${lang}')">
+                            ${LABELS[lang]}
+                        </div>
+                        <div class="category-list" id="categories-${lang}" style="display: none;">
+                `;
+
+                for (const category of categories) {
+                    const key = `${lang}-${category}`;
+                    const count = posts[key] ? posts[key].length : 0;
+                    html += `
+                        <div class="category-item" onclick="showCategory('${key}')">
+                            ${category} (${count})
+                        </div>
+                    `;
+                }
+
+                html += `
+                        </div>
+                    </div>
+                `;
+            }
+
+            sidebar.innerHTML = html;
+        }
+
+        // 언어 그룹 토글
+        function toggleLanguage(event, lang) {
+            event.preventDefault();
+            const list = document.getElementById(`categories-${lang}`);
+            const title = event.currentTarget;
+
+            if (list.style.display === 'none') {
+                list.style.display = 'block';
+                title.classList.remove('collapsed');
+            } else {
+                list.style.display = 'none';
+                title.classList.add('collapsed');
+            }
+        }
+
+        // 카테고리 표시
+        function showCategory(categoryKey) {
+            currentCategory = categoryKey;
+
+            // 모든 카테고리 항목에서 active 제거
+            document.querySelectorAll('.category-item').forEach(item => {
+                item.classList.remove('active');
+            });
+
+            // 현재 카테고리 항목에 active 추가
+            document.querySelectorAll('.category-item').forEach(item => {
+                if (item.textContent.includes(categoryKey.split('-').slice(1).join('-'))) {
+                    item.classList.add('active');
+                }
+            });
+
+            renderContent();
+        }
+
+        // 콘텐츠 렌더링
+        function renderContent() {
+            const content = document.getElementById('main-content');
+            const postList = posts[currentCategory] || [];
+            const categoryTitle = currentCategory.split('-').slice(1).join('-');
+
+            if (postList.length === 0) {
+                content.innerHTML = `
+                    <div class="empty-state">
+                        <div class="empty-state-icon">📚</div>
+                        <div class="empty-state-text">${categoryTitle} 카테고리에 등록된 논문이 없습니다.</div>
+                    </div>
+                `;
+            } else {
+                let html = `
+                    <div class="post-list">
+                        <div class="list-title">${categoryTitle}</div>
+                `;
+
+                postList.forEach((post, index) => {
+                    const url = post.url ? `onclick="window.location.href='${post.url}'"` : '';
+                    html += `
+                        <div class="post-item" ${url} style="cursor: ${post.url ? 'pointer' : 'default'};">
+                            <div style="display: flex; gap: 15px; flex: 1; min-width: 0;">
+                                <div class="post-number">${index + 1}.</div>
+                                <div class="post-content-wrapper">
+                                    <div class="post-header-row">
+                                        ${post.authors ? `<div class="post-authors">${post.authors}</div>` : ''}
+                                        <div class="post-title">${post.title}</div>
+                                        ${post.year ? `<div class="post-year">${post.year}</div>` : ''}
+                                    </div>
+                                    ${post.summary ? `<div class="post-summary">${post.summary}</div>` : ''}
+                                    ${post.date && !post.year ? `<div class="post-meta">${post.date}</div>` : ''}
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                });
+
+                html += `
+                    </div>
+                `;
+                content.innerHTML = html;
+            }
+        }
+
+        // 페이지 로드 시 초기화
+        window.addEventListener('DOMContentLoaded', init);
+    </script>
+</body>
+</html>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
