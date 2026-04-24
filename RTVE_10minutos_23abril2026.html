@@ -1,1 +1,473 @@
-test update
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RTVE 뉴스 - 2026년 4월 23일</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #ffffff 0%, #f5f5f5 100%);
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #c60b1e 0%, #8b0000 100%);
+            color: #ffc400;
+            padding: 40px 20px;
+            text-align: center;
+            border-radius: 8px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+
+        .article {
+            background: white;
+            padding: 30px;
+            margin-bottom: 30px;
+            border-left: 5px solid #c60b1e;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .article h2 {
+            color: #c60b1e;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            border-bottom: 2px solid #ffc400;
+            padding-bottom: 10px;
+        }
+
+        .article-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 20px;
+        }
+
+        .article-section {
+            padding: 15px;
+            background: #f9f9f9;
+            border-radius: 4px;
+        }
+
+        .article-section h3 {
+            color: #c60b1e;
+            font-size: 0.95em;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        .spanish-text {
+            color: #555;
+            font-style: italic;
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+
+        .korean-text {
+            color: #333;
+            line-height: 1.8;
+        }
+
+        .vocabulary {
+            background: white;
+            padding: 30px;
+            margin-bottom: 30px;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .vocabulary h2 {
+            color: #c60b1e;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            border-bottom: 2px solid #ffc400;
+            padding-bottom: 10px;
+        }
+
+        .vocab-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        .vocab-table thead {
+            background: #c60b1e;
+            color: white;
+        }
+
+        .vocab-table th {
+            padding: 12px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .vocab-table td {
+            padding: 12px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .vocab-table tbody tr:hover {
+            background: #f5f5f5;
+        }
+
+        .spanish-word {
+            color: #c60b1e;
+            font-weight: 600;
+        }
+
+        .pos {
+            color: #888;
+            font-size: 0.9em;
+            font-style: italic;
+        }
+
+        .korean-meaning {
+            color: #333;
+        }
+
+        .context {
+            color: #666;
+            font-size: 0.9em;
+            margin-top: 5px;
+        }
+
+        footer {
+            text-align: center;
+            color: #888;
+            padding: 20px;
+            border-top: 1px solid #ddd;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .article-content {
+                grid-template-columns: 1fr;
+            }
+
+            header h1 {
+                font-size: 1.8em;
+            }
+
+            .article {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>RTVE 뉴스</h1>
+            <p>스페인어 학습 자료 - 2026년 4월 23일</p>
+        </header>
+
+        <div class="article">
+            <h2>1. 정치 토론 중단 및 위협 편지 논란</h2>
+            <div class="article-content">
+                <div class="article-section">
+                    <h3>스페인어 원문</h3>
+                    <p class="spanish-text">las cartas con amenazas de muerte al ministro del interior la directora de la guardia civil y pablo iglesias entran en la campaña electoral de madrid dispara la crispación como nunca se había visto hola buenas tardes el líder de unidas podemos ha abandonado el debate en la cadena ser después de que rocío monasterio pusiera en duda esas amenazas y se negara a rectificar los aceptables si no se retrata lo que queremos mucho puede hablar bien han decidido abandonar el debate de los candidatos del psoe y más vale que como unidas podemos anuncian estas tres últimas formaciones que no van a participar en ningún otro debate con la ultraderecha en esta campaña isabel díaz ayuso no ha participado en el de hoy asegura que está en contra de cualquier tipo de américa</p>
+                </div>
+                <div class="article-section">
+                    <h3>한국어 번역</h3>
+                    <p class="korean-text">내무장관, 국가경비대 소장, 파블로 이글레시아스에게 보낸 사망 위협 편지가 마드리드 선거 운동에 진입하면서 긴장이 전례 없이 고조되고 있습니다. 좋은 오후입니다. 우니도스 포데모스 지도자는 Rocío Monasterio가 이러한 위협을 의심했고 수정을 거부한 후 Cadena Ser의 토론에서 떠났습니다. 이를 받아들일 수 없으며 정정하지 않으면 우리가 원하는 것을 할 수 있습니다. 그들은 토론을 떠나기로 결정했고 PSOE 후보들과 마찬가지로 우니도스 포데모스도 이 세 정치 세력이 이 선거 운동에서 극우와 다른 어떤 토론에도 참여하지 않을 것이라고 발표했습니다. Isabel Díaz Ayuso는 오늘의 토론에 참여하지 않았으며 모든 종류의 폭력에 반대한다고 주장합니다.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="article">
+            <h2>2. 위협 편지 수사 세부사항</h2>
+            <div class="article-content">
+                <div class="article-section">
+                    <h3>스페인어 원문</h3>
+                    <p class="spanish-text">la policía científica ya está investigando las tres cartas con amenazas de muerte enviados y enviadas a paulo iglesias al ministro del interior y a la directora de la guardia civil de momento se sabe que las tres se enviaron desde el mismo sitio el mismo día y tienen el mismo tipo de letra las balas que acompañan a esas cartas son las que se utilizan en fusiles de asalto del ejército pero ya no se usan todo apunta a que la misma persona escribió las tres cartas explican fuentes policiales a televisión española de momento es pronto para tener un sospechoso nos dicen son recientes los hechos y las investigaciones han iniciado y dejemos que transcurran adecuadamente</p>
+                </div>
+                <div class="article-section">
+                    <h3>한국어 번역</h3>
+                    <p class="korean-text">파울로 이글레시아스, 내무장관, 국가경비대 소장에게 보낸 사망 위협 편지 3통을 수사 중입니다. 현재로서는 3통 모두 같은 장소에서 같은 날에 보내졌으며 필체가 동일합니다. 이 편지들과 함께 보낸 총알은 군대의 돌격소총에 사용되는 것이지만 더 이상 사용되지 않습니다. 경찰 당국은 같은 사람이 3통의 편지를 모두 작성했을 가능성이 높다고 TV 에스파냐에 설명합니다. 현재로는 용의자를 특정하기 이르며, 당국은 최근의 일이고 수사가 진행 중이라고 말합니다.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="article">
+            <h2>3. 팬데믹 상황 및 백신 권장사항</h2>
+            <div class="article-content">
+                <div class="article-section">
+                    <h3>스페인어 원문</h3>
+                    <p class="spanish-text">en cuanto a la evolución de la pandemia en nuestro país la incidencia hoy vuelve a subir ligeramente ese ha sido en 235 casos por cada 100.000 habitantes el plan de vacunación continúa y desde amsterdam la agencia europea del medicamento recomienda poner la segunda dosis de astrazéneca después de la primera que insiste en que los beneficios de esta vacuna superan a los riesgos aseguran además que esos beneficios aumentan con la edad</p>
+                </div>
+                <div class="article-section">
+                    <h3>한국어 번역</h3>
+                    <p class="korean-text">우리나라의 팬데믹 상황에 대해, 오늘 발생률이 약간 다시 상승했으며 인구 100,000명당 235건입니다. 백신 접종 계획이 계속 진행 중이며, 암스테르담의 유럽 의약품청은 첫 번째 접종 후 AstraZeneca의 두 번째 용량을 접종할 것을 권장하며, 이 백신의 이점이 위험을 초과한다고 강조합니다.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="article">
+            <h2>4. 백신 및 EU 계약 체결</h2>
+            <div class="article-content">
+                <div class="article-section">
+                    <h3>스페인어 원문</h3>
+                    <p class="spanish-text">a la farmacéutica de moderna anunciado hoy que para primeros de otoño tendrán lista una vacuna contra las nuevas cepas de coronavirus hoy la unión europea ha confirmado un nuevo contrato con facer coincidiendo con la visita de la presidenta de la comisión a la fábrica de esa forma ceutí acá en bélgica confían en alcanzar un 70 por ciento de la vacunación en verano</p>
+                </div>
+                <div class="article-section">
+                    <h3>한국어 번역</h3>
+                    <p class="korean-text">모더나는 가을 초에 새로운 코로나바이러스 변종에 대한 백신을 준비할 것이라고 오늘 발표했습니다. EU는 오늘 Pfizer와 새로운 계약을 확인했으며, 이는 EU 위원회 회장이 벨기에 Puurs의 공장을 방문한 것과 일치합니다. 그들은 여름 동안 70%의 백신 접종 비율을 달성할 계획입니다.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="article">
+            <h2>5. 은행 임원 급여 문제</h2>
+            <div class="article-content">
+                <div class="article-section">
+                    <h3>스페인어 원문</h3>
+                    <p class="spanish-text">y el gobierno endurece su discurso sobre los sueldos y los bonus de los directivos de la banca en medio de los anuncios de rn ese sector la ministra de economía ha pedido al banco de españa que limite tanto los ere' como los sueldos pero la tarea no es sencilla en españa pese a los recortes de los bonos por el kobe ana patricia botín del santander cobró el año pasado casi 7 millones de euros su homólogo a 94 casi 3 el consejero delegado de caixabank su nuevo presidente ha visto triplicar su sueldo tras fusionarse su anterior entidad bankia allí lo tenía limitado este año cobrará más de un millón y medio de euros</p>
+                </div>
+                <div class="article-section">
+                    <h3>한국어 번역</h3>
+                    <p class="korean-text">정부는 은행 임원들의 급여와 보너스에 대한 입장을 강화하고 있습니다. 경제부 장관은 스페인 중앙은행에 감원과 급여 모두를 제한해 달라고 요청했습니다. Santander의 Ana Patricia Botín은 지난해 거의 700만 유로를 받았고, 그의 동료는 거의 300만 유로를 받았습니다. CaixaBank의 회장은 전 회사 Bankia와의 합병 후 급여를 3배로 인상했습니다. 올해는 150만 유로 이상을 받을 것입니다.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="article">
+            <h2>6. Sant Jordi (책의 날)</h2>
+            <div class="article-content">
+                <div class="article-section">
+                    <h3>스페인어 원문</h3>
+                    <p class="spanish-text">en barcelona celebran con una ilusión especial este día del libro el sant jordi de este año con los puestos en la calle se parece más a los de antes de la pandemia pues sí porque hoy hemos podido volver a ver autores firmando libros en las calles y los tradicionales puestos de rosas y de libros aunque eso sí este año sólo están autorizados a vender los profesionales del sector ya sea delante de sus tiendas o en espacios perimetrales</p>
+                </div>
+                <div class="article-section">
+                    <h3>한국어 번역</h3>
+                    <p class="korean-text">바르셀로나에서는 책의 날인 Sant Jordi를 특별한 흥분으로 축하하고 있습니다. 올해는 거리의 부스가 팬데믹 이전의 모습과 더 흡사합니다. 오늘 우리는 거리에서 저자들이 책에 서명하는 것을 다시 볼 수 있었고 장미와 책의 전통적인 부스를 볼 수 있었습니다. 올해는 업계 전문가들만 자신의 상점 앞이나 주변 공간에서 판매할 수 있습니다.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="article">
+            <h2>7. Brahim Ghali 입원</h2>
+            <div class="article-content">
+                <div class="article-section">
+                    <h3>스페인어 원문</h3>
+                    <p class="spanish-text">habla del líder del frente polisario brahim ghali que estaba hospitalizado en logroño según la ministra de asuntos exteriores el gobierno ha permitido su entrada por razones estrictamente humanitarias y asegura que no perturba las buenas relaciones con marruecos fuentes del polisario han explicado a tve que tiene coronavirus que primero le trasladaron a argelia y después llegó a españa con su pasaporte diplomático argelino aquí en 2016 fue llamado a declarar por torturas y desapariciones de saharauis disidentes</p>
+                </div>
+                <div class="article-section">
+                    <h3>한국어 번역</h3>
+                    <p class="korean-text">Polisario Front의 지도자 Brahim Ghali가 Logroño에 입원했습니다. 외교부 장관에 따르면 정부는 엄격히 인도주의적 이유로 그의 입국을 허용했으며 이것이 모로코와의 좋은 관계를 방해하지 않는다고 확인합니다. Polisario 소식통들은 TV 스페인에 그가 코로나바이러스를 가지고 있으며 먼저 알제리로 옮겨진 후 알제리 외교 여권을 가지고 스페인에 도착했다고 설명했습니다.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="article">
+            <h2>8. Alexei Navalny의 단식 투쟁 종료</h2>
+            <div class="article-content">
+                <div class="article-section">
+                    <h3>스페인어 원문</h3>
+                    <p class="spanish-text">el opositor ruso alexéi navalni ha anunciado el fin de la huelga de hambre que mantenía desde hace tres semanas en protesta por la falta de asistencia médica en la cárcel alexéi navalni agradece todo el apoyo recibido y especialmente el de los miles de personas que salieron a manifestarse el pasado miércoles explica que pone fin a 24 días en huelga de hambre por recomendación de sus doctores de confianza que no han tenido acceso a él directamente pero sí a los resultados de sus análisis y alertan de que su vida pende de un hilo</p>
+                </div>
+                <div class="article-section">
+                    <h3>한국어 번역</h3>
+                    <p class="korean-text">러시아 야당 인사 Alexei Navalny는 감옥에서의 의료 지원 부족에 항의하며 3주간 단식 투쟁을 종료했다고 발표했습니다. Navalny는 받은 모든 지원에 감사하며 특히 지난 주 금요일 시위에 참가한 수천 명에게 감사합니다. 그는 신뢰하는 의사들의 권고에 따라 24일간의 단식을 종료한다고 설명합니다. 의사들은 그에게 직접 접근할 수 없었지만 그의 분석 결과를 통해 그의 생명이 위험에 처해 있다고 경고합니다.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="article">
+            <h2>9. Chad 대통령 Idriss Déby 장례식</h2>
+            <div class="article-content">
+                <div class="article-section">
+                    <h3>스페인어 원문</h3>
+                    <p class="spanish-text">despedido hoy a su presidente idriss deby muerto el lunes en una batalla contra los rebeldes los invitados internacionales han resistido fuertemente escoltados en lugar aparte estaba el hijo del difunto mahamat también militar y que ha asumido el poder prometiendo que será por unos meses unos actos en momentos inciertos en el país y con un programa de honores militares una oración fúnebre leída por el vicepresidente del consejo militar de transición y la colocación de los atributos de mariscal en el ataúd</p>
+                </div>
+                <div class="article-section">
+                    <h3>한국어 번역</h3>
+                    <p class="korean-text">Chad는 오늘 월요일 반군과의 전투에서 사망한 대통령 Idriss Déby를 장례했습니다. 국제 손님들은 강력한 호위를 받았고 따로 떨어진 곳에는 고인의 아들 Mahamat(역시 군인이며 권력을 장악함)이 있었으며 몇 개월 동안 통치할 것이라고 약속했습니다. 국내 불확실성의 시간에 군사 영예로운 행사가 열렸으며, 과도 군사 위원회 부의장이 장례 기도를 읽었고 원수의 상징이 관 위에 놓였습니다.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="article">
+            <h2>10. 기후 정상회담</h2>
+            <div class="article-content">
+                <div class="article-section">
+                    <h3>스페인어 원문</h3>
+                    <p class="spanish-text">termina la cumbre del clima impulsada por eeuu y la administración para luchar contra el efecto invernadero y el calentamiento global de eeuu brasil japón y corea del sur han anunciado que recordarán sus emisiones hasta alcanzar la neutralidad climática en 2050 un objetivo al que han prometido acercarse a otras potencias como china y rúsia</p>
+                </div>
+                <div class="article-section">
+                    <h3>한국어 번역</h3>
+                    <p class="korean-text">온실 효과와 지구 온난화에 대처하기 위해 미국과 Biden 행정부가 추진하는 기후 정상회담이 종료되었습니다. 미국, 브라질, 일본, 한국은 2050년 기후 중립성을 달성하기 위해 배출량을 기억할 것이라고 발표했으며, 중국과 러시아 같은 다른 강대국들과도 이 목표에 접근하겠다고 약속했습니다.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="vocabulary">
+            <h2>📚 어휘 정리 (B1-B2 수준)</h2>
+            <table class="vocab-table">
+                <thead>
+                    <tr>
+                        <th>스페인어</th>
+                        <th>품사</th>
+                        <th>한국어 뜻</th>
+                        <th>원문에서의 사용</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="spanish-word">amenaza</td>
+                        <td class="pos">명사</td>
+                        <td class="korean-meaning">위협</td>
+                        <td class="context">cartas con amenazas de muerte (사망 위협 편지)</td>
+                    </tr>
+                    <tr>
+                        <td class="spanish-word">crispación</td>
+                        <td class="pos">명사</td>
+                        <td class="korean-meaning">긴장, 불안감</td>
+                        <td class="context">la crispación como nunca se había visto (전례 없는 긴장)</td>
+                    </tr>
+                    <tr>
+                        <td class="spanish-word">abandono</td>
+                        <td class="pos">명사</td>
+                        <td class="korean-meaning">포기, 중단</td>
+                        <td class="context">ha abandonado el debate (토론을 중단했다)</td>
+                    </tr>
+                    <tr>
+                        <td class="spanish-word">rectificar</td>
+                        <td class="pos">동사</td>
+                        <td class="korean-meaning">정정하다, 수정하다</td>
+                        <td class="context">se negara a rectificar (정정을 거부했다)</td>
+                    </tr>
+                    <tr>
+                        <td class="spanish-word">ultraderecha</td>
+                        <td class="pos">명사</td>
+                        <td class="korean-meaning">극우</td>
+                        <td class="context">debate con la ultraderecha (극우와의 토론)</td>
+                    </tr>
+                    <tr>
+                        <td class="spanish-word">investigación</td>
+                        <td class="pos">명사</td>
+                        <td class="korean-meaning">수사, 조사</td>
+                        <td class="context">la policía científica ya está investigando (경찰이 수사 중)</td>
+                    </tr>
+                    <tr>
+                        <td class="spanish-word">manuscrita</td>
+                        <td class="pos">형용사</td>
+                        <td class="korean-meaning">손으로 쓴, 필기의</td>
+                        <td class="context">al ser manuscrita (필기 형태이므로)</td>
+                    </tr>
+                    <tr>
+                        <td class="spanish-word">incidencia</td>
+                        <td class="pos">명사</td>
+                        <td class="korean-meaning">발생률, 영향</td>
+                        <td class="context">la incidencia hoy vuelve a subir (오늘 발생률이 다시 올랐다)</td>
+                    </tr>
+                    <tr>
+                        <td class="spanish-word">beneficios</td>
+                        <td class="pos">명사</td>
+                        <td class="korean-meaning">이점, 이득, 편익</td>
+                        <td class="context">los beneficios de esta vacuna (이 백신의 이점)</td>
+                    </tr>
+                    <tr>
+                        <td class="spanish-word">contrato</td>
+                        <td class="pos">명사</td>
+                        <td class="korean-meaning">계약</td>
+                        <td class="context">un nuevo contrato con facer (파이저와의 새로운 계약)</td>
+                    </tr>
+                    <tr>
+                        <td class="spanish-word">sueldo</td>
+                        <td class="pos">명사</td>
+                        <td class="korean-meaning">급여, 봉급</td>
+                        <td class="context">los sueldos de los directivos (임원들의 급여)</td>
+                    </tr>
+                    <tr>
+                        <td class="spanish-word">bonus</td>
+                        <td class="pos">명사</td>
+                        <td class="korean-meaning">보너스</td>
+                        <td class="context">los sueldos y los bonus (급여와 보너스)</td>
+                    </tr>
+                    <tr>
+                        <td class="spanish-word">recortes</td>
+                        <td class="pos">명사</td>
+                        <td class="korean-meaning">감원, 삭감</td>
+                        <td class="context">fuertes recortes de personal (인력 감원)</td>
+                    </tr>
+                    <tr>
+                        <td class="spanish-word">pandemia</td>
+                        <td class="pos">명사</td>
+                        <td class="korean-meaning">대유행병, 팬데믹</td>
+                        <td class="context">antes de la pandemia (팬데믹 이전)</td>
+                    </tr>
+                    <tr>
+                        <td class="spanish-word">diplomatico</td>
+                        <td class="pos">형용사</td>
+                        <td class="korean-meaning">외교의, 외교관</td>
+                        <td class="context">pasaporte diplomático (외교 여권)</td>
+                    </tr>
+                    <tr>
+                        <td class="spanish-word">huelga</td>
+                        <td class="pos">명사</td>
+                        <td class="korean-meaning">파업, 투쟁</td>
+                        <td class="context">huelga de hambre (단식 투쟁)</td>
+                    </tr>
+                    <tr>
+                        <td class="spanish-word">protesta</td>
+                        <td class="pos">명사</td>
+                        <td class="korean-meaning">항의, 시위</td>
+                        <td class="context">en protesta por la falta (부족에 항의하여)</td>
+                    </tr>
+                    <tr>
+                        <td class="spanish-word">asistencia</td>
+                        <td class="pos">명사</td>
+                        <td class="korean-meaning">지원, 도움, 참석</td>
+                        <td class="context">falta de asistencia médica (의료 지원 부족)</td>
+                    </tr>
+                    <tr>
+                        <td class="spanish-word">funeral</td>
+                        <td class="pos">명사</td>
+                        <td class="korean-meaning">장례식</td>
+                        <td class="context">oración fúnebre (장례 기도)</td>
+                    </tr>
+                    <tr>
+                        <td class="spanish-word">neutralidad</td>
+                        <td class="pos">명사</td>
+                        <td class="korean-meaning">중립, 중립성</td>
+                        <td class="context">neutralidad climática (기후 중립성)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <footer>
+            <p>RTVE Noticias - 2026년 4월 23일 (금요일)</p>
+            <p>스페인 공영 라디오 텔레비전 뉴스 학습 자료</p>
+        </footer>
+    </div>
+</body>
+</html>
