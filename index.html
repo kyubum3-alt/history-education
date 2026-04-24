@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>최규범의 역사교육론 연구 자료실</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #fff;
+            padding: 30px 0;
+            border-bottom: 1px solid #e0e0e0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        h1 {
+            font-size: 1.8em;
+            margin-bottom: 5px;
+            color: #2c3e50;
+        }
+
+        .subtitle {
+            color: #666;
+            font-size: 0.95em;
+        }
+
+        .main-layout {
+            display: flex;
+            max-width: 1400px;
+            margin: 0 auto;
+            gap: 0;
+            min-height: calc(100vh - 150px);
+        }
+
+        .sidebar {
+            width: 280px;
+            background-color: #fff;
+            border-right: 1px solid #e0e0e0;
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        .content {
+            flex: 1;
+            padding: 30px;
+            background-color: #f8f9fa;
+            overflow-y: auto;
+        }
+
+        .language-group {
+            margin-bottom: 25px;
+        }
+
+        .language-title {
+            font-size: 0.95em;
+            font-weight: bold;
+            color: #2c3e50;
+            padding: 10px 0;
+            border-top: 1px solid #e0e0e0;
+            margin-top: 10px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            user-select: none;
+        }
+
+        .language-title:first-child {
+            border-top: none;
+            margin-top: 0;
+        }
+
+        .language-title::before {
+            content: '▼';
+            font-size: 0.7em;
+            display: inline-block;
+            transition: transform 0.2s;
+        }
+
+        .language-title.collapsed::before {
+            content: '▶';
+        }
+
+        .category-list {
+            margin-top: 8px;
+            padding-left: 8px;
+        }
+
+        .category-item {
+            padding: 8px 12px;
+            margin-bottom: 4px;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: all 0.2s ease;
+            font-size: 0.9em;
+            border-left: 2px solid transparent;
+            color: #666;
+        }
+
+        .category-item:hover {
+            background-color: #f0f7ff;
+            border-left-color: #3498db;
+            color: #2c3e50;
+        }
+
+        .category-item.active {
+            background-color: #e3f2fd;
+            border-left-color: #3498db;
+            color: #2c3e50;
+            font-weight: 500;
+        }
+
+        .post-list {
+            background-color: #fff;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+
+        .list-title {
+            font-size: 1.1em;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #2c3e50;
+            border-bottom: 1px solid #e0e0e0;
+            padding-bottom: 10px;
+        }
+
+        .post-item {
+            padding: 15px;
+            margin-bottom: 12px;
+            background-color: #f8f9fa;
+            border-left: 3px solid #3498db;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            gap: 15px;
+        }
+
+        .post-item:hover {
+            background-color: #e3f2fd;
+            border-left-color: #2980b9;
+        }
+
+        .post-number {
+            font-weight: 700;
+            color: #3498db;
+            min-width: 25px;
+            font-size: 0.95em;
+        }
+
+        .post-content-wrapper {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .post-header-row {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 6px;
+            flex-wrap: wrap;
+            align-items: baseline;
+        }
+
+        .post-title {
+            font-weight: 600;
+            color: #2c3e50;
+            font-size: 0.95em;
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .post-authors {
+            font-size: 0.85em;
+            color: #666;
+            font-weight: 500;
+        }
+
+        .post-year {
+            font-size: 0.85em;
+            color: #999;
+            white-space: nowrap;
+        }
+
+        .post-meta {
+            font-size: 0.85em;
+            color: #999;
+            margin-bottom: 8px;
+        }
+
+        .post-summary {
+            font-size: 0.85em;
+            color: #555;
+            line-height: 1.5;
+            margin-top: 8px;
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 60px 30px;
+            color: #999;
+        }
+
+        .empty-state-icon {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+
+        .empty-state-text {
+            font-size: 1em;
+        }
+
+        /* 모바일 메뉴 */
+        .menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5em;
+            cursor: pointer;
+            color: #2c3e50;
+            padding: 0;
+            flex-shrink: 0;
+        }
+
+        .sidebar-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 998;
+        }
+
+        .sidebar-overlay.active {
+            display: block;
+        }
+
+        .close-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5em;
+            cursor: pointer;
+            color: #2c3e50;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .menu-btn {
+                display: block;
+            }
+
+            .close-btn {
+                display: block;
+            }
+
+            .header-content {
+                display: flex;
+                gap: 15px;
+                align-items: center;
+            }
+
+            h1 {
+                font-size: 1.3em;
+                margin-bottom: 0;
+            }
+
+            .subtitle {
+                display: none;
+            }
+
+            .sidebar {
+                position: fixed;
+                left: -280px;
+                top: 0;
+                height: 100vh;
+                z-index: 999;
+                transition: left 0.3s ease;
+                width: 280px;
+                overflow-y: auto;
+            }
+
+            .sidebar.active {
+                left: 0;
+            }
+
+            .content {
+                padding: 20px;
+            }
+
+            .post-item {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .post-title {
+                min-width: auto;
+                flex: none;
+            }
+
+            .post-header-row {
+                flex-direction: column;
+                gap: 6px;
+            }
+        }
+
+        /* 초소형 화면 (480px 이하) */
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.1em;
+            }
+
+            .menu-btn {
+                font-size: 1.3em;
+            }
+
+            .sidebar {
+                width: 240px;
+                left: -240px;
+            }
+
+            .content {
+                padding: 15px;
+            }
+
+            .post-item {
+                padding: 12px;
+                gap: 8px;
+            }
+
+            .post-number {
+                min-width: 20px;
+                font-size: 0.9em;
+            }
+
+            .post-title {
+                font-size: 0.9em;
+            }
+
+            .post-authors {
+                font-size: 0.8em;
+            }
+
+            .post-year {
+                font-size: 0.8em;
+            }
+
+            .post-summary {
+                font-size: 0.8em;
+            }
+
+            .list-title {
+                font-size: 1em;
+            }
+
+            .category-item {
+                padding: 8px 10px;
+                font-size: 0.85em;
+            }
+
+            .language-title {
+                font-size: 0.9em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <button class="menu-btn" onclick="toggleMenu()">☰</button>
+            <div>
+                <h1>최규범의 역사교육론 연구 자료실</h1>
+                <p class="subtitle">역사교육 연구 논문 및 자료 모음</p>
+            </div>
+        </div>
+    </header>
+
+    <div class="sidebar-overlay" onclick="closeMenu()"></div>
+
+    <div class="main-layout">
+        <div class="sidebar">
+            <button class="close-btn" onclick="closeMenu()">✕</button>
+            <div id="sidebar-content"></div>
+        </div>
+        <div class="content">
+            <div id="main-content"></div>
+        </div>
+    </div>
+
+    <script>
+        // 카테고리 정의
+        const CATEGORIES = {
+            korean: ['민주적 기억과 역사부정', '역사교과서', '다중시각서술', '역사적 사고', '언론 보도'],
+            spanish: ['민주적 기억과 역사부정', '역사교과서', '다중시각서술', '역사적 사고', '언론 보도'],
+            english: ['민주적 기억과 역사부정', '역사교과서', '다중시각서술', '역사적 사고', '언론 보도'],
+            'spanish-study': ['RTVE 뉴스']
+        };
+
+        const LABELS = {
+            korean: '국내 논문',
+            spanish: '스페인어권 논문',
+            english: '영어권 논문',
+            'spanish-study': '스페인어 공부'
+        };
+
+        // 홈 카테고리 (특수 카테고리)
+        const HOME_CATEGORY = 'home';
+
+        // 게시글 데이터
+        let posts = {};
+        let currentCategory = null;
+
+        // 기본 데이터 (모두 비어있음)
+        const DEFAULT_POSTS = {
+            "korean-민주적 기억과 역사부정": [],
+            "korean-역사교과서": [],
+            "korean-다중시각서술": [],
+            "korean-역사적 사고": [],
+            "korean-언론 보도": [],
+            "spanish-민주적 기억과 역사부정": [],
+            "spanish-역사교과서": [
+                {
+                    "title": "스페인 내전의 중등교육 교수법",
+                    "authors": "Goldstein",
+                    "year": 2023,
+                    "url": "Goldstein_2023_한국어번역.html",
+                    "uploadDate": "2026-04-24"
+                }
+            ],
+            "spanish-다중시각서술": [
+                {
+                    "title": "가치와 역사 교육 — 예비교사의 역사적 유의성 사회적 표상",
+                    "authors": "Ortuño, Bellatti, Molina",
+                    "year": 2025,
+                    "url": "Ortuño_Bellatti_Molina_2025_한국어번역.html",
+                    "uploadDate": "2026-04-23"
+                }
+            ],
+            "spanish-역사적 사고": [],
+            "spanish-언론 보도": [],
+            "english-민주적 기억과 역사부정": [],
+            "english-역사교과서": [],
+            "english-다중시각서술": [],
+            "english-역사적 사고": [],
+            "english-언론 보도": [],
+            "spanish-study-RTVE 뉴스": [
+                {
+                    "title": "2026년 4월 23일 - RTVE 10분뉴스",
+                    "date": "2026년 4월 23일",
+                    "url": "https://kyubum3-alt.github.io/history-education/RTVE_10minutos_23abril2026.html",
+                    "uploadDate": "2026-04-23"
+                },
+                {
+                    "title": "2026년 4월 22일 - RTVE 10분뉴스",
+                    "date": "2026년 4월 22일",
+                    "url": "https://kyubum3-alt.github.io/rtve-news/RTVE_10minutos_22abril2026.html",
+                    "uploadDate": "2026-04-22"
+                },
+                {
+                    "title": "2026년 4월 21일 - RTVE 10분뉴스",
+                    "date": "2026년 4월 21일",
+                    "url": "https://kyubum3-alt.github.io/rtve-news/RTVE_10minutos_21abril2026.html",
+                    "uploadDate": "2026-04-21"
+                }
+            ]
+        };
+
+        posts = JSON.parse(JSON.stringify(DEFAULT_POSTS));
+
+        // 초기화
+        function init() {
+            renderSidebar();
+            showCategory(HOME_CATEGORY);
+        }
+
+        // 사이드바 렌더링
+        function renderSidebar() {
+            const sidebar = document.getElementById('sidebar-content');
+            let html = '';
+
+            // 홈 버튼
+            html += `
+                <div style="margin-bottom: 20px;">
+                    <div class="category-item" id="home-btn" onclick="showCategory('${HOME_CATEGORY}')">
+                        🏠 홈
+                    </div>
+                </div>
+            `;
+
+            for (const [lang, categories] of Object.entries(CATEGORIES)) {
+                html += `
+                    <div class="language-group">
+                        <div class="language-title" onclick="toggleLanguage(event, '${lang}')">
+                            ${LABELS[lang]}
+                        </div>
+                        <div class="category-list" id="categories-${lang}" style="display: none;">
+                `;
+
+                for (const category of categories) {
+                    const key = `${lang}-${category}`;
+                    const count = posts[key] ? posts[key].length : 0;
+                    html += `
+                        <div class="category-item" onclick="showCategory('${key}')">
+                            ${category} (${count})
+                        </div>
+                    `;
+                }
+
+                html += `
+                        </div>
+                    </div>
+                `;
+            }
+
+            sidebar.innerHTML = html;
+        }
+
+        // 언어 그룹 토글
+        function toggleLanguage(event, lang) {
+            event.preventDefault();
+            const list = document.getElementById(`categories-${lang}`);
+            const title = event.currentTarget;
+
+            if (list.style.display === 'none') {
+                list.style.display = 'block';
+                title.classList.remove('collapsed');
+            } else {
+                list.style.display = 'none';
+                title.classList.add('collapsed');
+            }
+        }
+
+        // 카테고리 표시
+        function showCategory(categoryKey) {
+            currentCategory = categoryKey;
+
+            // 모든 카테고리 항목에서 active 제거
+            document.querySelectorAll('.category-item').forEach(item => {
+                item.classList.remove('active');
+            });
+
+            // 홈 버튼 처리
+            if (categoryKey === HOME_CATEGORY) {
+                const homeBtn = document.getElementById('home-btn');
+                if (homeBtn) homeBtn.classList.add('active');
+            } else {
+                // 현재 카테고리 항목에 active 추가
+                document.querySelectorAll('.category-item').forEach(item => {
+                    if (item.textContent.includes(categoryKey.split('-').slice(1).join('-'))) {
+                        item.classList.add('active');
+                    }
+                });
+            }
+
+            renderContent();
+
+            // 스크롤을 맨 위로 복귀
+            window.scrollTo(0, 0);
+        }
+
+        // 업로드 날짜를 Date 객체로 변환 (정렬용)
+        function getPostDate(post) {
+            // uploadDate (명시적 업로드 날짜) 사용
+            if (post.uploadDate) {
+                return new Date(post.uploadDate);
+            }
+            // 없으면 RTVE의 date 필드에서 파싱
+            if (post.date) {
+                const match = post.date.match(/(\d+)년\s+(\d+)월\s+(\d+)일/);
+                if (match) {
+                    return new Date(parseInt(match[1]), parseInt(match[2]) - 1, parseInt(match[3]));
+                }
+            }
+            // 없으면 year 사용
+            if (post.year) {
+                return new Date(post.year, 0, 1);
+            }
+            return new Date(0);
+        }
+
+        // 콘텐츠 렌더링
+        function renderContent() {
+            const content = document.getElementById('main-content');
+
+            // 홈 카테고리: 모든 글 모으기
+            if (currentCategory === HOME_CATEGORY) {
+                const allPosts = [];
+                for (const [key, postArray] of Object.entries(posts)) {
+                    if (Array.isArray(postArray)) {
+                        postArray.forEach(post => {
+                            allPosts.push({ ...post, category: key });
+                        });
+                    }
+                }
+
+                // 날짜 기준 내림차순 정렬 (최신 글이 위에 옴)
+                allPosts.sort((a, b) => getPostDate(b) - getPostDate(a));
+
+                if (allPosts.length === 0) {
+                    content.innerHTML = `
+                        <div class="empty-state">
+                            <div class="empty-state-icon">🏠</div>
+                            <div class="empty-state-text">아직 등록된 논문이 없습니다.<br/>카테고리에서 글을 추가해주세요.</div>
+                        </div>
+                    `;
+                } else {
+                    let html = `
+                        <div class="post-list">
+                            <div class="list-title">최신 글</div>
+                    `;
+                    allPosts.forEach((post, index) => {
+                        const url = post.url ? `onclick="window.location.href='${post.url}'"` : '';
+                        html += `
+                            <div class="post-item" ${url} style="cursor: ${post.url ? 'pointer' : 'default'};">
+                                <div style="display: flex; gap: 15px; flex: 1; min-width: 0;">
+                                    <div class="post-number">${index + 1}.</div>
+                                    <div class="post-content-wrapper">
+                                        <div class="post-header-row">
+                                            ${post.authors ? `<div class="post-authors">${post.authors}</div>` : ''}
+                                            <div class="post-title">${post.title}</div>
+                                            ${post.year ? `<div class="post-year">${post.year}</div>` : ''}
+                                        </div>
+                                        ${post.summary ? `<div class="post-summary">${post.summary}</div>` : ''}
+                                        ${post.date && !post.year ? `<div class="post-meta">${post.date}</div>` : ''}
+                                    </div>
+                                </div>
+                            </div>
+                        `;
+                    });
+                    html += `</div>`;
+                    content.innerHTML = html;
+                }
+                return;
+            }
+
+            // 일반 카테고리 (역순 정렬)
+            const postList = (posts[currentCategory] || []).slice().reverse();
+            const categoryTitle = currentCategory.split('-').slice(1).join('-');
+
+            if (postList.length === 0) {
+                content.innerHTML = `
+                    <div class="empty-state">
+                        <div class="empty-state-icon">📚</div>
+                        <div class="empty-state-text">${categoryTitle} 카테고리에 등록된 논문이 없습니다.</div>
+                    </div>
+                `;
+            } else {
+                let html = `
+                    <div class="post-list">
+                        <div class="list-title">${categoryTitle}</div>
+                `;
+
+                postList.forEach((post, index) => {
+                    const url = post.url ? `onclick="window.location.href='${post.url}'"` : '';
+                    html += `
+                        <div class="post-item" ${url} style="cursor: ${post.url ? 'pointer' : 'default'};">
+                            <div style="display: flex; gap: 15px; flex: 1; min-width: 0;">
+                                <div class="post-number">${index + 1}.</div>
+                                <div class="post-content-wrapper">
+                                    <div class="post-header-row">
+                                        ${post.authors ? `<div class="post-authors">${post.authors}</div>` : ''}
+                                        <div class="post-title">${post.title}</div>
+                                        ${post.year ? `<div class="post-year">${post.year}</div>` : ''}
+                                    </div>
+                                    ${post.summary ? `<div class="post-summary">${post.summary}</div>` : ''}
+                                    ${post.date && !post.year ? `<div class="post-meta">${post.date}</div>` : ''}
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                });
+
+                html += `
+                    </div>
+                `;
+                content.innerHTML = html;
+            }
+        }
+
+        // 메뉴 토글 (모바일)
+        function toggleMenu() {
+            const sidebar = document.querySelector('.sidebar');
+            const overlay = document.querySelector('.sidebar-overlay');
+            sidebar.classList.toggle('active');
+            overlay.classList.toggle('active');
+        }
+
+        // 메뉴 닫기
+        function closeMenu() {
+            const sidebar = document.querySelector('.sidebar');
+            const overlay = document.querySelector('.sidebar-overlay');
+            sidebar.classList.remove('active');
+            overlay.classList.remove('active');
+        }
+
+        // 페이지 로드 시 초기화
+        window.addEventListener('DOMContentLoaded', init);
+    </script>
+</body>
+</html>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
