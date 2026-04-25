@@ -414,9 +414,9 @@
     <script>
         // 카테고리 정의
         const CATEGORIES = {
-            korean: ['민주적 기억과 역사부정', '역사교과서', '다중시각서술', '역사적 사고', '언론 보도'],
-            spanish: ['민주적 기억과 역사부정', '역사교과서', '다중시각서술', '역사적 사고', '언론 보도'],
-            english: ['민주적 기억과 역사부정', '역사교과서', '다중시각서술', '역사적 사고', '언론 보도'],
+            korean: ['민주적 기억과 역사부정', '역사교과서', '다중시각서술', '기타', '언론 보도'],
+            spanish: ['민주적 기억과 역사부정', '역사교과서', '다중시각서술', '기타', '언론 보도'],
+            english: ['민주적 기억과 역사부정', '역사교과서', '다중시각서술', '기타', '언론 보도'],
             'spanish-study': ['RTVE 뉴스']
         };
 
@@ -439,7 +439,7 @@
             "korean-민주적 기억과 역사부정": [],
             "korean-역사교과서": [],
             "korean-다중시각서술": [],
-            "korean-역사적 사고": [],
+            "korean-기타": [],
             "korean-언론 보도": [],
             "spanish-민주적 기억과 역사부정": [],
             "spanish-역사교과서": [
@@ -460,12 +460,20 @@
                     "uploadDate": "2026-04-23"
                 }
             ],
-            "spanish-역사적 사고": [],
+            "spanish-기타": [],
             "spanish-언론 보도": [],
             "english-민주적 기억과 역사부정": [],
             "english-역사교과서": [],
             "english-다중시각서술": [],
-            "english-역사적 사고": [],
+            "english-기타": [
+                {
+                    "title": "수업 시뮬레이션을 통한 역사적 사고",
+                    "authors": "Pellegrino et al.",
+                    "year": 2012,
+                    "url": "Pellegrino_2012_한국어번역.html",
+                    "uploadDate": "2026-04-26"
+                }
+            ],
             "english-언론 보도": [],
             "spanish-study-RTVE 뉴스": [
                 {
@@ -718,13 +726,4 @@
         // 메뉴 닫기
         function closeMenu() {
             const sidebar = document.querySelector('.sidebar');
-            const overlay = document.querySelector('.sidebar-overlay');
-            sidebar.classList.remove('active');
-            overlay.classList.remove('active');
-        }
-
-        // 페이지 로드 시 초기화
-        window.addEventListener('DOMContentLoaded', init);
-    </script>
-</body>
-</html>
+            const overlay = document.qu
