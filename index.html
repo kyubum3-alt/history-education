@@ -726,4 +726,13 @@
         // 메뉴 닫기
         function closeMenu() {
             const sidebar = document.querySelector('.sidebar');
-            const overlay = document.qu
+            const overlay = document.querySelector('.sidebar-overlay');
+            sidebar.classList.remove('active');
+            overlay.classList.remove('active');
+        }
+
+        // 페이지 로드 시 초기화
+        window.addEventListener('DOMContentLoaded', init);
+    </script>
+</body>
+</html>
