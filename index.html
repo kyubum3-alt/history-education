@@ -129,6 +129,7 @@
             color: #2c3e50;
             font-weight: 500;
         }
+
         #search-input {
             transition: all 0.2s ease;
         }
@@ -447,6 +448,7 @@
         // 게시글 데이터
         let posts = {};
         let currentCategory = null;
+
         // 검색 키워드
         let currentSearchQuery = '';
 
@@ -647,7 +649,6 @@
             const sidebar = document.getElementById('sidebar-content');
             let html = '';
 
-
             // 검색 입력창
             html += `
                 <div style="margin-bottom: 20px;">
@@ -660,6 +661,8 @@
                     />
                 </div>
             `;
+
+
             // 홈 버튼
             html += `
                 <div style="margin-bottom: 20px;">
@@ -721,19 +724,6 @@
                 item.classList.remove('active');
             });
 
-
-            // 검색 입력창
-            html += `
-                <div style="margin-bottom: 20px;">
-                    <input
-                        type="text"
-                        id="search-input"
-                        placeholder="검색 (제목, 저자)"
-                        style="width: 100%; padding: 10px 12px; border: 1px solid #e0e0e0; border-radius: 4px; font-size: 0.9em; box-sizing: border-box;"
-                        onkeyup="handleSearch()"
-                    />
-                </div>
-            `;
             // 홈 버튼 처리
             if (categoryKey === HOME_CATEGORY) {
                 const homeBtn = document.getElementById('home-btn');
