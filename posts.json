@@ -1,0 +1,94 @@
+{
+  "korean-민주적 기억과 역사부정": [],
+  "korean-역사교과서": [],
+  "korean-다중시각서술": [],
+  "korean-기타": [],
+  "korean-언론 보도": [],
+  "spanish-민주적 기억과 역사부정": [],
+  "spanish-역사교과서": [
+    {
+      "title": "스페인 내전의 중등교육 교수법",
+      "authors": "Goldstein",
+      "year": 2023,
+      "url": "Goldstein_2023_한국어번역.html",
+      "uploadDate": "2026-04-24"
+    }
+  ],
+  "spanish-다중시각서술": [
+    {
+      "title": "가치와 역사 교육 — 예비교사의 역사적 유의성 사회적 표상",
+      "authors": "Ortuño, Bellatti, Molina",
+      "year": 2025,
+      "url": "Ortuño_Bellatti_Molina_2025_한국어번역.html",
+      "uploadDate": "2026-04-24"
+    }
+  ],
+  "spanish-기타": [],
+  "spanish-언론 보도": [],
+  "english-민주적 기억과 역사부정": [],
+  "english-역사교과서": [],
+  "english-다중시각서술": [
+    {
+      "title": "역사교육에서의 다원적 관점",
+      "authors": "Robert Stradling",
+      "year": 2003,
+      "url": "Stradling_2003_번역.html",
+      "uploadDate": "2026-04-27"
+    }
+  ],
+  "english-기타": [
+    {
+      "title": "수업 시뮬레이션을 통한 역사적 사고",
+      "authors": "Pellegrino et al.",
+      "year": 2012,
+      "url": "Pellegrino_2012_한국어번역.html",
+      "uploadDate": "2026-04-25"
+    },
+    {
+      "title": "역사 교육과 역사적 사고",
+      "authors": "Waters",
+      "year": 2021,
+      "url": "Waters_2021_한국어번역.html",
+      "uploadDate": "2026-04-25"
+    }
+  ],
+  "english-언론 보도": [],
+  "spanish-study-RTVE 뉴스": [
+    {
+      "title": "2026년 4월 25일 - RTVE 10분뉴스",
+      "date": "2026년 4월 25일",
+      "url": "RTVE_10minutos_25042026_final.html",
+      "uploadDate": "2026-04-25"
+    },
+    {
+      "title": "2026년 4월 26일 - RTVE 10분뉴스",
+      "date": "2026년 4월 26일",
+      "url": "RTVE_10minutos_26042026_final.html",
+      "uploadDate": "2026-04-26"
+    },
+    {
+      "title": "2026년 4월 24일 - RTVE 10분뉴스",
+      "date": "2026년 4월 24일",
+      "url": "RTVE_10minutos_24042026_final.html",
+      "uploadDate": "2026-04-26"
+    },
+    {
+      "title": "2026년 4월 23일 - RTVE 10분뉴스",
+      "date": "2026년 4월 23일",
+      "url": "https://kyubum3-alt.github.io/history-education/RTVE_10minutos_23abril2026.html",
+      "uploadDate": "2026-04-23"
+    },
+    {
+      "title": "2026년 4월 22일 - RTVE 10분뉴스",
+      "date": "2026년 4월 22일",
+      "url": "https://kyubum3-alt.github.io/rtve-news/RTVE_10minutos_22abril2026.html",
+      "uploadDate": "2026-04-22"
+    },
+    {
+      "title": "2026년 4월 21일 - RTVE 10분뉴스",
+      "date": "2026년 4월 21일",
+      "url": "https://kyubum3-alt.github.io/rtve-news/RTVE_10minutos_21abril2026.html",
+      "uploadDate": "2026-04-21"
+    }
+  ]
+}
