@@ -818,8 +818,8 @@
                 return;
             }
 
-            // 일반 카테고리 (역순 정렬)
-            const postList = (posts[currentCategory] || []).slice().reverse();
+            // 일반 카테고리 (uploadDate 기준 최신순 정렬)
+            const postList = (posts[currentCategory] || []).slice().sort((a, b) => getPostDate(b) - getPostDate(a));
             const categoryTitle = currentCategory.split('-').slice(1).join('-');
 
             if (postList.length === 0) {
