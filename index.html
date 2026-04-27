@@ -685,7 +685,7 @@
                     const key = `${lang}-${category}`;
                     const count = posts[key] ? posts[key].length : 0;
                     html += `
-                        <div class="category-item" onclick="showCategory('${key}')">
+                        <div class="category-item" data-key="${key}" onclick="showCategory('${key}')">
                             ${category} (${count})
                         </div>
                     `;
@@ -731,7 +731,7 @@
             } else {
                 // 현재 카테고리 항목에 active 추가
                 document.querySelectorAll('.category-item').forEach(item => {
-                    if (item.textContent.includes(categoryKey.split('-').slice(1).join('-'))) {
+                    if (item.dataset.key === categoryKey) {
                         item.classList.add('active');
                     }
                 });
