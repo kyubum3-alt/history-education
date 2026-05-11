@@ -1,6 +1,6 @@
 {
   "korean-민주적 기억과 역사부정": [],
-  "korean-역사교과서": [
+  "korean-역사교과서 및 교육과정": [
     {
       "title": "스페인 현대사에 관한 수정주의 해석과 그 등장 배경",
       "authors": "황보영조",
@@ -20,7 +20,14 @@
   "korean-기타": [],
   "korean-언론 보도": [],
   "spanish-민주적 기억과 역사부정": [],
-  "spanish-역사교과서": [
+  "spanish-역사교과서 및 교육과정": [
+    {
+      "title": "LOMCE와 역사적 역량: 스페인 교육과정 분석",
+      "authors": "López",
+      "year": 2014,
+      "url": "Lopez_2014_LOMCE와 역사적 역량.html",
+      "uploadDate": "2026-05-11"
+    },
     {
       "title": "스페인 내전의 중등교육 교수법",
       "authors": "Goldstein",
@@ -41,7 +48,7 @@
   "spanish-기타": [],
   "spanish-언론 보도": [],
   "english-민주적 기억과 역사부정": [],
-  "english-역사교과서": [],
+  "english-역사교과서 및 교육과정": [],
   "english-다중시각서술": [
     {
       "title": "역사교육에서의 다원적 관점",
