@@ -218,12 +218,12 @@
 
         function init() {
             renderSidebar();
-            showSection('korean');
+            showHome();
         }
 
         function renderSidebar() {
             const sidebar = document.getElementById('sidebar');
-            let html = '';
+            let html = '<div class="section-item" onclick="showHome()" style="margin-bottom: 15px; background-color: #f0f7ff; border-left-color: #3498db; color: #2c3e50;">🏠 홈</div>';
 
             for (const section of sectionOrder) {
                 const displayName = sectionNames[section] || section;
@@ -235,6 +235,54 @@
             }
 
             sidebar.innerHTML = html;
+        }
+
+        function showHome() {
+            currentSection = null;
+            renderHome();
+
+            document.querySelectorAll('.section-item').forEach(item => {
+                item.classList.remove('active');
+            });
+
+            document.querySelector('[onclick="showHome()"]').classList.add('active');
+        }
+
+        function renderHome() {
+            const content = document.getElementById('content');
+            let html = `<div class="post-list">
+                <div class="list-title">전체 자료</div>`;
+
+            let totalCount = 0;
+            for (const section of sectionOrder) {
+                const posts = allPosts[section] || [];
+                const displayName = sectionNames[section] || section;
+                const count = posts.length;
+                totalCount += count;
+
+                if (count > 0) {
+                    html += `<div style="padding: 15px 20px; border-bottom: 1px solid #e0e0e0;">
+                        <h3 style="color: #2c3e50; margin-bottom: 10px; font-size: 1.1em;">${displayName} (${count})</h3>`;
+
+                    for (const post of posts.slice(0, 3)) {
+                        html += `<div style="margin-bottom: 8px; padding-left: 10px; border-left: 2px solid #3498db;">
+                            <a href="${post.url}" target="_blank" style="text-decoration: none; color: #3498db; font-size: 0.95em;">${post.title}</a>
+                        </div>`;
+                    }
+
+                    if (count > 3) {
+                        html += `<div style="padding-left: 10px; color: #999; font-size: 0.9em; margin-top: 5px;">외 ${count - 3}개</div>`;
+                    }
+
+                    html += `</div>`;
+                }
+            }
+
+            html += `<div style="padding: 20px; text-align: center; color: #999;">
+                <p>총 ${totalCount}개의 자료가 등록되어 있습니다.</p>
+            </div></div>`;
+
+            content.innerHTML = html;
         }
 
         function showSection(section) {
