@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>스페인 현대사에 관한 수정주의 해석과 그 등장 배경</title>
+  <style>
+    :root {
+      --sidebar-width: 270px;
+      --accent: #2c5f8a;
+      --accent-light: #e8f1f8;
+      --accent-hover: #1e4268;
+      --text: #1a1a1a;
+      --muted: #555;
+      --border: #d0d7de;
+      --bg: #fafafa;
+      --white: #ffffff;
+      --table-head: #f0f4f8;
+      --footnote-bg: #f8f8f8;
+      --tag-bg: #ddeeff;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif;
+      font-size: 16px;
+      line-height: 1.9;
+    }
+
+    /* 사이드바 */
+    #sidebar {
+      position: fixed; top: 0; left: 0;
+      width: var(--sidebar-width); height: 100vh;
+      overflow-y: auto; background: var(--white);
+      border-right: 1px solid var(--border);
+      padding: 20px 0;
+      z-index: 100;
+    }
+    .sidebar-header {
+      padding: 0 20px 16px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 12px;
+    }
+    .sidebar-title {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--accent);
+      line-height: 1.5;
+      margin-bottom: 4px;
+    }
+    .sidebar-meta {
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+    #sidebar nav a {
+      display: block; padding: 5px 20px;
+      color: var(--text); text-decoration: none;
+      font-size: 0.86rem; line-height: 1.5;
+      transition: background 0.15s;
+    }
+    #sidebar nav a:hover { background: var(--accent-light); }
+    #sidebar nav a.sub { padding-left: 36px; color: var(--muted); font-size: 0.82rem; }
+    #sidebar nav a.active {
+      color: var(--accent); font-weight: 600;
+      background: var(--accent-light);
+      border-left: 3px solid var(--accent);
+    }
+
+    /* 메인 */
+    main {
+      margin-left: var(--sidebar-width);
+      padding: 48px 64px 80px;
+      max-width: 900px;
+      line-height: 1.9;
+    }
+
+    /* 논문 헤더 */
+    .paper-header {
+      border-bottom: 2px solid var(--accent);
+      padding-bottom: 24px;
+      margin-bottom: 36px;
+    }
+    .paper-header h1 {
+      font-size: 1.55rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      line-height: 1.5;
+      color: var(--accent);
+    }
+    .paper-meta {
+      color: var(--muted);
+      font-size: 0.88rem;
+      margin-top: 8px;
+    }
+    .paper-meta span { margin-right: 16px; }
+    .paper-meta span::before { content: ''; }
+    .doi { font-size: 0.82rem; }
+
+    /* 초록 박스 */
+    .abstract-box {
+      background: var(--accent-light);
+      border-left: 4px solid var(--accent);
+      padding: 24px 28px;
+      border-radius: 4px;
+      margin: 32px 0;
+    }
+    .abstract-box h2 {
+      font-size: 1.05rem;
+      color: var(--accent);
+      margin-bottom: 12px;
+      border: none;
+      padding: 0;
+    }
+
+    /* 주제어 태그 */
+    .keywords { margin-top: 14px; }
+    .keyword-tag {
+      display: inline-block;
+      background: var(--tag-bg);
+      padding: 2px 10px;
+      border-radius: 12px;
+      font-size: 0.82rem;
+      margin: 3px 2px;
+      color: var(--accent);
+    }
+
+    /* 섹션 */
+    section { margin-bottom: 48px; }
+
+    h2 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--accent);
+      margin: 36px 0 16px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--border);
+    }
+    h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin: 24px 0 12px;
+      color: var(--text);
+    }
+
+    p { margin-bottom: 1em; text-align: justify; }
+
+    /* 인용 블록 */
+    blockquote {
+      border-left: 3px solid var(--border);
+      margin: 20px 0;
+      padding: 14px 24px;
+      background: #f9f9f9;
+      font-size: 0.95rem;
+      line-height: 1.85;
+    }
+
+    /* 각주 */
+    .footnotes {
+      border-top: 1px solid var(--border);
+      margin-top: 36px;
+      padding-top: 14px;
+      font-size: 0.84rem;
+      color: var(--muted);
+      line-height: 1.75;
+    }
+    .footnotes p { margin: 5px 0; }
+    sup a {
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 0.78rem;
+    }
+    sup a:hover { text-decoration: underline; }
+    .fn-back { font-size: 0.8rem; color: var(--accent); margin-left: 4px; }
+
+    /* 참고문헌 */
+    #references p {
+      font-size: 0.9rem;
+      margin-bottom: 0.4em;
+      padding-left: 1.5em;
+      text-indent: -1.5em;
+      text-align: left;
+    }
+    #references h3 { margin-top: 20px; }
+
+    /* 맨 위로 버튼 */
+    .back-to-top {
+      position: fixed; bottom: 32px; right: 32px;
+      background: var(--accent); color: white; border: none;
+      padding: 10px 16px; border-radius: 6px;
+      cursor: pointer; font-size: 0.85rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+      transition: background 0.2s;
+    }
+    .back-to-top:hover { background: var(--accent-hover); }
+
+    /* 반응형 */
+    @media (max-width: 900px) {
+      #sidebar { display: none; }
+      main { margin-left: 0; padding: 24px 20px; }
+    }
+
+    /* 영문 초록 */
+    #abstract-en p { font-family: Georgia, serif; font-size: 0.95rem; }
+  </style>
+</head>
+<body>
+
+<aside id="sidebar">
+  <div class="sidebar-header">
+    <div class="sidebar-title">스페인 현대사에 관한 수정주의 해석과 그 등장 배경</div>
+    <div class="sidebar-meta">황보영조 · 2016</div>
+  </div>
+  <nav>
+    <a href="#abstract">초록</a>
+    <a href="#s1">Ⅰ. 머리말</a>
+    <a href="#s2">Ⅱ. 수정주의 테제</a>
+    <a href="#s3">Ⅲ. 수정주의의 등장 배경</a>
+    <a href="#s4">Ⅳ. 역사학계의 반응</a>
+    <a href="#s5">Ⅴ. 맺음말</a>
+    <a href="#references">참고문헌</a>
+    <a href="#abstract-en">Abstract</a>
+  </nav>
+</aside>
+
+<main>
+
+  <header class="paper-header">
+    <h1>스페인 현대사에 관한 수정주의 해석과 그 등장 배경</h1>
+    <div class="paper-meta">
+      <span>황보영조 (경북대 사학과 교수)</span>
+      <span>歷史敎育論集 第58輯 (2016. 2)</span>
+      <span class="doi">http://dx.doi.org/10.17999/SOHE.2016.58.11</span>
+    </div>
+    <div class="paper-meta" style="margin-top:6px; font-size:0.82rem; color:var(--muted);">
+      ※ 이 논문은 2013학년도 경북대학교 학술연구비에 의하여 연구되었음.
+    </div>
+  </header>
+
+  <!-- 초록 없음 (본 논문은 국문 초록 미수록, 영문 Abstract만 있음) -->
+
+  <!-- Ⅰ. 머리말 -->
+  <section id="s1">
+    <h2>Ⅰ. 머리말</h2>
+
+    <p>2013년 12월 13일 대한민국역사박물관에서 박물관 개관 1주년을 기념하는 국제학술대회가 열렸다. 대회 주제는 "세계 각국의 역사 논쟁: 갈등과 조정"이었다.<sup><a id="fnref1" href="#fn1">1)</a></sup> 근래 역사인식을 둘러싸고 심각한 논란과 갈등에 직면해 있는 우리 한국 사회를 위한 시사점을 얻기 위해 설정한 주제였다.<sup><a id="fnref2" href="#fn2">2)</a></sup></p>
+
+    <p>이 학술대회에서 필자는 "스페인의 과거사 논쟁"에 관해 발표했다.<sup><a id="fnref3" href="#fn3">3)</a></sup> 이 발표에서 평화를 위해 과거사를 거론하지 않기로 한 프랑코 사후의 침묵의 정치와 과거의 기억을 다시 끄집어내기 시작한 1990년대 말 이후의 기억의 정치를 다루었다. 내전과 독재라는 과거사를 지니고 있는 스페인이 과거사와 직접 연관이 있는 프랑코가 사망한 뒤에도 그것을 잊어버리자는 침묵의 길을 걸었다. 좌파와 우파의 정치 엘리트들이 그렇게 하기로 합의했고 대중들도 그 합의를 지지했다. 그 결과 큰 어려움 없이 민주주의를 정착시키게 되었다. 하지만 가라앉은 듯한 과거사 문제가 역사기억 회복 운동이 등장한 1990년대 말부터 다시 수면 위로 떠올랐다.</p>
+
+    <p>시민사회 단체들의 주도로 시작된 기억 회복 운동에 대해서 우파와 좌파 정치인들은 서로 다른 반응을 보였다. 우파 정치인들은 상처는 시간이 지나면 낫게 마련이라는 속담에 빗대어서 과거사를 재론하는 것은 오래된 상처를 덧나게 할 뿐이라고 주장했다. 반면에 좌파 정치인들 일부는 침묵의 정치를 편 결과로 희생자들을 기리고 애도하고 그들의 기억과 명예를 회복하며 프랑코 정권의 권력 남용을 단죄할 기회를 잃어버렸다면서 프랑코 정권의 인권 탄압을 파헤치고 희생자들의 누명을 벗겨주어야 한다고 주장했다. 그들은 이를 역사기억 회복에 비유했다.<sup><a id="fnref4" href="#fn4">4)</a></sup></p>
+
+    <p>2004년 3월 사회노동당의 총선 승리로 기억의 붐은 한층 고조되었다. 다수당이 된 사회노동당은 의회에서 2006년을 '역사기억의 해'로 선포하는 법안을 승인하고, 같은 해에 내전과 프랑코 독재 희생자들의 진상 규명을 위한 역사기억법안을 통과시켰다.</p>
+
+    <p>이렇듯 시민사회 단체들이 기억 회복 운동을 벌이고 정치인들이 기억회복을 위한 여러 조처들을 취하고 있을 때 역사학계는 뭘 하고 있었을까? 이러한 사회정치적 현상을 반영이라도 하듯이 역사가들도 팔로마 아길라르<sup><a id="fnref5" href="#fn5">5)</a></sup>를 필두로 내전의 기억 문제에 주목하기 시작했다. 이렇게 시작된 역사기억에 대한 역사가들의 관심이 시민사회 단체들 주도의 역사기억 회복운동과 맞물리며 증폭되고 있을 때 보수주의 지식인들이 기지개를 켜고 일어났다.</p>
+
+    <p>이른바 수정주의자들<sup><a id="fnref6" href="#fn6">6)</a></sup>로 알려진 보수적 성향의 저술가와 언론인들이 프랑코 정권을 옹호하면서 프랑코 사후 스페인 역사학을 지배해온 스페인 현대사에 관한 진보적 해석을 폄훼하는 작업을 벌였다. 페데리코 히메네스 로산토스, 세사르 비달, 호세 마리아 마르코, 피오 모아 등이 그들이었다. 이들이 기존의 '공식' 해석에 도전장을 냈다.</p>
+
+    <p>수정주의를 대표하는 인물은 저술가이자 역사가인 모아와 비달이다. 모아는 워낙에 공산당과 반파시즘저항단체(GRAPO)의 일원으로 활동하다가 혈기 왕성한 28살의 나이에 저항단체에서 축출되면서 극좌파 노선을 버리고 보수주의로 돌아선 인물이다. 그가 1999년에 낸 <em>스페인 내전의 기원</em>을 필두로 지금까지 매년 한두 권의 책<sup><a id="fnref7" href="#fn7">7)</a></sup>을 내면서 수정주의자들의 대표 주자로 떠올랐고, 그의 대표 저서 <em>내전의 신화</em>는 출판 첫 해에 15만 부가 팔리고 다음 2년 동안 10만 부가 더 팔려나갔다. 당시의 출판 시장을 고려할 때 수정주의에 대한 대중들의 반응이 가히 폭발적이었다고 할 수 있다. 하지만 수정주의에 대한 주류 역사학자들의 시선은 곱지 않았다. 일부 역사학자들이 모아의 테제를 비판하고 나섰고<sup><a id="fnref8" href="#fn8">8)</a></sup> 그 비판이 마침내 스페인 현대사 해석을 둘러싼 논쟁으로 비화되었다.</p>
+
+    <p>이 글은 우선 수정주의자들의 주요 테제가 무엇인지를 짚어보는 것으로 시작한다. 이를 위해 모아가 저술한 <em>내전의 신화</em>를 중심으로 그의 주장을 살펴본다. 이어서 그들의 테제가 왜 대중적 인기를 누리게 되었는지 그 배경을 분석해본다. 아울러 수정주의자들과 그들의 테제에 대한 역사학계의 반응이 어떠했는지를 비판자와 지지자의 두 부류로 나누어 살펴본다.<sup><a id="fnref9" href="#fn9">9)</a></sup></p>
+
+    <div class="footnotes">
+      <p><sup><a id="fn1" href="#fnref1">1)</a></sup> 학술대회에서 프랑스, 독일, 스페인, 미국, 영국, 일본의 사례를 다루었다. 대회의 결과물이 2014년 3월에 연구총서[안병직 외, <em>세계 각국의 역사 논쟁: 갈등과 조정</em>(대한민국역사박물관, 2014)]로 출판되었다. <a href="#fnref1" class="fn-back">↩</a></p>
+      <p><sup><a id="fn2" href="#fnref2">2)</a></sup> 안병직, 「역사 논쟁의 본질」, 안병직 외, 앞의 책, p.13. <a href="#fnref2" class="fn-back">↩</a></p>
+      <p><sup><a id="fn3" href="#fnref3">3)</a></sup> 황보영조, 「스페인의 과거사 논쟁」, 안병직 외, 앞의 책, pp.84～121. <a href="#fnref3" class="fn-back">↩</a></p>
+      <p><sup><a id="fn4" href="#fnref4">4)</a></sup> 황보영조, 앞의 글, pp.98～100. <a href="#fnref4" class="fn-back">↩</a></p>
+      <p><sup><a id="fn5" href="#fnref5">5)</a></sup> Paloma Aguilar, <em>Memoria y olvido de la Guerra Civil española</em> (Madrid: Alianza Editorial, 1996). <a href="#fnref5" class="fn-back">↩</a></p>
+      <p><sup><a id="fn6" href="#fnref6">6)</a></sup> 친프랑코적 역사서술을 따른다고 해서 이들을 '신프랑코주의자'라고 부르기도 한다. 이들이 지향하는 역사서술을 대체로 '역사수정주의(revisionismo histórico)'라고 일컫는다. 하지만 약간 결을 달리하여 '역사수정주의' 대신에 '의사수정주의(seudorevisionismo)'나 '복고수정주의(revisionismo restaurador)'라는 용어를 사용하는 이들도 있다. 이들 용어에 대해서는 차후에 좀 더 찬찬히 따져볼 일이지만 여기서는 우선 이들 모두를 '수정주의'로 통칭하고 그런 경향을 보이는 역사가와 저술가들을 '수정주의자'라고 일컫는다. <a href="#fnref6" class="fn-back">↩</a></p>
+      <p><sup><a id="fn7" href="#fnref7">7)</a></sup> 공저를 제외한 단독 저서의 일부를 소개하면 다음과 같다. <em>Los orígenes de la Guerra Civil española</em> (Madrid: Encuentro, 1999); <em>Los personajes de la República vistos por ellos mismos</em> (Madrid: Encuentro, 2000); <em>El derrumbe de la II República y la guerra civil</em> (Madrid: Encuentro, 2001); <em>La Oposición durante el Franquismo. Volumen 2: De un tiempo y de un país</em> (Madrid: Encuentro, 2002); <em>Contra la mentira: guerra civil, izquierda nacionalista y jacobinismo</em> (Madrid: Libros Libres, 2003); <em>Los mitos de la Guerra Civil</em> (Madrid: La Esfera de los Libros, 2003); <em>Los libros fundamentales sobre la Guerra Civil</em> (Madrid: Encuentro, 2004); <em>Una historia chocante: los nacionalismos catalán y vasco en la historia contemporánea de España</em> (Madrid: Encuentro, 2004); <em>Los crímenes de la Guerra Civil y otras polémicas</em> (Madrid: La Esfera de los Libros, 2004); <em>1936, el asalto final a la República</em> (Barcelona: Áltera, 2005); <em>Franco: un balance histórico</em> (Barcelona: Planeta, 2005); <em>La República que acabó en guerra civil</em> (Barcelona: Áltera, 2006); <em>La quiebra de la historia progresista</em> (Madrid: Encuentro, 2007); <em>Falacias de la izquierda, silencios de la derecha. Claves para entender el deterioro de la política española actual</em> (Madrid: Libros Libres, 2008); <em>Franco para antifranquistas: en 36 preguntas clave</em> (Barcelona: Áltera, 2009); <em>La democracia ahogada. Ensayos sobre la España de hoy</em> (Barcelona: Áltera, 2009); <em>Nueva historia de España</em> (Madrid: La Esfera de los Libros, 2010); <em>La transición de cristal. Franquismo y democracia</em> (Madrid: Libros Libres, 2010); <em>España contra España</em> (Madrid: Libros Libres, 2012); <em>Mitos del Franquismo</em> (Madrid: La Esfera de los Libros, 2015). <a href="#fnref7" class="fn-back">↩</a></p>
+      <p><sup><a id="fn8" href="#fnref8">8)</a></sup> 하비에르 투셀, 폴 프레스턴, 페드로 카를로스 곤살레스 쿠에바스, 알베르토 레이그 타피아, 엔리케 모라디에요스, 프란시스코 에스피노사 마에스트레, 후스토 세르나, 메르세데스 유스타, 카를로스 릴로바 헤리코, 헬런 그레이엄, 산토스 훌리아, 가브리엘 카르도나, 에드워드 말레파키스, 앙헬 비냐스 등이 그들이다. 이름이 알려진 스페인 현대사 역사가들 거의 모두가 비판적인 견해를 밝혔다. <a href="#fnref8" class="fn-back">↩</a></p>
+      <p><sup><a id="fn9" href="#fnref9">9)</a></sup> 사실은 이러한 내용을 앞서 얘기한 발표에서 간략하게 다루었다. 이것이 매우 중요한 내용인데도 불구하고 지면 관계상 제대로 다루지 못했다. 이를 여기서 별도로 다루는 이유가 여기에 있다. 이런 점에서 이 글은 「스페인의 과거사 논쟁」의 속편 내지는 제2편에 해당한다. <a href="#fnref9" class="fn-back">↩</a></p>
+    </div>
+  </section>
+
+  <!-- Ⅱ. 수정주의 테제 -->
+  <section id="s2">
+    <h2>Ⅱ. 수정주의 테제</h2>
+
+    <p>수정주의자들이 주로 문제 삼는 스페인 현대사는 제2공화국(1931～1936년)과 내전(1936～1939년), 프랑코 독재(1939～1975년) 시기이다. 그들은 이 시기에 대해 프랑코 사후에 공식화된 기존 해석과 다른 의미를 부여했다. 수정주의 테제가 기존 해석과 얼마나 다른지를 파악하려면 우선 기존 해석의 대강을 살펴볼 필요가 있다.</p>
+
+    <p>스페인 사회는 1936～1939년에 내전으로 골머리를 앓았다. 1931년에 수립된 제2공화국이 변화를 위한 개혁을 추진했는데 이 변화를 두려워한 사람들이 군사쿠데타를 지지하면서 내전이 시작되었다. 쿠데타 이후 군대가 진주한 지역에서는 더러운 전쟁이 자행되었다. 동족을 대량 학살하는 일에 민간인들이 군사당국과 협력했다. 내전은 또한 국제분쟁으로 비화되었다. 히틀러와 무솔리니의 군사원조를 받은 프랑코 장군이 신생 민주 공화국을 상대로 연전연승을 거두었다. 내전은 1939년 4월 1일에 프랑코가 이끄는 국민 진영의 승리로 끝이 났다.</p>
+
+    <p>내전이 끝났다고 해서 평화가 이룩되지는 않았다. 프랑코 정권은 패자들을 처형하고 배제하면서 나라와 사회를 재편해나갔다. 공화국을 지지한 사람들을 '스페인의 적대세력'이라면서 악마 취급을 했다. 약식 군사재판으로 수만 명을 처형했고, 남녀노소를 불문하고 수십만 명을 감옥과 소년원, 강제수용소에 가두었다.</p>
+
+    <p>이런 배제 정책을 펴는 데 역사를 무기로 이용했다. 프랑코는 자신의 과격한 새로운 질서 수립을 보수적 역사 해석을 동원해 합리화했다. 그는 15세기 가톨릭 군주들에게서 비롯된 스페인 '민족'의 탄생 신화를 마련하고 제국의 위대함을 낳은 가톨릭교와 문화적 동질성을 찬미했다. 한걸음 더 나아가 근대성의 '죄악들', 곧 계몽사상과 평등, 문화적 이질성을 물리치는 보루 구실을 할 위대한 나라를 다시 건설하겠다고 했다.<sup><a id="fnref10" href="#fn10">10)</a></sup></p>
+
+    <p>수정주의자들은 이러한 기존 해석에 대해 내전은 제2공화국의 실패에서 비롯된 것이고 내전은 공산주의자들의 음모를 무너뜨리기 위한 정당한 전쟁이었으며 프랑코는 민주주의와 자유주의 체제를 가능하게 만든 인물이라는 해석을 내놓았다. 이런 주장을 펴는 이들을 일부 학자들이 수정주의자들이라고 불렀다.<sup><a id="fnref11" href="#fn11">11)</a></sup></p>
+
+    <p>사실 수정주의자들의 수가 그리 많지는 않다. 그런데도 그들의 주장이 상당한 영향력을 미치고 있다.<sup><a id="fnref12" href="#fn12">12)</a></sup> 수정주의자들은 직업상 크게 두 부류, 곧 역사가와 언론인으로 구분해볼 수 있다. 모아, 비달, 앙헬 다비드 마르틴 루비오, 루이스 에우헤니오 토고레스가 전자에 해당하고, 히메네스 로산토스, 호세 하비에르 에스파르사, 호세 마리아 사발라, 세사르 알칼라가 후자에 해당한다. 전자에 해당하는 수정주의자들도 전문 역사학자라기보다는 역사 저술가에 가깝다. 여기서는 전자에 해당하는 모아와 비달의 주장을 중심으로 수정주의 테제를 검토한다.</p>
+
+    <p>수정주의 테제를 잘 요약해준 저서는 모아가 저술한 <em>내전의 신화</em>이다. 그는 이 책에서 자신의 저서가 내전을 다룬 체계적 역사서가 아니라 기존의 역사서술이나 선전 속에서 신화화된 주요 사건이나 인물을 비판적으로 검토하는 책이라고 밝혔다.<sup><a id="fnref13" href="#fn13">13)</a></sup> 그러면서 당시 사건들의 주역이 내린 결정과 실제 의도를 파헤치는 데 관심을 기울였다.<sup><a id="fnref14" href="#fn14">14)</a></sup> 그들의 태도와 결정이 내전을 초래했다는 생각에서이다.<sup><a id="fnref15" href="#fn15">15)</a></sup></p>
+
+    <p>그는 먼저 제2공화국이 온건하고 진보적인 민주주의를 수립해나갈 때 반동적인 과두세력이 자신들의 특권을 상실할지 모른다는 두려움 속에서 그런 공화국에 반기를 들고 음모를 꾸몄다는 기존 주장을 배격하면서 사실은 "공화국 수립을 방해하기는커녕 중용과 준법정신을 장려했으며 좌파의 무장반란에 맞서 민주주의와 법을 수호했다"고 주장했다.<sup><a id="fnref16" href="#fn16">16)</a></sup> 또한 1934년 10월에 "그동안 외곽에서 지원을 해오던 스페인자치우익연합(CEDA)이 중도 정부 내각에 참여"하기로 하자 좌파가 반대를 하고 나섰고, 이렇게 해서 불거진 갈등이 "삽시간에 스페인 역사의 향방을 결정지을 중대 분쟁으로 비화되었다"고 지적했다.<sup><a id="fnref17" href="#fn17">17)</a></sup> 당시 사회주의 지도자들조차도 스페인자치우익연합 의원들의 입각을 파시즘의 위협으로 인식하지 않았다고 주장했다. 당시 공화좌파와 '카탈루냐 분리주의'의 '도덕적 지원'을 받은 사회노동당(PSOE)이 불법적인 반란을 주도했는데 그 반란의 유일한 목적은 공화국을 공산화하는 데 있었다고 보았다. 요컨대 1934년 10월 반란이 스페인의 민주주의를 무너뜨렸다는 것이다.<sup><a id="fnref18" href="#fn18">18)</a></sup></p>
+
+    <p>모아는 이런 의미에서 1936년 7월의 군사반란을 "공화국 출범 초기부터 시작된 반공화주의 반란이 아니라 우파는 물론이고 좌파 정치인들 일부도 참을 수 없다고 판단한 심각한 사태에 대해 들고 일어난 봉기"라고 규정했다.<sup><a id="fnref19" href="#fn19">19)</a></sup> 내전 발발의 책임은 의심할 나위 없이 "경기 규칙을 어기고 체제를 내전으로 몰아간 좌파들"에게 있다고 했다. 반면에 보수주의자들은 상호 충돌을 피하면서 "삶과 죽음의 갈림길에 이르도록 위협의 도가 심해질 때까지 더러는 비겁하리만치 온건한 태도를 유지했다"면서 보수주의자들을 치켜세웠다.<sup><a id="fnref20" href="#fn20">20)</a></sup></p>
+
+    <p>비달도 스페인 현대사의 기억이 조작되었다고 비난하면서 좌파와 지역 민족주의자들에게 평화적 공존을 깨뜨린 책임을 물어야 한다고 지적했다.<sup><a id="fnref21" href="#fn21">21)</a></sup> 그의 지적은 '봉기'를 정당화하고 '신국가'의 폭력을 합법화하기 위해 유포한 내전 당시 국민 진영의 구호들을 새삼 떠올리게 하는 주장이다.</p>
+
+    <p>모아는 내전이 "프랑코에게 무조건 항복할 것인지 아니면 스탈린에게 굴복할 것인지를 선택"하는 전쟁이었다고 했다.<sup><a id="fnref22" href="#fn22">22)</a></sup> 그는 소련이 공화 진영을 '보호령'으로 삼고 스페인의 재원(스페인은행의 금)을 탈취하여 모스크바에 가져가려고 했다고 서술했다.<sup><a id="fnref23" href="#fn23">23)</a></sup> 이는 프랑코 독재 정권이 만들어낸 신화다. 여기서 그가 프랑코 정권이 만들어낸 전통적 테제를 재활용하고 있음을 알 수 있다.</p>
+
+    <p>내전 중에 벌어진 학살과 관련하여 프랑코 진영의 탄압은 축소하고 공화 진영의 그것은 과장했다. 모아는 파라쿠에요스와 바다호스의 학살을 다룬 <em>내전의 신화</em> 17장에서 프랑코 진영인 바다호스에서 자행된 학살은 슬쩍 넘어가고 공화 진영인 파라쿠에요스델하라마에서 벌어진 학살은 상세히 다루었다. 비달도 후자의 사건, 곧 좌파가 자행한 학살 사건을 자세히 다룬 책을 두 권이나 냈다.<sup><a id="fnref24" href="#fn24">24)</a></sup></p>
+
+    <p>마지막으로, 모아는 프랑코 정권을 매우 긍정적으로 평가했다. 그는 자유주의 체제도 아니고 민주주의 체제도 아니지만 프랑코 정권의 권위주의적 추진력으로 오늘날의 자유 민주 사회를 낳았다면서 다음과 같이 서술했다.</p>
+
+    <blockquote>
+      "프랑코 체제를 공화국과 오늘날의 민주 사회 사이에 위치한 어두운 공백기로 파악해서는 안 된다. 왜냐하면 오늘날의 민주 사회가 프랑코 체제에서 비롯되었기 때문이다. 게다가 우리 사회의 안정성은 프랑코 정권이 창출한 사회와 경제에 기반을 두고 있다. 프랑코 정권은 사회적 긴장을 순조롭게 잘 해결해냈다."<sup><a id="fnref25" href="#fn25">25)</a></sup>
+    </blockquote>
+
+    <p>그는 이어서 오늘날의 스페인 사회를 제2공화국 시절의 상황과 비교하여 다음과 같이 덧붙이기도 했다.</p>
+
+    <blockquote>
+      "공화국 헌법과 달리 새로운 헌법은 광범한 합의의 산물이다. 애매모호하고 과격한 종전의 반교권주의가 이제는 거의 자취를 감추었다. 바스크 민족주의 테러와 같은 예외를 제외한다면 오늘날의 정치 상황은 공화국 시절의 전형적 특징이라고 할 수 있는 격렬한 대립이나 갈등과 거리가 매우 멀다."<sup><a id="fnref26" href="#fn26">26)</a></sup>
+    </blockquote>
+
+    <p>그는 결국 프랑코 정권이 정당한 정권이었다는 결론을 내렸다.</p>
+
+    <blockquote>
+      "내가 한 시대와 한 나라에서 이미 지적한 것처럼, 프랑코의 내전 승리는 혁명의 충격에서 스페인을 구출한 것이고, 그의 정권은 세계대전에서 나라를 구하고 사회를 근대화시켰으며 안정된 민주 사회를 위한 여건을 조성했다. 나는 이것이 과장이라고 생각하지 않는다. 최근 들어 프랑코를 비판하는 세력이 프랑코 정권의 부정적 요소와 흉흉한 이미지들을 발굴해냈다. 하지만 최종 평가는 매우 긍정적이다. 오늘날 근거도 없는 비판들 대다수가 마치 틀림없는 진실인양 떠돌아다니고 있다."<sup><a id="fnref27" href="#fn27">27)</a></sup>
+    </blockquote>
+
+    <p>그는 이밖에도 여러 책들<sup><a id="fnref28" href="#fn28">28)</a></sup>을 통해서 우파가 정적과 계급의 적을 절멸하려는 혁명적 좌파의 도발 위협에 대항하지 않을 수 없었다고 주장했다. 이러한 주장들을 볼 때, 모아는 우파의 그것은 물론이고 스페인 사회 대다수의 내전 발발 책임을 상대화시고, 내전과 그 이후에 자행된 폭력에 눈감으며, 프랑코 독재의 역사적 과오를 면제해주려고 하는 것 같다.</p>
+
+    <p>이러한 수정주의 테제가 최근 들어 갑자기 생겨난 것은 아니다. 그것은 정치학자 알베르토 레이그 타피아가 지적했다시피<sup><a id="fnref29" href="#fn29">29)</a></sup> 프랑코주의 역사서술에 연원을 두고 있다. 이를테면 저술가이자 역사가인 호아킨 아라라스가 대표적 인물이다. 그는 내전 중에 출판한 <em>스페인 십자군의 역사</em><sup><a id="fnref30" href="#fn30">30)</a></sup>에서 제2공화국은 혁명가들과 프리메이슨에 포획된 노예 국가였고 1936년의 군사반란은 조국을 위기에서 구출할 유일한 구명줄이었다고 주장했다. 그는 이 군사반란을 십자군에 비유했다. 무려 8권에 달하는 이 책은 프랑코 정권이 내전에 관해 선전할 때 활용하는 표준서가 되었다. 또 다른 프랑코주의의 대부는 1940년대와 1950년대에 내전을 저술한 마누엘 아스나르이다.<sup><a id="fnref31" href="#fn31">31)</a></sup> 1996～2004년에 총리를 지낸 호세 마리아 아스나르의 조부가 되는 그는 톨레도의 알카사르 해방 신화와 '십자군' 신화를 널리 유포시켰다.</p>
+
+    <p>프랑코주의 테제를 만들어낸 핵심 인물은 언론인이자 저술가인 에두아르도 코민 콜로메르이다. 그는 1952년에서 1967년 사이에 정당과 좌파 운동, 특히 스페인에 해악을 끼친 것으로 알려진 아나키즘과 프리메이슨, 공산주의에 관한 저서들을 집필했다.<sup><a id="fnref32" href="#fn32">32)</a></sup> 사료를 자유롭게 이용할 수 있었던 그는 1931～1936년에 실체가 드러난, 스페인을 대적하는 반스페인 음모의 기원이 멀리 자유교육원(Institución Libre de Enseñanza, 1876～1936년)에까지 거슬러 올라간다는 테제를 내놓았다. 가톨릭교의 헤게모니에 반기를 든 자유교육원의 영향은 문화면에서 프랑코 정권에 제일 큰 위협이 되는 적으로 간주되었다. 그는 민족 쇠락과 내전의 책임을 제3인터내셔널과 국제비밀결사에게 돌렸다. 그리고 이를 통해서 장군들이 일으킨 '봉기'를 이념적으로 정당화했다. 봉기는 좌파들이 조장한 혼란과 무질서 상태를 해결하기 위한 '정당하고 불가피한 반란'이었다는 것이다. 코민 콜로메르는 리카르도 델라 시에르바와 더불어 프랑코 정권 최대의 역사가로 알려지게 된다.</p>
+
+    <p>코민 콜로메르가 제기한 이러한 군사반란의 이념적 정당화에 힘을 보태준 것은 다름 아니라 가톨릭교회였다. 톨레도 대주교이자 스페인의 수석사제인 추기경 이시드로 고마는 일찍이 1936년 8월 13일자 교황청 보고문에서, '최근 5년간 나라를 마르크스주의와 공산주의의 심연으로 이끌고 간 정부의 입법조치에 대항해 일어난, 민족의식과 애국심으로 불타는 강력한 시위'<sup><a id="fnref33" href="#fn33">33)</a></sup>라고 봉기를 정당화하고, 내전을 '스페인과 적(敵)스페인, 종교와 무신론, 기독교 문명과 야만 문명'의 전쟁이라고 규정한 적이 있다.<sup><a id="fnref34" href="#fn34">34)</a></sup></p>
+
+    <p>프랑코주의 역사서술의 마지막 주자는 라 시에르바이다. 그는 프랑코 정권 시절 정보관광부 산하에 설치한 역사연구실의 실장을 맡아서 정권의 정당화 작업에 착수한 '공로'로 '프랑코 정권의 공식 역사가'<sup><a id="fnref35" href="#fn35">35)</a></sup>로 불렸다. 민주화 이행기에 그는 프랑코가 스페인의 민주화를 가능하게 만들었다는 주장을 펼쳤다. 최근에 나온 그의 책 제목<sup><a id="fnref36" href="#fn36">36)</a></sup>에서도 알 수 있다시피, 그는 1936년 봄에 밀려든 공산주의자들의 '적조(赤潮)'의 위험을 거론하면서 군사쿠데타를 정당화하고 추기경 고마의 말을 빌려 내전을 '무장한 국민투표(plebiscito armado)'라고 규정했다. 이 말은 특정한 가치를 수호하기 위해 목숨을 바치러 나선 군대를 지원하는 국민운동을 의미하는 말이었다.<sup><a id="fnref37" href="#fn37">37)</a></sup></p>
+
+    <p>이상에서 살펴본 아라라스와 아스나르, 코민 콜로메르, 라 시에르바가 바로 수정주의의 선구자들에 해당한다. 수정주의는 이들의 저작 내용과 테제에 기반을 두고 있다. 따라서 수정주의는 프랑코주의 역사서술이 부활한 것이라고 보아도 무방할 것 같다. 그런데 왜 최근 들어 이 수정주의, 곧 친프랑코주의가 다시 등장했고 대중의 관심까지 받게 되었을까?</p>
+
+    <div class="footnotes">
+      <p><sup><a id="fn10" href="#fnref10">10)</a></sup> 이상의 기존 해석은 스페인 현대사를 전공하는 영국 역사가 헬런 그레이엄의 글을 요약 정리한 것이다. Helen Graham, "Spain Coming to Terms with the Past: Spain's Memory Wars," <em>History Today</em>, 54-5(May 2004). <a href="#fnref10" class="fn-back">↩</a></p>
+      <p><sup><a id="fn11" href="#fnref11">11)</a></sup> 대표적으로 다음 세 사람을 예로 들 수 있다. Francisco Espinosa Maestre, <em>El fenómeno revisionista o los fantasmas de la derecha española</em> (Badajoz: Del Oeste Ediciones, 2005); Alberto Reig Tapia, <em>Anti-Moa</em> (Barcelona: Ediciones B, 2006); <em>Revisionismo y política. Pío Moa revisitado</em> (Madrid: Foca, 2008); Javier Rodrigo, "Los mitos de la derecha historiográfica. Sobre la manera de la guerra civil y el revisionismo a la española," <em>Historia del Presente</em>, 3(2004), pp.185～195. <a href="#fnref11" class="fn-back">↩</a></p>
+      <p><sup><a id="fn12" href="#fnref12">12)</a></sup> Enrique Moradiellos, "Revisión histórica crítica y pseudo-revisionismo político presentidta: El caso de la Guerra Civil española" (Documento de Trabajo 2009/4, Depto. de Hª del Pensamiento y de los Movimientos Sociales y Políticos, UCM Fundación José Ortega y Gasset), p.3. <a href="#fnref12" class="fn-back">↩</a></p>
+      <p><sup><a id="fn13" href="#fnref13">13)</a></sup> Moa, <em>Los mitos</em>, p.13. <a href="#fnref13" class="fn-back">↩</a></p>
+      <p><sup><a id="fn14" href="#fnref14">14)</a></sup> Moa, <em>Los mitos</em>, p.22. <a href="#fnref14" class="fn-back">↩</a></p>
+      <p><sup><a id="fn15" href="#fnref15">15)</a></sup> Moa, <em>Los mitos</em>, p.31. <a href="#fnref15" class="fn-back">↩</a></p>
+      <p><sup><a id="fn16" href="#fnref16">16)</a></sup> Moa, <em>Los mitos</em>, p.188. <a href="#fnref16" class="fn-back">↩</a></p>
+      <p><sup><a id="fn17" href="#fnref17">17)</a></sup> Moa, <em>Los orígenes</em>, p.40. 여기서 중대 분쟁으로 비화되었다는 말은 이 갈등이 내전의 첫 단추가 되었다는 의미를 지니고 있다(Moa, <em>1934</em>, p.26). <a href="#fnref17" class="fn-back">↩</a></p>
+      <p><sup><a id="fn18" href="#fnref18">18)</a></sup> Moa, <em>Los mitos</em>, pp.147～182. <a href="#fnref18" class="fn-back">↩</a></p>
+      <p><sup><a id="fn19" href="#fnref19">19)</a></sup> Moa, <em>Los mitos</em>, pp.188～189. <a href="#fnref19" class="fn-back">↩</a></p>
+      <p><sup><a id="fn20" href="#fnref20">20)</a></sup> Moa, <em>Los mitos</em>, p.193. <a href="#fnref20" class="fn-back">↩</a></p>
+      <p><sup><a id="fn21" href="#fnref21">21)</a></sup> César Vidal, "Memoria histórica," <em>El Mundo</em> (2002.11.20). <a href="#fnref21" class="fn-back">↩</a></p>
+      <p><sup><a id="fn22" href="#fnref22">22)</a></sup> Moa, <em>Los crímenes</em>, p.127. <a href="#fnref22" class="fn-back">↩</a></p>
+      <p><sup><a id="fn23" href="#fnref23">23)</a></sup> Moa, <em>Los mitos</em>, p.294. <a href="#fnref23" class="fn-back">↩</a></p>
+      <p><sup><a id="fn24" href="#fnref24">24)</a></sup> César Vidal, <em>Checas de Madrid. Las cárceles republicanas al descubierto</em> (Barcelona: Belacqua/Carragio, 2003); <em>Paracuellos-Katyn: un ensayo sobre el genecidio de la izquierda</em> (Madrid: Libros Libres, 2005). 이러한 경향을 홀로코스트 연구에서와 마찬가지로 불편한 진실을 회피하기 위해 현실을 부정하는 일종의 부정주의(negaciacismo)로 파악하는 이들도 있다[Francisco Sevillano Calero, "El revisionismo historiográfico, sobre el pasado reciente en España," <em>Pasado y Memoria. Revista de Historia Contemporánea</em>, 6(2007), pp.185 y 187]. <a href="#fnref24" class="fn-back">↩</a></p>
+      <p><sup><a id="fn25" href="#fnref25">25)</a></sup> Moa, <em>Los mitos</em>, p.529. <a href="#fnref25" class="fn-back">↩</a></p>
+      <p><sup><a id="fn26" href="#fnref26">26)</a></sup> Moa, <em>Los mitos</em>, p.529. <a href="#fnref26" class="fn-back">↩</a></p>
+      <p><sup><a id="fn27" href="#fnref27">27)</a></sup> Moa, <em>Los mitos</em>, p.531. <a href="#fnref27" class="fn-back">↩</a></p>
+      <p><sup><a id="fn28" href="#fnref28">28)</a></sup> Moa, <em>1934</em>; <em>1936</em>; <em>Franco: un balance histórico</em>. <a href="#fnref28" class="fn-back">↩</a></p>
+      <p><sup><a id="fn29" href="#fnref29">29)</a></sup> Reig Tapia, <em>Anti-Moa</em>, pp.70 y ss. <a href="#fnref29" class="fn-back">↩</a></p>
+      <p><sup><a id="fn30" href="#fnref30">30)</a></sup> Joaquín Arrarás, <em>Historia de la Cruzada Española</em> (Madrid: Ediciones Españolas, 1938-1943). <a href="#fnref30" class="fn-back">↩</a></p>
+      <p><sup><a id="fn31" href="#fnref31">31)</a></sup> Manuel Aznar, <em>Historia militar de la guerra de España (1936-1939)</em> (Madrid: Idea, 1940); <em>El Alcázar no se rinde</em> (Madrid: Ograma, 1957). <a href="#fnref31" class="fn-back">↩</a></p>
+      <p><sup><a id="fn32" href="#fnref32">32)</a></sup> Eduardo Comín Colomer, <em>Lo que España debe a la Masonería</em> (Madrid: Editora Nacional, 1952); <em>Historia secreta de la Segunda República</em> (Madrid: Nos, 1954-1955); <em>El anarquismo contra España</em> (Madrid: Publicaciones Españolas, 1955); <em>Historia del Partido Comunista de España</em> (Madrid: Editora Nacional, 1965-1967). <a href="#fnref32" class="fn-back">↩</a></p>
+      <p><sup><a id="fn33" href="#fnref33">33)</a></sup> José Andrés Gallego y Antón M. Pazos (ed.), <em>Archivo Gomá. Vol. 1. Julio-Diciembre de 1936</em> (Madrid: CSIC, 2001), p.82. <a href="#fnref33" class="fn-back">↩</a></p>
+      <p><sup><a id="fn34" href="#fnref34">34)</a></sup> Antonio Marquina, <em>La diplomacia vaticana y la España de Franco</em> (Madrid: CSIC, 1982), p.45; 황보영조, 「스페인 내전의 전쟁 이념 분석」, <em>이베로아메리카연구</em>, 12(2001.12), p.138. <a href="#fnref34" class="fn-back">↩</a></p>
+      <p><sup><a id="fn35" href="#fnref35">35)</a></sup> Beatriz García, "Ruedo Ibérico: contra la estrategia del olvido, el dedo en el gatillo de la memoria," Miguel Angel Luis Carnicer, (coord.), <em>Nuevas tendencias historiográficas e historia local en España: actas del II Congreso de Historia Local de Aragón</em>(Huesca, 7 al 9 de julio de 1999) (Instituto de Estudios Altoaragoneses: Universidad de Zaragoza. Departamento de Historia Moderna y Contemporánea, 2001), p.395. 당시 그가 저술한 책은 다음과 같다. Ricardo de la Cierva, <em>Cien libros básicos sobre la guerra de España</em> (Madrid: Publicaciones Españolas, 1966); <em>Bibliografía general sobre la guerra de España (1936-1939) y sus antecedentes históricos. Fuentes para la historia contemporánea de España</em> (Barcelona: Ariel, 1968); <em>Historia de la guerra civil española. Tomo I: Perspectivas y antecedentes (1898-1936)</em> (Madrid: San Martín, 1969). <a href="#fnref35" class="fn-back">↩</a></p>
+      <p><sup><a id="fn36" href="#fnref36">36)</a></sup> Ricardo de la Cierva, <em>El 18 de julio no fue un golpe militar fascista. No existía le legalidad republicana. Deformación y violación sistemática de la memoria histórica de los españoles. Todas las pruebas</em> (Getafe: Fénix, 2000). <a href="#fnref36" class="fn-back">↩</a></p>
+      <p><sup><a id="fn37" href="#fnref37">37)</a></sup> Ricardo de la Cierva, "El 18 de julio, un plebiscito armado de media nación" (www.ctv.es/USERS/fnff/18julio.htm). <a href="#fnref37" class="fn-back">↩</a></p>
+    </div>
+  </section>
+
+  <!-- Ⅲ. 수정주의의 등장 배경 -->
+  <section id="s3">
+    <h2>Ⅲ. 수정주의의 등장 배경</h2>
+
+    <p>수정주의가 등장한 배경으로는 대체로 다음 네 가지를 꼽아볼 수 있다. 세대교체, 국내외 정치 상황의 변화, 역사기억 회복운동의 출현, 스페인의 현재와 미래에 대한 보수우파들의 정치적 관심이 그것이다.</p>
+
+    <p>먼저 최근 들어 내전과 프랑코 독재에 관한 '기억'을 갖고 있지 않는 내전의 '손자' 세대가 민주 사회의 주역이 되었다는 점을 들 수 있다. 다방면에서 사회의 주역이 된 새로운 세대는 과거, 특히 트라우마를 낳은 과거에 대해서 새로운 시각을 드러냈다.<sup><a id="fnref38" href="#fn38">38)</a></sup></p>
+
+    <p>2001년 인구조사 결과에 따르면 25～29살이 그 수가 제일 많은 인구집단으로 나타난다. 이들은 프랑코가 사망하던 해, 곧 1975년이나 그 후 4년 이내에 출생한 사람들이다. 2001년에 스페인 인구의 평균 연령은 39살로 파악되었다.<sup><a id="fnref39" href="#fn39">39)</a></sup> 2001년에 39살이라면 1962년에 출생한 자들이고 프랑코가 사망하던 해에 13살인 사람들이다. 2006년 인구조사에 따르면 스페인 인구 4,400만 명 가운데 35퍼센트, 곧 1,600만 명가량이 과거를 잊고 화해하자는 사면법을 제정한 1977년 이후에 태어난 사람들이다. 다시 말하면 스페인 사람 3명 가운데 1명 이상이 민주주의 시대에 태어난 사람들이고 프랑코 체제를 전혀 경험하지 않은 사람들이라는 얘기가 된다. 2000년을 전후한 시기에 스페인 사람들의 과거에 대한 인식에 변화가 일어날 개연성이 있음을 짐작하게 해준다.<sup><a id="fnref40" href="#fn40">40)</a></sup></p>
+
+    <p>내전과 프랑코 시대를 직접 겪은 '할아버지' 세대는 1960년대까지만 해도 내전 이후의 역사에 대해 두 가지 상반된 시각을 지니고 있었다. 승자들은 내전을 반공산주의 전쟁으로, 패자들은 그것을 반파시즘 전쟁으로 파악하고 있었다. 프랑코의 오른팔이던 루이스 카레로 블랑코 제독이 1960년에 전사자의 계곡에서 기념물의 의미를 설명하면서 "스페인 사람들이 1936년에서 1939년까지 싸워야 했던 전쟁은 내전이 아니라 외국세력의 지배에서 조국을 구출하기 위한 해방 전쟁임과 동시에 외국세력이 송두리째 뿌리 뽑아내려는 가톨릭 신앙을 수호하기 위한 성전"<sup><a id="fnref41" href="#fn41">41)</a></sup>이라고 언급한 데서 이를 확인할 수 있다.</p>
+
+    <p>한편 민주주의 이행기의 주역이 된 '자녀' 세대는 내전을 사회 전체가 책임져야할 '동족상잔의 광기'이자 '집단적 비극'이라고 파악했다. 사회주의 지도자 호아킨 레온이 1973년에 군주제파 지도자인 일간지 &lt;아베세&gt; 편집국장 후안 아그나시오 루카 데 테나에게 보낸 공개서한에서 "당신의 자녀나 내 자녀나 할 것 없이 그들은 모두 우리의 가슴을 뭉클하게 한 적이 있는 송사와 송시에 이제 더 이상 아무런 감흥을 느끼지 않는다"고 지적했다.<sup><a id="fnref42" href="#fn42">42)</a></sup> 이들의 자녀 세대는 정파에 관계없이 내전의 비극을 '잊고' '망각'하기로 합의했다. 제헌의회가 사면법을 처리할 무렵인 1977년 10월에 일간지 &lt;엘 파이스&gt;는 10월 15일자 사설에서 "민주 스페인은 이제부터 내전의 아픔과 책임을 잊고 40년 독재를 뛰어넘어 미래를 내다봐야 한다"고 강조했다.<sup><a id="fnref43" href="#fn43">43)</a></sup> 이행기를 넘어 민주주의 공고화 시기인 1980년대와 1990년대 초까지 스페인 사회를 지배한 것은 바로 이런 시각이었다.</p>
+
+    <p>그런데 '자녀' 세대에서 '손자' 세대로 또 다시 세대교체가 일어나면서 스페인 사람들은 과거가 잘못 설명되고 있다는 인식을 갖게 되었고, 그에 따라 새로운 '이야기 시대(tiempo de contar)'가 열리기 시작했다.<sup><a id="fnref44" href="#fn44">44)</a></sup> 이런 맥락에서 활동을 개시한 이들은 라 시에르바나 안토니오 팔라시오 아타르드, 페르난도 비스카이노 카사스, 앙헬 팔로미노 같은 프랑코주의 논객과 역사가들이 아니었다. 이들은 자유에 적대적인 프랑코 정권에 직·간접적으로 연루된 자들이었다. 이러한 혐의에서 자유로운 '손자'나 '증손자'들이 '이야기 시대'를 열어갔다. 그들 가운데 일부는 심지어 독재에 맞서 적극 투쟁한 자들도 있었다.<sup><a id="fnref45" href="#fn45">45)</a></sup> 이들이 바로 새로운 수정주의자들이다. 이들이 내전과 그 결과를 현재의 관점에서 그리고 현재를 위해 대중들에게 이야기를 꺼내놓기 시작했다.</p>
+
+    <p>둘째로, 1990년대에 조성된 새로운 국내외 정치 상황을 들 수 있다. 먼저 국내적으로 의회민주주의 체제의 기초가 확실히 다져졌다. 이제 사회적 안정이나 제도적 안정이 무너질까봐 그렇게 신경을 쓰지 않고도 국론을 분열시킨 트라우마가 있는 과거를 공개적으로 얘기할 수 있게 되었다. 독재에서 민주주의로 평화적 이행을 할 수 있게 해준 '침묵' 협정 또는 '망각' 협정은 내전과 그에 관련된 범죄들을 더 이상 정쟁의 무기로 삼지 않기로 한 정치 엘리트들의 합의였다. 그러니까 이 합의는 내전과 프랑코 독재를 실제로 '망각'하거나 '침묵'한 결과에서 비롯된 것이 아니고 비극을 잊어버리고 그 비극을 되풀이하지 말며 평화로운 미래를 건설해나가기를 바라자는 도덕적 염원에서 비롯된 것이다. 합의의 산물인 '침묵'이나 '망각'은 정치적이고 제도적인 '침묵'이나 '망각'에 그쳤고, 그것이 역사서술을 포함하는 문화 분야의 '기억 협정'으로까지 확대되지는 않았다. 프랑코 사후 20여 년 동안 내전에 관한 연구논문과 단행본이 무려 4천여 건이나 쏟아져 나온 사실이 이를 반증해준다.<sup><a id="fnref46" href="#fn46">46)</a></sup> 내전의 기억을 연구한 아길라르가 "스페인 역사서술과 영화, 문학이 과거에 대한 침묵의 음모를 심심찮게 언급하면서도 내전을 중요하게 다루고 있다"는 사실에 대해 놀라워한 이유가 여기에 있다.<sup><a id="fnref47" href="#fn47">47)</a></sup></p>
+
+    <p>다음으로 국외적으로는 1989년 이후 전개된 소련 해체와 사회주의 체제 붕괴를 언급해야 한다. 이러한 변화로 말미암아 그동안 사회주의 체제들이 자행한 범죄와 그 사회들이 겪은 고통이 고스란히 드러나게 되었고 그와 더불어 공산주의의 신화와 혁명의 신화에 대한 평판이 땅에 떨어지게 되었다. 베를린 장벽이 무너진 이후 공산주의 국가들의 이론과 실제가 잔혹한 전체주의 실험이었다는 지적도 제기되었다.<sup><a id="fnref48" href="#fn48">48)</a></sup> 그 결과 일찍이 1945년의 패배 이후 파시즘이 겪었던 것과 유사한 도덕적 수치와 위상하락을 공산주의도 겪게 되었다. 이탈리아 역사가 엔초 트라베르소가 최근에 "러시아 혁명은 전체주의 체제를 낳았다. 바뵈프와 마르크스 이래 공산주의가 타도 대상으로 삼은 모든 것, 곧 억압과 불평등, 지배가 삽시간에 자연스런 존재 양식으로 바뀌었다"고 서술하기에 이르렀다.<sup><a id="fnref49" href="#fn49">49)</a></sup> 1989년 이전의 좌파 역사가들로서는 생각조차 할 수 없는 서술이었다.</p>
+
+    <p>이러한 국내외 상황의 변화가 프랑스에서 파시즘 체제나 권위주의 체제에 맞서 싸운 레지스탕스 신화에 의문을 제기하는 재해석을 초래한 것과 마찬가지로 스페인에서도 친프랑코적 수정주의를 꽃피우는 데 이바지한 것으로 보인다.<sup><a id="fnref50" href="#fn50">50)</a></sup> 이제 역사의 비극에 대한 책임을 오롯이 좌파에 전가하는 1950년대 냉전 시대의 극단적 해석이 다시 고개를 들기 시작하고, 프랑코를 '공산주의를 무찌른 최초의 전사,' '서구의 보초,' '자유주의 독재자'라고 재평가하기에 이르렀다.</p>
+
+    <p>또한 수정주의자들이 언론 매체에서 매우 호의적 평가를 받게 된 시기가 2000년 총선에서 호세 마리아 아스나르가 압도적 다수의 지지를 받으며 총리에 재선된 시기와 맞물린다는 사실에도 주의를 기울여야 할 것이다. 자신들에게 매우 유리한 정치사회적 환경에서 우파 저술가들은 세대교체를 거치면서 갈수록 멀어져갈 뿐만 아니라 점차 향수어린 시선으로 되돌아보게 되는 프랑코 체제를 대중들에게 널리 알리기 시작했다.<sup><a id="fnref51" href="#fn51">51)</a></sup></p>
+
+    <p>셋째로, '역사기억회복운동(Movimiento para la Recuperación de la Memoria Histórica)'의 출현을 들 수 있다. 자칭 역사기억회복운동은 민주주의 초기로 거슬러 올라간다. 하지만 그 직후에는 운동을 계속 추동해나갈 사회적 요구가 부재했었다.<sup><a id="fnref52" href="#fn52">52)</a></sup> 사회적 요구가 부재했던 데는 아마도 '침묵협정'이 미친 영향이 컸을 것이다. 그러다가 답보 상태에 빠진 기억회복운동이 다시 활기를 띠게 되는 데는 앞서 살펴보았다시피 세대교체와 안정된 민주주의의 영향이 크게 작용했다. 기억회복을 위한 각종 민간단체들이 우후죽순처럼 생겨나기 시작했다. 역사기억회복회(ARMH)와 내전망명문서보존회(AGE)를 필두로 전쟁아이들협회, 망명자후손회 등 160개가 넘는 단체들이 전국과 지방을 무대로 활동하기 시작했다.<sup><a id="fnref53" href="#fn53">53)</a></sup> 2000년부터 2006년 사이에 이들의 활동으로 발굴된 희생자들의 유해가 무려 983구에 달한다.<sup><a id="fnref54" href="#fn54">54)</a></sup></p>
+
+    <p>한편 가톨릭교회는 교회 나름대로 '역사기억' '회복' 작업을 벌여나갔다. 내전에서 희생된 '순교자들'에 대한 시복식과 시성식을 거행하기 시작했다. 가톨릭교회는 1936년 7월 24일 과달라하라에서 공화 진영의 민병대에 의해 살해된 카르멜회 수녀 3명을 교회가 공경할 복자로 추대하는 시복식을 1987년에 거행하였고, 그 이후에도 수많은 '순교자들'을 복자로 추대했다. 가톨릭교회에서는 복자들 가운데서 또 다른 기적이 확인된 복자에게는 시성식을 베풀어 그를 성인으로 추대한다. 이렇게 하여 성인으로 추대된 사람이 2009년까지 670여 명에 이른다.<sup><a id="fnref55" href="#fn55">55)</a></sup> 이러한 가톨릭교회의 시복과 시성 그리고 그것에 대한 교황의 승인은 매우 중요한 의미를 지닌다. 희생자와 전사자들을 기리기로 한 교회의 결정은 그 대상이 승자의 후손이나 상속자의 범위에 머물지 않고 패자의 가족들에게로 확대될 가능성이 있었던 것이다. 그리고 실제로 그렇게 되었다. 프랑코 정권 희생자들에 대한 '역사기억' 회복운동에 제동을 걸고 불편한 여론을 잠재우는 일에 중대 사명을 띤 수정주의가 등장한 것은 바로 이런 흐름 속에서였다.<sup><a id="fnref56" href="#fn56">56)</a></sup></p>
+
+    <p>마지막으로, 스페인 민주주의의 현재와 미래에 관한 보수우파들의 정치적 관심을 그 배경으로 들 수 있다. 우리는 이 점을 수정주의자들인 모아와 토고레스에게서 확인할 수 있다. 모아는 2004년 10월에 논란이 되고 있던 카탈루냐자치령 문제를 놓고 "사회노동당과 카탈루냐공화에스케라(ERC)가 1934년에 내전을 기획하고 조직한 적이 있다. 이제 두 정당이 다시 손을 잡고 있다"면서 당시 정치 상황을 1934년 10월의 그것에 비유했다.<sup><a id="fnref57" href="#fn57">57)</a></sup> 산파블로-세우대학교 역사학 교수인 토고레스도 제2공화국의 의미를 평가하면서 "중산 계급이 위협을 느끼고 하층 계급에게도 출구가 없는 혼돈의 세계였으며, 지금과 마찬가지로 실제 해결책은 없고 말만 무성했다"고 지적했다.<sup><a id="fnref58" href="#fn58">58)</a></sup> 모아와 토고레스 두 사람 모두 자신들이 보기에 의심의 여지가 없는 확실한 과거에서 정치 상황에 관한 역사적 교훈을 이끌어냈다. 그들은 제2공화국 출범 75주년을 맞이하는 2006년에 사회노동당과 카탈루냐 지역 정당 연립이 안고 있는 치명적 위험을 경고하고 나섰다. 현실 정치의 관점에서 과거를 이용한 셈이다. 이들은 좌파 민주주의는 정당하지 않고 우파의 그것은 정당하다는 점을 제2공화국의 상황에 빗대어 강변했다. 이들은 한걸음 더 나아가 오늘날의 스페인 민주주의가 프랑코 정권의 내전 승리와 개발 노력의 산물이라고 생각했다. 모아는 이를 구체적으로 다음과 같이 표현했다.</p>
+
+    <blockquote>
+      "나는 프랑코 정권을 비난하지 않는다. 프랑코 정권이 혁명과 세계대전, 마키스<sup><a id="fnref59" href="#fn59">59)</a></sup>가 주도하는 새로운 내전 시도에서 스페인을 구출해냈기 때문이다. (…) 나는 프랑코 정권을 비난하지 않는다. (오늘날의) 입헌군주제와 민주주의가 전체주의자와 테러리스트가 득실거리는 반프랑코 정권이 아니라 프랑코 정권에서 그리고 프랑코 정권이 물려준 평화와 번영 속에서 등장했기 때문이다. 과거로 회귀하려는 반프랑코주의자들이 입헌군주제와 민주주의를 무너뜨리고 있다."<sup><a id="fnref60" href="#fn60">60)</a></sup>
+    </blockquote>
+
+    <p>이런 관점에서 과거와 현재와 미래의 해악들에 대한 도덕적 잘못과 역사적 책임은 오직 죄를 범한 사람들, 곧 좌파와 그들의 공범자들이 져야 한다고 이들은 주장했다. 이를 위해 이들은 과거를 활용했다. 이들은 역사가, 아니면 적어도 역사 해석이 인간 집단들에게 집단 정체성을 깨닫게 하는 필수 요소이자 개인들에게 사회적 정체성을 느끼게 해주는 기본 요소라는 사실을 잘 알고 있었던 것으로 보인다.<sup><a id="fnref61" href="#fn61">61)</a></sup></p>
+
+    <p>이러한 수정주의자들의 현실 정치에 대한 관심은 우파를 프랑코 정권의 상속자로 몰아붙이는 일부 좌파들의 정치 공세에 의해 촉발된 측면도 없지 않다. 국민당(PP)이 2000년 총선에서 압도적 과반수를 차지한 것을 두고 "우파가 프랑코 정권을 계승하다"라거나 "우파는 언제나 자신들의 모체인 독재와 기꺼이 협력했다"고 평가한 언론인 루이스 세브리안의 평가와 "어떤 면에서는 마치 프랑코가 총선에 출마해 승리를 거둔 것과 같다"고 본 전 총리 펠리페 곤살레스의 추론<sup><a id="fnref62" href="#fn62">62)</a></sup>이 반격의 기회를 엿보고 있던 우파에게 좋은 빌미를 제공해주었을 것이다. 이런 점에서 우파는 물론이고 좌파도 과거사 논쟁을 불러온 이른바 '적대적 공범자들'이라고 짐작해볼 수 있을 것이다.<sup><a id="fnref63" href="#fn63">63)</a></sup></p>
+
+    <p>이상에서 살펴본 네 가지 요소, 곧 세대교체와 국내외 정치 상황의 변화, 역사기억 회복운동 출현, 스페인의 현재와 미래에 대한 보수우파들의 정치적 관심이 수정주의 해석의 등장 배경을 이해하는 데 도움을 줄 것이다. 발렌시아대학의 역사학 교수 후스토 세르나는 한걸음 더 나아가 수정주의가 대중적 관심을 끌며 상당한 호응을 누리게 된 까닭을 두 가지 측면에서 찾고 있다.<sup><a id="fnref64" href="#fn64">64)</a></sup></p>
+
+    <p>먼저 정치적 선전술이다. 그는 모아가 단순화의 원리, 과장의 원리, 반복의 원리, 주입의 원리, 전염의 원리 같은 정치적 선전술을 사용했다고 본다. 이를테면 비판의 대상을 사회주의자들로 단순화하고, 관련 정보들을 부풀리며, 몇 가지 주장을 계속 되풀이하고, 기존의 관념과 증거들을 마구잡이로 끌어 쓰며, 여러 집단들을 동원해 무관심층을 파고드는 방법이 그것이다. 이를 위해 모아가 인터넷신문 《리베르탓 디히탈(Libertad Digital)》과 자신의 블로그를 비롯한 다양한 대중매체들을 적극 활용하고 있다고 주장했다.</p>
+
+    <p>다음으로 스페인 대중의 무지이다. 내전과 프랑코 정권에 대해 잘 알지 못하는 대중들 가운데 상당수는 수정주의 테제를 자연스럽게 받아들이는 경향이 있다. 전문 역사학자들은 이런 점에서 대중과의 소통 문제를 고민해봐야 할 것이다.</p>
+
+    <div class="footnotes">
+      <p><sup><a id="fn38" href="#fnref38">38)</a></sup> 이 점에 대해서는 다음 글들을 참고하라. Alexandra Barabona de Brito, Paloma Aguilar Fernández y Carmen González Enríquez (eds), <em>Las políticas hacia el pasado. Juicios, depuraciones, perdón y olvido en las nuevas democracias</em> (Madrid: Istmo, 2002); Sathis N. Kalyvas, "Cuatro maneras de recordar un pasado conflictivo," <em>El País</em> (22 de noviembre de 2006). <a href="#fnref38" class="fn-back">↩</a></p>
+      <p><sup><a id="fn39" href="#fnref39">39)</a></sup> "Cifras INE," <em>Boletín Informativo del Instituto Nacional de Estadistica</em>, 2(Madrid, 2003), p.3. Moradiellos, "Revisión histórica," p.14에서 재인용. <a href="#fnref39" class="fn-back">↩</a></p>
+      <p><sup><a id="fn40" href="#fnref40">40)</a></sup> Santos Juliá, "Los nombres de la guerra," <em>Claves de Razón Práctica</em>, 164(2006), pp.22～31. <a href="#fnref40" class="fn-back">↩</a></p>
+      <p><sup><a id="fn41" href="#fnref41">41)</a></sup> Michael Richards, "El régimen de Franco y la política de memoria de la guerra civil española," J. Aróstegui y F. Godicheau (eds.), <em>Guerra Civil. Mito y memoria</em> (Madrid: Marcial Pons, 2006), pp.185～186. <a href="#fnref41" class="fn-back">↩</a></p>
+      <p><sup><a id="fn42" href="#fnref42">42)</a></sup> Javier Muñoz Soro, "Entre la memoria y la reconciliación. El recuerdo de la República y la guerra en la generación de 1968," <em>Historia del Presente</em>, 2(2003), pp.99～100. <a href="#fnref42" class="fn-back">↩</a></p>
+      <p><sup><a id="fn43" href="#fnref43">43)</a></sup> Paloma Aguilar, "Justicia, política y memoria: los legados del franquismo en la transición española," A. Barabona, P. Aguilar y C. González (eds.), <em>Las políticas hacia el pasado</em> (Madrid: Istmo, 2002), p.159. <a href="#fnref43" class="fn-back">↩</a></p>
+      <p><sup><a id="fn44" href="#fnref44">44)</a></sup> Javier Ugarte, "¿Legado de Franquismo? Tiempo de contar," Carme Molinero (ed.), <em>La Transición, treinta años después</em> (Barcelona: Península, 2006), p.189. <a href="#fnref44" class="fn-back">↩</a></p>
+      <p><sup><a id="fn45" href="#fnref45">45)</a></sup> 대표적으로 모아가 그렇다. <a href="#fnref45" class="fn-back">↩</a></p>
+      <p><sup><a id="fn46" href="#fnref46">46)</a></sup> Santos Juliá, "De 'guerra contra el invasor' a 'guerra fratricida," Santos Juliá (coord.), <em>Víctimas de la guerra civil</em> (Madrid: Temas de hoy, 2004), pp.48～49; "Memoria, historia y política en un pasado de guerra y dictadura," Santos Juliá, <em>Memoria de la guerra y del franquismo</em> (Madrid: Taurus, 2006), pp.46, 57～69; Moradiellos, "Revisión histórica," p.18; Juan Andrés Blanco Rodríguez, "El registro historiográfico de la guerra civil, 1936-2004," J. Aróstegui y F. Godicheau (eds.), <em>Guerra Civil. Mito y Memoria</em> (Madrid: Marcial Pons, 2006), pp.397 y 405. <a href="#fnref46" class="fn-back">↩</a></p>
+      <p><sup><a id="fn47" href="#fnref47">47)</a></sup> Paloma Aguilar, "Presencia y ausencia de la guerra civil y del franquismo en la democracia española. Reflexiones en torno a la articulación y ruptura del 'pacto de silencio'," J. Aróstegui y F. Godicheau (eds.), <em>Guerra Civil</em>, p.250. <a href="#fnref47" class="fn-back">↩</a></p>
+      <p><sup><a id="fn48" href="#fnref48">48)</a></sup> 스테판 쿠르투아를 비롯한 역사가들이 추정한 바에 따르면 이 실험에서 8,500만 명에서 1억 명 정도가 희생되었다고 한다. Stéphane Courtois, <em>El libro negro del comunismo</em> (Madrid: Espasa Calpe, 1998), pp.14-50. <a href="#fnref48" class="fn-back">↩</a></p>
+      <p><sup><a id="fn49" href="#fnref49">49)</a></sup> Enzo Traverso, <em>El pasado, instrucciones de uso. Historia, memoria, política</em> (Madrid: Marcial Pons, 2007), p.77. <a href="#fnref49" class="fn-back">↩</a></p>
+      <p><sup><a id="fn50" href="#fnref50">50)</a></sup> J. Aróstegui y F. Godicheau, <em>Guerra Civil. Mito y Memoria</em> (Madrid: Marcial Pons, 2006), 9장과 10장 참조. <a href="#fnref50" class="fn-back">↩</a></p>
+      <p><sup><a id="fn51" href="#fnref51">51)</a></sup> Carme Moliner, "Crónica sentimental y falsa memoria del franquismo," <em>Historia del Presente</em>, 1(2002), pp.98～100. <a href="#fnref51" class="fn-back">↩</a></p>
+      <p><sup><a id="fn52" href="#fnref52">52)</a></sup> Sergio Gálvez Biesca, "El proceso de la recuperación de la memoria histórica en España. Una aproximación a los movimientos sociales por la memoria," <em>International Journal of Iberian Studies</em>, 19-1(2006), p.26; Aguilar, "Presencia," p.257. <a href="#fnref52" class="fn-back">↩</a></p>
+      <p><sup><a id="fn53" href="#fnref53">53)</a></sup> 황보영조, 위의 글, pp.97～98. <a href="#fnref53" class="fn-back">↩</a></p>
+      <p><sup><a id="fn54" href="#fnref54">54)</a></sup> Gálvez Biesca, "El proceso," pp.34 y 38. <a href="#fnref54" class="fn-back">↩</a></p>
+      <p><sup><a id="fn55" href="#fnref55">55)</a></sup> Moradiellos, "Revisión histórica," pp.28～29. <a href="#fnref55" class="fn-back">↩</a></p>
+      <p><sup><a id="fn56" href="#fnref56">56)</a></sup> Moradiellos, "Revisión histórica," p.31. <a href="#fnref56" class="fn-back">↩</a></p>
+      <p><sup><a id="fn57" href="#fnref57">57)</a></sup> "Entrevista a Pío Moa," <em>La Nueva España</em> (11 de noviembre de 2004). <a href="#fnref57" class="fn-back">↩</a></p>
+      <p><sup><a id="fn58" href="#fnref58">58)</a></sup> "Guerra Civil: Verdades y Mentiras," <em>Tiempo</em> (18 de septiembre de 2006). <a href="#fnref58" class="fn-back">↩</a></p>
+      <p><sup><a id="fn59" href="#fnref59">59)</a></sup> 반프랑코 레지스탕스를 일컫는다. <a href="#fnref59" class="fn-back">↩</a></p>
+      <p><sup><a id="fn60" href="#fnref60">60)</a></sup> Pío Moa, "¿Condena usted el franquismo?," <em>Libertad Digital</em> (30 de noviembre de 2007). <a href="#fnref60" class="fn-back">↩</a></p>
+      <p><sup><a id="fn61" href="#fnref61">61)</a></sup> Margarita Limón Luque, "El fin de la Historia en la Enseñanza Oligatoria," Pablo Sánchez León y Jesús Izquierdo Martín (eds.), <em>El fin de los historiadores. Pensar históricamente en el siglo XXI</em> (Madrid: Siglo XXI, 2008), pp.87～111. <a href="#fnref61" class="fn-back">↩</a></p>
+      <p><sup><a id="fn62" href="#fnref62">62)</a></sup> Felipe González y Juan Luis Cebrián, <em>El futuro no es lo que era. Una conversación</em> (Madrid: Punto de Lectura, 2001), pp.36 y 48～49. <a href="#fnref62" class="fn-back">↩</a></p>
+      <p><sup><a id="fn63" href="#fnref63">63)</a></sup> 아길라르도 좌파가 과거의 기억을 중요 정쟁으로 삼았다고 지적한 바 있다(Aguilar, "Presencia," p.287). 모라디에요스는 흥미롭게도 1999년 6월 '역사를 위한 투쟁'이라는 성명서에서 일부 극좌파 역사가들(아벨 파스, 에두아르도 폰스 프라데스, 안토니 후트글라르 등)이 거물급 공식 역사가들(산토스 훌리아, 훌리안 카사노바, 안토니오 엘로르사 등)을 '부르주아 계급의 역사'를 얘기하고 '혁명 운동'을 무시하거나 폄훼하며 '역사적 사실을 날조'했다고 비난했다는 내용을 소개하고 있다(Moradiellos, "Revisión histórica," pp.11～12). <a href="#fnref63" class="fn-back">↩</a></p>
+      <p><sup><a id="fn64" href="#fnref64">64)</a></sup> Justo Serna, "Las iluminaciones de Pío Moa. El revisionismo antirrepublicano," <em>Pasajes. Revista de pensamiento contemporáneo</em>, 21-22(2007), pp.99～108. <a href="#fnref64" class="fn-back">↩</a></p>
+    </div>
+  </section>
+
+  <!-- Ⅳ. 역사학계의 반응 -->
+  <section id="s4">
+    <h2>Ⅳ. 역사학계의 반응</h2>
+
+    <p>앞서 살펴본 수정주의 테제에 대해 대중들 상당수가 상당히 호의적인 반응을 보인 반면에 역사학자들은 대체로 비판적 입장을 보였다.<sup><a id="fnref65" href="#fn65">65)</a></sup> 특히 좌파 역사학자들이 그러했다. 하지만 수정주의자들을 지지하는 역사학자들도 없지는 않았다.</p>
+
+    <p>역사학자들은 대체로 그것들이 학문적 가치가 없다면서 수정주의적 관점을 담은 저서들을 무시하는 경향을 보였다. 그런 가운데 일부 좌파 역사학자들이 학술적인 대응에 나섰다. 프란시스코 에스피노사와 알베르토 레이그 타피아, 앙헬 비냐스, 엔리케 모라디에요스, 후스토 세르나가 그들이다. 에스피노사는 2005년에 <em>수정주의 현상과 스페인 우파의 망령들</em><sup><a id="fnref66" href="#fn66">66)</a></sup>이란 책을 냈고 레이그 타피아는 모아의 글을 반박하는 책 <em>반모아</em>와 <em>수정주의와 정치</em>를 비롯해 여러 권의 책을 썼다.<sup><a id="fnref67" href="#fn67">67)</a></sup> 연전에 작고한 하비에르 투셀도 일간지 《엘 파이스》에 반론을 실었다.<sup><a id="fnref68" href="#fn68">68)</a></sup> 세르나는 모아와 여러 편의 글을 주고받았다. 이들의 논쟁이 디지털 잡지 《엘 카토블레파스(El Catoblepas)》에 수록돼 있다. 모라디에요스도 2004년에 <em>1936년. 내전의 신화</em>라는 책을 냈다.</p>
+
+    <p>이 좌파 역사학자들이 비판하는 내용은 대체로 다음 3가지이다. 첫째로, 프랑코 사후에 진행된 역사 연구 결과와 배치된다. 둘째로, 사료를 무시하고 있다. 셋째로, 프랑코주의 역사가들의 견해와 일치한다. 미국 역사학자 스탠리 페인도 좌파 역사학자들의 비판 내용을 이와 비슷하게 정리한 바 있다.<sup><a id="fnref69" href="#fn69">69)</a></sup></p>
+
+    <p>에스피노사와 레이그 타피아는 특히 모아를 역사가로 대우하면서도 지적 능력이 부족하다고 비난했다. 그 뜻이 정확히 무엇인지는 모르겠지만 에스피노사는 모아를 '소형탁자(mesa camilla)'와 같은 역사가라고 폄하했다.<sup><a id="fnref70" href="#fn70">70)</a></sup> 그는 '인류의 민주적 역사기억'이란 말을 사용하면서 그것을 좌파의 기억과 동일시했다. 그러면서 좌파는 민주적인 반면에 우파는 '파시스트'라고 판단했다.<sup><a id="fnref71" href="#fn71">71)</a></sup> 그는 여기서 선과 악, 아군과 적군을 구분하는 이분법적 시각을 보이고 있다.</p>
+
+    <p>레이그 타피아는 모아의 저서에 대해 "쓸데없는 반복이 많고 지루하다"는 평가를 했다.<sup><a id="fnref72" href="#fn72">72)</a></sup> 그리고 "그 자체가 역사가 아닌 내용을 과학적으로 분석한다는 것은 정말 시간 낭비이다"라고 결론을 내렸다.<sup><a id="fnref73" href="#fn73">73)</a></sup> 그는 수정주의자들과 달리 프랑코와 그의 정권을 매우 부정적으로 평가했다. 프랑코를 '두려움의 티를 내지 않으려고 안간힘을 쓰는 열등감에 사로잡힌 미성숙한 사람'이자 '유아기의 편집증적 전제주의 단계를 극복하지 못한' 사람으로 보았으며, 심지어는 절대 악의 화신으로 간주했다.<sup><a id="fnref74" href="#fn74">74)</a></sup> 또한 우파를 혐오의 대상으로 본 반면에 좌파는 '자유와 민주주의를 위한 투사'로 여겼다.<sup><a id="fnref75" href="#fn75">75)</a></sup></p>
+
+    <p>영국 역사가 폴 프레스턴도 수정주의가 프랑코주의 역사서술을 되풀이하고 있다고 지적했다. 수정주의는 공화국을 폄훼할 뿐만 아니라 사람들에게 역사기억 회복을 위한 노력들이 불편한 것이라는 인식을 심어주고 있다고 비판했다. 그도 스페인 학자들과 마찬가지로 모아가 새로운 연구를 수행하는 역사가는 아니라고 규정했다.<sup><a id="fnref76" href="#fn76">76)</a></sup></p>
+
+    <p>이렇듯 역사학자들 대다수가 수정주의 테제를 비판하는 가운데 모아와 그의 저서를 긍정적으로 평가하는 학자들도 등장했다. 호세 마누엘 쿠엥카 토리비오, 스탠리 페인, 마누엘 알바레스 타르디오, 루이스 아란스가 그들이다.</p>
+
+    <p>쿠엥카 토리비오는 모아의 저서들을 '지배적 역사서술의 일방주의'를 바로잡아주는 저작이라고 평가했다.<sup><a id="fnref77" href="#fn77">77)</a></sup> 그는 그의 저작에 심각한 결함들이 있기는 하지만 그것이 제2공화국에 대해 널리 확산된 '장밋빛 전설'의 균형을 잡아주는 데 필요하다고 판단했다.<sup><a id="fnref78" href="#fn78">78)</a></sup></p>
+
+    <p>미국 역사학자 페인은 모아의 든든한 '후원자'이다. 그는 모아의 저서 <em>1934년. 내전의 시작</em>의 서문을 써주었고, 공화국의 몰락에 관한 최신 내용을 종합하는 자신의 저서에다 그 내용의 일부를 인용했다.<sup><a id="fnref79" href="#fn79">79)</a></sup> 그는 여기에 머무르지 않고 공동 인터뷰와 신문기고 등을 통해 모아가 쓴 저서들의 학술적 가치를 인정하고 존중해주었다.<sup><a id="fnref80" href="#fn80">80)</a></sup> 한 잡지에 기고한 글에서 그는 모아를 이렇게 치켜세웠다.</p>
+
+    <blockquote>
+      "다섯 권의 연구서에서 모아는 최근 연구와 매우 신중한 사료 분석에 토대를 둔 새로운 해석을 내놓았다. 이는 정치적으로 올바른 관념에 도전하고 대학과 대중매체를 지배하는 선입관들을 명백히 드러내준다. 이따금씩 유려한 표현을 구사하는 모아의 글 솜씨는 생생하고도 탁월하다. 그가 내린 결론은 그 자체로 의미심장하며 논란의 대상이 되지 않는다."<sup><a id="fnref81" href="#fn81">81)</a></sup>
+    </blockquote>
+
+    <p>더 나아가 사료를 무시하고 있다는 좌파 역사학자들의 비판을 염두에 두면서 "모아가 관련 참고자료를 모두 활용했고 중요 사료도 적잖게 조사했다"고 페인은 지적했다. 그리고 결론을 대신해 "1934년 혁명이 도저히 극복할 수 없고 마침내 내전으로 분출하게 되는 대립의 심연을 열어젖혔다"고 썼다.<sup><a id="fnref82" href="#fn82">82)</a></sup></p>
+
+    <p>하지만 모아의 저서들을 긍정적으로 평가한 역사학자들은 사실 소수에 불과하다. 그에 대한 긍정적 평가는 대체로 정치학자들에게서 나왔다. 모아가 1999년에서 2001년에 걸쳐 저술한 공화국 3부작<sup><a id="fnref83" href="#fn83">83)</a></sup>을 높이 평가한 알바레스 타르디오와 아란스가 그들이다. 이들은 모아의 테제를 프랑수아 퓌레나 에른스트 놀테로 대표되는 유럽의 수정주의의 맥락에서 파악한다. 이들은 모아가 내놓은 '상품'의 품질이 퓌레나 놀테의 그것보다 떨어지는 점을 인정하면서도 1934년 10월과 1936년 7월 18일이 연결되어 있다는, 다시 말해서 내전이 1934년 10월 혁명에서 비롯되었다는 연속론 테제는 타당하다고 보았다. 아란스는 모아가 스페인의 주류 역사학을 '진보주의' 역사학으로 규정하고 그것을 마르크스주의와 유물론의 낡은 틀에 갇혀 있는 경직되고 정체된 전통으로 파악한다는 점을 높이 샀다. 그는 이런 점에서 모아를 의사(擬似)수정주의자로 분류할 수 있다고 생각한다.<sup><a id="fnref84" href="#fn84">84)</a></sup></p>
+
+    <div class="footnotes">
+      <p><sup><a id="fn65" href="#fnref65">65)</a></sup> 여기서는 지면 관계상 구체적 논점들에 대한 반응을 다루기보다는 전반적인 평가를 중심으로 서술한다. <a href="#fnref65" class="fn-back">↩</a></p>
+      <p><sup><a id="fn66" href="#fnref66">66)</a></sup> Espinosa, <em>El fenómeno</em>. <a href="#fnref66" class="fn-back">↩</a></p>
+      <p><sup><a id="fn67" href="#fnref67">67)</a></sup> Alberto Reig Tapia, <em>Ideología e Historia. Sobre la represión franquista y la Guerra Civil</em> (Madrid: Akal, 1984 y 1986); <em>Violencia y Terror. Estudios sobre la Guerra Civil española</em> (Madrid: Akal, 1990); <em>Franco "Caudillo": mito y realidad</em> (Madrid: Tecnos, 1995 y 1996); <em>Memoria de la Guerra Civil. Los mitos de la tribu</em> (Madrid: Alianza, 1999); <em>Franco, el César Superlativo</em> (Madrid: Tecnos, 2005); <em>La cruzada de 1936. Mito y memoria</em> (Madrid: Alianza, 2006). <a href="#fnref67" class="fn-back">↩</a></p>
+      <p><sup><a id="fn68" href="#fnref68">68)</a></sup> "El revisionismo histórico español," <em>El País</em> (8 de julio de 2004). <a href="#fnref68" class="fn-back">↩</a></p>
+      <p><sup><a id="fn69" href="#fnref69">69)</a></sup> Stanley G. Payne, "1934: comienza la Guerra Civil," <em>FAES. Cuadernos de Pensamiento Político</em>, 5(2005), pp.188～190. 페인은 여기서 좌파 역사학자들의 비판 내용을, 수정주의자들이 프랑코 정권의 편견을 되풀이하고 있을 뿐이고, 그들의 저서들이 사료 연구에 기반을 두고 있지 않으며, 대학 교수가 아니기 때문에 그들의 연구에 관심을 기울일 가치가 없다는 3가지 사항으로 정리하고 좌파 역사학자들의 비판에 반론을 제기했다. <a href="#fnref69" class="fn-back">↩</a></p>
+      <p><sup><a id="fn70" href="#fnref70">70)</a></sup> Francisco Espinosa, "El fenómeno revisionista y los fantasmas de la derecha española," Francisco Espinosa, <em>Contra el olvido. Historia y memoria de la guerra civil</em> (Barcelona: Crítica, 2006), p.236. <a href="#fnref70" class="fn-back">↩</a></p>
+      <p><sup><a id="fn71" href="#fnref71">71)</a></sup> Espinosa, <em>Contra el olvido</em>, pp.195 y 299. <a href="#fnref71" class="fn-back">↩</a></p>
+      <p><sup><a id="fn72" href="#fnref72">72)</a></sup> Reig Tapia, <em>Anti-Moa</em>, p.61. <a href="#fnref72" class="fn-back">↩</a></p>
+      <p><sup><a id="fn73" href="#fnref73">73)</a></sup> Reig Tapia, <em>Anti-Moa</em>, p.481. <a href="#fnref73" class="fn-back">↩</a></p>
+      <p><sup><a id="fn74" href="#fnref74">74)</a></sup> Reig Tapia, <em>Franco</em>, pp.316 y 337. <a href="#fnref74" class="fn-back">↩</a></p>
+      <p><sup><a id="fn75" href="#fnref75">75)</a></sup> Reig Tapia, <em>Franco</em>, p.296. 이러한 비판들에 대해 모아는 마누엘 투뇬 델라라가 퍼뜨린 좌파 역사서술을 교조적으로 따르는 데 머물러 있다고 비난했다. <em>El Catoblepas</em>, 64(junio 2007)를 보라. <a href="#fnref75" class="fn-back">↩</a></p>
+      <p><sup><a id="fn76" href="#fnref76">76)</a></sup> "Moa se ha pasado de la pistola a la pluma," Elplural.com(4 de mayo de 2006). <a href="#fnref76" class="fn-back">↩</a></p>
+      <p><sup><a id="fn77" href="#fnref77">77)</a></sup> Reig Tapia, <em>Anti-Moa</em>, p.346에서 재인용. <a href="#fnref77" class="fn-back">↩</a></p>
+      <p><sup><a id="fn78" href="#fnref78">78)</a></sup> José Manuel Cuenca Toribio, "La Segunda República. De la leyenda negra a la rosa," <em>Revista de las Cortes Generales</em>, 56(2002), pp.45～72. <a href="#fnref78" class="fn-back">↩</a></p>
+      <p><sup><a id="fn79" href="#fnref79">79)</a></sup> Stanley G. Payne, <em>El colapso de la República. Los orígenes de la Guerra Civil (1933-1936)</em> (Madrid: Esfera de los Libros, 2006), p.148. <a href="#fnref79" class="fn-back">↩</a></p>
+      <p><sup><a id="fn80" href="#fnref80">80)</a></sup> 2012년에 필자가 방문학자 신분으로 위스콘신매디슨대학을 방문하여 페인 교수와 정기적으로 런치-톡 시간을 가질 기회가 있었다. 당시에 모아에 대한 좌파 역사가들의 평가만 알고 있던 필자는 그의 저서를 높이 평가하는 페인의 이야기를 들으며 고개를 갸우뚱해한 적이 있다. <a href="#fnref80" class="fn-back">↩</a></p>
+      <p><sup><a id="fn81" href="#fnref81">81)</a></sup> Payne, "1934," p.188. <a href="#fnref81" class="fn-back">↩</a></p>
+      <p><sup><a id="fn82" href="#fnref82">82)</a></sup> Payne, "1934," pp.190～191. <a href="#fnref82" class="fn-back">↩</a></p>
+      <p><sup><a id="fn83" href="#fnref83">83)</a></sup> <em>스페인 내전의 기원</em>, <em>공화국의 주요 인물들</em>, <em>제2공화국의 붕괴와 내전</em>을 일컫는다. <a href="#fnref83" class="fn-back">↩</a></p>
+      <p><sup><a id="fn84" href="#fnref84">84)</a></sup> Luís Arranz, "Democracia y Segunda República, según Pío Moa," <em>Nueva Revista de Política, Cultura y Arte</em>, 98(2005), pp.45～60. <a href="#fnref84" class="fn-back">↩</a></p>
+    </div>
+  </section>
+
+  <!-- Ⅴ. 맺음말 -->
+  <section id="s5">
+    <h2>Ⅴ. 맺음말</h2>
+
+    <p>우리는 이상에서 수정주의자들이 주장하는 내용이 무엇인지, 그들이 그런 주장을 하고 나선 배경이 무엇인지, 그들의 주장에 대한 역사학자들의 반응이 어떠했는지를 차례대로 살펴보았다.</p>
+
+    <p>'수정'은 '정통'을 전제로 한 것이다. 수정주의자들이 '정통'으로 간주한 것은 스페인 현대사에 대한 좌파적 해석이었다. 좌파적 해석의 골자는 제2공화국에서 시작된 근대화의 움직임이 군사쿠데타와 내전, 프랑코 독재로 억압되었다가 프랑코 사후 되살아났다는 내용이다. 이것이 민주주의 이행기에서부터 오늘에 이르기까지 스페인 사회를 지배한 해석이자 담론이었다.</p>
+
+    <p>그런 와중에 이런 좌파적 해석은 이분법적이고 교조적인 분석에 불과하다는 문제를 제기하며 제2공화국과 내전, 프랑코 정권에 대한 기존 해석을 '수정'하는 자들이 등장했다. 1990년대 말 무렵에 그 윤곽을 드러내기 시작한 이 수정주의는 한마디로 말해서 제2공화국의 실패에서 내전이 비롯되었고 내전은 공산주의자들을 몰아내기 위한 전쟁이었으며 내전에 승리한 프랑코가 민주주의와 자유주의 체제를 만드는 데 기여했다는 주장이다. 이는 내전과 프랑코 독재 하에서 전개된 프랑코주의 역사서술과 여러 가지 면에서 닮았다. 이런 '수정' 해석이 고개를 든 데는 세대교체와 국내외 정치 상황의 변화, 역사기억 회복 운동의 출현, 보수우파들의 정치적 관심이 크게 작용했다.</p>
+
+    <p>이런 변화들로 말미암아 생겨난 역사 수정주의 현상에 대해 기존 역사학계는 애초에 별다른 관심을 기울이지 않았다. 일부 학자들이 관련 서적과 글을 통해 대응하기 시작한 것은 그것이 대중매체에서 상당한 호응을 얻게 되면서부터였다. 바야흐로 스페인 현대사 해석을 둘러싼 논란이 벌어진 것이다.</p>
+
+    <p>하지만 좌파 역사학자들은 아쉽게도 수정주의가 등장한 배경과 그에 대한 대중의 호응을 제대로 이해하지 않고서 그것이 사료 분석 작업을 하지 않았다거나 프랑코주의 역사서술을 되풀이하고 있을 뿐이라는 이유를 내걸면서 그 해석의 학술적 의미에 별다른 관심을 기울이지 않았다. 수정주의를 반대하면서도 학문적 성찰의 태도를 보이지 않는 좌파 역사학자들에게 아쉬움을 토로하고 있는 세비야노 칼레로와 곤살레스 쿠에바스를 비롯한 일부 학자들을 제외하면 그렇다.</p>
+
+    <p>이런 점에서 수정주의의 의미를 제대로 따져봐야 한다는 페인의 지적은 새겨들을 만 하다. 특히 스페인의 수정주의를 20세기 유럽의 수정주의 맥락에서 파악해봐야 한다는 정치학자 알바레스 타르디오와 아란스의 주장은 그것을 단순히 스페인에 국한된 현상이 아니라 각국의 사례와 더불어 비교 검토해야 할 지구사적 현상으로 인식하고 있다는 점에서 우리의 상상의 지평을 엄청나게 확대해준다.</p>
+
+    <p>스페인 현대사에 관한 수정주의 해석을 둘러싼 논쟁은 아직 현재 진행형이다. 귀추를 지켜보며 세심한 주의를 기울여야 할 필요가 여기에 있다. 하지만 이것은 역사학이 무엇이고 역사가의 임무가 어떠해야 하는지를 진지하게 고민하게 해주는 논쟁이기도 하다.</p>
+
+    <p style="font-size:0.85rem; color:var(--muted); margin-top:24px;">
+      투고일: 2016.01.08. &nbsp;|&nbsp; 심사완료일: 2016.02.03. &nbsp;|&nbsp; 게재확정일: 2016.02.12.
+    </p>
+  </section>
+
+  <!-- 참고문헌 -->
+  <section id="references">
+    <h2>참고문헌</h2>
+
+    <h3>Ⅰ. 정기간행물</h3>
+    <p>El Catoblepas</p>
+    <p>El Mundo</p>
+    <p>El País</p>
+    <p>La Nueva España</p>
+    <p>Libertad Digital</p>
+    <p>Tiempo</p>
+
+    <h3>Ⅱ. 논문과 단행본</h3>
+    <p>안병직 외, <em>세계 각국의 역사 논쟁: 갈등과 조정</em>, 대한민국역사박물관, 2014.</p>
+    <p>황보영조, 「스페인 내전의 전쟁 이념 분석」, <em>이베로아메리카연구</em>, 2001.12.</p>
+    <p>Aguilar, Palomar, <em>Memoria y olvido de la Guerra Civil española</em> (Madrid: Alianza Editorial, 1996)</p>
+    <p>Aguilar, "Justicia, política y memoria: los legados del franquismo en la transición española," A. Barabona, P. Aguilar y C. González (eds.), <em>Las políticas hacia el pasado</em> (Madrid: Istmo, 2002)</p>
+    <p>Aguilar, "Presencia y ausencia de la guerra civil y del franquismo en la democracia española. Reflexiones en torno a la articulación y ruptura del 'pacto de silencio'," J. Aróstegui y F. Godicheau (eds.), <em>Guerra Civil. Mito y Memoria</em> (Madrid: Marcial Pons, 2006)</p>
+    <p>Andrés Gallego, José y Antón M. Pazos (ed.), <em>Archivo Gomá. Vol. 1. Julio-Diciembre de 1936</em> (Madrid: CSIC, 2001)</p>
+    <p>Aróstegui, Julio y F. Godicheau, <em>Guerra Civil. Mito y Memoria</em> (Madrid: Marcial Pons, 2006)</p>
+    <p>Arranz, Luís, "Democracia y Segunda República, según Pío Moa," <em>Nueva Revista de Política, Cultura y Arte</em>, 98(2005)</p>
+    <p>Arrarás, Joaquín, <em>Historia de la Cruzada Española</em> (Madrid: Ediciones Españolas, 1938-1943)</p>
+    <p>Aznar, Manuel, <em>Historia militar de la guerra de España (1936-1939)</em> (Madrid: Idea, 1940)</p>
+    <p>Aznar, <em>El Alcázar no se rinde</em> (Madrid: Ograma, 1957)</p>
+    <p>Barabona de Brito, Alexandra, Paloma Aguilar Fernández y Carmen González Enríquez (eds), <em>Las políticas hacia el pasado. Juicios, depuraciones, perdón y olvido en las nuevas democracias</em> (Madrid: Istmo, 2002)</p>
+    <p>Blanco Rodríguez, Juan Andrés, "El registro historiográfico de la guerra civil, 1936-2004," J. Aróstegui y F. Godicheau (eds.), <em>Guerra Civil. Mito y Memoria</em> (Madrid: Marcial Pons, 2006)</p>
+    <p>Comín Colomer, Eduardo, <em>Lo que España debe a la Masonería</em> (Madrid: Editora Nacional, 1952)</p>
+    <p>Comín Colomer, <em>Historia secreta de la Segunda República</em> (Madrid: Nos, 1954-1955)</p>
+    <p>Comín Colomer, <em>El anarquismo contra España</em> (Madrid: Publicaciones Españolas, 1955)</p>
+    <p>Comín Colomer, <em>Historia del Partido Comunista de España</em> (Madrid: Editora Nacional, 1965-1967)</p>
+    <p>Courtois, Stéphane, <em>El libro negro del comunismo</em> (Madrid: Espasa Calpe, 1998)</p>
+    <p>Cuenca Toribio, José Manuel, "La Segunda República. De la leyenda negra a la rosa," <em>Revista de las Cortes Generales</em>, 56(2002)</p>
+    <p>Espinosa Maestre, Francisco, <em>El fenómeno revisionista o los fantasmas de la derecha española</em> (Badajoz: Del Oeste Ediciones, 2005)</p>
+    <p>Espinosa Maestre, <em>Contra el olvido. Historia y memoria de la guerra civil</em> (Barcelona: Crítica, 2006)</p>
+    <p>Gálvez Biesca, Sergio, "El proceso de la recuperación de la memoria histórica en España. Una aproximación a los movimientos sociales por la memoria," <em>International Journal of Iberian Studies</em>, 19-1(2006)</p>
+    <p>García, Beatriz, "Ruedo Ibérico: contra la estrategia del olvido, el dedo en el gatillo de la memoria," Miguel Angel Luis Carnicer, (coord.), <em>Nuevas tendencias historiográficas e historia local en España: actas del II Congreso de Historia Local de Aragón</em>(Huesca, 7 al 9 de julio de 1999) (Instituto de Estudios Altoaragoneses: Universidad de Zaragoza. Departamento de Historia Moderna y Contemporánea, 2001)</p>
+    <p>González, Felipe y Juan Luis Cebrián, <em>El futuro no es lo que era. Una conversación</em> (Madrid: Punto de Lectura, 2001)</p>
+    <p>Graham, Helen, "Spain Coming to Terms with the Past: Spain's Memory Wars," <em>History Today</em>, 54-5(May 2004)</p>
+    <p>Juliá, Santos, "Los nombres de la guerra," <em>Claves de Razón Práctica</em>, 164(2006)</p>
+    <p>Juliá, "De 'guerra contra el invasor' a 'guerra fratricida," Santos Juliá (coord.), <em>Víctimas de la guerra civil</em> (Madrid: Temas de hoy, 2004)</p>
+    <p>Juliá, "Memoria, historia y política en un pasado de guerra y dictadura," Santos Juliá, <em>Memoria de la guerra y del franquismo</em> (Madrid: Taurus, 2006)</p>
+    <p>Kalyvas, Sathis N., "Cuatro maneras de recordar un pasado conflictivo," <em>El País</em> (22 de noviembre de 2006)</p>
+    <p>La Cierva, Ricardo de, <em>Cien libros básicos sobre la guerra de España</em> (Madrid: Publicaciones Españolas, 1966)</p>
+    <p>La Cierva, <em>Bibliografía general sobre la guerra de España (1936-1939) y sus antecedentes históricos. Fuentes para la historia contemporánea de España</em> (Barcelona: Ariel, 1968)</p>
+    <p>La Cierva, <em>Historia de la guerra civil española. Tomo I: Perspectivas y antecedentes (1898-1936)</em> (Madrid: San Martín, 1969)</p>
+    <p>La Cierva, "El 18 de julio, un plebiscito armado de media nación" (www.ctv.es/USERS/fnff/18julio.htm)</p>
+    <p>Limón Luque, Margarita, "El fin de la Historia en la Enseñanza Oligatoria," Pablo Sánchez León y Jesús Izquierdo Martín (eds.), <em>El fin de los historiadores. Pensar históricamente en el siglo XXI</em> (Madrid: Siglo XXI, 2008)</p>
+    <p>Marquina, Antonio, <em>La diplomacia vaticana y la España de Franco</em> (Madrid: CSIC, 1982)</p>
+    <p>Moa, Pío, <em>Los orígenes de la Guerra Civil española</em> (Madrid: Encuentro, 1999)</p>
+    <p>Moa, Pío, <em>Los personajes de la República vistos por ellos mismos</em> (Madrid: Encuentro, 2000)</p>
+    <p>Moa, Pío, <em>El derrumbe de la II República y la guerra civil</em> (Madrid: Encuentro, 2001)</p>
+    <p>Moa, Pío, <em>La Oposición durante el Franquismo. Volumen 2: De un tiempo y de un país</em> (Madrid: Encuentro, 2002)</p>
+    <p>Moa, Pío, <em>Contra la mentira: guerra civil, izquierda nacionalista y jacobinismo</em> (Madrid: Libros Libres, 2003)</p>
+    <p>Moa, Pío, <em>Los mitos de la Guerra Civil</em> (Madrid: La Esfera de los Libros, 2003)</p>
+    <p>Moa, Pío, <em>Los libros fundamentales sobre la Guerra Civil</em> (Madrid: Encuentro, 2004)</p>
+    <p>Moa, Pío, <em>Una historia chocante: los nacionalismos catalán y vasco en la historia contemporánea de España</em> (Madrid: Encuentro, 2004)</p>
+    <p>Moa, Pío, <em>Los crímenes de la Guerra Civil y otras polémicas</em> (Madrid: La Esfera de los Libros, 2004)</p>
+    <p>Moa, Pío, <em>1936, el asalto final a la República</em> (Barcelona: Áltera, 2005)</p>
+    <p>Moa, Pío, <em>Franco: un balance histórico</em> (Barcelona: Planeta, 2005)</p>
+    <p>Moa, Pío, <em>La República que acabó en guerra civil</em> (Barcelona: Áltera, 2006)</p>
+    <p>Moa, Pío, <em>La quiebra de la historia progresista</em> (Madrid: Encuentro, 2007)</p>
+    <p>Moa, Pío, <em>Falacias de la izquierda, silencios de la derecha. Claves para entender el deterioro de la política española actual</em> (Madrid: Libros Libres, 2008)</p>
+    <p>Moa, Pío, <em>Franco para antifranquistas: en 36 preguntas clave</em> (Barcelona: Áltera, 2009)</p>
+    <p>Moa, Pío, <em>La democracia ahogada. Ensayos sobre la España de hoy</em> (Barcelona: Áltera, 2009)</p>
+    <p>Moa, Pío, <em>Nueva historia de España</em> (Madrid: La Esfera de los Libros, 2010)</p>
+    <p>Moa, Pío, <em>La transición de cristal. Franquismo y democracia</em> (Madrid: Libros Libres, 2010)</p>
+    <p>Moa, Pío, <em>España contra España</em> (Madrid: Libros Libres, 2012)</p>
+    <p>Moa, Pío, <em>Mitos del Franquismo</em> (Madrid: La Esfera de los Libros, 2015)</p>
+    <p>Moa, Pío, "¿Condena usted el franquismo?," <em>Libertad Digital</em> (30 de noviembre de 2007)</p>
+    <p>Moliner, Carme, "Crónica sentimental y falsa memoria del franquismo," <em>Historia del Presente</em>, 1(2002)</p>
+    <p>Moradiellos, Enrique, "Revisión histórica crítica y pseudo-revisionismo político presentidta: El caso de la Guerra Civil española" (Documento de Trabajo 2009/4, Depto. de Hª del Pensamiento y de los Movimientos Sociales y Políticos, UCM Fundación José Ortega y Gasset)</p>
+    <p>Muñoz Soro, Javier, "Entre la memoria y la reconciliación. El recuerdo de la República y la guerra en la generación de 1968," <em>Historia del Presente</em>, 2(2003)</p>
+    <p>Payne, Stanley G., "1934: comienza la Guerra Civil," <em>FAES. Cuadernos de Pensamiento Político</em>, 5(2005)</p>
+    <p>Payne, <em>El colapso de la República. Los orígenes de la Guerra Civil (1933-1936)</em> (Madrid: Esfera de los Libros, 2006)</p>
+    <p>Reig Tapia, Alberto, <em>Anti-Moa</em> (Barcelona: Ediciones B, 2006)</p>
+    <p>Reig Tapia, <em>Revisionismo y política. Pío Moa revisitado</em> (Madrid: Foca, 2008)</p>
+    <p>Reig Tapia, <em>Ideología e Historia. Sobre la represión franquista y la Guerra Civil</em> (Madrid: Akal, 1984 y 1986)</p>
+    <p>Reig Tapia, <em>Violencia y Terror. Estudios sobre la Guerra Civil española</em> (Madrid: Akal, 1990)</p>
+    <p>Reig Tapia, <em>Franco "Caudillo": mito y realidad</em> (Madrid: Tecnos, 1995 y 1996)</p>
+    <p>Reig Tapia, <em>Memoria de la Guerra Civil. Los mitos de la tribu</em> (Madrid: Alianza, 1999)</p>
+    <p>Reig Tapia, <em>Franco, el César Superlativo</em> (Madrid: Tecnos, 2005)</p>
+    <p>Reig Tapia, <em>La cruzada de 1936. Mito y memoria</em> (Madrid: Alianza, 2006)</p>
+    <p>Richards, Michael, "El régimen de Franco y la política de memoria de la guerra civil española," J. Aróstegui y F. Godicheau (eds.), <em>Guerra Civil. Mito y memoria</em> (Madrid: Marcial Pons, 2006)</p>
+    <p>Rodrigo, Javier, "Los mitos de la derecha historiográfica. Sobre la manera de la guerra civil y el revisionismo a la española," <em>Historia del Presente</em>, 3(2004)</p>
+    <p>Serna, Justo, "Las iluminaciones de Pío Moa. El revisionismo antirrepublicano," <em>Pasajes. Revista de pensamiento contemporáneo</em>, 21-22(2007)</p>
+    <p>Sevillano Calero, Francisco, "El revisionismo historiográfico, sobre el pasado reciente en España," <em>Pasado y Memoria. Revista de Historia Contemporánea</em>, 6(2007)</p>
+    <p>Ugarte, Javier, "¿Legado de Franquismo? Tiempo de contar," Carme Molinero (ed.), <em>La Transición, treinta años después</em> (Barcelona: Península, 2006)</p>
+    <p>Vidal, César, "Memoria histórica," <em>El Mundo</em> (2002.11.20)</p>
+    <p>Vidal, César, <em>Checas de Madrid. Las cárceles republicanas al descubierto</em> (Barcelona: Belacqua/Carragio, 2003)</p>
+    <p>Vidal, César, <em>Paracuellos-Katyn: un ensayo sobre el genecidio de la izquierda</em> (Madrid: Libros Libres, 2005)</p>
+  </section>
+
+  <!-- Abstract (영문) -->
+  <section id="abstract-en" class="abstract-box">
+    <h2>Abstract</h2>
+    <p id="abstract-en">Revisionist Interpretations of the Contemporary History of Spain</p>
+    <p><strong>Hwangbo, Yeong-jo</strong></p>
+    <p>The memory boom that has upsurged even higher in the Spanish society of the early 21st Century eventually get to develop into the debate on the revisionism of the contemporary history of Spain. The conservative history writers and journalists recently have begun to publish a variety of books that have a tendency of defending the achievements of the Francoist Dictatorship, casting a doubt on the progressive interpretations of the contemporary history that have dominated the academic history of Spain. That is, the revisionists have challenged the 'official' or 'public' history. Spanish academic circles of history have responded critically to this revisionism, while some of them are giving it positive support.</p>
+    <p>In this paper, we are going to examine what the revisionist themes are, why the revisionists has got to appear at this time, and how the academic historians have responded. We hope that this analysis will make a great contribution to a better understanding of the present and future historiography of the contemporary history of Spain.</p>
+    <div class="keywords">
+      <span class="keyword-tag">제2공화국 (Second Republic)</span>
+      <span class="keyword-tag">스페인 내전 (Spanish Civil War)</span>
+      <span class="keyword-tag">프랑코 정권 (Francoist Regime)</span>
+      <span class="keyword-tag">수정주의 (Revisionism)</span>
+      <span class="keyword-tag">역사기억 (Historical Memory)</span>
+    </div>
+  </section>
+
+  <button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">▲ 맨 위로</button>
+
+</main>
+
+<script>
+  window.addEventListener('scroll', () => {
+    let current = '';
+    document.querySelectorAll('section[id]').forEach(s => {
+      if (s.getBoundingClientRect().top <= 100) current = s.id;
+    });
+    document.querySelectorAll('#sidebar nav a').forEach(a => {
+      a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+    });
+  });
+</script>
+
+</body>
+</html>
