@@ -67,338 +67,115 @@
             overflow-y: auto;
         }
 
-        .language-group {
-            margin-bottom: 25px;
-        }
-
-        .language-title {
-            font-size: 0.95em;
-            font-weight: bold;
-            color: #2c3e50;
-            padding: 10px 0;
-            border-top: 1px solid #e0e0e0;
-            margin-top: 10px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            user-select: none;
-        }
-
-        .language-title:first-child {
-            border-top: none;
-            margin-top: 0;
-        }
-
-        .language-title::before {
-            content: '▼';
-            font-size: 0.7em;
-            display: inline-block;
-            transition: transform 0.2s;
-        }
-
-        .language-title.collapsed::before {
-            content: '▶';
-        }
-
-        .category-list {
-            margin-top: 8px;
-            padding-left: 8px;
-        }
-
-        .category-item {
-            padding: 8px 12px;
-            margin-bottom: 4px;
+        .section-item {
+            padding: 12px 15px;
+            margin-bottom: 8px;
             cursor: pointer;
             border-radius: 4px;
             transition: all 0.2s ease;
-            font-size: 0.9em;
-            border-left: 2px solid transparent;
+            font-size: 0.95em;
+            border-left: 3px solid transparent;
             color: #666;
+            font-weight: 500;
         }
 
-        .category-item:hover {
+        .section-item:hover {
             background-color: #f0f7ff;
             border-left-color: #3498db;
             color: #2c3e50;
         }
 
-        .category-item.active {
+        .section-item.active {
             background-color: #e3f2fd;
             border-left-color: #3498db;
             color: #2c3e50;
-            font-weight: 500;
+            font-weight: 600;
         }
-
-        #search-input {
-            transition: all 0.2s ease;
-        }
-
-        #search-input:focus {
-            outline: none;
-            border-color: #3498db;
-            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
-        }
-
-        #search-input::placeholder {
-            color: #bbb;
-        }
-
 
         .post-list {
             background-color: #fff;
             border-radius: 5px;
-            padding: 15px;
-            margin-bottom: 20px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
         }
 
         .list-title {
-            font-size: 1.1em;
-            font-weight: bold;
-            margin-bottom: 15px;
-            color: #2c3e50;
+            padding: 20px;
+            background-color: #f5f5f5;
             border-bottom: 1px solid #e0e0e0;
-            padding-bottom: 10px;
+            font-size: 1.3em;
+            font-weight: 600;
+            color: #2c3e50;
         }
 
         .post-item {
-            padding: 15px;
-            margin-bottom: 12px;
-            background-color: #f8f9fa;
-            border-left: 3px solid #3498db;
-            border-radius: 3px;
-            cursor: pointer;
+            padding: 20px;
+            border-bottom: 1px solid #e0e0e0;
             transition: all 0.2s ease;
-            display: flex;
-            gap: 15px;
+        }
+
+        .post-item:last-child {
+            border-bottom: none;
         }
 
         .post-item:hover {
-            background-color: #e3f2fd;
-            border-left-color: #2980b9;
+            background-color: #f9f9f9;
         }
 
-        .post-number {
-            font-weight: 700;
+        .post-item a {
+            text-decoration: none;
             color: #3498db;
-            min-width: 25px;
-            font-size: 0.95em;
-        }
-
-        .post-content-wrapper {
-            flex: 1;
-            min-width: 0;
-        }
-
-        .post-header-row {
-            display: flex;
-            gap: 12px;
-            margin-bottom: 6px;
-            flex-wrap: wrap;
-            align-items: baseline;
-        }
-
-        .post-title {
-            font-weight: 600;
-            color: #2c3e50;
-            font-size: 0.95em;
-            flex: 1;
-            min-width: 200px;
-        }
-
-        .post-authors {
-            font-size: 0.85em;
-            color: #666;
             font-weight: 500;
-        }
-
-        .post-year {
-            font-size: 0.85em;
-            color: #999;
-            white-space: nowrap;
-        }
-
-        .post-meta {
-            font-size: 0.85em;
-            color: #999;
+            display: block;
             margin-bottom: 8px;
         }
 
-        .post-summary {
-            font-size: 0.85em;
-            color: #555;
-            line-height: 1.5;
+        .post-item a:hover {
+            color: #2980b9;
+            text-decoration: underline;
+        }
+
+        .post-meta {
+            font-size: 0.9em;
+            color: #999;
             margin-top: 8px;
         }
 
-        .empty-state {
-            text-align: center;
-            padding: 60px 30px;
-            color: #999;
-        }
-
-        .empty-state-icon {
-            font-size: 3em;
-            margin-bottom: 20px;
-        }
-
         .empty-state-text {
+            padding: 40px 20px;
+            text-align: center;
+            color: #999;
             font-size: 1em;
         }
 
-        /* 모바일 메뉴 */
-        .menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 1.5em;
-            cursor: pointer;
-            color: #2c3e50;
-            padding: 0;
-            flex-shrink: 0;
-        }
-
-        .sidebar-overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: rgba(0, 0, 0, 0.5);
-            z-index: 998;
-        }
-
-        .sidebar-overlay.active {
-            display: block;
-        }
-
-        .close-btn {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 1.5em;
-            cursor: pointer;
-            color: #2c3e50;
-            padding: 10px;
-            margin-bottom: 20px;
-        }
-
         @media (max-width: 768px) {
-            .menu-btn {
-                display: block;
+            .main-layout {
+                flex-direction: column;
             }
 
-            .close-btn {
-                display: block;
+            .sidebar {
+                width: 100%;
+                border-right: none;
+                border-bottom: 1px solid #e0e0e0;
+                max-height: 150px;
+                overflow-x: auto;
+                padding: 10px;
             }
 
-            .header-content {
-                display: flex;
-                gap: 15px;
-                align-items: center;
-            }
-
-            h1 {
-                font-size: 1.3em;
+            .section-item {
+                display: inline-block;
+                width: auto;
+                margin-right: 8px;
                 margin-bottom: 0;
-            }
-
-            .subtitle {
-                display: none;
-            }
-
-            .sidebar {
-                position: fixed;
-                left: -280px;
-                top: 0;
-                height: 100vh;
-                z-index: 999;
-                transition: left 0.3s ease;
-                width: 280px;
-                overflow-y: auto;
-            }
-
-            .sidebar.active {
-                left: 0;
-            }
-
-            .content {
-                padding: 20px;
-            }
-
-            .post-item {
-                flex-direction: column;
-                gap: 10px;
-            }
-
-            .post-title {
-                min-width: auto;
-                flex: none;
-            }
-
-            .post-header-row {
-                flex-direction: column;
-                gap: 6px;
-            }
-        }
-
-        /* 초소형 화면 (480px 이하) */
-        @media (max-width: 480px) {
-            h1 {
-                font-size: 1.1em;
-            }
-
-            .menu-btn {
-                font-size: 1.3em;
-            }
-
-            .sidebar {
-                width: 240px;
-                left: -240px;
+                white-space: nowrap;
             }
 
             .content {
                 padding: 15px;
             }
 
-            .post-item {
-                padding: 12px;
-                gap: 8px;
-            }
-
-            .post-number {
-                min-width: 20px;
-                font-size: 0.9em;
-            }
-
-            .post-title {
-                font-size: 0.9em;
-            }
-
-            .post-authors {
-                font-size: 0.8em;
-            }
-
-            .post-year {
-                font-size: 0.8em;
-            }
-
-            .post-summary {
-                font-size: 0.8em;
-            }
-
-            .list-title {
-                font-size: 1em;
-            }
-
-            .category-item {
-                padding: 8px 10px;
-                font-size: 0.85em;
-            }
-
-            .language-title {
-                font-size: 0.9em;
+            h1 {
+                font-size: 1.4em;
             }
         }
     </style>
@@ -406,393 +183,111 @@
 <body>
     <header>
         <div class="header-content">
-            <button class="menu-btn" onclick="toggleMenu()">☰</button>
-            <div>
-                <h1>최규범의 역사교육론 연구 자료실</h1>
-                <p class="subtitle">역사교육 연구 논문 및 자료 모음</p>
-            </div>
+            <h1>최규범의 역사교육론 연구 자료실</h1>
+            <p class="subtitle">역사교육 관련 논문 및 자료 아카이브</p>
         </div>
     </header>
 
-    <div class="sidebar-overlay" onclick="closeMenu()"></div>
-
     <div class="main-layout">
-        <div class="sidebar">
-            <button class="close-btn" onclick="closeMenu()">✕</button>
-            <div id="sidebar-content"></div>
-        </div>
-        <div class="content">
-            <div id="main-content"></div>
-        </div>
+        <div class="sidebar" id="sidebar"></div>
+        <div class="content" id="content"></div>
     </div>
 
     <script>
-        // 카테고리 정의
-        const CATEGORIES = {
-            korean: ['민주적 기억과 역사부정', '역사교과서', '다중시각서술', '기타', '언론 보도'],
-            spanish: ['민주적 기억과 역사부정', '역사교과서', '다중시각서술', '기타', '언론 보도'],
-            english: ['민주적 기억과 역사부정', '역사교과서', '다중시각서술', '기타', '언론 보도'],
-            'spanish-study': ['RTVE 뉴스']
+        let allPosts = {};
+        let currentSection = 'korean';
+
+        const sectionNames = {
+            'korean': '국내',
+            'spanish': '스페인어권',
+            'english': '영어권',
+            'spanish-study-RTVE뉴스': 'RTVE 뉴스'
         };
 
-        const LABELS = {
-            korean: '국내 논문',
-            spanish: '스페인어권 논문',
-            english: '영어권 논문',
-            'spanish-study': '스페인어 공부'
-        };
+        const sectionOrder = ['korean', 'spanish', 'english', 'spanish-study-RTVE뉴스'];
 
-        // 홈 카테고리 (특수 카테고리)
-        const HOME_CATEGORY = 'home';
-
-        // 게시글 데이터
-        let posts = {};
-        let currentCategory = null;
-
-        // 검색 키워드
-        let currentSearchQuery = '';
-
-        // 검색 입력 핸들러
-        function handleSearch() {
-            const input = document.getElementById('search-input');
-            currentSearchQuery = input.value.toLowerCase().trim();
-
-            if (currentSearchQuery.length === 0) {
-                showCategory(currentCategory || HOME_CATEGORY);
-            } else {
-                showSearchResults();
+        async function loadPosts() {
+            try {
+                const response = await fetch('posts.json');
+                allPosts = await response.json();
+                init();
+            } catch (error) {
+                console.error('포스트 로딩 실패:', error);
             }
         }
 
-        // 검색 수행
-        function searchPosts(query) {
-            const results = [];
-
-            for (const [key, postArray] of Object.entries(posts)) {
-                if (Array.isArray(postArray)) {
-                    postArray.forEach(post => {
-                        const title = (post.title || '').toLowerCase();
-                        const authors = (post.authors || '').toLowerCase();
-                        const date = (post.date || '').toLowerCase();
-
-                        if (title.includes(query) || authors.includes(query) || date.includes(query)) {
-                            results.push({ ...post, category: key });
-                        }
-                    });
-                }
-            }
-
-            return results;
-        }
-
-        // 검색 결과 표시
-        function showSearchResults() {
-            currentCategory = null;
-
-            document.querySelectorAll('.category-item').forEach(item => {
-                item.classList.remove('active');
-            });
-
-            const results = searchPosts(currentSearchQuery);
-            const content = document.getElementById('main-content');
-
-            if (results.length === 0) {
-                content.innerHTML = `
-                    <div class="empty-state">
-                        <div class="empty-state-icon">🔍</div>
-                        <div class="empty-state-text">"${currentSearchQuery}"에 대한 결과가 없습니다.</div>
-                    </div>
-                `;
-                return;
-            }
-
-            results.sort((a, b) => getPostDate(b) - getPostDate(a));
-
-            let html = `
-                <div class="post-list">
-                    <div class="list-title">검색 결과 (${results.length}개)</div>
-            `;
-
-            results.forEach((post, index) => {
-                const url = post.url ? `onclick="window.location.href='${post.url}'"` : '';
-                html += `
-                    <div class="post-item" ${url} style="cursor: ${post.url ? 'pointer' : 'default'};">
-                        <div style="display: flex; gap: 15px; flex: 1; min-width: 0;">
-                            <div class="post-number">${index + 1}.</div>
-                            <div class="post-content-wrapper">
-                                <div class="post-header-row">
-                                    ${post.authors ? `<div class="post-authors">${post.authors}</div>` : ''}
-                                    <div class="post-title">${post.title}</div>
-                                    ${post.year ? `<div class="post-year">${post.year}</div>` : ''}
-                                </div>
-                                ${post.summary ? `<div class="post-summary">${post.summary}</div>` : ''}
-                                ${post.date && !post.year ? `<div class="post-meta">${post.date}</div>` : ''}
-                            </div>
-                        </div>
-                    </div>
-                `;
-            });
-
-            html += `</div>`;
-            content.innerHTML = html;
-            window.scrollTo(0, 0);
-        }
-
-
-        // DOMContentLoaded: posts.json 로드 후 init()
-        window.addEventListener('DOMContentLoaded', () => {
-            fetch('posts.json')
-                .then(r => r.json())
-                .then(data => {
-                    posts = data;
-                    init();
-                })
-                .catch(() => {
-                    console.error('posts.json 로드 실패');
-                    init();
-                });
-        });
-
-        // 초기화
         function init() {
             renderSidebar();
-            showCategory(HOME_CATEGORY);
+            showSection('korean');
         }
 
-        // 사이드바 렌더링
         function renderSidebar() {
-            const sidebar = document.getElementById('sidebar-content');
+            const sidebar = document.getElementById('sidebar');
             let html = '';
 
-            // 검색 입력창
-            html += `
-                <div style="margin-bottom: 20px;">
-                    <input
-                        type="text"
-                        id="search-input"
-                        placeholder="검색 (제목, 저자)"
-                        style="width: 100%; padding: 10px 12px; border: 1px solid #e0e0e0; border-radius: 4px; font-size: 0.9em; box-sizing: border-box;"
-                        onkeyup="handleSearch()"
-                    />
-                </div>
-            `;
+            for (const section of sectionOrder) {
+                const displayName = sectionNames[section] || section;
+                const count = allPosts[section] ? allPosts[section].length : 0;
 
-
-            // 홈 버튼
-            html += `
-                <div style="margin-bottom: 20px;">
-                    <div class="category-item" id="home-btn" onclick="showCategory('${HOME_CATEGORY}')">
-                        🏠 홈
-                    </div>
-                </div>
-            `;
-
-            for (const [lang, categories] of Object.entries(CATEGORIES)) {
-                html += `
-                    <div class="language-group">
-                        <div class="language-title" onclick="toggleLanguage(event, '${lang}')">
-                            ${LABELS[lang]}
-                        </div>
-                        <div class="category-list" id="categories-${lang}" style="display: none;">
-                `;
-
-                for (const category of categories) {
-                    const key = `${lang}-${category}`;
-                    const count = posts[key] ? posts[key].length : 0;
-                    html += `
-                        <div class="category-item" data-key="${key}" onclick="showCategory('${key}')">
-                            ${category} (${count})
-                        </div>
-                    `;
-                }
-
-                html += `
-                        </div>
-                    </div>
-                `;
+                html += `<div class="section-item" data-section="${section}" onclick="showSection('${section}')">
+                    ${displayName} (${count})
+                </div>`;
             }
 
             sidebar.innerHTML = html;
         }
 
-        // 언어 그룹 토글
-        function toggleLanguage(event, lang) {
-            event.preventDefault();
-            const list = document.getElementById(`categories-${lang}`);
-            const title = event.currentTarget;
+        function showSection(section) {
+            currentSection = section;
+            renderContent();
 
-            if (list.style.display === 'none') {
-                list.style.display = 'block';
-                title.classList.remove('collapsed');
-            } else {
-                list.style.display = 'none';
-                title.classList.add('collapsed');
-            }
-        }
-
-        // 카테고리 표시
-        function showCategory(categoryKey) {
-            currentCategory = categoryKey;
-
-            // 모든 카테고리 항목에서 active 제거
-            document.querySelectorAll('.category-item').forEach(item => {
+            document.querySelectorAll('.section-item').forEach(item => {
                 item.classList.remove('active');
             });
 
-            // 홈 버튼 처리
-            if (categoryKey === HOME_CATEGORY) {
-                const homeBtn = document.getElementById('home-btn');
-                if (homeBtn) homeBtn.classList.add('active');
-            } else {
-                // 현재 카테고리 항목에 active 추가
-                document.querySelectorAll('.category-item').forEach(item => {
-                    if (item.dataset.key === categoryKey) {
-                        item.classList.add('active');
-                    }
-                });
-            }
-
-            renderContent();
-
-            // 스크롤을 맨 위로 복귀
-            window.scrollTo(0, 0);
+            document.querySelector(`[data-section="${section}"]`).classList.add('active');
         }
 
-        // 업로드 날짜를 Date 객체로 변환 (정렬용)
-        function getPostDate(post) {
-            // uploadDate (명시적 업로드 날짜) 사용
-            if (post.uploadDate) {
-                return new Date(post.uploadDate);
-            }
-            // 없으면 RTVE의 date 필드에서 파싱
-            if (post.date) {
-                const match = post.date.match(/(\d+)년\s+(\d+)월\s+(\d+)일/);
-                if (match) {
-                    return new Date(parseInt(match[1]), parseInt(match[2]) - 1, parseInt(match[3]));
-                }
-            }
-            // 없으면 year 사용
-            if (post.year) {
-                return new Date(post.year, 0, 1);
-            }
-            return new Date(0);
-        }
-
-        // 콘텐츠 렌더링
         function renderContent() {
-            const content = document.getElementById('main-content');
+            const content = document.getElementById('content');
+            const posts = allPosts[currentSection] || [];
+            const displayName = sectionNames[currentSection] || currentSection;
 
-            // 홈 카테고리: 모든 글 모으기
-            if (currentCategory === HOME_CATEGORY) {
-                const allPosts = [];
-                for (const [key, postArray] of Object.entries(posts)) {
-                    if (Array.isArray(postArray)) {
-                        postArray.forEach(post => {
-                            allPosts.push({ ...post, category: key });
-                        });
-                    }
-                }
-
-                // 날짜 기준 내림차순 정렬 (최신 글이 위에 옴)
-                allPosts.sort((a, b) => getPostDate(b) - getPostDate(a));
-
-                if (allPosts.length === 0) {
-                    content.innerHTML = `
-                        <div class="empty-state">
-                            <div class="empty-state-icon">🏠</div>
-                            <div class="empty-state-text">아직 등록된 논문이 없습니다.<br/>카테고리에서 글을 추가해주세요.</div>
-                        </div>
-                    `;
-                } else {
-                    let html = `
-                        <div class="post-list">
-                            <div class="list-title">최신 글</div>
-                    `;
-                    allPosts.forEach((post, index) => {
-                        const url = post.url ? `onclick="window.location.href='${post.url}'"` : '';
-                        html += `
-                            <div class="post-item" ${url} style="cursor: ${post.url ? 'pointer' : 'default'};">
-                                <div style="display: flex; gap: 15px; flex: 1; min-width: 0;">
-                                    <div class="post-number">${index + 1}.</div>
-                                    <div class="post-content-wrapper">
-                                        <div class="post-header-row">
-                                            ${post.authors ? `<div class="post-authors">${post.authors}</div>` : ''}
-                                            <div class="post-title">${post.title}</div>
-                                            ${post.year ? `<div class="post-year">${post.year}</div>` : ''}
-                                        </div>
-                                        ${post.summary ? `<div class="post-summary">${post.summary}</div>` : ''}
-                                        ${post.date && !post.year ? `<div class="post-meta">${post.date}</div>` : ''}
-                                    </div>
-                                </div>
-                            </div>
-                        `;
-                    });
-                    html += `</div>`;
-                    content.innerHTML = html;
-                }
+            if (!posts || posts.length === 0) {
+                content.innerHTML = `<div class="post-list">
+                    <div class="list-title">${displayName}</div>
+                    <div class="empty-state-text">${displayName} 섹션에 등록된 자료가 없습니다.</div>
+                </div>`;
                 return;
             }
 
-            // 일반 카테고리 (uploadDate 기준 최신순 정렬)
-            const postList = (posts[currentCategory] || []).slice().sort((a, b) => getPostDate(b) - getPostDate(a));
-            const categoryTitle = currentCategory.split('-').slice(1).join('-');
+            let html = `<div class="post-list">
+                <div class="list-title">${displayName}</div>`;
 
-            if (postList.length === 0) {
-                content.innerHTML = `
-                    <div class="empty-state">
-                        <div class="empty-state-icon">📚</div>
-                        <div class="empty-state-text">${categoryTitle} 카테고리에 등록된 논문이 없습니다.</div>
-                    </div>
-                `;
-            } else {
-                let html = `
-                    <div class="post-list">
-                        <div class="list-title">${categoryTitle}</div>
-                `;
+            for (const post of posts) {
+                html += `<div class="post-item">
+                    <a href="${post.url}" target="_blank">${post.title}</a>
+                    <div class="post-meta">`;
 
-                postList.forEach((post, index) => {
-                    const url = post.url ? `onclick="window.location.href='${post.url}'"` : '';
-                    html += `
-                        <div class="post-item" ${url} style="cursor: ${post.url ? 'pointer' : 'default'};">
-                            <div style="display: flex; gap: 15px; flex: 1; min-width: 0;">
-                                <div class="post-number">${index + 1}.</div>
-                                <div class="post-content-wrapper">
-                                    <div class="post-header-row">
-                                        ${post.authors ? `<div class="post-authors">${post.authors}</div>` : ''}
-                                        <div class="post-title">${post.title}</div>
-                                        ${post.year ? `<div class="post-year">${post.year}</div>` : ''}
-                                    </div>
-                                    ${post.summary ? `<div class="post-summary">${post.summary}</div>` : ''}
-                                    ${post.date && !post.year ? `<div class="post-meta">${post.date}</div>` : ''}
-                                </div>
-                            </div>
-                        </div>
-                    `;
-                });
+                if (post.authors) {
+                    html += `저자: ${post.authors} | `;
+                }
+                if (post.year) {
+                    html += `${post.year} | `;
+                }
+                if (post.date) {
+                    html += `${post.date}`;
+                }
 
-                html += `
-                    </div>
-                `;
-                content.innerHTML = html;
+                html += `</div>
+                </div>`;
             }
+
+            html += '</div>';
+            content.innerHTML = html;
         }
 
-        // 메뉴 토글 (모바일)
-        function toggleMenu() {
-            const sidebar = document.querySelector('.sidebar');
-            const overlay = document.querySelector('.sidebar-overlay');
-            sidebar.classList.toggle('active');
-            overlay.classList.toggle('active');
-        }
-
-        // 메뉴 닫기
-        function closeMenu() {
-            const sidebar = document.querySelector('.sidebar');
-            const overlay = document.querySelector('.sidebar-overlay');
-            sidebar.classList.remove('active');
-            overlay.classList.remove('active');
-        }
-
+        document.addEventListener('DOMContentLoaded', loadPosts);
     </script>
 </body>
 </html>

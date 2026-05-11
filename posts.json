@@ -1,6 +1,5 @@
 {
-  "korean-민주적 기억과 역사부정": [],
-  "korean-역사교과서 및 교육과정": [
+  "korean": [
     {
       "title": "스페인 현대사에 관한 수정주의 해석과 그 등장 배경",
       "authors": "황보영조",
@@ -16,11 +15,7 @@
       "uploadDate": "2026-05-11"
     }
   ],
-  "korean-다중시각서술": [],
-  "korean-기타": [],
-  "korean-언론 보도": [],
-  "spanish-민주적 기억과 역사부정": [],
-  "spanish-역사교과서 및 교육과정": [
+  "spanish": [
     {
       "title": "LOMCE와 역사적 역량: 스페인 교육과정 분석",
       "authors": "López",
@@ -34,9 +29,7 @@
       "year": 2023,
       "url": "Goldstein_2023_한국어번역.html",
       "uploadDate": "2026-04-24"
-    }
-  ],
-  "spanish-다중시각서술": [
+    },
     {
       "title": "가치와 역사 교육 — 예비교사의 역사적 유의성 사회적 표상",
       "authors": "Ortuño, Bellatti, Molina",
@@ -45,20 +38,14 @@
       "uploadDate": "2026-04-24"
     }
   ],
-  "spanish-기타": [],
-  "spanish-언론 보도": [],
-  "english-민주적 기억과 역사부정": [],
-  "english-역사교과서 및 교육과정": [],
-  "english-다중시각서술": [
+  "english": [
     {
       "title": "역사교육에서의 다원적 관점",
       "authors": "Robert Stradling",
       "year": 2003,
       "url": "Stradling_2003_번역.html",
       "uploadDate": "2026-04-27"
-    }
-  ],
-  "english-기타": [
+    },
     {
       "title": "수업 시뮬레이션을 통한 역사적 사고",
       "authors": "Pellegrino et al.",
@@ -74,8 +61,7 @@
       "uploadDate": "2026-04-25"
     }
   ],
-  "english-언론 보도": [],
-  "spanish-study-RTVE 뉴스": [
+  "spanish-study-RTVE뉴스": [
     {
       "title": "2026년 5월 10일 - RTVE 10분뉴스",
       "date": "2026년 5월 10일",
