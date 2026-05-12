@@ -40,13 +40,6 @@
   ],
   "english": [
     {
-      "title": "학교에서야 제대로 듣지요",
-      "authors": "Kitson & McCully",
-      "year": 2005,
-      "url": "Kitson_McCully_2005_한국어번역.html",
-      "uploadDate": "2026-05-12"
-    },
-    {
       "title": "역사교육에서의 다원적 관점",
       "authors": "Robert Stradling",
       "year": 2003,
@@ -69,12 +62,6 @@
     }
   ],
   "spanish-study-RTVE뉴스": [
-    {
-      "title": "2026년 5월 11일 - RTVE 10분뉴스",
-      "date": "2026년 5월 11일",
-      "url": "RTVE_10minutos_11052026_final.html",
-      "uploadDate": "2026-05-11"
-    },
     {
       "title": "2026년 5월 10일 - RTVE 10분뉴스",
       "date": "2026년 5월 10일",
@@ -178,4 +165,10 @@
       "uploadDate": "2026-04-22"
     },
     {
-      "tit
+      "title": "2026년 4월 21일 - RTVE 10분뉴스",
+      "date": "2026년 4월 21일",
+      "url": "https://kyubum3-alt.github.io/rtve-news/RTVE_10minutos_21abril2026.html",
+      "uploadDate": "2026-04-21"
+    }
+  ]
+}
