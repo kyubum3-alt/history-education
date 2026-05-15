@@ -17,32 +17,11 @@
   ],
   "spanish": [
     {
-      "title": "가치와 역사 교육 — 예비교사의 역사적 유의성 사회적 표상",
-      "authors": "Ortuño, Bellatti, Molina",
-      "year": 2025,
-      "url": "Ortuño_Bellatti_Molina_2025_한국어번역.html",
-      "uploadDate": "2026-04-24"
-    },
-    {
-      "title": "Diez-Gutiérrez와 Rodrigues-López의 교육 불평등 연구",
-      "authors": "Diez-Gutiérrez, Rodrigues-López",
-      "year": 2023,
-      "url": "Diez-Gutierrez_Rodrigues-Lopez_한국어번역.html",
-      "uploadDate": "2026-05-14"
-    },
-    {
-      "title": "교육개혁과 역사교육",
-      "authors": "Delgado",
-      "year": 2023,
-      "url": "Delgado_2023_교육개혁과_역사교육_한국어번역.html",
-      "uploadDate": "2026-05-13"
-    },
-    {
-      "title": "라몬 비센테 로페스 파칼 인터뷰 - 격동의 시대 역사교육",
-      "authors": "López Facal",
-      "year": 2023,
-      "url": "LopezFacal_2023_인터뷰_라몬 비센테 로페스 파칼 인터뷰-격동의 시대 역사교육.html",
-      "uploadDate": "2026-05-14"
+      "title": "LOMCE와 역사적 역량: 스페인 교육과정 분석",
+      "authors": "López",
+      "year": 2014,
+      "url": "Lopez_2014_LOMCE와 역사적 역량.html",
+      "uploadDate": "2026-05-11"
     },
     {
       "title": "스페인 내전의 중등교육 교수법",
@@ -52,102 +31,11 @@
       "uploadDate": "2026-04-24"
     },
     {
-      "title": "중등학교 및 바칠레라토 교과서 속 내전과 프랑코 체제의 피해자들",
-      "authors": "Escobedo",
-      "year": 2023,
-      "url": "Escobedo_2023_중등학교 및 바칠레라토 교과서 속 내전과 프랑코 체제의 피해자들.html",
-      "uploadDate": "2026-05-14"
-    },
-    {
-      "title": "스페인 역사 (LOMLOE)",
-      "authors": "스페인 교육과정",
-      "year": 2022,
-      "url": "Historia_de_Espana_LOMLOE.html",
-      "uploadDate": "2026-05-13"
-    },
-    {
-      "title": "학교의 역사적 기억",
-      "authors": "Diez",
-      "year": 2022,
-      "url": "Diez_2022_학교의_역사적_기억_한국어번역.html",
-      "uploadDate": "2026-05-13"
-    },
-    {
-      "title": "갈등적 역사 주제와 학교 교육",
-      "authors": "Valls",
-      "year": 2017,
-      "url": "Valls_2017_갈등적 역사 주제와 학교 교육.html",
-      "uploadDate": "2026-05-15"
-    },
-    {
-      "title": "역사 수업의 논쟁적 주제 교육",
-      "authors": "Toledo Jofré et al.",
-      "year": 2015,
-      "url": "ToledoJofre_etal_2015_역사 수업의 논쟁적 주제 교육.html",
-      "uploadDate": "2026-05-14"
-    },
-    {
-      "title": "LOMCE와 역사적 역량: 스페인 교육과정 분석",
-      "authors": "López",
-      "year": 2014,
-      "url": "Lopez_2014_LOMCE와 역사적 역량.html",
-      "uploadDate": "2026-05-11"
-    },
-    {
-      "title": "수업에서의 '사회적 갈등 쟁점'",
-      "authors": "López Facal & Santidrian",
-      "year": 2011,
-      "url": "LopezFacal_Santidrian_2011_수업에서의 '사회적 갈등 쟁점'.html",
-      "uploadDate": "2026-05-14"
-    },
-    {
-      "title": "역사 대학입학시험(PAU)의 평가: 스페인 민주주의 이행기에 관한 연구",
-      "authors": "Martinez Conejo & López Facal",
-      "year": 2011,
-      "url": "MartinezConejo_LopezFacal_2011_역사 대학입학시험(PAU)의 평가- 스페인 민주주의 이행기에 관한 연구.html",
-      "uploadDate": "2026-05-14"
-    },
-    {
-      "title": "스페인과 서구의 맥락에서 본 실제 문제와 정치적 논쟁",
-      "authors": "Valls & López Facal",
-      "year": 2010,
-      "url": "Valls_LopezFacal_2010_스페인과 서구의 맥락에서 본 실제 문제와 정치적 논쟁.html",
-      "uploadDate": "2026-05-14"
-    },
-    {
-      "title": "바칠레라토 역사 교육과정의 실행과 교과서 활용",
-      "authors": "Martínez Valcárcel",
-      "year": 2008,
-      "url": "MartínezValcárcel_2008_바칠레라토 역사 교육과정의 실행과 교과서 활용.html",
-      "uploadDate": "2026-05-14"
-    },
-    {
-      "title": "역사 교과서 연구의 새로운 도전: 텍스트와 맥락 사이",
-      "authors": "Valls & Montés",
-      "year": 2001,
-      "url": "VallsMontés_2001_역사 교과서 연구의 새로운 도전- 텍스트와 맥락 사이.html",
-      "uploadDate": "2026-05-15"
-    },
-    {
-      "title": "제2차 국제 논쟁의 역사 학술대회",
-      "authors": "Valls & Montés",
-      "year": 2000,
-      "url": "VallsMontes_2000_제2차 국제 논쟁의 역사 학술대회와.html",
-      "uploadDate": "2026-05-15"
-    },
-    {
-      "title": "현대 스페인의 학교 역사서술: 역사 교과서에서 학교 교과의 역사로",
-      "authors": "Valls",
-      "year": 1999,
-      "url": "Valls_1999_현대 스페인의 학교 역사서술-역사 교과서에서 학교 교과의 역사로.html",
-      "uploadDate": "2026-05-15"
-    },
-    {
-      "title": "교육 개혁과 역사 교과서 담론: 스페인의 사례",
-      "authors": "Cuesta & Fernández",
-      "year": 1998,
-      "url": "Cuesta_Fernandez_1998_한국어번역.html",
-      "uploadDate": "2026-05-15"
+      "title": "가치와 역사 교육 — 예비교사의 역사적 유의성 사회적 표상",
+      "authors": "Ortuño, Bellatti, Molina",
+      "year": 2025,
+      "url": "Ortuño_Bellatti_Molina_2025_한국어번역.html",
+      "uploadDate": "2026-04-24"
     }
   ],
   "english": [
@@ -181,12 +69,6 @@
     }
   ],
   "spanish-study-RTVE뉴스": [
-    {
-      "title": "2026년 5월 13일 - RTVE 10분뉴스",
-      "date": "2026년 5월 13일",
-      "url": "RTVE_10minutos_13052026_final.html",
-      "uploadDate": "2026-05-14"
-    },
     {
       "title": "2026년 5월 12일 - RTVE 10분뉴스",
       "date": "2026년 5월 12일",
