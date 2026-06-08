@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>역사 교육을 위한 새로운 패러다임? — Valls & López Facal (2010)</title>
+<style>
+  :root {
+    --sidebar-width: 270px;
+    --accent: #2c5f8a;
+    --accent-light: #e8f1f8;
+    --text: #1a1a1a;
+    --muted: #555;
+    --border: #d0d7de;
+    --bg: #fafafa;
+    --white: #ffffff;
+    --table-head: #f0f4f8;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Nanum Myeongjo', 'Malgun Gothic', Georgia, serif;
+    font-size: 16px;
+    line-height: 1.85;
+    color: var(--text);
+    background: var(--bg);
+  }
+
+  /* ── 사이드바 ── */
+  #sidebar {
+    position: fixed;
+    top: 0; left: 0;
+    width: var(--sidebar-width);
+    height: 100vh;
+    overflow-y: auto;
+    background: var(--white);
+    border-right: 1px solid var(--border);
+    padding: 20px 14px;
+    z-index: 100;
+  }
+
+  #sidebar .sidebar-title {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 14px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--accent);
+  }
+
+  #sidebar nav a {
+    display: block;
+    font-size: 13px;
+    color: var(--muted);
+    text-decoration: none;
+    padding: 5px 8px;
+    border-radius: 4px;
+    margin-bottom: 2px;
+    line-height: 1.4;
+    transition: background 0.15s, color 0.15s;
+  }
+
+  #sidebar nav a:hover,
+  #sidebar nav a.active {
+    background: var(--accent-light);
+    color: var(--accent);
+    font-weight: 600;
+  }
+
+  #sidebar nav a.sub {
+    padding-left: 20px;
+    font-size: 12px;
+  }
+
+  /* ── 메인 콘텐츠 ── */
+  #main {
+    margin-left: var(--sidebar-width);
+    max-width: 860px;
+    padding: 48px 48px 80px;
+  }
+
+  /* ── 논문 헤더 ── */
+  .paper-header {
+    border-bottom: 3px solid var(--accent);
+    padding-bottom: 24px;
+    margin-bottom: 32px;
+  }
+
+  .paper-label {
+    font-size: 12px;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    margin-bottom: 10px;
+  }
+
+  .paper-title-ko {
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--accent);
+    line-height: 1.35;
+    margin-bottom: 8px;
+  }
+
+  .paper-title-es {
+    font-size: 14px;
+    color: var(--muted);
+    font-style: italic;
+    margin-bottom: 18px;
+  }
+
+  .paper-meta {
+    font-size: 13.5px;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+
+  .paper-meta strong { color: var(--text); }
+
+  /* ── 초록 박스 ── */
+  .abstract-box {
+    background: var(--accent-light);
+    border-left: 4px solid var(--accent);
+    border-radius: 6px;
+    padding: 22px 26px;
+    margin-bottom: 36px;
+  }
+
+  .abstract-box h2 {
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--accent);
+    margin-bottom: 12px;
+  }
+
+  .abstract-ko {
+    font-size: 15px;
+    line-height: 1.85;
+    margin-bottom: 18px;
+  }
+
+  .abstract-divider {
+    border: none;
+    border-top: 1px dashed var(--border);
+    margin: 16px 0;
+  }
+
+  .abstract-en {
+    font-size: 13.5px;
+    line-height: 1.8;
+    color: var(--muted);
+    font-style: italic;
+  }
+
+  .keywords {
+    margin-top: 14px;
+    font-size: 13.5px;
+  }
+
+  .keywords strong { color: var(--accent); }
+
+  /* ── 섹션 ── */
+  section {
+    margin-bottom: 40px;
+    scroll-margin-top: 24px;
+  }
+
+  section h2 {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--accent);
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 8px;
+    margin-bottom: 18px;
+  }
+
+  section h3 {
+    font-size: 16.5px;
+    font-weight: 700;
+    color: var(--text);
+    margin: 24px 0 12px;
+  }
+
+  p {
+    margin-bottom: 16px;
+    text-align: justify;
+  }
+
+  blockquote {
+    border-left: 4px solid var(--accent);
+    background: #f7f9fb;
+    padding: 16px 20px;
+    margin: 20px 0;
+    font-size: 15px;
+    color: #333;
+    line-height: 1.8;
+    font-style: italic;
+  }
+
+  /* ── 표 ── */
+  .table-wrap {
+    margin: 28px 0;
+    overflow-x: auto;
+  }
+
+  .caption {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--muted);
+    margin-bottom: 8px;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+  }
+
+  thead tr { background: var(--table-head); }
+
+  th, td {
+    border: 1px solid var(--border);
+    padding: 9px 12px;
+    text-align: left;
+    vertical-align: top;
+  }
+
+  th { font-weight: 700; color: var(--accent); }
+
+  .table-source {
+    font-size: 12.5px;
+    color: var(--muted);
+    margin-top: 6px;
+    font-style: italic;
+  }
+
+  /* ── 각주 ── */
+  .footnotes {
+    background: #f5f5f5;
+    border-top: 1px solid var(--border);
+    padding: 18px 22px;
+    margin-top: 30px;
+    border-radius: 4px;
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.75;
+  }
+
+  .footnotes h4 {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .footnotes p { margin-bottom: 6px; }
+
+  /* ── 참고문헌 ── */
+  .ref-item {
+    margin-bottom: 14px;
+    font-size: 14px;
+    line-height: 1.75;
+    padding-left: 24px;
+    text-indent: -24px;
+  }
+
+  .ref-ko {
+    font-size: 12.5px;
+    color: var(--muted);
+    margin-top: 2px;
+    padding-left: 24px;
+    text-indent: 0;
+    font-style: italic;
+  }
+
+  /* ── 맨 위로 버튼 ── */
+  .back-to-top {
+    display: inline-block;
+    margin-top: 40px;
+    padding: 10px 20px;
+    background: var(--accent);
+    color: white;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 13.5px;
+    transition: background 0.2s;
+  }
+
+  .back-to-top:hover { background: #1e4468; }
+
+  /* ── 반응형 ── */
+  @media (max-width: 900px) {
+    #sidebar { display: none; }
+    #main { margin-left: 0; padding: 24px 20px 60px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════ 사이드바 ═══════════════════════════════ -->
+<aside id="sidebar">
+  <div class="sidebar-title">📄 목차</div>
+  <nav>
+    <a href="#header">논문 정보</a>
+    <a href="#abstract">초록</a>
+    <a href="#intro">서론</a>
+    <a href="#polemica">1. 스페인의 역사 교육 논쟁 (1996–2010)</a>
+    <a href="#aprendizajes">2. 학생 학습 결과: 실증 연구</a>
+    <a href="#manuales">3. 역사 교과서와 교사: 변화와 연속성</a>
+    <a href="#dificultades">4. 현재의 난점과 모순</a>
+    <a href="#notas">각주</a>
+    <a href="#referencias">참고문헌</a>
+  </nav>
+</aside>
+
+<!-- ═══════════════════════════════ 메인 ═══════════════════════════════ -->
+<main id="main">
+
+  <!-- 논문 헤더 -->
+  <div class="paper-header" id="header">
+    <div class="paper-label">토론 · Enseñanza de las Ciencias Sociales, 2010 · 10, pp. 75–85</div>
+    <div class="paper-title-ko">역사 교육을 위한 새로운 패러다임?<br>스페인과 서구의 맥락에서 본 실제 문제와 정치적 논쟁</div>
+    <div class="paper-title-es">¿Un nuevo paradigma para la enseñanza de la historia? Los problemas reales y las polémicas interesadas al respecto en España y en el contexto del mundo occidental</div>
+    <div class="paper-meta">
+      <strong>저자:</strong> Rafael Valls¹ · Ramón López Facal²<br>
+      <strong>소속:</strong> ¹발렌시아 대학교 · ²산티아고 데 콤포스텔라 대학교<br>
+      <strong>수록지:</strong> <em>Enseñanza de las Ciencias Sociales</em>, 2010, vol. 10, pp. 75–85<br>
+      <strong>투고:</strong> 2010년 10월 19일 / <strong>게재 승인:</strong> 2011년 11월 11일<br>
+      <strong>출처:</strong> Dialnet-UnNuevoParadigmaParaLaEnsenanzaDeLaHistoria-4023128
+    </div>
+  </div>
+
+  <!-- 초록 -->
+  <div class="abstract-box" id="abstract">
+    <h2>초록</h2>
+    <div class="abstract-ko">
+      최근 수십 년간의 중요한 사학사적 변화와 역사 교육에 새롭게 부여된 목표들 외에도, 오늘날 역사 학교 교육의 복잡한 현황은 일부 정치·문화 집단이 특정한 내용과 방식의 역사 교육을 확립하려는 시도로 인해 더욱 첨예한 논쟁을 불러일으키고 있다. 이 글은 이러한 전반적 상황을 맥락화하기 위해 세 부분으로 구성된다. 첫째, 스페인의 역사 교육 논쟁의 주요 특성을 개관하고, 각종 공식 기관의 평가를 기존 실증 연구 결과와 대조한다. 둘째, 지난 10~20년간 교사와 교과서에 나타난 변화와 연속성을 개략적으로 살펴본다. 마지막으로, 현재 역사 교육이 직면한 어려움과 그 극복 방안(새로운 교육 패러다임 모색)을 국제 역사 교수법 연구에 비추어 제시한다.
+    </div>
+    <div class="keywords"><strong>주제어:</strong> 역사 교육, 교육 모델, 학습, 역사의식</div>
+    <hr class="abstract-divider">
+    <div class="abstract-en">
+      <strong>Abstract:</strong> The complexity of today's situation regarding history school teaching, besides the very important historiographic changes undergone in the past decades and the new purposes adscribed to history school teaching, has been even more highlighted due to the interest of some political and cultural groups in establishing some contents and a type of history teaching that have been the subject of controversy. To try to contextualize this general view, in the first section we systematically tackle the main characteristics of the controversy arisen regarding history teaching in Spain, contrasting the views expressed by several official authorities with the results obtained in some of the existing empirical researches. Secondly, the changes and the continuity that both teachers and school books have maintained during the past 10-20 years are outlined. In the final part, today's difficulties in history teaching and the guidelines to overcome them (a new didactic paradigm attempt) in accordance with the international didactic research are shown.
+    </div>
+    <div class="keywords"><strong>Keywords:</strong> History teaching, education system, learning, historical awareness.</div>
+  </div>
+
+  <!-- 서론 -->
+  <section id="intro">
+    <h2>서론</h2>
+    <p>대부분의 서구 국가에서 역사 교육의 현황을 다루는 것은 결코 쉬운 일이 아니다. 우리는 차이점에도 불구하고, 최근까지 비교적 안정적인 개인적·집단적 행동 양식을 형성하던 많은 준거들이 변화하고 있는 매우 복잡한 사회 안에 놓여 있기 때문이다. 교육의 세계도 사회의 일부로서 이러한 변화와 현재의 불확실성에 함께 참여하고 있다.</p>
+    <p>역사 교육의 경우, 지난 수십 년간의 중요한 사학사적 변화 외에도, 일부 정치·문화 집단이 특정한 내용과 방식의 역사 교육을 확립하려는 시도로 인해 상황의 복잡성이 더욱 부각되어 왔다. 가장 직접적인 준거가 되는 스페인의 경우도 예외가 아니며, 영국·프랑스·이탈리아를 비롯한 여러 라틴아메리카 국가들에서도 다소 유사한 논쟁이 전개되어 왔다.¹ 이들 국가 상당수에서는 역사 교육에서 진행 중이던 여러 수준의 교육적 혁신에 제동을 걸고, 전통적 교육 모델로 회귀하려는 시도가 있었다. 이는 해당 전통 모델이 받아온 합리적인 비판들에도 불구하고 이루어진 것이었다. 그 이유는 나라마다 달랐지만, 공통된 목표는 교사의 혁신적 활동 가능성과 학생의 심화된 학습 가능성을 적어도 이론적으로는 제한하는, 더욱 지시적이고 폐쇄적인 백과사전식 교육과정을 확립하는 것이었다.</p>
+    <p>스페인의 사례를 좀 더 자세히 살펴보자. 이 사례는 상당히 시사적이다. 스페인에서는 1990년대 초 중요한 교수법 현대화 프로젝트가 시작되었으나, 불과 몇 년 후 행정적 측면과 교사 집단 상당 부분으로부터 강한 저항에 직면했고, 결국 '이론상' 진보적인 정부의 묵인 아래 마땅한 것 이상의 지지를 받으며 진정한 교육 반개혁으로 변질되고 말았다. 이 글에서는 우선 역사 교육 논쟁의 주요 특성을 간략히 살펴보고, 각종 공식 기관의 평가를 기존 실증 연구 결과와 대조한다. 다음으로 지난 10~20년간 교사와 교과서에 나타난 변화와 연속성을 개략적으로 그려본다. 마지막으로 역사 교육의 현재 난점과 극복 방안(새로운 교육 패러다임 모색)을 국제 교수법 연구에 비추어 제시하고자 한다.</p>
+  </section>
+
+  <!-- 1절 -->
+  <section id="polemica">
+    <h2>1. 스페인의 역사 교육 논쟁 (1996–2010)</h2>
+    <p>1996년 10월, 당시 교육부 장관은 자신의 보수 정당이 이른바 '인문학'(역사·지리·언어문학·철학·고전문화 교과를 포괄하는 명칭) 과목을 대학 이전 교육 전체에 걸쳐 시급히 개혁하겠다는 의지를 표명했다. 곧이어 장관이 역사 과목에 특히 관심을 두고 있음이 드러났다. 장관의 담화에서 핵심적인 주장들은 다음과 같았다.²</p>
+    <p>스페인에서는 1990년대 초 교육 개혁의 결과로 역사 교육이 교육과정에서 '놀랍도록 구석으로 밀려나는' 현상이 발생했다. 초등교육에서는 역사가 '자연·사회·문화 환경 이해'라는 모호한 명칭 아래 다른 과목들과 합쳐졌으며, 중등교육에서는 지리·사회학·인류학·경제학·생태학 등 이질적인 교과들을 포함하는 '사회과학' 범주 아래 등장하게 되었다. 장관의 견해로는 더 심각한 문제가 '우리 학생들이 받는 교육에서 역사적 내용이 부족하다'는 점이었다. "학생 한 명이 10년의 의무 교육 전체를 거치면서 율리우스 카이사르나 펠리페 2세에 관한 수업을 단 한 번도 듣지 않고 졸업할 수도 있다… 의무 교육에서 역사는 현대사의 피상적인 학습으로 축소되었다. 연대기는 부재하고, 위대한 역사적 인물 연구는 역사학이 아닌 사회과학의 방법론적 시각으로 다루어지는 구조 분석으로 대체되었다."</p>
+    <p>장관의 담화는 당시 상황의 반대편에 선다고 본인이 여긴 세 대상에 대한 찬사로 마무리되었다. 첫째로 왕실인데, 왕실은 "그 본질상 스페인의 역사적 연속성을 상징하며… 국왕 개인이 스페인 역사 자체를 체현한다"고 했다. 둘째로 왕립역사아카데미(Real Academia de la Historia)로, "언제나 통일성과 다양성을 조화시킬 줄 알았던 살아있고 효율적이며 사회에 유용한 기관"으로 묘사했다. 스페인에서 역사 교육의 '비참한 상태'가 지속되지 않으려면 아카데미 회원들의 협력이 필요하다고 보았다. 마지막으로 교육 개혁에 반대했던 교사들을 치켜세웠는데, "이 방침은 역사 교사들의 등 뒤에서 실행에 옮겨진 것으로, 교사들은 오늘날 교사들 자신의 명철함과 올바른 판단력으로 공식 교육과정의 공백을 메워야 한다"고 했다.</p>
+    <p>장관이 담화에서 요구한 것은 1990년대 초의 교육 개혁을 통해 바꾸고자 했던 전통적 역사 교육 방식의 회복이라고 볼 수 있다. 왕실을 '스페인의 역사적 연속성'으로 추켜세운 것, '전통적인 위대한 역사적 인물들'에 대한 언급, '역사의 뼈대'로서의 연대기 강조, 개념적·구조적 역사보다 사실적 역사 중시, 현대사 경시, 역사에 대한 사회과학적 접근 비판 등이 그것을 반영한다.</p>
+    <p>역사 교육과정을 개편하려는 보수 장관의 계획은 1년 후 교육과정 최저기준안 제출로 구체화되었으나, 1997년 말 국회 승인을 얻는 데 실패했다.</p>
+    <p>이 실패한 안의 주된 특징은 '최저기준' 내용을 대폭 확대한 것으로, 실질적으로 전통 교과서에 반복적으로 등장하는 거의 모든 주제를 포괄했다. 여기에 이 장관안 전체의 가장 큰 모순이 있었다. 여러 교사와 교수법 연구자들은 그러한 교육과정이 기본적으로 주입식·피상적·암기 위주의 교육을 수반한다고 지적했다. 이 위원회 구성원들이 가르치는 것과 배우는 것을 구분하지 못한다는 비판³도 제기되었으며, 목표와 내용·평가 기준 사이에 현저한 모순이 있었다. 전자는 비교적 형성적·비판적 접근을 취했으나, 후자는 총망라적이고 세부적으로 기술되어 있어 암기·주입식 교수법으로만 다룰 수 있었고, 학생들의 실질적이고 능동적인 학습을 추구하는 다른 교수법적 접근과는 양립 불가능했다.</p>
+    <p>2000년 6월, 이전 논쟁의 파문이 가라앉았을 무렵 왕립역사아카데미가 『중등교육기관 역사 교과서 및 강좌에 관한 보고서』를 공표했다. 이 보고서는 당시 현행 역사 교육과정 개편에 관한 앞선 장관안을 거의 그대로 반복·지지하는 내용이었으며, 이로써 논쟁의 두 번째 국면이 시작되었다. 보고서는 아카데미의 관점에서 "가장 비판받아야 할 두 측면은 현대 이전 역사 학습에 주어지는 낮은 비중과, 학생들이 스페인 역사 과정에 대해 형성하는 편파적이고 모호한 시각"이라고 강조했다.</p>
+    <p>보고서 말미에서는 중등교육의 역사 교육에 대한 아카데미의 비판이 더욱 명시적으로 드러났다.</p>
+
+    <blockquote>
+      "따라서 우리는 오늘날 스페인 중등교육의 역사 교육이 안고 있는 문제가 세 가지 요소를 포함한다고 결론지을 수 있다. 이를 사회학주의, 교육학주의, 정치적 상황이라고 규정할 수 있다. 역사 교육은 제2차 세계대전 이후 사회학주의의 강한 영향으로 위기를 맞기 시작했는데, 여기서 사회학주의란 현재의 이론적 틀을 활용하는 분석과 연계된 방식으로 전통적인 연대기적 과정에서 벗어난 과거관을 제시하는 것을 의미한다. 마찬가지로 교육학적 집착은 교수법에 지나치게 강조점을 둠으로써 결국 무엇을 가르쳐야 하는지를 잊게 만드는 부정적 결과를 낳았다… 마지막으로 정치적 상황은 자치공동체들이 학문적 접근과 무관한 목적에 역사를 이용하려는 의도와 관련된다… 아카데미는 역사 교육이 해당 학문의 정체성이라 할 수 있는 것들을 배제할 수 없다고 본다. 기본 요소는 연대기와 사건이다… 따라서 전체 시민을 대상으로 하는 중등교육 단계의 역사 교육을 지켜내는 데 힘써야 한다. 스페인 국가주의와 주변부 민족주의 간의 가상의 대립이라는 악순환을 끊어낼 필요가 있다. 스페인의 역사는 부인할 수 없는 현실이며, 비록 지배적 형태는 아닐지라도 교육과정에 반드시 존재해야 한다. 분명 가장 합리적인 미래 방향은 스페인 역사를 유럽사 및 세계사 전체의 맥락 속에 위치시키는 것이다."⁴
+    </blockquote>
+
+    <p>이 긴 인용문은 보수 정부와 왕립역사아카데미가 공유하는 전통적 역사 교육관의 시각에서 1990년대 초부터 시행된 교육과정 방향과 일부 교사 집단이 발전시켜 온 교수법적 제안들에 어떤 비판이 가해졌는지를 잘 보여준다. 이 보고서에서 특히 주목할 세 가지 요소가 있는데, 이는 1996년 10월 아기레(Aguirre) 장관이 이미 제시한 가정들과 상당 부분 일치한다. 첫째, 역사 교육의 순전히 주입식 방식을 극복하고자 했던 교수법적 혁신—학생이 교수·학습 과정에 더 능동적으로 참여하는 새로운 방식, 그리고 현재와 연결된 역사적 과정 및 관련 문제에 대한 학교 학습—에 대한 거부감 내지 반감이다. 둘째, 지역사나 향토사가 역사 교육에서 과도한 비중을 차지하며 스페인 역사의 통일된 이해를 방해한다는 견해에 기반한 반감이다. 셋째, 특히 바칠레라토(Bachillerato)에서 현대사가 전체 교육과정에서 지나치게 큰 비중을 차지한다는 인식이다.</p>
+    <p>이 보고서는 수많은 비판과 반박을 받아 아카데미 스스로도 이 문서가 단순한 의견에 불과하며 오류나 부정확함이 있을 수 있다고 인정해야 했다. 가장 잘 뒷받침된 비판 중 하나는 교과서 내 지역사 비중과 관련된 것이었다. 보이유(Bofill) 재단이 추진한 보고서(Segura, 2001)의 주요 결론—스페인 각 자치공동체에서 가장 많이 사용되는 교과서를 분석한 것—은 왕립역사아카데미의 주장을 실증 자료로 반박하며 다음 세 가지로 요약된다.</p>
+
+    <div class="table-wrap">
+      <div class="caption">【보이유 재단 보고서(Segura, 2001) 주요 결론 요약】</div>
+      <table>
+        <thead>
+          <tr>
+            <th>비판 항목</th>
+            <th>실제 조사 결과</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>지역사 과잉 여부</td>
+            <td>법령이 허용하는 35~45%에 훨씬 못 미치며, 평균 10%에도 이르지 못함. '지역주의 과잉' 주장은 학문적으로 수용 불가. 실제 우선 준거는 스페인 국가 및 서유럽임.</td>
+          </tr>
+          <tr>
+            <td>'교육학주의' 과잉 여부</td>
+            <td>교과서는 교육학적 과잉과 거리가 멀며, 오히려 충분한 교수법적 갱신이 이루어지지 않은 채 전통적 주제 내용이 계속 우세함. 능동적 학습보다 내용 전달·암기가 여전히 지배적임.</td>
+          </tr>
+          <tr>
+            <td>주요 문제</td>
+            <td>주제 내용의 부족이 아니라 오히려 과잉임. 방대한 분량이 심층 학습과 비판적 사고를 방해함. 현행 법령(교육과정 일반 목표: 비판적·합리적 판단 형성)을 충족하려면 방법론적·태도적 내용을 확대해야 함.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>역사 교육과정 개편 과정의 첫 번째 귀결점은 2001년 1월에 찾아왔다. ESO(의무중등교육) 및 바칠레라토에 대한 새로운 교육과정(최저기준)이 공식 발표된 것이다. 교육과정의 개방적·유연한 성격은 제거되었으며, ESO는 학년별 폐쇄적 교육과정으로 회귀했다. 바칠레라토 스페인사 교육과정은 기존의 현대사 중심에서 역사 전반(기원부터 현재까지)으로 확대되었다. 이러한 변화는 2001년부터 2004년 3월까지 진행되다가 정권 교체로 이후 2년간 중단되었으며, 새로운 교육과정 제안을 기다리게 되었다. 사회당 정부가 추진한 이후의 2007년 교육과정(당시 현행)은 2001년 기조에서 거의 변화를 주지 않았고, 이는 국제 역사 교수법 연구가 말하고 확인해 온 방향으로 상황을 개선하거나 적어도 더 나빠지지 않을 수 있다고 믿었던 많은 이들에게 실망을 안겨주었다.</p>
+  </section>
+
+  <!-- 2절 -->
+  <section id="aprendizajes">
+    <h2>2. 학생 학습 결과: 실증 연구 결과</h2>
+    <p>교육부 장관과 왕립역사아카데미가 묘사한 상황은 과연 얼마나 실제를 반영하는가? 이 물음에 답하기 위해, 학생 학습 지식과 교과서 분석에 관한 실증 연구 데이터를 잠깐이라도 살펴볼 필요가 있다.</p>
+    <p>초등학교 졸업생과 중학교 4학년(ESO 4학년) 학생의 학습 성취에 관한 데이터는 국민당(PP) 일부 정치 지도자들이 드러낸 편견을 반박한다. 교육부 산하 기관인 국립교육질평가원(INCE)이 최근 수년간 실시한 설문 조사에 따르면 초등학생들의 성취도는 이전 기본교육(EGB) 세대보다 향상되었으며, ESO 학생들도 마찬가지였다. 역사가 성취도가 가장 낮은 과목도 아니었다. INCE가 1998년 3월 발표한 14세·16세 학생 대상 보고서에서도 역사·지리의 성취 결과는 다른 과목들에 비해 오히려 좋은 편이었으며, ESO 학생들의 평균(500점 만점에 271점)은 LOGSE 이전 BUP-FP 학생들의 평균(260점)보다 높았다.⁵</p>
+    <p>같은 기관이 2000년에 실시하여 2001년 말에 공표한 평가에서도 마찬가지였다.⁶ INCE의 다른 보고서들도 11세 학생들이 1995년과 1999년 비교에서 성취를 높였음을 확인했다(각각 평균 219점, 250점; 500점 만점, '환경 이해' 과목 기준).⁷ 이후 2009년까지의 분석도 매우 유사한 결과를 보였고⁸, 다른 연구자들의 유사한 연구들도 같은 결과를 보고했다.⁹</p>
+    <p>이들 실증 연구의 주요 결론은 다음과 같이 명확하다. 첫째, 의무 교육(6~16세) 학생들의 역사 학습 성취는 지난 십 년 동안 전반적으로 악화된 것이 아니라, 목표치에는 훨씬 못 미치더라도 향상되었다. 둘째, 국민당 지도자들이 말한 역사 교육의 '비참한 상태'라는 주장은 근거가 없으며, 따라서 그 이면에는 쉽게 고백할 수 없는 다른 이해관계가 자리하고 있음을 시사한다. 물론 이것이 더 나은 학습 성취를 위한 역사 교육의 지속적인 개선 노력을 가로막는 이유가 될 수는 없다.</p>
+  </section>
+
+  <!-- 3절 -->
+  <section id="manuales">
+    <h2>3. 역사 교과서와 교사: 변화와 연속성</h2>
+    <p>역사 교육에서 여전히 가장 많이 활용되는 자원인 역사 교과서는 1990년대의 교육과정 변화에 어떻게 영향을 받았을까? 현재의 역사 교과서들은 1970년대 말, 심지어 1980년대의 교과서들과 비교하면 상당히 변화했음이 쉽게 확인된다. 가장 크게 달라진 측면으로는 다루어지는 각 시대의 동시대 역사 사료와 문서의 활용이 늘어난 점을 들 수 있다. 또한 학생들에게 질문·과제·활동·탐구 문제를 제시하는 지면이 늘었으며, 사료의 적절한 활용, 처리, 정리, 도표화, 전달과 관련된 다양한 사학방법론적 기법을 학생들이 익히도록 하는 크고 작은 탐구 활동들도 마련되었다.</p>
+    <p>따라서 첫 번째 확인은 현재의 교과서들이 적어도 형식적 특성 측면에서는 긍정적으로 변화했다는 것인데, 언급된 요소들이 이전 교과서에는 존재하지 않았거나 훨씬 미미한 수준이었기 때문이다.¹⁰ 이러한 혁신들은 1990년대 초의 교육 개혁이 추진한 입법적 변화에 의해 가능해졌고 심지어 촉진되었다. 당시 개방적이고 유연한 교육과정이 확립되어 출판사와 교과서 저자들, 그리고 교사 집단 모두에게 최종 결정에 있어 넓은 자율의 폭을 허용했기 때문이다. 이러한 유연성과 최저 내용 기준의 느슨한 정의는 내용의 선택과 배열이 매우 다양한 형태를 취할 수 있게 해주었다. 그런데 실제로 그러했을까?</p>
+    <p>교과서, 특히 주요 출판사의 교과서는 극도로 복잡한 산물이다.¹¹ 이를 검토하고 주요 특성에 대해 논할 때 간과해서는 안 될 광범위한 요소들이 그 제작에 관여한다.</p>
+    <p>스페인을 비롯한 많은 나라에서처럼 자유 시장 조건이 형성되는 한, 교과서는 상업적 제품이어야 하며 따라서 채택 결정권을 가진 이들에게 매력적이어야 한다. 교과서는 각 학교의 학교위원회가 선정하지만 실제 선택은 교사들이 하며, 대형 출판사들은 시장 조사를 통해 교사의 구체적인 특성을 출판 방향 설정에 반영한다. 스페인의 경우, 중등 교사들은 교수법적 준비보다 사학적 지식이 뛰어난 편인데, 이는 두 분야 모두에서 교수법 차원이 크게 불리한 방향으로 불균형하게 이루어진 초기 및 계속 연수 때문이다.</p>
+    <p>중등 교과서들은 상당 부분 이러한 중등 교사들의 불균형한 준비 상태의 산물이며, 교수법적 처리보다 학문적 내용을 우선시했다.</p>
+    <p>1990년대 초부터 시행된 교육과정 변화는 이 상황을 바꿀 수 있었다. 당시 교육과정에서는 방법론적 절차—즉, 이미 완성된 지식을 암기하는 것이 아니라 각 학문 고유의 절차와 기법을 습득하여 점진적으로 자율적인 학습을 이루어 나가는 것—도 핵심 내용으로 설정되었기 때문이다.</p>
+    <p>역사 교육에 대한 이러한 새로운 입법적 접근은 새 교과서에 상당히 부분적으로만 반영되었다. 각 단원의 여러 부분에 수반되는 질문·문제·소규모 탐구·작업 기법 소개가 대체로 지나치게 단순하게 설정되어 있기 때문인데, 교과서 본문의 일부를 골라내는 방식으로 해결이 가능하여 학생들의 창의적인 작업이나 실질적인 추론·성찰을 가능하게 하지 못한다. 물론 일부 교과서에서 간혹 제시되는 더 복잡하고 창의적인 활동들이 최근 연구(Martínez Valcárcel 외, 2009; Merchán, 2005)에서 확인되었듯이 다양한 이유로 일부 교사들에 의해 활용되지 않을 때 이 문제는 더욱 심각해진다.</p>
+    <p>교과서들은 대체로 과학(이 경우 사학)에 대해 지나치게 객관주의적·결정론적인 관점에서 출발하며, 사용된 사료나 교과서 저자가 작성한 본문 어느 쪽에서도 서로 다르거나 대립하는 관점에 거의 자리를 내어주지 않는다. 그런 상황에서는 학생들의 생각, 표상, 고정관념, 경험, 감정이 교실로 들어오기 매우 어렵고, 이는 역사 지식이 문제의식 없이 이미 결정된 것으로, 그리고 자신들의 관심사나 문제와는 거리가 먼 것으로 느껴지는 탓에 학생들의 흥미와 동기를 저하시키게 될 것이다.</p>
+    <p>대형 출판사들은 역사 교과서를 설계할 때 매우 해결하기 어려운 상황에 직면한다. 이는 1990년대처럼 공식 교육과정이 개방적이고 유연할 때 더욱 복잡해진다. 한편으로, 학생들이 더 심층적인 학습을 할 수 있도록 주제를 제한적으로 선정하면, 해당 출판사의 교과서에서 익숙한 내용이나 자신이 선호하는 내용을 찾지 못하는 교사들과 갈등을 빚을 수 있다. 교사들이 교과서 채택을 결정하는 만큼 이 선택은 출판사의 상업적 이익에 불리하게 작용할 수 있다. 그렇다고 출판사들이 기존의 전통적 교과서를 그대로 재현할 수도 없다. 가장 두드러진 교육학적·사학적 혁신과 최신 교수법 처리가 담긴 교과서를 원하는 교사 집단도 있기 때문이다. 그래서 대형 출판사들의 지배적인 경향은 최대한 많은 주제를 포함하는 것이지만, 이는 피상적이고 표면적인 처리를 대가로 하며, 학생들이 그 주제들에 대해 최소한의 견고한 이해에 도달하기가 어렵게 된다.</p>
+    <p>이 상업적·교육적·간접적으로 직업적인 고려는 교과서에서 지역별 특성이 적게 반영되는 것에도 영향을 미친다. 어떤 대형 출판사도 자신의 전국적 시장 점유율을 잃거나 축소하고 싶지 않다. 교과서 제작에는 시간과 투자가 많이 들며, 각 교과서의 여러 이형 교재를 준비하는 것(현재 스페인의 모든 자치공동체가 완전한 교육 권한을 가지고 있다)은 이 과정을 엄청나게 복잡하게 만들 것이다. 그래서 대형 출판사들이 채택하는 방식은 매우 유사하며, 거의 모든 이형 교재에서 스페인 전체를 위한 기본적으로 균질한 교과서를 만들고, 여기에 특정 단원 형태나 각 주제 내에 2~4페이지 분량의 지역별 특성을 추가하는 방식을 택하고 있다.</p>
+    <p>최근 교육 연구에서는 교사들의 이른바 '학과 규범(código disciplinar)'이 매우 강력함을 알 수 있다. 학과 규범이란 명시적이든 묵시적이든 교사들의 직업적 실천을 안내하는 아이디어·가치·가정·규정·일상적 관행의 총체로서, 일관된 교수법적 성찰을 통해 충분히 비판적으로 검토되지 않을 경우 기본적으로 확립된 전통에서 영감을 받는다(Cuesta, 1997). 이 학교 전통의 존재가 교과서의 상당히 전통적인 성격(외형적 변화—삽화, 질문, 요약, 어휘 등—에도 불구하고 내용이 방법론적으로 더 선택적이고 비판적·합리적으로 처리되기보다 과도하게 문화주의적이고 망라적인 내용을 유지하는 것)을 설명하는 이유 중 하나이다. 전통적 역사 교육은 정당성을 잃었지만 유효성은 잃지 않았다.</p>
+    <p>'최저 교육과정 기준'의 일반적이고 세밀하지 않은 성격 덕분에 그 최종 구체화의 다른 형태들도 등장할 수 있었다. 1990년대 후반에는 현장 교사들과 직접 연계된 일부 교수법 집단들이 1991년 교육과정안의 가장 혁신적인 성과라 할 수 있는 새로운 학습 자료들을 만들어냈다. 이러한 교수법 집단들이 만든 교육과정 자료들—상업 출판사의 제약이 상대적으로 적다고 볼 수 있는—은 스페인 교육 지형에서 매우 흥미로운 현상이다. 이 자료들은 개방적이고 유연한 교육과정이 제공하는 가능성을 적절히 활용하여, 역사 교육에서 특정 정보 전달적·일방적·주입식 접근을 넘어서는 더 성찰적이고 비판적인 교육을 지향한다. 그 접근은 오래된 역사 서술—역사적·연대기적 연속성을 과대평가하고 역사의 흐름을 자연스럽고 반박 불가하며 공백 없는 것으로 제시하여 현존하는 것, 최종적으로 승리한 것을 정당화하는 인식—의 틀에 아직도 크게 얽매여 있다.</p>
+    <p>그렇다면 이들 '대안적' 교과서들은 더 성찰적이고 비판적인 교육이라는 선택을 어떻게 구현하고자 하는가? 이들 자료는 다양하지만, 모두가 공유하는 몇 가지 전제를 갖고 있다. 주요한 두 가지만 강조하고자 한다.</p>
+    <p>첫 번째는 특정 시간적 순서의 확립이다. 현재(학생들이 이미 어떤 경험을 가지고 있을 관련 문제를 제기)에서 출발하여 더 또는 덜 먼 과거를 다루고(새로운 유의미한 정보를 획득하고, 역사적 경험을 확장하며, 적절한 방법론적 접근을 통해 연구된 문제에 대해 더 복합적인 지식을 형성하기 위해), 각 단원의 마지막 부분에서는 가까운 미래의 가능한 전망들에도 열린 최종 정리를 통해 현재로 돌아오는 방식이다. 이러한 시간적 순서의 제안은 사소한 것이 아니라 그 반대로, 현재의 문제들에 대한 헌신적인 정의에서 출발하여 내용을 선택·재고·재구성할 필요성을 내포하며, 학식적이거나 현저히 문화주의적인 활용 방식을 가능한 한 극복하게 해준다.</p>
+    <p>두 번째는 학생들로 하여금 제안된 주제·문제의 다양한 측면에 대해 자신의 생각이나 관점을 인식하도록 계속 촉구하는 것이다. 이러한 유형의 활동은 각 단원의 모든 부분에 걸쳐 이루어지며, 학생들이 수행한 방법론적 활동을 통해 습득한 내용과 초기 생각을 대조하는 최종 정리로 마무리된다.</p>
+    <p>이상의 분석에서 가장 명백한 결론은 변화와 연속성의 공존, 즉 소수의 혁신적 실천(혁신적인 교수법 집단들이 만든 교육과정 자료들의 제안은 중등교육기관에서 거의 호응을 얻지 못했다)과 공존하면서 전통적인 교육 방식과 관행이 지속된다는 것이다. 이는 이미 언급했듯이 비교적 정확한 데이터를 갖고 있는 우리 주변의 대부분 나라에서도 마찬가지 현상이다(Angvik & Von Borries, 1997). 역사 교육의 실제에서 변화와 지속 또는 관행 모두를 설명하려 할 때, 이 지속성들이 생존과 낡은 관행으로서의 측면이 있음에도 그 자체로 제도적 합리성이나 논리를 지니며 역사 교사들의 교수 행위를 틀 지우는 장기적 구조의 형태를 취한다는 점을 고려해야 한다. 전통적 역사 교육은 정당성을 잃었지만 유효성은 잃지 않았다.</p>
+    <p>보완적 시각인 학생의 관점에서도 역사 교육에 도입된 변화가 미미함이 확인된다. 중등학생들에 따르면, 역사 수업은 현재도 교사가 완성된 지식을 일방적으로 전달하는 방식을 특징으로 한다. 강의식 수업과 교과서 읽기·공부가 교실 안에서의 거의 유일한 활동으로 지속되고 있다. 이러한 인식은 스페인 학생들과 상당수 유럽 국가들, 그리고 우리가 아는 한 여러 라틴아메리카 국가 학생들도 공유한다. 학생들의 응답은 역사 교육에서 전통적 접근의 우세를 확인해준다. 학생들에게 역사는 한정된 수의 역사적 사실들을 반복적으로 다루고 그에 관한 정보들을 암기하는 과목이다. 학생들에게 역사는 실용성이 없지만, 사회적 구별의 표지로서 가치를 지닐 수 있다.</p>
+  </section>
+
+  <!-- 4절 -->
+  <section id="dificultades">
+    <h2>4. 현재의 난점과 모순</h2>
+    <p>역사 교육의 내용과 교수 실천 모두에서 변화보다 연속성이 우세한 현상을 설명하는 데 고려해야 할 요소는 많다.</p>
+    <p>한편으로는, 교사의 사학적 양성과 교수법적 준비 사이의 현저한 불균형이 전자에 유리하게 작용한다. 교사들은 '역사가'로서보다 역사 교사로서 훨씬 더 불안함을 느끼며, 교수법적 혁신보다 새로운 사학적 접근을 받아들이는 경향이 훨씬 강하다. 다른 한편, 모순처럼 보일 수 있지만, 대다수 교사들은 적어도 이론적으로는, 전통적 역사 교육에 대한 주된 비판—특히 암기 의존 및 불가능한 백과사전식 접근—에 응답하고자 했던 역사 교육의 새로운 정당화 담론을 자신의 것으로 받아들였다.¹¹ 상당수 교사들은 역사 교육의 주요 목표로 이 학문이 현재를 이해하는 능력, 학생들의 논리적 사고 발달을 촉진하는 능력, 그리고 관용과 비판적 능력 등 가치 교육에 유효한 인문학적 지식을 제공하는 능력을 꼽는다. 그럼에도 교사들은 이러한 능력들이 역사 교육의 기본 목표라 여겨지는 것, 즉 역사적 사실과 위대한 시대에 대한 지식으로부터 직접 도출될 수 있다고 보는 경향이 있다(Merchán, 2002).</p>
+    <p>역사 교육에서 새로 표방된 목표들과 전통적인 교과 구성—역사 일반서의 유형으로 설정된 것¹³—을 일관되게 조화시키려는 시도에서 가장 큰 모순이 나타나는데, 학생들이 현재를 이해하는 것을 돕는 일이 매우 어렵기 때문이다. 지배적인 역사 모델이 '전체' 역사를 보는 역사 일반서 모델인 한, 광의의 현재 문제들은 수업에서 거의 다루어지지 않는다. 이 딜레마 앞에서 대부분의 교사들은 자신이 더 안정감을 느끼고, 자신의 평가로도 더 권위 있는 것, 즉 더 전통적이고 학문적인 역사 접근법을 선택했다. 이는 동시에 교실 안에서 교사에게 더 많은 권력을 주고 통제를 더 쉽게 확보할 수 있는 접근법이기도 한데, 학생들의 역량이 가장 낮은 분야이기 때문이다. 여기에 수업 관리, 즉 교실 내 질서 유지도 관련된다. 이는 가르치고 배우는 것과 같은 핵심 기능 외에도 최근 전통적 교육과 그 학교 관행을 일반적으로 유지시키는 설명 요인의 하나로 주목받는다. 본질적으로 지식 전달로서 파악되는 강의식 수업은 학생들이 수동적으로 필기에 집중하게 만드는 역할도 한다.</p>
+    <p>어떻게 하면 학생들이 역사, 역사적 지식에 더 관심을 갖게 할 수 있을까? 어떻게 역사 교육을 학생들에게 더 매력적이고 동기를 부여하는 것으로 만들 수 있을까? 이 질문들에 답하기가 쉽지 않은 것은, 보아왔듯이 많은 요소들이 이 문제에 영향을 미치기 때문이다. 역사 교육과 직접 관련된 측면들 외에도, 이 특수한 문제를 훨씬 넘어서며 교사들에게도, 심지어 우선적으로 영향을 미치는 더 일반적인 성격의 다른 요인들—교육 정책, 교사 사기 저하, 학생 다양성 등—이 있다(Prats, 2002). 어쨌든 우리는 현재 상황을 개선하기 위해 필요하다고 여겨지지만 충분하지는 않을 몇 가지 가능한 방안을 개략적으로 제시하고자 한다.</p>
+    <p>이미 간략히 다룬 두 측면은 이제 언급만 하겠다. 하나는 교사의 교수법적 양성으로, 역사 교육의 가능한 개선에 있어 핵심이다. 다른 하나는 반성적이고 합리적인 역사 접근을 가로막는, 우리 견해로는 현재 거의 극복 불가능한 역사 일반서 모델의 극복이다. 이런 의미에서 개방적이고 유연한 내용에 기반한 교육과정 제안이 훨씬 더 적합해 보이는데, 교사를 구속하거나 교수법적 가능성을 제한하지 않으면서 더 다양한 처리를 허용하기 때문이다(López Facal, 2004).</p>
+    <p>세 번째 측면은 동기 부여, 즉 학생들이 역사적 지식에 관심을 갖게 하는 것이다. 학생들의 가장 자주 반복되는 비판은, 한편으로 제공되는 역사가 자신들이 살고 있는 사회의 문제와 관심사와 거의 연결되지 않는다는 것이고, 다른 한편으로는 매 학년 반복되면서 금방 잊혀지는 특정한, 어느 정도 일화적인 역사적 사실들의 암기에 크게 의존한다는 것이다.</p>
+    <p>국제 교수법 연구는 역사 교육에서 다루어지는 주제들의 문제화가 필수적이라는 데 상당 부분 일치한다. 역사 수업에서 분석되는 역사적 문제들에 대한 이러한 탐구적 접근이 학생들의 관심을 가장 직접적으로 불러일으킬 수 있는데, 이를 위해서는 학생들이 다루어지는 문제들과 사료의 적절한 활용, 대조·비교, 관련 분석·비판을 통해 제기된 질문에 대한 답을 찾는 데 필요한 방법들을 의식하게 해야 한다. 역사 교육이 단순히 완성된 결과물의 전달로만 구성되어—그 결과를 얻는 방법이나 그 타당성의 정도를 고려하지 않고—있다고 보는 시각, 즉 역사적 지식을 정밀하고 엄격한 방법론을 요구하는 지식의 형태나 유형으로 제시하지 않는 것이 학생들에게 더 매력적이고 유용할 수 있는 역사 교수·학습의 실현을 위한 주요 장애물 중 하나이다.</p>
+    <p>이 국제적 교수법의 일치는 또한 학생들이 갖는 생각들—역사란 무엇인가와 그것이 어떻게 구성되는가에 대해서든, 역사적 지식이 다루는 다양한 주제들에 대해서든—을 고려할 필요성에 관해서도 나타난다. 이런 의미에서 다루어지는 주제들과 학생들이 그 주제들에 대해 가질 수 있는 관점 및 표상 사이의 최대한 많은 연결 고리를 만드는 것이 중요하다고 본다(역사적 정보는 오늘날 우리 학생들에게 다양한 경로, 특히 텔레비전과 영화와 관련된 경로를 통해 도달한다).</p>
+    <p>교사가 이끄는 이러한 작은 학교 탐구를 포함하는 역사 교육의 접근은, 따라야 할 교육과정이 여전히 전통적인 역사 일반서의 것—이미 그 접근이 가능한 역사의 유형과 그 교육과정을 완수하는 것의 불가능성을 보여준 것이며, '요약의 요약'이라는 수단을 주된 자원으로 사용하더라도 불가능하고, 학생들에게는 최종적으로 이해 없이 암기할 수밖에 없는 이해 불가능한 것이 되어버린다—인 한 실현될 수 없다.</p>
+    <p>두 대안 사이에는 교사들의 다양한 실천이 교실 안에서 수행하는 다양한 가능성이 존재하지만, 더 적절한 교육과 역사의 더 나은 학습을 어떻게 달성할 것인가의 문제는 전통적 교육의 반복적으로 확인된 결함들을 극복하는 것을 반드시 통해야 한다. 이 새로운 역사 교육은 물론 전통적인 역사 교육과는 거의 공통점이 없을 것이다. 전통 역사 교육은 현재 각 국가가 점유하는 영토의 민족주의적·회고적 서사나 가상의 보편사의 시대 연속에 기반한 서사주의에 의존하는 것이었다. 이 전통적 접근을 극복할 수 있다면, 역사 교육은 현재의 가치와 사회 제도를 상대화하고 그것이 시간의 흐름 속에서 인간적 구성물임을 보여줌으로써—즉, 사회적인 것의 역사성과 다원성을 역사 학교 학습의 중심 장소로 주장함으로써—모든 의미를 획득할 수 있다. 따라서 교육적 실천에서 관찰된 한계와 결함에 대한 더 깊고 합리적인 설명을 지속적으로 모색하고, 자발주의나 즉흥주의에 의존하지 않는 역사 교육 개선의 가능한 방향들을 식별할 필요성이 있다.</p>
+  </section>
+
+  <!-- 각주 -->
+  <section id="notas">
+    <div class="footnotes">
+      <h4>각주 (Notas)</h4>
+      <p>¹ 유럽 국가들의 경우 Alessandro Cavalli(2005) 편저 참조; 라틴아메리카 국가들의 경우 Rafael Valls(2005–2008) 편저; 영국 사례의 경우 R. Andrews, C. McGlynn, A. Mycock(2010)의 분석 참조.</p>
+      <p>² <em>Comunidad Escolar</em>, 1996년 10월 23일: "왕립역사아카데미에서의 E. 아기레 담화".</p>
+      <p>³ 카탈루냐 교육부의 인문학 개혁에 관한 보고서 (<em>Escuela Española</em>, 1997년 11월 13일).</p>
+      <p>⁴ 왕립역사아카데미 (2000). 『중등교육기관 역사 교과서 및 강좌에 관한 보고서』, 제8항.</p>
+      <p>⁵ <em>El País</em>, 1998년 3월 3일.</p>
+      <p>⁶ INCE 정보 요약: 제1호(2001년 1월), 제27호(2001년 12월), 제3호(2002년 2월): ESO 4학년 사회과학·지리·역사 평가.</p>
+      <p>⁷ <em>El País</em>, 2002년 3월 26일.</p>
+      <p>⁸ 분석은 http://www.educacion.gob.es/ievaluacion.html [접속: 2010년 9월 15일]을 통해 이루어졌다. 결과는 스페인 전체 및 각 자치공동체별로 제공된다.</p>
+      <p>⁹ 예를 들어, Álvaro Marchesi가 조정하고 산타 마리아 재단이 발행한 연구(<em>El País</em>, 2002년 4월 17일)나 Joaquim Prats가 이끈 연구(2001) 참조.</p>
+      <p>¹⁰ 이와 매우 유사한 변화들이 많은 라틴아메리카 국가들의 교과서에서도 나타나며, 이미 인용한 R. Valls(2005–2008) 편저 참조.</p>
+      <p>¹¹ 이들 다섯 출판사(Santillana, Anaya, S.M., Vicens Vives, Ecir)는 스페인 의무중등교육 및 바칠레라토에서 사용되는 역사 교과서의 약 80%를 차지한다.</p>
+      <p>¹² 프랑스적 관점에서도 교사들의 매우 표현적인 말 "on n'a jamais le temps(우리에게는 시간이 없다)"으로 같은 확인이 이루어진다. Nicole Lautier(1997) 참조.</p>
+      <p>¹³ 고전 사학과 역사 교육 모두에서 지배적인 이 접근법은 Pilar Maestro(2003)에 의해 깊이 분석되었다.</p>
+    </div>
+  </section>
+
+  <!-- 참고문헌 -->
+  <section id="referencias">
+    <h2>참고문헌</h2>
+
+    <div class="ref-item">
+      Andrews, R.; McGlynn, C. y Mycock, A. (2010). «National pride and students' attitudes towards history: an exploration Studies». <em>Educational Studies</em>, 36(3), pp. 299–309.
+      <div class="ref-ko">「국가적 자긍심과 역사에 대한 학생 태도: 탐색적 연구」, 『교육 연구』</div>
+    </div>
+
+    <div class="ref-item">
+      Angvik, M. y Von Borries, B. (1997). <em>Youth and history. A Comparative European Survey on Historical Consciousness and Political Attitudes among Adolescents</em>. Hamburgo: Koerber Stiftung, 2 vols.
+      <div class="ref-ko">『청소년과 역사: 유럽 청소년의 역사의식과 정치적 태도에 관한 비교 연구』 (함부르크: 쾨르버 재단, 2권)</div>
+    </div>
+
+    <div class="ref-item">
+      Cavalli, A. (2005). <em>Insegnare la storia contemporanea in Europa</em>. Bologna: Il Mulino.
+      <div class="ref-ko">『유럽에서 현대사 가르치기』 (볼로냐: 일 물리노)</div>
+    </div>
+
+    <div class="ref-item">
+      Cuesta, R. (1997). <em>Sociogénesis de una disciplina escolar: la historia</em>. Barcelona: Pomares-Corredor.
+      <div class="ref-ko">『학교 교과목의 사회발생론: 역사』 (바르셀로나: 포마레스-코레도르)</div>
+    </div>
+
+    <div class="ref-item">
+      Lautier, N. (1997). <em>À la rencontre de l'histoire</em>. Lille: Presses universitaires du Septentrion.
+      <div class="ref-ko">『역사와의 만남』 (릴: 세텐트리옹 대학출판부)</div>
+    </div>
+
+    <div class="ref-item">
+      López Facal, R. (2004). «Enseñar la historia de la gente». En: VV. AA. <em>Josep Fontana. Historia y proyecto social</em>. Barcelona: Crítica-Universitat Pompeu Fabra.
+      <div class="ref-ko">「사람들의 역사 가르치기」, 『호셉 폰타나: 역사와 사회 기획』 수록 (바르셀로나: 크리티카-폼페우 파브라 대학)</div>
+    </div>
+
+    <div class="ref-item">
+      Maestro, P. (2003). «El modelo de las historias generales y la enseñanza de la historia: límites y alternativas». En: Carreras, J. J. y Forcadell, C. (eds.): <em>Usos públicos de la historia</em>. Madrid: M. Pons y Prensas Universitarias de Zaragoza, pp. 173–221.
+      <div class="ref-ko">「역사 일반서 모델과 역사 교육: 한계와 대안」, 『역사의 공적 활용』 수록 (마드리드: M. 폰스 & 사라고사 대학출판부)</div>
+    </div>
+
+    <div class="ref-item">
+      Martínez Valcárcel, N. <em>et al</em>. (2009). «El uso del libro de texto de Historia de España en Bachillerato: diez años de estudio, 1993–2003, y dos reformas (LGE-LOGSE)». <em>Didáctica de las Ciencias Experimentales y Sociales</em>, 23, pp. 3–35.
+      <div class="ref-ko">「바칠레라토 스페인사 교과서 활용: 10년간의 연구(1993–2003)와 두 차례 개혁(LGE-LOGSE)」, 『실험·사회과학 교수법』</div>
+    </div>
+
+    <div class="ref-item">
+      Merchán Iglesias, F. J. (2002). «El estudio de la clase de historia como campo de producción del currículo». <em>Enseñanza de las Ciencias Sociales</em>, 1, pp. 41–54.
+      <div class="ref-ko">「교육과정 생산의 장으로서 역사 수업 연구」, 『사회과학 교육』</div>
+    </div>
+
+    <div class="ref-item">
+      Merchán Iglesias, F. J. (2005). <em>Enseñanza, examen y control: profesores y alumnos en la clase de historia</em>. Barcelona: Octaedro-EUB.
+      <div class="ref-ko">『교수, 시험, 통제: 역사 수업에서의 교사와 학생』 (바르셀로나: 옥타에드로-EUB)</div>
+    </div>
+
+    <div class="ref-item">
+      Prats, J. (dir.) (2001). <em>Los jóvenes ante el reto europeo. Conocimientos y expectativas del alumnado de educación secundaria</em>. Barcelona: Fundació La Caixa, Colección Estudios Sociales, 7.
+      <div class="ref-ko">『유럽의 도전 앞의 청소년: 중등교육 학생들의 지식과 기대』 (바르셀로나: 라 카이샤 재단, 사회 연구 총서 7)</div>
+    </div>
+
+    <div class="ref-item">
+      Prats, J. (ed.) (2002). <em>La secundària a examen</em>. Barcelona: Proa.
+      <div class="ref-ko">『중등교육을 점검하다』 (바르셀로나: 프로아)</div>
+    </div>
+
+    <div class="ref-item">
+      Segura, A. (coord.) (2001). <em>Els llibres d'història, l'ensenyament de la història i altres històries</em>. Barcelona: Fundació Bofill.
+      <div class="ref-ko">『역사 교과서, 역사 교육 및 다른 역사들』 (바르셀로나: 보이유 재단)</div>
+    </div>
+
+    <div class="ref-item">
+      Valls, R. (2005–2008). <em>Los procesos independentistas iberoamericanos en los manuales de historia</em>. Madrid: OEI-Fundación Mapfre-Tavera, 4 vols.
+      <div class="ref-ko">『역사 교과서에 나타난 라틴아메리카 독립 과정』 (마드리드: OEI-마프레-타베라 재단, 4권)</div>
+    </div>
+
+    <a href="#header" class="back-to-top">▲ 맨 위로</a>
+  </section>
+
+</main>
+
+<script>
+  // 스크롤 추적: 현재 섹션 강조
+  window.addEventListener('scroll', () => {
+    let current = '';
+    document.querySelectorAll('section[id]').forEach(s => {
+      if (s.getBoundingClientRect().top <= 80) current = s.id;
+    });
+    document.querySelectorAll('#sidebar nav a').forEach(a => {
+      a.classList.toggle('active',
+        a.getAttribute('href') === '#' + current);
+    });
+  });
+
+  // 클릭 시 부드러운 스크롤
+  document.querySelectorAll('#sidebar nav a').forEach(a => {
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) target.scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+</script>
+
+</body>
+</html>

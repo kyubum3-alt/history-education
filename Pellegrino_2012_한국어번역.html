@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>수업 시뮬레이션을 통한 역사적 사고 (Pellegrino et al., 2012)</title>
+<style>
+  :root {
+    --sidebar-width: 270px;
+    --accent: #2c5f8a;
+    --accent-light: #e8f1f8;
+    --text: #1a1a1a;
+    --muted: #555;
+    --border: #d0d7de;
+    --bg: #fafafa;
+    --white: #ffffff;
+    --table-head: #f0f4f8;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Noto Serif KR', 'Nanum Myeongjo', Georgia, serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.85;
+    font-size: 15.5px;
+  }
+
+  /* ── 사이드바 ── */
+  #sidebar {
+    position: fixed;
+    top: 0; left: 0;
+    width: var(--sidebar-width);
+    height: 100vh;
+    background: var(--white);
+    border-right: 1px solid var(--border);
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    z-index: 100;
+  }
+
+  #sidebar .sidebar-header {
+    background: var(--accent);
+    color: #fff;
+    padding: 18px 16px 14px;
+    font-size: 13px;
+    font-family: 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    line-height: 1.5;
+  }
+
+  #sidebar .sidebar-header .journal-name {
+    font-size: 10.5px;
+    font-weight: 400;
+    opacity: 0.85;
+    margin-top: 4px;
+  }
+
+  #sidebar nav {
+    padding: 14px 0 30px;
+    flex: 1;
+  }
+
+  #sidebar nav a {
+    display: block;
+    padding: 5px 18px;
+    text-decoration: none;
+    color: var(--muted);
+    font-size: 12.5px;
+    font-family: 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+    border-left: 3px solid transparent;
+    transition: all 0.15s;
+    line-height: 1.5;
+  }
+
+  #sidebar nav a:hover {
+    color: var(--accent);
+    background: var(--accent-light);
+  }
+
+  #sidebar nav a.active {
+    color: var(--accent);
+    border-left-color: var(--accent);
+    background: var(--accent-light);
+    font-weight: 700;
+  }
+
+  #sidebar nav a.sub {
+    padding-left: 30px;
+    font-size: 11.5px;
+  }
+
+  #sidebar nav .nav-section-title {
+    font-size: 10px;
+    font-weight: 700;
+    color: #999;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 12px 18px 4px;
+    font-family: 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+  }
+
+  /* ── 메인 콘텐츠 ── */
+  #main {
+    margin-left: var(--sidebar-width);
+    padding: 48px 56px 80px;
+    max-width: 860px;
+  }
+
+  /* ── 논문 헤더 ── */
+  .paper-header {
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 24px;
+    margin-bottom: 32px;
+  }
+
+  .paper-header .journal-label {
+    font-size: 11px;
+    font-family: 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+    color: var(--accent);
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+
+  .paper-header h1 {
+    font-size: 26px;
+    line-height: 1.4;
+    color: var(--text);
+    margin-bottom: 6px;
+  }
+
+  .paper-header .original-title {
+    font-size: 14px;
+    color: var(--muted);
+    margin-bottom: 16px;
+    font-style: italic;
+  }
+
+  .paper-header .authors {
+    font-size: 14px;
+    color: var(--text);
+    font-family: 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+    margin-bottom: 8px;
+  }
+
+  .paper-header .meta {
+    font-size: 12px;
+    color: var(--muted);
+    font-family: 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+    line-height: 1.7;
+  }
+
+  /* ── 초록 ── */
+  .abstract-box {
+    background: var(--accent-light);
+    border-left: 4px solid var(--accent);
+    border-radius: 0 8px 8px 0;
+    padding: 22px 24px;
+    margin-bottom: 36px;
+  }
+
+  .abstract-box h2 {
+    font-size: 13px;
+    font-family: 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+    font-weight: 700;
+    color: var(--accent);
+    letter-spacing: 0.05em;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+  }
+
+  .abstract-box p {
+    font-size: 14.5px;
+    line-height: 1.8;
+    margin-bottom: 10px;
+  }
+
+  .abstract-box .keywords {
+    font-size: 13px;
+    color: var(--muted);
+    margin-top: 12px;
+    font-family: 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+  }
+
+  /* ── 섹션 ── */
+  section {
+    margin-bottom: 44px;
+    scroll-margin-top: 24px;
+  }
+
+  section h2 {
+    font-size: 20px;
+    color: var(--accent);
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 8px;
+    margin-bottom: 18px;
+  }
+
+  section h3 {
+    font-size: 16px;
+    color: var(--text);
+    margin: 20px 0 10px;
+    font-weight: 700;
+  }
+
+  section h4 {
+    font-size: 14.5px;
+    color: var(--muted);
+    margin: 14px 0 6px;
+    font-weight: 700;
+    font-family: 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+  }
+
+  p { margin-bottom: 14px; }
+
+  ul, ol {
+    margin: 10px 0 16px 22px;
+  }
+
+  li { margin-bottom: 7px; line-height: 1.75; }
+
+  li ul, li ol { margin-top: 5px; }
+
+  /* ── 표 ── */
+  .table-wrap {
+    margin: 24px 0 30px;
+    overflow-x: auto;
+  }
+
+  .table-wrap .caption {
+    font-size: 13px;
+    font-weight: 700;
+    font-family: 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+    color: var(--text);
+    margin-bottom: 8px;
+  }
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 13.5px;
+    font-family: 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+  }
+
+  thead th {
+    background: var(--table-head);
+    border: 1px solid var(--border);
+    padding: 9px 12px;
+    text-align: left;
+    font-weight: 700;
+    color: var(--accent);
+  }
+
+  tbody td {
+    border: 1px solid var(--border);
+    padding: 8px 12px;
+    vertical-align: top;
+  }
+
+  tbody tr:hover { background: #f6f8fa; }
+
+  .table-source {
+    font-size: 11.5px;
+    color: var(--muted);
+    margin-top: 6px;
+    font-family: 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+  }
+
+  /* ── 참고문헌 ── */
+  .ref-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .ref-list li {
+    padding: 6px 0 6px 20px;
+    text-indent: -20px;
+    font-size: 13.5px;
+    border-bottom: 1px solid #f0f0f0;
+    line-height: 1.65;
+  }
+
+  .ref-list li:last-child { border-bottom: none; }
+
+  .ref-ko {
+    display: block;
+    font-size: 12px;
+    color: var(--accent);
+    margin-top: 2px;
+    font-family: 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+  }
+
+  /* ── 맨 위로 버튼 ── */
+  #to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+    z-index: 200;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.85;
+    transition: opacity 0.2s;
+  }
+
+  #to-top:hover { opacity: 1; }
+
+  /* ── 반응형 ── */
+  @media (max-width: 900px) {
+    #sidebar { display: none; }
+    #main { margin-left: 0; padding: 24px 18px 60px; }
+  }
+
+  .highlight-box {
+    background: #fff8e1;
+    border-left: 4px solid #f4b942;
+    padding: 14px 18px;
+    margin: 16px 0 20px;
+    border-radius: 0 6px 6px 0;
+    font-size: 14px;
+  }
+
+  .day-header {
+    background: var(--accent);
+    color: #fff;
+    padding: 7px 16px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-family: 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+    font-weight: 700;
+    margin: 22px 0 12px;
+    display: inline-block;
+  }
+</style>
+</head>
+<body>
+
+<!-- ══════════════ 사이드바 ══════════════ -->
+<aside id="sidebar">
+  <div class="sidebar-header">
+    수업 시뮬레이션을 통한 역사적 사고
+    <div class="journal-name">The Clearing House, 85(4), 2012</div>
+  </div>
+  <nav>
+    <div class="nav-section-title">목차</div>
+    <a href="#abstract">초록</a>
+    <a href="#intro">서론</a>
+    <a href="#context">역사적 배경</a>
+    <a href="#overview">수업 개요</a>
+    <a href="#prereq">사전 학습 내용</a>
+    <a href="#directions">수업 진행 방법</a>
+    <a href="#day1" class="sub">1일차</a>
+    <a href="#day23" class="sub">2–3일차</a>
+    <a href="#day34" class="sub">3–4일차</a>
+    <a href="#assessment">평가</a>
+    <a href="#implications">함의 및 결론</a>
+    <a href="#referencias">참고문헌</a>
+  </nav>
+</aside>
+
+<!-- ══════════════ 메인 ══════════════ -->
+<main id="main">
+
+  <!-- 논문 헤더 -->
+  <div class="paper-header">
+    <div class="journal-label">The Clearing House: A Journal of Educational Strategies, Issues and Ideas · Vol. 85, No. 4 · pp. 146–152 · 2012</div>
+    <h1>수업 시뮬레이션을 통한 역사적 사고:<br>1919년 파리 평화 회의</h1>
+    <div class="original-title">Historical Thinking through Classroom Simulation: 1919 Paris Peace Conference</div>
+    <div class="authors">Anthony Pellegrino · Christopher Dean Lee · Alex d'Erizans</div>
+    <div class="meta">
+      George Mason University, Fairfax, VA (Pellegrino) ·
+      University of Michigan, Ann Arbor, MI (Lee) ·
+      Borough of Manhattan Community College, CUNY, New York, NY (d'Erizans)<br>
+      DOI: 10.1080/00098655.2012.659774 · 온라인 게재: 2012년 5월 14일
+    </div>
+  </div>
+
+  <!-- 초록 -->
+  <section id="abstract">
+    <div class="abstract-box">
+      <h2>초록 (Abstract)</h2>
+      <p>약 100년 가까이 교육자들은 모의 심의 기구(예: 모의 유엔)를 외교 협상의 복잡성을 가르치는 교수·학습 도구로 활용해 왔다. 본 논문은 이러한 수업 시뮬레이션 활동이 특정 역사적 현실을 이해하는 데에도 기여할 수 있으며, 나아가 탐구와 의사결정 중심의 학습자 주도 수업 모델을 제시할 수 있다고 주장한다. 사회 교과 수업에 적용했을 때, 이 도구는 학생들이 특정 협상 기구에 참여했던 동시대 행위자의 심의 행위를 직접 체험하도록 요구함으로써 역사적 사고와 역사적 공감 능력을 함양할 잠재력을 지닌다. 본 논문에서 제시하는 수업 활동은 1919년 파리 평화 회의를 특징지었던 복잡한 딜레마와 상충하는 요구들을 학생들이 직접 씨름하도록 설계되어 있다. 학생들은 실제 대표단의 역할을 맡아 주요 현안을 논의할 뿐만 아니라 심의를 수행한다. 즉, 회의에 참석했던 실제 대표단과 마찬가지로, 학생들은 단순히 핵심 지정학적 문제를 성찰하고 이야기하는 데 그치지 않는다. 그들은 공포와 희망이 뒤섞인 세계를 위한 구체적 결정을 내려야 한다.</p>
+      <div class="keywords">
+        <strong>핵심어:</strong> 역사 시뮬레이션, 심의, 역사적 공감, 역사적 사고, 파리 평화 회의, 제1차 세계대전, 심의 기구
+      </div>
+    </div>
+  </section>
+
+  <!-- 서론 -->
+  <section id="intro">
+    <h2>서론</h2>
+    <p>약 100년 가까이 교육자들은 모의 심의 기구(예: 모의 유엔)를 외교 협상의 복잡성, 지정학적 현실, 그리고 시민 참여를 가르치는 교수·학습 도구로 활용해 왔다. 본 논문은 이러한 수업 시뮬레이션이 특정 시대와 장소의 역사적 현실을 이해하는 데 더욱 특화된 기능을 수행할 수 있다고 주장한다. 이 도구는 학생들이 특정 협상 기구에 참여했던 동시대 행위자의 심의 행위를 직접 체험하도록 요구함으로써 역사적 사고와 역사적 공감 능력을 함양할 잠재력을 지닌다. 이러한 수업 상황에서 시뮬레이션 활동에 참여하는 학생들은 "자신과는 다른 삶의 방식의 원인, 장단점, 심지어 위험성과 이점까지도 논의할 수 있게 된다" (Fisher and Vander Laan 2002, 25). 더 나아가, 학생들이 자신의 학습 경험을 스스로 이끌어가는 학습자 주도 수업을 구현하려는 노력은 자기효능감에 긍정적인 영향을 미치고 학습을 보다 의미 있는 경험으로 만드는 데 기여한다 (Neill 1995; Tanner et al. 2003). 흥미롭게도, 우리가 이 방법론을 통해 탐구하고자 선택한 역사적 사건은 바로 모의 심의 기구라는 교육적 도구의 탄생을 이끌어낸 사건 그 자체, 즉 1919년 파리 평화 회의이다.</p>
+    <p>스쿨스 역사 브래들리 위원회(Bradley Commission on History in the Schools)의 추동력에 힘입어, 역사적 사고에 대한 강조는 20년이 훌쩍 넘는 기간 동안 역사 교수·학습의 핵심 과제로 자리해 왔다 (Evans 2004; Zilversmit 1989). 학자들 사이에서는 효과적인 역사 교육이 역사 '행하기(doing)'를 포함해야 한다는 폭넓은 공감대가 형성되어 있다. 이러한 접근은 1차·2차 사료를 분석하고, 그 과정에서 증거 및 역사가들이 그것을 평가해 온 방식과 씨름하는 것을 포함한다 (Drake and Nelson 2005). 결국 "성숙한 역사적 사고"의 달성은 "역사의 굴곡진 지형을 헤쳐나가고, 과거와의 친숙함과 거리감이라는 두 극 사이의 지대를 가로지르는 능력에 정확히 달려 있다" (Wineburg 2001, 5).</p>
+    <p>이러한 역사적 사고의 원칙은 학생들이 탐구 중인 시대적 맥락 안에서 이슈 분석, 의사결정, 역사적 관점 인식(즉, 역사적 공감) 등 역사가들이 흔히 활용하는 실천들을 수행하도록 독려해 왔다 (Crabtree and Nash 1995). 학생들에게 역사적 행위자의 역할을 맡도록 요구함으로써, 수업 시뮬레이션은 단순한 이름과 날짜의 암기, 혹은 전통적인 교실 토론을 넘어서 역사적 공감 능력과 고차원적 사고를 발달시키는 데 이상적인 수단을 제공한다 (Jensen 2008; Larson and Keiper 2011).</p>
+    <p>역사적 내용에 관한 교실 토론—교사의 발문이나 언급에 학생이 반응하고 교사가 피드백을 제공하는 방식 (Wilen and White 1991)—의 유용성에도 불구하고, '심의(deliberation)'는 역사적 사고의 발달에 있어 더욱 적합한 방식일 수 있다. 토론이 어떤 질문에 대한 고찰과 논쟁의 기회를 제공하며 그 자체로 지식 구축의 과정인 것은 분명하지만 (Hess 2009; Larson and Keiper 2011; Singer 2009), 심의는 여기서 한 걸음 더 나아가 "모두에게 구속력 있는" 합의와 해결을 요구한다 (Parker 2001, 112). 심의의 과정은 학생들이 사실에 대한 신중한 검토와 자신의 합리적 판단에 근거하여 문제나 갈등을 해결하도록 강제하며 (Center for Public Deliberation 2009; Mutz 2006), 이는 역사적 사고의 핵심 요소이자 (Wineburg 2001) 의미 있는 교육 경험의 일반적 조건이기도 하다.</p>
+    <p>모의 심의 기구 활동의 변형된 형태는, 학생들이 단순히 "사실과 절차의 일상적 사용을 넘어서는" (Larson and Keiper 2011, 192) 진정성 있는 내용 탐구에 몰입하고 "승리보다 통찰을 추구하는" (Parker 2001, 112) 방식으로, 학생들의 역사적 사고 능력을 촉진하는 데 효과적으로 활용될 수 있다.</p>
+    <p>다음의 수업 활동은 역사 시뮬레이션을 통해 학생들에게 심의 과정에 활발하게 참여할 기회를 제공하기 위해 설계되었다. 이하에서 우리는 1919년 파리 평화 회의의 역사적 맥락, 수업 개요, 수업 웹사이트, 활동을 위한 사전 학습 내용, 단계별 수업 지도 방법, 그리고 제안된 평가 루브릭을 제시한다.</p>
+  </section>
+
+  <!-- 역사적 배경 -->
+  <section id="context">
+    <h2>역사적 배경</h2>
+    <p>1919년 1월 파리 평화 회의가 소집된 것은, 자신감 넘치고 부유하며 제국주의적이었던 유럽이 발칸반도에서의 영향력과 권력을 둘러싼 다툼으로 시작된, 그리고 양측의 균형이 너무나 팽팽하여 멈추기가 불가능했던 전쟁 속에서 4년간의 길고 참혹한 전투 끝에 스스로를 산산조각 내버렸기 때문이었다. 제1차 세계대전은 거의 모든 유럽 열강을 끌어들였다. 수백만 명의 전투원(민간인에 대한 대규모 학살은 제2차 세계대전에 이르러서야 본격화되었다)이 전쟁에서 목숨을 잃었다 (MacMillan 2003). 이 사망자 수에는 부상을 입은—종종 한쪽 다리, 한쪽 팔, 혹은 한쪽 눈을 잃은—수백만 명의 사람들, 독가스로 몸이 망가진 이들, 혹은 신경이 무너져 내린 사람들은 포함되어 있지도 않았다 (Howard 2003; Keegan 1999; Neiberg 2006). 전사자와 부상자를 향한 가족과 친구들의 슬픔은 가히 상상을 초월하는 것이었다 (Ferguson 1999; Winter 1998).</p>
+    <p>그러나 이 전쟁은 참전자들에게 다양한 방식으로 영향을 미쳤다. 전쟁은 정부를 뒤엎고 사회를 뒤흔들었다. 전쟁은 20세기의 물질적 성취를 소진시켰고, 유럽을 세계 패권으로 이끌었던 최고의 자신감, 우월감, 그리고 '계몽된' 진보 의식을 영원히 뒤흔들어놓았다 (Keegan 1999, 8). 프랑스 시인 폴 발레리(Paul Valéry)의 말을 빌리자면, "정신의 위기"가 상당한 잔인화를 경험한 사회 전반에 만연하게 되었다 (Valéry 1927, 27–28).</p>
+    <p>그럼에도 불구하고, 모든 것이 암울하지만은 않았다. 대규모 공세, 대규모 학살, 그리고 '총력전'을 수행하기 위한 내부 전선과 식민 제국의 동원이 이루어지던 시대에, 평범한 사람들이 자신의 존재를 드러내기 시작했다. 유럽의 평범한 남녀들은 이전과 달리 권한을 부여받았다고 느꼈고 그 어느 때보다도 강력하게 자신의 권리를 주장했다 (Brayborn and Summerfield 1987; Davis 2000; Higonnet et al. 1987; Horne 1997; Winter and Robert 1997). 전쟁이 끝난 후, 많은 수가 군 복무를 경험했던 식민지 원주민들은 독립을 위한 투쟁에서 더욱 용기를 얻었다. 트리플 앙탕트의 전쟁 수행에 기여했으므로 자신들의 목소리가 들려야 마땅하다고 확신하고, 유럽의 살육 현장에서 서구의 '계몽된' 우월성이라는 주장이 붕괴되는 것을 목격하면서, 식민지 원주민들은 그 어느 때보다도 강렬하게 활기를 띠었다. 서아프리카에서 동남아시아에 이르기까지, 세네갈, 알제리, 인도, 베트남 등의 지역에서 민족주의 운동이 급격히 성장했다 (Brocheux and Hémery 2010; Derrick 2008; Echenberg 1990; Heehs 1998). 또한 독일, 러시아와 같은 패전국이나 엄청난 희생에 비해 불공평하고 불충분한 영토적 전리품을 받았다고 느끼는 이탈리아와 같은 국가들에서는, 전쟁이 궁극적으로 새로운 유토피아적 가능성의 문을 열고 '1914년 정신'으로의 민족 갱신과 진보를 향한 노력에 활력을 불어넣었다. 전선에서의 동지애와 전쟁의 흥분은 전후 세계에서 많은 병사들을 행동으로 이끌었다. 낙관주의와 희망으로 충만한 많은 이들은 자신이 각자의 민족을 더 나은 미래로 이끌 권리, 심지어 의무를 지닌다고 믿었다 (Ekstein 1989; Fritzsche 1998; Mosse 1991).</p>
+    <p>1919년 초가 되자, 세계 각지에서 온 대표단들이 전쟁 종결에 관한 강화 조건을 결정하기 위해 파리에 모였다. 이토록 참혹한 전쟁 이후 기대는 컸고, 실망의 위험 역시 그만큼 높았다. 6개월간 30개 이상의 연합국 및 우방국의 대표들(최고조에 달했을 때 1,000명을 넘었다)이 날마다 모여 논쟁하고, 토론하고, 다투었다. 회의의 실질적 주도권은 미국, 영국, 프랑스, 그리고 그보다는 다소 영향력이 작았던 이탈리아, 이른바 '빅 4(Big Four)'에 있었다. 후자인 이탈리아는 전쟁 발발 당시 삼국동맹(Triple Alliance)의 일원이었으나, 먼저 공격을 받은 경우에만 동맹국을 방어할 의무가 있다고 주장하며 몇 달간 중립을 유지했다. 이탈리아는 오스트리아-헝가리가 세르비아에 선전포고를 했다는 사실을 자국의 입장을 정당화하는 명분으로 삼았다. 그러나 결국 영국, 프랑스, 러시아가 제시한 매력적인 영토 획득의 약속에 이끌려 이탈리아는 1915년 5월 삼국협상 측으로 참전하였다. 뒤늦게 연합국 측에 합류했음에도 불구하고, 이탈리아는 전쟁 중 상당한 인적·물적 희생을 바탕으로 회의에서 두드러진 위치를 확보했다.</p>
+    <p>독일은 참석이 허용되지 않았으며, 내전의 소용돌이 속에 있던 볼셰비키 러시아는 초청을 받지 못했다. 공식적으로 평화 회의는 1920년까지 이어졌지만, 핵심적인 결정이 이루어진 최초 6개월이 진정으로 중요한 시간이었다. 평화 입안자들은 패전국인 독일, 오스트리아-헝가리, 불가리아, 오스만 제국과의 조약을 작성해야 했으며, 동시에 자국의 수많은 요란하고 종종 충돌하는 열망과 요구들과도 씨름해야 했다. 과거에 존재했던 나라들을 대표하는 청원자들과 미래의 꿈에 불과한 나라들의 청원자들이 몰려들었다. 내내 평화 입안자들은 파리에서 논쟁과 토론이 이어지는 동안, 지구 곳곳의 사람들이 자신만의 결정을 내리고, 자신만의 전투를 치르고, 자신만의 역사를 만들어가고 있다는 사실을 알고 있었다 (MacMillan 2003; Mee 1980; Sharp 1991). 프랑스 수석 대표인 총리 조르주 클레망소(Georges Clemenceau)는 동료에게 이런 말을 남기며, 자신과 다른 평화 입안자들이 직면한 수많은 헤라클레스적 과업들을 가장 단순하게 요약했다: "전쟁을 하는 것이 평화를 만드는 것보다 훨씬 쉽다" (MacMillan 2003, xxx).</p>
+    <p>파리 평화 회의의 유산은 실로 복잡하다 (Boemeke, Feldman, and Glaser 1998). 일부 동시대 관찰자들과 그 이후 학자들 및 언론에 의해, 회의의 결정들은 전후의 경제적·정치적 불안정, 독일과 이탈리아의 전체주의 이데올로기의 부상, 제2차 세계대전의 발발, 그리고 오늘날까지 이어지는 식민주의에 대한 반감의 토대를 닦은 것으로 평가받았다 (Andelman 2008). 그러나 최근에 역사가들은 일반적으로 평화 입안자들에게 더 우호적인 시각을 취하면서, 그들이 직면했던 진정으로 엄청난 도전들과 어려운 질문들을 인정하려는 시도를 이어왔다. 이들 역사가들은 히틀러가 20년 후 전쟁을 일으킨 것이 베르사유 조약 때문이 아니라고 주장한다. 물론 1919년의 평화 입안자들은 종종 오만한 실수를 저질렀다. 그럼에도 불구하고, 심지어 냉소적으로 보더라도, 대표단들은 보다 나은 세계 질서를 구축하고자 노력했다. 그들은 미래를 내다볼 수 없었고, 미래를 통제할 수도 없었다 (MacMillan 2003). 후자의 과제는 진정으로 그들의 후계자들에게 달려 있었으나, 후계자들은 종종 실제로는 꽤 유연하고 미래의 수정이 가능했던 조약 규정들을 이행하는 데 실패했다.</p>
+    <p>전쟁의 원인으로서 커다란 역할을 했던 민족 자결의 원칙은 실행 가능한 새로운 세계 질서의 조직 원리로 기능했다. 새로운 국제 기구인 국제연맹은 만족한 열강들의 전통적인 방어 동맹을 보완했다. 이러한 성과들은 평화 입안자들이 극도의 시간 압박 속에서 행동했음을 감안할 때 더욱 놀라운 것이었다. 러시아에서 막 권력을 장악한 공산주의의 확산을 저지하기 위해 신속함이 필수적이었다 (Mayer 1967). 그러나 최종적인 분석에서, 평화 입안자들이 어떤 사건에 대해서든 결정을 내릴 수 있는 능력은 제한되어 있었는데, 현장에서 벌어지는 전개 상황이 종종 그들을 앞질러버렸기 때문이었다. 특히 프랑스, 영국, 이탈리아의 지도자들은 전쟁에 지친 자국 국민들에게 값비싼 해외 모험의 대가를 치르도록 강제할 능력을 더 이상 갖추지 못했다. 간단히 말해, 어떤 조건이든 어떤 협정이든 강요할 수 있는 힘이 그 당시에는 결여되어 있었다. 이것이 바로 1919년 파리의 평화 입안자들이 전쟁으로 황폐해진 세계에 평화를 가져다주기 위해 활동해야 했던 조건이었다.</p>
+  </section>
+
+  <!-- 수업 개요 -->
+  <section id="overview">
+    <h2>수업 개요</h2>
+    <p>이 수업 활동에서 교사는 일반적으로 2일에서 4일에 걸쳐 학생들이 파리 평화 회의를 시뮬레이션으로 체험하도록 안내한다. 이 수업은 제1차 세계대전에 관한 단원의 마무리 학습 활동으로 기능하도록 설계되어 있다. 학생들은 세계 각지의 다양한 대표단 구성원, 특히 빅 4 대표단을 실제로 역할극으로 연기하게 된다. 학생 평가는 그들이 작성한 결과물의 질과 대표단 대표로서의 수업 내 수행 능력을 토대로 이루어진다. 이 수업의 모든 자료와 리소스는 온라인(http://cehd.gmu.edu/book/pellegrino/)에서 확인할 수 있다.</p>
+  </section>
+
+  <!-- 사전 학습 내용 -->
+  <section id="prereq">
+    <h2>사전 학습 내용</h2>
+
+    <h3>1. 제1차 세계대전의 장·단기적 원인에 대한 이해</h3>
+    <p>학생들은 다음의 내용을 포함하여 19세기 후반으로 거슬러 올라가는 제1차 세계대전의 장·단기적 원인들에 대해 익숙해야 한다.</p>
+    <ul>
+      <li>해외 식민지 획득을 향한 제국주의적 욕구, 특히 이른바 '아프리카 쟁탈전(Scramble for Africa)'과의 관련성</li>
+      <li>유럽 전반에 걸쳐 타협을 거부하는 '우리' 대 '저들'의 이분법, 우월감, 특정 민족의 사명의식을 조장한 공격적 민족주의의 부상—이러한 개념들은 종종 엄격한 민족적·인종적 용어로 정의되었다</li>
+      <li>삼국협상(영국·프랑스·러시아)과 삼국동맹(독일·오스트리아-헝가리·이탈리아)이라는 두 경쟁 동맹의 점진적 공고화</li>
+      <li>대륙 전반에 걸쳐 호전적 분위기를 고조시키고, 1914년 결정적 승리를 위한 초기 계획의 실패를 초래하며, 4년간의 길고 참혹한 서부 전선 교착 상태에 기여한 유럽 군사 지휘관들의 신념과 기대</li>
+      <li>갈등을 사회를 '정화'하는 데 필요한 카타르시스적 해방으로 선전한 사회 다윈주의와 모더니즘 같은 문화적 경향</li>
+      <li>오스트리아 황태자 프란츠 페르디난트(Franz Ferdinand) 암살의 직접적 배경과 경위, 그리고 1914년 여름 유럽 전쟁의 전면화 과정</li>
+    </ul>
+
+    <h3>2. 총력전 수행 방식에 대한 이해</h3>
+    <p>학생들은 교전국들이 전쟁을 준비하고 치른 다음의 양상들에 익숙해야 한다.</p>
+    <ul>
+      <li>각 교전국의 내부 전선(홈 프런트)에서 총동원이 미친 정치적·경제적·사회적·문화적 영향</li>
+      <li>전쟁의 여러 전선에 걸쳐 인적·물적으로 이루어진 엄청난 파괴, 특히 서유럽 참호선을 따라 벌어진 극도로 유혈적인 소모전(솜 전투, 베르됭 전투 등)에 대한 각별한 주목</li>
+    </ul>
+
+    <h3>3. 전쟁 종결 요인에 대한 이해</h3>
+    <p>학생들은 전쟁 종결을 설명하는 다음의 요인들을 이해하고 있어야 한다.</p>
+    <ul>
+      <li>1917년 4월 미국의 참전</li>
+      <li>1918년 전면적 러시아 내전의 발발</li>
+      <li>1918년 3월 볼셰비키에 의한 러시아의 제1차 세계대전 이탈</li>
+      <li>1918년 3월 독일의 춘계 공세 실패</li>
+      <li>1918년 11월 독일 혁명</li>
+    </ul>
+  </section>
+
+  <!-- 수업 진행 방법 -->
+  <section id="directions">
+    <h2>수업 진행 방법</h2>
+
+    <div class="day-header" id="day1">1일차</div>
+
+    <ol>
+      <li>
+        <p>학생들은 군인 시인 윌프레드 오언(Wilfred Owen)이 쓴 「달콤하고 영광스러운 일이라네(Dulce et Decorum Est)」를 읽는다 (자료는 http://cehd.gmu.edu/book/pellegrino/ 참조). 교사는 시의 가능한 의미들과 교전국들이 총력전을 어떻게 경험했는지에 관해 이 작품이 드러내는 것에 대해 짧은 전체 토론을 진행한다. 이러한 활동은 학생들에게 전투원들에게 가해진 전쟁의 잔혹성을 다시 한번 상기시킨다. 그렇게 함으로써, 학생들이 이제 정의롭고 지속적인 평화를 결정해야 할 전쟁의 성격과 대가에 대한 감각을 갖추게 한다.</p>
+      </li>
+      <li>
+        <p>교사는 학생들을 회의에 참석한 14개 주요 국가 집단을 대표하는 대표단으로 편성한다. 미국, 영국, 프랑스, 이탈리아(빅 4) 외에 각 대표단은 다음의 4개 지역 갈등 영역 중 하나에 포함된다: 북부 유럽(폴란드인, 체코/슬로바키아인), 남부 유럽(유고슬라비아인, 그리스인, 루마니아인), 아시아(일본인, 중국인), 중동(유대인, 아랍인, 터키인).</p>
+      </li>
+      <li>
+        <p>교사는 각 학생에게 대표단 입장 문서(Position Paper) 한 부씩을 배포한다. 1~2페이지 분량의 이 문서들은 학생들이 각자의 국가 집단 대표단으로서의 역할을 수행하는 데 필요한 정보를 제공한다. 입장 문서는 그들이 대표하는 국가 집단의 가장 최근의 관련 역사, 독특한 전쟁 경험, 그리고 회의에서의 구체적인 기대와 목표를 학생들에게 숙지시키는 핵심 도구로 기능한다 (자료 복사본은 http://cehd.gmu.edu/book/pellegrino/ 참조). 베르사유에서 모인 다양한 국가 집단 대표자들이 출현한 독특한 사회적·정치적·문화적·경제적·군사적 맥락을 연구함으로써, 학생들은 실제 대표단의 역할에 더욱 효과적으로 몰입할 수 있게 된다. 이렇게 강화된 역사적 공감 능력을 갖추고 학생들은 심의에 참여할 준비를 갖추게 된다.</p>
+      </li>
+      <li>
+        <p>숙제로, 교사는 학생들에게 자신의 대표단 입장 문서를 주의 깊게 읽고 다음 수업 시간까지 아래 질문들에 대한 서면 답변을 준비해 오도록 지시한다: (1) 회의 중 심의를 진행하면서 가장 관련성이 높을 것이라 생각되는 3가지 사실, 사건, 또는 아이디어를 문서에서 파악한다; (2) 회의 종료 시점까지 달성해야 할 가장 중요한 3가지 목표를 설정한다; (3) 자신의 목표 달성에 있어 직면하게 될 가장 만만찮은 3가지 도전 과제를 제시한다. 이 정보는 학급 전체를 대상으로 논의되지 않고, 각 지역 갈등 영역 그룹 내에서 학생들의 심의를 위한 구체적인 출발점으로 활용된다 (아래 수업 지도 방법 5 참조).</p>
+      </li>
+    </ol>
+
+    <div class="day-header" id="day23">2–3일차</div>
+
+    <ol start="5">
+      <li>
+        <p>교사는 (이제 대표단을 대표하는) 학생들을 각자의 4개 지역 갈등 영역으로 나눈다. 후자의 그룹 구성은 초기 심의가 이루어지는 틀로 기능한다. 각 4개 지역 갈등 영역에는 각각의 대표단에서 최소 한 명 이상의 대표자가 참여해야 한다. 회의에서 빅 4가 지녔던 압도적 영향력을 반영하기 위해, 미국, 영국, 프랑스, 이탈리아의 대표자들은 4개의 지역 갈등 영역 회의 모두에 대표단을 파견하게 된다. 이상적인 참여 인원은 26명으로, 빅 4를 대표하는 16명(각 국가당 4명)과 회의에 참가한 나머지 10개 국가의 대표자 역할을 맡는 10명으로 구성된다. 단, 교사는 학급의 학생 수에 따라 (각 국가의 대표자 수를 늘리거나 참가 국가의 수를 줄이는 방식으로) 이를 조정할 수 있다.</p>
+      </li>
+      <li>
+        <p>교사는 대표단 간의 효과적인 교류를 촉진하기 위한 지침을 수립하여 심의 과정을 시작한다. 무엇보다 중요한 것은, 교사가 학생들에게 심의의 목표를 분명히 인식시키는 것이다. 또한 모든 대표단이 자신의 요구와 필요를 표명하고 다른 대표단의 발언에 충분히 응답할 기회를 가질 수 있어야 함을 학생들에게 알려야 한다 (Parker 2001). 심의 지침이 수립되면, 교사는 대표단들에게 자신의 입장을 명확하게 규정하고 진술하고, 왜 그러한 주장을 하는지에 대한 필요한 배경 정보를 다른 대표단에게 제공하며, 자신들의 특정 선호를 (궁극적으로 최종 회의 결정을 내릴) 빅 4에게 설득하는 방식으로 심의를 진행하도록 지시한다. 교사는 각 지역 갈등 그룹 회의 내에서 빅 4가 심의 중인 특정 현안들에 대해 합의에 도달해야 함을 대표단들에게 설명한다 (Center for Public Deliberation 2009). 이와 관련하여, 교사는 각 지역 갈등 그룹에서 적어도 하나의 대표단이(그렇지 않다면 모든 대표단이) 빅 4 대표단이 내린 결정의 일부에 적어도 동의하지 않을 것임을 학생들에게 상기시킨다. 4개의 지역 갈등 영역 그룹 내에서 심의가 시작되면, 교사는 교실을 적극적으로 순회하며 선도적인 질문을 던지고, 학생들이 자국의 입장을 성찰하고 옹호하도록 격려하며, 필요에 따라 구체적인 제안을 하는 방식으로 대표단들 사이의 토론과 심의를 촉진한다.</p>
+      </li>
+    </ol>
+
+    <div class="day-header" id="day34">3–4일차</div>
+
+    <ol start="7">
+      <li>
+        <p>각 지역 갈등 그룹 회의 내에서 합의가 이루어지면, 빅 4 대표단은 그룹 전체에서 이루어진 구체적인 토론과 논쟁 내용, 그리고 자신들의 결정에 담긴 세부 사항과 그 근거를 밝히는 입장 성명서(더블 스페이스 2페이지 분량)를 작성한다 (Larson and Keiper 2011). 동시에 나머지 각 대표단은 빅 4의 합의 결정에 대한 비판이나 지지(혹은 그 결합)와 그 이유를 서술하는 입장 성명서(더블 스페이스 1페이지 분량)를 작성해야 한다. 각 입장 성명서는 일반 대중을 위한 보도자료 형식으로 작성되므로, 모든 국가의 대표단들은 성명서를 작성할 때 국내외 관심 청중을 고려해야 한다. 단순한 토론만이 아닌 매우 현실적이고 시급한 현안들에 관한 명확한 결정에 도달하기 위한 투쟁을 반영하는 이 결과물들은 학생들이 참여한 심의를 잘 보여줄 것이다.</p>
+      </li>
+      <li>
+        <p>교사는 지역 갈등 그룹들을 해체하고, 빅 4 대표단들을 각자의 국가별 그룹으로 재편성하여 별도로 모이도록 하며, 나머지 모든 갈등 대표단 구성원들을 하나의 그룹으로 소집한다. 후자가 생산적인 논의를 진행하기에 너무 크다면, 교사는 갈등 대표단 그룹을 '패자'와 '승자'로 추가 분리할 수 있다.</p>
+      </li>
+      <li>
+        <p>빅 4의 각 국가 그룹 내에서, 대표단들은 각 지역 갈등 그룹 성명서에 대한 자국의 입장을 통합적이고 포괄적인 방식으로 다루는 최종 국가 입장 문서(더블 스페이스 2페이지 분량)를 작성한다. 나머지 국가 그룹 모임에서는, 대표단들이 서로 회의 경험을 나누고 적절하다고 판단될 경우 자신의 보도자료 성명서를 수정한다. 다시 한번, 학생들은 토론에 그치지 않고 명확한 결론에 도달해야 함으로써 심의를 수행하게 된다.</p>
+      </li>
+      <li>
+        <p>모든 최종 입장 성명서 작성이 완료되면, 각 대표단 그룹은 자신의 연구 결과(빅 4를 위한 국가 입장 문서와 나머지 대표단을 위한 개별 입장 문서)를 학급 전체에 발표한다.</p>
+      </li>
+      <li>
+        <p>교사는 남은 수업 시간을 디브리핑(사후 토론) 활동으로 활용해야 하는데, 이는 파리 1919년의 역사적 순간에 관한 진정성 있고 실질적인 토론을 이끌어내야 한다 (Larson and Keiper 2011). 교사는 이 시간을 빅 4가 파리 평화 회의에서 실제로 내린 결론들을 개괄하는 데에도 활용해야 한다.</p>
+      </li>
+      <li>
+        <p>교사는 학생들에게 이 수업 활동 중 작성한 결과물들을 평가 목적으로 제출하도록 지시한다. 모든 학생들은 활동 초반에 받은 대표단 입장 문서에 관한 초기 성찰 결과물(개인당 한 부)을 제출해야 한다. 또한 빅 4를 대표하는 학생들은 4개의 지역 갈등 영역 그룹 회의에서 작성된 초기 입장 문서(지역 갈등 영역당 한 부)와 최종 국가 입장 문서(국가 그룹당 한 부)를 제출해야 한다. 나머지 대표단을 대표하는 학생들은 자신의 입장 문서의 모든 초고(빅 4를 제외한 모든 대표단과의 전체 회의 전후)를 제출해야 한다.</p>
+      </li>
+    </ol>
+  </section>
+
+  <!-- 평가 -->
+  <section id="assessment">
+    <h2>평가</h2>
+    <p>이 수업 활동에 대한 평가는 두 부분으로 나뉜다: 발표(결과물)와 수행(대면 심의 및 구두 발표)이며, 각각은 지식과 의사소통의 두 하위 항목으로 세분화된다 (Drake and Nelson 2005; Larson and Keiper 2011).</p>
+
+    <div class="table-wrap">
+      <div class="caption">표 1. 평가 루브릭 (발표 및 수행)</div>
+      <table>
+        <thead>
+          <tr>
+            <th>구분</th>
+            <th>평가 항목</th>
+            <th>우수 학생의 수행 기준</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td rowspan="2"><strong>발표<br>(결과물)</strong></td>
+            <td>지식</td>
+            <td>
+              <ul>
+                <li>핵심 개념과 중요 주제를 철저히 정의하고 설명함</li>
+                <li>심의 과정에서 관련된 상황들을 정확하게 설명함</li>
+                <li>시뮬레이션 내의 모든 관련 이해당사자들을 명확히 파악함</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>의사소통</td>
+            <td>
+              <ul>
+                <li>지식과 추론 과정의 증거를 제공하는 방식으로 아이디어를 일관성 있게 표현함</li>
+                <li>결과물을 명확하고 체계적인 방식으로 구성함</li>
+                <li>전반에 걸쳐 세부 사항(문법, 철자, 문장 부호)에 주의를 기울임</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td rowspan="2"><strong>수행<br>(활동)</strong></td>
+            <td>지식</td>
+            <td>
+              <ul>
+                <li>다른 학생들과 지속적으로 해당 주제에 관해 교류함</li>
+                <li>활동 전반에 걸쳐 진정성 있게 자신의 역할에서 행동하고 발언함</li>
+                <li>활동 전반에 걸쳐 적절한 용어를 활용함</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>의사소통</td>
+            <td>
+              <ul>
+                <li>그룹 내 대화를 촉진함</li>
+                <li>다른 그룹 구성원들에게 지지하는 아이디어나 반론을 제공함</li>
+                <li>강사가 제시한 토론 규칙을 따름 (앞의 수업 지도 방법 6 참조)</li>
+              </ul>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="table-source">출처: Drake and Nelson (2005); Larson and Keiper (2011)을 바탕으로 재구성.</div>
+    </div>
+
+    <p>이 네 가지 평가 범주 각각은 1점(가장 낮은 발표·수행)에서 5점(최적의 발표·수행)까지의 척도로 채점될 수 있으며, 이후 학급에 적합한 점수 단위로 환산된다. 평가 시 교사는 시간의 흐름에 따른 변화(긍정적이든 부정적이든)의 징후에 특별한 주의를 기울여야 한다. 학생들이 제출해야 하는 다수의 결과물과 이 수업 활동이 요구하는 지속적인 심의는 교사가 개별 학생 및 학급 전체의 그러한 추이를 파악할 수 있도록 해준다. 이 평가는 결코 최종적인 것이 아니지만, 이 수업 중 학생들의 전반적인 수행을 채점하는 데 있어 교육자들에게 어느 정도의 지침을 제공할 수 있다.</p>
+  </section>
+
+  <!-- 함의 및 결론 -->
+  <section id="implications">
+    <h2>시뮬레이션 활동의 함의</h2>
+    <p>수업 시뮬레이션 활동은 학생들을 블룸의 분류 체계(Bloom's Taxonomy)의 가장 낮은 수준의 지식 획득을 넘어선 학습 경험에 몰입시킬 잠재력을 지닌다. 학생들에게 타인—역사적 인물이든 현실의 인물이든—에 대한 공감적 시각을 얻을 기회를 제공하는 것은, 참여 민주주의 사회에서 정보에 밝고 능동적인 시민을 육성하도록 설계된 교육 시스템의 초석으로 기능한다 (Center for Public Deliberation 2009; Gutmann 1987; Hess 2009).</p>
+    <p>그러나 교사들은 민주주의에서와 마찬가지로, 우리가 여기서 기술한 것과 같은 시뮬레이션 활동들이 처방이 불가능한 대체로 예측할 수 없는 사건들임을 명심해야 한다. 교사의 역할은 촉진자로서, 학생들에 의해 이끌어지도록 설계된 시뮬레이션이 그 경로대로 진행되도록 허용하고 꼭 필요한 경우에만 개입하는 것이다. 교사는 활동이 취하는 (잘못된) 방향을 학습 경험의 중요한 부분으로 간주하고, 메타인지적 성찰을 장려하고 잘못된 정보를 바로잡는 시간으로서 핵심적인 디브리핑 활동을 적극 활용해야 한다 (Larson and Keiper 2011). 모든 교수 전략과 마찬가지로, 수업 시뮬레이션을 개발하고 실행하는 것은 실제로 도전적인 일이다. 그럼에도 불구하고, 저명한 재판, 위기 관리 회의, 무역 협상, 혹은 평화 조약을 다루든 간에, 이러한 유형의 활동은 역사적 행위자들이 단순히 토론하는 것을 넘어서 심의하기 위해 한자리에 모인 다양한 과거의 독특한 사건들과 씨름하는 데 있어 교사와 학생 모두에게 중추적인 교육 경험이 될 잠재력을 지닌다. 인류가 치른 가장 파괴적인 전쟁을 마무리하면서 동시에 더 큰 격동의 세기로 들어가는 서막을 열었던 1919년 파리 평화 회의는 바로 그러한 모임이었다—세계가 이전에 본 적이 없었고, 앞으로도 다시 보기 어려울 모임이었다.</p>
+  </section>
+
+  <!-- 참고문헌 -->
+  <section id="referencias">
+    <h2>참고문헌</h2>
+    <ul class="ref-list">
+      <li>Andelman, D. A. (2008). <em>A shattered peace: Versailles 1919 and the price we pay today.</em> Hoboken, NJ: John Wiley and Sons.
+        <span class="ref-ko">산산조각 난 평화: 베르사유 1919와 오늘날 우리가 치르는 대가</span>
+      </li>
+      <li>Boemeke, M. F., Feldman, G. D., &amp; Glaser, E. (Eds.). (1998). <em>The Treaty of Versailles: A reassessment after 75 years.</em> Washington, DC: German Historical Institute.
+        <span class="ref-ko">베르사유 조약: 75년 후의 재평가</span>
+      </li>
+      <li>Brayborn, G., &amp; Summerfield, P. (1987). <em>Out of the cage: Women's experiences in two world wars.</em> London: Thorsons Publishers.
+        <span class="ref-ko">새장 밖으로: 두 차례 세계대전에서의 여성 경험</span>
+      </li>
+      <li>Brocheux, P., &amp; Hémery, D. (2010). <em>Indochina: An ambiguous colonization, 1858–1954.</em> Berkeley: University of California Press.
+        <span class="ref-ko">인도차이나: 모호한 식민지화, 1858–1954</span>
+      </li>
+      <li>Center for Public Deliberation. (2009). <em>What is deliberation?</em> http://www.cpd.colostate.edu/what.html#1
+        <span class="ref-ko">공적 심의란 무엇인가?</span>
+      </li>
+      <li>Crabtree, C., &amp; Nash, G. B. (1995). Standards in historical thinking. <em>The History Teacher, 28</em>(3), 315–34.
+        <span class="ref-ko">역사적 사고의 기준</span>
+      </li>
+      <li>Davis, B. J. (2000). <em>Home fires burning: Food, politics, and everyday life in Berlin in World War I.</em> Chapel Hill: The University of North Carolina Press.
+        <span class="ref-ko">타오르는 홈파이어: 제1차 세계대전 베를린의 음식, 정치, 일상생활</span>
+      </li>
+      <li>Derrick, J. (2008). <em>Africa's agitators: Militant anti-colonialism in Africa and the west, 1918–1939.</em> New York: Columbia University Press.
+        <span class="ref-ko">아프리카의 선동가들: 아프리카와 서방에서의 전투적 반식민주의, 1918–1939</span>
+      </li>
+      <li>Drake, F. D., &amp; Nelson, L. R. (2005). <em>Engagement in teaching history: Theory and practices for middle and secondary teachers.</em> Upper Saddle River, NJ: Pearson Merrill Prentice Hall.
+        <span class="ref-ko">역사 교수의 참여: 중등 교사를 위한 이론과 실천</span>
+      </li>
+      <li>Echenberg, M. (1990). <em>Colonial conscripts: The "Tirailleurs Sénégalais" in French West Africa, 1857–1960.</em> Portsmouth, NH: Heinemann.
+        <span class="ref-ko">식민지 징집병: 프랑스령 서아프리카의 '세네갈 보병', 1857–1960</span>
+      </li>
+      <li>Ekstein, M. (1989). <em>Rites of spring: The Great War and the birth of the modern age.</em> New York: Doubleday.
+        <span class="ref-ko">봄의 제전: 대전쟁과 현대의 탄생</span>
+      </li>
+      <li>Evans, R. W. (2004). <em>The social studies wars: What should we teach the children?</em> New York: Teachers College Press.
+        <span class="ref-ko">사회과 전쟁: 우리는 아이들에게 무엇을 가르쳐야 하는가?</span>
+      </li>
+      <li>Ferguson, N. (1999). <em>The pity of war: Explaining World War I.</em> New York: The Penguin Group.
+        <span class="ref-ko">전쟁의 비참함: 제1차 세계대전을 설명하다</span>
+      </li>
+      <li>Fisher, J., &amp; Vander Laan, S. (2002). Improving approaches to multicultural education: Teaching empathy through role-playing. <em>Multicultural Education, 9,</em> 25–27.
+        <span class="ref-ko">다문화 교육 접근 방식의 개선: 역할극을 통한 공감 교육</span>
+      </li>
+      <li>Fritzsche, P. (1998). <em>Germans into Nazis.</em> Cambridge, MA: Harvard University Press.
+        <span class="ref-ko">독일인에서 나치로</span>
+      </li>
+      <li>Gutmann, A. (1987). <em>Democratic education.</em> Princeton, NJ: Princeton University Press.
+        <span class="ref-ko">민주주의 교육</span>
+      </li>
+      <li>Heehs, P. (1998). <em>India's freedom struggle: A short history.</em> Delhi: Oxford University Press.
+        <span class="ref-ko">인도의 독립 투쟁: 소사(小史)</span>
+      </li>
+      <li>Hess, D. E. (2009). <em>Controversy in the classroom: The democratic power of discussion.</em> New York: Routledge.
+        <span class="ref-ko">교실 속 논쟁: 토론의 민주주의적 힘</span>
+      </li>
+      <li>Higonnet, M. R., Jensen, J., Michel, S., &amp; Collins Weitz, M. (Eds.). (1987). <em>Behind the lines: Gender and the two world wars.</em> New Haven, CT: Yale University Press.
+        <span class="ref-ko">전선 뒤편에서: 젠더와 두 차례의 세계대전</span>
+      </li>
+      <li>Horne, J. N. (Ed.). (1997). <em>State, society, and mobilization in Europe during the First World War.</em> Cambridge: Cambridge University Press.
+        <span class="ref-ko">제1차 세계대전 중 유럽의 국가, 사회, 동원</span>
+      </li>
+      <li>Howard, M. (2003). <em>The First World War: A very short introduction.</em> New York: Oxford University Press.
+        <span class="ref-ko">제1차 세계대전: 매우 짧은 입문서</span>
+      </li>
+      <li>Jensen, J. (2008). Developing historical empathy through debate: An action research study. <em>Social Studies Research and Practice, 3</em>(1), 55–68.
+        <span class="ref-ko">토론을 통한 역사적 공감 능력 발달: 실행 연구</span>
+      </li>
+      <li>Keegan, J. (1999). <em>The First World War.</em> New York: Alfred A. Knopf.
+        <span class="ref-ko">제1차 세계대전</span>
+      </li>
+      <li>Larson, B. E., &amp; Keiper, T. A. (2011). <em>Instructional strategies for middle and secondary social studies: Methods, assessment and classroom management.</em> New York: Routledge.
+        <span class="ref-ko">중등 사회과를 위한 교수 전략: 방법론, 평가, 학급 경영</span>
+      </li>
+      <li>MacMillan, M. (2003). <em>Paris 1919: Six months that changed the world.</em> New York: Random House.
+        <span class="ref-ko">파리 1919: 세계를 바꾼 6개월</span>
+      </li>
+      <li>Mayer, A. J. (1967). <em>Politics and diplomacy of peacemaking: Containment and counterrevolution at Versailles, 1918–1919.</em> New York: Vintage.
+        <span class="ref-ko">평화 구축의 정치와 외교: 베르사유에서의 봉쇄와 반혁명, 1918–1919</span>
+      </li>
+      <li>Mee Jr., C. L. (1980). <em>The end of order: Versailles 1919.</em> New York: E.P. Dutton.
+        <span class="ref-ko">질서의 종말: 베르사유 1919</span>
+      </li>
+      <li>Mosse, G. L. (1991). <em>Fallen soldiers: Reshaping the memory of the world wars.</em> New York: Oxford University Press.
+        <span class="ref-ko">쓰러진 병사들: 세계대전의 기억을 재형성하다</span>
+      </li>
+      <li>Mutz, D. C. (2006). <em>Hearing the other side: Deliberative versus participatory democracy.</em> New York: Cambridge University Press.
+        <span class="ref-ko">반대편 이야기 듣기: 숙의 민주주의 대 참여 민주주의</span>
+      </li>
+      <li>Neiberg, M. S. (2006). <em>Fighting the Great War: A global history.</em> Cambridge: Harvard University Press.
+        <span class="ref-ko">대전쟁을 싸우다: 세계사</span>
+      </li>
+      <li>Neill, A. S. (1995). <em>Summerhill school: A new view of childhood.</em> London: St. Martins Griffin.
+        <span class="ref-ko">서머힐 학교: 아동기에 대한 새로운 시각</span>
+      </li>
+      <li>Parker, W. C. (2001). Classroom discussion: Models for leading seminars and deliberation. <em>Social Education, 65,</em> 111–15.
+        <span class="ref-ko">교실 토론: 세미나와 심의를 이끄는 모델</span>
+      </li>
+      <li>Sharp, A. (1991). <em>The Versailles settlement: Peacemaking in Paris, 1919.</em> New York: St. Martin's Press.
+        <span class="ref-ko">베르사유 협정: 파리에서의 평화 구축, 1919</span>
+      </li>
+      <li>Singer, A. J. (2009). <em>Social studies for secondary schools: Teaching to learn, learning to teach, 3rd ed.</em> New York: Routledge.
+        <span class="ref-ko">중등학교를 위한 사회과: 배우기 위한 가르침, 가르치기 위한 배움, 제3판</span>
+      </li>
+      <li>Tanner, B. M., Bottoms, G., Feagin, C., &amp; Bearman, A. (2003). <em>Instructional strategies: How teachers teach matters.</em> Atlanta, GA: Southern Regional Education Board.
+        <span class="ref-ko">교수 전략: 교사가 가르치는 방식이 중요하다</span>
+      </li>
+      <li>Valéry, P. (1927). <em>Variety,</em> trans., M. Cowley. New York: Harcourt Brace.
+        <span class="ref-ko">다양성 (M. 코울리 역)</span>
+      </li>
+      <li>Wilen, W. W., &amp; White, J. (1991). Interaction and discourse in social studies classrooms. In W. W. Willen (Ed.), <em>Teaching and learning through discussion: Theory, research, and practice of the discussion method</em> (pp. 147–169). Springfield, IL: Charles C. Thomas Press.
+        <span class="ref-ko">사회과 교실에서의 상호작용과 담화 / 토론을 통한 교수·학습: 토론법의 이론, 연구, 실천 수록</span>
+      </li>
+      <li>Wineburg, S. (2001). <em>Historical thinking and other unnatural acts: Charting the future of teaching the past.</em> Philadelphia, PA: Temple University Press.
+        <span class="ref-ko">역사적 사고와 그 밖의 부자연스러운 행위: 과거 가르치기의 미래를 그리다</span>
+      </li>
+      <li>Winter, J. M. (1998). <em>Sites of memory, sites of mourning: The Great War in European cultural history.</em> Cambridge: Cambridge University Press.
+        <span class="ref-ko">기억의 장소, 애도의 장소: 유럽 문화사에서의 대전쟁</span>
+      </li>
+      <li>Winter, J. M., &amp; Robert, J. L. (Eds.). (1997). <em>Capital cities at war: Paris, London, and Berlin, 1914–1919.</em> Cambridge: Cambridge University Press.
+        <span class="ref-ko">전쟁 속의 수도들: 파리, 런던, 베를린, 1914–1919</span>
+      </li>
+      <li>Zilversmit, A. (1989). The Bradley Commission and American history. <em>The History Teacher, 23</em>(1), 49–51.
+        <span class="ref-ko">브래들리 위원회와 미국 역사 교육</span>
+      </li>
+    </ul>
+  </section>
+
+</main>
+
+<!-- 맨 위로 버튼 -->
+<button id="to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="맨 위로">▲</button>
+
+<script>
+  // 스크롤 추적 + 사이드바 현재 섹션 강조
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('#sidebar nav a');
+
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => {
+      if (s.getBoundingClientRect().top <= 100) current = s.id;
+    });
+    navLinks.forEach(a => {
+      a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+    });
+  });
+
+  // 부드러운 스크롤
+  navLinks.forEach(a => {
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) target.scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+</script>
+</body>
+</html>

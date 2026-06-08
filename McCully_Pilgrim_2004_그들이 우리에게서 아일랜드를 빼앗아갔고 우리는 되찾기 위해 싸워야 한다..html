@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>"그들이 우리에게서 아일랜드를 빼앗아갔다" — McCully & Pilgrim (2004)</title>
+<style>
+:root {
+  --sidebar-width: 270px;
+  --accent: #6b3010;
+  --accent-light: #fdf3ec;
+  --text: #1a1a1a;
+  --muted: #555;
+  --border: #d0d7de;
+  --bg: #fafafa;
+  --white: #ffffff;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Noto Serif KR', Georgia, serif; background: var(--bg); color: var(--text); line-height: 1.85; font-size: 15px; }
+
+#sidebar {
+  position: fixed; top: 0; left: 0;
+  width: var(--sidebar-width); height: 100vh;
+  background: var(--white); border-right: 1px solid var(--border);
+  overflow-y: auto; z-index: 100; padding: 20px 0 40px;
+}
+#sidebar .sb-header { padding: 0 18px 16px; border-bottom: 1px solid var(--border); margin-bottom: 12px; }
+#sidebar .sb-title { font-size: 12px; font-weight: 700; color: var(--accent); letter-spacing: .5px; text-transform: uppercase; }
+#sidebar .sb-author { font-size: 11px; color: var(--muted); margin-top: 4px; }
+#sidebar nav a {
+  display: block; padding: 5px 18px; font-size: 12.5px;
+  color: var(--muted); text-decoration: none;
+  border-left: 3px solid transparent; transition: all .2s;
+}
+#sidebar nav a:hover { color: var(--accent); background: var(--accent-light); }
+#sidebar nav a.active { color: var(--accent); border-left-color: var(--accent); background: var(--accent-light); font-weight: 600; }
+#sidebar nav a.sub { padding-left: 32px; font-size: 12px; }
+
+#main { margin-left: var(--sidebar-width); padding: 48px 56px 80px; max-width: 900px; }
+
+.paper-header { border-bottom: 2px solid var(--accent); padding-bottom: 24px; margin-bottom: 32px; }
+.journal-tag { display: inline-block; background: var(--accent); color: #fff; font-size: 11px; padding: 2px 10px; border-radius: 3px; letter-spacing: .4px; margin-bottom: 14px; }
+.paper-header h1 { font-size: 24px; line-height: 1.35; color: var(--accent); margin-bottom: 6px; }
+.paper-header .orig-title { font-size: 13.5px; color: var(--muted); font-style: italic; margin-bottom: 16px; }
+.paper-header .meta { font-size: 13px; color: var(--muted); line-height: 1.7; }
+.paper-header .meta strong { color: var(--text); }
+
+section { scroll-margin-top: 24px; margin-bottom: 44px; }
+section h2 { font-size: 19px; color: var(--accent); border-bottom: 1px solid var(--border); padding-bottom: 8px; margin-bottom: 16px; }
+section h3 { font-size: 15.5px; color: #5a2a0a; margin: 20px 0 10px; font-style: italic; }
+section p { margin-bottom: 14px; text-align: justify; }
+section ul, section ol { margin: 8px 0 14px 24px; }
+section li { margin-bottom: 6px; }
+
+blockquote { border-left: 3px solid var(--accent); margin: 16px 0; padding: 10px 20px; background: var(--accent-light); font-size: 14px; font-style: italic; color: #333; }
+
+.callout { float: right; width: 155px; margin: 0 0 16px 20px; padding: 10px 14px; background: var(--accent-light); border-left: 3px solid var(--accent); font-size: 13px; font-style: italic; color: var(--accent); line-height: 1.5; clear: right; }
+
+/* 인물 카드 */
+.char-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 20px 0; }
+.char-card { border: 1px solid var(--border); border-radius: 6px; padding: 14px 16px; background: #f9fafb; }
+.char-card h4 { font-size: 13.5px; font-weight: 700; margin-bottom: 10px; }
+.char-card.ken h4 { color: #1e3f7a; }
+.char-card.pat h4 { color: #7a1e1e; }
+.char-card ul { margin-left: 16px; }
+.char-card ul li { font-size: 13px; font-style: italic; margin-bottom: 6px; }
+
+/* 표 */
+.table-wrap { margin: 20px 0; overflow-x: auto; }
+.table-wrap .caption { font-size: 13px; font-weight: 700; margin-bottom: 8px; color: var(--muted); }
+table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+thead th { background: #f5ede5; padding: 8px 12px; border: 1px solid #e8c9a8; text-align: left; }
+tbody td { padding: 7px 12px; border: 1px solid #d0d7de; vertical-align: top; }
+tbody tr:nth-child(even) { background: #fdf8f5; }
+
+/* 프롬프트 카드 */
+.prompt-card { border: 1px solid #e8c9a8; border-radius: 6px; padding: 18px 22px; margin: 20px 0; background: #fdf8f5; }
+.prompt-card h4 { font-size: 15px; font-weight: 700; text-align: center; color: var(--accent); margin-bottom: 14px; }
+.prompt-card .keywords { font-size: 13px; font-weight: 700; margin-bottom: 12px; color: #555; }
+.prompt-card .keywords span { display: inline-block; background: var(--accent); color: #fff; padding: 2px 8px; border-radius: 3px; margin-right: 6px; font-size: 12px; }
+
+.ref-list { list-style: none; padding: 0; }
+.ref-list li { padding: 7px 0 7px 24px; text-indent: -24px; border-bottom: 1px solid #eee; font-size: 13.5px; line-height: 1.7; }
+.ref-list li:last-child { border-bottom: none; }
+
+.back-to-top { display: block; text-align: center; margin-top: 48px; padding: 10px; background: var(--accent-light); color: var(--accent); border-radius: 4px; text-decoration: none; font-size: 13px; }
+.back-to-top:hover { background: var(--accent); color: #fff; }
+
+@media (max-width: 900px) {
+  #sidebar { display: none; }
+  #main { margin-left: 0; padding: 24px 20px 60px; }
+  .callout { float: none; width: 100%; margin: 10px 0; }
+  .char-cards { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<aside id="sidebar">
+  <div class="sb-header">
+    <div class="sb-title">McCully & Pilgrim (2004)</div>
+    <div class="sb-author">Teaching History 114</div>
+  </div>
+  <nav>
+    <a href="#intro">서론 및 두 가지 목표</a>
+    <a href="#curriculum">교육과정 검토와 맥락</a>
+    <a href="#difficult">어려운 문제 다루기</a>
+    <a href="#kenpat">켄과 팻 소개</a>
+    <a href="#identity">정체성 탐구 수업</a>
+    <a href="#activity">프롬프트 카드 활동</a>
+    <a href="#own">학생 자신의 관점 탐구</a>
+    <a href="#eval">평가와 함의</a>
+    <a href="#refs">각주 및 참고문헌</a>
+  </nav>
+</aside>
+
+<main id="main">
+
+  <header class="paper-header">
+    <div class="journal-tag">Teaching History 114 · 2004</div>
+    <h1>"그들이 우리에게서 아일랜드를 빼앗아갔고 우리는 되찾기 위해 싸워야 한다."<br>역사적 해석과 현대적 태도의 관계를 탐구하기 위한 허구적 인물의 활용</h1>
+    <div class="orig-title">'They took Ireland away from us and we have to fight to get it back.' Using fictional characters to explore the relationship between historical interpretation and contemporary attitudes.</div>
+    <div class="meta">
+      <strong>저자</strong>: Alan McCully (얼스터 대학교 Coleraine PGCE 중등 역사 지도교수) &amp; Nigel Pilgrim (뱅거 아카데미, 다운 주)<br>
+      <strong>저널</strong>: <em>Teaching History</em>, No. 114, pp. 17–21<br>
+      <strong>출판연도</strong>: 2004
+    </div>
+  </header>
+
+  <!-- 서론 -->
+  <section id="intro">
+    <h2>서론: 두 가지 주요 목표</h2>
+    <p>이 논문에 담긴 아이디어들의 근거가 되는 두 가지 주요 목표는 다음과 같다:</p>
+    <ol>
+      <li>학생들이 오늘날 서로 다른 사람들이 같은 역사적 사건들을 서로 다른 방식으로 해석하는 방법과 이유를 이해하도록 돕는 것;</li>
+      <li>학생들이 '큰 그림'에 대한 감각을 기르도록 돕는 것—이 경우 1169년(노르만인들이 상당수로 아일랜드에 도착한 것으로 통상 인정되는 날짜) 이후의 아일랜드 역사.</li>
+    </ol>
+    <p>두 목표는 모든 역사 교육과정과 맥락에 적절하지만, 첫 번째 목표는 분명한 이유로 북아일랜드에서 특별한 공명을 갖는다. 그럼에도 우리는 여기에 개략된 활동의 원칙들이 다양한 맥락에 적용될 수 있고, 학생들이 역사적 해석에 대한 이해와 시기를 가로지르는 연결 능력—학생 진전의 필수 요소—을 발전시키는 상상력 있는 방법을 제공한다고 믿는다.</p>
+    <p>이 논문의 초기 작업은 몇 년 전 Speak Your Piece의 일환으로 완료되었다. 채널 4 프로그램 시리즈—〈Off the Walls〉—는 북아일랜드의 문화적·정치적 주제들에 관한 것으로 핵심 자료를 형성했다. 그것에서 두 허구적 인물, 켄과 팻이 소개된다. 역사 교사들로 이루어진 소그룹이 직면한 과제는 이 두 현대적 인물을 역사 연구와 어떻게 관련시킬 것인가였다. 결과—오늘날 두 주인공의 현대적 태도가 어떻게 형성될 수 있는지, 그리고 역사의 서로 다른 시각들을 어떻게 형성할 수 있는지를 검토하는 것—는 교사와 학생 모두에게 자극적임이 드러났다.</p>
+  </section>
+
+  <!-- 교육과정 검토와 맥락 -->
+  <section id="curriculum">
+    <h2>교육과정 검토와 맥락</h2>
+    <p>가장 최근의 북아일랜드 교육과정 검토 제안들의 출판이 이 아이디어에 대한 우리의 관심을 다시 불러일으켰다.<sup>2</sup> 이 제안들은 몇 가지 측면에서 급진적이다. 그것들은 각 젊은이가 '개인으로서, 사회에 대한 기여자로서, 그리고 경제와 환경에 대한 기여자로서' 발전하도록 돕는 것을 목표로 한다. 이렇게 함에 있어 특정 가치들—평등·정의·인권·민주적 수단에 의한 갈등 해결—이 명시적으로 확인되고 교육과정의 핵심에 위치한다. 학습의 감정적 차원은 흥미와 동기를 생성하는 데 결정적인 것으로 인식된다.</p>
+    <p>역사는 규정된 내용이 거의 없을 것이고 독립 과목으로서의 법정 지위도 더 이상 갖지 않을 것이다. 대신, '환경과 사회'라는 우산 용어 아래 교육과정에의 포함이 교과 고유의 결과뿐만 아니라 그것이 증진하는 일반적 기술과 가치에 의해서도 정당화될 것이다. 점점 더 젊은이들은 자신들의 학습을 현대적 관련성의 문제에 적용하도록 장려받을 것이다.</p>
+    <p>역사에 대한 그러한 제안들은 세 가지 측면에서 상당한 열기를 일으킬 가능성이 높다. 첫째, 대부분의 규정된 내용의 제거는 명시된 핵심 모듈에서 성장한 교사 세대에게 상당한 불안과 혼란을 야기할 가능성이 높다. 둘째, '역사의 위기'나 적어도 '역사의 희석'이라는 외침이 있을 것이다. 셋째, '학생들을 개인으로서, 그리고 사회에 기여하는 이들로서 발전시키기'와 관련된 목표들은 이전보다 훨씬 명확한 사회적 유용성 차원을 가지고 있다.</p>
+    <p>3,000명의 젊은이를 대상으로 한 7년간의 종단 연구에서 역사는 '현재나 미래에 유용하지 않다'는 이유로 일관되게 세 가지 가장 가치 없는 과목 중 하나로 자리매김되었다.<sup>3</sup> 역사 교사들에게는 실망스러운 결과였다.</p>
+  </section>
+
+  <!-- 어려운 문제 다루기 -->
+  <section id="difficult">
+    <h2>어려운 문제 다루기: '그녀는 자신이 동의하지 않는 어떤 것도 듣지 않는다'</h2>
+    <div class="callout">허구적 인물들은 자신의 과거 해석을 검토하는 거울을 제공한다.</div>
+    <p>북아일랜드 역사교육은 '중립적 객관성'이라고 부를 수 있는 것의 위장하에 잠재적으로 논쟁적인 아일랜드 역사를 다루는 데 큰 발전을 이루었다. 공통 교수 접근법을 가진 공통 교육과정은 분쟁 사회에서 상당한 성취다. 그러나 우리의 이전 Teaching History 논문에서 상세히 설명된 것처럼, 특히 학생들의 감정적 능력을 참여시키는 것과 관련하여 한계들도 나타났다.<sup>4</sup></p>
+    <p>주장은 '객관적 중립성'이 어떤 맥락에서도 환상이지만, 역사적 사건의 현대적 시각과의 감정적 연관이 깊이 느껴지는 곳에서는 학교에서 공부하는 역사와 공동체에서 선동되는 역사 사이의 단절의 실제 위험이 있다는 것이다. 다시 말해, 역사 교사들이 학생들이 교실 밖에서 접하는 역사의 종류들을 고려하지 못한다면—아무리 형성되어 있고 일방적이더라도—학생들은 '학교 역사'와 '다른 역사들'을 두 개의 분리된 실체로 간주할 수 있다. 교육과정 검토는 특정 현대적 관점과 과거가 해석되는 방식 사이의 관계를 탐색함으로써, 학생들과 공동체들에게 사회를 분열시키는 힘들을 이해하는 하나의 방향을 제공한다.</p>
+  </section>
+
+  <!-- 켄과 팻 소개 -->
+  <section id="kenpat">
+    <h2>켄과 팻: 인물 소개</h2>
+    <p>우리가 원래 프로젝트에서 사용한 다섯 편의 TV 프로그램은 각각 '정체성'·'문화'·'종교'·'정치'·'미래 선택'의 주제를 탐구했다. 각 프로그램에는 켄(강한 충성파)·팻(강한 공화파)과 그들의 친구들이 등장하는 드라마 카메오가 포함되어 있었다. 켄과 팻은 명확하게 정의된 논쟁적 입장들을 대표하기 때문에 연구의 초점으로 선택되었다.</p>
+
+    <div class="char-cards">
+      <div class="char-card ken">
+        <h4>켄(Ken)의 발언 — 강한 충성파</h4>
+        <ul>
+          <li>'나는 개신교도이고 그것이 자랑스럽다. 우리 아버지는 말해. 「한번 개신교도는 영원한 개신교도다.」'</li>
+          <li>'이것은 얼스터이고 영원히 얼스터로 남을 것이다. 그들이 싫다면 그들이 온 공화국으로 돌아가면 된다.'</li>
+          <li>'[성금요일 협정]은 가톨릭에게의 배신임에 틀림없다. 우리는 약해지고 있다… 우리는 포기하지 않을 것이다. 항복은 없다.'</li>
+          <li>'당신은 그가 미쳤다고 생각한다. 그의 아버지를 보라. 진짜 미치광이다.' (빌리가 켄에 대해)</li>
+        </ul>
+      </div>
+      <div class="char-card pat">
+        <h4>팻(Pat)의 발언 — 강한 공화파</h4>
+        <ul>
+          <li>'우리 엄마는 말해. 「그들이 우리에게서 아일랜드를 빼앗아갔다.」 우리 프랭키는 매우 흥분해서… 그래, 우리는 되찾기 위해 싸워야 할 것이다.'</li>
+          <li>'이것은 우리의 선택이 아니다. 우리는 이 국가를 원하지 않았다. 그것은 우리에게 강요되었다.'</li>
+          <li>'우리 프랭키는 광대가 아니다. 우리 프랭키는 영웅이다. 그는 자신의 믿음 때문에 거기[감옥]에 갇혀 있다.'</li>
+          <li>'그녀는 자신이 동의하지 않는 어떤 것도 듣지 않는다. 그녀는 너무 많이 안다.' (아오이페가 팻에 대해)</li>
+        </ul>
+      </div>
+    </div>
+
+    <p>작업은 핵심 단계 3 최종 학년에서 핵심 모듈 '연합에서 분단까지'의 완료 이후나, GCSE에서 분단 이후 아일랜드 역사 모듈의 말미에 배치하는 것이 가장 적합하다고 합의되었다. 작업에는 두 가지 목표가 있었다. 첫째는 두 주인공의 현대적 태도가 과거에 대한 서로 다른 시각에 의해 어떻게 형성될 수 있는지, 그리고 형성하는지를 검토하는 것이었다. 둘째는 1169년 이후 아일랜드 역사의 '큰 그림'에 대한 학생들의 이해를 한데 모으는 수단을 제공하는 것이었다.</p>
+    <p>아래에 개략된 활동들은 상당한 준군사 세력이 존재하는 충성파 노동자 계급 단지에서 많은 학생들이 온 고전하는 고등학교에서 이루어졌다. 학생들은 아일랜드에 평화를 가져오려는 이전 시도들과의 관계에서 성금요일 협정을 평가하는 GCSE 코스워크를 준비하고 있었다.</p>
+  </section>
+
+  <!-- 정체성 탐구 수업 -->
+  <section id="identity">
+    <h2>'나는 개신교도이고 자랑스럽다': 정체성 탐구</h2>
+    <p>처음에 학급은 정체성에 관한 프로그램을 시청했다. 그런 다음 개인 정체성을 정의하고 확인하는 방패 제작에 기반한 소그룹 예술 활동에 참여했다. 학생들은 그런 다음 켄과 팻을 '알아야' 했다. 비디오 클립에 프로그램에서 추출한 발언들(예를 들어 그림 2 참조)이 동반되었다. 두 가지 질문이 제기되었다: '그들의 사고를 형성한 것은 무엇인가?'와 '역사가 기여했을 수 있는가?'</p>
+    <p>그들 각각의 배경이 논의되었고, 가족과 공동체의 가능한 영향을 포함하여 그들의 견해에 영향을 미치는 요인들에 대한 추론이 이루어졌다. 그런 다음 역사 문제가 소개되었다. 이전 연구와 북아일랜드 문화적·정치적 환경에 대한 지식을 바탕으로, 다음과 같은 질문들을 탐구할 수 있었다: '각 인물은 어떤 사건들과 동일시할 수 있는가?' '그들은 그 사건들을 어떻게 볼 것인가?' '왜 그들은 같은 사건에 대해 매우 다른 시각을 가질 수 있는가?' '역사 해석이 어떻게 현대적 입장과 상호작용하는가?'</p>
+    <p>이 질문 방식을 추구하려면 정확한 교과 지식이 필요하다는 것이 인식되었다. 여러 세기의 역사를 세밀하게 요약하는 것은 처음부터 활동을 죽일 가능성이 높다. 대안으로, 각각 시각적 이미지·핵심어·서로 다른 관점을 반영하는 두세 개의 인용문을 담은 핵심 사건에 대한 짧은 프롬프트 카드 시리즈가 준비되었다(그림 3 참조). 학생들은 교사의 지원을 받으며 쌍으로 작업했다.</p>
+  </section>
+
+  <!-- 프롬프트 카드 활동 -->
+  <section id="activity">
+    <h2>프롬프트 카드 활동</h2>
+    <div class="prompt-card">
+      <h4>그림 3: 대기근 — 프롬프트 카드 예시</h4>
+      <div class="keywords">
+        <strong>키워드:</strong>
+        <span>죽음</span><span>열병</span><span>이주</span><span>인구</span><span>책임?</span>
+      </div>
+      <p><strong>인용문 1</strong> — 제임스 핀턴 랄러(개혁가, 1807-1849):</p>
+      <blockquote>그들의 땅과 삶이 자신들이 아닌 다른 이들의 보관과 감독 아래에 있는 사람들은 공통의 안전 상태에 있지 않다. '46년의 아일랜드 대기근이 예이며 증거다. 옥수수 농작물은 섬을 먹이기에 충분했다. 그러나 지주들은 기근에도 불구하고, 열병을 무시하고 임대료를 받아내려 했다. 그들은 전체 수확물을 가져가고 농사를 지은 이들에게는 굶주림을 남겼다.</blockquote>
+      <p><strong>인용문 2</strong> — 러셀 리스/오드리 호지, 『연합과 분단』(1995):</p>
+      <blockquote>많은 지주들이 도움을 주려다 많은 돈을 잃었고; 다른 이들은 거의 아무것도 하지 않았다. 퀘이커 교도들은 가장 필요한 곳에 음식·의복·씨앗을 제공했다. 이 집단은 또한 아일랜드 상황에 대한 정확한 보고서를 영국에 보내는 데도 유용했다.</blockquote>
+    </div>
+
+    <p>시작 활동으로, 학생들은 켄과 팻 각각이 긍정적으로 느낄 인용문과 부정적으로 반응하도록 자극할 인용문을 찾도록 요청받았다. 전반적인 과제는 각 사건의 중요성을 이야기하고, 켄과 팻이 매우 다른 배경에 비추어 각각의 사건에 어떻게 반응할지를 결정하는 것이었다.</p>
+
+    <div class="table-wrap">
+      <div class="caption">그림 4: 역사적 사건들에 대한 켄과 팻의 반응 도표</div>
+      <table>
+        <thead>
+          <tr><th>역사적 사건</th><th>긍정적 동일시</th><th>부정적 동일시</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>게일 아일랜드의 패배</td><td>켄</td><td>팻</td></tr>
+          <tr><td>얼스터 식민지 개척</td><td>켄</td><td>팻</td></tr>
+          <tr><td>1641년 반란</td><td>팻</td><td>켄</td></tr>
+          <tr><td>보인 강 전투</td><td>켄</td><td>팻</td></tr>
+          <tr><td>형사법</td><td>팻</td><td>켄</td></tr>
+          <tr><td>1798년 봉기</td><td>팻</td><td>켄</td></tr>
+          <tr><td>연합법</td><td>켄</td><td>팻</td></tr>
+          <tr><td>아일랜드 대기근</td><td>팻(후에 공화파 정당화에 활용)</td><td>켄(감정적 반응 유발)</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>이 활동의 한 가지 부산물은 학생들이 특정 역사적 사건들—개신교도들에게의 보인 강 전투, 가톨릭교도들에게의 부활절 봉기 같은—이 한 공동체의 기념 전통에만 속하지 않는다는 것을 인식하게 된다는 것이었다. 오히려, 그 중요성은 현대적 관점에 따라 다르게 간주될 수 있다. 예컨대, 켄과 팻 모두 1840년대 아일랜드 대기근 동안 빈민들의 경험에 공감할 수 있지만, 팻은 핀턴 랄러의 시각을 활용하여 현재의 반영국적 정치 입장을 정당화할 수 있다. 이렇게 함으로써 그녀는 대기근을 공화주의를 위해 주장하게 된다—다시 말해, 그 기간의 인지된 불만이 현재 이데올로기와 동일시된다. 이것은 켄으로부터 감정적 반응을 촉발하여 핀턴 랄러의 주장의 타당성을 냉정하게 검토하기 더 어렵게 만들 것이다. 감정적 장벽이 자리잡을 수 있다.</p>
+  </section>
+
+  <!-- 학생 자신의 관점 탐구 -->
+  <section id="own">
+    <h2>'우리는 이 국가를 원하지 않았다': 학생 자신의 관점 탐구</h2>
+    <p>이것들은 어려운 아이디어들이지만, 추상적 성찰 대신 이처럼 전형적으로 극단적인 허구적 인물들을 활용함으로써 얻어지는 거리감에 의해 학생들의 사고가 자극되었다. 다음 과제는 더 큰 개인적 비판적 성찰을 장려하는 것이었다. 먼저, 지금까지 생성된 아이디어들을 모으기 위해 핵심 질문들로 돌아갔다. 네 가지 개방형 질문이 제기되었다:</p>
+    <ul>
+      <li>우리는 역사를 어떻게 배우는가?</li>
+      <li>우리는 공동체에서 벽화·구호 등을 통해 역사를 어떻게 사용하는가?</li>
+      <li>전체 이야기를 조사하는 것이 얼마나 중요한가?</li>
+      <li>역사 연구가 켄과 팻이 갈등을 더 잘 이해하도록 도울 수 있는가?</li>
+    </ul>
+    <p>이것은 격려가 되는 개방적인 토론을 생성했지만, 학생들이 자신들의 상황에 학습을 적용하고 있다는 것을 완전히 보여주지는 못했다. 또한 관찰은 학급의 약 50%만이 토론에 참여했음을 나타냈다. 이후 학생들과의 비공식 대화는 그들 중 여럿이 이제 '역사 공부의 제약에서 벗어나기'를 원하게 되었음을 드러냈다—그것이 현대 정치 토론에 참여하기 위해서였다. 좌절스러운 결과였다.</p>
+    <p>따라서 두 번째 더블 수업은 첫 번째의 역사적 주제들과의 연결을 제공하고 학생들에게 자신들의 견해—특히 현대 문제에 대한—를 더 자유롭게 표현할 기회를 주도록 계획되었다. 수업은 '네 귀퉁이' 걷기 토론 전략을 활용했다.<sup>5</sup> 학생들은 네 가지 진술에 반응하도록 요청받았다:</p>
+    <ol>
+      <li>아일랜드 역사를 배우는 것은 시간 낭비다.</li>
+      <li>분단은 아일랜드 문제의 해결책으로 작동했다.</li>
+      <li>북아일랜드의 유일한 미래는 통합 교육에 있다.</li>
+      <li>준군사 조직원 죄수들의 석방 없이는 진정한 평화 과정이 있을 수 없다.</li>
+    </ol>
+    <p>처음 두 진술에 의해 생성된 정보에 입각한 토론은 학생들이 개별 역사적 사건들을 넘어 더 일반적인 경향을 보고 이것들을 현대 상황과 연결시키는 능력을 반영했다. 나머지 두 진술은 더 열정적인 토론으로 이어졌다. 4번 진술에 대한 토론은 예컨대 지난 30년이 '전쟁'으로 분류될 수 있는지에 초점을 맞췄다.</p>
+  </section>
+
+  <!-- 평가와 함의 -->
+  <section id="eval">
+    <h2>'우리 엄마는 그들이 우리에게서 아일랜드를 빼앗아갔다고 말해': 평가와 함의</h2>
+    <p>수업은 여름 학기 말에 이루어졌고 체계적 평가는 어렵게 이루어졌다. 담임 교사는 다음 학년도 초에 결과에 '매우 만족'한다고 선언했다:</p>
+    <blockquote>역사적·현대적 문제들을 생각할 때, 학생들은 자신들의 비판적 의견을 발전시켰다…… 그 결과 [그들의] 현재 상황에 대한 이해가 이득을 보았다…… 논쟁적 문제들을 토론하고 토의하는 그들의 능력이 눈에 띄게 향상되었으며, 그들은 과거 사건들이 현재에 어떻게 영향을 미치는지에 대한 더 많은 정보에 근거한 인식을 보여줄 수 있었다.</blockquote>
+    <p>그는 이것을 부분적으로 교실에서 표현된 학생 의견을 이끌어내고 견해 명확화를 구하는 자신의 자신감 증가에 기인한다고 했다. 그는 또한 실망감도 표명했다. 두 번째 수업은 '강경한 의견들'을 가진 소그룹 학생들을 드러냈다. 이 그룹은 다른 이들처럼 향상된 기술을 획득했지만, 그들이 생산한 코스워크에서의 가치 명확화의 증거는 더 적었다.</p>
+    <blockquote>최종 분석에서, 일부는 이 기술들을 주로 자신들의 집단적 정체성을 더 지지하는 데 활용했고, 대부분은 극히 복잡한 역사에 대한 이해를 향상시키는 데 활용했다.</blockquote>
+    <p>그러나 교사의 의견들은 깊이 자리잡은 문화적·정치적 입장을 가진 학생들이 논쟁적 역사 연구에 선택성을 적용하고 자신들의 제한된 시각에 대한 더 강한 정당화를 갖고 나올 수 있다는 가능성을 다시 제기한다.<sup>6</sup></p>
+
+    <h3>허구적 인물 활용의 강점</h3>
+    <p>켄과 팻에 대한 작업은 완전히 발전되지 않았고 그 영향도 엄밀하게 평가되지 않았다. 그러나 여기에 개략된 실천은 과거와 현재 사이에 다리를 놓는 잠재적인 접근법을 제공한다. 우리는 허구적 드라마 인물들의 탐구가 몇 가지 강점을 가지고 있다고 주장한다:</p>
+    <ol>
+      <li>전형적이지만 알아볼 수 있는 인물들을 소개함으로써 학생들을 참여시키는 강한 '갈고리'를 제공한다(한 여학생이 켄 같은 사람을 아느냐고 질문받자 학급의 남학생들을 향해 손을 흔들었다!).</li>
+      <li>공식적 교과 연구가 학교 문밖에 남겨질 가능성을 피하려는 과거와 현재 사이의 대화를 만든다.<sup>7</sup> 이러한 접근법은 관련성을 강조하고 학생들이 과거 사건들이 현대 상황에 미치는 역사적 중요성을 토론하는 데 참여시킬 가능성이 높다.</li>
+      <li>허구적 인물들의 사용은 처음에는 개인 감정으로부터의 거리감을 제공하지만 또한 자신의 과거 해석을, 그리고 어쩌면 공인들의 해석도 검토하는 거울을 제공할 수 있다.</li>
+    </ol>
+    <p>우리는 교육과정 검토 목표를 추구하면서 이 작업을 더 발전시킬 의도이다. 한편 우리는 질문을 제기한다: 이 접근법이 다른 논쟁적 문제들—예컨대 영국 맥락에서의 인종차별주의—에 이전 가능성을 가질 수 있을까? 켄과 팻을 대체할 수 있는 연속극이나 코미디 인물들이 있을까?</p>
+  </section>
+
+  <!-- 각주 및 참고문헌 -->
+  <section id="refs">
+    <h2>각주 및 참고문헌</h2>
+    <ul class="ref-list">
+      <li>1. CCEA (2003) <em>Pathways: proposals for Curriculum and Assessment at Key Stage 3</em>, Belfast, Council for the Curriculum, Examinations and Assessment. [교육과정 검토에서 환경과 사회 역사 분야 발췌]</li>
+      <li>2. CCEA (2003) op cit.</li>
+      <li>3. NFER (1999) <em>Real Curriculum</em> reports. 3,000명의 젊은이를 대상으로 한 7년간 종단 연구에서 역사는 일관되게 '현재나 미래에 유용하지 않다'는 이유로 세 가지 가장 가치 없는 과목 중 하나로 인용되었다.</li>
+      <li>4. McCully A., Pilgrim N., Sutherland A. and McMinn T. (2002) '「Don't worry, Mr. Trimble. We can handle it.」 Balancing the rational and emotional in the teaching of contentious topics', <em>Teaching History</em> 106, '시민과 공동체' 특집호. 우리는 거기서 북아일랜드 역사 교육과정이 감정 영역을 배제하고 인지 영역을 강조하는 경향이 있어, 깊이 자리잡은 입장들을 명확히 하는 데 도움이 되는 교과의 잠재력을 제한하고 있다고 주장했다.</li>
+      <li>5. '네 귀퉁이'는 걷기 토론이다. 교실의 귀퉁이들은 '동의', '강하게 동의', '동의하지 않음', '모르겠음'으로 표시된다. 참가자들은 논쟁적인 진술이 읽힐 때 자신이 선택한 귀퉁이로 이동하도록 요청받는다.</li>
+      <li>6. Barton, K.C. &amp; McCully, A.W. (in print) 'History, Identity and the School Curriculum in Northern Ireland: An Empirical Study of Secondary Students' Ideas and Perspectives' <em>Journal of Curriculum Studies</em>.</li>
+      <li>7. McCully et al (2002) op.cit. 참조.</li>
+    </ul>
+    <a href="#intro" class="back-to-top">▲ 맨 위로 돌아가기</a>
+  </section>
+
+</main>
+
+<script>
+window.addEventListener('scroll', () => {
+  let current = '';
+  document.querySelectorAll('section[id]').forEach(s => {
+    if (s.getBoundingClientRect().top <= 80) current = s.id;
+  });
+  document.querySelectorAll('#sidebar nav a').forEach(a => {
+    a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+  });
+});
+document.querySelectorAll('#sidebar nav a, .back-to-top').forEach(a => {
+  a.addEventListener('click', e => {
+    e.preventDefault();
+    const t = document.querySelector(a.getAttribute('href'));
+    if (t) t.scrollIntoView({ behavior: 'smooth' });
+  });
+});
+</script>
+</body>
+</html>

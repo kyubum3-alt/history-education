@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>제2차 국제 학술대회 '논쟁의 역사'와 역사 교육의 문제들 – Valls Montes (2000) 한국어 번역</title>
+<style>
+  :root {
+    --sidebar-width: 270px;
+    --accent: #2c5f8a;
+    --accent-light: #e8f1f8;
+    --text: #1a1a1a;
+    --muted: #555;
+    --border: #d0d7de;
+    --bg: #fafafa;
+    --white: #ffffff;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+    font-size: 15px;
+    line-height: 1.85;
+    color: var(--text);
+    background: var(--bg);
+  }
+
+  #sidebar {
+    position: fixed;
+    top: 0; left: 0;
+    width: var(--sidebar-width);
+    height: 100vh;
+    background: var(--white);
+    border-right: 1px solid var(--border);
+    overflow-y: auto;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+  }
+
+  #sidebar .sidebar-header {
+    background: var(--accent);
+    color: #fff;
+    padding: 16px 14px 12px;
+    font-size: 12.5px;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  #sidebar .sidebar-header .journal {
+    font-size: 10.5px;
+    font-weight: 400;
+    opacity: 0.85;
+    margin-top: 3px;
+  }
+
+  #sidebar nav { padding: 10px 0 20px; flex: 1; }
+
+  #sidebar nav a {
+    display: block;
+    padding: 6px 16px;
+    font-size: 12.5px;
+    color: var(--muted);
+    text-decoration: none;
+    border-left: 3px solid transparent;
+    transition: all 0.15s;
+    line-height: 1.5;
+  }
+
+  #sidebar nav a:hover,
+  #sidebar nav a.active {
+    color: var(--accent);
+    background: var(--accent-light);
+    border-left-color: var(--accent);
+    font-weight: 600;
+  }
+
+  #sidebar nav .nav-section {
+    font-size: 10.5px;
+    font-weight: 700;
+    color: #999;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    padding: 12px 16px 4px;
+  }
+
+  #main {
+    margin-left: var(--sidebar-width);
+    padding: 40px 52px 80px;
+    max-width: 880px;
+  }
+
+  .paper-header {
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 22px;
+    margin-bottom: 28px;
+  }
+
+  .paper-header .ko-title {
+    font-size: 21px;
+    font-weight: 800;
+    color: var(--accent);
+    line-height: 1.4;
+    margin-bottom: 8px;
+  }
+
+  .paper-header .es-title {
+    font-size: 13.5px;
+    color: var(--muted);
+    font-style: italic;
+    margin-bottom: 14px;
+  }
+
+  .paper-meta {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 2;
+  }
+
+  .paper-meta strong { color: var(--text); }
+
+  /* 서지 유형 배지 */
+  .doc-type {
+    display: inline-block;
+    background: #e8f4e8;
+    color: #2a6b2a;
+    border: 1px solid #b8d8b8;
+    border-radius: 4px;
+    font-size: 11.5px;
+    font-weight: 700;
+    padding: 2px 8px;
+    margin-bottom: 10px;
+    letter-spacing: 0.3px;
+  }
+
+  .context-box {
+    background: var(--accent-light);
+    border-left: 4px solid var(--accent);
+    border-radius: 0 6px 6px 0;
+    padding: 14px 20px;
+    margin-bottom: 28px;
+    font-size: 13px;
+    color: #333;
+    line-height: 1.8;
+  }
+
+  .context-box strong { color: var(--accent); }
+
+  section {
+    margin-bottom: 36px;
+    scroll-margin-top: 24px;
+  }
+
+  section h2 {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--accent);
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 6px;
+    margin-bottom: 14px;
+  }
+
+  p { margin-bottom: 13px; text-align: justify; }
+
+  .footnotes {
+    border-top: 1px solid var(--border);
+    margin-top: 28px;
+    padding-top: 14px;
+    font-size: 12.5px;
+    color: var(--muted);
+    line-height: 1.75;
+  }
+
+  .footnotes h4 {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .footnote-item { margin-bottom: 8px; }
+
+  .back-top {
+    display: inline-block;
+    margin-top: 28px;
+    padding: 8px 18px;
+    background: var(--accent);
+    color: #fff;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+  }
+
+  .back-top:hover { background: #1e4a73; }
+
+  @media (max-width: 900px) {
+    #sidebar { display: none; }
+    #main { margin-left: 0; padding: 24px 20px 60px; }
+  }
+</style>
+</head>
+<body>
+
+<aside id="sidebar">
+  <div class="sidebar-header">
+    📄 제2차 국제 '논쟁의 역사' 학술대회와 역사 교육의 문제들
+    <div class="journal">Con-Ciencia Social, n. 4 (2000) · Valls Montes</div>
+  </div>
+  <nav>
+    <div class="nav-section">논문 정보</div>
+    <a href="#context">문헌 맥락</a>
+
+    <div class="nav-section">본문</div>
+    <a href="#cambio">인식 변화의 배경</a>
+    <a href="#factores">두 가지 촉진 요인</a>
+    <a href="#historiografia">역사학의 사회적 기능 외면 문제</a>
+    <a href="#sintonia">이베로아메리카와의 공명</a>
+    <a href="#congreso">학술대회의 의의</a>
+
+    <div class="nav-section">서지</div>
+    <a href="#notas">각주</a>
+  </nav>
+</aside>
+
+<main id="main">
+
+  <div class="paper-header">
+    <div class="doc-type">학술대회 보고문 / 기고문</div>
+    <div class="ko-title">제2차 국제 "논쟁의 역사" 학술대회와<br>역사 교육의 문제들</div>
+    <div class="es-title">El II Congreso Internacional "Historia a Debate" y los problemas relacionados con la enseñanza de la Historia</div>
+    <div class="paper-meta">
+      <strong>저자:</strong> Rafael Valls Montes (발렌시아 대학교, 스페인)<br>
+      <strong>게재지:</strong> Con-Ciencia Social, n. 4 (2000), pp. 157–158<br>
+      <strong>주석:</strong> 제2차 국제 학술대회는 1999년 7월 산티아고 데 콤포스텔라에서 개최됨
+    </div>
+  </div>
+
+  <!-- 문헌 맥락 안내 -->
+  <div class="context-box" id="context">
+    <strong>문헌 성격 안내</strong><br>
+    이 글은 1999년 7월 스페인 산티아고 데 콤포스텔라에서 열린 제2차 국제 '논쟁의 역사(Historia a Debate)' 학술대회에 대한 짧은 보고 기고문이다(2쪽 분량). 교과서 연구가 라파엘 발스 몬테스(Rafael Valls Montes)가 대회 참관 후 역사 교육 문제에 관한 인식 변화와 이베로아메리카 학계와의 수렴을 중심으로 논평한 글이다.
+  </div>
+
+  <!-- 인식 변화의 배경 -->
+  <section id="cambio">
+    <h2>역사학 포럼에서 역사 교육의 존재감 증대</h2>
+
+    <p>불과 몇 년 전부터 역사 교육이 역사학 토론의 장에서 존재감을 드러내기 시작했다. 비교적 이른 시기인 1993년, 제1차 '논쟁의 역사' 학술대회에서 이미 그러했다. 그 해 역사 교육의 존재는—회의록이 반영하듯—다소 미약했다. 반면 1999년 학술대회에서는 가장 인기 있고 활기찬 분과 중 하나가 되었으며, 이는 다음 회의록에서도 확인될 것이다. "새로운 세기에 가르쳐야 할 역사는 무엇인가?"라는 주제로 진행된 두 세션과 "인문학 논쟁: 현황과 전망"이라는 원탁 토론은 이 제2차 학술대회 주최자들이 역사 교육과 관련된 일련의 문제들에 부여한 중요성을 잘 보여준다.</p>
+
+    <p>이 인상적인 인식과 관심의 변화를 설명하는 데 도움이 될 중간 시기에 무슨 일이 있었는가?</p>
+
+    <p>이 변화를 이해하는 데 기여할 수 있는 몇 가지 상황들이 있다. 스페인과 이베로아메리카 대부분의 국가(이 제2차 국제 학술대회에서 가장 많이 참가한 대표들이 이 나라들에서 왔다)에서 공통적으로 작용한 두 가지를 공간의 제약 때문에 중심으로 살펴보겠다.</p>
+  </section>
+
+  <!-- 두 가지 촉진 요인 -->
+  <section id="factores">
+    <h2>두 가지 촉진 요인</h2>
+
+    <p>첫째, 역사 교육과 그 교수법에 관한 상당히 많은 연구들의 최근 세대가 등장하여 높은 지적 수준을 갖추고, 교수법 자원 활용에 관한 연구(독일인들이 <em>Methodik</em>이라고 부르는 것)의 방향을 넘어서 역사 교육의 사회적 용도와 기능에 훨씬 더 긴밀하게 연결된 연구—과거뿐만 아니라 현재의—깊은 새로운 성찰 영역을 열었다(이를 독일인들은 자신들의 개념화를 계속 따라 <em>Didaktik</em>이라고 부른다). 이 의미에서, 역사 교수법(didáctica de la Historia)이 역사 지식의 이 근본적인 사회적 차원에 관해 현재 가장 많고 갈수록 더 많은 기여를 하고 있는 것이라고 말하는 것은 결코 과장이 아니라고 생각한다.</p>
+
+    <p>둘째, 1990년대는 이베로아메리카 전역에서 비대학 교육과 관련된 학습 계획의 심층적 개혁으로 특징지어진다. 이 개혁들은 최소한 강령적으로는 역사(그리고 전반적인 사회과학) 교육의 교육 목적들을 근본적으로 재구성했다. 19세기 자유주의 체제가 규정했던 기본적으로 애국주의적인 전제들로부터—이러한 전제들은 최근까지 별다른 수정 없이 지속되어 왔다—역사 교육의 정당화를 재정립하는 작업이 이루어졌다. 이 개혁들에는, 다소 자극받거나 다소 자발적으로, 역사 교육의 "새로운" 기능들을 세미나나 상설 집합체로 조직되어 심층적으로 재사고한 교사 집단들의 출현이 함께 이루어졌다(이 점에서 페디카리<em>Fedicaria</em>의 경우가 전형적이다). 이 집단들은 "새로운" 시대와 현재의 학생 특성—의무교육 수준에서 이미 많은 경우 해당 연령대 전체 인구를 포괄하게 된—에 적합한 역사 교육을 요구해왔다.</p>
+  </section>
+
+  <!-- 역사학의 사회적 기능 외면 문제 -->
+  <section id="historiografia">
+    <h2>역사학의 사회적 기능 외면 문제</h2>
+
+    <p>학문적 성격의 역사학 연구는 오랫동안 역사 지식의 이 기본적인 사회적 차원과 멀리 떨어져 있었으며, 안타깝게도 그것이 다루는 연구들에서 제기되는 사회적(심지어 시민적) 관심의 빈약함을 고려하고 대학 학과의 제한적인 울타리 너머로 주요 결과물을 접근 가능하게 만들려는 요구 면에서도 여전히 대부분 그러하다.</p>
+
+    <p>항상 그러했던 것은 아니다. 이는 스페인의 몇몇 대역사가들—과거와 현재 모두—의 관심사와 기여에서 확인된다(라파엘 알타미라, 호세 델레이토 피뇨엘라, 하이메 비센스 비베스 또는 호세프 폰타나의 경우를 예로 들겠다. 이들을 언급하는 것은 내가 이들을 가장 잘 알기 때문이다). 그러나 최근 들어 스페인 역사학의 중요한 일부에서 이루어진 의심할 여지 없는 진전이 역사의 사회적·교육적 용도와 목적에 대한 새로운 관심과 함께 이루어지지 않았다는 것은 사실이다.</p>
+  </section>
+
+  <!-- 이베로아메리카와의 공명 -->
+  <section id="sintonia">
+    <h2>스페인-이베로아메리카 역사 교육 학계의 공명</h2>
+
+    <p>역사 교육에서 스페인과 이베로아메리카의 역사 교수법 학자들 및 교사들 사이의 공명은—존재하는 문제들에 대한 접근 방식과 제안 및 토론된 내용 모두에서—산티아고 데 콤포스텔라 국제 학술대회에서 매우 두드러지게 나타났다. 의심할 여지 없이 이에 기여한 것은 지난 20년 동안 대서양 양안에서의 성장하는 교류이다. 초기에는 스페인에서 이베로아메리카로의 흐름이 우세했지만, 현재는 보다 균형에 가까워지고 있다. 이를 보여주는 것은 이 주제에 관해 이베로아메리카에서 생성되고 있는 새로운 출판물(책과 학술지)들로, 이는 존재하는 큰 공명을 확인해주며, 마찬가지로 양측에서 이루어지는 각각의 가장 두드러진 교수법적 토론과 방향들에 대한 서로 간의 지식, 그리고 성장하는 지적 교류에서도 드러난다. 이 교류는 양측의 행정 영역에서도 나타나는데, 예를 들어 다양한 교육 계획들과 이베로아메리카 국가들의 조직(OEI)이 추진하는 이에 연결된 연구들이 그 사례이다.<sup>1</sup></p>
+
+    <p>가장 희망적인 미래의 실마리는 아마도 즉각적인 미래에 관한 것일 것이다. 지난 2년 동안 상황이 변화하는 것으로 보이며, 역사 교육 전담 분과가 열리거나 예정된 학술대회가 이미 여러 개 있다(비토리아 —1998년 3월—; 사라고사 —1998년 11월—; 발렌시아 —2000년 5월—를 예로 들 수 있다). 이 변화가 적어도 감수성의 변화를 나타내기를 바라며, 역사학 학계에서도 전통적인 연속성과 관행들이 사회적으로 더 새롭고 열매 있는 경험들에 열리고 있음의 신호가 되기를 바란다.</p>
+  </section>
+
+  <!-- 학술대회의 의의 -->
+  <section id="congreso">
+    <h2>학술대회의 의의</h2>
+
+    <p>제2차 국제 '논쟁의 역사' 학술대회는 한편으로 역사 교육 교사들 사이에서 공유된 이러한 관심사들의 좋은 장이었고, 다른 한편으로 역사 교사들로서 우리의 과학적·개인적 지식을 넓히고, 이를 토대로 학교가 만들어내고 제공하며 분배하는 역사 지식으로 사회와 역사적 지식에 대해 다른 방식으로 성찰할 수 있는 역사 교육을 달성하기 위한 노력을 배가할 수 있는 훌륭한 플랫폼이었다.</p>
+
+    <a href="#" class="back-top">▲ 맨 위로</a>
+  </section>
+
+  <!-- 각주 -->
+  <section id="notas">
+    <h2>각주</h2>
+    <div class="footnotes">
+      <div class="footnote-item"><sup>1</sup> 이 주제와 관련하여 생성된 많은 출판물들 중에서 스페인에서의 접근성이 높은 것들을 특히 꼽을 수 있다: M. C. 곤살레스 무뇨스(González Muñoz): (1997): <em>La enseñanza de la Historia en el nivel medio. Situación, tendencias e innovaciones</em> [중등 수준의 역사 교육: 현황, 경향, 혁신]. Madrid, OEI-Marcial Pons; P. 데 블라스(de Blas): (1997): <em>Los planes y programas para la enseñanza de la Historia en Iberomérica en el nivel medio</em> [이베로아메리카 중등 수준 역사 교육 계획과 교육과정]. Madrid, OEI-Marcial Pons; <em>Iber</em> 학술지 22호(1999년 12월)에 수록된 글들—이 호는 주로 이베로아메리카의 역사 교육에 헌신했다—; 그리고 매우 최근의 출판물인 VV.AA.: (1999): <em>Enseñanza de la Historia de Iberoamérica: Currículo-tipo. Guía para el profesor</em> [이베로아메리카 역사 교육: 표준 교육과정. 교사를 위한 지침서]. Madrid, OEI.</div>
+    </div>
+  </section>
+
+</main>
+
+<script>
+  window.addEventListener('scroll', () => {
+    let current = '';
+    document.querySelectorAll('section[id]').forEach(s => {
+      if (s.getBoundingClientRect().top <= 80) current = s.id;
+    });
+    document.querySelectorAll('#sidebar nav a').forEach(a => {
+      a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+    });
+  });
+
+  document.querySelectorAll('#sidebar nav a, .back-top').forEach(a => {
+    a.addEventListener('click', e => {
+      const href = a.getAttribute('href');
+      if (href && href !== '#') {
+        e.preventDefault();
+        const target = document.querySelector(href);
+        if (target) target.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  });
+</script>
+</body>
+</html>
