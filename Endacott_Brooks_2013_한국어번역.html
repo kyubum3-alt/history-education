@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Endacott &amp; Brooks (2013) — 역사적 감정이입 이론·실천 모델 한국어 번역</title>
+<style>
+:root {
+  --sidebar-width: 260px;
+  --accent: #2c5f8a;
+  --accent-light: #e8f1f8;
+  --text: #1a1a1a;
+  --muted: #555;
+  --border: #d0d7de;
+  --bg: #fafafa;
+  --white: #ffffff;
+  --table-head: #f0f4f8;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Noto Serif KR', 'Malgun Gothic', Georgia, serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.85;
+  font-size: 15px;
+}
+
+#sidebar {
+  position: fixed;
+  top: 0; left: 0;
+  width: var(--sidebar-width);
+  height: 100vh;
+  background: var(--white);
+  border-right: 1px solid var(--border);
+  overflow-y: auto;
+  padding: 20px 0 40px;
+  z-index: 100;
+}
+
+#sidebar .sidebar-title {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  padding: 0 16px 12px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 10px;
+}
+
+#sidebar nav a {
+  display: block;
+  padding: 5px 16px;
+  font-size: 12.5px;
+  color: var(--muted);
+  text-decoration: none;
+  border-left: 3px solid transparent;
+  transition: all .15s;
+  line-height: 1.4;
+}
+
+#sidebar nav a.sub {
+  padding-left: 28px;
+  font-size: 11.5px;
+}
+
+#sidebar nav a:hover,
+#sidebar nav a.active {
+  color: var(--accent);
+  border-left-color: var(--accent);
+  background: var(--accent-light);
+}
+
+#main {
+  margin-left: var(--sidebar-width);
+  max-width: 860px;
+  padding: 48px 48px 80px;
+}
+
+.paper-header {
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 24px;
+  margin-bottom: 32px;
+}
+
+.paper-journal {
+  font-size: 12px;
+  color: var(--accent);
+  font-weight: 700;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.paper-title-ko {
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.4;
+  color: var(--text);
+  margin-bottom: 6px;
+}
+
+.paper-title-en {
+  font-size: 13px;
+  color: var(--muted);
+  font-style: italic;
+  margin-bottom: 16px;
+}
+
+.paper-meta {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.paper-meta strong { color: var(--text); }
+
+.abstract-box {
+  background: var(--accent-light);
+  border-left: 4px solid var(--accent);
+  border-radius: 4px;
+  padding: 20px 24px;
+  margin-bottom: 40px;
+}
+
+.abstract-box h2 {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 10px;
+}
+
+.abstract-box p { font-size: 14px; line-height: 1.8; }
+
+.abstract-original {
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border);
+  font-size: 12.5px;
+  color: var(--muted);
+  font-style: italic;
+  line-height: 1.7;
+}
+
+.keywords {
+  margin-top: 10px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.keywords strong { color: var(--text); }
+
+section {
+  scroll-margin-top: 24px;
+  margin-bottom: 48px;
+}
+
+h2.section-heading {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--accent);
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 8px;
+  margin-bottom: 18px;
+}
+
+h3.sub-heading {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text);
+  margin: 22px 0 10px;
+}
+
+p { margin-bottom: 14px; }
+
+ul, ol {
+  margin: 10px 0 14px 24px;
+  line-height: 2;
+}
+
+.table-wrap {
+  margin: 24px 0;
+  overflow-x: auto;
+}
+
+.table-wrap .caption {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13.5px;
+}
+
+thead tr { background: var(--table-head); }
+
+th, td {
+  border: 1px solid var(--border);
+  padding: 8px 12px;
+  vertical-align: top;
+  line-height: 1.6;
+}
+
+th { font-weight: 700; text-align: left; }
+
+.figure-placeholder {
+  background: #f5f7fa;
+  border: 1px dashed var(--border);
+  border-radius: 4px;
+  padding: 18px 20px;
+  margin: 24px 0;
+}
+
+.figure-placeholder .fig-title {
+  font-weight: 700;
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+
+.callout {
+  background: #fffbea;
+  border-left: 4px solid #e8c43a;
+  border-radius: 4px;
+  padding: 14px 18px;
+  margin: 16px 0;
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+.ref-list { font-size: 13px; line-height: 1.7; }
+.ref-item {
+  padding: 6px 0;
+  border-bottom: 1px solid #eee;
+}
+.ref-item:last-child { border-bottom: none; }
+.ref-ko { color: var(--muted); font-size: 12px; display: block; }
+
+.back-to-top {
+  display: block;
+  text-align: right;
+  font-size: 12px;
+  color: var(--accent);
+  text-decoration: none;
+  margin-top: 32px;
+}
+
+@media (max-width: 900px) {
+  #sidebar { display: none; }
+  #main { margin-left: 0; padding: 24px 20px 60px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ══════════════ 사이드바 ══════════════ -->
+<div id="sidebar">
+  <div class="sidebar-title">📄 논문 목차</div>
+  <nav>
+    <a href="#header">논문 정보</a>
+    <a href="#abstract">초록</a>
+    <a href="#intro">1. 서론</a>
+    <a href="#conceptualization">2. 역사적 감정이입의 새로운 개념화</a>
+    <a class="sub" href="#when">2-1. 언제 역사적 감정이입을 활용하는가</a>
+    <a href="#model">3. 역사적 감정이입의 교수 모델</a>
+    <a class="sub" href="#introduction-phase">3-1. 도입 단계</a>
+    <a class="sub" href="#investigation">3-2. 탐구 단계</a>
+    <a class="sub" href="#display">3-3. 표현 단계</a>
+    <a class="sub" href="#reflection">3-4. 성찰 단계</a>
+    <a href="#conclusion">4. 결론</a>
+    <a href="#references">참고문헌</a>
+  </nav>
+</div>
+
+<!-- ══════════════ 메인 콘텐츠 ══════════════ -->
+<div id="main">
+
+  <!-- 논문 헤더 -->
+  <div class="paper-header" id="header">
+    <div class="paper-journal">Social Studies Research and Practice, Vol. 8, No. 1 | Spring 2013 | pp. 41–58</div>
+    <div class="paper-title-ko">역사적 감정이입 증진을 위한 이론·실천 모델의 업데이트</div>
+    <div class="paper-title-en">An Updated Theoretical and Practical Model for Promoting Historical Empathy</div>
+    <div class="paper-meta">
+      <strong>저자:</strong> Jason Endacott (University of Arkansas) · Sarah Brooks (Elmhurst College)<br>
+      <strong>저널:</strong> Social Studies Research and Practice (www.socstrp.org)<br>
+      <strong>출판:</strong> Spring 2013, Volume 8 Number 1
+    </div>
+  </div>
+
+  <!-- 초록 -->
+  <section id="abstract">
+    <div class="abstract-box">
+      <h2>초록 (Abstract)</h2>
+      <p>지난 20여 년간 역사적 감정이입이라는 주제에 상당한 주목이 집중되어 왔지만, 현재 역사적 감정이입이 정의되고, 운용화되며, 교실 실천에 적용되는 방식은 일관성이 부족하고, 종종 이 구인(construct)에 대한 구식 개념화에 기반하고 있다. 학자들은 역사적 감정이입을 학생들과 함께 활용하는 데 있어 다양하고, 경우에 따라 서로 경쟁하는 이론적·실천적 접근법을 사용해 왔으며, 이는 역사적 감정이입의 성격, 목적, 함양에 관한 지속적인 혼란으로 이어졌다. 우리의 목표는 역사적 감정이입을 이중 차원적 인지-정의적 구인으로 명확히 정의하고, 역사적 감정이입을 배타적으로 인지적이거나 정의적인 역사 탐구 방식과 차별화하는 업데이트된 개념화를 제시하는 것이다. 나아가 역사적 감정이입의 근접 목표와 궁극적 목표에 대한 고려를 포함한, 역사적 감정이입 증진을 위한 업데이트된 교수 모델을 제공한다. 우리는 역사적 감정이입 증진을 위한 최선의 실천에 관해 연구가 어느 정도 합의를 이루어 낸 지점과 추가 연구가 필요한 지점을 조명하고자 한다.</p>
+      <div class="keywords"><strong>주요어:</strong> 역사적 감정이입, 정의적 참여, 관점 인식, 역사 탐구, 이론 모델, 교수 모델</div>
+      <div class="abstract-original">
+        <strong>원문:</strong> Over the past two decades significant attention has been given to the topic of historical empathy, yet the manner in which historical empathy is currently defined, operationalized, and put into classroom practice lacks consistency and often is based on dated conceptualizations of the construct. Scholars have employed a variety of theoretical and practical approaches to utilizing historical empathy with students, leading to persistent confusion about the nature, purpose and fostering of historical empathy. Our goal is to present an updated conceptualization that clearly defines historical empathy as a dual-dimensional, cognitive-affective construct and differentiates historical empathy from exclusively cognitive or affective modes of historical inquiry. We further provide an updated instructional model for the promotion of historical empathy that includes consideration for historical empathy's proximate and ultimate goals. We aim to highlight where research has produced some consensus on best practice for promoting empathy and where further study is needed.
+      </div>
+    </div>
+  </section>
+
+  <!-- 1. 서론 -->
+  <section id="intro">
+    <h2 class="section-heading">1. 서론 (Introduction)</h2>
+    <p>역사적 감정이입이란 학생들이 과거 역사적 인물들과 인지적·정의적으로 참여하여, 그들의 삶의 경험, 결정 또는 행동을 더 잘 이해하고 맥락화하는 과정이다. 역사적 감정이입은 특정 역사적·사회적 맥락 내에서 과거의 사람들이 어떻게 생각하고, 느끼고, 결정을 내리고, 행동하고, 결과에 직면했는지를 이해하는 것을 수반한다. 지난 20여 년간 역사적 감정이입의 함양과 발현은 유치원-12학년 교실에서의 역사 교수·학습에 관심을 가진 학자들로부터 상당한 주목을 받아 왔다. 다양한 저자들이 역사적 감정이입이 정확히 무엇인지 정의하고, 학생들이 발현할 때 그것이 어떤 모습인지 파악하려 시도해 왔다 (Barton &amp; Levstik, 2004; Blake, 1998; Bryant &amp; Clark, 2006; Dulberg, 2002; Endacott, 2010; Foster &amp; Yeager, 1998; Foster, 1999; Lee &amp; Ashby, 2001; Riley, 1998; Stern, 1998; VanSledright, 2001). 한편 수많은 연구자들은 역사적 감정이입 또는 그 요소들을 증진하기 위해 다양한 교수 방법과 전략이 어떻게 사용될 수 있는지 보여주는 데 에너지를 집중해 왔다 (Brooks, 2008; Colby, 2008; D'Adamo &amp; Fallace, 2011; Davis, 2001; Doppen, 2000; Endacott, 2010; Grant, 2001; Jensen, 2008; Kohlmeier, 2006; Yeager et al., 1998). 또 다른 학자들은 역사적 감정이입이 역사 교실 안팎에서 어떻게 긍정적인 성과로 이어지는지에 대해 이론화하거나 이를 입증하고자 했다 (Barton &amp; Levstik, 2004; Brooks, 2011; Gehlbach, 2004; Kohlmeier, 2006).</p>
+
+    <p>학자들은 학생들과 함께 역사적 감정이입을 활용하는 데 있어 서로 다르고 경우에 따라 경쟁하는 이론적·실천적 접근법을 사용해 왔으며, 이는 역사적 감정이입의 형태와 함양에 관한 지속적인 혼란으로 이어졌다. Stuart Foster (2001)가 역사적 감정이입을 "문제적이고 논쟁적인 용어"(p. 167)라고 지칭한 지 10여 년이 지났지만, 역사적 감정이입에 대한 현재의 참조들은 여전히 그만큼 문제적이고 논쟁적이라고 할 수 있다. 역사적 감정이입이 정의되고, 운용화되고, 교실 실천에 적용되는 방식은 일관성이 부족하고 종종 이 구인에 대한 구식 개념화에 기반하고 있다. 이러한 이유로 우리는 관련 학문적 논의를 종합하여 (1) 역사적 감정이입을 배타적으로 인지적이거나 정의적인 탐구 방식과 차별화하는 이중 차원적 인지-정의적 개념화를 업데이트하고, (2) 역사적 맥락화, 인지적 관점 취하기, 역사적 인물에 대한 정의적 연결을 통한 역사적 감정이입 함양을 위한 상응하는 교수 모델을 제시하기 위해 이 논의에 뛰어든다.</p>
+  </section>
+
+  <!-- 2. 역사적 감정이입의 새로운 개념화 -->
+  <section id="conceptualization">
+    <h2 class="section-heading">2. 역사적 감정이입의 새로운 개념화 (An Updated Conceptualization of Historical Empathy)</h2>
+    <p>많은 초기 연구자들은 역사적 감정이입을 주로 인지적 구인으로 특성화했으며 (예: Foster, 1999), 그 결과 역사적 감정이입에 대한 초기 연구의 상당 부분은 역사적 감정이입이 관점 취하기라는 인지적 행위와 대략 동등하다는 가정에 기반하였다 (예: Doppen, 2000). 보다 최근의 연구 (Brooks, 2011; Endacott, 2011; Kohlmeier, 2006; Stoddard, 2008)는 역사적 감정이입이 이중 영역적 구인으로서 더 완전히 실현된다고 제안하는데, 여기서 역사 탐구자는 역사적 인물의 생각을 검토하는 동시에 그들의 상황이 가진 정의적 차원과 연결된다. 이러한 경쟁적 개념화들을 인식하여, 많은 학자들이 역사적 감정이입의 인지적 측면을 명시적으로 지칭할 때 "관점 취하기"(Doppen, 2000; Dulberg, 2002; Gehlbach, 2004), "관점 인식"(Barton &amp; Levstik, 2004), 또는 "합리적 이해"(Lee &amp; Ashby, 2001) 같은 용어로 대체해 왔다. 우리는 이러한 용어들이 "역사적 감정이입"과 동의어나 교환 가능한 용어로 사용되는 경우 이 대체가 문제적이라고 본다. 배타적으로 인지적인 관점 취하기의 행위는 역사적 감정이입이 아니지만, 관점 취하기가 역사적 감정이입의 매우 필수불가결한 하나의 측면인 것은 분명하다.</p>
+
+    <p>사회심리학자들 사이에서는 감정이입의 이중 차원적 인지-정의적 성격이 널리 받아들여지고 있다. 현재 이 순간 우리의 동시대인들과 감정이입하는 것은 타인이 직면한 상황에 대한 정의적 연결을 포함하며, 이는 그 사람의 관점과 그것을 둘러싼 정황에 대한 우리의 인지적 이해에 의해 형성된다 (Eisenberg, 2000; Hoffman, 1984). 우리가 매일 감정이입하는 사람들은 그들이 직면하는 상황에 대해 동시적인 인지적·정의적 반응을 다루고 있다. 그들과의 우리의 연결 역시, 그들의 상황을 더 잘 이해하려면, 이 두 영역 모두에 걸쳐야 한다. 우리는 그들이 어떻게 생각하고, 어떻게 느낄 수 있으며, 이 두 요소가 그들이 직면한 상황에 대한 그들의 반응을 어떻게 형성할 수 있는지 이해하려고 노력한다.</p>
+
+    <p>역사적 감정이입은 과거의 관점이 어느 정도 타당성을 지닌다는 가능성을 유지하면서 현재의 삶과 먼 과거의 삶 사이의 차이를 식별하도록 요구한다 (Barton &amp; Levstik, 2004); 이는 인지-정의적 접근을 통해서만 달성될 수 있다. 17세기 사람들의 마녀에 대한 믿음이나 조지 피켓 장군의 Cemetery Ridge 돌격 지속 결정 (Stewart, 1987)과 같이 겉으로는 비합리적인 것들을 이해하려는 시도를 생각해보라. 학생들이 순전히 인지적 관점에서 그러한 상황을 검토한다면, 합리적인 사람이 비합리적인 사람보다 낫기 때문에 왜 그들이 과거 사람들보다 우월하다고 여기지 않겠는가? 역사적 인물들을 탐구할 때 오직 논리나 이성만 적용하도록 요구받는다면, 학생들은 자부심, 두려움, 사랑, 증오, 절박함, 또는 탐욕과 같은 관심사에 의해 영향을 받은 사람들을 이해하려 할 때 불리한 위치에 있게 된다.</p>
+
+    <p>역사적 감정이입을 발현하기 위해 학생들은 타인에 초점을 맞추는 것과 자신에게 초점을 맞추는 것 사이를 번갈아 해야 한다. 타인에게 초점을 맞출 때는 주어진 상황에서 다른 사람이 느낄 가능성이 있는 것을 인식하고, 자신에게 초점을 맞출 때는 비슷한 정의적 반응을 야기한 자신의 삶에서의 유사한 경험을 떠올리게 된다. 과거와의 정의적 연결을 형성하는 과정은 학생들이 역사적 인물들을 매우 인간적인 경험을 직면한 인간으로 볼 수 있게 하며, 관점 취하기만으로는 얻을 수 없는 더 풍부한 이해로 이어진다. 인간은 종종 인지적 고려와 정의적 고려에 동등한 비중을 두는 것이 불가능하거나 심지어 바람직하지 않은 상황에 처한다. 역사적 인물의 가능한 정의적 반응에 연결함으로써, 학생들은 하나의 영역이 역사적 인물의 경험에 더 큰 영향을 미쳤던 상황을 더 잘 이해할 수 있다. 다른 인간의 상황에 대한 정의적 연결이 청교도의 마녀에 대한 믿음이나 피켓의 돌격 결정을 합리적으로 만들지는 않지만, 그러한 역사적 생각, 믿음, 결정을 더 이해 가능하게 만들 수 있다. 역사적 인물의 삶의 경험과 행동에 대한 정의적 힘의 가능한 영향을 의도적으로 탐구하지 않으면, 학생들이 현재 중심적 결론으로 섣불리 뛰어들거나 (Wineburg, 2001) 역사적 인물의 상황에 자신의 정의적 입장을 삽입하는 "자기중심적 표류(egoistic drift)"에 빠질 위험이 커진다 (Endacott, 2010).</p>
+
+    <p>우리는 역사 교육자들이 이전에 주장해 온 것보다 일반적으로 받아들여지는 심리학적 이중 차원적 감정이입 개념화에 더 가까운 역사적 감정이입의 이론적 개념화를 제안한다. 물론 역사적 감정이입은 항상 현대적 감정이입과 질적으로 다를 것인데, 역사적 감정이입은 다른 시간과 장소의 정치적, 사회적, 문화적 맥락에 의존하는 다른 방식의 사고를 사용했을 가능성이 높은 과거의 사람들을 포함하기 때문이다. 따라서 역사적 감정이입은 다음의 세 가지 상호 연관되고 상호 의존적인 시도를 요구한다 (그림 1 참조):</p>
+
+    <ul>
+      <li><strong>역사적 맥락화(Historical Contextualization)</strong> — 탐구 중인 시대의 사회적, 정치적, 문화적 규범에 대한 깊은 이해와 역사적 상황으로 이어지는 사건들 및 동시에 일어나고 있는 기타 관련 사건들에 대한 지식을 포함하는 시간적 차이감.</li>
+      <li><strong>관점 취하기(Perspective Taking)</strong> — 문제의 상황에 대해 그 사람이 어떻게 생각했을 수 있는지 이해하기 위한, 타인의 이전 삶의 경험, 원칙, 입장, 태도, 신념에 대한 이해.</li>
+      <li><strong>정의적 연결(Affective Connection)</strong> — 자신의 유사하지만 다른 삶의 경험에 기반한 연결에 의해 역사적 인물의 삶의 경험, 상황 또는 행동이 그들의 정의적 반응에 의해 어떻게 영향을 받았을 수 있는지에 대한 고려.</li>
+    </ul>
+
+    <div class="figure-placeholder">
+      <div class="fig-title">그림 1. 역사적 감정이입의 시각적 개념화</div>
+      <p>이 그림은 세 개의 원이 중심에서 교차하는 벤다이어그램 형태로 역사적 감정이입을 시각화한다.<br><br>
+      <strong>세 개의 원:</strong><br>
+      • 정의적 연결(Affective Connection)<br>
+      • 관점 취하기(Perspective Taking)<br>
+      • 역사적 맥락화(Historical Contextualization)<br><br>
+      <strong>원의 교차 영역:</strong><br>
+      • 정의적 연결 + 관점 취하기의 교차 = Empathy (감정이입)<br>
+      • 관점 취하기 + 역사적 맥락화의 교차 = Historical Perspective Taking (역사적 관점 취하기)<br>
+      • 정의적 연결 + 역사적 맥락화의 교차 = Affective Connection to the Past (과거에 대한 정의적 연결)<br>
+      • 세 원의 완전한 교차 = <strong>Historical Empathy (역사적 감정이입)</strong></p>
+    </div>
+
+    <p>독립적으로 고려할 때, 이 세 가지 시도 각각은 가치 있고 교육적이다. 이 요소들을 결합하면 더욱 강력한 경험을 제공할 수 있다. 앞서 언급한 바와 같이, 많은 교사들과 연구자들이 역사적 맥락화와 관점 취하기라는 인지적 행위를 결합하는 힘을 인식해 왔으며, 다른 이들은 역사에 대한 학생들의 정의적 연결을 탐구하는 것의 이점을 탐구해 왔다 (예: Rosenzwieg &amp; Thelen, 2000). 우리는 이 세 가지 측면을 모두 동시에 사용함으로써 더 깊고 전체론적인 과거 이해가 가능하다고 믿는다. 나아가, 우리는 "역사적 감정이입"에 대한 어떤 시도도 역사적 맥락화, 관점 취하기, 정의적 연결을 반드시 포함해야 한다고 주장한다. 이 세 가지 측면을 모두 포함하지 않는 역사 탐구는 정확하게 "역사적 관점 취하기" 또는 "역사에 대한 정의적 연결"로 묘사될 수 있지만, "역사적 감정이입"이라고 불릴 수는 없다.</p>
+
+    <p>이중 차원적 역사적 감정이입의 발달은 근접 목표(즉, 교실에서의 즉각적인 교육과정 목표와 관련된 것들)와 궁극적 목표(즉, 개인이 평생 동안 혜택을 받을 수 있는 이해, 기술, 성향과 관련된 것들) 모두를 증진할 가능성을 가지고 있다. 역사적 감정이입에 관한 연구의 상당 부분은 지금까지 그것이 근접 목표를 지원할 수 있는 방식에 초점을 맞춰 왔다. 역사적 감정이입의 정의적 요소가 강조되고 검토되었을 때, 학생들은 연구 대상에 대한 다양한 형태의 돌봄을 보여줌으로써 역사에 대한 관심을 증가시켰다 (Barton &amp; Levstik, 2004). 때때로 학생들은 역사적 주제에 깊이 감동받거나 이끌리며, 이것이 수업 내용에 대한 능동적 참여로 이어진다 (Endacott, 2010; Kohlmeier, 2006).</p>
+
+    <p>근접 이익 외에도, 이중 차원적 역사적 감정이입이 학생의 평생에 영향을 미칠 수 있는 더 넓은 이해, 기술, 성향을 낳을 수 있다고 우리는 주장한다. 우선 역사적 감정이입 훈련은 학생들이 생각 형성, 의사결정, 행동의 복잡성을 이해하는 데 도움을 준다 (Doppen, 2000; Endacott, 2010; Foster, 1999). 궁극적인 목표는 모든 관점이 흔히 다양한 변수들의 산물이며 "우리 자신의 관점도 마찬가지로 맥락의 결과라는 것을 인식"(Barton &amp; Levstik, 2004, p. 219)하도록 학생들을 돕는 것이다.</p>
+
+    <p>역사적 감정이입 훈련은 또한 학생들이 과거와 현재 사이의 연결을 확립하는 법을 배우는 데 도움을 줄 수 있다. Sarah Brooks (2011)의 연구에서, 역사적 감정이입을 촉진하기 위해 강의를 활용한 교사에 의해 역사적 사건과 현재의 일들 사이에 유사점을 그리도록 독려받은 학생들은 과거와 현재의 측면들을 유추적으로 볼 수 있었고, 그를 통해 그들의 현재 세계를 더 잘 이해했다.</p>
+
+    <p>마지막으로, 역사적 감정이입은 궁극적으로 과거 사람들이 직면한 상황의 복잡성과 타인의 선을 위해 행동할 필요성에 대한 성향적 인식을 증진할 수 있다. 역사적 감정이입 훈련은 교사가 오늘날의 윤리적 문제를 직면하는 데 도움이 될 무언가를 과거에서 배우기를 기대할 때 학생들이 과거에 대한 도덕적 판단을 내리도록 초대한다 (Levstik &amp; Barton, 2011). 인지적·정의적 시도로서 역사적 감정이입은 학생들이 주변의 필요에 대한 더 강한 인식과 이러한 필요에 응답할 주체성을 발달시키는 데 도움을 줄 수 있다.</p>
+
+    <h3 class="sub-heading" id="when">2-1. 언제 교실에서 역사적 감정이입을 증진하는 것이 적절한가?</h3>
+    <p>실천가들은 역사적 감정이입이 주어진 교수 상황에 적합한지 결정하기 위해 이용 가능한 역사적 증거, 학생들의 능력과 성향, 그리고 공부할 역사 내용의 성격을 신중하게 평가해야 한다. 1차·2차 역사적 증거의 이용 가능성과 적합성은 역사적 맥락화, 관점 취하기, 정의적 연결을 지원하기에 충분해야 한다.</p>
+
+    <p>충분한 사료 외에도, 교사들은 특정 역사적 인물의 상황이나 삶의 경험이 가진 인지적·정의적 차원과 연결하기 위한 학생들의 능력과 성향을 고려해야 한다 (Cunningham, 2007; Endacott, 2010). 학생들은 역사적 인물의 관점을 타당한 것으로 받아들이기 위해 자신의 입장을 넘어서서 생각할 의지와 능력이 있어야 한다 (Barton &amp; Levstik, 2004). 연구자들은 초등학교 저학년에서도 학생들이 발달상 타인의 관점을 취할 능력이 있음을 보여주었다 (Davis, 2001; Dulberg, 2002). 동시에, 학생과 역사적 인물 사이의 더 큰 거리(공간, 시간, 지위, 문화 등에서)가 관점 취하기에 더 큰 도전을 제기할 것이라고 보는 것이 합리적이다.</p>
+
+    <p>역사적 감정이입에 참여하기 위해, 학생들은 역사적 인물들이 직면한 경험과 자신의 삶에서의 유사한 경험 사이의 정의적 연결을 찾을 수 있어야 한다. 다른 사람들의 경험에도 초점을 맞추기 위해 자신의 감정이나 경험을 넘어서 이동할 수 없는 학생들은 "자기중심적 표류(egoistic drift)"라고 알려진 현상에 의해 방해받는다 (Endacott, 2010; Hoffman, 1984). 또한 역사적 상황의 특성이 반대 효과를 낼 수도 있다. 학생들이 특히 끔찍하거나 외상적인 상황을, 극적인 결과와 함께 경험한 역사적 인물들과 감정이입한다면, 그들은 실제로 감정이입 대신 동정심을 느낄 수 있다. 학생들이 타인에게 동정심을 느낄 때, 그들은 타인과 함께 느끼는 것이 아니라 타인을 위해 느끼며, 그들을 이해하려는 대신 슬픔이나 연민의 감정을 다른 사람에게 투사한다 (Eisenberg, 2000).</p>
+  </section>
+
+  <!-- 3. 역사적 감정이입의 교수 모델 -->
+  <section id="model">
+    <h2 class="section-heading">3. 역사적 감정이입의 업데이트된 교수 모델 (An Updated Instructional Model of Historical Empathy)</h2>
+    <p>이 섹션에서 우리는 학생들의 사고를 과거 사람들과 참여하고 이 이해를 현재에 적용하는 과정을 통해 발판 삼는 역사적 감정이입 증진을 위한 업데이트된 모델을 제시한다. 여기 제시된 모델은 다음을 포함한다: (1) 학생들이 역사적 감정이입에 참여할 역사적 상황 및/또는 역사적 인물을 소개하도록 설계된 도입 단계, (2) 학생들이 역사적 맥락, 역사적 관점, 관련 정의적 고려에 대한 더 깊은 이해를 발달시키기 위해 1차·2차 사료를 심도 있게 공부하는 탐구 단계, (3) 학생들이 발달시킨 이해를 발현하는 표현 단계, (4) 학생들이 과거와 현재 사이의 연결을 만들면서 역사적 감정이입에 참여한 결과로 그들의 개인적 견해가 어떻게 변화했는지 고려하도록 초대받는 성찰 단계. 단계를 설정함으로써 우리는 역사적 감정이입을 위한 교수의 이 네 가지 측면이 고립되어 발생해야 한다는 것을 의미하려는 것이 아니다. 오히려 이 단계들을 제시하는 것은 역사적 감정이입과 학생들에 대한 그것의 잠재적 이익이 진정으로 실현되려면 포함되어야 할 교수의 요소들을 명확히 할 수 있기 때문이다.</p>
+
+    <h3 class="sub-heading" id="introduction-phase">3-1. 도입 단계 (Introduction)</h3>
+    <p>역사적 감정이입의 기회는 학생의 관심을 자극하는 역사적 상황이나 결정이 있을 때마다 생겨날 수 있다. 역사적 감정이입에 참여하기 위해, 학생들은 역사적 인물 또는 집단의 삶의 경험에 대한 역사적 맥락, 역사적 관점, 정의적 연결을 탐구해야 한다. 이것이 적은 과제가 아니기 때문에, 학생들은 이를 위해 준비되고 도움을 받아야 한다. 도입 단계는 이후 단계들에 비해 상대적으로 짧고 여러 형태를 취할 수 있지만, 학생들이 이후에 따르는 사료와 미디어를 탐구할 렌즈를 제공하고 장면을 설정하는 궁극적 목적을 유지해야 한다.</p>
+
+    <p>교과서 읽기나 다큐멘터리 구절이 학생들에게 역사적 시대, 상황, 또는 사건을 소개하는 데 사용될 수 있다 (Brooks, 2008, 2011). 국가 또는 지역 여론 조사 통계와 같은 1차 사료는 특정 역사적 시대에 지배적이었던 정서에 관한 정보를 학생들에게 제공할 수 있다. 연대순 사건 목록이나 타임라인은 학생들이 역사적 상황이 더 넓은 사건의 연쇄 중 일부임을 시각화하는 데 도움이 될 수 있다 (Doppen, 2000). 예를 들어 Jason Endacott (2010)은 학생들에게 자신들의 상황을 더 깊이 탐구할 수 있는 토대를 마련해 주기 위해 세 명의 역사적 인물—조지 메이슨, 토머스 제퍼슨, 제임스 매디슨—의 배경, 삶의 경험, 신념과 원칙에 관한 개인 정보를 제공하면서 교수 단원을 시작했다.</p>
+
+    <div class="table-wrap">
+      <div class="caption">표 1. 역사적 감정이입을 위한 도입 활동 예시 질문</div>
+      <table>
+        <thead>
+          <tr>
+            <th>목적</th>
+            <th>예시 질문</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>학생과 역사적 인물 간의 개인적 유사점·차이점 고려</strong></td>
+            <td>
+              어려운 결정을 해야 했던 적이 있나요? 무엇이 그 결정을 어렵게 만들었나요? 어떻게 대처했나요?<br><br>
+              당신은 수전 B. 앤서니와 어떤 면에서 유사하거나 다르다고 생각하나요?<br><br>
+              해리 트루먼은 싸움에서 물러서는 그런 사람이었다고 생각하나요?<br><br>
+              이 역사적 인물이 직면한 상황을 어떻게 묘사하겠나요? 유사한 상황에 처한 적이 있나요?
+            </td>
+          </tr>
+          <tr>
+            <td><strong>역사적 맥락에 주의 환기</strong></td>
+            <td>
+              19세기 전반 뉴잉글랜드는 어떻게 변화하고 있었나요?<br><br>
+              마오 이후 중국에서의 삶은 오늘날 미국의 삶과 어떻게 유사하거나 달랐나요?<br><br>
+              종교개혁으로 이어졌다고 생각하는 다섯 가지 주요 사건은 무엇인가요?<br><br>
+              이 특정 상황은 당시 그 사회에서 일어나고 있는 것을 어떻게 반영하나요?
+            </td>
+          </tr>
+          <tr>
+            <td><strong>역사적 상황의 중요성 강조</strong></td>
+            <td>
+              우리가 왜 방직공장 노동자들의 삶을 공부하는 데 세 수업을 할애할 것이라고 생각하나요?<br><br>
+              존 스미스와 우리가 어떤 공통점을 가질 수 있는지 생각하는 것이 왜 중요하다고 생각하나요?
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>역사적 감정이입 훈련은 대안적으로 학생들이 탐구할 내용과 연결될 수 있는 이전 경험에 대해 성찰하도록 함으로써 도입될 수도 있다. 예를 들어, 제퍼슨 대통령의 루이지애나 매입 결정을 이해하는 훈련은 학생들에게 그들이 내려야 했던 어려운 결정에 대해 성찰하도록 요청함으로써 도입될 수 있다 (Endacott, 2010). 도입 활동이 어떤 형태를 취하든, 그것의 목적은 학생들이 자신의 것과 다를 가능성이 높은 역사적 관점들을 다루기 위한 준비를 갖추는 것이다.</p>
+
+    <h3 class="sub-heading" id="investigation">3-2. 탐구 단계 (Investigation)</h3>
+    <p>역사적 감정이입을 목표로 하는 탐구 활동은 학생들이 역사적 맥락의 세부 사항뿐 아니라 특정 상황과 행동에 관련된 역사적 인물들의 생각과 감정을 심도 있게 탐구할 수 있게 한다. 여러 연구들이 다양한 교수 자원과 활동이 이러한 유형의 작업을 증진할 수 있음을 밝혀왔지만, 1차 사료 작업이 그 핵심이다. 다큐멘터리와 극영화 (Stoddard, 2008), 2차 텍스트 (Brooks, 2011)가 학생들로부터 감정이입적 반응을 이끌어내는 데 효과적으로 사용되어 왔다. 그러나 가능한 한 언제나 학생들이 감정이입해야 할 관점에 관한 1차 역사적 증거를 보고 만지고 읽는 것이 중요하다.</p>
+
+    <p>한 교사는 자신이 학생들이 감정이입하기를 원하는 사람들을 듣고 볼 수 있게 하는 시각적·문자적 사료를 의도적으로 선택한다고 설명했다 (Brooks, 2011). 영국 산업혁명의 영향을 받은 노동자들에 대한 역사적 감정이입을 증진하기 위해, 그녀는 학생들에게 노동자 계급의 주거 사진, 집에서 일감 작업을 하는 대가족, 공장과 광산에서 일하는 아이들의 사진, 그리고 많은 노동자들이 겪은 고난에 대한 직접적인 설명들을 제공했다. Endacott (2010)은 역사적 인물로부터 나온 일기 항목, 편지, 연설과 같은 1차 사료가 학생들에게 역사적 인물들이 어떻게 생각하고 느꼈는지에 대한 감각을 가장 효과적으로 제공할 수 있다는 것을 발견했다. Jada Kohlmeier (2006)가 학생들에게 단 하나의 1인칭 서술을 사용하여 역사적 인물의 관점을 검토하도록 요청했을 때, 학생들은 역사적 감정이입의 인지적·정의적 차원 모두를 보여줌으로써 반응했다.</p>
+
+    <p>학생들이 1차 사료와 작업할 때마다 기본적인 출처 질문들을 고려해야 한다 (Foster, 1999). "누가 문서나 유물을 만들었는가?" "언제, 왜 만들어졌는가?" "누구를 위해?" "어떤 상황에서?" 또한 학생들은 역사적 탐구자로서 자신의 편견과 입장에 관한 질문을 스스로에게 해야 한다 (VanSledright, 2001). 여러 연구는 필수 질문들이 역사적 인물들과의 감정이입적 참여를 독려하는 데 사용될 수 있음을 추가로 시사한다. "왜 젊은 여성들은 방직공장에서 일자리를 찾기 위해 농촌 생활을 떠나기로 선택했는가?" (Brooks, 2008)와 같은 포괄적 질문들이 학생들이 참여하는 모든 다중 수업 1차 사료 작업의 안내 역할을 한다.</p>
+
+    <div class="table-wrap">
+      <div class="caption">표 2. 역사적 감정이입을 위한 탐구 활동 예시 질문</div>
+      <table>
+        <thead>
+          <tr>
+            <th>유형</th>
+            <th>예시 질문</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>일반 탐구 질문</strong></td>
+            <td>
+              이 사료는 역사적 인물이 자신의 상황에 대해 어떻게 생각했을 수 있는지에 대해 무엇을 말해주는가?<br><br>
+              이 사료의 정보가 역사적 인물의 사고에 어떻게 영향을 미쳤을 것이라 생각하는가?<br><br>
+              이 사료는 역사적 인물이 자신의 상황에 대해 어떻게 느꼈을 수 있는지에 대해 무엇을 말해주는가?<br><br>
+              이 감정을 당신이 삶에서 직면했던 유사한 것과 연관 지을 수 있는가? 어떻게 같고 달랐는가?<br><br>
+              우리가 역사적 인물이 이 상황에서 어떻게 느꼈는지 정말로 이해할 수 있다고 생각하는가? 왜, 혹은 왜 그렇지 않은가?<br><br>
+              이것이 당신에게 무엇을 의미하는가? 이것에 대해 어떻게 생각하는가? 공정한가?
+            </td>
+          </tr>
+          <tr>
+            <td><strong>문서별 질문</strong></td>
+            <td>
+              이 판화는 죽음에 대한 중세적 생각을 어떻게 시사하는가?<br><br>
+              이 편지로부터 프랭클린 피어스의 헌법에 대한 신념에 관해 무엇을 알 수 있는가?<br><br>
+              이 그림의 어떤 점이 식민지 주민들을 영국으로부터의 독립을 지지하도록 감동시켰을 수 있는가?<br><br>
+              19세기 초에 살았던 여성이 이 포스터에 어떻게 반응했을 것이라 생각하는가?
+            </td>
+          </tr>
+          <tr>
+            <td><strong>필수 질문</strong></td>
+            <td>
+              왜 많은 미국 남성과 여성들이 19세기에 여성 참정권 확대에 저항했는가?<br><br>
+              많은 중국 시민들은 문화대혁명의 어려움 속에서 어떻게 마오에 대한 지지를 유지했는가?
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>여러 연구가 1차 사료 작업이 토론을 수반할 때 매우 풍부할 수 있음을 보여주었다 (Brooks, 2011; Doppen, 2000; Kohlmeier, 2006). 학생들이 소그룹 또는 전체 학급으로 질문을 고려하도록 요청받을 때, 그들은 서로 다른 생각을 듣고 반응할 수 있다. Kohlmeier (2006)는 토론 연습이 효과적이라는 것을 발견했는데, 왜냐하면 그녀가 "학생들에게 그 시대에 대한 사전 지식을 상기시키고, 역사적 인물들의 신념과 관행에 대한 그들의 가정에 도전하며, 어떤 정보가 중요하고 무엇이 사소한지를 분석하는 것을 도울" 수 있었기 때문이다 (p. 40, 41). 마찬가지로, Brooks (2011)의 한 사례 연구에서, 한 AP 유럽사 교사가 매우 어려운 역사적 관점의 정당성을 지속적으로 맥락화를 요구함으로써 학생들이 고려하도록 도전하는 기회로 토론을 활용했다.</p>
+
+    <p>일부 교사들은 서면 사료를 구술·시각 자료로 보완하고, 어휘 지원을 제공하고, 느린 학습자를 위한 반복량을 조정하고, 적절한 경우 더 많은 안내나 자유를 제공하고, 학생들에게 추가 도전 질문을 통해 다양한 관점을 검토하도록 요청하는 등 매우 적극적인 역할을 학생 탐구에서 맡아왔다 (Cunningham, 2007). 궁극적으로 탐구 단계는 도입 단계와 마찬가지로 교사가 학생들의 필요를 미리 예측하면서도 필요에 따라 즉흥적으로 탐구를 조정할 의지와 능력을 갖고 학생들과 반복적 과정을 거치도록 요구한다.</p>
+
+    <h3 class="sub-heading" id="display">3-3. 표현 단계 (Display)</h3>
+    <p>역사적 감정이입 훈련은 학생들이 역사적 맥락과 관점에 대한 지식과 과거와의 정의적 연결을 활용하고 종합할 공간을 마련해야 한다. 역사적 상황과 인물들을 도입 단계에서 접한 학생들은 이제 지금까지 작업해 온 감정이입을 공식적으로 발현할 기회를 가져야 한다. 학생들은 과거의 경험, 신념, 결정, 또는 행동에 대해 자신만의 결론을 도출하거나 역사적 주장을 펼치도록 요청받는다. 생산적인 표현 연습은 학생들이 주장을 이용 가능한 증거에 맥락화하도록 요구하고, 과거 관점의 정당성을 무시하거나 역사적 인물들에게 자신의 입장을 강요하는 것을 억제한다.</p>
+
+    <p>학생들은 가장 일반적으로 글쓰기를 통해 역사적 감정이입을 표현하도록 요청받는다. 역사적 생각과 감정에 주의를 기울이도록 구조화된 질문 중심의 3인칭 에세이 과제가 가장 전통적인 방식이다 (Foster, 1999; Doppen, 2000). 1인칭 글쓰기 과제는 학생들이 역사적 인물이 상황에 대해 어떻게 생각하고 느꼈을지를 표현할 수 있는 쉬운 포럼을 제공하기 때문에 인기가 있다 (Endacott, 2010; Skolnick, Dulberg &amp; Maestra, 2004). 그러나 연구들은 1인칭 글쓰기 과제가 학생들을 증거에서 벗어나 단순히 그 상황에서 자신이 어떻게 느꼈을지를 상상하도록 유혹할 수 있다고 보여주었다 (Brooks, 2008).</p>
+
+    <p>Franz Doppen (2000)은 고등학생들에게 트루먼 대통령의 원자폭탄 투하 결정에 대한 역사적 감정이입을 박물관 전시 창작을 통해 표현하도록 요청했다. Jill Jensen (2008)은 미국 서부 확장과 관련된 특정 집단의 관점을 대표하고 주장하도록 구성된 토론에서 다음과 같은 질문들을 제기했다: "미국 여성들에게 동부와 서부 중 어디서의 삶이 더 힘들었는가?" 역할극 토론은 학생들이 서로 다른 역사적 관점들을 구분하는 데 도움이 되었다. Levstik &amp; Barton (2011)은 "나는"시나 전기시 같은 시 과제와 역사적 원탁이나 "핫시트" 같은 역할극 활동을 역사적 감정이입 표현에 잠재적으로 적합한 추가 교수 활동으로 설명한다.</p>
+
+    <h3 class="sub-heading" id="reflection">3-4. 성찰 단계 (Reflection)</h3>
+    <p>역사적 감정이입을 증진하는 것을 목표로 하는 많은 훈련들이 학생들이 표현 활동에 참여하고 역사적 감정이입의 근접 목표인 교육과정 내용 습득의 숙달을 보여준 후 마무리된다. 우리는 이중 차원적 역사적 감정이입의 궁극적 이익—위에서 논의된 이해, 기술, 성향—이 실현되려면 하나의 최종 단계가 필요하다고 주장한다. 학생들은 과거에 대한 이해를 현재의 생각, 감정, 행동에 반영하는 과정을 통해 안내받아야 한다.</p>
+
+    <p>성찰 활동은 학생들이 현재의 상황과 유사하며 따라서 그것을 설명하는 데 도움이 될 수 있는 과거의 상황을 찾는 데 초점을 맞출 수 있다. 한 사례 연구에서, 나폴레옹과 그의 지지자들 및 비판자들에 대한 활발한 교실 토론 후, 교사가 단순히 이렇게 물었다: "이러한 유형의 토론, 이러한 유형의 투쟁—나폴레옹 대 혼란—을 겪고 있는 사회나 장소가 있다고 생각하는가? 이것이 오늘날 사람들이 여전히 직면하는 딜레마인가?" (Brooks, 2011, p. 183) 그 결과 학생들은 과거와 현재 사이에 의미 있는 유사점을 찾도록 도전받았고, 실제로 그렇게 했다.</p>
+
+    <p>마지막으로, 성찰 활동은 학생들이 자신이 면밀히 검토한 역사적 관점, 감정, 행동, 상황에 대해 의견을 형성하도록 초대해야 한다. 역사적 감정이입은 상대주의를 요구하지 않는다. 오히려, 학생들은 과거의 측면들에 대해 도덕적 판단을 내리고 그러한 의견을 현재의 행동으로 이끌도록 독려받아야 한다 (Barton &amp; Levstik, 2004). 미국 노예의 삶의 경험을 검토하도록 학생들에게 요청하는 이유가 그 관행에 대한 혐오감과 현재에 유사한 불의 행위가 발생하는 것을 막고자 하는 욕망을 느끼게 하려는 것이 아니라면 무엇이겠는가? 유감스럽게도, 역사적 감정이입 훈련을 현재와 개인적 관심사와 연결함으로써 마무리하는 중요함에도 불구하고, 교사들이 어떻게 그러한 성찰의 기회를 만들 수 있고 실제로 만드는지에 구체적으로 초점을 맞춘 경험적 연구는 거의 없었다.</p>
+
+    <div class="table-wrap">
+      <div class="caption">표 3. 역사적 감정이입을 위한 성찰 활동 예시 질문</div>
+      <table>
+        <thead>
+          <tr>
+            <th>목적</th>
+            <th>예시 질문</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>현재 관점의 맥락에 대한 성찰 유도</strong></td>
+            <td>
+              베트남 전쟁은 오늘날 미국인들이 전쟁에 대해 생각하는 방식을 어떻게 형성했는가?<br><br>
+              과거 사람들의 관점은 오늘날 우리가 가진 관점과 어떻게 유사하거나 다른가? 이러한 차이에 영향을 미치는 요인들은 무엇인가?<br><br>
+              시간이 지남에 따라 이 역사적 상황에 대한 우리의 견해는 어떻게 변화했는가?
+            </td>
+          </tr>
+          <tr>
+            <td><strong>과거와 현재의 유사점 고려</strong></td>
+            <td>
+              빈곤의 원인에 대한 19세기의 설명은 오늘날 우리가 빈곤의 원인을 이해하는 방식과 어떻게 유사하거나 다른가?<br><br>
+              이 사건이 오늘날 일어났다면 어떻게 달랐을 수 있는가?<br><br>
+              이 역사적 인물과 유사한 상황을 오늘날 경험하고 있는 사람이 있다고 생각하는가?
+            </td>
+          </tr>
+          <tr>
+            <td><strong>도덕적 판단과 타인의 선을 위한 행동 성향 유도</strong></td>
+            <td>
+              트루먼이 두 개의 원자폭탄을 투하하기로 결정한 것이 옳았다고 생각하는가? 왜 그렇게, 혹은 왜 그렇지 않은가?<br><br>
+              이 단원에서 가장 다루기 어려웠던 측면은 무엇이었는가?<br><br>
+              과거에 살았던 사람들의 삶을 공부하는 것이 왜 중요한가? 그것이 오늘날 우리가 사람들을 보는 방식을 어떻게 바꿀 수 있는가?<br><br>
+              과거에 무엇이 옳고 그른지를 어떻게 결정하는가? 과거에는 옳고 현재에는 그를 수 있는가?<br><br>
+              이 역사적 인물의 상황에 대한 지식이 오늘날 세계에 대한 당신의 견해를 어떻게 알려주거나 변화시킬 수 있는가?
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- 4. 결론 -->
+  <section id="conclusion">
+    <h2 class="section-heading">4. 결론 (Conclusion)</h2>
+    <p>역사 교육 공동체는 과거와 현재에 대한 학생들의 이해를 심화시키는 잠재력을 완전히 실현하기 위해 역사적 감정이입의 문제적이고 논쟁적인 사용을 극복해야 한다. 이것이 이루어지려면, 학자들과 교사들 모두 연구에 기반한 개념화와 교실에서 검증된 전략들을 통합해야 한다. 우리는 역사 탐구에 학생들을 배타적으로 인지적이거나 정의적으로 참여시키려는 어떠한 시도도 결코 폄하하지 않겠지만, 이중 차원적이지 않은 역사 탐구는 역사적 감정이입이 아니라고 강하게 믿는다. 역사적 감정이입은 사료 분석과 합리적 판단을 포함하는 검증된 역사 탐구 방법에 의존한다. 그러나 정의적 영역은 학생들이 참여할 수 있는 또 다른 보편적으로 인간적인 차원을 제공한다. 역사적 감정이입을 위한 교실 기반 훈련은 필연적으로 교사와 학생 모두가 주도하는 시도이다. 교사들은 역사적 감정이입이 언제 어떻게 활용될 수 있는지 결정하면서, 그들이 제공하는 사료와 질문으로 훈련을 형성한다. 한편 학생들은 증거에 대한 자신의 해석, 공감할 수 있는 삶의 경험의 감사, 동료들과의 상호작용을 통해 역사적 상황과 인물에 대한 이해를 구성한다.</p>
+
+    <div class="callout">
+      <strong>향후 연구 과제 (연구자들에 대한 초대)</strong><br><br>
+      우리는 역사 교육 연구 공동체에 역사적 감정이입의 구식이고 제한된 개념화를 포기할 것을 촉구한다. 이중 차원적 구인으로서의 역사적 감정이입에 관한 미래 연구는 감정이입 표현을 위한 대안적 활동들의 장점과 제약에 초점을 맞추는 것이 좋을 것이다. 잠재적인 표현 활동들 중 소수의 하위 집합만이 검토되었으며, 이러한 연구들의 대부분은 역사적 감정이입의 정의적 차원에 어떠한 주의도 기울이지 않았다. 역사적 감정이입의 궁극적인 성향적 이익에 대한 학문적 주목이 상당히 필요하다. 교실 교사들은 대체로 미개척 영역에서 실험해야 하며, 연구자들은 교사들이 학생들을 역사적 감정이입을 사용하여 자신과 주변 세계에 대한 이해를 형성하도록 어떻게 초대하는지를 면밀히 연구해야 한다.
+    </div>
+  </section>
+
+  <!-- 참고문헌 -->
+  <section id="references">
+    <h2 class="section-heading">참고문헌 (References)</h2>
+    <div class="ref-list">
+      <div class="ref-item">Barton, K. C. (2005). Best not to forget them: Positionality and students' ideas about historical significance in Northern Ireland. <em>Theory &amp; Research in Social Education, 33</em>(1), 9-44. <span class="ref-ko">[그들을 잊지 않는 것이 최선: 북아일랜드에서의 입장성과 역사적 유의성에 대한 학생들의 생각]</span></div>
+      <div class="ref-item">Barton, K., &amp; Levstik, L. (2004). <em>Teaching history for the common good.</em> Mahwah, NJ: Lawrence Erlbaum Associates. <span class="ref-ko">[공공선을 위한 역사 교육]</span></div>
+      <div class="ref-item">Blake, C. (1998). Historical empathy: A response to Foster and Yeager. <em>International Journal of Social Education, 13</em>(1), 25-31. <span class="ref-ko">[역사적 감정이입: Foster와 Yeager에 대한 응답]</span></div>
+      <div class="ref-item">Brooks, S. (2008). Displaying historical empathy: What impact can a writing assignment have? <em>Social Studies: Research and Practice, 3</em>(2), 130-146. <span class="ref-ko">[역사적 감정이입 표현하기: 글쓰기 과제는 어떤 영향을 미칠 수 있는가?]</span></div>
+      <div class="ref-item">Brooks, S. (2011). Historical empathy as perspective recognition and care in one secondary social studies classroom. <em>Theory &amp; Research in Social Education, 39</em>(2), 166-202. <span class="ref-ko">[하나의 중등 사회과 교실에서 관점 인식과 돌봄으로서의 역사적 감정이입]</span></div>
+      <div class="ref-item">Bryant, D. &amp; Clark, P. (2006). Historical empathy and Canada: "A people's history". <em>Canadian Journal of Education, 29</em>(4), 1039-1063. <span class="ref-ko">[역사적 감정이입과 캐나다: "인민의 역사"]</span></div>
+      <div class="ref-item">Colby, S. R. (2008). Energizing the history classroom: historical narrative inquiry and historical empathy. <em>Social Studies Research and Practice, 3</em>(3), 60-78. <span class="ref-ko">[역사 교실 활성화하기: 역사적 서술 탐구와 역사적 감정이입]</span></div>
+      <div class="ref-item">Cunningham, D. L. (2007). Understanding pedagogical reasoning in history teaching through the case of cultivating empathy. <em>Theory &amp; Research in Social Education, 35</em>(4), 592-630. <span class="ref-ko">[감정이입 함양 사례를 통한 역사 교수에서의 교육학적 추론 이해]</span></div>
+      <div class="ref-item">D'Adamo, L., &amp; Fallace, T. (2011). The multigenre research project: An approach to developing historical empathy. <em>Social Studies Research and Practice, 6</em>(1), 75-88. <span class="ref-ko">[다장르 연구 프로젝트: 역사적 감정이입 발달을 위한 접근법]</span></div>
+      <div class="ref-item">Davis, O. (2001). In pursuit of historical empathy. In O. Davis, Yeager, E., &amp; Foster, S. (Eds.), <em>Historical empathy and perspective taking in the social studies</em> (pp. 1-12). New York, NY: Rowman and Littlefield. <span class="ref-ko">[역사적 감정이입을 추구하며]</span></div>
+      <div class="ref-item">Doppen, F. (2000). Teaching and learning multiple perspectives: The atomic bomb. <em>The Social Studies, 91,</em> 159-169. <span class="ref-ko">[다관점 교수·학습: 원자폭탄]</span></div>
+      <div class="ref-item">Dulberg, N. (2002). <em>Engaging in history: Empathy and perspective-taking in children's historical thinking.</em> Annual Meeting of AERA, New Orleans, LA. <span class="ref-ko">[역사에 참여하기: 아동의 역사적 사고에서의 감정이입과 관점 취하기]</span></div>
+      <div class="ref-item">Eisenberg, N. (2000). Empathy. In K. E. Alan (Ed.), <em>Encyclopedia of psychology</em> (Vol. 3) (pp. 179-182). Washington, D.C. <span class="ref-ko">[감정이입. 심리학 백과사전]</span></div>
+      <div class="ref-item">Endacott, J. L. (2010). Reconsidering affective engagement in historical empathy. <em>Theory &amp; Research in Social Education, 38</em>(1), 6-49. <span class="ref-ko">[역사적 감정이입에서의 정의적 참여 재고]</span></div>
+      <div class="ref-item">Foster, S. (1999). Using historical empathy to excite students about the study of history: Can you empathize with Neville Chamberlain? <em>The Social Studies, 90</em>(1), 18-24. <span class="ref-ko">[역사적 감정이입으로 역사 공부에 학생 흥미 유발하기]</span></div>
+      <div class="ref-item">Foster, S. J., &amp; Yeager, E. A. (1998). The role of empathy in the development of historical understanding. <em>International Journal of Social Education, 13</em>(1), 1-7. <span class="ref-ko">[역사적 이해 발달에서 감정이입의 역할]</span></div>
+      <div class="ref-item">Foster, S. 2001. Historical empathy in theory and practice: Some final thoughts. In O. Davis, E. Yeager, &amp; S. Foster (Eds.), <em>Historical empathy and perspective taking in the social studies</em> (pp. 167-182). New York, NY: Rowman and Littlefield. <span class="ref-ko">[이론과 실천에서의 역사적 감정이입: 몇 가지 최종 생각]</span></div>
+      <div class="ref-item">Gehlbach, H. (2004). Social perspective taking: A facilitating aptitude for conflict resolution, historical empathy, and social studies achievement. <em>Theory &amp; Research in Social Education, 32</em>(1), 39-55. <span class="ref-ko">[사회적 관점 취하기: 갈등 해결, 역사적 감정이입, 사회과 성취를 위한 촉진 적성]</span></div>
+      <div class="ref-item">Grant, S.G. (2001). It's just the facts, or is it? The relationship between teachers' practices and students' understanding of history. <em>Theory and Research in Social Education, 29</em>(4), 63-108. <span class="ref-ko">[그것이 단지 사실인가, 아닌가? 교사 실천과 학생의 역사 이해 간의 관계]</span></div>
+      <div class="ref-item">Hoffman, M. L. (1984). Interaction of affect and cognition in empathy. In C. E. Izard, J. Kagan, &amp; R. B. Zajonc (Eds.), <em>Emotions, cognition and behavior</em> (pp. 103-131). Cambridge University Press. <span class="ref-ko">[감정이입에서 정서와 인지의 상호작용]</span></div>
+      <div class="ref-item">Jensen, J. (2008). Developing historical empathy through debate: An action research study. <em>Social Studies Research and Practice, 3</em>(1), 55-66. <span class="ref-ko">[토론을 통한 역사적 감정이입 발달: 실행 연구]</span></div>
+      <div class="ref-item">Kohlmeier, J. (2006). "Couldn't she just leave?": The relationship between consistently using class discussions and the development of historical empathy in a 9th grade world history course. <em>Theory &amp; Research in Social Education, 34</em>(1), 34-57. <span class="ref-ko">["그녀는 그냥 떠날 수 없었을까?": 소크라테스 세미나 지속 사용과 역사적 감정이입 발달 간의 관계]</span></div>
+      <div class="ref-item">Lee, P., &amp; Ashby, R. (2001). Empathy, perspective taking, and rational understanding. In O. L. Davis, E. Yeager, &amp; S. Foster (Eds.), <em>Historical empathy and perspective taking in the social studies</em> (pp. 21-50). New York, NY: Rowman and Littlefield. <span class="ref-ko">[감정이입, 관점 취하기, 합리적 이해]</span></div>
+      <div class="ref-item">Levstik, L. S. &amp; Barton, K. C. (2011). (4th ed.). <em>Doing history: Investigating with children in elementary and middle schools.</em> Mahwah, NJ: Lawrence Erlbaum. <span class="ref-ko">[역사하기: 초·중등학교에서 아동과 함께하는 탐구, 제4판]</span></div>
+      <div class="ref-item">Riley, K. L. (1998). Historical empathy and the Holocaust: Theory into practice. <em>International Journal of Social Education, 13</em>(1), 32-42. <span class="ref-ko">[역사적 감정이입과 홀로코스트: 이론에서 실천으로]</span></div>
+      <div class="ref-item">Rosenzweig, R. and Thelen, D. (1998). <em>The presence of the past.</em> New York, NY: Columbia University Press. <span class="ref-ko">[과거의 현존]</span></div>
+      <div class="ref-item">Skolnick, J., Dulberg, N., &amp; Maestre, T. (2004). <em>Through other eyes: Developing empathy and multicultural perspectives in the social studies</em> (2nd ed.). Toronto, Ontario: Pippin. <span class="ref-ko">[다른 눈을 통해: 사회과에서 감정이입과 다문화적 관점 개발]</span></div>
+      <div class="ref-item">Stern, B. S. (1998). Addressing the concept of historical empathy: Wit frauen: German women recall the Third Reich. <em>International Journal of Social Education, 13</em>(1), 43-48. <span class="ref-ko">[역사적 감정이입 개념 다루기: 독일 여성들의 제3제국 회상]</span></div>
+      <div class="ref-item">Stewart, G. R. (1987). <em>Pickett's charge: A microhistory of the final attack at Gettysburg, July 3, 1863.</em> Boston, MA: Houghton Mifflin. <span class="ref-ko">[피켓의 돌격: 1863년 7월 3일 게티즈버그 최후 공격의 미시사]</span></div>
+      <div class="ref-item">Stoddard, J. (2008). Attempting to understand the lives of others: Film as a tool for developing historical empathy. In A. Marcus (Ed.) <em>Celluloid blackboard: Teaching history with film.</em> Charlotte, NC: Information Age Publishing. <span class="ref-ko">[다른 이들의 삶 이해하기 시도: 역사적 감정이입 발달을 위한 도구로서의 영화]</span></div>
+      <div class="ref-item">VanSledright, B. (2001). From Empathetic Regard to Self-Understanding: Im/Positionality, Empathy, and Historical Contextualization. In O. Davis, Yeager, E., and Foster, S. (Eds.), <em>Historical Empathy and Perspective Taking in the Social Studies</em> (pp. 51-68). New York, NY: Rowman and Littlefield. <span class="ref-ko">[감정이입적 인식에서 자기 이해로: 입장성, 감정이입, 역사적 맥락화]</span></div>
+      <div class="ref-item">Wineburg, S. (2001). <em>Historical thinking and other unnatural acts.</em> Philadelphia, PA: Temple University Press. <span class="ref-ko">[역사적 사고와 다른 부자연스러운 행위들]</span></div>
+      <div class="ref-item">Yeager, E. A., Foster, S. J., Maley, S. D., Anderson, T. &amp; Morris III, J. W. (1998). Why people in the past acted as they did: An exploratory study in historical empathy. <em>International Journal of Social Education, 13</em>(1), 8-24. <span class="ref-ko">[과거의 사람들은 왜 그렇게 행동했는가: 역사적 감정이입에 대한 탐구적 연구]</span></div>
+    </div>
+
+    <a href="#header" class="back-to-top">▲ 맨 위로</a>
+  </section>
+
+</div>
+
+<script>
+window.addEventListener('scroll', () => {
+  let current = '';
+  document.querySelectorAll('section[id]').forEach(s => {
+    if (s.getBoundingClientRect().top <= 80) current = s.id;
+  });
+  document.querySelectorAll('#sidebar nav a').forEach(a => {
+    a.classList.toggle('active',
+      a.getAttribute('href') === '#' + current);
+  });
+});
+
+document.querySelectorAll('#sidebar nav a, .back-to-top').forEach(a => {
+  a.addEventListener('click', e => {
+    const href = a.getAttribute('href');
+    if (href && href.startsWith('#')) {
+      e.preventDefault();
+      const target = document.querySelector(href);
+      if (target) target.scrollIntoView({ behavior: 'smooth' });
+    }
+  });
+});
+</script>
+</body>
+</html>

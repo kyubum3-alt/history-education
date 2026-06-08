@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>노예, 여성, 그리고 전쟁! — Endacott & Pelekanos (2015) 한국어 번역</title>
+<style>
+:root {
+  --sidebar-width: 260px;
+  --accent: #2c5f8a;
+  --accent-light: #e8f1f8;
+  --text: #1a1a1a;
+  --muted: #555;
+  --border: #d0d7de;
+  --bg: #fafafa;
+  --white: #ffffff;
+  --table-head: #f0f4f8;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Noto Serif KR', 'Georgia', serif;
+  font-size: 16px;
+  line-height: 1.85;
+  color: var(--text);
+  background: var(--bg);
+}
+
+/* ── 사이드바 ── */
+#sidebar {
+  position: fixed;
+  top: 0; left: 0;
+  width: var(--sidebar-width);
+  height: 100vh;
+  background: var(--white);
+  border-right: 1px solid var(--border);
+  overflow-y: auto;
+  z-index: 100;
+  padding: 20px 0 40px;
+}
+
+#sidebar .sidebar-header {
+  padding: 0 16px 16px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 12px;
+}
+
+#sidebar .sidebar-header p {
+  font-size: 11px;
+  color: var(--muted);
+  line-height: 1.4;
+}
+
+#sidebar .sidebar-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 4px;
+}
+
+#sidebar nav a {
+  display: block;
+  padding: 5px 16px 5px 20px;
+  font-size: 12.5px;
+  color: var(--muted);
+  text-decoration: none;
+  border-left: 3px solid transparent;
+  transition: all 0.15s;
+}
+
+#sidebar nav a:hover,
+#sidebar nav a.active {
+  color: var(--accent);
+  border-left-color: var(--accent);
+  background: var(--accent-light);
+}
+
+#sidebar nav a.sub {
+  padding-left: 32px;
+  font-size: 12px;
+}
+
+/* ── 메인 콘텐츠 ── */
+#main {
+  margin-left: var(--sidebar-width);
+  padding: 48px 60px 80px;
+  max-width: 900px;
+}
+
+/* ── 논문 헤더 ── */
+.paper-header {
+  margin-bottom: 32px;
+  padding-bottom: 24px;
+  border-bottom: 2px solid var(--accent);
+}
+
+.paper-header .journal-info {
+  font-size: 12px;
+  color: var(--muted);
+  margin-bottom: 10px;
+  font-style: italic;
+}
+
+.paper-header h1 {
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--accent);
+  line-height: 1.4;
+  margin-bottom: 8px;
+}
+
+.paper-header .original-title {
+  font-size: 14px;
+  color: var(--muted);
+  font-style: italic;
+  margin-bottom: 14px;
+}
+
+.paper-header .author-info {
+  font-size: 14px;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+
+.paper-header .affil-info {
+  font-size: 12.5px;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+
+.paper-header .doi-info {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* ── 초록 박스 ── */
+.abstract-box {
+  background: var(--accent-light);
+  border-left: 4px solid var(--accent);
+  border-radius: 4px;
+  padding: 20px 24px;
+  margin-bottom: 40px;
+}
+
+.abstract-box h2 {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 10px;
+}
+
+.abstract-box p {
+  font-size: 14.5px;
+  line-height: 1.8;
+  color: var(--text);
+  margin-bottom: 10px;
+}
+
+.abstract-box .keywords {
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 8px;
+}
+
+/* ── 섹션 ── */
+section {
+  margin-bottom: 48px;
+  scroll-margin-top: 24px;
+}
+
+section h2 {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--accent);
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 8px;
+  margin-bottom: 20px;
+}
+
+section h3 {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--text);
+  margin: 28px 0 14px;
+}
+
+section h4 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--muted);
+  margin: 20px 0 10px;
+  font-style: italic;
+}
+
+section p {
+  margin-bottom: 16px;
+  text-align: justify;
+}
+
+/* ── 인용문 ── */
+blockquote {
+  margin: 20px 0;
+  padding: 12px 20px;
+  border-left: 3px solid var(--border);
+  background: #f7f9fb;
+  font-size: 14.5px;
+  color: #444;
+  line-height: 1.75;
+}
+
+/* ── 표 ── */
+.table-wrap {
+  margin: 28px 0;
+  overflow-x: auto;
+}
+
+.table-wrap .caption {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+thead th {
+  background: var(--table-head);
+  padding: 10px 14px;
+  text-align: left;
+  border: 1px solid var(--border);
+  font-weight: 700;
+}
+
+tbody td {
+  padding: 9px 14px;
+  border: 1px solid var(--border);
+  vertical-align: top;
+}
+
+tbody tr:nth-child(even) { background: #f8fafc; }
+
+.table-source {
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 6px;
+  font-style: italic;
+}
+
+/* ── 번호 목록 ── */
+ol.proposition-list {
+  padding-left: 2em;
+  margin-bottom: 16px;
+}
+
+ol.proposition-list li {
+  margin-bottom: 8px;
+}
+
+ul.bullet-list {
+  padding-left: 2em;
+  margin-bottom: 16px;
+  list-style: disc;
+}
+
+ul.bullet-list li {
+  margin-bottom: 8px;
+  line-height: 1.7;
+}
+
+/* ── 대화 블록 ── */
+.dialogue {
+  background: #f3f6fa;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 14px 20px;
+  margin: 20px 0;
+  font-size: 14.5px;
+  line-height: 1.8;
+}
+
+.dialogue .speaker {
+  font-weight: 700;
+  color: var(--accent);
+}
+
+/* ── 참고문헌 ── */
+#referencias p {
+  font-size: 14px;
+  padding-left: 2em;
+  text-indent: -2em;
+  margin-bottom: 10px;
+}
+
+/* ── 맨 위로 버튼 ── */
+#to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  font-size: 18px;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  transition: opacity 0.2s;
+}
+
+#to-top:hover { opacity: 0.85; }
+
+/* ── 반응형 ── */
+@media (max-width: 900px) {
+  #sidebar { display: none; }
+  #main { margin-left: 0; padding: 24px 20px 60px; }
+}
+</style>
+</head>
+<body>
+
+<!-- 사이드바 -->
+<aside id="sidebar">
+  <div class="sidebar-header">
+    <div class="sidebar-title">📄 Endacott &amp; Pelekanos (2015)</div>
+    <p>The Social Studies<br>Vol. 106, No. 1, pp. 1–7</p>
+  </div>
+  <nav>
+    <a href="#abstract">초록</a>
+    <a href="#intro">1. 서론</a>
+    <a href="#planning">2. 소피아의 수업 계획</a>
+    <a class="sub" href="#enduring">2-1. 영속적 이해</a>
+    <a class="sub" href="#empathy-model">2-2. 역사적 공감 이론 모델</a>
+    <a href="#instruction">3. 수업 실천: 4단계 모델</a>
+    <a class="sub" href="#introduction-phase">3-1. 도입 단계</a>
+    <a class="sub" href="#investigation-phase">3-2. 탐구 단계</a>
+    <a class="sub" href="#contextualization">3-2-1. 역사적 맥락화</a>
+    <a class="sub" href="#perspective">3-2-2. 관점 취하기</a>
+    <a class="sub" href="#affective">3-2-3. 정서적 연결</a>
+    <a class="sub" href="#display-phase">3-3. 발표 단계</a>
+    <a class="sub" href="#reflection-phase">3-4. 성찰 단계</a>
+    <a href="#conclusion">4. 결론</a>
+    <a href="#referencias">참고문헌</a>
+  </nav>
+</aside>
+
+<!-- 메인 콘텐츠 -->
+<main id="main">
+
+  <!-- 논문 헤더 -->
+  <div class="paper-header">
+    <div class="journal-info">The Social Studies · 2015 · Vol. 106, No. 1 · pp. 1–7</div>
+    <h1>노예, 여성, 그리고 전쟁!<br>역사적 공감을 통한 중학생의 영속적 이해 촉진</h1>
+    <div class="original-title">Slaves, Women, and War! Engaging Middle School Students in Historical Empathy for Enduring Understanding</div>
+    <div class="author-info"><strong>Jason L. Endacott &amp; Christina Pelekanos</strong></div>
+    <div class="affil-info">
+      ¹ 교육과정 및 수업학과, 아칸소 대학교, 페이엣빌, 아칸소, 미국<br>
+      ² 사회과 교과 교사, Village Community School, 뉴욕, 뉴욕, 미국
+    </div>
+    <div class="doi-info">DOI: 10.1080/00377996.2014.957378 | 온라인 출판: 2014년 9월 26일</div>
+  </div>
+
+  <!-- 초록 -->
+  <section id="abstract">
+    <div class="abstract-box">
+      <h2>초록</h2>
+      <p>역사 교실에서 역사적 공감을 활용하는 것이 역사 탐구와 이해를 촉진하는 데 유익하다는 사실은 연구를 통해 입증되어 있다. 본 논문은 한 중학교 교사가 갱신된 역사적 공감의 이론적·실천적 모델을 고대 아테네에 관한 기존 수업 단원에 통합하여 학생들이 사회 통제에 관한 영속적 이해를 발전시키도록 돕는 경험을 기록한다. 학생들은 일차 자료를 탐구하고, 모둠 활동에 참여하며, 소크라테스식 대화를 통해 노예제·여성의 권리·스파르타와의 전쟁이라는 세 가지 쟁점을 둘러싼 아테네 시민들의 역사적 맥락·관점·정서적 고려를 분석한다. 이 과정의 결산은 아테네 민회를 모의한 토론으로, 학생들은 고대 아테네와 역사적 공감을 통해 얻은 사회 통제의 인간적 현상에 대한 새로운 이해를 발휘한다.</p>
+      <div class="keywords"><strong>핵심어:</strong> 역사적 공감, 사회 통제, 소크라테스식 대화</div>
+    </div>
+  </section>
+
+  <!-- 서론 -->
+  <section id="intro">
+    <h2>1. 서론</h2>
+    <p>7학년 세계사 교사인 소피아 아르닥토스(Sophia Ardactos)는 수천 년 전에 살다 죽은 고대 역사적 인물들과 그들의 업적에 중학생들이 관심을 갖도록 고무시켜야 하는 어려운 과제에 직면해 있다. 최근 사회과 학술대회를 방문한 소피아는 역사적 공감을 수업에 통합하는 것에 관한 세션에 참석하였다. 역사적 공감은 "학생들이 역사적 인물의 삶의 경험·결정·행동을 더 잘 이해하고 맥락화하기 위해 인지적·정서적으로 그 인물에 몰입하는 과정"으로 정의된다 (Endacott and Brooks 2013, 41). 소피아는 학생들이 고대인들을 살아 있고 중요한 존재로 바라보게 하고 싶기 때문에, 역사적 공감이 "과거의 사람들이 특정한 역사적·사회적 맥락 안에서 어떻게 생각하고, 느끼고, 결정을 내리고, 행동하며, 결과에 직면했는지" 이해하는 데 도움이 될 수 있는지 궁금했다 (Ibid., 41). 소피아는 다가오는 고대 아테네 단원에서 학생들에게 역사적 공감을 촉진해 보기로 결심하였다. 본 논문은 역사적 인물을 인간화하려는 소피아의 목표를 공유하는 다른 교사들이 영속적 역사 이해를 위해 자신의 수업에서 역사적 공감을 활용하기를 희망하며 그 과정을 기록한다.</p>
+  </section>
+
+  <!-- 소피아의 수업 계획 -->
+  <section id="planning">
+    <h2>2. 소피아의 수업 계획</h2>
+
+    <h4 id="enduring">2-1. 영속적 이해(Enduring Understandings)</h4>
+    <p>경력 교사인 소피아는 수년에 걸쳐 갱신하고 수정해 온 완비된 수업 단원들을 갖추고 있다. 그녀는 이해 중심 교육과정(Understanding by Design, UBD) 수업 모델 (Wiggins and McTighe 2005)의 지지자로, UBD의 원칙을 계획과 수업에 적용한다. 소피아는 고대 아테네 단원의 영속적 이해로 사회 통제라는 반복되는 역사적·인간적 현상, 특히 모든 인간 집단이 구성원들의 행동 중 적어도 일부를 통제하려 한다는 개념을 강조한다. 학생들은 고대 아테네의 맥락과 현대 사회 모두에서 사회 통제가 어떻게 나타나는지를 문명의 영속적 특성으로 탐구할 것이다. 그녀는 역사적 공감이 학생들로 하여금 고대 아테네인들의 사회 통제에 대한 필요를 이해하고, 고대/현대 맥락에서 사회 통제를 비교하며, 사회가 구성원들에게 어느 정도의 통제를 행사할 필요성에 대한 합리적 판단을 내리는 데 도움이 될 것이라고 믿는다. 이를 염두에 두고 소피아는 학생들이 궁극적으로 답해야 할 네 가지 핵심 질문을 개발하였다.</p>
+    <ol class="proposition-list">
+      <li>집단은 구성원의 행동을 어떻게 통제하는가?</li>
+      <li>고대 아테네인들은 사회 통제를 어떻게 실행하였는가?</li>
+      <li>역사적 사례에 대한 지식을 현대 사회의 사회 통제와 어떻게 연결할 수 있는가?</li>
+      <li>사회 통제를 유지하는 데 정부는 어떤 역할을 하는가?</li>
+    </ol>
+
+    <h4 id="empathy-model">2-2. 역사적 공감 이론 모델</h4>
+    <p>학술대회에서 소피아는 역사적 공감이 세 가지 상호 연관되고 상호 의존적인 과업을 포함한다는 것을 배웠다 (Endacott and Brooks 2013, 43).</p>
+    <ul class="bullet-list">
+      <li><strong>역사적 맥락화(Historical Contextualization)</strong>: 탐구 중인 시대의 사회적·정치적·문화적 규범에 대한 깊은 이해와, 역사적 상황에 이르게 된 사건들 및 동시대에 일어나고 있는 다른 관련 사건들에 대한 지식을 포함하는 시간적 차이 감각.</li>
+      <li><strong>관점 취하기(Perspective Taking)</strong>: 해당 인물이 문제의 상황에 대해 어떻게 생각했을지 이해하기 위한 타인의 선행 삶의 경험·원칙·입장·태도·신념에 대한 이해.</li>
+      <li><strong>정서적 연결(Affective Connection)</strong>: 자신의 유사하지만 다른 삶의 경험과 연결을 바탕으로 한 정서적 반응에 의해 역사적 인물의 삶의 경험·상황·행동이 어떻게 영향받았을지에 대한 고려.</li>
+    </ul>
+    <p>역사적 맥락·관점 취하기·정서적 연결이 소피아가 역사적 공감을 통합하기 위해 기존 단원을 수정하는 방법을 구상할 때의 초점이 될 것이다. 물론 많은 역사 교사들이 학생들에게 이 세 가지 측면을 어떤 방식으로든 생각하게 하며, 소피아도 예외가 아니다. 그러나 이번에는 소피아와 학생들에게 다를 것인데, 그녀가 역사적 맥락·관점 취하기·정서적 연결을 학생들이 세 가지를 동시에 고려할 때 발생하는 관계에 의존하는 과정의 상호 의존적 측면으로 강조할 것이기 때문이다. 이 특정 과정이 역사적 공감을 다른 역사 탐구 방식과 구별하는 것이며, 소피아의 계획과 수업을 지난 몇 년과 정말로 다르게 만드는 것이다.</p>
+    <p>이 세 가지 역사적 공감 측면을 통합하는 것은 결코 작은 과업이 아니다. 고대 그리스인들은 수천 년 전에 죽었다. 학생들이 어떻게 사회 통제를 둘러싼 문제들에 대해 그들이 어떻게 생각하거나 느꼈을지 이해할 수 있을까? 그녀는 학생들이 오래전에 죽은 사람들의 마음속으로 들어갈 수 없다는 것을 알고 있으나, 학생들이 현대적 관점을 극복하고 과거로부터 온 누군가가 세상을 봤을 방식으로 세상을 보려고 시도하는 것이 가능하다는 것도 연구를 통해 알고 있다 (Brooks 2008; Endacott 2010; Kohlmeier 2006). 소피아는 이 노력에서 학생들이 많은 것을 배울 수 있다는 것을, 특히 현대의 역사 탐구자로서 자신들의 한계에서도 배울 수 있음을 안다. 그녀는 학생들이 자신의 관점과 현대 세계에서의 위치가 매우 다른 역사적·사회적 맥락에서 살았던 사람들에 대한 이해에 어떤 영향을 미치는지 지속적으로 생각하도록 독려하겠다는 메모를 남긴다.</p>
+  </section>
+
+  <!-- 수업 실천 -->
+  <section id="instruction">
+    <h2>3. 수업 실천: 영속적 이해를 위한 역사적 공감 4단계</h2>
+    <p>수업 측면에서 소피아는 역사적 공감을 촉진하기 위한 네 단계를 포함하는 과정(그림 1)을 통해 학생들의 사고를 스캐폴딩할 것이다 (Endacott and Brooks 2013).</p>
+
+    <div class="table-wrap">
+      <div class="caption">그림 1. 소피아의 수업 과정 — 역사적 공감 4단계</div>
+      <table>
+        <thead>
+          <tr>
+            <th>단계</th>
+            <th>수업 목적</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>도입 단계</strong><br>(Introduction Phase)</td>
+            <td>학생들에게 역사적 인물과 탐구 대상 역사적 상황(고대 아테네와 아테네인들)을 소개한다.</td>
+          </tr>
+          <tr>
+            <td><strong>탐구 단계</strong><br>(Investigation Phase)</td>
+            <td>일차·이차 자료를 탐구하여 고대 그리스의 역사적·사회적 맥락, 아테네 시민들의 역사적 관점, 그리고 그들의 생각과 행동에 영향을 미쳤을 관련 정서적 고려에 대한 더 깊은 이해를 발전시킨다.</td>
+          </tr>
+          <tr>
+            <td><strong>발표 단계</strong><br>(Display Phase)</td>
+            <td>학생들이 서사나 논증 작성, 수행, 또는 다른 프로젝트 기반 형식을 통해 발전시킨 역사적 이해를 보여줄 기회.</td>
+          </tr>
+          <tr>
+            <td><strong>성찰 단계</strong><br>(Reflection Phase)</td>
+            <td>학생들이 역사적 공감에 참여한 결과로 자신의 개인적 견해가 어떻게 변화했을지를 고려하면서 과거와 현재를 연결하는 것을 돕는다.</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="table-source">출처: Endacott and Brooks (2013)를 기반으로 소피아의 수업 과정 재구성</div>
+    </div>
+
+    <h3 id="introduction-phase">3-1. 도입 단계(Introduction Phase)</h3>
+    <p>역사적 공감의 첫 번째 단계는 뒤따를 맥락화된 지식의 탐구와 발표를 위한 무대를 마련한다. 소피아는 학생들의 탐구와 역사적 공감 발휘를 이끌 네 가지 핵심 질문을 제시함으로써 영속적 이해로서의 사회 통제를 소개하는 것으로 시작한다. 학생들은 각 핵심 질문에 대한 초기 생각을 몇 분 동안 적는다. 소피아가 사전에 사회 통제를 영속적 이해로 강조한 것이 학생들의 글쓰기를 준비시킨다. 그녀는 단원이 끝날 때쯤 학생들의 답이 크게 변할 것을 알기 때문에 응답지를 모아 나중을 위해 안전한 곳에 보관한다.</p>
+    <p>역사적 공감의 도입 단계는 일반적으로 역사적 상황을 소개하고 학생들이 문제의 역사적 인물(들)을 둘러싼 역사적 맥락·역사적 관점·정서적 연결을 탐구하도록 고무시키는 포괄적인 질문이나 과업을 포함한다 (Endacott and Brooks 2013). 소피아는 학생들에게 다음 프롬프트를 제시한다.</p>
+    <blockquote>
+      여러분은 아테네 민회(Assembly)이며 이 위대한 도시국가의 운명을 봉인할 어려운 결정을 내려야 합니다. 세 가지 주제가 치열하게 논쟁될 것이며, 민회가 승리하는 행동 방침을 결정할 것입니다. 기원전 431년, 페리클레스가 그리스 역사의 "황금 시대"(기원전 460~429년경)를 이끌고 있으며, 아테네가 더욱 민주화됨에 따라 이 민회(에클레시아)는 아테네 사회와 정부를 위한 중요한 결정을 내립니다. 민회에 참여하는 것은 아테네에서 자유롭게 태어난 남성의 특권이었습니다. 최대 4만 명의 아테네인이 민회 회의에 참여하지만, 기록에 따르면 일일 회의에는 4,000~5,000명의 구성원이 참석하였습니다. 많은 그리스인들이 참여할 수 없었습니다. 외국 태생의 사람들, 여성, 노예들은 완전한 시민권을 가질 수 없었습니다. 모든 규칙, 법률, 제안은 이 입법 기구에서 나왔습니다. 여러분은 이 문제에 대해 어떻게 생각하는지 결정하고 민회에서 투표해야 합니다. 아테네의 미래가 여러분의 손에 달려 있습니다!
+    </blockquote>
+    <p>프롬프트를 검토한 후, 학생들은 결국 민회에서 다루어진 세 가지 제안에 대해 고대 아테네인의 입장을 개발해야 한다는 것을 듣게 된다.</p>
+    <ol class="proposition-list">
+      <li><strong>스파르타와의 전쟁:</strong> 아테네가 스파르타와 전쟁을 하여 펠로폰네소스 전쟁을 시작해야 하는가?</li>
+      <li><strong>노예제:</strong> 아테네가 더 많은 노예를 얻기 위해 멜로스를 침공해야 하는가?</li>
+      <li><strong>여성의 권리:</strong> 한 산파가 의학 강의에 참석하기 위해 남성 복장을 하다 적발되었다. 그녀에게 어떤 운명이 닥쳐야 하는가?</li>
+    </ol>
+    <p>고대 아테네에서 사회 통제를 둘러싼 문제들을 학생들의 탐구 전면에 가져오기 위해 소피아는 학생들이 아테네 사회에서 사회 통제의 세 가지 중요한 측면을 탐구하게 이끄는 세 가지 제안을 제시한다. 아테네인들은 노예제의 사회적 제도와 여성의 권리에 대한 제한을 자신들의 문화의 일부로 받아들였지만, 단순히 아테네인들이 이러한 문화적 규범을 받아들였다고 학생들에게 말하는 것은 "왜"에 대한 더 깊은 이해를 탐구하려는 동기를 끌어내기 힘들다. 바로 거기서 역사적 공감이 역할을 한다.</p>
+    <p>그녀가 학생들이 가능한 한 고대 아테네인의 위치에서 아테네 사회를 볼 수 있도록 도울 수 있다면, 학생들은 아테네인들의 삶의 경험에 대해 더 잘 이해할 수 있을 것이라고 그녀는 믿는다. 이 문제들을 다양한 역사적 맥락(고대 이집트, 로마 제국, 중세 유럽 등)에서 씨름하면서, 소피아는 학생들이 시공간을 가로질러 사회 통제에 대한 영속적 이해를 맥락화하고, 이를 통해 현대 세계에서 사회 통제에 대한 이해에 역사적 관점을 부여하도록 장려한다.</p>
+    <p>소피아는 수업 측면에서 학생들이 직업·사회적 지위·나이·가족 상황·아테네 민주주의에 대한 정치적 견해를 갖춘 아테네 "페르소나"를 만들게 함으로써 이를 달성한다. 민회 참여를 위한 요건이었기 때문에 학급의 여학생들은 남성 페르소나를 채택해야 한다. 소피아는 학생들이 일상생활과 도시국가의 사회적·정치적·문화적 측면에 대한 견해에서 아테네적 관점을 인식하고 감상하기를 원한다. 학생들은 또한 이러한 아테네적 관점을 사회 통제의 영속적 이해와 연결할 것이 기대된다. 특정 아테네인의 역할을 맡음으로써 학생들은 권력을 가진 위치에 서거나 다른 사람의 권력에 복종하게 된다. 이 시점부터 학생들은 역사 탐구자로서 아테네적 관점과 현대적 관점의 균형을 맞출 것이다.</p>
+
+    <h3 id="investigation-phase">3-2. 탐구 단계(Investigation Phase)</h3>
+    <p>소피아의 학생들은 민회 앞에 놓인 제안들에 대한 입장을 개발하기 위해 고대 아테네의 역사적 맥락을 깊이 탐구할 준비가 되어 있다. 학생들은 일관된 연구 메모를 기록하기 위한 "주제 정보 시트"와 연구에서 중요한 주제와 문제를 추적하기 위한 "핵심 아이디어" 페이지를 만들기 위해 Google Docs를 사용한다. 컴퓨터를 사용할 수 없는 경우 Google Docs 대신 색인 카드 세트를 사용해도 된다.</p>
+    <p>소피아는 1인칭 일차 자료가 역사적 공감을 발전시키는 데 강력하다는 것을 알고 (Endacott 2010), 학생들이 나중에 민회 연설문을 작성할 때 활용할 수 있도록 일차 자료의 인용문을 기록하도록 장려한다. 탐구 프로토콜로 무장한 학생들은 소피아가 역사적 공감의 세 가지 상호 의존적 요소의 중요성을 강조하는 동안 증거를 깊이 탐구한다.</p>
+
+    <h4 id="contextualization">3-2-1. 역사적 맥락화(Historical Contextualization)</h4>
+    <p>역사적 공감에 참여하는 것은 문제의 상황을 둘러싼 역사적 맥락에 대한 깊은 이해를 요구한다. 따라서 소피아는 학생들이 역사적 미묘함을 분석하고 고대 아테네에서의 삶이 어떠했는지에 대한 맥락적 이해를 발전시키도록 요구하는 활동들을 조직한다. 이러한 활동들 중 하나에서 그녀는 얼핏 당황스러운 질문인 "아테네는 어떤 점에서 캔 오프너와 같은가?"를 제기한다. 학생들은 아테네 민주주의가 모든 구성 요소들이 조화를 이루고 목적을 가지고 운영되어야만 제대로 작동한다는 것에 대해 토론하기 시작한다. 이 구성 요소들은 또한 독특하게 아테네적인 것인데, 이것이 바로 소피아가 학생들에게 이해시키고 싶은 것이다.</p>
+    <p>다음 날 학생들은 플라톤의 소크라테스 대화록에 기반한 소크라테스 세미나를 진행한다. 학생들은 소크라테스의 교수 방법과 아테네 정부에 의한 그의 처형을 토론한다. 이 토론들은 많은 새로운 아이디어에 불관용적이면서도 열린 토론의 장이었던 아테네 민주주의의 이중성을 보여준다. 소피아의 학생들은 더 깊은 맥락적 이해를 발전시키기 위해 아테네 민주주의를 미국의 정부 체계와 비교·대조한다. 분석을 촉진하기 위해 그녀는 "이 두 정부는 더 유사한가, 더 다른가? 어떻게 알 수 있는가? 그들의 정부를 탐구함으로써 아테네인들에 대해 무엇을 알 수 있는가?"와 같은 핵심 질문들을 제기한다. 학생들은 이 활동을 통해 남성의 지배적 역할, 아테네 정부에 참여할 수 없는 자들에 대해 참여자들이 가진 권력, 아테네인들의 중앙 집권에 대한 두려움, 시민 참여의 중요성, 그리고 뛰어난 수사적 기술의 핵심 역할에 대해 많은 것을 배운다.</p>
+    <p>학생들은 개인 및 그룹으로 작업하여 역사적 맥락의 단편적 요소들을 아테네 사회의 그림으로 만든다. 토론은 역사적 공감에 참여하는 중요한 요소이며 (Brooks 2011; Endacott 2010; Kohlmeier 2006), 소피아는 협동 학습 중 토론을 장려한다. 학생들은 맥락적 퍼즐의 또 다른 조각을 제공하는 훌륭한 일차 자료를 발견할 때 매우 흥분한다. 소피아는 또한 학생들의 역사적 맥락에 대한 발전하는 이해를 측정하는 기회로 그룹 토론을 활용한다.</p>
+
+    <h4 id="perspective">3-2-2. 관점 취하기(Perspective Taking)</h4>
+    <p>다음 날 소피아의 학생들은 교실에 들어서면서 칠판에 적힌 다음 토론 질문을 발견한다: "왜 모든 인간 집단은 구성원들의 행동 중 적어도 일부를 통제하려 하는가?" 소피아는 이 질문을 사용하여 권력과 통제에 대한 인간의 필요에 관한 또 다른 소크라테스식 토론으로 학생들을 이끈다. 학생들은 가족에서 조직된 정부에 이르기까지 모든 인간 집단에 존재하는 역동성으로서 사회 통제에 대한 이해를 심화하고, 그 이유를 이해하기 시작한다. 그녀는 다음과 같은 질문들을 제기한다.</p>
+    <ul class="bullet-list">
+      <li>"왜 사회에서 어떤 사람들은 사회적 지위에 매우 관심을 갖는다고 생각하는가?"</li>
+      <li>"왜 사회들은 성별 역할을 발전시킨다고 생각하는가?"</li>
+      <li>"권력은 어디서 온다고 생각하는가?"</li>
+      <li>"사회에서 권력과 통제 사이의 관계는 무엇인가?"</li>
+      <li>"사회에서 서로 다른 사람들은 사회 통제를 어떻게 보는가?"</li>
+    </ul>
+    <p>다음 날 소피아의 학생들은 다양한 일차·이차 자료를 탐구하고, 소피아는 끊임없이 교실을 돌아다니며 학생들이 노예 노동이나 여성의 권리와 같은 구체적인 문제들을 이해하도록 돕는다. 고대사를 가르친 경험을 통해 그녀는 청소년 학생들이 종종 판단을 내리고 현재주의에 빠지기 쉽다는 것을 깨달았다. 그녀는 "그들은 너무 이상했어요. 왜 이런 이상한 것들을 했나요? 그들은 여성을 싫어했어요. 그들은 노예를 싫어했어요."와 같은 발언을 듣는다. 소피아는 학생들의 현재주의적 경향에 매우 의도적으로 도전한다. 그녀는 종종 토론을 중단하고 "방금 하신 말씀에 대해 생각해 봅시다. 왜 그들이 이런 방식으로 행동했다고 생각하나요? 왜 이것이 이상하다고 생각하나요?"라고 말한다.</p>
+    <p>그녀는 학생들이 아테네의 관점을 이해하려 하면서도 현대의 역사 탐구자로서 자신의 관점에 대해 성찰해야 한다는 것을 안다. 그녀는 이전에 만든 아테네 페르소나에 대해 날카로운 질문을 던진다. "당신의 아테네 시민은 이러한 질문들에 대해 어떻게 생각했을까요? 오늘날 당신이 생각하는 것과 어떻게 다른가요? 이러한 차이 뒤에는 무엇이 있을까요?" 그녀는 학생들이 시간적·문화적 차이를 이들의 이익을 위해 활용하도록, 즉 고대의 신념을 고대의 관행과 연결하도록 밀어붙임으로써 도움을 준다. 그녀는 학생들에게 불의하다고 여기는 행동들을 용납하거나 합리화하도록 요구하지 않지만, 그것들을 이해하고 맥락화하기를 원한다.</p>
+    <p>탐구가 계속되면서 소피아는 학생들이 "아테네식 민주주의가 노예가 없었더라면 가능했을까요?"와 같은 질문을 하는 것을 알아챈다. 이는 소피아에게 아테네 민주주의 체제에서 고대 철학자들이 발견한 결함을 개략적으로 설명하는 복잡한 자료를 소개하고, 아테네 민주주의가 다양한 사람들에게 권력을 부여하거나 박탈하는 방식에 대한 토론을 이끌 기회를 제공한다.</p>
+    <p>학생들은 고대 아테네 민주주의와 그 사회 통제 방법에 대한 입장을 취하도록 촉구받는다. "네 귀퉁이(Four Corners)"라는 학습 전략을 사용하여 학생들은 다음 진술들에 대해 입장을 취하고 방어해야 한다.</p>
+    <ul class="bullet-list">
+      <li>소크라테스는 친구들이 도망가는 것을 도와주지 않도록 함으로써 옳은 일을 하였다.</li>
+      <li>정치에 관심이 없는 사람은 사회에서 자기 위치가 없다.</li>
+      <li>극단적인 것들은 항상 피해야 한다.</li>
+    </ul>
+    <p>"강하게 동의", "다소 동의", "다소 반대", "강하게 반대"로 표시된 교실 네 귀퉁이로 이동하면서, 학생들은 자신의 관점을 고대 아테네인들의 관점과 조화시킨다. 결정을 내리지 못한 학생들은 교실 한가운데 머물고 급우들이 자신의 입장의 논리를 확신시키려 하며, 이는 또한 소수의 학생들이 관점이 바뀌면서 귀퉁이를 바꾸도록 유도한다. 역사적 관점 취하기와 현대적 관점의 균형을 맞추도록 학생들에게 요청하는 소피아의 전략은, 과거를 공부할 때 자신의 당대 사회문화적 규범적 지침을 결코 완전히 뒤에 남겨 둘 수 없기 때문에 역사 교육자들이 자주 권고하는 방식이다 (VanSledright 2011).</p>
+    <p>소피아는 또한 학생들이 민주적 토론에서 다중 관점의 중요성을 이해하기를 원한다. 그녀는 Teaching Matters 웹사이트에서 발견한 일련의 아이디어들을 종합하여 다음 글쓰기 프롬프트를 제시한다.</p>
+    <blockquote>어려운 결정을 내리려 할 때, 같은 방식으로 생각하는 사람들과 토론하는 것을 좋아하나요, 아니면 다르게 생각하는 사람들과 토론하는 것을 좋아하나요? 왜요? 개인적인 예와 논리적 추론을 사용하여 답변을 지지하세요.</blockquote>
+    <p>이후, 학생들은 이상적인 아테네 시민이 어떻게 생겼을지 구체화하기 시작한다. 페리클레스의 역할을 일시적으로 맡아, 아테네 민주주의 체제에 구현된 기술·특성·가치들에 대한 이해를 종합하여 "이상적인 아테네인"을 위한 직업 설명서를 작성한다.</p>
+
+    <h4 id="affective">3-2-3. 정서적 연결(Affective Connections)</h4>
+    <p>소피아는 감정이 의사결정에 강력한 영향을 미칠 수 있다는 것을 알고 있으며, 사회 통제를 둘러싼 문제들은 학생과 역사적 인물 모두에게서 정서적 반응을 불러일으킬 가능성이 있다. 그녀는 학생들이 민주적 논쟁에 참여하면서 아테네 시민들의 욕망·희망·두려움이 그들의 생각·행동·삶의 경험에 어떻게 영향을 미쳤을지 이해하기를 원한다. 학생들이 이미 사회 통제를 문명화된 사회의 보편적 측면으로 확립했기 때문에, 소피아는 이를 학생들과 아테네인들 사이의 정서적 연결의 초점으로 활용할 계획이다.</p>
+    <p>그녀는 학생들이 자신의 사회 통제에 대한 개인적 경험을 아테네인들의 경험과 연결하도록 장려하여 현대 세계의 학생들에게 사회 통제에 대한 정서적 반응을 촉진한다. 그렇게 함으로써 소피아는 유사성과 차이점에 초점을 맞춘다. 그녀는 학생들에게 아테네인들이 사회 통제의 문제에 어떻게 반응했을지, 그리고 그들의 반응이 현대 세계의 자신들과 어떻게 유사하면서도 매우 다를지 지속적으로 생각해 보라고 상기시킨다. 이것은 그녀가 학생들이 맞추도록 도와야 하는 신중한 균형인데, 부분적으로는 다른 사람이 정확히 어떻게 느끼는지 결코 알 수 없기 때문이고, 부분적으로는 아테네인들이 소피아의 학생들이 매우 다른 방식으로 관련 짓는 노예제와 같은 문제들을 다루었기 때문이다.</p>
+    <p>소피아는 학생들이 정서적 반응을 불러일으킬 잠재력이 있는 사회 통제의 측면들을 접할 때 모든 활동에 걸쳐 정서적 연결을 강조한다. 예를 들어, 소피아는 "자유의 땅 대 지도자의 땅(Freeland vs. Leaderland)"이라는 가상 사회를 만들고 학생들에게 어느 쪽을 선호하는지 묻는다. 자유의 땅은 사회 통제 없이 진정으로 원하는 것은 무엇이든 자유롭게 할 수 있는 사회이다. 지도자의 땅은 개인적 자유에 엄격한 제한이 있는 훨씬 더 권위주의적인 사회이다. 학생들은 두 나라 중 새로운 집을 선택하고 선택한 고향이 다른 나라보다 우월한 이유를 설명함으로써 선택을 방어해야 한다.</p>
+    <p>소피아는 충성심이나 국가적 자부심을 포함하는 결정이 종종 선택이 도전받을 때 감정적 반응으로 이어진다는 것을 지적하기 위해 이 기회를 활용한다. 학생들이 감정으로 반응할 때, 그녀는 그들에게 잠시 멈추고 자신의 감정이 어떻게 자신의 사고에 영향을 미치고 있는지 생각해 보도록 요청한다. 그녀는 "아테네인들도 유사한 감정을 느꼈을까요? 그들의 반응이 당신의 것과 어떻게 달랐을까요?"와 같은 질문을 던진다. 학생들은 무제한적 자유에 대한 욕망을 통제에 대한 인간의 욕망과 조화시킨다. 많은 학생들이 자신의 반응에 놀라며, 일부 학생들은 자유의 땅을 포기하고 더 제한적인 지도자의 땅으로 이동하기로 결정하기까지 한다. 학급은 자유의 땅과 지도자의 땅의 결함 있는 극단들에 대해 토론하며, 결국 개인적 자유와 인간 행동에 대한 공정한 제한의 사회가 선호될 것이라는 결론에 도달한다.</p>
+    <p>소피아는 또한 학생들이 도입 단계에서 만든 아테네 페르소나에 대한 정서적 연결을 장려한다. 학생들이 토론을 준비하면서 그녀는 "여러분은 자신으로서 논쟁하는 것이 아닙니다. 여러분은 아테네인으로서 논쟁하는 것입니다"라고 상기시킨다. 그녀는 부유한 아테네 페르소나를 만든 학생에게 돌아서며 "노예를 포기하고 싶은 마음이 전혀 없지 않겠어요? 그 외에 무엇을 잃게 될까요? 그것에 대해 어떤 느낌이 드나요?"라고 묻는다. 학생들이 토론 연설문을 작성할 준비를 할 때, 소피아는 설득 효과를 위한 감정적 연결을 만들기 위해 개인 이야기를 사용하는 수사적 전략을 상기시킨다. 그녀는 학생들에게 "논리에 호소하는 것과 감정에 호소하는 것의 차이를 생각해 보세요. 사람들이 결정을 내리는 방식이기 때문에 둘 다 하고 싶을 것입니다. 그것을 장점으로 활용하세요"라고 촉구한다.</p>
+
+    <h3 id="display-phase">3-3. 발표 단계(Display Phase)</h3>
+    <p>학생들은 교실을 아테네 민회로 변모시키는 과정을 시작하는데, 이 포럼에서 그들은 아테네 사회의 미래에 영원히 영향을 미칠 핵심 결정들을 내릴 것이다. 세 개의 토론 팀이 구성되고, 학생들은 자신이 지지하게 될 대의명분을 기대하며 설렌다. 소피아는 고대 문명: 그리스(Mollet and Mollet 1997)에서 세 가지 제안을 각색하였다. 첫 번째 그룹은 스파르타와의 전쟁의 위험과 이점을 토론하며 펠로폰네소스 전쟁의 운명을 결정할 것이다. 두 번째 그룹은 아테네 사회에서 여성을 위한 규칙을 위반한 산파의 운명에 대해 논쟁할 것이다. 세 번째 그룹은 아테네를 위해 더 많은 노예를 포획하기 위해 다른 그리스 도시국가를 침공할지 결정하며, 사회에서 노예제의 필요성과 역할의 범위에 대해 논의할 것이다.</p>
+    <p>소피아는 민회 준비가 단순한 역사 연구 이상을 필요로 한다는 것을 안다. 수업에서 공개 발언·대화·토론을 정기적으로 사용해 온 교사로서, 소피아는 학생들에게 이러한 의사소통 형태에 참여하는 방법을 가르치는 것이 중요하다고 믿는다. 학생들은 광범위한 연구를 수행하였고, 이제 강력한 연설문의 개요를 잡고 초안을 작성할 것이다. 그들은 수사 기술을 배우고 글쓰기에서 파토스(pathos)·로고스(logos)·에토스(ethos)의 사용을 탐구한다.</p>
+    <div class="dialogue">
+      <p><span class="speaker">소피아:</span> 내일부터 좋은 연설을 만드는 것이 무엇이며 수집한 증거, 답한 핵심 질문, 개발한 아테네 캐릭터를 어떻게 통합하고 잘 작성된 설득력 있는 연설로 합쳐야 하는지 생각해 볼 것입니다. 아테네인들이 연설을 잘 못했을 때 어떤 일이 일어났는지 기억하시죠. 그들에게 어떤 일이 생겼나요?</p>
+      <p><span class="speaker">학생:</span> 머리를 뽑아서 옆에 던져버려요.</p>
+      <p><span class="speaker">소피아:</span> 여러분에게 그런 일이 생기지 않길 바랍니다!</p>
+    </div>
+    <p>소피아의 학생들은 민회가 열리기 전 "아고라 만남의 날"에 자신의 토론 주제에 대해 알릴 기회를 갖는다. 학생들은 아테네인들이 아고라에 가서 사교 활동을 하고 도시의 시사 문제를 토론했다는 것을 배운다. 각 토론 그룹은 자신의 토론 주제를 비공식적으로 토론하고 질문에 답할 준비를 해서 수업에 와야 한다. 공식 복장은 필수이며(학생들은 토가를 묶는 방법을 배우는 것을 좋아한다), 각 그룹은 다른 민회 구성원들에게 소규모 정보 팜플렛을 제시한다. 각 그룹은 아고라 만남의 날 이전에 다른 토론 팀 구성원들에게 물어볼 질문들을 준비해야 한다. 소피아는 또한 학생들에게 다음 날 민회에서 정보에 기반한 투표를 하기 위해 여전히 필요한 정보를 적어두도록 지시한다.</p>
+    <p>며칠간의 준비 끝에 드디어 민회가 열리고, 학생들은 강렬한 토론을 시작하기를 열망한다. 소피아는 이 행사에서 단지 사회자 역할만 담당한다. 아테네의 노예제도가 먼저 토론되며, 담론은 멜로스를 침공하여 더 많은 노예를 포획하는 것에 찬성하는 발언으로 시작된다. 학생들은 2분간 연설을 발표할 기회를 갖는다. 제안에 찬성하는 연설이 완료되면, 토론은 반대 발언으로 넘어간다. 연설을 들으면서 학생들은 메모를 작성하고 질문·지지 발언·반론을 준비해야 한다. 모든 연설이 끝난 후 공개 토론이 시작되고 전체 학급이 토론에 참여하게 된다.</p>
+    <p>소피아는 제안에 찬성과 반대하는 발언을 할 자원자를 요청한다. 발언자 목록이 만들어지고 학생들은 찬반 발언·질문·논거를 번갈아 가며 한다. 소피아는 토론 시간 제한을 설정한 후 투표를 요청한다. 고대적 주제에 맞게 소피아는 학생들에게 투표를 던질 도자기 파편을 준다. 학생들은 제안을 지지하거나 반대하는 것으로 표시된 용기에 파편을 넣어 투표한다. 투표가 집계되고 승자가 선언된다. 이 과정은 나머지 두 가지 토론 주제에 대해 반복된다.</p>
+
+    <h3 id="reflection-phase">3-4. 성찰 단계(Reflection Phase)</h3>
+    <p>민회 시뮬레이션이 끝날 때, 소피아와 학생들은 사회 통제에 대해 배우는 과정에 대해 신중한 관찰을 하였다. 소피아는 학생들이 아테네의 노예제도와 여성 대우에 매우 좌절하면서도, 아테네인들이 이 집단들을 사회에서 소외시키기 위해 내린 결정들에 공감할 수 있었다는 것을 알아챘다. 학생들은 토론 주제에 강렬한 연결감을 발전시키고 목적과 통찰력을 가지고 논쟁하였다. 소피아는 분노·좌절·흥분과 같은 감정의 표현에 감동받았으며, 학생들은 역사적 사실로 자신들의 열정적인 논거를 지지하는 가치를 발견하였다. 그녀는 학생들이 아테네 사회에서 사회 통제에 대한 더 깊은 이해를 발전시키기 위해 역사적 맥락·관점 취하기·정서적 연결을 성공적으로 결합했다고 믿었다.</p>
+    <p>이제 소피아는 학생들이 새로운 지식을 다른 맥락에 맥락화하고 지속적인 인간적 현상으로서의 사회 통제에 대한 더 넓은 이해를 발전시키도록 도울 차례였다. 그녀는 단원 초반의 나머지 두 핵심 질문을 제기한다.</p>
+    <ul class="bullet-list">
+      <li>역사적 사례에 대한 지식을 현대 사회의 사회 통제와 어떻게 연결할 수 있는가?</li>
+      <li>사회 통제를 유지하는 데 정부는 어떤 역할을 하는가?</li>
+    </ul>
+    <p>첫 번째 질문에 답하기 위해, 학생들은 오늘날 세계 어딘가에서 정부의 사회 통제에 관한 현대적 사례를 검색한다. 검색을 수행하면서 학생들은 통제받는 사람이 누구인지, 통제하는 사람이 누구인지, 사용된 통제 방법, 통제가 필요한 이유, 통제가 정당한지 여부를 확인해야 한다. 소피아는 컴퓨터 화면에서 빈 문서를 띄우고 학생들의 발견을 기록한다. 작업하면서 학생들은 세계 전반의 사회 통제 패턴을 찾는다. 그들은 시리아 내전, 동성혼 평등에 관한 미국의 지속되는 논쟁, 중국의 정부 통제 등 세계 각지의 사회 통제 사례들을 인용한다.</p>
+    <p>예시와 패턴을 기록한 후, 소피아는 마지막 핵심 질문으로 전환한다. "사회 통제를 유지하는 데 정부는 어떤 역할을 하는가?" 학생들은 "하나씩 주고받기(Give One-Get One)" 전략을 사용하여 답을 목록으로 작성한다. 마지막 과제는 학생들이 사회 통제에 대한 자신의 개인적 생각을 표현하는 글쓰기 프롬프트로, 두 가지 질문을 포함한다.</p>
+    <ol class="proposition-list">
+      <li>사회 통제를 유지하는 데 정부는 어떤 역할을 하는가?</li>
+      <li>미래에 사회 통제는 어떻게 변화할 것 같은가?</li>
+    </ol>
+    <p>학생들이 사회 통제에 대해 배운 것을 종합하고 새로운 맥락에서 적용하는 합리적인 응답을 작성할 수 있다면, 소피아는 학생들이 이 개념에 대해 정말로 견고한 실용적 지식을 발전시켰다는 것을 알 것이다.</p>
+  </section>
+
+  <!-- 결론 -->
+  <section id="conclusion">
+    <h2>4. 결론</h2>
+    <p>소피아는 단원이 끝난 후 영속적 이해를 위한 역사적 공감에 학생들이 참여한 경험을 돌아본다. 지난 몇 년과 비교하여, 소피아는 학생들이 자신들이 하는 작업에 대해 더 강한 주인의식을 발전시켰다고 믿는다. 그들의 연설문은 더 사실에 근거하고 있었으며, 뒷받침하는 증거가 없는 거창한 일반화와 광범위한 진술이 줄어들었다. 결과적으로 학생들의 사회 통제에 대한 이해도 역사적 사실·현대적 사례·인간의 반응에 뿌리를 두게 되었다. 학생들은 사회 통제의 특정 사례들을 토론하는 것을 넘어 이 개념을 시공간을 가로지르는 지속적인 인간적 현상으로 분석할 수 있게 되었다.</p>
+    <p>학생들의 정서적 반응은 아테네적 관점에 대한 이해를 형성하고 민회 연설의 분위기와 전달에 현저하게 영향을 미쳤다. 이전 토론에 비해 한층 높아진 참여와 관심의 수준이 있었다. 다른 교사들이 들러서 학생들이 하루 종일 그것에 대해 이야기하고 있다고 말하였다. 학생들은 심지어 모든 수업에 토가를 입고 싶어하기도 하였다. 소피아는 이러한 태도상의 차이들 대부분을 역사적 공감의 포함 덕분으로 여기며, 교육과정의 다른 영역에서 어떻게 역사적 공감을 활용할 수 있을지 매우 기대하고 있다.</p>
+  </section>
+
+  <!-- 참고문헌 -->
+  <section id="referencias">
+    <h2>참고문헌</h2>
+    <p>Brooks, S. "역사적 공감: 한 중등 사회과 교실에서의 관점 인식과 돌봄" [Historical Empathy as Perspective Recognition and Care in One Secondary Social Studies Classroom]. <em>Theory and Research in Social Education</em>, no. 2 (2011): 166–202.</p>
+    <p>Brooks, S. "역사적 공감 발휘: 쓰기 과제가 어떤 영향을 미칠 수 있는가?" [Displaying Historical Empathy: What Impact Can a Writing Assignment Have?]. <em>Social Studies Research &amp; Practice</em>, no. 2 (2008): 130–146.</p>
+    <p>Endacott, J. L. "역사적 공감에서의 정서적 참여 재고" [Reconsidering Affective Engagement in Historical Empathy]. <em>Theory and Research in Social Education</em>, no. 1 (2010): 6–49.</p>
+    <p>Endacott, J. L., and S. Brooks. "역사적 공감 촉진을 위한 갱신된 이론적·실천적 모델" [An Updated Theoretical and Practical Model for Promoting Historical Empathy]. <em>Social Studies Research &amp; Practice</em>, no. 1 (2013): 41–58.</p>
+    <p>Kohlmeier, J. "'그녀는 그냥 떠날 수 없었을까?': 수업 토론의 지속적 활용과 9학년 세계사 수업에서의 역사적 공감 발달 사이의 관계" ['Couldn't She Just Leave?': The Relationship Between Consistently Using Class Discussions and the Development of Historical Empathy in a 9th Grade World History Course]. <em>Theory and Research in Social Education</em>, no. 1 (2006): 34–57.</p>
+    <p>Mollet, D., and J. Mollet. <em>고대 문명: 그리스: 역사-사회과학/언어 예술 프로그램, 문학 기반, 창의적이고 교과 통합적</em> [Ancient Civilizations: Greece: A History-Social Science/Language Arts Program, Literature-based, Creative and Cross-Curricular]. San Diego, CA: Wide-Horizons Education Resources, 1997.</p>
+    <p>VanSledright, B. S. <em>역사교육 재사고의 도전</em> [The Challenge of Rethinking History Education]. New York, NY: Routledge, 2011.</p>
+    <p>Wiggins, G., and J. McTighe. <em>이해 중심 교육과정: 확장 2판</em> [Understanding by Design: Expanded 2nd edition]. New York, NY: Pearson, 2005.</p>
+  </section>
+
+</main>
+
+<!-- 맨 위로 버튼 -->
+<button id="to-top" onclick="window.scrollTo({top:0, behavior:'smooth'})" title="맨 위로">▲</button>
+
+<script>
+window.addEventListener('scroll', () => {
+  let current = '';
+  document.querySelectorAll('section[id]').forEach(s => {
+    if (s.getBoundingClientRect().top <= 80) current = s.id;
+  });
+  document.querySelectorAll('#sidebar nav a').forEach(a => {
+    a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+  });
+});
+
+document.querySelectorAll('#sidebar nav a').forEach(a => {
+  a.addEventListener('click', e => {
+    e.preventDefault();
+    const target = document.querySelector(a.getAttribute('href'));
+    if (target) target.scrollIntoView({ behavior: 'smooth' });
+  });
+});
+</script>
+</body>
+</html>

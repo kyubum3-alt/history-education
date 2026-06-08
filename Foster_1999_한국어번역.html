@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>역사적 공감으로 역사 공부에 흥미 유발하기 — Foster (1999)</title>
+<style>
+:root {
+  --sidebar-width: 260px;
+  --accent: #2c5f8a;
+  --accent-light: #e8f1f8;
+  --text: #1a1a1a;
+  --muted: #555;
+  --border: #d0d7de;
+  --bg: #fafafa;
+  --white: #ffffff;
+  --table-head: #f0f4f8;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Noto Serif KR', 'Malgun Gothic', Georgia, serif;
+  font-size: 15.5px;
+  line-height: 1.85;
+  color: var(--text);
+  background: var(--bg);
+}
+
+#sidebar {
+  position: fixed;
+  top: 0; left: 0;
+  width: var(--sidebar-width);
+  height: 100vh;
+  background: var(--white);
+  border-right: 1px solid var(--border);
+  overflow-y: auto;
+  padding: 20px 0 40px;
+  z-index: 100;
+}
+
+#sidebar .sidebar-title {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  color: var(--accent);
+  padding: 0 18px 10px;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 10px;
+}
+
+#sidebar nav a {
+  display: block;
+  padding: 5px 18px;
+  font-size: 13px;
+  color: var(--muted);
+  text-decoration: none;
+  border-left: 3px solid transparent;
+  transition: all .15s;
+  line-height: 1.5;
+}
+
+#sidebar nav a:hover,
+#sidebar nav a.active {
+  color: var(--accent);
+  background: var(--accent-light);
+  border-left-color: var(--accent);
+}
+
+#sidebar nav a.sub {
+  padding-left: 32px;
+  font-size: 12.5px;
+}
+
+#main {
+  margin-left: var(--sidebar-width);
+  padding: 48px 56px 80px;
+  max-width: 900px;
+}
+
+.paper-header {
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 24px;
+  margin-bottom: 32px;
+}
+
+.paper-header h1 {
+  font-size: 26px;
+  line-height: 1.4;
+  color: var(--accent);
+  margin-bottom: 6px;
+}
+
+.paper-header .orig-title {
+  font-size: 15px;
+  color: var(--muted);
+  font-style: italic;
+  margin-bottom: 16px;
+}
+
+.paper-meta {
+  font-size: 13.5px;
+  color: var(--muted);
+  line-height: 2;
+}
+
+.paper-meta strong { color: var(--text); }
+
+section {
+  scroll-margin-top: 24px;
+  margin-bottom: 44px;
+}
+
+section h2 {
+  font-size: 20px;
+  color: var(--accent);
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 6px;
+  margin-bottom: 16px;
+}
+
+section h3 {
+  font-size: 16.5px;
+  color: var(--text);
+  margin: 20px 0 10px;
+  font-weight: 700;
+}
+
+p { margin-bottom: 12px; }
+
+ul, ol {
+  margin: 0 0 14px 24px;
+}
+
+li { margin-bottom: 6px; }
+
+.table-wrap {
+  margin: 24px 0;
+  overflow-x: auto;
+}
+
+.table-wrap .caption {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 6px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+th {
+  background: var(--table-head);
+  padding: 8px 12px;
+  text-align: left;
+  border: 1px solid var(--border);
+  font-weight: 700;
+}
+
+td {
+  padding: 7px 12px;
+  border: 1px solid var(--border);
+  vertical-align: top;
+}
+
+tr:nth-child(even) td { background: #f8fafc; }
+
+.source-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--accent);
+  border-radius: 4px;
+  padding: 16px 20px;
+  margin-bottom: 18px;
+}
+
+.source-card h4 {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+
+.source-card .source-ref {
+  font-size: 12.5px;
+  color: var(--muted);
+  margin-top: 8px;
+  font-style: italic;
+}
+
+blockquote {
+  margin: 12px 0 12px 20px;
+  padding: 10px 16px;
+  border-left: 3px solid var(--border);
+  color: var(--muted);
+  font-style: italic;
+}
+
+.ref-list { list-style: none; padding: 0; }
+.ref-list li {
+  padding: 6px 0;
+  border-bottom: 1px dotted var(--border);
+  font-size: 14px;
+  line-height: 1.7;
+}
+.ref-list li:last-child { border-bottom: none; }
+.ref-ko {
+  font-size: 13px;
+  color: var(--muted);
+  display: block;
+  margin-top: 2px;
+}
+
+.chronology-item {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 14px;
+}
+
+.chrono-year {
+  font-weight: 700;
+  color: var(--accent);
+  min-width: 50px;
+  font-size: 15px;
+}
+
+#to-top {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  background: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 42px; height: 42px;
+  font-size: 18px;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,.18);
+  transition: opacity .2s;
+}
+
+#to-top:hover { opacity: .85; }
+
+.doi-link {
+  font-size: 13px;
+  color: var(--accent);
+}
+
+@media (max-width: 900px) {
+  #sidebar { display: none; }
+  #main { margin-left: 0; padding: 24px 20px; }
+}
+</style>
+</head>
+<body>
+
+<aside id="sidebar">
+  <div class="sidebar-title">📄 논문 목차</div>
+  <nav>
+    <a href="#header">논문 정보</a>
+    <a href="#intro">서론</a>
+    <a href="#overview">수업 모델 개요</a>
+    <a href="#what-is">역사적 공감이란 무엇인가?</a>
+    <a class="sub" href="#not-empathy">공감이 아닌 것</a>
+    <a class="sub" href="#six-qualities">역사적 공감의 6가지 요소</a>
+    <a href="#dilemma">딜레마: 체임벌린은 왜 히틀러를 유화했는가?</a>
+    <a href="#context">맥락과 연대기</a>
+    <a class="sub" href="#background">필수 배경 지식</a>
+    <a class="sub" href="#group-research">집단 역사 맥락 연구</a>
+    <a href="#evidence">역사적 증거 소개</a>
+    <a href="#investigation">역사 자료 학생 탐구</a>
+    <a href="#evaluation">집단 평가</a>
+    <a href="#construct">논거 구성</a>
+    <a href="#appendix">부록</a>
+    <a class="sub" href="#chronology">연대기: 1930년대 독일 외교정책</a>
+    <a class="sub" href="#inv-sheet">학생 탐구 질문지</a>
+    <a class="sub" href="#sources">자료 카드 1–21</a>
+    <a href="#referencias">참고문헌</a>
+  </nav>
+</aside>
+
+<main id="main">
+
+  <!-- ── 논문 헤더 ── -->
+  <div class="paper-header" id="header">
+    <h1>역사적 공감으로 역사 공부에 흥미 유발하기:<br>네빌 체임벌린에게 공감할 수 있는가?</h1>
+    <div class="orig-title">Using Historical Empathy to Excite Students about the Study of History: Can You Empathize with Neville Chamberlain?</div>
+    <div class="paper-meta">
+      <strong>저자:</strong> Stuart Foster (조지아 대학교 사회과교육학과 조교수)<br>
+      <strong>게재지:</strong> <em>The Social Studies</em>, Vol. 90, No. 1<br>
+      <strong>발행일:</strong> 1999년 1/2월호 (pp. 18–24)<br>
+      <strong>DOI:</strong> <a class="doi-link" href="https://doi.org/10.1080/00377999909602386">10.1080/00377999909602386</a>
+    </div>
+  </div>
+
+  <!-- ── 서론 ── -->
+  <section id="intro">
+    <h2>서론</h2>
+    <p>학생들은 너무 자주 학교 역사를 의미 없는 세부 사항과 사건들만을 다루는 멀고, 지루하고, 낡은 과목으로 여긴다. 많은 역사 교실에서 학생들은 끝없는 정보의 흐름을 받아들이고 흡수하며 수많은 백과사전적 사실을 외우도록 요구받는다(Goodlad 1984; Downey and Levstik 1991; Loewen 1995). 그 결과, 젊은이들에게 역사는 메마르고, 수동적이며, 자신들의 삶과는 무관한 것처럼 보이게 된다.</p>
+
+    <p>그러나 역사가 그렇게 보일 필요는 없다. 역사 공부는 최선의 경우, 젊은 학습자들에게 경이감과 탐구심을 전달할 수 있다. 역사는 학생들이 과거 사람들의 생각과 믿음을 깊이 있게 고려하도록 장려할 수 있다. 그들의 상황, 그들의 딜레마, 그들의 행동을 이해하고 감상하며, 궁극적으로는 그러한 행동의 결과를 반성하도록 이끌 수 있다. 무엇보다도, 역사 교사들은 학생들을 역사 구성에 적극적으로 참여시키고 과거의 사건들에 대해 비판적으로 사고하도록 할 수 있다(Foster, Morris, and Davis 1996; Thornton 1997; Levstik 1997).</p>
+
+    <p>이러한 긍정적인 접근들을 역사 교실에 통합하는 강력한 방법 중 하나는 역사적 공감(historical empathy)의 활용이다.</p>
+  </section>
+
+  <!-- ── 수업 모델 개요 ── -->
+  <section id="overview">
+    <h2>수업 모델 개요</h2>
+    <p>여기에 제시된 수업 모델은 1938년 가을 아돌프 히틀러와의 협상을 둘러싼 몇 달 동안 영국 수상 네빌 체임벌린의 입장을 고등학생들이 고려하도록 요구하는 일련의 수업 세부 사항을 포함한다. 이 수업 모델은 2차 세계 대전 발발로 이어지는 중요한 사건들에 초점을 맞추고 있지만, 과거 사람들의 행동을 이해해야 하는 어떤 역사적 주제에도 적용 가능하다. 예를 들어, 마틴 루터 킹은 왜 비폭력 정책을 채택했는가? 로마인들은 문명화되었는가? 왜 많은 아일랜드 이민자들이 19세기에 미국으로 이주했는가? 왜 트루먼은 히로시마와 나가사키 폭격을 명령했는가?</p>
+
+    <p>대부분의 미국 역사 교과서는 체임벌린과 그의 유화 정책을 완전한 실패로 간주한다. 교과서들은 히틀러가 체임벌린의 정책에 의해 억제되지 않았으며, 그 명백한 실패의 결과로 전 세계 국가들이 역사상 가장 파괴적인 전쟁으로 빠져들었다고 주장한다. 불행히도, 전전(戰前) 유럽의 사건들을 그렇게 분석하는 사람들은 상황의 복잡성을 무시하며, 더 중요하게는 체임벌린에게 가용했던 선택지들과 그가 운영한 사회정치적 맥락을 고려하지 않는다.</p>
+
+    <p>60년 전의 그 사건들을 학생들이 이해하도록 돕기 위해, 교사들은 모델 수업을 사용하여 학생들에게 역사적 딜레마를 제시할 수 있다. 이 수업들은 학생들에게 체임벌린에게 공감하고 그의 행동과 그것을 형성한 맥락을 이해하고 감상할 것을 요구한다. 궁극적으로, 학생들이 그 시대의 사건들에 더 가까이 다가가게 된 후, 그들은 체임벌린의 정책에 대한 사려 깊은 평가를 내리도록 요구받는다.</p>
+  </section>
+
+  <!-- ── 역사적 공감이란 무엇인가? ── -->
+  <section id="what-is">
+    <h2>역사적 공감이란 무엇인가?</h2>
+    <p>이 모델의 성공에 필수적인 것은 학생들이 역사적 공감의 과정에 참여해야 한다는 요건이다. 그러나 오랫동안 역사가들과 학자들은 역사적 공감(historical empathy)이라는 용어의 성격과 의미에 대해 논쟁해 왔다(Ashby and Lee 1987; Portal 1987; Shemilt 1987; Knight 1989; Jenkins 1991; Downey 1995; Yeager and Foster 1996). 따라서 이 용어에 대한 몇 가지 해명이 필요하다.</p>
+
+    <h3 id="not-empathy">역사적 공감이 아닌 것</h3>
+    <p>역사적 공감에 대한 더 명확한 이해는 그것이 무엇이 아닌지에 대한 인식에서 도출될 수 있다.</p>
+
+    <p>우선, 공감은 역사를 공부하는 학생들이 "과거 사람들의 눈 뒤로 들어가" 역사적 인물들과 "동일시"하는 과정으로만 보아서는 안 된다(Gagnon 1991). 어떤 역사가나 역사 학생도 시간상 다른 곳에서 온 다른 사람의 페르소나를 채택할 능력을 가지고 있지 않다. 더욱이, 동일시의 과정은 역사 공부의 본질적인 원칙과 양립하지 않는다. 즉, 그것은 후견지명의 관점을 무시하며 역사가들이 과거 사건의 현대적 해석자라는 원칙에 이질적이다.</p>
+
+    <p>또한 역사적 공감은 상상력과 혼동되어서는 안 된다. 교과서 과제들은 일반적으로 학생들에게 자신이 지난 시대에 있었다고 상상하도록 요구한다(예: 메이플라워호에 있었다고 상상하라; 자신이 아파치 인디언이라고 상상하라). 그러나 역사적 공감에 대한 그런 견해는 우리의 과거에 대한 무책임하고 잘못된 이해로 이어진다. 진정한 역사는 신중한 탐구와 이용 가능한 증거의 면밀한 검토에 의존한다. P. J. Rogers(1990)가 주장했듯이, "역사는 꾸며내는 자유로운, 상상하자, 가장하자 연습이 아니다." 추론과 추측은 역사가들이 역사 기록의 공백을 설명하는 데 도움을 주지만, 역사적 공감은 상상력에 깊이 물든 과정이 아니다.</p>
+
+    <p>마지막으로, 역사적 공감은 동정(sympathy)의 개념과 직접적으로 관련되어 있지 않다. 일부 역사적 인물들(예: 산업혁명의 아동 노동자들, 2차 세계 대전 중 홀로코스트의 희생자들)에 대한 동정은 역사 교실에서 어쩌면 환영받을지 모르지만, 그것이 역사의 핵심 목적은 아니다. 역사적 연구는 가능한 한 이성적 객관성에 의존한다. 역사적 인물들과의 감정적 관계는 역사의 근본적인 목적에서 벗어난다.</p>
+
+    <h3 id="six-qualities">역사적 공감의 6가지 요소</h3>
+    <p>역사적 공감이 동일시, 상상, 또는 동정을 명시적으로 포함하지 않는다면, 그것은 무엇을 포함하는가? 본질적으로 역사적 공감은 여섯 가지 기본적인 요소를 포함한다.</p>
+
+    <ol>
+      <li><strong>행동에 대한 이해와 설명:</strong> 역사적 공감은 과거 사람들이 왜 그들이 한 대로 행동했는지에 대한 이해와 설명으로 이어지는 과정이다.</li>
+      <li><strong>역사적 맥락과 연대기에 대한 감상:</strong> 공감은 과거 사건의 평가에서 역사적 맥락과 연대기에 대한 감상을 포함한다. 공감하기 위해 학생들은 검토 중인 시대의 주요 사건, 인물, 문화를 알고 있어야 한다.</li>
+      <li><strong>역사적 증거의 철저한 분석과 평가:</strong> 역사적 공감은 역사적 증거의 철저한 분석과 평가에 의존한다. 역사적 증거는 역사의 엔진이다. 학생들은 과거 행동에 대한 더 사려 깊은 이해를 확립하기 위해 역사적 증거의 검토와 해석에 참여해야 한다.</li>
+      <li><strong>결과에 대한 감상:</strong> 역사적 공감은 과거에 저질러진 행위의 결과에 대한 감상을 포함한다. 역사를 공부하는 학생들은 후견지명—사건이 어떻게 전개되었는지 알 수 있는 사치—의 이점을 누린다. 따라서 학생들은 행동의 결과를 인식하고 어떤 역사적 인물이 취한 행동이 미래의 사건들에 어떻게 영향을 미쳤는지 사려 깊게 반성할 수 있어야 한다.</li>
+      <li><strong>지나간 시대에 대한 직관적 감각:</strong> 역사적 공감은 지나간 시대에 대한 직관적 감각과 과거가 현재와 다르다는 암묵적 인식을 요구한다. 다시 말해, 과거의 사람들은 오늘날의 가치, 도덕, 믿음, 지식으로 판단받아서는 안 된다. 효과적으로 공감하기 위해 학생들은 이전 시대의 사회정치적·문화적 힘을 감상하기 시작해야 한다.</li>
+      <li><strong>인간 행동의 복잡성에 대한 존중:</strong> 역사적 공감은 인간 행동과 업적의 복잡성에 대한 존중, 감상, 감수성을 요구한다. 학생들은 역사 공부가 과학적 과정이 아니며 과거 인간의 행동에 절대적인 규칙이 적용되지 않는다는 것을 인식해야 한다. 매우 유사한 상황에서도 서로 다른 개인들은 매우 다른 방식으로 행동할 수 있다. 예를 들어, 1938년 히틀러에 대한 윈스턴 처칠의 정책은 체임벌린이 따른 것과 매우 달랐을 것이다. 학생들은 어떤 개인의 성격, 배경, 성품, 믿음의 복잡성이 그 사람의 행동 방식에 심각하게 영향을 미친다는 것을 이해해야 한다.</li>
+    </ol>
+
+    <p>따라서 다음에 나오는 모델 공감 수업에서 학생들은 체임벌린이 되어 "그의 눈 뒤로 들어갈" 필요가 없다. 그들은 그의 처지에 동정을 표하거나 심지어 자신이 영국 수상이었다고 상상하도록 요청받지도 않는다. 오히려, 학생들은 그의 결정을 형성한 사건들을 이해하고, 그가 일한 맥락을 감상하며, 그의 행동의 결과를 알도록 요구받는다. 무엇보다도, 학생들은 역사적 증거의 종합을 사용하여 체임벌린이 1938년 가을 아돌프 히틀러와의 협상에서 왜 유화 정책을 따랐는지를 이해하고, 설명하고, 평가하도록 요구받는다.</p>
+
+    <p>이 수업 모델은 네 가지 상호 연관된 단계로 구성된다. 첫 번째 단계에서는 1938년 체임벌린이 히틀러를 유화하기로 결정한 딜레마의 배경을 설정해야 한다. 학생들은 인간 행동의 이해나 분석을 필요로 하는 역사적 사건에 초점을 맞추어야 한다. 그들은 맥락과 연대기 연구를 통해 사건에 대한 배경 지식을 발달시켜야 한다. 역사적 증거를 수집한 후, 학생들은 다른 학급 구성원들과 자신의 지식을 공유해야 한다. 이 연습은 학생들이 역사적 증거를 사용하여 자신의 결론을 지지하는 논거를 구성하는 것으로 끝난다.</p>
+  </section>
+
+  <!-- ── 딜레마 ── -->
+  <section id="dilemma">
+    <h2>딜레마: 체임벌린은 왜 1938년에 히틀러를 유화했는가?</h2>
+    <p>1930년대에 영국과 프랑스는 히틀러에 대한 유화 정책을 채택했다. 이는 그들이 전쟁을 피하기 위해 독재자의 많은 요구를 협상하고 충족시키려 했다는 것을 의미한다. 유화 정책의 핵심 인물은 영국 수상 네빌 체임벌린이었다. 그는 또 다른 참혹한 전쟁을 간절히 피하고 싶었으며, 아돌프 히틀러와 직접 협상함으로써 유럽의 평화를 확보할 수 있다고 믿었다.</p>
+
+    <p>1938년 9월, 체임벌린은 히틀러를 만나기 위해 세 번 독일로 날아갔다. 마지막 회의(9월 28-30일)에서 그는 평화의 대가로 체코슬로바키아의 한 지역인 주데텐란트에 대한 독일의 침공을 요구하는 히틀러의 요구를 수용하기로 합의했다. 이탈리아의 무솔리니와 프랑스의 달라디에도 합의한 이 결의는 뮌헨 협정으로 알려졌다.</p>
+
+    <p>런던으로 돌아오는 길에 체임벌린은 "우리 시대의 평화"가 달성되었다고 선언했다. 그는 유럽의 평화를 선언하며 아돌프 히틀러가 서명한 유명한 종이 조각을 들어 보였다. 그는 전쟁이 피해졌다는 것에 기뻐하는 환호하는 군중의 환영을 받았다. 그러나 1년이 채 안 된 1939년 9월, 히틀러가 폴란드를 침공하여 협정을 파기한 후, 영국과 프랑스는 독일에 선전 포고했다. 체임벌린은 가슴이 무너졌다. 그의 유화 정책은 실패했다.</p>
+  </section>
+
+  <!-- ── 맥락과 연대기 ── -->
+  <section id="context">
+    <h2>맥락과 연대기</h2>
+
+    <h3 id="background">필수 배경 지식</h3>
+    <p>학생들이 핵심 질문을 다루기 전에, 그들은 해당 시대에 대한 맥락적·연대기적 지식을 갖추어야 한다. 학생들의 배경 지식은 이전 지식에 따라 학급마다 다를 것이다. 체임벌린의 입장을 더 충분히 이해하기 위해, 학생들은 해당 시대를 소개할 기본적인 지식을 습득해야 한다. 교사들은 2차 세계 대전 발발로 이어지는 사건의 연대기를 제공하는 1930년대 독일 외교 정책에 관한 정보 자료(부록 참조)를 활용할 수 있다.</p>
+
+    <h3 id="group-research">집단 역사 맥락 연구</h3>
+    <p>유화 정책의 배경을 이해하기 위해, 학생들은 중요한 맥락적 정보를 연구해야 한다. 5인 팀으로 활동하면서 다양한 자료(예: 교과서, 도서관, 학교 미디어 센터, 인터넷)를 사용하여 다음 주제 중 하나를 조사할 수 있다:</p>
+
+    <ul>
+      <li>1차 세계 대전의 주요 사회적·정치적·경제적 영향</li>
+      <li>베르사유 조약의 조항, 그 근거, 독일의 조약 반응</li>
+      <li>히틀러의 권력 부상의 주요 사건 및 1938년 이전 그의 주요 국내 정책과 행동의 세부 사항</li>
+      <li>1920년대와 1930년대의 국제연맹 설립과 효과성</li>
+      <li>1930년대 히틀러의 외교 정책에서 주요 사건과 히틀러가 베르사유 조약에 반복적으로 도전한 이유</li>
+      <li>세계의 주요 강대국(예: 미국, 영국, 프랑스, 소련)이 1920년대와 1930년대에 고립 정책 또는 평화 추구를 따른 이유</li>
+    </ul>
+
+    <p>각 연구 팀은 학급의 모든 학생을 위한 2페이지 보고서를 작성하고 팀의 결과를 요약하는 5~10분의 발표를 해야 한다. 역사적 시대에 대한 맥락적·연대기적 틀을 구성하는 학생들은 체임벌린의 정책 추구로 이어진 상황을 더 잘 이해할 수 있을 것이다.</p>
+  </section>
+
+  <!-- ── 역사적 증거 소개 ── -->
+  <section id="evidence">
+    <h2>역사적 증거 소개</h2>
+    <p>과제에 필수적인 것은 학생들이 딜레마와 관련된 역사적 증거를 적극적으로 분석하고 평가해야 한다는 요건이다. 교사는 학급을 집단으로 나누고 각 집단에 부록에 제시된 자료 카드 세트를 줌으로써 이를 달성할 수 있다. 각 집단의 한 구성원이 집단의 결정을 기록해야 한다. 집단은 각 자료를 토론하고 그것이 히틀러를 유화하려는 체임벌린의 결정을 지지하는지, 반대하는지, 또는 중립적인지를 결정해야 한다. 구성원들이 결정에 도달하면, 기록자는 자료를 기록하고 집단의 집합적 결정을 적절한 열에 표시해야 한다. 그것이 완료되면, 전체 학급이 자료와 각 집단이 도달한 결정을 토론할 수 있다.</p>
+  </section>
+
+  <!-- ── 역사 자료 학생 탐구 ── -->
+  <section id="investigation">
+    <h2>역사 자료 학생 탐구</h2>
+    <p>일부 교사들은 학급이 수업에서 제공된 자료를 넘어서도록 요구함으로써 과제를 확장하기를 원할 수 있다. 실제로, 학생들은 많은 증거가 교실 밖에 존재한다는 것을 인식해야 한다. 학생들이 탐구 질문지를 받으면, 어떤 학생도 두 가지 이상의 질문을 연구하지 않도록 하면서 어떤 개인이 어떤 질문을 연구할지 결정해야 한다. 작업은 수업 시간 중에 또는 집에서 이루어질 수 있으며 1페이지 보고서로 요약된다. 학생들은 자신의 연구를 집단의 다른 구성원들과 공유한다. 이런 방식으로, 집단들은 해당 시대에 대한 상호 이해를 풍부하게 하기 위해 협력적으로 행동한다. 교사는 그런 다음 전체 학급을 학생들이 제기한 질문과 주제들에 대한 토론으로 이끌 수 있다.</p>
+  </section>
+
+  <!-- ── 집단 평가 ── -->
+  <section id="evaluation">
+    <h2>집단 평가: 체임벌린의 유화 정책에 대한 찬반 논거</h2>
+    <p>학급이 사건에 대한 충분한 이해를 습득하면, 학생들은 체임벌린의 정책을 평가해야 한다. 학급 구성원들이 원래 집단으로 다시 모이면, 집단들은 자료 카드의 정보와 자신의 연구 정보 및 기타 관련 증거를 사용하여 유화 정책을 따르려는 체임벌린의 결정에 대한 가장 강력한 5가지 찬성 논거와 가장 강력한 5가지 반대 이유를 결정할 것이다. 집단들은 오버헤드 투명 필름이나 대형 전시 차트에 결과를 요약할 수 있다. 각 집단의 대표가 논거를 설명해야 한다. 학생들이 역사적 증거로 자신의 논거를 지지하는 것이 필수적이다. 전체 학급이 각 집단의 결정을 토론해야 한다.</p>
+  </section>
+
+  <!-- ── 논거 구성 ── -->
+  <section id="construct">
+    <h2>결론을 지지하는 논거 구성</h2>
+    <p>집단 및 학급 토론 후, 모든 학생들은 핵심 논거에 대한 합리적인 이해를 습득하게 된다. 개별 학생들이 역사적 딜레마에 적극적으로 참여했고 시대에 대한 그들의 이해가 접근 가능하고 의미 있는 방식으로 구성되었기 때문에, 그들은 체임벌린의 행동을 평가하는 어려운 과제를 더 잘 수행할 수 있다.</p>
+
+    <p>이와 같은 공감 연습을 통해, 학생들은 역사적 사건에 더 가까이 다가가고 과거에 대한 관점을 구성하는 데 적극적으로 참여한다. 공감 연습의 마지막에 학생들은 역사적 증거의 불확실성과 씨름했으며, 가장 중요하게는 중요한 역사적 인물의 행동을 사려 깊게 이해하고, 감상하고, 평가했다.</p>
+  </section>
+
+  <!-- ── 부록 ── -->
+  <section id="appendix">
+    <h2>부록</h2>
+
+    <h3 id="chronology">맥락과 연대기: 1930년대 독일 외교 정책 주요 사건</h3>
+
+    <div class="chronology-item">
+      <div class="chrono-year">1919</div>
+      <div>1차 세계 대전 이후, 빅3(영국, 프랑스, 미국)은 독일에게 전쟁에서의 적대 행위에 대한 책임을 물었다. 파리 외곽의 베르사유에서 독일 군사력의 규모를 제한하고 독일 영토를 빼앗는 조약이 서명되었다. 히틀러를 포함한 많은 독일인들은 조약이 너무 가혹하다고 느끼고 복수를 다짐했다.</div>
+    </div>
+
+    <div class="chronology-item">
+      <div class="chrono-year">1933</div>
+      <div>독일의 권력을 장악한 지 3일 만에 히틀러는 군사 지휘관들에게 독일 재무장이 그의 최우선 과제라고 말했다—그것은 비밀리에 이루어질 것이었다. 이것은 베르사유 조약의 조항에 완전히 위반되는 것이었다.</div>
+    </div>
+
+    <div class="chronology-item">
+      <div class="chrono-year">1935</div>
+      <div>히틀러는 베를린에서 대규모 재무장 집회를 조직했으며, 영국과의 협정 하에 독일 해군의 규모를 극적으로 증가시켰다.</div>
+    </div>
+
+    <div class="chronology-item">
+      <div class="chrono-year">1936</div>
+      <div>히틀러는 군사 징병제를 도입하고 많은 공장들에 군비를 생산하도록 명령했다. 1936년 3월 히틀러는 3만 명의 군대를 라인란트로 진주시켰으며, 이 역시 베르사유 조약을 파기하는 것이었다. 1936년 11월 히틀러는 이탈리아 및 일본과 군사 동맹을 체결했다.</div>
+    </div>
+
+    <div class="chronology-item">
+      <div class="chrono-year">1937</div>
+      <div>히틀러는 스페인 내전을 독일의 무기와 군사 전술을 시험하는 데 활용했다.</div>
+    </div>
+
+    <div class="chronology-item">
+      <div class="chrono-year">1938</div>
+      <div>히틀러는 군대의 직접 지휘권을 장악했다. 1938년 3월 독일 군대는 또다시 베르사유 조약의 조항에 위반하여 오스트리아로 진군했다. 1938년 9월 히틀러는 체코슬로바키아의 한 지역인 주데텐란트를 독일에 양도할 것을 요구했다. 히틀러는 체코 정부가 주데텐란트에 사는 300만 독일인들을 학대했다고 주장했다. 체임벌린은 히틀러와 협상하기 위해 뮌헨으로 갔다. 프랑스 지도자 달라디에의 지지를 받아, 체임벌린은 히틀러가 체코슬로바키아의 나머지 부분이 안전하다는 것을 보장하는 조건으로 히틀러의 요구에 동의했다. 히틀러는 동의했다.</div>
+    </div>
+
+    <div class="chronology-item">
+      <div class="chrono-year">1939</div>
+      <div>1939년 3월 히틀러는 체코슬로바키아의 나머지 부분을 침공했다. 폴란드가 다음이었다. 히틀러는 소련과 협정을 협상했다. 두 나라는 서로 공격하지 않고 폴란드를 나누기로 합의했다. 영국과 프랑스는 히틀러에게 폴란드 침공은 전쟁으로 이어질 것이라고 경고했다. 이틀 후 독일은 폴란드를 침공했다. 9월 3일 영국과 프랑스가 선전 포고했다.</div>
+    </div>
+
+    <h3 id="inv-sheet">학생 탐구 질문지</h3>
+    <p>수업에서 집단에게 주어진 역사적 자료들은 체임벌린이 히틀러를 유화하기로 한 결정에 관한 유용한 배경 정보를 제공해야 한다. 그러나 다음 질문들을 연구함으로써 논거를 강화할 수 있다.</p>
+
+    <ol>
+      <li>1930년대에 미국, 프랑스, 영국은 독일에서의 히틀러의 행동에 대해 무엇을 알았는가?</li>
+      <li>연합국들은 왜 독일이 재무장하도록 허용했는가?</li>
+      <li>1938년 미국의 입장은 무엇이었는가? 미국이 또 다른 유럽 전쟁에 참여할 가능성이 있었는가?</li>
+      <li>1938년 영국의 군사력은 얼마나 강했는가? 전쟁을 할 준비가 되어 있었는가?</li>
+      <li>윈스턴 처칠은 체임벌린이 1938년에 무엇을 해야 한다고 생각했는가? 그가 1938년에 영국을 전쟁으로 이끌었을까?</li>
+      <li>히틀러의 책 『나의 투쟁(Mein Kampf)』이 연합국 지도자들에게 그의 미래 계획에 대한 단서를 제공했는가?</li>
+      <li>1938년 9월 소련의 입장은 무엇이었는가? 소련은 영국, 프랑스, 독일, 미국의 행동에 대해 어떻게 생각했는가?</li>
+      <li>1938년 영국 국민들은 전쟁을 할 준비가 되어 있었는가?</li>
+      <li>1919년 베르사유 조약의 독일 처우는 얼마나 공정했는가?</li>
+      <li>1920년대와 1930년대에 세계 평화 유지에서 국제연맹은 얼마나 효과적이었는가? 국제연맹이 또 다른 세계 대전을 예방할 수 있었을까?</li>
+      <li>체코의 영국, 프랑스, 독일의 행동에 대한 입장은 무엇이었는가?</li>
+    </ol>
+
+    <p><strong>중요:</strong> 위 질문들을 탐구할 때, 반드시 정보의 출처를 적어 두도록 하라. 예를 들어, 역사책에서 정보를 찾았다면 저자의 이름, 책 제목, 출판 연도, 관련 페이지 번호를 기록하라. 자신의 메모에 정보를 요약하고 적절한 경우 직접 인용문을 활용하라.</p>
+
+    <h3 id="sources">학생 추가 자료</h3>
+    <p>교사들은 각 집단이 토론하고 평가할 다음 자료들의 세트를 한 부씩 준비하기를 원할 수 있다.</p>
+
+    <div class="source-card">
+      <h4>자료 1 — 체임벌린의 연설 (1938년 9월)</h4>
+      <blockquote>"내가 그 4년간의 끔찍한 세월[1차 세계 대전]을 생각할 때, 그리고 살해된 700만 명의 남성들과 불구가 되고 상이군인이 된 1,300만 명을 생각할 때, 나는 1차 세계 대전의 반복을 피하기 위해 모든 신경을 다해야 하는 것이 나의 의무라고 느낀다. ... 전쟁에는 승자가 없고 모두가 패자이다."</blockquote>
+      <div class="source-ref">—Keith Fielding, <em>The Life of Neville Chamberlain</em> (1946): 320.</div>
+    </div>
+
+    <div class="source-card">
+      <h4>자료 2 — 1차 세계 대전 전사자 수</h4>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>국가</th><th>전사자 수</th></tr></thead>
+          <tbody>
+            <tr><td>독일</td><td>1,950,000명</td></tr>
+            <tr><td>러시아</td><td>1,700,000명</td></tr>
+            <tr><td>프랑스</td><td>1,500,000명</td></tr>
+            <tr><td>오스트리아</td><td>1,050,000명</td></tr>
+            <tr><td>대영제국</td><td>1,000,000명</td></tr>
+            <tr><td>이탈리아</td><td>533,000명</td></tr>
+            <tr><td>미국</td><td>116,000명</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="source-ref">—Colin Shephard, Andy Reid, and Keith Shephard, <em>Peace and War</em> (1993): 115.</div>
+    </div>
+
+    <div class="source-card">
+      <h4>자료 3 — 베르사유 조약에 대한 독일의 반발</h4>
+      <p>많은 독일인들은 그들이 베르사유 조약의 가혹한 조항이라고 여긴 것에 매우 불만을 품었다. 특히 독일인들은 (a) 폴란드 회랑에 의한 독일의 분할, (b) 라인란트에 독일군 주둔 거부, (c) 독일의 오스트리아 통합 금지, (d) 독일 육군과 해군의 규모에 부과된 엄격한 제한, (e) 연합국이 체코슬로바키아에 주데텐란트(원자재와 산업이 풍부하고 300만 독일어권 주민이 사는 지역)를 준 결정에 분개했다.</p>
+      <p>베르사유 협정 직후 발행된 독일 신문의 다음 발췌문은 일부 독일인들이 조약에 대해 어떻게 생각했는지를 보여준다.</p>
+      <blockquote>
+        <strong>도이체 차이퉁 (DEUTSCHE ZEITUNG) 1919년 6월 28일</strong><br>
+        복수를! 독일 민족이여!<br>
+        오늘 베르사유의 거울의 방에서 치욕적인 조약이 서명되고 있다. 절대로 잊지 마라! 독일 국민은 쉼 없는 노동으로 세계 국가들 사이에서 자신들이 마땅히 누려야 할 그 위치를 되찾기 위해 전진할 것이다. 1919년의 수치에 대한 복수가 있을 것이다.
+      </blockquote>
+    </div>
+
+    <div class="source-card">
+      <h4>자료 4 — 영국의 반전 여론</h4>
+      <p>영국에서 수백만의 평범한 사람들이 전쟁에 대한 자신들의 감정을 표현할 수 있었다. 1934년 반전 단체인 평화 서약 동맹의 지도자 딕 셰퍼드 신부는 자신과 같은 감정을 가진 사람들에게 전쟁에 동의하지 않고 전쟁에서 싸우지 않겠다는 것을 명시한 엽서를 보내 달라고 호소했다. 1년 안에 그는 많은 퇴역 군인들을 포함하여 80,000장의 엽서를 받았다.</p>
+      <p>이후 1934년 세실 경은 국민들에게 국제연맹을 지지하는지, 군축에 동의하는지를 묻는 전국적인 "평화 투표"를 조직했다. 영국 성인의 거의 절반인 1,150만 명이 투표했다. 1,100만 명이 국제연맹을 지지한다고 말했으며, 1,000만 명이 군축에 찬성했다.</p>
+      <div class="source-ref">—Josh Brooman, <em>Era of the Second World War</em> (1993): 26.</div>
+    </div>
+
+    <div class="source-card">
+      <h4>자료 5 — 히틀러의 『나의 투쟁(Mein Kampf)』(1924)</h4>
+      <p>히틀러의 주요 주장:</p>
+      <ul>
+        <li>베르사유 조약은 취소되어야 하며 독일에서 빼앗긴 땅은 반환되어야 한다.</li>
+        <li>독일의 피를 가진 모든 사람들(오스트리아와 체코슬로바키아에 사는 많은 이들 포함)은 대독일에서 살 수 있어야 한다.</li>
+        <li>독일인은 "주인 민족(Master Race)"이다. 그들은 순수성을 유지해야 한다. 유대인은 국가의 구성원이 될 수 없다. 그들은 파괴되어야 한다.</li>
+      </ul>
+    </div>
+
+    <div class="source-card">
+      <h4>자료 6 — 영독 해군 협정 (1935)</h4>
+      <p>1935년 3월 히틀러는 두 명의 영국 고위 관리들을 만났다. 히틀러는 베르사유 조약의 군사 조항이 독일을 공산주의자들의 공격으로부터 무방비 상태로 남겨 두었다고 주장했다. 두 달 후 영국은 영독 해군 협정에 서명했다. 그것은 독일에게 영국 왕립 해군 규모의 35% 규모의 해군을 건설할 권리를 주었다. 일부 관측자들은 충격을 받았다. 베를린에 살고 있던 미국 언론인 윌리엄 샤이러는 1935년 6월 18일에 썼다: "독일이 영국과 동등한 잠수함 톤수를 얻는다. 왜 영국이 이것에 동의했는지 나로서는 이해할 수 없다. 독일 잠수함들은 지난 전쟁에서 거의 그들을 무너뜨렸으며, 다음 전쟁에서도 그럴 수 있다."</p>
+      <div class="source-ref">—William L. Shirer, <em>Berlin Diary: The Journal of a Foreign Correspondent 1934–1941</em> (1988): 40.</div>
+    </div>
+
+    <div class="source-card">
+      <h4>자료 7 — 1938년 3월 영국 여론 조사</h4>
+      <p>"독일이 침공한다면 영국이 체코슬로바키아를 돕겠다고 약속해야 하는가?"</p>
+      <ul>
+        <li>찬성: 33%</li>
+        <li>반대: 43%</li>
+        <li>무응답: 24%</li>
+      </ul>
+      <div class="source-ref">—Mass Observation Archives, University of Sussex.</div>
+    </div>
+
+    <div class="source-card">
+      <h4>자료 8 — 로마-베를린 추축 (1936)</h4>
+      <p>1936년 히틀러와 무솔리니는 협정을 맺었다: 로마-베를린 추축. 무솔리니는 1935년 에티오피아(아비시니아)를 침공하여 이미 세계에 자신의 무자비함을 드러낸 상태였다.</p>
+    </div>
+
+    <div class="source-card">
+      <h4>자료 9 — 라인란트 진주 후 히틀러의 발언 (1936)</h4>
+      <p>1936년 히틀러는 자신의 군사 계획이 효과가 있을지 확신하지 못했다. 1936년 3월 라인란트를 침공한 후, 그는 통역관에게 말했다:</p>
+      <blockquote>"라인란트 진군 후 48시간이 내 생애에서 가장 신경을 자극하는 시간이었다. 만약 그때 프랑스가 라인란트로 진군했다면, 우리는 꼬리를 내리고 물러나야 했을 것이다. 왜냐하면 우리가 보유한 군사 자원이 심지어 적당한 저항조차 완전히 부적합했을 것이기 때문이다."</blockquote>
+    </div>
+
+    <div class="source-card">
+      <h4>자료 10 — 체임벌린의 재무장 준비</h4>
+      <p>체임벌린은 전쟁의 생각을 혐오했지만, 영국이 여전히 그 가능성에 대비해야 한다는 것을 알았다.</p>
+      <p>1934년에서 1939년 사이에 국방에 지출되는 금액이 4배 증가했으며, 1938년에서 1939년 사이에는 두 배가 되었다. 뮌헨 회의 전에 정부는 영국의 모든 사람들에게 방독면을 나누어 주었고, 방공호를 팠으며, 금속, 화학물질, 항공기를 미국으로부터 구매했다.</p>
+      <p>1938년 말 체임벌린은 논평했다: "우리가 뮌헨에서 이 협정에 서명했다고 해서 재무장 프로그램에 관한 우리의 노력을 완화할 여유가 있다고 생각하는 사람은 없어야 한다. 우리는 다른 나라들이 같은 방식으로 행동할 것이라고 확신할 때까지 재무장을 멈추는 것은 나라에 광기일 것이다."</p>
+    </div>
+
+    <div class="source-card">
+      <h4>자료 11 — 소련 역사가 쿠쿠쉬킨의 해석 (1981)</h4>
+      <blockquote>왜 영국과 프랑스가 히틀러가 자신의 목적을 달성하도록 도왔는가? 소련이 제안한 통일 전선의 아이디어를 거부함으로써 그들은 독일의 손에 놀아났다. 그들은 히틀러에게 일부 체코 영토를 줌으로써 그를 달래기를 바랐다. 그들은 독일의 침략을 소련을 향해 동쪽으로 향하게 하고 싶었으며 치욕적인 뮌헨 협정이 이것을 달성했다.</blockquote>
+      <div class="source-ref">—Colin Shephard, Andy Reid, and Keith Shephard, <em>Peace and War</em> (1993): 139에서 인용.</div>
+    </div>
+
+    <div class="source-card">
+      <h4>자료 12 — 유대인에 대한 나치의 박해 (사진)</h4>
+      <p>히틀러가 1933년 권력을 잡은 후 유대인들에 대한 광범위한 공격이 강화되었다. 원본에는 "신의 재앙, 폴란드 유대인들"이라는 제목의 반유대주의 선전 포스터가 수록되어 있다. (출처: U.S. 홀로코스트 박물관)</p>
+    </div>
+
+    <div class="source-card">
+      <h4>자료 13 — 베르사유 조약 이후 독일의 군비 증강</h4>
+      <p>베르사유 조약의 조항에 따라 독일은 10만 명의 군대, 전차 없음, 잠수함 없음, 공군 없음, 6척의 전함으로 이루어진 소규모 해군만 보유할 수 있었다.</p>
+      <p>1920년대와 1930년대 초에 독일은 군사적으로 취약한 상태를 유지했다. 그러나 히틀러가 1933년에 권력을 장악한 후 상황이 빠르게 변화했다.</p>
+      <p>1939년까지 독일 해군은 전함 5척, 순양함 6척, 구축함 17척, 잠수함 57척으로 구성되었다. 독일 공군은 항공기 2,916대로 구성되었다. 독일 군대는 육군 2,730,000명, 공군 400,000명, 해군 50,000명으로 이루어진 총 3,180,000명에 달했다.</p>
+      <div class="source-ref">—John Ellis, <em>World War II Statistical Survey</em> (1993).</div>
+    </div>
+
+    <div class="source-card">
+      <h4>자료 14 — 히틀러의 제국의회 연설 (1936년 3월 7일)</h4>
+      <blockquote>"우리는 이전 어느 때보다 더 유럽 국가들 간의 이해 증진을 위해 노력하려는 우리의 소망을 선언한다. ... 유럽에서 우리는 제기할 영토적 요구가 없다."</blockquote>
+    </div>
+
+    <div class="source-card">
+      <h4>자료 15 — 루즈벨트 대통령의 반전 성명</h4>
+      <p>많은 영국 관리들은 나치 위협과 관련하여 미국의 입장을 알고 싶어 했다. 1930년대 후반 프랭클린 D. 루즈벨트 대통령은 다음의 성명을 발표했다:</p>
+      <blockquote>"나는 전쟁을 보았다. 나는 부상자들에게서 흘러내리는 피를 보았다. 나는 독가스로 폐를 기침하는 남성들을 보았다. 나는 진흙 속에 있는 죽은 남성들을 보았다. 나는 파괴된 도시들을 보았다. 나는 굶주리는 아이들을 보았다. 나는 전쟁을 혐오한다. 나는 이 나라에서 전쟁을 막는 방법을 계획하는 데 헤아릴 수 없는 시간을 보냈다."</blockquote>
+      <div class="source-ref">—<em>The Public Papers and Addresses of FDR</em>, Vol. 5, 289.</div>
+    </div>
+
+    <div class="source-card">
+      <h4>자료 16 — 오스트리아 점령 후 나치의 유대인 탄압 (사진)</h4>
+      <p>히틀러의 군대는 1938년 3월 오스트리아에 진입했다. 오스트리아 사람들은 나치 병사들에 의해 빈번하게 위협받았다. 원본 사진은 빈 대학교 계단에서 유대인들의 건물 출입을 막으려는 나치들의 모습을 보여준다. (출처: U.S. 홀로코스트 박물관)</p>
+    </div>
+
+    <div class="source-card">
+      <h4>자료 17 — 체임벌린의 편지 (1938년 3월 20일)</h4>
+      <p>체코슬로바키아를 지원하는 영국의 능력에 관한 체임벌린의 견해는 그의 두 자매에게 보낸 편지에 묘사되어 있다:</p>
+      <blockquote>"지도를 보기만 해도 독일이 원한다면 체코슬로바키아가 독일에 의해 점령되는 것을 프랑스나 우리가 막을 수 있는 것이 전혀 없다는 것을 알 수 있다."</blockquote>
+    </div>
+
+    <div class="source-card">
+      <h4>자료 18 — 라인란트 진군에 대한 언론인 샤이러의 보도 (1936)</h4>
+      <p>독일이 1936년 3월 라인란트로 성공적으로 진군한 후, 미국 언론인 윌리엄 샤이러는 썼다:</p>
+      <blockquote>히틀러가 해냈다! 프랑스는 진군하지 않는다. 대신 국제연맹에 호소하고 있다! 히틀러와 괴링의 얼굴이 이 정오에 모두 미소 짓고 있는 것도 당연하다. 오, 프랑스의 어리석음이여! 오늘 나는 절대적인 권위로 라인란트의 비무장 지역으로 어제 진군한 독일 군대가 프랑스 군대가 어떤 방식으로든 그들에게 저항한다면 급히 후퇴하라는 엄격한 명령을 받았다는 것을 알았다. 그들은 정규 군대와 싸울 준비가 되어 있지 않았으며 장비도 갖추어져 있지 않았다.</blockquote>
+      <div class="source-ref">—William L. Shirer, <em>Berlin Diary: The Journal of a Foreign Correspondent 1934–1941</em> (1988): 55–56.</div>
+    </div>
+
+    <div class="source-card">
+      <h4>자료 19 — 뮌헨이 영국의 전략적 입장을 개선했는가?</h4>
+      <blockquote>"뮌헨이 프랑스와 영국에게 군비를 가속화하기 위해 준 11개월의 평화가 독일과의 격차를 좁혀 체임벌린이 죽는 날까지 주장했듯이 전쟁이 왔을 때 더 나은 싸움 자세를 갖추게 했는가? 아니면 그들이 실제로 1938년 9월보다 상황이 나빠졌는가?<br><br>그것은 많이 논쟁되는 질문이다. 나는 한 가지 예외—영국의 항공 방어 강화—를 제외하고 서방 연합국이 군사력에서 독일에 미치지 못했다고 믿는다. 나는 그들이 더 뒤처졌다고 믿는다. ... 더욱이, 1939년 9월 1일 히틀러가 전쟁을 시작했을 때 그들의 전략적 입장은 뮌헨 때보다 훨씬 나빴다."</blockquote>
+      <div class="source-ref">—William L. Shirer, <em>The Nightmare Years 1930–1940</em> (1984): 368.</div>
+    </div>
+
+    <div class="source-card">
+      <h4>자료 20 — 서방의 히틀러에 대한 긍정적 인식 (로이드 조지, 1936)</h4>
+      <p>1930년대에 서유럽과 미국의 많은 영향력 있는 사람들은 히틀러가 존중할 만한 의도를 가진 지도자라고 믿었다. 예를 들어, 전직 영국 수상 데이비드 로이드 조지는 1936년 히틀러를 방문한 직후 영국 신문에 다음과 같이 썼다:</p>
+      <blockquote>그의 인기에 관해서, 특히 독일 청년층에서, 조금도 의심할 여지가 없다. 노인들은 그를 신뢰하며; 젊은이들은 그를 우상화한다. ... 그것은 그녀의 모든 억압자들로부터 나라를 구한 민족 영웅의 숭배이다.<br>독일이 유럽을 위협하는 생각은, 그 군대가 국경을 넘어 행진할 수도 있다는 것은 새로운 비전의 어떤 부분도 형성하지 않는다. 독일인들은 더 이상 다른 땅을 침략하려는 욕망이 없다.</blockquote>
+      <div class="source-ref">—David Lloyd George, <em>Daily Express</em>, 17 November 1936.</div>
+    </div>
+
+    <div class="source-card">
+      <h4>자료 21 — 역사가 A. J. P. 테일러의 해석</h4>
+      <p>자신의 저명한 책 『2차 세계 대전의 기원』에서 영국 역사가 A. J. P. 테일러는 히틀러가 구체적인 계획이 없었다고 주장했다. 그는 사건을 기다렸다. 오스트리아 위기를 촉발한 것은 히틀러가 아니라 슈슈니크였다. 체코슬로바키아를 해체하는 데 앞장선 것은 영국이었다. 폴란드 문제에서 히틀러에게 저항하지 않을 것이라는 인상을 준 것은 1939년 영국이었다. 다른 사람들이 히틀러에게 기회를 제공했으며 그는 그것을 잡았다.</p>
+      <div class="source-ref">—A. J. P. Taylor, <em>The Origins of the Second World War</em> (1963): 177–87.</div>
+    </div>
+  </section>
+
+  <!-- ── 참고문헌 ── -->
+  <section id="referencias">
+    <h2>참고문헌</h2>
+    <ul class="ref-list">
+      <li>Ashby, R., and P. Lee. 1987. Children's concepts of empathy and understanding in history. In <em>The history curriculum for teachers</em>, edited by C. Portal. London: Falmer Press.
+        <span class="ref-ko">아동의 역사에서 공감과 이해 개념.</span></li>
+      <li>Brooman, J. 1993. <em>The era of the second world war</em>. London: Longman.
+        <span class="ref-ko">2차 세계 대전의 시대.</span></li>
+      <li>Downey, M. T. 1995. Perspective taking and historical thinking: Doing history in a fifth-grade classroom. Paper presented at the Annual Meeting of the American Educational Research Association, San Francisco.
+        <span class="ref-ko">관점 수용과 역사적 사고: 5학년 교실에서 역사 하기.</span></li>
+      <li>Downey, M. T., and L. S. Levstik. 1991. Teaching and learning history. In <em>Handbook on research in social studies teaching and learning</em>, edited by J. P. Shaver. New York: Macmillan.
+        <span class="ref-ko">역사 교수·학습. 사회과 교수·학습 연구 핸드북.</span></li>
+      <li>Fielding, K. 1946. <em>The life of Neville Chamberlain</em>. London: Macmillan.
+        <span class="ref-ko">네빌 체임벌린의 생애.</span></li>
+      <li>Foster, S., J. W. Morris, and O. L. Davis, Jr. 1996. Prospects for teaching historical analysis and interpretation: National curriculum standards for history meet high school history textbooks. <em>Journal of Curriculum and Supervision</em> (11): 367–85.
+        <span class="ref-ko">역사적 분석과 해석 교수의 전망: 역사 국가 교육과정 기준과 고등학교 역사 교과서의 만남.</span></li>
+      <li>Gagnon, P. 1991. <em>Historical literacy in American education</em>. Boston: Houghton Mifflin.
+        <span class="ref-ko">미국 교육에서의 역사적 문해력.</span></li>
+      <li>Goodlad, J. 1984. <em>A place called school</em>. New York: McGraw Hill.
+        <span class="ref-ko">학교라는 곳.</span></li>
+      <li>Jenkins, K. 1991. <em>Re-thinking history</em>. London: Routledge.
+        <span class="ref-ko">역사 다시 생각하기.</span></li>
+      <li>Knight, P. 1989. Empathy: Concept, confusion, and consequences in a national curriculum. <em>Oxford Review of Education</em> (15): 41–53.
+        <span class="ref-ko">공감: 국가 교육과정에서의 개념, 혼란, 결과.</span></li>
+      <li>Levstik, L. 1997. "Any history is someone's history:" Listening to multiple voices from the past. <em>Social Education</em> (61): 48–51.
+        <span class="ref-ko">"어떤 역사도 누군가의 역사다": 과거의 다양한 목소리 듣기.</span></li>
+      <li>Loewen, J. W. 1995. <em>Lies my teacher told me: Everything your American history textbook got wrong</em>. New York: New Press.
+        <span class="ref-ko">선생님이 내게 말한 거짓말: 당신의 미국사 교과서가 틀린 모든 것.</span></li>
+      <li>Portal, C. 1987. Empathy as an objective for history teaching in history. In <em>The history curriculum for teachers</em>, edited by C. Portal. London: Falmer Press.
+        <span class="ref-ko">역사 교수의 목적으로서 공감.</span></li>
+      <li>Rogers, P. J. 1990. History: Why, what, and how? <em>Teaching of history series</em>, number 60. London: Historical Association.
+        <span class="ref-ko">역사: 왜, 무엇을, 어떻게?</span></li>
+      <li>Rosenman, S. L. 1938. <em>The public papers and addresses of FDR</em>. Vol. 5. New York: Random House.
+        <span class="ref-ko">FDR의 공개 논문과 연설.</span></li>
+      <li>Shemilt, D. 1987. Adolescent ideas about evidence and methodology in history. In <em>The history curriculum for teachers</em>, edited by C. Portal. London: Falmer Press.
+        <span class="ref-ko">역사의 증거와 방법론에 관한 청소년 사고.</span></li>
+      <li>Shephard, C., A. Reid, and K. Shephard. 1993. <em>Peace and war: Discovering the past</em>. London: John Murray.
+        <span class="ref-ko">평화와 전쟁: 과거 발견하기.</span></li>
+      <li>Shirer, W. L. 1988. <em>Berlin diary: the journal of a foreign correspondent, 1934–1941</em>. New York: A. A. Knopf.
+        <span class="ref-ko">베를린 일기: 외국 특파원의 일지, 1934–1941.</span></li>
+      <li>Shirer, W. L. 1984. <em>The nightmare years 1930–1940</em>. Boston: Little, Brown.
+        <span class="ref-ko">악몽의 세월 1930–1940.</span></li>
+      <li>Taylor, A. J. P. 1963. <em>The origins of the Second World War</em>. New York: Premier.
+        <span class="ref-ko">2차 세계 대전의 기원.</span></li>
+      <li>Thornton, S. J. 1997. First-hand study: Teaching history for understanding. <em>Social Education</em> (61): 11–12.
+        <span class="ref-ko">직접 연구: 이해를 위한 역사 교수.</span></li>
+      <li>Yeager, E. A., and S. Foster. 1996. The role of empathy in the development of historical understanding. Paper presented at the College and University Faculty Assembly, Washington D.C.
+        <span class="ref-ko">역사적 이해 발달에서 공감의 역할.</span></li>
+    </ul>
+  </section>
+
+</main>
+
+<button id="to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="맨 위로">▲</button>
+
+<script>
+window.addEventListener('scroll', () => {
+  let current = '';
+  document.querySelectorAll('section[id]').forEach(s => {
+    if (s.getBoundingClientRect().top <= 100) current = s.id;
+  });
+  document.querySelectorAll('#sidebar nav a').forEach(a => {
+    a.classList.toggle('active',
+      a.getAttribute('href') === '#' + current);
+  });
+});
+
+document.querySelectorAll('#sidebar nav a').forEach(a => {
+  a.addEventListener('click', e => {
+    e.preventDefault();
+    const target = document.querySelector(a.getAttribute('href'));
+    if (target) target.scrollIntoView({ behavior: 'smooth' });
+  });
+});
+</script>
+</body>
+</html>
