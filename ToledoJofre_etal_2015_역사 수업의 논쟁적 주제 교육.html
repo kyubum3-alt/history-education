@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>역사 수업의 "논쟁적 주제" 교육 — Toledo Jofré 외 (2015)</title>
+<style>
+  :root {
+    --sidebar-width: 270px;
+    --accent: #2c5f8a;
+    --accent-light: #e8f1f8;
+    --text: #1a1a1a;
+    --muted: #555;
+    --border: #d0d7de;
+    --bg: #fafafa;
+    --white: #ffffff;
+    --table-head: #f0f4f8;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Nanum Myeongjo', 'Malgun Gothic', Georgia, serif;
+    font-size: 16px;
+    line-height: 1.9;
+    color: var(--text);
+    background: var(--bg);
+  }
+
+  #sidebar {
+    position: fixed;
+    top: 0; left: 0;
+    width: var(--sidebar-width);
+    height: 100vh;
+    overflow-y: auto;
+    background: var(--white);
+    border-right: 1px solid var(--border);
+    padding: 20px 14px;
+    z-index: 100;
+  }
+
+  #sidebar .sidebar-title {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 14px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--accent);
+  }
+
+  #sidebar nav a {
+    display: block;
+    font-size: 12.5px;
+    color: var(--muted);
+    text-decoration: none;
+    padding: 5px 8px;
+    border-radius: 4px;
+    margin-bottom: 2px;
+    line-height: 1.4;
+    transition: background 0.15s, color 0.15s;
+  }
+
+  #sidebar nav a:hover,
+  #sidebar nav a.active {
+    background: var(--accent-light);
+    color: var(--accent);
+    font-weight: 600;
+  }
+
+  #sidebar nav a.sub {
+    padding-left: 20px;
+    font-size: 12px;
+  }
+
+  #main {
+    margin-left: var(--sidebar-width);
+    max-width: 860px;
+    padding: 48px 48px 80px;
+  }
+
+  .paper-header {
+    border-bottom: 3px solid var(--accent);
+    padding-bottom: 24px;
+    margin-bottom: 32px;
+  }
+
+  .paper-label {
+    font-size: 12px;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    margin-bottom: 10px;
+  }
+
+  .paper-title-ko {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--accent);
+    line-height: 1.4;
+    margin-bottom: 8px;
+  }
+
+  .paper-title-es {
+    font-size: 14px;
+    color: var(--muted);
+    font-style: italic;
+    margin-bottom: 18px;
+  }
+
+  .paper-meta {
+    font-size: 13.5px;
+    color: var(--muted);
+    line-height: 1.8;
+  }
+
+  .paper-meta strong { color: var(--text); }
+
+  .abstract-box {
+    background: var(--accent-light);
+    border-left: 4px solid var(--accent);
+    border-radius: 6px;
+    padding: 22px 26px;
+    margin-bottom: 36px;
+  }
+
+  .abstract-box h2 {
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--accent);
+    margin-bottom: 12px;
+  }
+
+  .abstract-ko { font-size: 15px; line-height: 1.85; margin-bottom: 14px; }
+
+  .abstract-divider {
+    border: none;
+    border-top: 1px dashed var(--border);
+    margin: 14px 0;
+  }
+
+  .abstract-en { font-size: 13.5px; line-height: 1.8; color: var(--muted); font-style: italic; margin-bottom: 10px; }
+
+  .keywords { margin-top: 10px; font-size: 13.5px; }
+  .keywords strong { color: var(--accent); }
+
+  section {
+    margin-bottom: 40px;
+    scroll-margin-top: 24px;
+  }
+
+  section h2 {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--accent);
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 8px;
+    margin-bottom: 18px;
+  }
+
+  section h3 {
+    font-size: 16.5px;
+    font-weight: 700;
+    color: var(--text);
+    margin: 26px 0 12px;
+    padding-left: 10px;
+    border-left: 3px solid var(--accent);
+  }
+
+  p {
+    margin-bottom: 16px;
+    text-align: justify;
+    font-size: 15.5px;
+    line-height: 1.9;
+  }
+
+  .figure-placeholder {
+    background: #f4f8fc;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 20px 24px;
+    margin: 24px 0;
+  }
+
+  .fig-title {
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--accent);
+    margin-bottom: 10px;
+  }
+
+  .figure-placeholder p { font-size: 14px; color: #444; margin-bottom: 8px; }
+
+  .table-source {
+    font-size: 12.5px;
+    color: var(--muted);
+    margin-top: 8px;
+    font-style: italic;
+  }
+
+  .table-wrap {
+    margin: 24px 0;
+    overflow-x: auto;
+  }
+
+  .caption {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--muted);
+    margin-bottom: 8px;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+  }
+
+  thead tr { background: var(--table-head); }
+  th, td { border: 1px solid var(--border); padding: 9px 12px; text-align: left; vertical-align: top; }
+  th { font-weight: 700; color: var(--accent); }
+
+  .ref-item {
+    margin-bottom: 10px;
+    font-size: 13.5px;
+    line-height: 1.75;
+    padding-left: 24px;
+    text-indent: -24px;
+  }
+
+  .ref-ko {
+    font-size: 12.5px;
+    color: var(--muted);
+    margin-top: 2px;
+    padding-left: 24px;
+    text-indent: 0;
+    font-style: italic;
+  }
+
+  .back-to-top {
+    display: inline-block;
+    margin-top: 40px;
+    padding: 10px 20px;
+    background: var(--accent);
+    color: white;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 13.5px;
+  }
+
+  .back-to-top:hover { background: #1e4468; }
+
+  @media (max-width: 900px) {
+    #sidebar { display: none; }
+    #main { margin-left: 0; padding: 24px 20px 60px; }
+  }
+</style>
+</head>
+<body>
+
+<aside id="sidebar">
+  <div class="sidebar-title">📄 목차</div>
+  <nav>
+    <a href="#header">논문 정보</a>
+    <a href="#abstract">초록</a>
+    <a href="#intro">서론</a>
+    <a href="#metodologia">방법론</a>
+    <a href="#resultados">결과</a>
+    <a class="sub" href="#r-temas">"논쟁적 주제"</a>
+    <a class="sub" href="#r-profesor">교사에 대하여</a>
+    <a class="sub" href="#r-posicion">→ 교사의 포지셔닝</a>
+    <a class="sub" href="#r-didactica">→ 교수법</a>
+    <a class="sub" href="#r-evaluacion">→ 평가</a>
+    <a class="sub" href="#r-estudiantes">학생에 대하여</a>
+    <a href="#discusion">논의</a>
+    <a class="sub" href="#d-temas">논쟁적 주제에 대하여</a>
+    <a class="sub" href="#d-profesor">교사에 대하여</a>
+    <a class="sub" href="#d-evaluacion">학습 평가에 대하여</a>
+    <a class="sub" href="#d-estudiantes">학생에 대하여</a>
+    <a href="#conclusiones">결론</a>
+    <a href="#referencias">참고문헌</a>
+  </nav>
+</aside>
+
+<main id="main">
+
+  <!-- 헤더 -->
+  <div class="paper-header" id="header">
+    <div class="paper-label">도시에 · Revista de Estudios Sociales, No. 52, 2015, pp. 119–133</div>
+    <div class="paper-title-ko">역사 수업의 "논쟁적 주제" 교육:<br>칠레 학생들의 관점</div>
+    <div class="paper-title-es">Enseñanza de "temas controversiales" en el curso de historia, desde la perspectiva de los estudiantes chilenos</div>
+    <div class="paper-meta">
+      <strong>저자:</strong> María Isabel Toledo Jofré · Abraham Magendzo Kolstrein · Virna Gutiérrez Gianella · Ricardo Iglesias Segura · Ramón López-Facal<br>
+      <strong>재원:</strong> FONDECYT 연구 프로젝트 1120742<br>
+      <strong>수록지:</strong> <em>Revista de Estudios Sociales</em>, No. 52, Bogotá, 2015년 4–6월, pp. 119–133<br>
+      <strong>DOI:</strong> http://dx.doi.org/10.7440/res52.2015.08<br>
+      <strong>투고:</strong> 2014년 5월 16일 / <strong>승인:</strong> 2014년 9월 30일 / <strong>수정:</strong> 2014년 12월 3일
+    </div>
+  </div>
+
+  <!-- 초록 -->
+  <div class="abstract-box" id="abstract">
+    <h2>초록</h2>
+    <div class="abstract-ko">
+      이 논문은 중등교육 1주기 동안 "논쟁적 주제"의 교육에 대해 학생들이 보고하는 내용을 분석한다. 비확률적·무작위·층화 표본으로 칠레 학생 1,210명을 설문 조사했다. 기술 통계가 적용되었으며 교사 유형론이 구성되었다. 가장 논쟁적인 주제들은 인권 침해에 해당한다. 논쟁의 수준과 그 교수 사이에는 상관관계가 없다. 교사들은 서로 다른 해석을 제시하고 혁신적인 활동, 전략, 교수 절차 및 평가를 개발한다. 학생들은 능동적인 역할을 맡고, 대화를 소중히 여기며, 교사의 의견을 요청하고, 역사에 대한 자신의 해석을 구성하기를 원한다. 그러나 교수법적 변혁이 일어나기 위해서는 권한을 부여하고 변혁적인 실천의 전개가 요구된다.
+    </div>
+    <div class="keywords"><strong>주제어:</strong> "논쟁적 주제", 역사, 중등교육, 교육과정, 학생</div>
+    <hr class="abstract-divider">
+    <div class="abstract-en">
+      <strong>Abstract:</strong> This article analyzes students' statements regarding the teaching of "controversial issues" during the first cycle of secondary school. The survey covered 1,210 Chilean students in a random, stratified, non-probabilistic sample. Descriptive statistics were used and a typology of teachers was defined. The most controversial issues correspond to human rights violations. There is no correlation between the level of controversy of a topic and its teaching. The teachers present different interpretations and develop innovative activities, strategies, teaching procedures and evaluations. Students play an active role, value dialogue, ask for their teacher's opinion, and want to construct their own interpretations about history. However, in order for a pedagogical transformation to occur, empowering and transformative practices must be deployed.
+    </div>
+    <div class="keywords"><strong>Keywords:</strong> "Controversial issues," history, teaching secondary schools, curriculum, student.</div>
+  </div>
+
+  <!-- 서론 -->
+  <section id="intro">
+    <h2>서론</h2>
+    <p>19세기 중반부터 칠레 국가는 국민에 대한 '문명화' 및 '도덕화' 사명을 지닌 교육의 책임을 맡았다. 칠레사, 지리, 국가 헌법의 교육은 시민들이 선거를 통해 정치 체제에 참여하도록 설득하는 수단이 되었다(Egaña 2000). 애국심, 시민 정신의 학습 및 이와 관련된 가치의 전달을 통해 국가 정체성을 구축하는 것이 목표였다(Iglesias 2009, 42-43). 20세기가 시작되면서 이 개념은 교육의 보편화를 위한 공화주의 계획에서 새로운 세대를 형성하는 임무를 맡은 사범학교 교사와 교육자 양성에 통합되었다(1920년 8월 26일 법령 제3,654호, Rengifo 2012). 그때부터 칠레 국민의 기원, 문명화 기획의 설치 과정의 어려움, 국가 건설을 촉진한 요인들이 가르쳐졌다. 갈등과 위기는 국가 건설에 대한 위협으로 제시되었다(Sagredo y Serrano 1994).</p>
+    <p>20세기 중반, 교육 개혁은 민주화, 삶을 위한 교육, 교육의 사회문화적 책임, 사회 변혁을 위한 교육, 교육 시스템 참여를 촉진했다(Oliva 2010). 지식은 교사가 전달하고 학생이 학습하는 내용으로 개념화되었으며, 전문화된 과목으로 분류되어 순차적으로 제시되었다(Brunner 1980). 이후 인민연합 정부(1970–1973)는 "민주적 직접 참여를 통한 이 새로운 학교 조직을 통해 평등과 인적 역량 개발을 목표로 하는 […] 민족적, 생산적, 과학적, 사회적이고 포괄적인 성격"(Aravena y Zúñiga 2012, 12)의 새로운 교육 프로그램을 설계했다. 이 계획은 1973년 쿠데타로 실행되지 못했다.</p>
+    <p>살바도르 아옌데 정부를 전복하고 1990년까지 독재를 수립한 쿠데타 이후, 학습 프로그램에서 내용이 제외되었고 토론, 참여, 다원주의가 제거되었다(Valenzuela, Labarrera y Rodríguez 2008). 군사 제도에 봉사하는 애국자 양성이 촉진되었다(Reyes 2002). 조국을 위해 희생한 이들의 전공(戰功)과 가치들이 가르쳐졌다(Henríquez 2011). 수도권 엘리트의 역사가 가르쳐졌고(Sagredo y Serrano 1994), 현실 정치, 군사 정권에 대한 유머, 국가적 가치의 왜곡이 금지되었다(Ministerio de Educación 1974, Briones et al. 1984에서 인용). 권력을 떠나기 전 군부는 교육과정 문제에서 국가의 역할을 제한하고 교육과정의 이념적 통제를 맡기 위해 자율적 기관(상위교육위원회)을 설립했다.</p>
+    <p>칠레 교육과정은—학교 시스템 시작부터 그래왔듯이—행정 방식과 관계없이 모든 교육기관에 대해 전국적이고 의무적이다. 1982년부터 교육기관들은 의존 형태에 따라 구분되었다. 즉 시립(국가 재정), 국가보조 사립(국가와 가족이 공동 재정), 유료 사립(가족만의 재정). 초등교육은 8년(6~13세), 중등교육은 4년(14~17세)이다. 후자는 각 2년씩 두 주기로 구성된다.</p>
+    <p>1996년 교육과정 개혁은 기본 목표(전체 교수·학습 과정에 기여하는 역량)와 의무 최소 내용(기본 목표를 달성하기 위한 기술과 태도를 개발할 수 있는 특정 지식과 실천)을 확립하는 교육과정 틀을 정의했다. 이 교육과정 틀은 9개 분야로 교육을 조직했으며, 그 중 하나가 역사·사회과학이다(Ministerio de Educación 2005). 이 분야는 학제간 관점에서 지리, 시민 교육, 경제를 통합한다. 이 분야는 "학생들이 사회 환경에 대한 이해를 구조화하고 연대, 환경 보호, 다원주의, 민주주의와 국가 정체성 가치 평가의 원칙을 토대로 사회에서 비판적이고 책임감 있게 행동하도록 안내하는 지식, 기술, 성향을 개발하는 것을 목적으로 한다"(Ministerio de Educación 2005, 95). 이 분야를 위해 학생 특성에 적합한 방법론을 실행하고 선행 지식을 인정하여, 탐구, 정보 검색, 새로운 지식 구성을 촉진하는 활동을 통해 의미 있는 학습을 창출할 것이 제안된다. 또한 이 과목은 시민 교육의 축으로 구상된다(Gysling 2001).</p>
+    <p>이 교육과정 개념은 Carretero y Montanero(2008, 134)가 지적하듯 역사 교육이 가졌던 "도덕화하고 교훈을 주는 역할"을 뒤로하고, 그 기능이 "비판적이고 자율적인 시민 형성"임을 정의했다. 그러므로 학교에서 역사 교육의 목적은 학생들이 "[…] 자신이 사는 세계를 더 잘 이해하고"(Fink y Heimberg 2006, 45), 자신의 세계에 자리매김할 수 있도록(Pagès 2002) 자신만의 지식을 구성하고 민주 사회에 능동적으로 참여하는 것이다(National Council for the Social Studies 2010; Laville 2000; Pagès 2002 y 2007). 학생들이 자신의 공동체, 나라, 세계화된 세계의 사회적·경제적·정치적·문화적 삶에 참여하도록 준비해야 한다고 전제된다(Pagès 2007). 이를 위해서는 사회적 현실에 대한 비판적이고 문제화하는 관점을 개발하고(Hurst y Ross 2000), 정보에 입각하고 합리적인 결정을 내리는 법을 배우며, 공익을 지향하고(National Council for the Social Studies 1994; Pagès 2007) 지적·정서적 역량을 강화해야 한다(Laville 2000).</p>
+    <p>따라서 칠레 교육과정의 구성적 부분인 역사·지리·사회과학 과목은 정보에 밝고, 비판적이며, 사회적 책임감이 있고, 공정하고 평등하며 민주적인 사회 건설에 능동적으로 참여하는 시민 형성을 위한 특권적인 교육과정 공간으로 자리 잡는다. 이를 위해 학생들은 현재와 관련 있는(Laville 2003; Pagès 2007) 사회 문제들을 조사하고, 분석하고, 해결해야 한다(Chilcoat y Ligon 2003).</p>
+    <p>2009년 교육과정 조정 이후 이 과목의 학습 프로그램은 1학년에는 제1차 세계대전부터 현재의 세계화된 세계까지(20, 21세기) 보편적 성격의 역사 내용을, 2학년에는 콜럼버스 이전 원주민 세계부터 19세기 말까지의 칠레 역사를 관련 내용으로 포함한다. 교육은 3학년의 칠레 현대사와 4학년의 현재 세계사 교육으로 이어진다(Ministerio de Educación 2009).</p>
+    <p>이 과목과 다른 역사 수업에서 다루어지는 많은 주제들이 "논쟁적 주제"(Crick 1998, Levinson 2006에서)에 해당하지만—전쟁, 혁명, 해방 운동, 쿠데타, 인권 등(Advisory Group on Citizenship 1998)—칠레 교육과정 전반적으로, 특히 역사 과목 프로그램은 논쟁적 관점에서 제시되지 않는다.</p>
+    <p>"논쟁적 주제"는 합의가 없는(Advisory Group on Citizenship 1998) 주제들이다. 단일한 답변이나 해결책이 없고(Simonneaux 2011), 과학적 합의도 없다(Tutiaux-Guillon 2010). 이들은 학술계, 언론, 학교(Legardez y Simonneaux 2006)에서 논쟁(Legardez 2003)을 유발하는 주제들이다. 대립적인 의견과 사회적 대립(López-Facal 2010), 갈등을 야기하며(Vashist 1993, Asimeng-Boahene 2007에서 인용), 서로 다른 집단이 그에 대해 서로 다른 논증을 생산하기 때문에 사회를 분열시키고(Bailey 1975, Oulton et al. 2004에서; Stradling 1984, Harwood y Hahn 1990에서), 화해 불가능한 설명이나 해결책을 촉진한다(Crick 1998; Oulton, Dillon y Grace 2004; Stradling 1985, Oulton et al. 2004에서). 논증의 다양성은 가치(Stradling 1984, Harwood y Hahn 1990에서)이나 서로 다른 사회적 표상에서 비롯된다. 이들은 가치와 이해를 동원하고 정치적으로 민감하며(Tutiaux-Guillon 2012), 사회 행위자들의 실천에 질문하고(Legardez 2003), 감정을 불러일으키고, 기억을 활성화하며, 입장 표명을 촉구한다(Tutiaux-Guillon 2010).</p>
+    <p>교사들은 이 주제들의 교육 앞에서 필연적으로 입장을 취한다. 주제가 논쟁적임을 인정하지만 가르치기를 회피하거나 가르치지 않는 교사들이 있다(Corngold y Waddington 2006; Vandenberg 2009). 논쟁을 일으키지 않는 측면만을 가르치는 교사들도 있다(Vandenberg 2009). 같은 주제에 대해 서로 다른 해석이 존재함을 인정하지만 자신의 관점만 제시하는 교사들도 있다. 교사는 같은 주제에 대해 서로 다른 해석을 제시하고(Hess 2004; Stradling, Noctor y Baines 1984, Cotton 2006에서) 학생들의 토론을 중재할 때 중립적 입장을 취한다(Stenhouse 1983, Oulton et al. 2004에서). 자신의 의견을 드러내지 않으면 "능동적 중립"(Vandenberg 2009), 자신의 입장을 제시하면 "헌신적 중립"이다(Kelly 1986, Oulton et al. 2004에서). 교사는 피억압자의 관점에서 구성된 해석을 제시할 때 비판적 입장을 취한다(Applebaum 2003, Corngold y Waddington 2006에서). 교사가 자신의 도덕적 확신을 학생이 동화해야 할 확실성으로 전달하고 대안적 담론에 접근할 가능성 없이 전달할 때, 비판적이지 않을 때(Oulton et al. 2004), 검증되지 않은 논증을 진실로 전달할 때 교화가 일어난다. 또한 명제들을 독단적으로 제시하고(Finkin et al. 2007), 역사의 한 버전만을 제시하고, 증거를 제시하지 않을 때도 교화가 발생한다(Hocutt 2005; Siegel 1987, Cuypers y Ishtiyaque 2006에서; Hanks 2008; Merry 2005).</p>
+    <p>이상의 이유로, 중등교육 1주기 역사 수업에서 교사와 학생의 관점에서 "논쟁적 주제"의 교육을 기술하는 것을 목표로 하는 연구가 수행되었다. 교사들의 보고 내용은 이미 발표되었다(Toledo et al. 2015). 따라서 이 논문에서는 중등교육 1주기 동안 "논쟁적 주제" 교육에 대해 학생들이 보고하는 내용을 분석한다.</p>
+  </section>
+
+  <!-- 방법론 -->
+  <section id="metodologia">
+    <h2>방법론</h2>
+    <p>연구 모집단은 중등교육을 실시하는 산티아고 데 칠레 수도광역주의 도시 교육기관 전체로 정의되었다. 표본 틀은 교육부의 2010년 공식 기관 목록이었다. 분석 단위는 중등교육 1주기를 마친, 즉 2012년에 중등 3학년을 재학 중인 학생이었다.</p>
+    <p>비례 배분을 통한 비확률적·무작위·층화 표본이 사용되었다. 표본은 2단계였다. 교육기관이 선정되고, 동일 학급을 가르친 교사가 선정되었으며, 이후 학생들이 확인되었다. 정보 수집 기법은 설문조사였으며, 도구는 자기 기입식 설문지였다.</p>
+    <p>"논쟁적 주제"를 선정하기 위해 전문가 판단 기법이 사용되었다. 이를 위해 연구팀이 두 가지 기준으로 "논쟁적 주제"로 확인한 중등교육 1주기(1, 2학년) 역사·지리·사회과학 프로그램에 있는 주제 목록이 작성되었다. 하나는 역사적 기준, 즉 사회적 수준에서 화해 불가능한 해석, 입장, 행동을 생성한 역사적 사건, 과정 또는 단계이고, 다른 하나는 사학적 기준, 즉 학문적 영역에서 논쟁을 일으킨 주제들이다. 이는 각 주제에 대한 수업 계획을 구성할 수 있는 사학적 자료의 존재를 검증하기 위한 것이었다. 각 주제에 대해 사회적 논쟁과 쟁점 중인 사학적 논제들이 명시되었다. 자료는 14명의 심사위원—역사가, 역사 교사, 정치 과학자, 사회학자—에게 발송되었다. 그들에게 학문적 논쟁과 사회적 논쟁의 정도에 대해 의견을 표명하도록 요청했다. 심사위원들은 제시된 15개 주제가 사회적으로나 사학적으로 모두 논쟁적임을 확인했다.</p>
+    <p>이 15개 주제로 설문지의 첫 번째 부분이 구성되었다. 리커트 척도를 사용하여 논쟁의 정도에 대해 질문했다. 다른 문항들은 "논쟁적 주제" 교육에 관한 기존 이론적 참고문헌에서 추출한 지표로 작성되었다. 일부 문항은 지표의 존재 여부를 묻고, 다른 문항은 특정 진술에 대한 동의 정도를 묻는다.</p>
+    <p>도구는 28개 시립, 59개 국가보조 사립, 10개 유료 사립 등 97개 교육기관에서 적용되었다. 중등 3학년 학생(16~17세) 1,210명이 설문에 참여했다. 즉 이들은 중등교육 1주기를 이미 마친 상태였다. 52.1%는 여학생, 45.4%는 남학생이었다. 교육기관 교장의 허가, 모든 학생의 동의, 학생 부모 및/또는 보호자의 동의를 받았다.</p>
+    <p>정보 분석을 위해 기술 통계가 적용되었다. 이후 "논쟁적 주제" 교육 앞에서의 포지셔닝 전략에 따른 교사 유형론이 구성되었다. 이를 위해 교사 행동 전략의 지표로 작동하도록 설계된 설문지 문항들이 사용되었다.</p>
+  </section>
+
+  <!-- 결과 -->
+  <section id="resultados">
+    <h2>결과</h2>
+
+    <h3 id="r-temas">"논쟁적 주제"</h3>
+    <p>학생들에 따르면, 역사 수업에서 공부하는 모든 주제는 어느 정도 논쟁적이다. 그러나 일부는 학생들의 절반 이상이 매우 논쟁적인 것으로 인식한다. 학생들에 따르면 가장 논쟁적인 세 주제는 다음과 같다. 국가 테러리즘과 라틴아메리카 인권 침해(66.4%), 원주민 인구의 감소와 파괴(65.1%), 유대인 학살(58.9%). 학생들의 절반 이상이 매우 논쟁적으로 보는 항목에는 사회·경제 발전에서 국가의 역할(56.6%), 냉전(53.7%), 라틴아메리카 혁명 운동(53.0%), 경제 성장과 부의 분배(52.3%), 국가 영토 형성(51.0%)도 포함된다(그림 1 참조).</p>
+    <p>학생들의 50% 미만이 매우 논쟁적으로 확인한 주제들은 다음과 같다. 19세기 칠레의 세계 경제 편입(48.7%), 세계화의 영향(42.1%), 스페인 정복(41.6%), 복지국가의 위기(37.6%), 러시아 혁명(33.2%), 산아제한 정책(31.4%), 제국주의(30.8%).</p>
+
+    <div class="figure-placeholder">
+      <div class="fig-title">그림 1. 학생들이 선언한 갈등 정도 비율에 따라 정렬된 "논쟁적 주제"</div>
+      <p>【가로 막대 그래프 설명】 15개 논쟁적 주제가 학생들이 부여한 갈등 정도(적음·어느 정도·많음)에 따른 백분율 분포로 표시됨. 갈등이 높은 순으로 정렬:</p>
+      <p>① 국가 테러리즘 및 인권 침해 — ② 원주민 인구 감소·파괴 — ③ 유대인 학살 및 민족 말살 정책 — ④ 사회·경제 발전에서 국가의 역할 — ⑤ 냉전 — ⑥ 라틴아메리카 혁명 운동 — ⑦ 경제 성장과 부의 분배 — ⑧ 국가 영토 형성 — ⑨ 19세기 칠레의 세계 경제 편입 — ⑩ 세계화 효과(동질화 등) — ⑪ 스페인 정복 — ⑫ 복지국가 위기 및 신자유주의 정책 도입 — ⑬ 러시아 혁명 — ⑭ 공사(公私) 산아제한 정책 — ⑮ 제국주의와 세계 분할</p>
+      <div class="table-source">출처: 산티아고 칠레 수도광역주 97개 도시 교육기관의 중등 3학년 학생(16~17세) 1,210명을 대상으로 적용한 설문지를 기반으로 자체 작성.</div>
+    </div>
+
+    <p>학생들의 거의 절반(49.5%)은 2012년 라틴아메리카에서의 국가 테러리즘과 인권 침해가 가르쳐지지 않았다고 주장한다. 공사(公私) 산아제한 정책도 마찬가지였다고 44.6%가 밝혔다. 36.0%는 복지국가의 위기와 신자유주의 정책 실행이 분석되지 않았다고 보고한다. 같은 비율의 학생들이 교사가 라틴아메리카 혁명 운동을 가르치지 않았다고 보고하며, 29.9%는 교사가 유대인 학살과 민족 말살 정책 주제를 가르치지 않았다고 보고한다(그림 2 참조).</p>
+
+    <div class="figure-placeholder">
+      <div class="fig-title">그림 2. 2010년 및/또는 2011년에 가르쳐진 주제들, 갈등 정도에 따라 내림차순으로 정렬</div>
+      <p>【가로 막대 그래프 설명】 15개 주제별로 해당 주제를 가르쳤다(예) 또는 가르치지 않았다(아니오)고 신고한 학생들의 비율을 표시. 갈등이 높은 순으로 정렬. 국가 테러리즘 및 인권 침해의 경우 '가르치지 않음(아니오)' 비율이 가장 높아 약 50%에 달함. 이와 달리 냉전, 러시아 혁명 등 상대적으로 정치적 민감도가 낮은 주제들은 '가르침(예)' 비율이 더 높음.</p>
+      <div class="table-source">출처: 산티아고 칠레 수도광역주 97개 도시 교육기관의 중등 3학년 학생(16~17세) 1,210명을 대상으로 적용한 설문지를 기반으로 자체 작성.</div>
+    </div>
+
+    <p>학생들의 50%는 "논쟁적 주제"를 다룰 때 학생들 사이에 갈등이 시작되었다고 선언하지만, 48.6%는 발생하지 않았다고 생각한다. 47.7%는 토론의 존재를 인정하고, 7.2%는 언어적 공격을, 3.4%는 동급생과 대화를 끊었다고 표시하고, 2%는 신체적 공격을 보고한다. 학생들의 23.3%는 학생과 교사 사이에 갈등이 발생했다고 선언한다.</p>
+    <p>학생들의 54.2%는 교사가 가르치기 전에 수업에서 다룬 주제에 대해 가족과 대화한 적이 거의 없다고 밝혔다. 그러나 수업 후에는 57.0%의 학생이 공부한 "논쟁적 주제"에 대해 학급 친구들과 대화했고, 42.7%는 어머니 및/또는 아버지와, 24.3%는 자신의 교사들과, 21.7%는 형제·자매 및/또는 사촌과, 15.3%는 조부모와 대화했다. 수업 후 아무와도 대화하지 않은 학생은 26.6%에 불과하다.</p>
+
+    <h3 id="r-profesor">교사에 대하여</h3>
+    <h3 id="r-posicion">교사의 포지셔닝</h3>
+    <p>학생들의 응답으로 교사를 범주화할 수 있지만, 23.4%의 학생은 교사가 "논쟁적 주제"를 가르칠 때 취하는 입장을 파악하지 못한다. 그러나 학생들의 32.8%는 교사가 같은 사건에 대해 서로 다른 해석을 제시한다고 선언한다. 학생들에 따르면 3.5%는 사건에 대한 해석이 하나뿐인 것처럼 행동하는 교사로 분류될 수 있고, 2.9%는 다른 해석이 있음을 인정하는 것 같지만 가르치지 않고, 2.6%는 주제의 객관화된 요소만을 가르친다. 그러나 학생들은 34.8%의 교사를 어떤 범주에도 배치하지 않는다. 이는 교사들이 서로 모순적인 행동을 전개하기 때문이다.</p>
+    <p>학생들의 31.2%에 따르면, 교사는 "논쟁적 주제"를 가르칠 때 학생들의 의견에 영향을 미치지 않으려 했다. 7.1%는 교사가 역사의 어떤 해석에 동의하지 않는다는 것을 보여주기 위해 농담, 아이러니, 조롱을 사용했다고 보고하며, 학생들의 12.4%에 따르면 교사는 학생들이 사건을 해석하는 방식을 납득시키기 위해 감정을 조작했다. 두 경우 모두 교화적 행동에 해당한다.</p>
+    <p>학생들의 30.4%는 교사가 역사를 배우면 더 나은 사람, 좋은 아버지, 좋은 시민이 되는 데 도움이 된다고 말하는 것을 들었다. 또한 8.7%에 따르면 교사는 시험에서 수업에서 제시된 것과 다른 의견은 받아들이지 않을 것이라고 말했다. 14.5%의 학생들은 때때로 교사가 역사가들이 주장하는 것과 일치하지 않는 의견을 제시했다고 생각하고, 14.0%는 때때로 교사가 자신의 논증을 뒷받침하는 증거를 제시하지 않았다고 나타낸다. 이는 전통적 역사관에서 수업에서 교화 행동을 전개하는 교사들이다. 이는 학생들의 33.5%가 교사가 역사의 올바른 해석이 무엇인지 명시적으로 알려주기를 기대하고, 12.9%는 학생들이 역사에 대해 의견을 낼 충분한 지식 및/또는 역량을 가지고 있지 않다고 생각하는 것과 부합한다. 이들도 "공식 역사"가 전달되고 교사에게 학습 내용을 환원할 수 있기를 기대하므로 전통적인 역사관을 유지한다. 이와 일관되게 학생들의 30.8%는 교사가 학생들이 확립된 사회 규범과 가치에 의문 없이 적응하고 존중하기를 바란다고 생각한다. 그러나 학생들의 67.3%는 역사 교사가 학생들이 자신이 사는 사회에 대해 비판적 태도를 갖기를 원할 것이라고 생각한다. 이는 학생들이 과거를 해석하는 것이 해석적 행동임을, 그리고 역사 학습이 사회에 능동적으로 참여하는 데 필요한 역량을 제공한다는 것을 받아들였음을 반영한다.</p>
+
+    <h3 id="r-didactica">교수법(didáctica)</h3>
+    <p>학생들의 92.0%는 역사 교사가 "논쟁적 주제"를 가르칠 때 설명식 수업을 들었고, 78.8%는 연대표를 작성했으며, 76.1%는 다큐멘터리나 영화를 봤고, 75.6%는 표, 도식, 개념 체계를 구성했다. 72.7%는 인터넷에서 정보를 검색하고, 69.9%는 학생 교과서로 작업했으며, 66.2%는 조사를 수행했다. 62.2%는 과제를 발표하고, 61.8%는 책, 인터넷 등에서 개념을 검색했다. 학생들의 61.3%는 설문지를 작성했고, 60.3%는 그래프 및/또는 도식을 분석했다. 49.6%는 그룹에서 주제에 대해 대화했고, 38.8%는 공부한 시대의 책을 읽었으며, 37.9%는 에세이를 쓰고, 35.0%는 글을 필사했다. 31.0%는 증언을 듣거나 읽었고, 29.9%는 지도 독서에 참여하고, 28.5%는 사건에 대한 자신만의 해석을 구성했다. 27.6%는 포트폴리오를 구성했고, 26.1%는 토론에 참여했으며, 25.3%는 카드를 구성했다. 25.1%의 학생들은 문장을 완성했고, 22.1%는 역사적 장소를 방문했으며, 21.7%는 당시 신문 기사를 읽었고, 14.9%는 당대 뉴스나 신문을 준비했다. 13.9%는 가족을 설문하거나 인터뷰했고, 13.9%는 글을 암기했으며, 9.2%는 공부한 시대의 음악을 들었다.</p>
+    <p>학생들이 보고한 바에 따르면, 30.3%의 교사들은 역사 교육의 전통적 방식에 고유한 것으로 범주화될 수 있는 활동을 수행했다. 즉 다큐멘터리나 영화 제시, 그래프 및/또는 도식 분석, 당시 신문·잡지·책 읽기, 표·도식·정의 구성, 연대표 작성, 학생 교과서 읽기, 카드 완성, 역사적 장소 방문, 글 필사 및/또는 암기. 그러나 학생들의 55.3%에 따르면, 교사들은 능동적 교수법, 즉 가족에 대한 설문 또는 인터뷰, 주제에 대한 그룹 성찰이나 토론, 당시 뉴스나 신문 준비, 공부한 시대를 살았던 사람들의 증언 제시, 인터넷에서 정보 검색, 역사적 주제·인물·시기에 관한 조사, 발표, 당시 음악 제시, 책이나 인터넷 등에서 개념 검색, 논평할 문장 제시, 학생들이 사건에 대한 자신의 해석을 구성하도록 요청, 에세이 작성, 포트폴리오 구성, 지도 독서 조직 등을 사용한다. 14.4%의 교사들은 두 가지 유형의 활동을 함께 수행한다.</p>
+    <p>학생들의 71.9%는 이미지·사진·그림 등을 분석했고, 68.3%는 문서를 분석했으며, 61.2%는 다큐멘터리나 영화를 분석했다. 또한 54.6%는 역사적 자료로 작업했고, 45.2%는 개념을 구성했으며, 21.7%는 토론에 참여했고, 24.2%는 에세이를 썼으며, 5.8%는 인터넷 포럼이나 소셜 미디어에 참여했다.</p>
+    <p>학생들의 88.3%는 교사가 역사의 한 시점에서 사건이 어떻게 일어났는지를 이야기하는 것을 들었고, 76.4%는 교사가 사건의 원인과 결과를 설명하는 것을 들었으며, 70.6%는 역사적 시간으로 작업했다. 65.39%는 역사적 자료를 분석했고, 64.2%는 역사적 개념을 분석하거나 적용했다. 55.4%는 조사했고, 50.4%는 역사적 사실이나 과정을 비교했으며, 30.5%는 가설을 수립했다.</p>
+    <p>학생들의 84.7%는 수업 중 교사가 학습 교과서를 사용했다고 나타내며, 75.0%는 이미지를 제시했다고 선언한다. 58.3%는 교사가 다큐멘터리를 제시했다고 나타내고, 56.8%는 역사적 문서를 사용했다고 하며, 43.7%는 공부한 주제와 관련된 통계표, 그래프 및/또는 수치가 제시되었다고 선언한다. 33.4%는 교사가 역사가들의 글을 교실에 가져왔다고 보고하고, 17.3%는 현장 학습이 이루어졌다고 하며, 16.6%는 사건을 직접 경험한 사람들의 증언으로 작업했다고 하고, 15.4%는 교사가 공부한 주제와 관련된 현재 신문이나 잡지를 제시했다고 보고한다.</p>
+
+    <h3 id="r-evaluacion">평가</h3>
+    <p>학생들의 88.6%는 서술형 문항으로 평가받았고, 82.0%는 선다형 문항에 답했다. 61.6%는 교사가 조사 보고서를 채점했다. 같은 목적으로 46.8%는 구두 발표를, 41.6%는 에세이를 수행했다. 15.4%는 문제를 해결했고, 15.2%는 포트폴리오를 작성했다. 8.4%는 역할극이나 연극 해석 참여로 평가받았다. 학생들의 1.8%는 "논쟁적 주제"를 분석할 때 평가받지 않았다.</p>
+    <p>학생들의 76.8%에 따르면, 교사는 시간 속 사건의 위치를 평가했다. 70.8%는 역사 및 사회과학 개념에 대한 평가를 보고하고, 70.4%는 사건이나 인물 생애의 장소 위치를 평가했다. 64.7%는 교사가 날짜·인물·사건 암기를 평가했다고 나타내고, 62.7%는 역사적 정보를 검색하고 조직하는 능력을 평가했다고 한다. 58.4%에 따르면 성찰적 역량이 측정되었다. 46.1%는 공간적 위치를, 46.1%는 구두·서면 의사소통 능력을 지적한다. 34.9%에 따르면 다룬 주제에 대한 사학적 서사 지식이 평가되었고, 29.5%에 따르면 역사적 공감 능력이 평가되었다. 29.4%는 교사의 지식을 환원하는 능력이 평가되었다고 나타낸다.</p>
+
+    <h3 id="r-estudiantes">학생에 대하여</h3>
+    <p>학생들의 82.7%는 수업에서 다룬 주제에 대한 대화와 토론이 있는 것이 중요하다고 생각하고, 68.6%는 수업 내용이 의문시될 수 있다고 나타낸다. 그러나 학생들의 11.3%에게는 교사가 제시하는 과목이 비판받아서는 안 된다. 86.5%는 학생들이 교사가 제시하는 내용에 대한 의견을 표명해야 한다고 주장하지만, 13.5%는 교사가 가르치는 것을 의문시해서는 안 된다고 생각한다. 학생들의 56.5%에 따르면 자신의 역할은 교사가 가르치는 내용을 듣고 배우는 것이다. 반면 77.0%는 학생들이 수업 주제에 대해 성찰하고 자신의 결론을 수립해야 한다는 데 동의한다.</p>
+    <p>학생들의 39.3%는 조직된 공간이 없더라도 빈번하게 개인 의견을 표현한다고 생각하고, 19.5%는 거의 그렇게 하지 않는다고 한다. 학생들의 46.5%는 자신이 역사에 대한 자신만의 해석을 구성해야 한다고 주장한다. 반면 30.9%는 교사가 가르치는 것을 암기해야 한다고 생각한다.</p>
+    <p>36.3%는 학생들이 교사가 가르치는 사건에 대한 개인적 의견을 명시적으로 말해줄 것을 자주 요청한다고 보고하는 반면, 29.9%는 그런 일이 드물게 발생한다고 생각한다.</p>
+    <p>학생들의 22.4%는 정치적 이유나 개인적 이해 때문에 역사의 일부를 왜곡하려는 사람들이 있다고 생각한다. 78.8%는 교사가 역사적 사건에 대한 해석을 제시할 때 증거를 제시할 필요가 있다고 생각한다. 반면 12.9%에게는 공유하지 않는 역사 해석을 뒷받침할 필요가 없다. 41.0%는 일부 증거가 일부 생각을 옹호하기 위해 편향적으로 선택될 수 있다고 나타내고, 16.3%는 역사에 대한 모든 의견이 근거를 가질 필요가 없다고 생각한다. 학생들의 61.1%는 어떤 역사가와도 공유되지 않는 역사에 관한 생각을 뒷받침할 수 있다고 주장하고, 16.9%는 역사가 비판받아서는 안 된다고 나타내며, 14.0%에 따르면 역사에는 사건에 대한 진실한 해석이 하나뿐이다.</p>
+    <p>학생들의 13.8%는 교사가 같은 사건에 대한 서로 다른 해석을 제시할 때 내용이 혼란스러워진다고 하는데, 이는 동료들의 51.3%에게는 해당하지 않는다. 35.7%는 교사가 사건에 대한 해석을 하나만 제시할 때 동기가 덜 부여되고, 반면 제시된 다양한 해석이 학생들의 30.2%를 자주 동기 부여한다.</p>
+  </section>
+
+  <!-- 논의 -->
+  <section id="discusion">
+    <h2>논의</h2>
+
+    <h3 id="d-temas">"논쟁적 주제"에 대하여</h3>
+    <p>더 많은 학생들에게 가장 논쟁적인 교육과정 내용은 칠레와 다른 나라들 모두에서의 인권 침해와 관련된 것이다. 이 주제들은 학생들이나 그 가족들이 직·간접적으로 경험한 사건들이기 때문에 이 범주에 맞다. 또한 감정을 불러일으키고(사람들의 삶에 영향을 미치고 고통을 유발하기 때문에), 시민들이 그에 대해 입장을 취하기 때문이다. 이는 정치적 토론과 언론에 있는 주제들이며 학술계에서도 분석된다. 덜 논쟁적인 주제들—그러나 마찬가지로 논쟁적인—은 학생들이 자신의 삶에 미치는 영향을 인식하기 더 어려운 사건들과 관련된다. 따라서 이들은 학생들의 즉각적인 관심사에서 더 멀리 있다.</p>
+    <p>더 또는 덜 논쟁적인 주제들이 존재함에도 불구하고, 과목의 대부분 내용은 어느 정도 갈등을 유발한다. 그러나 주제가 유발하는 논쟁의 정도와 그 교육 사이에는 직접적인 연관성이 없다. 학생들의 보고에 따르면 교사들은 이 주제들을 가르치기를 회피하지 않는다. 일어나는 일은 교사들이 이 주제들을 논쟁적 관점에서 가르치지 않는다는 것이며, 이는 이 주제들을 다루는 방식에서 교수법적 공백을 드러낸다.</p>
+    <p>교사가 주제에 수반되는 논쟁을 명시적으로 밝히지 않기 때문에, 교실에서 "논쟁적 주제"에 대한 언급이 학생들 사이에 갈등을 유발한다. 논쟁이 교실에서 드러나지 않으면, 학생들은 교사가 참여하지 않는 공간에서 토론하기 때문이다. 또한 학생들이 갈등의 존재를 인정한다는 사실은 교실 밖에서 존재하는 화해 불가능한 입장들이 교실에서 분석되지 않았음을, 즉 학생들 사이와 학생들과 교사 사이에 대화가 형성되지 않았음을 드러낸다. 갈등은 가치에 기초한 논증이 새로운 지식으로 풍요로워지지 않았기 때문에, 논증이 상대방이 놓인 사회적 위치에서 비롯된다는 것이 명시되지 않았기 때문에 발생한다. 대화 역량 개발을 위한 기회가 낭비되었다.</p>
+    <p>그럼에도 교실에서 논쟁적 주제들이 제시되면, 교사가 그것들을 다루는 방식에 관계없이 수업 후에도 대화가 이어지고 동료들 사이, 교사와, 그리고/또는 가족과의 대화가 시작된다. 이는 학교 기관이 이전에 가족들과 논의되지 않았더라도 "논쟁적 주제"의 사회적 토론에 미치는 영향을 보여준다. 따라서 학교는 역사 교육을 통해 과거에 대한 일상적 담론을 형성하는 상식적 생각의 재검토에 기여할 수 있다(Lee 2004). 역사 수업은 사회적 논쟁에 영양분을 주고 학생들이 그에 대해 입장을 취할 수 있도록 역량을 키우는 지식을 기여할 수 있다. 학교는 칠레의 경우처럼 사회적 갈등을 겪은 사회에서 특히 집단적 질서의 주제들을 열어놓거나 침묵시킬 수 있다. 학교가 이 침묵당한 주제들에 공간을 준다면, 사회적 갈등으로 손상된 사회적 직물의 회복에 기여할 수 있다.</p>
+    <p>또한 학생들이 감정적으로 연관된 역사 수업에서 "논쟁적 주제"의 합리적 분석은 민주주의 사회에서 역사 학교 교육의 목적 중 하나를 달성하는 데 기여한다. 즉, 학생들이 과거에 대한 개인적·집단적 판단을 공식화할 수 있도록 하고, 그 이해를 위해 인지적·문화적 요인들을 포함하며, 과거에 대한 이해를 현재 및 미래와 연결시키는 것이다(Sharon Macdonald와 Katja Fausser 2000, Seixas 2004에서).</p>
+
+    <h3 id="d-profesor">교사에 대하여</h3>
+    <p>학생들에 따르면, 대다수 교사들은 "논쟁적 주제"에 대한 다양한 해석을 제시하지 않는다. "중립적" 입장을 취하지 않는다. 교사들이 "중립성"을 취하지 않을 때, "객관화된" 주제들만을 제시하거나, 논쟁을 "부정"하거나(역사에 대한 해석이 하나뿐이라고 가정하거나) 또는 하나의 해석만을 유일한 것처럼 제시함으로써 교화한다. "중립성"을 취하지 않을 때, 교사는 권력-지식의 위치에 자리하고 정서적으로 중립적인 서사를 전개하면서 논쟁적 주제들을 배제하고 학생들이 자신의 선행 지식이나 의견을 표현할 공간을 주지 않는다. 이는 지식이 여전히 발생하는 인식론적·이론적·이념적 틀과 과학 공동체의 권력 투쟁과 무관하게 제시되고 있음을 나타낸다(Apple 1986). 또한 교수 실천에서 교사는 계속해서 무엇이 학습되어야 하는지, 결과적으로 무엇이 침묵되고 비가시화되고 부정되어야 하는지를 결정하는 이가 된다. 교사들이 사회와 역사 학문에서 논쟁 중인 주제들을 가르치지만 기존의 논쟁을 명시하지 않고, 더 나아가 다양한 해석을 낳는 갈등을 분석하지 않는다는 것이 다시 분명해진다.</p>
+    <p>교사들은 제시하는 역사 해석 하나 또는 여러 개에 대한 동의나 반대를 생략함으로써 학생들의 의견에 영향을 미치지 않으려 한다. 이는 다른 연구들에서 생산된 정보(Toledo y Magendzo 2008 y 2010)와 연결되는데, 이들 연구에서는 교사들이 분석하거나 서사에 연결하는 사건들을 선택하는 데 사용된 기준을 명시하지 않고 발생한 것에 대한 서사를 제시한다고 보고했다. 또한 역사적 서사는 교사들이 자신에게 유발하는 감정을 드러내지 않고, 문화적으로 진실과 객관성의 조건과 연결되는 설명식 수업의 형식으로 제시되는 경우가 많다. 이는 학생이 교사가 자신의 수업을 조직하기 위해 취하는 사회적 위치를 파악할 가능성을 제한한다. 학생이 교사가 특정한 사회적 위치에서 서사를 조직한다는 것을, 그리고 가르쳐지는 같은 역사적 사건이나 과정에 대해 다른 해석이 있다는 것을 인식할 수 없다면, 교화는 가르쳐지는 내용에 의해서도 가르치기 위해 사용되는 방법에 의해서도 작동한다.</p>
+    <p>또한 교육이 중립적이지 않다는 점도 고려해야 한다. 교사는 성찰을 안내할 의무가 있으며 "논쟁적 주제"에 대한 서로 다른 해석들을 마치 대안인 것처럼 제시할 수 없다(Magendzo y Toledo 2009). 왜냐하면 인식론적으로, 이론적으로, 이념적으로 그렇지 않으며, 학생들의 삶에 대해 서로 다른 함의를 갖기 때문이다. 또한 시민으로서의 교사는 주제에 대해 입장을 취했으며, 역사 과목이 공익을 달성하는 관점에서 의사결정에 참여하는 시민을 형성하는 목적을 갖기 때문에, 자신의 삶에 영향을 미치는 사건들 앞에서 자신의 입장을 숨길 수 없다. 따라서 기대되는 것은 교사가 "헌신적 중립", 즉 자신의 입장을 공개적으로 드러내되 전개된 논증에 대해 항상 성찰해야 함을 나타내는 것이다.</p>
+    <p>학생들이 교사가 "논쟁적 주제"를 가르칠 때 해야 하거나 하지 말아야 하는 것에 대해 공식적으로 알지 못하더라도, 교사들이 아마 인식하지 못하는 교화 행동들을 보고한다. 즉 학생의 해석을 유도하기 위한 자격 박탈과 감정 사용. 이는 "논쟁적 주제" 다루기를 위한 대화 수립의 필요성과 모순되는 교수법적 실천이다.</p>
+
+    <h3 id="d-evaluacion">학습 평가에 대하여</h3>
+    <p>학생들의 보고에 따르면 많은 교사들이 정보 검색, 논증, 대화를 수반하는 평가 활동을 도입하면서 성찰적 역량과 역사 및 사회과학 고유의 개념 이해를 평가하고 있다. 그러나 역사 전통 교육의 고유한 평가 방식과 그 학문적 범주들이 주를 이룬다. 대부분의 교사들이 학습을 평가하기 위해 수행하는 활동들이 항상 학생들이 일상적으로 참여하는 사회적 토론에 능동적으로 참여하는 데 필요한 정보 검색, 논증 구성, 입장 표명, 대화, 공감, 기타 역량을 드러내게 해주지 않는다. "논쟁적 주제"에 대한 학습 평가를 위해 기대되는 것은 학생이 가까운 논쟁적 상황에 직면하여 그것을 분석하고 그 함의를 수립하고 주제에 대해 토론할 수 있는 것이다.</p>
+    <p>그러나 변혁이 완전하지 않음에도 불구하고, 교사의 지식을 환원하는 학생 역량의 양화에 초점을 맞춘 평가가 현저히 후퇴하고 있음을 강조해야 한다.</p>
+
+    <h3 id="d-estudiantes">학생에 대하여</h3>
+    <p>학생들이 나타내는 바에 따르면, 학교를 그들이 종속적 위치를 차지하는 곳으로 보는 개념이 패권을 잃어가고 있다. 지식-권력의 위치에 있는 교사의 생각은 학생들이 자신을 학습 주체로 개념화하는, 교사와의 더 평등한 관계로 대체되고 있다. 그러나 일부 학생들은 여전히 전통적인 교육관을 가지고, 자신의 역할이 수동적이어야 하며 교사가 배워야 할 지식을 보유하고 있다고 내면화했다.</p>
+    <p>이는 교사들이 논쟁적 관점에서 사회적·학문적 논쟁 주제들을 다룰 적절한 조건이 있음을 의미한다. 이는 학생들이 수업에서 교사가 제시하는 지식에 대해 대화하고, 의문시하고, 성찰하는 것이 필요하다고 생각하기 때문이며, 학생들이 역사에 대한 자신만의 해석을 구성하고 의견을 표명하기를 원하기 때문이다. 이는 수업이 학생들의 참여를 고려하지 않더라도 그들이 자발적으로 의견을 표현한다는 사실에서 드러나며, 특정 목적을 가진 조직된 대화에 참여할 수 없을 때도 마찬가지이다. 따라서 학생들이 역사의 해석적 성격과 역사적 서사 구성 방식을 이해하는 것 같지만, 서로 다른 해석들 앞에서 입장을 취하는 경험을 해보지 않은 것처럼 보인다. 이는 대화하고, 성찰하고, 자신의 결론을 수립하려는 욕구가 사회적 논쟁들을 긴장시키며 조직된 수업이 만들어낼 수 있는 동기와 연결되지 않기 때문이다.</p>
+  </section>
+
+  <!-- 결론 -->
+  <section id="conclusiones">
+    <h2>결론</h2>
+    <p>학교에서의 역사 교육이 점진적으로 변혁되는 느리고 진보적인 과정이 확인된다. 즉 민중을 "칠레화"하고 훈육하는 역사의 초기 이용에서부터 그 목적이 민주 사회 참여를 위한 시민 형성임을 정의하기까지. 그러나 1973년 쿠데타를 통한 독재의 수립은 더 보수적이고 전통적인 교육 모델로의 회귀를 의미했다. 그러나 민주주의가 회복되면서 현대 역사 교수법의 원칙에 따라(Toledo, Gazmuri y Magendzo 2010), 역사 교육은 학생들이 사회에 능동적으로 참여하는 데 필요한 기술을 개발하는 특권적인 교수법 공간으로 구상되었다.</p>
+    <p>그러나 1996년 교육과정 개혁이 사회와 역사 학문에서 논쟁적인 주제들을 학습 프로그램에 포함했고, 이 학습 프로그램을 실행하기 위해 제안된 수업 방법론이 같은 역사적 사건과 과정에 대한 다양한 해석을 제시하도록 초대함에도 불구하고, 교사들이 논쟁적 주제들을 가르치기를 회피하는 한 수업들이 논쟁적 관점에서 조직되지 않는다. 일어나고 있는 것은 대화를 조직하는 데 저항이나 경험 부족, 지식을 긴장시키는 것, 의견을 표현하는 것, 학생들에게 발언권을 주는 것이 있는 것 같다. 이것이 이루어진다면 교수법적 공간이 강화될 것이다. 왜냐하면 학생들은 교사들과 더 평등한 관계를 기대하고, 교육과정 내용을 비판적으로 분석하고, 의견을 표현하고, 역사 해석을 구성하고, 토론하면서 수업에서 능동적 역할을 맡기를 원하기 때문이다. 그러나 교사들에게는 아직도 사회적 사건들의 기원에 있는 갈등, 그리고 학생들의 학습을 강화하는 교수법적 자원으로서의 갈등을 인식하는 것이 복잡하다.</p>
+    <p>교사들은 새로운 활동, 절차, 전략, 평가 활동을 다양화하고 도입했지만 아직 교수 실천의 변혁이 이루어지지 않았다. 논쟁적 주제들을 가르치지만 긴장시키지 않는다. 모두가 자신의 의견을 명시하지 않지만, 서사에서 암묵적으로 전달한다. 학생들은 의견을 내지만 대화하지 않는다. 수업은 논쟁들을 중심으로 조직되지 않는다. 여전히 역사 전통 교육의 논리가 지속된다. 중요한 진전이 관찰되지만 변혁은 아직 가능하지 않았다. 이것이 일어나기 위해서는 전달된 지식의 기원을 의문시하고, 논쟁의 의미를 이해하고, 교육과정이 학생들의 삶의 문제들을 통합하고, 논증된 대화가 그것들을 분석하는 도구가 되어야 한다. 변혁이 일어나기 위해 교사는 "변혁적 지식인"(Gimeno 1988; Giroux 1990)으로 변혁되어야 한다.</p>
+    <p>양성에 의해 역사 교사는 그 역할을 맡는 도구들을 가지고 있다. 그러나 학교 시스템에는, 모든 사회적 기관에서처럼, 헤게모니적 지식의 재생산과 전통적인 교수법적 실천을 유도하는 규제 메커니즘이 있다는 점을 명심해야 한다. 따라서 변혁이 일어나기 위해서는 "변혁적 지식인"으로 양성된 교사들, 즉 사학과 사회과학에 대한 광범위한 지식을 갖추고 정치적 행동에 역량 있으며, 역사 교육을 청소년의 일상생활 맥락에서 토론되는 주제들과 연결할 수 있는 교사들이 필요하다. 논쟁이 논쟁 주제들의 기원과 해결에 있다는 것을, 그리고 시민적 행동이 그로부터 투영된다는 것을 이해하는 교사들. 이 관점에서 논쟁적인 의미로 역사 교육을 맡는 것은 비판적 교수법 및 교수론과 밀접하게 연결되어, 혁신적인 실천을 넘어서 교수법적 행동을 권한을 부여하고 변혁하는 실천으로 맡는 것이 필요해진다.</p>
+  </section>
+
+  <!-- 참고문헌 -->
+  <section id="referencias">
+    <h2>참고문헌</h2>
+
+    <div class="ref-item">1. Advisory Group on Citizenship. 1998. <em>Education for Citizenship and the Teaching of Democracy in Schools</em>. London: Qualifications and Curriculum Authority.
+      <div class="ref-ko">「시민 교육과 학교에서의 민주주의 교육」</div>
+    </div>
+    <div class="ref-item">2. Apple, Michael. 1986. <em>Ideología y currículo</em>. Madrid: Ediciones Akal.
+      <div class="ref-ko">『이념과 교육과정』</div>
+    </div>
+    <div class="ref-item">3. Applebaum, Barbara. 2003. Social Justice, Democratic Education, and the Silencing of Words that Wound. <em>Journal of Moral Education</em> 32, n° 2: 151-162.
+      <div class="ref-ko">「사회 정의, 민주주의 교육, 그리고 상처 주는 말의 침묵화」</div>
+    </div>
+    <div class="ref-item">4. Aravena, Marcela y Javier Zúñiga. 2012. La institucionalización del docente secundario en Chile. <em>Revista Historia de la Educación-Anuario</em> 13, n° 2.
+      <div class="ref-ko">「칠레 중등 교사의 제도화: 직업적 발전인가 직업의 후퇴인가?」</div>
+    </div>
+    <div class="ref-item">5. Asimeng-Boahene, Lewis. 2007. Creating Strategies to Deal with Problems of Teaching Controversial Issues in Social Studies in African Schools. <em>Intercultural Education</em> 18, n° 3: 231-242.
+      <div class="ref-ko">「아프리카 학교 사회 교과에서 논쟁적 주제 교육 문제 대처 전략 수립」</div>
+    </div>
+    <div class="ref-item">6. Bailey, Charles. 1975. Neutrality and Rationality in Teaching. En <em>Values and Authority in Schools</em>, eds. David Bridges y Peter Scrimshaw. Londres: Hodder & Stoughton, 124-132.
+      <div class="ref-ko">「교육에서의 중립성과 합리성」</div>
+    </div>
+    <div class="ref-item">7. Briones, Guillermo et al. 1984. <em>Las transformaciones educacionales bajo el Régimen Militar</em>. Santiago de Chile: Programa Interdisciplinario de Investigaciones y Educación.
+      <div class="ref-ko">『군사 정권 하의 교육적 변혁』</div>
+    </div>
+    <div class="ref-item">8. Brunner, José Joaquín. 1980. <em>Sociología de los principios educacionales</em>. Facultad Latinoamericana de Ciencias Sociales.
+      <div class="ref-ko">『교육 원칙의 사회학: 칠레 초등교육 계획·프로그램의 두 차례 개혁 분석(1965, 1980)』</div>
+    </div>
+    <div class="ref-item">9. Carretero, Mario y Manuel Montanero. 2008. Enseñanza y aprendizaje de la historia. <em>Cultura y Educación</em> 20, n° 3: 133-142.
+      <div class="ref-ko">「역사의 교수·학습: 인지적·문화적 측면」</div>
+    </div>
+    <div class="ref-item">10. Chilcoat, George y Jerry Ligon. 2003. "It Is Democratic Citizens We Are After". <em>International Journal of Social Education</em> 18, n° 2: 76-92.
+      <div class="ref-ko">「우리가 추구하는 것은 민주주의적 시민이다」</div>
+    </div>
+    <div class="ref-item">11. Corngold, Josh y David Waddington. 2006. Teacher Neutrality Reconsidered. <em>Annual Meeting of American Political Science Association</em>.
+      <div class="ref-ko">「교사 중립성 재고: 정치학 교실에의 함의」</div>
+    </div>
+    <div class="ref-item">12. Cotton, Deborah. 2006. Teaching Controversial Environmental Issues. <em>Educational Research</em> 48, n° 2: 223-241.
+      <div class="ref-ko">「논쟁적 환경 문제 교육: 교실 현실에서의 중립성과 균형」</div>
+    </div>
+    <div class="ref-item">13. Crick, Bernard. 1998. <em>Education for Citizenship and the Teaching of Democracy in Schools</em>. Londres: Qualifications and Curriculum Authority.
+      <div class="ref-ko">『학교에서의 시민 교육과 민주주의 교육』</div>
+    </div>
+    <div class="ref-item">14. Cuypers, Stefaan y Haji Ishtiyaque. 2006. Education for Critical Thinking. <em>Educational Philosophy and Theory</em> 38, n° 6: 724-727.
+      <div class="ref-ko">「비판적 사고를 위한 교육은 비교화적일 수 있는가?」</div>
+    </div>
+    <div class="ref-item">15. Egaña, Loreto. 2000. <em>La educación primaria popular en el siglo XIX en Chile</em>. Santiago de Chile: LOM.
+      <div class="ref-ko">『19세기 칠레의 민중 초등교육: 국가 정책의 실천』</div>
+    </div>
+    <div class="ref-item">16. Fink, Nadine y Charles Heimberg. 2006. ¿Cómo se representan la historia y las ciencias sociales los alumnos de la Suiza francófona? <em>Enseñanza de las Ciencias Sociales</em> 5: 45-54.
+      <div class="ref-ko">「프랑스어권 스위스 학생들은 역사와 사회과학을 어떻게 표상하는가?」</div>
+    </div>
+    <div class="ref-item">17. Finkin, Matthew et al. 2007. <em>Freedom in the Classroom</em>. American Association of University Professors.
+      <div class="ref-ko">『교실에서의 자유』</div>
+    </div>
+    <div class="ref-item">18. Gimeno Sacristán, José. 1988. <em>El currículum. Una reflexión sobre la práctica</em>. Madrid: Ediciones Morata.
+      <div class="ref-ko">『교육과정: 실천에 관한 성찰』</div>
+    </div>
+    <div class="ref-item">19. Giroux, Henry. 1990. <em>Los profesores como intelectuales: hacia una pedagogía crítica del aprendizaje</em>. Madrid: Paidós Ibérica.
+      <div class="ref-ko">『지식인으로서의 교사: 비판적 학습 교수법을 향하여』</div>
+    </div>
+    <div class="ref-item">20. Gysling, Jacqueline. 2001. Reforma curricular: el caso de Chile. <em>Informe proyecto: alcance y resultados de las reformas educativas en Argentina, Chile y Uruguay</em>.
+      <div class="ref-ko">「교육과정 개혁: 칠레 사례」</div>
+    </div>
+    <div class="ref-item">21–25. Hanks, Hocutt, Harwood & Hahn, Henríquez, Hess. (2004–2008). 각 논문들 — 교실에서의 논쟁적 주제, 교화 대 교육, 비판적 사고 관련 연구.</div>
+    <div class="ref-item">26. Hurst, David y Wayne Ross. 2000. <em>Democratic Social Education</em>. Nueva York: Falmer Press.
+      <div class="ref-ko">『민주주의적 사회 교육: 사회 변화를 위한 사회 교과』</div>
+    </div>
+    <div class="ref-item">27. Iglesias, Ricardo. 2009. El papel de la educación en la construcción del Estado nacional chileno en el siglo XIX. <em>Nación y nacionalismo en Chile. Siglo XIX</em>, tomo II. Santiago de Chile: Centro de Estudios Bicentenario, 39-72.
+      <div class="ref-ko">「19세기 칠레 민족국가 건설에서 교육의 역할」</div>
+    </div>
+    <div class="ref-item">28. Kelly, Thomas. 1986. Discussing Controversial Issues: Four Perspectives on the Teacher's Role. <em>Theory and Research in Social Education</em> 14, n° 2: 113-138.
+      <div class="ref-ko">「논쟁적 주제 토론: 교사 역할에 관한 네 가지 관점」</div>
+    </div>
+    <div class="ref-item">29–30. Laville, Christian. 2000, 2003. 역사 교육의 서사 전쟁 및 역사와 시민 교육 관련 논문들 (프랑스어).
+      <div class="ref-ko">「서사들의 전쟁: 역사 교육 주변의 논쟁과 환상」; 「역사와 시민 교육: 실패 확인과 치유 제안」</div>
+    </div>
+    <div class="ref-item">31. Lee, Peter. 2004. Putting Principles into Practice: Understanding History. <em>How Students Learn</em>. Washington: The National Academic Press, 29-214.
+      <div class="ref-ko">「원칙을 실천으로: 역사 이해」</div>
+    </div>
+    <div class="ref-item">32–33. Legardez, Alain. 2003; Legardez y Simonneaux. 2006. 사회적으로 살아있는 질문들과 역사·사회과학 교육 관련 연구 (프랑스어).
+      <div class="ref-ko">「사회적·역사적으로 살아있는 질문의 교육」; 『시사에 맞닥뜨린 학교, 살아있는 질문 가르치기』</div>
+    </div>
+    <div class="ref-item">34. Levinson, Ralph. 2006. Towards a Theoretical Framework for Teaching Socio-Scientific Controversial Issues. <em>International Journal of Science Education</em> 28, n° 10: 1201-1224.
+      <div class="ref-ko">「사회과학적 논쟁 주제 교육을 위한 이론적 틀을 향하여」</div>
+    </div>
+    <div class="ref-item">36. López-Facal, Ramón. 2010. "Los problemas de candente actualidad en la enseñanza de las ciencias sociales". Ponencia en las VII Jornades Internacionals de Recerca en didàctica de les ciències socials. Barcelona.
+      <div class="ref-ko">「사회과학 교육에서의 시사적으로 뜨거운 문제들」 (학술대회 발표문)</div>
+    </div>
+    <div class="ref-item">37. Macdonald, Sharon y Katja Fausser. 2000. Towards European Historical Consciousness. <em>Approaches to European historical consciousness</em>. Hamburgo: Koerber Stiftung, 9-30.
+      <div class="ref-ko">「유럽 역사의식을 향하여」</div>
+    </div>
+    <div class="ref-item">38. Magendzo, Abraham y María Isabel Toledo. 2009. Moral Dilemmas in Teaching Recent History Related to the Violation of Human Rights in Chile. <em>Journal of Moral Education</em> 38, n° 4: 445-465.
+      <div class="ref-ko">「칠레 인권 침해와 관련된 현대사 교육에서의 도덕적 딜레마」</div>
+    </div>
+    <div class="ref-item">39. Merry, Michael. 2005. Indoctrination, Moral Instruction, and Nonrational Beliefs. <em>Educational Theory</em> 55, n° 4: 405-409.
+      <div class="ref-ko">「교화, 도덕적 교육, 비합리적 신념: 자율성을 위한 자리가 있는가?」</div>
+    </div>
+    <div class="ref-item">40–42. Ministerio de Educación Chile. 1974, 2005, 2009. 교육부 공문 및 의무 최소 내용 관련 공문서들.
+      <div class="ref-ko">칠레 교육부 각종 교육과정 규정 문서</div>
+    </div>
+    <div class="ref-item">43–44. National Council for the Social Studies. 1994, 2010. <em>Curriculum Standards for Social Studies</em>.
+      <div class="ref-ko">『사회 교과 교육과정 기준』 (미국 전국사회교과협의회)</div>
+    </div>
+    <div class="ref-item">45. Oliva, María Angélica. 2010. Política educativa chilena 1965-2009. <em>Revista Brasileira de Educação</em> 15, n° 44: 311-328.
+      <div class="ref-ko">「칠레 교육 정책 1965–2009: 그 구조가 감추는 것」</div>
+    </div>
+    <div class="ref-item">46–47. Oulton, Christopher et al. 2004. 두 편의 논쟁적 주제 교육 관련 논문. <em>International Journal of Science Education</em>; <em>Oxford Review of Education</em>.
+      <div class="ref-ko">「논쟁적 주제 교육의 재개념화」; 「시민 교육 맥락의 논쟁적 주제—교사 태도와 실천」</div>
+    </div>
+    <div class="ref-item">48–49. Pagès, Joan. 2002, 2007. <em>Pensamiento Educativo</em>; <em>Didáctica Geográfica</em>.
+      <div class="ref-ko">「역사와 사회과학 교수·학습: 교육과정과 사회과학 교수법」; 「스페인에서의 사회과학 교육과 시민 교육」</div>
+    </div>
+    <div class="ref-item">50. Rengifo, Francisca. 2012. Familia y escuela. <em>Revista Historia</em> 1, n° 45: 123-170.
+      <div class="ref-ko">「가족과 학교: 국가 학교화 과정의 사회사, 칠레, 1860–1930」</div>
+    </div>
+    <div class="ref-item">51. Reyes, Leonora. 2002. ¿Olvidar para construir nación? <em>Revista CyberHumanitatis</em> 23.
+      <div class="ref-ko">「국가 건설을 위해 잊어야 하는가? 권위주의 이후 역사·사회과학 교육과정 계획·프로그램 수립」</div>
+    </div>
+    <div class="ref-item">52. Sagredo, Rafael y Sol Serrano. 1994. <em>Un espejo cambiante: la visión de la Historia de Chile en los textos escolares</em>. OEA.
+      <div class="ref-ko">『변화하는 거울: 교과서에 나타난 칠레사의 시각』</div>
+    </div>
+    <div class="ref-item">53. Seixas, Peter. 2004. <em>Theorizing Historical Consciousness</em>. Toronto: University of Toronto Press.
+      <div class="ref-ko">『역사의식 이론화』</div>
+    </div>
+    <div class="ref-item">54–55. Siegel, Harvey. 1987; Simonneaux, Jean. 2011. 인식론적 상대주의 비판 및 사회적으로 살아있는 질문의 교수법적 구성.
+      <div class="ref-ko">『상대주의 논박』; 『경제·사회적 사회적으로 살아있는 질문의 교수법적 구성』</div>
+    </div>
+    <div class="ref-item">56. Stenhouse, Lawrence. 1983. <em>Authority, Education and Emancipation</em>. Londres: Heinemann Educational Books.
+      <div class="ref-ko">『권위, 교육, 해방』</div>
+    </div>
+    <div class="ref-item">57–59. Stradling, Robert. 1984, 1985; Stradling, Noctor y Baines. 1984. <em>Teaching Controversial Issues</em>.
+      <div class="ref-ko">「교실에서의 논쟁적 주제」; 「교육과정에서의 논쟁적 주제」; 『논쟁적 주제 교육』</div>
+    </div>
+    <div class="ref-item">60–63. Toledo, María Isabel y Abraham Magendzo. 2008, 2010; Toledo et al. 2015; Toledo, Gazmuri y Magendzo. 2010. 칠레 역사 교육 관련 FONDECYT 연구 보고서 및 논문들.
+      <div class="ref-ko">「군사 정권과 민주주의로의 이행 하위 단원의 교수·학습 탐색적 연구」; 「'현재의 역사' 교육 정량·정성 연구」; 「역사 교육의 현행 경향 범주화 제안」; 「교사 관점의 역사·사회과학 논쟁적 주제 교육」</div>
+    </div>
+    <div class="ref-item">64–65. Tutiaux-Guillon, Nicole. 2010, 2012. 역사·지리에서의 사회적으로 살아있는 질문 관련 학술대회 발표문들 (프랑스어).
+      <div class="ref-ko">「역사·지리 학교 교과에서의 사회적으로 살아있는 질문, 도전」; 「역사·지리에서의 사회적으로 살아있는 질문: 어떤 교수법적 분석?」</div>
+    </div>
+    <div class="ref-item">66. Valenzuela, Juan Miguel et al. 2008. Educación en Chile: entre la continuidad y las rupturas. <em>Revista Iberoamericana de Educación</em> 4: 129-145.
+      <div class="ref-ko">「칠레의 교육: 연속성과 단절 사이. 교육 정책의 주요 이정표」</div>
+    </div>
+    <div class="ref-item">67. Vandenberg, Donald. 2009. Critical Thinking about Truth in Teaching. <em>Educational Philosophy and Theory</em> 41, n° 2: 155-165.
+      <div class="ref-ko">「교수에서 진실에 관한 비판적 사고: 인식론적 에토스」</div>
+    </div>
+    <div class="ref-item">68–69. Vashist, Savita. 1993; Wales, Jenny y Paul Clarke. 2005. 중등학교 사회 교과 백과사전; 『시민권 학습』.
+      <div class="ref-ko">『중등학교 사회 교과 백과사전』; 『시민권 학습』</div>
+    </div>
+
+    <a href="#header" class="back-to-top">▲ 맨 위로</a>
+  </section>
+
+</main>
+
+<script>
+  window.addEventListener('scroll', () => {
+    let current = '';
+    document.querySelectorAll('section[id], div[id]').forEach(s => {
+      if (s.getBoundingClientRect().top <= 80) current = s.id;
+    });
+    document.querySelectorAll('#sidebar nav a').forEach(a => {
+      a.classList.toggle('active',
+        a.getAttribute('href') === '#' + current);
+    });
+  });
+
+  document.querySelectorAll('#sidebar nav a').forEach(a => {
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) target.scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+</script>
+
+</body>
+</html>

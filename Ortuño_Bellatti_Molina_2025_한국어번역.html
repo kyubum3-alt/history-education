@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>가치와 역사 교육 — 예비교사의 역사적 유의성 사회적 표상</title>
+<style>
+  :root {
+    --sidebar-width: 260px;
+    --accent: #2c5f8a;
+    --accent-light: #e8f1f8;
+    --text: #1a1a1a;
+    --muted: #555;
+    --border: #d0d7de;
+    --bg: #fafafa;
+    --white: #ffffff;
+    --table-head: #f0f4f8;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Noto Serif KR', 'Malgun Gothic', '맑은 고딕', Georgia, serif;
+    font-size: 15.5px;
+    line-height: 1.85;
+    color: var(--text);
+    background: var(--bg);
+    display: flex;
+  }
+
+  /* ── 사이드바 ── */
+  #sidebar {
+    width: var(--sidebar-width);
+    min-height: 100vh;
+    background: var(--white);
+    border-right: 1px solid var(--border);
+    position: fixed;
+    top: 0; left: 0;
+    overflow-y: auto;
+    padding: 24px 0 40px;
+    z-index: 100;
+  }
+
+  #sidebar .logo {
+    padding: 0 20px 16px;
+    font-size: 11.5px;
+    color: var(--muted);
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 12px;
+    line-height: 1.5;
+  }
+
+  #sidebar .logo strong {
+    display: block;
+    font-size: 12.5px;
+    color: var(--accent);
+    margin-bottom: 4px;
+  }
+
+  #sidebar nav ul { list-style: none; }
+
+  #sidebar nav ul li a {
+    display: block;
+    padding: 7px 20px;
+    font-size: 13px;
+    color: var(--muted);
+    text-decoration: none;
+    border-left: 3px solid transparent;
+    transition: all .15s;
+    line-height: 1.45;
+  }
+
+  #sidebar nav ul li a:hover,
+  #sidebar nav ul li a.active {
+    background: var(--accent-light);
+    color: var(--accent);
+    border-left-color: var(--accent);
+  }
+
+  #sidebar nav ul li.sub a {
+    padding-left: 34px;
+    font-size: 12.5px;
+  }
+
+  /* ── 메인 콘텐츠 ── */
+  #main {
+    margin-left: var(--sidebar-width);
+    max-width: 820px;
+    padding: 48px 52px 80px;
+    width: calc(100% - var(--sidebar-width));
+  }
+
+  /* ── 논문 헤더 ── */
+  .paper-header {
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 28px;
+    margin-bottom: 36px;
+  }
+
+  .paper-title-ko {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--accent);
+    line-height: 1.4;
+    margin-bottom: 8px;
+  }
+
+  .paper-title-es {
+    font-size: 14px;
+    color: var(--muted);
+    font-style: italic;
+    margin-bottom: 20px;
+  }
+
+  .paper-doi {
+    font-size: 12.5px;
+    color: var(--muted);
+    margin-bottom: 14px;
+  }
+
+  .authors {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 14px;
+  }
+
+  .author-item {
+    font-size: 14px;
+  }
+
+  .author-name { font-weight: 600; }
+
+  .author-affil {
+    font-size: 12.5px;
+    color: var(--muted);
+  }
+
+  .journal-info {
+    font-size: 12px;
+    color: var(--muted);
+    border-top: 1px solid var(--border);
+    padding-top: 10px;
+    margin-top: 14px;
+  }
+
+  /* ── 섹션 ── */
+  section { margin-bottom: 44px; scroll-margin-top: 24px; }
+
+  h2 {
+    font-size: 18px;
+    color: var(--accent);
+    margin-bottom: 16px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  h3 {
+    font-size: 16px;
+    color: var(--text);
+    margin: 24px 0 10px;
+    font-weight: 700;
+  }
+
+  p { margin-bottom: 14px; text-align: justify; }
+
+  /* ── 초록 박스 ── */
+  .abstract-box {
+    background: var(--accent-light);
+    border-left: 4px solid var(--accent);
+    padding: 20px 24px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+  }
+
+  .abstract-box p { margin-bottom: 10px; }
+  .abstract-box p:last-child { margin-bottom: 0; }
+
+  .keywords {
+    font-size: 13.5px;
+    color: var(--muted);
+    margin-top: 10px;
+  }
+
+  .keywords strong { color: var(--text); }
+
+  /* ── 표 ── */
+  .table-wrap {
+    overflow-x: auto;
+    margin: 20px 0;
+  }
+
+  .caption {
+    font-size: 13.5px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--accent);
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13.5px;
+  }
+
+  thead tr { background: var(--table-head); }
+
+  th, td {
+    border: 1px solid var(--border);
+    padding: 8px 12px;
+    text-align: center;
+  }
+
+  th { font-weight: 700; color: var(--accent); }
+
+  td:first-child { text-align: left; font-weight: 600; }
+
+  tbody tr:nth-child(even) { background: #f7f9fb; }
+
+  .table-source {
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 5px;
+  }
+
+  /* ── 그래프 플레이스홀더 ── */
+  .figure-placeholder {
+    background: #f0f4f8;
+    border: 1px dashed var(--border);
+    border-radius: 6px;
+    padding: 20px 24px;
+    margin: 20px 0;
+    font-size: 13px;
+    color: var(--muted);
+  }
+
+  .figure-placeholder .fig-title {
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 6px;
+  }
+
+  /* ── 인용 블록 ── */
+  blockquote {
+    border-left: 3px solid var(--border);
+    margin: 16px 0 16px 24px;
+    padding: 8px 16px;
+    color: var(--muted);
+    font-style: italic;
+    font-size: 14.5px;
+  }
+
+  /* ── 참고문헌 ── */
+  .ref-list { list-style: none; }
+  .ref-list li {
+    font-size: 13.5px;
+    margin-bottom: 12px;
+    padding-left: 24px;
+    text-indent: -24px;
+    line-height: 1.7;
+  }
+
+  /* ── 맨 위로 ── */
+  .to-top {
+    display: inline-block;
+    margin-top: 30px;
+    font-size: 13px;
+    color: var(--accent);
+    text-decoration: none;
+    border: 1px solid var(--accent);
+    padding: 5px 14px;
+    border-radius: 4px;
+    transition: background .15s;
+  }
+  .to-top:hover { background: var(--accent); color: #fff; }
+
+  /* 반응형 */
+  @media (max-width: 900px) {
+    #sidebar { display: none; }
+    #main { margin-left: 0; max-width: 100%; padding: 24px 20px 60px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══════════════════ 사이드바 ══════════════════ -->
+<aside id="sidebar">
+  <div class="logo">
+    <strong>역사 교육 &amp; 가치관 연구</strong>
+    Ortuño · Bellatti · Molina (2025)<br>
+    <em>Revista de Educación</em>, 408
+  </div>
+  <nav>
+    <ul>
+      <li><a href="#top">📄 논문 정보</a></li>
+      <li><a href="#abstract-ko">초록 (한국어)</a></li>
+      <li><a href="#abstract-en">초록 (영어)</a></li>
+      <li><a href="#intro">1. 서론</a></li>
+      <li><a href="#estado">2. 선행연구 검토</a></li>
+      <li><a href="#metodologia">3. 연구 방법</a></li>
+      <li class="sub"><a href="#muestra">3-1. 연구 참여자</a></li>
+      <li class="sub"><a href="#instrumentos">3-2. 연구 도구</a></li>
+      <li class="sub"><a href="#procedimiento">3-3. 분석 절차</a></li>
+      <li><a href="#resultados">4. 연구 결과</a></li>
+      <li class="sub"><a href="#cambio">4-1. 변화/자극</a></li>
+      <li class="sub"><a href="#logro">4-2. 성취</a></li>
+      <li class="sub"><a href="#benevolencia">4-3. 자애/선의</a></li>
+      <li class="sub"><a href="#poder">4-4. 권력</a></li>
+      <li class="sub"><a href="#universalismo">4-5. 보편주의</a></li>
+      <li class="sub"><a href="#autodireccion">4-6. 자율</a></li>
+      <li><a href="#discusion">5. 논의</a></li>
+      <li><a href="#conclusion">6. 결론</a></li>
+      <li><a href="#financiacion">7. 연구비 지원</a></li>
+      <li><a href="#referencias">8. 참고문헌</a></li>
+      <li><a href="#anexo">9. 부록</a></li>
+    </ul>
+  </nav>
+</aside>
+
+<!-- ══════════════════ 메인 ══════════════════ -->
+<main id="main">
+
+<!-- 논문 헤더 -->
+<div class="paper-header" id="top">
+  <div class="paper-title-ko">가치와 역사 교육:<br>예비교사의 역사적 유의성에 관한 사회적 표상</div>
+  <div class="paper-title-es">Valores y enseñanza de la historia. La representación social de relevancia histórica en docentes en formación</div>
+  <div class="paper-doi">https://doi.org/10.4438/1988-592X-RE-2024-408-XXX</div>
+  <div class="authors">
+    <div class="author-item">
+      <span class="author-name">Jorge Ortuño Molina</span>
+      <span class="author-affil"> — https://orcid.org/0000-0002-4665-4910</span><br>
+      <span class="author-affil">Universidad de Murcia (무르시아 대학교)</span>
+    </div>
+    <div class="author-item">
+      <span class="author-name">Ilaria Bellatti</span>
+      <span class="author-affil"> — https://orcid.org/0000-0002-9619-7199</span><br>
+      <span class="author-affil">Universidad de Barcelona (바르셀로나 대학교)</span>
+    </div>
+    <div class="author-item">
+      <span class="author-name">Sebastián Molina Puche</span>
+      <span class="author-affil"> — https://orcid.org/0000-0003-1469-2100</span><br>
+      <span class="author-affil">Universidad de Murcia (무르시아 대학교)</span>
+    </div>
+  </div>
+  <div class="journal-info">
+    <em>Revista de Educación</em>, 408호, 2025년 4~6월, pp. 159–192 ·
+    접수: 2023. 09. 06. / 승인: 2024. 05. 06.
+  </div>
+</div>
+
+
+<!-- ══ 초록 (한국어) ══ -->
+<section id="abstract-ko">
+  <h2>초록</h2>
+  <div class="abstract-box">
+    <p>역사 교육은 그 자체로 어떤 교육적 목적을 추구하는가를 내포하는 내용 선정 과정을 수반하며, 동시에 인물과 사건을 다루는 방식에는 감정과 가치를 포함하는 의미 생성 과정이 포함된다. 이에 본 연구에서는 예비 초등교사들이 세계사의 중요 사건과 인물에 관해 갖는 사회적 표상을 분석하여, 해당 내용과 연관된 어떤 가치가 지배적으로 나타나는지를 살펴보고자 하였다. 이를 위해 기술적 비실험 혼합 연구 설계를 채택하였다. 연구에는 2020~2021학년도 및 2021~2022학년도에 무르시아 대학교와 바르셀로나 대학교의 초등교육학과에 재학 중인 학생 202명이 참여하였다.</p>
+    <p>설문지는 5명의 역사 인물 또는 사건이 연상시킬 수 있는 단어-자극을 통한 연상적 접근 방식으로 설계되었다. 참여자들이 역사적으로 중요하다고 간주하는 것의 특성은 남성중심적·정치적·사회중심적 시각이 지배적이라는 점에서 스페인 국내 연구뿐 아니라 유럽 및 라틴아메리카 맥락의 연구들과 공통된 양상을 보인다. 또한 인물과 사건에 결부된 가치를 분석한 결과, 진보(전진)의 관념과 성취의 관념이 두드러지게 나타났으며, 이는 인물 및 사건의 역사적 맥락과 무관하게 추적 가능한 현재적 가치관에 해당하는 것들임을 알 수 있었다.</p>
+    <p>본 연구에서 개략적으로 제시한 내용은, 역사 교육의 전략을 재검토하는 데 활용될 수 있다. 특히 다관점성(multiperspectiva)을 보다 강조하고, 역사적 인물과 사건의 맥락화에 더 큰 비중을 두며, 지나치게 현재적인 지배적 가치관을 부각시키기 위해 전통적으로 침묵해 온 역사 속 인물들에게 목소리를 부여하는 방향으로 나아가야 할 것이다.</p>
+    <div class="keywords"><strong>핵심어:</strong> 역사 교육, 사회적 표상, 역사적 유의성, 교사 양성, 역사 문화, 가치관</div>
+  </div>
+</section>
+
+
+<!-- ══ 초록 (영어) ══ -->
+<section id="abstract-en">
+  <h2>Abstract (영어 원문)</h2>
+  <div class="abstract-box">
+    <p>The teaching of history involves a process of content selection that implies educational purposes, while the treatment of characters and events involves processes of creation of meanings that include emotions and values. Therefore, this paper analyzes the social representation of prospective teachers of Primary Education on historical significance of universal history to seek which values are associated with the indicated contents. To this purpose, a non-experimental descriptive mixed design has been chosen. The study involved 202 students of the Primary Education programs at the universities of Murcia and Barcelona in the 2020-2021 and 2021-2022 academic years. The questionnaire has been designed with an associative approach by means of words-stimuli that 5 characters or events could evoke. The characteristics of what is considered historically relevant by the participants show an image shared with other studies, both national and in the European and Latin American context, in which an androcentric, political and sociocentric vision predominates. In addition, the analysis of the values associated with characters and events shows a predominance of the idea of progress (advancement) as well as that of achievement, which correspond mostly to current values, and that can be traced independently of the historical context of characters and events. What is outlined in this work can serve to rethink strategies for history teaching where more emphasis is placed on multiperspective, a greater weight in the contextualization of historical characters and events, and in giving voice to characters of history who have traditionally been silenced to highlight dominant values more typical of contemporaneity than of true weight, meaning and sense of past events.</p>
+    <div class="keywords"><strong>Keywords:</strong> History education, social representation, historical significance, teacher training, Historical Culture, values.</div>
+  </div>
+</section>
+
+
+<!-- ══ 서론 ══ -->
+<section id="intro">
+  <h2>1. 서론</h2>
+  <p>학교 역사 교육의 내용 선정은 언제나 논쟁적인 주제였다. 그런데 스페인에서 2006년 교육기본법(Ley Orgánica 2/2006 de Educación)을 개정하는 2020년 제3/2020호 법률이 그 내용을 충분히 구체화하지 않음으로써, 언론—특히 학생들이 우리나라 공통 역사를 형성해 온 주요 이정표들을 잃어버릴 수 있다고 경고하는 매체들—의 주목을 받게 되었다. 더불어 스페인 왕립역사학술원(Real Academia de la Historia, 이하 RAH)도 이에 주목하였다. RAH는 이전 역사적 과정에 비해 현대사가 지나치게 비중 있게 다루어지고, 사회학·정치학·경제학적 내용 대신 역사 고유의 내용이 충분히 반영되지 않는다고 비판하였다. 또한 역사와 기억을 구별하는 것이 필요하다고 주장하면서, 기억의 주관적이고 가변적인 성격이 결여하고 있는 과학적 지위를 역사에 부여해야 한다고 강조하였다(RAH, 2022).</p>
+
+  <p>무엇을 가르칠 것인가를 둘러싼 역사 교육 내용 논쟁은 실질적으로 어떤 교육적 목적을 추구할 것인가의 문제를 내포한다. 그렇다면 역사 교육은 과연 그것이 실시·소비되는 사회문화적 맥락과 유리되거나 무관했던 적이 있었는가? 지금까지 역사에서 중요하다고 간주된 것들은 어떻게 선정되어 왔는가? 그리고 거기에 어떤 의미가 부여되어 왔는가? 이러한 질문들 앞에서, 우리는 스페인의 예비 초등교사들—역사가 교육과정에서 비중 있는 비중을 차지하기 시작하는 첫 단계의 교사들—이 역사에서 중요하다고 간주되는 것에 관해 어떤 시각을 갖고 있는지를 분석해야 할 필요성을 인식하게 되었다. 이 문제에 답하기 위해, 우리는 무르시아 대학교와 바르셀로나 대학교 예비교사들이 역사적 유의성을 어떻게 구성하는지를 분석하고, 그 일치 정도와 시사점을 확인하는 연구를 수행하였다.</p>
+
+  <p>이러한 초기 문제의식으로부터, 본 연구는 다음의 구체적 연구 목표를 설정하였다:</p>
+  <ul style="margin: 10px 0 14px 24px; line-height: 2;">
+    <li>참여자(예비교사)들이 중요하다고 간주하는 역사적 인물, 사실, 사건의 특성을 파악한다.</li>
+    <li>참여자들이 가장 많이 언급하는 역사적 인물, 사실, 사건에 부여된 의미를 기술한다.</li>
+  </ul>
+</section>
+
+
+<!-- ══ 선행연구 ══ -->
+<section id="estado">
+  <h2>2. 선행연구 검토</h2>
+  <p>역사 교육을 위한 교수설계에서 학습 내용의 사회적 의미 분석은 흔히 부차적인 것으로 취급된다. 그 이유는 아마도 역사적 사고 교육에 대한 강조(Gómez, Ortuño & Miralles, 2018)처럼 객관적이라고 여겨지는 것과 교육적 형식 교육에 국한되어야 한다고 생각되는 것을, 교육 장면 밖에서의 역사 소비 방식(Seixas, 2016)과 분리시키는 경향 때문일 것이다. 그러나 학생들은 공식 교육에 진입할 때 이미 역사적 지식에서 자유롭지 않다. 학생들은 자신들이 속한 집단이 과거를 해석·전달·변용하는 방식에 의해 형성되는 역사 문화를 이미 체득한 상태이며, 이는 집단의 응집력과 정체성을 위해 활용된다(Grever & Adriaansen, 2017). 학교 자체(교사, 교육법 등) 또한 이러한 역사 문화에서 벗어나 있지 않으며, 오히려 그러한 정체성 요소 생성의 도구로 기능한다. 이러한 인식 아래, 역사적 방법론 교육만으로는 역사적 지식에 대한 비판적 사고를 함양할 수 없다는 문제의식이 제기되면서, 역사 내용(과정, 인물 등)에 대한 학생들의 의미 구성 방식을 이해하는 것이 중요해지기 시작하였다(Epstein & Peck, 2019; Levesque & Croteau, 2020). 스페인의 경우, 이미 이 방향의 연구들이 축적되어 있다. 예를 들어 Arias & Egea(2019), Ibagón, Maquilón & Miralles(2021), Rivero, Navarro & Aso(2022)의 연구는 예비교사와 중등학생들이 가장 중요하게 여기는 역사 인물의 특성을 추적하였다. 또한 Mugueta(2016), Ortega & Pagès(2017), Rivero & Pelegrín(2019), Ortuño, Molina & Maquilón(2024)의 연구들은 과거의 여러 측면에 관한 공유된 시각 속에서 주제 혹은 가치를 통해 의미를 심층적으로 탐구함으로써, 역사 학습에서 사회문화적 맥락의 이해와 영향에 대한 논의를 열어 두었다.</p>
+
+  <p>이러한 맥락 연구는 역사 교과의 의미 있는 학습이 어떻게 생성되는지를 이해하는 데 도움이 된다. 맥락은 역사에 부여되는 의미에 영향을 미치며, 과거의 내용을 현재를 정당화하고 미래가 어떠해야 하는지를 상상하는 데 활용할 수 있는 가능성을 열어 주기 때문이다(Fronza, 2016). 한 집단이 공유하는 과거의 시각은 사회적 표상—집단 기억의 담지자—으로 전환될 수 있다. 따라서 역사의 사회적 표상 분석은 역량 교육의 차원에서 의미를 가진다. 과거의 활용이 상식적 지식과 연결되기 때문인데, 이 상식적 지식은 "개인을 즉각적인 맥락 속에서 안내하고, 물리적 세계에의 적응과 사회적 상호작용의 통합을 가능하게 하며, 서로 다른 집단에의 귀속감에 의문을 제기하도록 한다"(Delfino, Sosa, Bobowik & Zubieta, 2020, p. 70).</p>
+
+  <p>사회적 표상은 어떤 요소를 그대로 재현하는 것이 아니라, 주체가 그 요소를 해석하는 것이다(Jodelet, 2011). 따라서 역사적 사회적 표상에 대해 이야기할 때, 우리는 과거에 대한 접근이 아니라, 과거를 현재를 정당화하고 집단 내 필요한 정체성 유대를 창출하는 데 사용하는 집단 가치 체계로부터 과거를 재구성하는 것을 의미한다(Banchs, 2000). 이런 방식으로 사회적 표상은 한 집단이 시간의 흐름 속에서 지속성을 유지하도록 보장한다(Castorina, 2017). 나아가 역사적 사회적 표상 분석은 역사 지식을 단순히 역사에 관한 학습이 아니라 역사에 대한 학습으로 확장하는 역량 교육에도 기여한다. 구체적으로, 역사 교육을 역사적 사고 교수법적 접근으로 가르치는 핵심 개념 중 하나인 역사적 유의성(relevancia histórica)을 추적할 수 있는 가능성을 말한다(Seixas & Morton, 2013; Domínguez, 2015; Gómez, Ortuño & Miralles, 2018). 이런 의미에서, 역사 내용이 수많은 과거의 사실 및 인물들 중에서 선별된다는 것, 그리고 그것들이 서사(narrative) 속에 편입될 때 비로소 원인과 결과의 연결 속에서 부여된 역할과 구성된 서사적 논거에 따라 의미를 획득한다는 것(Jenkins, 2006)을 학생들이 인식하는 것이 중요하다.</p>
+
+  <p>학교 역사 교육은 역사적 방법의 교수와 부여된 의미 분석이 상호작용하면서, 우리가 실제로 누구이며 그 과거를 어떻게 다루고 싶은지에 대한 보다 비판적인 사고를 함양하는 장이 될 수 있다(Straub, 2005; Seixas, 2012, 2016; Clark & Peck, 2018). 이를 위해서는, 역사적 과정·사실·인물을 확인하는 교수법적 접근(마스터 내러티브에서 전형적인 1차 개념)과 이를 분석·해석하는 접근(인과관계와 사료를 이해하는 2차 개념)만으로는 부족하며, 우리가 무엇을 공부하는지, 왜 공부하는지, 무엇을 위해 활용하는지를 스스로에게 묻도록 하는 존재론적 요소도 도입해야 한다(Alvén, 2021). 그럼에도 불구하고 우리는 의미 생성 과정을 포함하고 감정과 이데올로기를 담은 이른바 3차 개념을 여전히 간과하고 있다(Edling, Löfström & Ammert, 2021). 이를 의식하는 것은 자기성찰을 촉진하고, 현재 우리의 행동을 조건 짓고 미래를 지향하는 개인의 가치관을 이해하는 데 도움이 될 것이며, 이러한 가치관은 학습된 역사 내용에서도 추적 가능하다(Spanget, 2013). 그리고 우리가 역사 교육과 결부시키고 있는 가치가 인간 존엄성, 보편주의, 자연과 인간 존재들 사이의 헌신에 관한 가치들을 포함하거나 장려해야 하는 것은 아닌지 재고할 필요가 있다. 이러한 가치들은 아무리 엄밀한 역사서술에서도 발견될 수 있는 것들이다(Rüsen, 2012). 그러기 위해서는 우리가 과거에 투영하는 사회문화적 맥락의 방식을 도입해야 하며, 이것이 결국 현재의 행동 변화에 대한 저항을 낳는다는 점을 직시해야 한다. 기후 위기와 무한 경제 성장이라는 지속 불가능한 관념은, 교육이 새로운 세대에게 환경 및 우리 자신과의 관계 방식을 변화시켜야 한다는 인식을 심어 줄 것을 요구하고 있다. 우리는 인간의 삶과 자연을 분리하여 서로 다른 관점에서 분석하는 인간중심적 과거 시각을 갖고 있으나(Nordgren, 2021), 실제로 인간의 삶은 우리가 삶의 계획을 펼쳐 나가는 자연에서 분리될 수 없다.</p>
+</section>
+
+
+<!-- ══ 연구 방법 ══ -->
+<section id="metodologia">
+  <h2>3. 연구 방법</h2>
+  <p>본 연구에서는 질적·양적 데이터 분석 방법을 결합한 비실험 설계를 채택하였다. 혼합 연구 방법은 사회과학 연구, 특히 교육 연구에서 내러티브와 통계를 결합한 내용 분석을 가능하게 함으로써 보다 설득력 있는 설명을 제공한다(O'Connor, 2019). 개방형 응답 분석을 위해서는, 특정 질문에 대한 지식을 참여자들의 응답에 담긴 의미를 탐색함으로써 얻기에 적합한 질적 전통의 기술적 현상학적 설계를 채택하였다(Kim, Sefcik & Bradway, 2017).</p>
+
+  <section id="muestra">
+    <h3>3-1. 연구 참여자</h3>
+    <p>참여자 선정은 의도적 표집 방식으로 이루어졌다. 이는 미래의 학교 교육 주체들이 교실에서 행동하거나 의사결정을 내리는 데 활용할 역사에 대한 시각을 포착할 수 있기 때문이다(McCrum, 2013). 참여자들은 대체로 유사한 특성을 지닌 집단으로(비의무교육 단계의 학생, 지적 관심과 기본적인 역사적 소양을 갖춘 이들), 표집은 의도적으로 이루어졌다. 사회적 표상은 개인 인터뷰를 통해 연구되기는 하지만, 연구의 주체는 개인이 아니라 사회 집단이라는 점을 강조할 필요가 있다. 따라서 연구 대상자들과 집단이 처한 사회문화적 맥락이 최대한 유사할 수 있도록 의도적 표집이 이루어졌다(Gutiérrez-Vidrio, 2019).</p>
+
+    <p>본 연구에는 2020년과 2021년도에 두 개 국립 대학교(무르시아 대학교 및 바르셀로나 대학교)의 초등교육학과에 재학 중인 학생 202명이 참여하였다. 평균 연령은 20.54세(표준편차 SD = 1.96)이며, 연령 범위는 19세에서 26세였다. 대다수인 168명(83.16%)이 여성이었고, 44명(21.78%)이 남성이었다. 설문 실시 시점에 재학 중이었던 학년과 관련하여, 133명이 학부 2학년이라고 응답(65.84%)하였고, 69명이 2학년 재학 중이라고 응답(34.15%)하였다. 참여자 정보는 표 I에서 확인할 수 있다.</p>
+
+    <div class="table-wrap">
+      <div class="caption">표 I. 응답자의 성별, 소속 대학교, 연도에 따른 참여자 분포 (연구자 자체 작성)</div>
+      <table>
+        <thead>
+          <tr>
+            <th></th>
+            <th colspan="2">2020년</th>
+            <th colspan="2">2021년</th>
+          </tr>
+          <tr>
+            <th></th>
+            <th>무르시아 대학교</th>
+            <th>바르셀로나 대학교</th>
+            <th>무르시아 대학교</th>
+            <th>바르셀로나 대학교</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>남성</td><td>13</td><td>7</td><td>20</td><td>4</td></tr>
+          <tr><td>여성</td><td>31</td><td>42</td><td>40</td><td>45</td></tr>
+        </tbody>
+      </table>
+      <div class="table-source">출처: 연구자 자체 작성</div>
+    </div>
+  </section>
+
+  <section id="instrumentos">
+    <h3>3-2. 연구 도구</h3>
+    <p>정보 수집을 위해 ad hoc 설문지를 제작하였다. 설문지에서 참여자들은 인류 역사에서 중요하고 유의하다고 생각하는 역사 인물 또는 사건 5개를 긍정적·부정적 가치 모두를 포함하여 자유롭게 기술하도록 하였다. Abric(2001)이 지적하듯, 설문지는 인터뷰와 달리 양적 관점을 도입할 수 있어 응답의 구성을 파악하고 주관적 편향을 줄이기 위한 표준화(주제별 표현 표준화, 주제 순서, 응답 방식 등)가 가능하다. 의미 파악을 위해 설문지는 연상적 접근 방식을 채택하였는데, 해당 인물이나 사건이 연상시킬 수 있는 단어-자극을 유도함으로써 의미론적 지도의 구조를 탐색하고자 하였다. Gutiérrez-Vidrio(2016)가 밝히듯, 단순해 보이는 이 방식—어떤 대상(본 연구에서는 역사 인물이나 사건)에 단어를 연상시키는 것—은 높은 수준의 추상성을 수반하며, 그 자발적이고 통제가 덜 된 특성은 연구 대상의 의미론적 세계를 구성하는 요소들에 훨씬 빠르고 용이하게 접근하도록 한다. 이러한 유형의 도구는 역사의 사회적 표상 연구에서 유효한 것으로 검증되어 있다(Liu & Hilton, 2005; Zubieta & Barreiro, 2014). 참여자들이 사용한 형용사, 명사, 동사(원형)는 참여자 자신의 자유로운 선택에 의해 결정된 것으로, 사용된 형태와 용어의 다양성이 매우 풍부하게 나타났다. 분석 과정의 명확성을 위해 참여자들이 사용한 모든 변형(명사, 형용사, 동사)을 하나의 단어로 통합하는 정보 축약 작업을 수행하였다(부록 참조). 부록에는 예시 어휘만 제시되지만, 어떤 인물이나 사건(본 연구에서 '사례'로 분류)과 연관된 해당 특성의 반복 횟수를 산출할 때에는 모든 변형의 빈도가 반영되었다.</p>
+  </section>
+
+  <section id="procedimiento">
+    <h3>3-3. 분석 절차</h3>
+    <p>데이터 분석을 위해 질적 분석 소프트웨어 NVivo 1.6을 활용하였다. 이 프로그램은 질적·양적 분석 기법을 동시에 결합할 수 있기 때문이다. 이를 위해 평가 대상(인물·사건)에 대한 가치 평가를 내리는 주체의 프로필, 대상의 속성, 대상에 대한 평가라는 세 가지 큰 코드 범주를 생성하였다. 이를 통해 표상 분석에 필요한 두 가지 유형의 작업을 수행하였다. 첫째, 표상 대상(역사적 과정, 사건, 인물)의 구성을 그 내부 유형 분류를 통해 수행하였다. 또한 참여자의 인구통계학적 정보 코드(성별, 소속 대학교, 참여 연도)도 활용하였다. 역사 인물과 사건은 '사례'로 분류되었으며, 각각에 네 가지 속성이 추가되었다(표 III 및 IV 참조). 지리적·시간적 코딩은 전통적인 세기별 구분과 인물의 활동 시기라는 관례적 기준을 바탕으로 이루어졌다.</p>
+
+    <p>두 번째 작업(가치 투영)과 관련하여, 호칭들을 Schwartz & Boehnke(2004)의 보편적 가치 이론에 따라 코딩하였다. 이 이론에서 가치란 "행동과 판단의 지침으로 작용하는 감정에 결부된 신념으로, 우선순위와 중요도 순으로 배열될 수 있으며, 각 개인 고유의 가치 체계를 구성한다"(Páez, 2014, p. 136)고 개념화된다. 결정적인 측면은 이것들이 동기적 유형으로 간주될 수 있다는 점으로, 각 가치는 추구해야 할 목표와 목적을 반영한다. 이는 사회적 표상이 역사에서 중요하다고 간주되는 것의 의미를 이해하는 데 도움이 된다는 본 연구의 주장을 뒷받침하는데, 참여자들이 인물들로 하여금 자신들의 행동을 이끌고 기억하고 학습할 자격을 부여하는 가치가 무엇인지를 확인하기 때문이다. 부록에서는 우리가 가치와 연결 지은 특성들의 목록을, 표 II에서는 Schwartz & Boehnke(2004)가 제시한 정의를 확인할 수 있다.</p>
+
+    <div class="table-wrap">
+      <div class="caption">표 II. Schwartz & Boehnke(2004)의 가치 정의</div>
+      <table>
+        <thead>
+          <tr><th>가치</th><th>정의</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>자율(Autodirección)</td><td>독립적 사고와 행동, 선택, 창조 또는 탐구</td></tr>
+          <tr><td>자애(Benevolencia)</td><td>일상적으로 접촉하는 사람들의 안녕 보존 및 증진</td></tr>
+          <tr><td>순응(Conformidad)</td><td>다른 이들을 불쾌하게 하거나 해칠 가능성이 있으며 사회적 기대나 규범을 위반할 수 있는 행동·욕구·충동의 절제·억제</td></tr>
+          <tr><td>자극(Estimulación)</td><td>삶의 새로움, 매력, 변화</td></tr>
+          <tr><td>쾌락(Hedonismo)</td><td>자신을 위한 쾌락 또는 감각적 만족</td></tr>
+          <tr><td>성취(Logro)</td><td>사회적 기준에 부합하는 역량 증명을 통한 개인적 성공</td></tr>
+          <tr><td>권력(Poder)</td><td>사회적 지위와 위신, 타인 또는 자원에 대한 통제·지배</td></tr>
+          <tr><td>안전(Seguridad)</td><td>사회 및 관계의 안전·조화·안정성, 자기 자신의 것도 포함</td></tr>
+          <tr><td>전통(Tradición)</td><td>문화나 종교가 제공하는 전통과 이념에 대한 존중·헌신·수용</td></tr>
+          <tr><td>보편주의(Universalismo)</td><td>모든 사람과 자연의 안녕에 대한 이해·감사·관용·보호</td></tr>
+        </tbody>
+      </table>
+      <div class="table-source">출처: Schwartz & Boehnke, 2004</div>
+    </div>
+
+    <p>이 데이터를 분석할 때 고려해야 할 점은, 응답자들이 인물 또는 사건을 자유롭게 선택할 수 있는 항목이 5개(각 선택에 연관된 가치 1개씩)였다는 것이다. 이는 분석해야 할 항목이 1,015개에 이르며, 각각 해당 호칭이 수반된다는 것을 의미한다. 반복 없이 기록된 사례만을 살펴보면, 그 수는 232개(반복을 제외한 고유 인물 또는 사건)로 집계된다. 이 수치는 연구를 진행할 수 있는 근거가 되었다. 가능한 사례의 23%만으로 표본이 포화 상태에 달했으며, 역사적 측면에서 중요하다고 간주되는 것을 상징화할 수 있는 구체적인 대상이 존재함을 보여 주었다.</p>
+  </section>
+</section>
+
+
+<!-- ══ 연구 결과 ══ -->
+<section id="resultados">
+  <h2>4. 연구 결과</h2>
+  <p>첫 번째 연구 목표와 관련하여, 표 III과 IV에서 확인할 수 있듯이, 소속 대학교별 집단의 응답과 응답자의 성별은 선정된 인물의 유형(주로 정치·군사 인물), 지리적 귀속, 인물의 성별 측면에서 유의미한 차이를 보이지 않았다. 인류의 역사에서 중요도를 기준으로 어떤 시대와 지역의 인물이든 선택할 수 있었음에도 불구하고, 응답은 의무교육 단계의 교육과정 패턴을 따라 유럽 및 스페인과 연관된 인물에 집중되었다. 또한 선정된 인물의 49.6%가 남성이었고, 여성 인물은 22%, 역사적 사건 또는 과정을 지명한 경우는 28.4%였다. 역사 인물과 사건의 시대적 분포는 20세기(48.7%)가 압도적으로 많았으며, 19세기(10.3%)와 21세기(10.8%)의 사건 및 인물 비율을 합산하면 근현대사가 여타 역사 시대를 압도함을 알 수 있다. 주목할 점은, 여성 응답자가 남성 응답자보다 여성 역사 인물을 더 많이 선택한다는 것이다(표 V 참조). 여성 응답자는 36.3%의 비율로 여성 역사 인물을 선택한 반면, 남성 응답자는 16.4%에 그쳤다. 마지막으로 두 대학교와 다른 연도의 설문지에서 나타난 인물과 사건 사이에는 높은 일치도가 나타났다(그래프 I).</p>
+
+  <div class="table-wrap">
+    <div class="caption">표 III. 대학교별 인물/사건 유형 분류</div>
+    <table>
+      <thead>
+        <tr>
+          <th>대학교</th>
+          <th>사건</th>
+          <th>정치·군사</th>
+          <th>사상가·철학자</th>
+          <th>과학자</th>
+          <th>활동가</th>
+          <th>예술가</th>
+          <th>기술</th>
+          <th>작가</th>
+          <th>탐험가</th>
+          <th>종교인</th>
+          <th>정치 이념</th>
+          <th>기업인</th>
+          <th>운동선수</th>
+          <th>합계</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>바르셀로나대(UB)</td><td>31</td><td>43</td><td>7</td><td>23</td><td>9</td><td>16</td><td>2</td><td>8</td><td>2</td><td>4</td><td>2</td><td>2</td><td>1</td><td>150</td></tr>
+        <tr><td>무르시아대(UMU)</td><td>47</td><td>39</td><td>8</td><td>17</td><td>7</td><td>13</td><td>1</td><td>7</td><td>2</td><td>3</td><td>1</td><td>3</td><td>2</td><td>150</td></tr>
+        <tr><td><strong>합계</strong></td><td>61</td><td>67</td><td>11</td><td>26</td><td>11</td><td>24</td><td>2</td><td>12</td><td>3</td><td>5</td><td>2</td><td>5</td><td>3</td><td>232</td></tr>
+      </tbody>
+    </table>
+    <div class="table-source">출처: 연구자 자체 작성</div>
+  </div>
+
+  <div class="table-wrap">
+    <div class="caption">표 IV. 대학교별 인물/사건의 지리적 분포</div>
+    <table>
+      <thead>
+        <tr><th>대학교</th><th>유럽</th><th>스페인</th><th>세계</th><th>미국</th><th>아시아</th><th>아프리카</th><th>라틴아메리카</th><th>합계</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>바르셀로나대(UB)</td><td>55</td><td>34</td><td>16</td><td>26</td><td>6</td><td>5</td><td>7</td><td>149</td></tr>
+        <tr><td>무르시아대(UMU)</td><td>54</td><td>35</td><td>22</td><td>28</td><td>6</td><td>2</td><td>4</td><td>150</td></tr>
+        <tr><td><strong>합계(중복 제외)</strong></td><td>78</td><td>59</td><td>26</td><td>45</td><td>9</td><td>6</td><td>9</td><td>232</td></tr>
+      </tbody>
+    </table>
+    <div class="table-source">출처: 연구자 자체 작성</div>
+  </div>
+
+  <div class="table-wrap">
+    <div class="caption">표 V. 응답자 성별에 따른 역사 인물 성별 분류</div>
+    <table>
+      <thead>
+        <tr><th>응답자 성별</th><th>선정 인물 = 여성</th><th>선정 인물 = 남성</th><th>합계</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>남성</td><td>13</td><td>66</td><td>79</td></tr>
+        <tr><td>여성</td><td>48</td><td>84</td><td>132</td></tr>
+        <tr><td><strong>합계(중복 제외)</strong></td><td>51</td><td>115</td><td>166</td></tr>
+      </tbody>
+    </table>
+    <div class="table-source">출처: 연구자 자체 작성</div>
+  </div>
+
+  <div class="figure-placeholder">
+    <div class="fig-title">그래프 I. 대학교별·연도별 가장 많이 인용된 인물 및 사건</div>
+    <p>그래프는 무르시아 대학교(N=101: 2020년 그룹 N=45, 2021년 그룹 N=56)와 바르셀로나 대학교(N=101: 2020년 그룹 N=49, 2021년 그룹 N=52)에서 학생의 최소 4%, 7%, 10% 이상이 응답한 인물 및 사건을 네트워크 형식으로 시각화한 것이다. 두 대학교에서 공통적으로 상위에 등장하는 인물로는 알베르트 아인슈타인, 아돌프 히틀러, 크리스토퍼 콜럼버스, 마리 퀴리, 프리다 칼로, 나폴레옹, 프란시스코 프랑코, 마르틴 루터 킹, 마리아 클라라 캄포아모르, 프란시스코 캄포아모르, 넬슨 만델라 등이 포함된다. 주요 사건으로는 프랑스혁명, 산업혁명, 제2차 세계대전 등이 있다.</p>
+    <div class="table-source">출처: 연구자 자체 작성</div>
+  </div>
+
+  <p>그러나 이러한 측면과 함께, 우리는 누가 선택되는가뿐 아니라 그 선택이 어떤 의미를 투영하는지도 살펴봐야 한다.</p>
+
+  <p>인물 또는 사건의 특성에 담긴 첫 번째 아이디어는 Schwartz & Boehnke(2004)가 제시한 표 II의 열 가지 가치 중, 세 가지 수준이 명확히 구별된다는 것이다. 첫째, 가장 빈번하게 반복되는 가치는 변화/자극, 성취/공적, 도덕적 평가(선/악), 권력이다. 둘째, 그보다 낮은 빈도로, 개인의 초월 관념 및 자율/자유 관념과 연관된 가치들이 언급된다. 셋째, 안전, 질서, 전통, 쾌락 등의 가치는 극히 주변적으로만 언급된다(부록 참조).</p>
+
+  <p>이제 아래에서 살펴볼 바와 같이, 이 가치들은 서로 결합되는 경향이 있으며 상호 연관성이 형성된다. 실제로 코딩 과정에서 단어 유사성에 따른 피어슨(Pearson) 상관계수를 고려하면(그래프 II), 인물 및 역사 사건이 참여자들에게 어떤 존재로 형상화되는지를 보다 완전하게 파악할 수 있는 연결 관계가 나타난다.</p>
+
+  <div class="figure-placeholder">
+    <div class="fig-title">그래프 II. 코딩에서의 단어 유사성에 따른 가치 연관성 덴드로그램</div>
+    <p>덴드로그램은 코딩 과정에서 단어 유사성에 기반하여 가치들이 어떻게 군집을 이루는지를 보여 준다. 분석 결과, [자애(Benevolencia)] — [권력(Poder)] — [자극(Estimulación)] — [성취(Logro)] — [자율(Autodirección)] — [보편주의(Universalismo)]의 순으로 유사성 군집이 형성되었다.</p>
+    <div class="table-source">출처: 연구자 자체 작성</div>
+  </div>
+
+  <p>참여자들이 선정한 역사 인물 및 사건에 부여된 의미를 분석하기 위해, 가장 빈번하게 반복된 가치와 그에 연관된 수식어에 초점을 맞추기로 한다. 주변적 빈도만을 보이는 가치들(안전, 질서, 전통, 쾌락)은 논의에서 제외하지만, 경우에 따라 이것들이 지배적 가치들과 연관되어 나타나는 경우가 있다.</p>
+
+  <!-- 변화/자극 -->
+  <section id="cambio">
+    <h3>4-1. 변화/자극(Cambio/estimulación)</h3>
+    <p>변화/자극의 관념은 '중요한 것'과 가장 먼저 연결되는 개념이다. 이 관념을 묘사하는 데 가장 많이 사용된 수식어는 발견(Descubrimiento), 용기(Valentía), 혁명(Revolución), 혁신(Innovación)이었다(이 네 형용사는 변화/자극과 연관된 수식어 총 179개 중 148개를 차지한다). 그리고 이 수식어들과 연관된 역사 인물로는 크리스토퍼 콜럼버스, 마리 퀴리, 프리다 칼로와 프랑스혁명, 산업혁명이 두드러졌다(그래프 III 참조). 변화의 원형으로서 이 인물들에 결부된 가치들은 성취(개인적 공적)의 관념과 상관관계를 보이며, 따라서 변화는 진보를 의미한다. 더 나아가, 변화와 진보는 자율 가치에서 드러나는 개인성의 관념과도 함께 나타난다. 사례는 다음과 같다:</p>
+
+    <blockquote>응답자 139번은 콜럼버스를 중요한 역사 인물로 평가하며 "아메리카를 발견하였기[가치=자극] 때문이며 역사에서 하나의 전진[전진으로 이해됨]이었다[가치=성취]"고 기술하였다.</blockquote>
+
+    <blockquote>응답자 148번도 콜럼버스를 "야망적인[가치=성취] 인물로, 알려진 것 너머를 발견하고 싶었고[가치=자율] 당시 사회의 규칙을 깨뜨리고자 하였기[가치=자극/변화] 때문"에 높이 평가하였다.</blockquote>
+
+    <blockquote>응답자 248번은 아인슈타인을 인용하며, "상대성이론 등 과학에서 위대한 진보를 이루었기 때문에 뛰어난 [가치=성취] 인물"이라고 하였다. "그의 동기는 세계가 어떻게 작동하는지를 이해하도록 도와줄 위대한 과학적 발견을 이루는 것이었다[가치=자극/변화]"고 기술하였다.</blockquote>
+
+    <blockquote>응답자 721번은 마리 퀴리를 인용하며 "그녀가 살았던 시대에 매우 대담했기 때문에 혁신적인[가치=자극/변화] 인물"이라고 하고, "그 대담함 덕에 같은 분야에 종사하는 다른 사람들로부터 인정을[가치=성취] 받을 수 있었다"고 기술하였다.</blockquote>
+
+    <p>변화와 자율(개인성)의 관념은, 예를 들어 응답자 51번에서 찾아볼 수 있다. 오바마를 중요한 인물로 부각시키면서 그를 "극복[가치=성취]"이라고 표현하였는데, "미국에서 하나의 전후를 만들었고[가치=자극/변화], 나는 그를 훌륭한 사람이라고 생각하며 [...] 자신이 원하는 모든 것을 위해 싸웠기[가치=자율] 때문"이라고 서술하였다.</p>
+
+    <div class="figure-placeholder">
+      <div class="fig-title">그래프 III. 자극/변화 가치와 연관된 수식어 및 인물</div>
+      <p>네트워크 그래프는 자극/변화(총 179건)를 중심으로 다음과 같은 연결 관계를 보여 준다: 발견(43건) — 크리스토퍼 콜럼버스(60건), 용기(39건), 혁명(36건) — 프랑스혁명(21건), 혁신(30건) — 산업혁명(13건), 프리다 칼로(31건), 마리 퀴리(37건), 알베르트 아인슈타인(31건), 마르틴 루터 킹, 클라라 캄포아모르, 넬슨 만델라, 바라크 오바마, 나폴레옹(20건), 시몬 드 보부아르(4건) 등.</p>
+      <div class="table-source">출처: 연구자 자체 작성</div>
+    </div>
+
+    <p>한편, 변화/자극 가치는 유럽의 아메리카 도착, 프랑스혁명과 러시아혁명, 세계대전, 미국 독립 등 높은 수준의 폭력을 수반하는 사건들이 진보, 자유 또는 초월적 가치와 같은 성취 가치들과 연관된 변화 요소로 나타난다는 사실을 주목하게 한다. 이 사건들은 실로 트라우마적인 것으로 인식되지만, 동시에 사회적 진보를 가능하게 한 결과를 낳은 것으로 인식된다(보편주의 또는 개인 초월 가치와도 연관됨). 사례는 다음과 같다:</p>
+
+    <blockquote>응답자 888번은 러시아혁명을 "혁명[가치=자극/변화]"으로 규정하며, "탁월한 혁명으로, 하나의 대의를 위한 총체적 연대[가치=보편주의]"라고 정당화하였다.</blockquote>
+
+    <blockquote>응답자 857번은 프랑스혁명을 "잔인함에도 불구하고 프랑스뿐 아니라 전 세계에 가져온 긍정적 결과들 때문에[가치=자극/변화, =성취] 필요한[가치=보편주의]" 것이었다고 기술하였다.</blockquote>
+  </section>
+
+  <!-- 성취 -->
+  <section id="logro">
+    <h3>4-2. 성취(Logro)</h3>
+    <p>가장 빈번하게 반복되는 또 다른 가치는 야망(Ambición), 천재성(Genio), 진보(Avance), 지능(Inteligente)과 같은 수식어와 연관된 성취이다. 이 수식어들은 해당 가치에 사용된 총 수식어의 66%를 차지한다. 이 경우 가장 많이 인용된 인물은 나폴레옹과 콜럼버스를 제외하면 과학계에 속하는 인물들이다. 사용된 수식어를 검토하면, 응답자들 사이에서 일정한 패턴이 나타나는 것 같다. 남성 과학자들은 주로 자질 측면에서 표현되는 반면, 여성 과학자들은 사회적 변화의 관념과 더 많이 연결된다(그래프 IV). 예를 들어 응답자 240번은 아인슈타인을 평가하며 "과학에서 매우 중요한 이론들을 발전시켰기 때문에 '지능적인'[가치=성취]" 인물이라고 하였다. 반면 마리 퀴리는 과학자로서의 역량(언급은 되지만)보다는 여성 권리 신장의 상징으로서 더 강한 의미를 갖는다. 진보, 혁명, 혁신이라는 수식어가 지능과 함께 사용된다는 것이 이를 뒷받침한다. 사례는 다음과 같다:</p>
+
+    <blockquote>응답자 720번은 마리 퀴리를 "혁신[가치=자극/변화]"으로 표현하며, "그 시대에 매우 앞서간[가치=성취] 역량 있는 여성으로 느껴지기 때문에 혁신적"이라고 하였다.</blockquote>
+
+    <blockquote>응답자 699번은 마리 퀴리를 "결연한[가치=자율]" 인물로 표현하며, "그 일로 인해 고통받으면서도 포기하지 않고 자신의 일과 과학을 위해 많은 것을 희생하였기" 때문이라고 하였다.</blockquote>
+
+    <p>또한 주목할 점은, 마리 퀴리를 중요한 인물로 지명한 두 명의 남성(남성 응답자의 5%)에 비해 35명의 여성이 마리 퀴리를 선택(여성 응답자의 21%)하였다는 사실이다. 알베르트 아인슈타인의 경우, 선택한 31명 중 25명이 여성이고 6명이 남성이었으며, 이는 남성의 15%, 여성의 15.4%에 해당한다.</p>
+
+    <p>성취 가치와 연관된 또 다른 흥미로운 아이디어는 사회적 진보를 기술적 발전과 동일시하는 것이다. 다음이 그 사례이다:</p>
+
+    <blockquote>응답자 878번은 산업혁명을 "사회와 사람들의 삶에서 총체적 변화[가치=자극/변화]를 가능하게 했기 때문에 '진보'[가치=성취]"라고 평가하였다.</blockquote>
+
+    <blockquote>응답자 884번은 산업혁명을 "훨씬 더 많은 권리를 획득[가치=보편주의]하고 새로운 노동 방식을 발견[가치=자극/변화]하는 것을 가능하게 했기 때문에 진보"라고 평가하였다.</blockquote>
+
+    <blockquote>응답자 882번은 산업혁명을 "경제, 사회, 기술 등 다양한 분야에서 위대한 진보[가치=성취]가 이루어진 새로운 시대의 시작을 의미했기 때문에 '혁신[가치=자극/변화]'"이라고 평가하였다.</blockquote>
+
+    <div class="figure-placeholder">
+      <div class="fig-title">그래프 IV. 성취/인정 가치와 연관된 역사 인물 및 사건</div>
+      <p>성취/인정(총 182건)을 중심으로 한 네트워크 그래프. 주요 연결: 크리스토퍼 콜럼버스(60건), 마리 퀴리(37건), 알베르트 아인슈타인(31건), 아이작 뉴턴(17건), 찰스 다윈(10건), 나폴레옹(30건); 수식어별로는 야망적인(24건), 천재성(29건), 지능적인(37건), 진보(40건), 이사벨 카톨릭 여왕(8건) 등이 나타난다.</p>
+      <div class="table-source">출처: 연구자 자체 작성</div>
+    </div>
+  </section>
+
+  <!-- 자애/선의 -->
+  <section id="benevolencia">
+    <h3>4-3. 자애/선의(Benevolencia)</h3>
+    <p>역사 인물 또는 사건에 대한 도덕적 평가 관념과 연관된 수식어의 경우, 살인자(asesino), 악인(malvado), 잔인한(cruel)과 같은 부정적 수식어가 두드러졌다(161건 중 115건). 이 모두가 두 역사 인물, 아돌프 히틀러와 프란시스코 프랑코와 강하게 연관되었다(그래프 V).</p>
+
+    <p>다른 가치들과 달리, 도덕적 평가는 현재에도 집단 기억에 여전히 생생하고 현재적 발현이 뚜렷한 20세기 사건과 인물을 중심으로 형성되었다. 흥미로운 점은, 두 인물에 대한 참여자들의 인식 차이이다. 히틀러의 경우 악에 대한 연결은 명백하다. 언급 건수의 60%가 악인, 살인자, 잔인함 등의 평가와 연관된다. 응답자 469번은 히틀러를 "유대인과 흑인 인구에 대한 수많은 잔학 행위를[가치=자애/악] 저질렀기 때문에 '인종차별'[가치=보편주의]"이라고 평가한 것이 그 예이다.</p>
+
+    <p>그러나 프랑코의 경우 34%만이 악과 연결된다. 응답자 332번이 그를 "수많은 사람을 살해하고 모든 행동에서 잔인함을 보였기 때문에 '잔인한[가치=자애/악]'"이라고 표현한 것이 그 사례이다. 프랑코에게 부여된 수식어는 그 인물의 본성에 적용되는 것이 아니라, 권력을 행사한 방식에 적용된다. 응답자 304번은 그를 "독재자"라고 평가하고, 응답자 310번은 "권위주의적[가치=권력]"이라고 표현하며 "내전과 독재로 수많은 해 동안 스페인의 역사를 나쁘게[가치=자애/악] 물들인 독재자였기" 때문이라고 정당화하였다.</p>
+
+    <p>대조적으로, 선의와 연관된 인물로는 간디와 마더 테레사가 두드러졌으나, 히틀러나 프랑코에 비해 훨씬 적은 빈도로 언급되었다.</p>
+
+    <div class="figure-placeholder">
+      <div class="fig-title">그래프 V. 자애/악 가치와 연관된 역사 인물 및 사건</div>
+      <p>자애/악(총 161건) 네트워크 그래프. 아돌프 히틀러(102건)가 '악인'(30건), '잔인한'(62건), '살인자'(23건)와 강하게 연결된다. 프란시스코 프랑코(65건)는 '잔인한'(62건), '독재자'(19건)와, 제2차 세계대전(11건)은 '홀로코스트'(7건) 및 '발견/정복 아메리카'(18건)와 연관된다. 선의로는 간디(18건)와 테레사 수녀(7건)가 긍정적 자애 범주에 위치한다.</p>
+      <div class="table-source">출처: 연구자 자체 작성</div>
+    </div>
+  </section>
+
+  <!-- 권력 -->
+  <section id="poder">
+    <h3>4-4. 권력(Poder)</h3>
+    <p>권력의 관념은 주로 남성 인물들과 밀접하게 연결되며(이사벨 카톨릭 여왕만이 예외임: 그래프 VI), 일반적으로 제국주의, 독재자, 권위주의, 정복과 같이 부정적인 도덕적 평가를 갖는 것으로 볼 수 있는 수식어들과 연결된다.</p>
+
+    <p>그러나 이러한 수식어들과 함께, 동일 인물들에 대해 성취(주로)와 자율의 관념과 연결되는 평가들도 나타난다. 히틀러와 프랑코만이 그 행위에 대한 도덕적 평가를 받는데, 이미 언급하였듯이 현재 사회에서 이들의 행동이 여전히 영향을 미치고 있기 때문으로 보인다. 율리우스 카이사르나 나폴레옹 같은 인물들은 기본적으로 권력의 관념과 연결되며(언급될 때마다 약 3분의 2의 비율로), 반드시 부정적 평가를 받지는 않는다. 이러한 권력에 대한 '호의적인' 성격은 가톨릭 군주, 알렉산드로스 대왕, 나폴레옹에게서도 발견된다. 사례는 다음과 같다:</p>
+
+    <blockquote>응답자 659번은 카이사르를 "자신의 전략으로 유럽의 많은 부분을 정복하였기[가치=권력] 때문에 '영리한[가치=성취]'" 인물이라고 평가하였다.</blockquote>
+
+    <blockquote>응답자 790번은 나폴레옹을 "매우 불만족스러운[가치=순응, 부정적 의미] 사람이었다고 생각하기 때문에 '야망적인[가치=성취]'" 인물이라고 하였다.</blockquote>
+
+    <blockquote>응답자 13번은 알렉산드로스 대왕을 "많은 영토를 정복하였고[가치=권력] 지능적이고 매우 야망적인[가치=성취]" 인물이라고 표현하며, "전략적인[가치=성취]" 인물이라고 평가하였다.</blockquote>
+
+    <blockquote>마지막으로, 이사벨 여왕은 응답자 629번에 의해 "왕위에 오르기 위해 그다지 좋지 않은 상황들을 맞닥뜨려야 했기 때문에 '용기[가치=자극/변화]'"라는 평가를 받았다.</blockquote>
+
+    <div class="figure-placeholder">
+      <div class="fig-title">그래프 VI. 권력 가치와 연관된 역사 인물 및 사건</div>
+      <p>권력/사회 조직(총 159건) 네트워크 그래프. 아돌프 히틀러(102건)와 프란시스코 프랑코(65건)가 중심에 위치한다. 수식어로는 독재자(19건), 정복(39건), 식민화(4건), 제국주의(17건), 지도자(19건), 권위주의적(17건), 권력(20건) 등이 나타난다. 이사벨/가톨릭 군주(18건), 율리우스 카이사르(14건), 나폴레옹(30건), 크리스토퍼 콜럼버스(60건), 로마화/로마 제국(8건) 등도 연결된다.</p>
+      <div class="table-source">출처: 연구자 자체 작성</div>
+    </div>
+  </section>
+
+  <!-- 보편주의 -->
+  <section id="universalismo">
+    <h3>4-5. 보편주의(Universalismo)</h3>
+    <p>가장 많은 연관성을 보이는 또 다른 가치는 보편주의이다. 여기서는 평등(Igualdad), 정의(Justicia), 연대(Unión), 열린 마음(Apertura de mente)과 같은 수식어가 언급의 대부분을 차지한다. 그리고 이와 연관된 인물로 클라라 캄포아모르가 두드러진다(그래프 VII 참조). 이 범주에서 응답자들이 주목한 다른 인물로는 마르틴 루터 킹과 넬슨 만델라가 있다. 흥미로운 점은, 이 모든 인물들이 시민권 쟁취의 관념과 연결되며, 이는 비순응주의 가치와도 완전히 연관된다는 것이다. 바라크 오바마와 가톨릭 군주의 언급도 주목할 만하다. 가톨릭 군주는 스페인 영토의 연합과 평등의 관념과 연관된다.</p>
+
+    <div class="figure-placeholder">
+      <div class="fig-title">그래프 VII. 보편주의/초월 가치와 연관된 역사 인물 및 사건</div>
+      <p>보편주의/초월/지식(총 139건) 네트워크 그래프. 클라라 캄포아모르(21건), 마르틴 루터 킹(16건), 간디(18건), 넬슨 만델라가 중심 인물로 나타난다. 주요 수식어: 평등(30건), 정의(11건), 연대(11건), 열린 마음(9건), 여성 참정권/여성 권리(10건). 가톨릭 군주(10건), 바라크 오바마, 돈 펠라요, 예수 그리스도, 프리다 칼로(6건), 플라톤(3건), 갈릴레오(3건) 등도 포함된다.</p>
+      <div class="table-source">출처: 연구자 자체 작성</div>
+    </div>
+  </section>
+
+  <!-- 자율 -->
+  <section id="autodireccion">
+    <h3>4-6. 자율(Autodirección)</h3>
+    <p>자율 가치를 자극과 성취 가치와 연결 짓는 경향이 나타난다. 보편주의의 관념이 시민권 쟁취와 연결된다면, 자율의 관념은 억압적인 사회 조직 체계로부터의 해방을 예시하는 두 역사적 과정—프랑스혁명과 베를린 장벽의 붕괴—에 의해 크게 반영된다. 가장 많이 사용된 수식어가 '자유'인 것은 당연하다(그래프 VIII 참조). 두 번째 수준에서는 투쟁의 관념이 나타나며, 클라라 캄포아모르, 로사 팍스, 프리다 칼로와 같은 활동가들과 연관된다. 이 연관성은, 가장 많이 인용된 여성 인물들(마리 퀴리, 프리다 칼로, 클라라 캄포아모르)이 언제나 그들이 살았던 세계와의 단절을 의미하는 아이콘—여성의 가시성이 있는 사회를 향한 진전의 선구자들—이라는 성격과 연결되는 것을 볼 수 있게 해 준다. 반면 남성들은 권력의 관념과 연결되고, 그들의 업적은 어떤 대의를 위한 이름으로서가 아니라 개인성과 인성 측면에서 인정받는다. 여성을 집단으로 보는 고정관념적 관념이 부분적으로 유지된다.</p>
+
+    <div class="figure-placeholder">
+      <div class="fig-title">그래프 VIII. 자유/자율 가치와 연관된 역사 인물 및 사건</div>
+      <p>자유 정신-자율(총 102건) 네트워크 그래프. 자유(30건), 투쟁가(24건), 호기심 있는(11건), 창의적인(20건)이 주요 수식어로 나타난다. 클라라 캄포아모르(21건), 프리다 칼로(31건), 베를린 장벽 붕괴(12건), 프랑스혁명(21건), 넬슨 만델라, 로사 파크스, 이사벨 라 카톨리카, 마리 퀴리(17건), 아이작 뉴턴(17건), 알베르트 아인슈타인, 갈릴레오 갈릴레이 등이 연결된다.</p>
+      <div class="table-source">출처: 연구자 자체 작성</div>
+    </div>
+  </section>
+</section>
+
+
+<!-- ══ 논의 ══ -->
+<section id="discusion">
+  <h2>5. 논의</h2>
+  <p>현대사가 다른 역사 시대를 압도함에도 불구하고, 과거와 현대 역사 인물 및 사건의 특성 사이에는 유의미한 차이가 없는 것으로 나타났다. 이와 함께, 역사성이 결여된 특성들이 무엇인지 분석하는 것이 중요하다. 첫 번째 특성은, 응답을 보면 역사의 동력이 인물들의 의지로 단순화되는 경향이다. 즉 권력은 개인에, 일반적으로 남성인 위인들에게 있다. 남성중심주의는 교육 분야의 고정관념적 관념과 일치하는 방식으로 인물에 의미를 부여할 때 여전히 지배적인 기준으로 나타난다(Sáenz, 2015; López Navajas, 2015; Bel, 2016). 마찬가지로, 역사적 행위 주체에 대한 이러한 개념은 집단 행동, 공동체의 역할을 축소하고 그것을 소수의 지도자들에게 부여한다. 비록 국가와 진보의 이미지와 연결되어 있지만, 자연적 위계 관념을 조장한다는 점에서 결코 현대적이지 않은 시각이다(Seixas, 2012b). 같은 맥락에서, 이 인물들의 의지는 성취/인정 가치와 자율 가치로 채색되며, 이것들은 현대성(Vega, 2012)의 지배적 특성인 개인주의와 연결된다(Páez, 2014). 개인, 공적 또는 성취, 자유의 관념은 마찬가지로 진보와 발전의 개념과 연결된다. 사회적·개인적 진보는 따라서 19세기에 등장한 능력주의의 산물로 여겨진다. 그러나 능력주의와 진보의 관념이 현대 세계에서 불평등을 명백히 정당화하는 개념이며, 실패의 원인을 구조적 현상이 아닌 개인의 역량 부족에서 찾는다는 사실을 간과해서는 안 된다(Piketty, 2014). 19~20세기 경제사에 대한 상세 분석(Piketty, 2014)과 현재의 보고서들은 불평등과 특권의 원인을 구조적 현상이 아닌 개인의 책임으로 귀결시키는 신화를 드러낸다(Future Policy Lab, 2022).</p>
+
+  <p>응답에서 공유되는 또 다른 특성은 폭력이다. 폭력은 인류의 변화를 예시하는 사건이나 인물 선택에서 핵심적인 축을 이룬다(Arnoso, Páez, Bobowik & Basabe, 2018). 이처럼 사건들(전쟁, 혁명, 정복 과정 등)의 선택은 트라우마적 행위가 기억에 남기는 흔적(분노, 슬픔, 두려움, 불안 등)에서 비롯된다. 그러나 이러한 트라우마적 성격과 함께, 폭력이 변화와 진보의 요소로서 필요하다는 관념도 나타나는데, 이는 19세기 사학(史學)의 주요 기둥 중 하나가 여전히 지속됨을 보여 준다(Iggers, Wang & Mukeherjee, 2008).</p>
+
+  <p>언급된 인물 및 사건의 특성 중 또 하나는 유럽중심주의 또는 사회중심주의이다(Arnoso et al., 2018). 이는 고유한 사건들과 문화적 가치에 지나친 세계적 중요성을 부여하는 것이다. RAH가 새로운 법에 대한 의견서에서 지적하였듯이, 현재의 도전을 이해하기 위해 스페인의 유럽중심적 관점을 확장할 필요가 있다. 그러나 이 문제는 새로운 교육과정 틀에만 국한된 것이 아니라, 사용 중인 교과서에서도 지속적으로 나타나는 것이다(Sáez & Bellatti, 2016; Gómez & Chapman, 2017). 이러한 사회중심주의 내에서, 우리의 사회문화적 맥락에서 수행된 기술 발전이 전 세계적 차원의 사회적·경제적 발전에 기여한 요소로 연결되는 경향이 있다. 즉 중요하다고 여겨지는 것에 관한 표현들은, 또한 대체로 유럽과 북아메리카에 기반을 둔(Castells, 2005) 기술 발전과 연결된 개인성과 물질주의에 결부된 자유를 보여 준다.</p>
+</section>
+
+
+<!-- ══ 결론 ══ -->
+<section id="conclusion">
+  <h2>6. 결론</h2>
+  <p>참여자들이 역사적으로 중요하다고 간주하는 것의 특성은, 스페인 사례의 경우 Mugueta(2016), Arias & Egea(2019), Ortuño, Molina & Maquilón(2024)의 연구, 라틴아메리카 사례의 경우 Delfino, Sosa, Bobowick & Zubieta(2020)의 연구, 그리고 다른 유럽 지역의 경우 Van Havere, Wils, Depaepe, Verschaffel & Van Nieuwenhuyse(2017)의 연구와 유사한 양상을 보인다. 남성중심적·정치적·사회중심적 시각이라는 점에서 그러하다. 더 나아가 본 연구는, 역사에서 중요하다고 간주되는 것과 연결될 수 있는 가치들(변화, 성취, 선/악, 권력 또는 자율)이 대체로 현재의 가치관에 해당하며, 이는 산업적·상업적 생산성, 강력한 경제 발전, 도시화를 특성으로 하며 대가족보다 핵가족이 지배적인 사회의 가치관이라는 점을 추가적으로 제시하였다(Páez & Zubieta, 2006). 선/악의 관념은, 역사 교육이 가치 전달에서 수행할 수 있는 역할의 크나큰 결과인데, 학생들은 자신들이 다루는 역사 내용에서 도덕적 부담(선인과 악인, 정의와 불의 등)을 흔히 인식하기 때문이다(Löfstrom, Ammert, Sharp & Edling, 2020). 그리고 마지막으로, 권력의 관념은 교육과정과 학교 교과서 자료 구성에서 정치사가 강한 영향을 미쳤다는 것과 크게 관련된다(Gómez, Monteagudo & Miralles, 2018). 여기에 포함된 결과들이 집단의 소속감과 집단 응집력을 생성하는 데 역사가 수행하는 역할을 이해하는 데 기여한다고 생각한다. 우리는 과거에 대해 현재에 보다 적합한 행동을 과거에서 예시하려는 서사적 담론을 투영하는 경향이 있기 때문이다(González, Santisteban & Pagès, 2020).</p>
+
+  <p>그러나 본 연구가 내포하는 한계들을 인식하고 있다. 첫째, 참여자들은 매우 제한적이고 결코 대표성이 없는 표본이다. 사회적 표상 분석에서는 집단의 특성(본 연구의 경우 예비교사)을 고려하는 것이 근본적이지만, 참여자들이 해당 집단 인구 대비 소규모 표본에 불과하다는 사실은 신중한 태도를 요구한다. 또한 역사 문화가 해당 사회적 표상의 형성에서 수행하는 역할을 분석하기 위해 더 광범위한 자료(교육 자료, 여가 자료, 언론 자료, 소셜 미디어, 시청각 자료 등)에 대한 분석이 필요할 것이다. 둘째, 연구 설계와 논문 분량의 한계로 인해, 지배적 가치들이 응답자와 선정된 역사 인물들의 성 편향에 어느 정도 종속되어 있는지를 추적할 수 있는 흥미로운 젠더 관점 연구를 다루지 못하였다. 셋째, 역사 문화와 역사 교육에 내재된 가치들을 분석하기 위해서는, 현직 교사, 다양한 학교급 및 교육과정의 학생들 등 다른 집단으로 초점을 확장하는 것이 바람직할 것이다.</p>
+
+  <p>어떤 경우든, 본 연구에서 개략적으로 제시한 내용은 역사 교육의 전략을 재검토하는 데—특히 교사 양성 단계에서—기여할 수 있다고 생각한다. 다관점성을 보다 강조하고, 역사 인물과 사건의 맥락화에 더 큰 비중을 두며, 과거 사건들의 진정한 비중·의미·뜻보다 지나치게 현재적인 지배적 가치들을 부각하기 위해 전통적으로 침묵해 온 집단들과 역사 속 인물들에게 목소리를 부여하는 방향의 자료 개발에 보다 집중할 필요가 있다.</p>
+</section>
+
+
+<!-- ══ 연구비 지원 ══ -->
+<section id="financiacion">
+  <h2>7. 연구비 지원</h2>
+  <p>본 논문은 국가 연구개발 프로젝트 "역사 교육과 학습: 비판적 시민 양성을 위한 다관점성 및 문화 아이콘 분석(EduHiCon)", PID2020-114434RB-I00, 스페인 과학혁신부(Ministerio de Ciencia e Innovación) 지원 연구의 맥락과 연결되어 있다.</p>
+</section>
+
+
+<!-- ══ 참고문헌 ══ -->
+<section id="referencias">
+  <h2>8. 참고문헌</h2>
+  <ul class="ref-list">
+    <li>Abric, J.C. (2001). Metodología de recolección de las representaciones sociales [사회적 표상의 수집 방법론]. En J. C. Abric (coord.), <em>Prácticas sociales y representaciones</em> [사회적 실천과 표상] (pp. 53-74). Ediciones Coyoacán.</li>
+    <li>Alvén, F. (2021). Opening or closing Pandoras' box? -Third order concepts in history education for powerful knowledge. <em>El futuro del pasado</em>, 12, 245-263. https://doi.org/10.14201/fdp202112245263.</li>
+    <li>Arias, L. y Egea, A. (2019). Who changes the course of history? Historical agency in the narratives of Spanish pre-service primary teachers. <em>History Education Research Journal</em>, 16(2), 322-339. https://doi.org/10.18546/HERJ.16.2.11</li>
+    <li>Arnoso, M., Páez, D., Bobowik, M. y Basabe, N. (2018). Implicaciones de los estudios sobre memoria colectiva para la enseñanza de la historia [집단 기억 연구의 역사 교육에 대한 시사점]. <em>Arbor</em>, 194(788), a445. https://doi.org/10.3989/arbor.2018.788n2005</li>
+    <li>Banchs, M. (2000). Aproximaciones procesuales y estructurales al estudio de las representaciones sociales [사회적 표상 연구에 대한 과정적·구조적 접근]. <em>Papers on Social Representations</em>, 9, 3.1-3.15.</li>
+    <li>Bel, J. C. (2016). El papel de las mujeres en la historia según las imágenes de los libros de texto [교과서 이미지에 따른 역사 속 여성의 역할]. <em>Aula</em>, 22, 219-233. https://doi.org/10.14201/aula201622219233</li>
+    <li>Castells, M. (2005). The network society: from knowledge to policy. En M. Castells y G. Cardoso (eds.), <em>The network society: from knowledge to policy</em> (pp. 3-23). Center for Transatlantic Relations.</li>
+    <li>Castorina, J.A. (2017). Las representaciones sociales y los procesos de enseñanza-aprendizaje de conocimientos sociales [사회적 표상과 사회 지식의 교수-학습 과정]. <em>Psicología da Educação</em>, 44, 1-13. https://doi.org/10.5935/2175-3520.20170001</li>
+    <li>Clark, A., y Peck, C. (2018). <em>Contemplating historical consciousness: notes from the field</em>. Berghan Books.</li>
+    <li>Delfino, G.I., Sosa, F.M., Bobowick, M. y Zubieta, E. M. (2020). Memoria colectiva e Historia universal: evaluación subjetiva e importancia de eventos y personajes [집단 기억과 세계사: 사건과 인물의 주관적 평가 및 중요성]. <em>Psicodebate</em>, 20(1), 68-85. https://doi.org/10.18682/pd.v20i1.1006</li>
+    <li>Domínguez, J. (2015). <em>Pensamiento histórico y evaluación de competencias</em> [역사적 사고와 역량 평가]. Octaedro.</li>
+    <li>Duquette, C. (2021). Critical Historical Consciousness as the goal of History Education? Thoughts on a possible operationalization in the classroom. <em>El Futur Comença Ara Mateix: L'ensenyament de Les Ciències Socials per Interpretar El Món i Actuar Socialment</em>, 13-29.</li>
+    <li>Epstein, T. (2009). <em>Interpreting National History. Race, Identity and Pedagogy in Classrooms and Communities</em>. Routledge.</li>
+    <li>Epstein, T., y Peck, C. (2019). Introduction. En T. Epstein y C. Peck (eds.). <em>Teaching and learning difficult histories in international context. A critical sociocultural approach</em>. Routledge.</li>
+    <li>Edling, S., Löfström, J., Sharp, H. y Ammert, N. (2021). Mapping moral consciousness in research on historical consciousness and education—A summative content analysis of 512 research articles published between 1980 and 2020. <em>Journal of Curriculum Studies</em>, 54(2) 1-19. https://doi.org/10.1080/00220272.2021.1970817</li>
+    <li>Fronza, M. (2016). As histórias em quadrinhos nas aulas de historia [역사 수업에서의 만화]. En S. Molina, N. Llonch y T. Martínez (eds.), <em>Identidad, ciudadanía y patrimonio: educación histórica para el siglo XXI</em> [정체성, 시민성과 유산: 21세기를 위한 역사 교육] (pp. 187-196). Trea.</li>
+    <li>Future Policy Lab (2022). Derribando el dique de la meritocracia [능력주의의 둑 허물기]. https://www.futurepolicylab.com/informes/derribando-el-dique-de-la-meritocracia/</li>
+    <li>Gómez, C., Monteagudo, J. y Miralles, P. (2018). Conocimiento histórico y evaluación de competencias en los exámenes de Educación Secundaria [중등 교육 시험에서의 역사 지식과 역량 평가]. <em>Educatio Siglo XXI</em>, 85-106. https://doi.org/10.6018/j/324181</li>
+    <li>Gómez, C., Ortuño, J. y Miralles, P. (2018). <em>Enseñar ciencias sociales con métodos activos de aprendizaje. Reflexiones y propuestas a través de la indagación</em> [능동적 학습 방법으로 사회과학 가르치기]. Octaedro.</li>
+    <li>González, G. A., Santisteban, A. y Pagés, J. (2020). Finalidades de la enseñanza de la historia en futuros profesores [예비교사의 역사 교육 목적]. <em>Revista Internacional de Investigación en Educación</em>, 13, 1-23. https://doi.org/10.11144/Javeriana.m13.fehf</li>
+    <li>Grever, M. y Adriaansen, R.J. (2017). Historical culture: A concept revisited. En M. Carretero, S. Berger y M. Graver (eds.). <em>Palgrave handbook of research in historical culture and education</em> (pp. 73-89). Palgrave.</li>
+    <li>Gutiérrez-Vidrio, S. (2016). Diferentes aproximaciones metodológicas para el estudio de las representaciones sociales [사회적 표상 연구를 위한 다양한 방법론적 접근]. En R. Torregrosa et al. (eds.), <em>Representaciones sociales, campo jurídico y conciliación en equidad</em> (pp. 5-40). Tenis.</li>
+    <li>Gutiérrez-Vidrio, S. (2019). Reflexiones metodológicas en torno al estudio de las representaciones sociales [사회적 표상 연구의 방법론적 성찰]. <em>Revista iberoamericana de educación superior</em>, 29(X), 105-123. https://doi.org/10.22201/iisue.20072872e.2019.29.525</li>
+    <li>Ibagón, N. J., Maquilón, J. y Miralles, P. (2021). Identidad histórica y formas de expresión nacionalista en contextos escolares multiculturales [다문화 학교 맥락에서의 역사적 정체성과 민족주의적 표현 방식]. <em>Campo Abierto</em>, 40(3), 307-322. https://doi.org/10.17398/0213-9529.40.3.307</li>
+    <li>Iggers, G., Wang, E. y Mukherjee, S. (2008). <em>A Global History of Modern Historiography</em>. Pearson.</li>
+    <li>Jodelet, D. (2011). Aportes de las representaciones al campo de la educación [교육 분야에 대한 표상의 기여]. <em>Espacios en Blanco</em>, 21, 133-154.</li>
+    <li>Jenkins, K. (2006). <em>¿Por qué la historia? Ética y posmodernidad</em> [왜 역사인가? 윤리학과 포스트모더니티]. Fondo de cultura económica.</li>
+    <li>Kim, H., Sefcik, J. y Bradway, C. (2017). Characteristics of Qualitative Descriptive Studies: A Systematic Review. <em>Res Nurs Health</em>, 40(1), 23-42. https://doi.org/10.1002/nur.21768</li>
+    <li>Levesque, S. y Croteau, J.P. (2020). <em>Beyond History for Historical Consciousness. Students, Narrative, and Memory</em>. University of Toronto Press.</li>
+    <li>Liu, J. y Hilton, D. (2005). How the past weighs on the present: Social representations of history and their role in identity politics. <em>British Journal of Social Psychology</em>, 44(4), 537-556. https://doi.org/10.1348/014466605X27162</li>
+    <li>López Navajas, A. (2015). <em>Las mujeres que nos faltan. Análisis de la ausencia de las mujeres en los manuales escolares</em> [우리에게 부재한 여성들: 학교 교과서에서의 여성 부재 분석]. Valencia: Universitat de València.</li>
+    <li>Luyt, B. (2011). The nature of historical representation on Wikipedia: dominant or alternative historiography? <em>Journal of the American Society for Information Science and Technology</em>, 62(6), 1058-1065.</li>
+    <li>McCrum, E. (2013). History teachers' thinking about the nature of their subject. <em>Teaching and Teacher Education</em>, 35, 73-80. https://doi.org/10.1016/j.tate.2013.05.004</li>
+    <li>Mugueta, I. (2016). Las representaciones sociales de la historia al servicio de la didáctica en educación superior [고등 교육에서 교수법을 위한 역사의 사회적 표상]. <em>Contextos educativos</em>, 1, 9-30. https://doi.org/10.18172/con.2753</li>
+    <li>Nordgren, K. (4 de febrero 2021). The anthropocene and the need for a crisis in teaching. <em>Public History Weekly</em>.</li>
+    <li>O'Connor, J. (2019). Document Analysis. En M. Lambert (ed), <em>Practical research methods in education</em> (pp. 67-75). Routledge.</li>
+    <li>Ortega, D. y Pagès, J. (2017). Las representaciones sociales de los problemas contemporáneos en estudiantes de magisterio de Educación Primaria [초등교육 예비교사들의 현대 문제에 대한 사회적 표상]. <em>Investigación en la escuela</em>, 93, 1-16.</li>
+    <li>Ortuño, J., Molina, S. y Maquilón, J.J. (2024). Iconos españoles en la cultura histórica de docentes en formación [예비교사들의 역사 문화 속 스페인 아이콘]. <em>Revista Electrónica Interuniversitaria de Formación del Profesorado</em>, 27(2), 1-18. https://doi.org/10.6018/reifop.602091</li>
+    <li>Páez, J. (2014). Teorías de valor: modelos e implicaciones educativas [가치 이론: 교육적 모델과 시사점]. <em>Revista de psicología y educación</em>, 9(1), 129-149.</li>
+    <li>Páez, D. y Zubieta, E. (2006). Dimensiones culturales individualismo-colectivismo como síndrome cultural [문화적 증후군으로서의 개인주의-집단주의 문화 차원]. En D. Páez y I. Férnández (eds.), <em>Psicología cultural y educación</em> (pp. 55-86). Pearson Education.</li>
+    <li>Piketty, T. (2014). <em>El capital en el siglo XXI</em> [21세기 자본]. Fondo de Cultura Económica.</li>
+    <li>Real Academia de la Historia (RAH) (2022). <em>Líneas principales de las alegaciones de la Real Academia de la Historia al borrador del proyecto de Real Decreto por el que se establece la ordenación de las enseñanzas mínimas del bachillerato</em>. https://www.rah.es/proyecto-de-real-decreto-por-el-que-se-establece-la-ordenacion-y-las-ensenanzas-minimas-del-bachillerato</li>
+    <li>Ricoeur, P. (2004). <em>La memoria, la historia, el olvido</em> [기억, 역사, 망각]. Fondo de cultura económica.</li>
+    <li>Rivero, P., Navarro, I. y Aso, B. (2022). Who are the protagonist of history? Exploratory study on historical relevance after completing compulsory Secondary Education in Spain. <em>Social Sciences (MDPI)</em>, 11. https://doi.org/10.3390/socsci11040175</li>
+    <li>Rivero, P. y Pelegrín, J. (2019). ¿Qué historia consideran relevante los futuros docentes de Educación Infantil? [예비 유아교사들은 어떤 역사를 중요하다고 생각하는가?] <em>Cadernos de Pesquisa</em>, 49, 96-119. https://doi.org/10.1590/198053145428</li>
+    <li>Rüsen, J. (2012). Forming Historical Consciousness–Towards a Humanistic History Didactics. <em>Antíteses</em>, 5(10), 519-536.</li>
+    <li>Sáenz, A. (2015). ¡La enseñanza de la Historia sin mujeres! Género, currículum escolar y libros de texto [여성 없는 역사 교육! 젠더, 학교 교육과정, 교과서]. <em>Didácticas de las Ciencias Experimentales y Sociales</em>, 29, 43-59. https://doi.org/10.7203/dces.29.3820</li>
+    <li>Schwartz, S. y Boehnke, K. (2004). Evaluating the structure of human values with confirmatory analysis. <em>Journal of research in personality</em>, 38(3), 230-255. https://doi.org/10.1016/S0092-6566(03)00069-2</li>
+    <li>Seixas, P. (Ed). (2012). <em>Theorizing historical consciousness</em>. University of Toronto Press.</li>
+    <li>Seixas, P. (2012b). Historical agency as a problem for researchers in history education. <em>Antíteses</em>, 5(10), 537-53.</li>
+    <li>Seixas, P. y Morton, T. (2013). <em>The big six historical thinking concepts</em>. University of Toronto Press.</li>
+    <li>Seixas, P. (25 de febrero de 2016). A history/memory matrix for history education. <em>Public History Weekly</em>. dx.doi.org/10.1515/phw-2016-5370.</li>
+    <li>Spanget, T. (2013). Interdisciplinarity and self-reflection in civic education. <em>Nordidactica: Journal of Humanities and Social Science Education</em>, 1, 201-226.</li>
+    <li>Straub, J. (2005). <em>Narration, identity and historical consciousness</em>. Bergham Valle.</li>
+    <li>Van Havere, T., Wils, K., Depaepe, F., Verschaffel, L. y Nieuwenhuyse, K. (2017). Flemish students' historical reference knowledge and narratives of the Belgian national past at the end of secondary education. <em>London Review of Education</em>, 15(2), 272-285. https://doi.org/10.18546/LRE.15.2.10</li>
+    <li>Vega Alonso, E. (2012). La realidad paradójica de un mundo individualista [개인주의 세계의 역설적 현실]. <em>Indivisa. Boletín de estudios de investigación</em>, 13, 145-168.</li>
+    <li>Zubieta, E. y Barreiro, A. (2014). Memoria colectiva y representaciones sociales de la historia [역사의 집단 기억과 사회적 표상]. En E. Zubieta et al. (eds.), <em>Psicología social y política. Procesos teóricos y estudios aplicados</em> [사회정치 심리학: 이론적 과정과 응용 연구] (pp. 589-610). EUDEBA.</li>
+  </ul>
+</section>
+
+
+<!-- ══ 부록 ══ -->
+<section id="anexo">
+  <h2>9. 부록 (Anexo)</h2>
+  <p>부록에는 각 가치 범주에 해당하는 수식어(형용사·명사·동사)의 목록과 그 빈도가 정리되어 있다. 아래는 주요 가치 범주별 부록 내용 요약이다.</p>
+
+  <div class="table-wrap">
+    <div class="caption">부록. 가치 범주별 수식어 및 빈도 목록 (요약)</div>
+    <table>
+      <thead>
+        <tr><th>가치 범주</th><th>총 빈도</th><th>주요 수식어 (선택)</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>변화/자극 (Cambio/Estimulación)</td><td>179</td>
+          <td>발견(Discover, 43), 용기(Brave/Valentía, 39), 혁명(Revolution, 36), 혁신(Innovation, 30), 선구적인(Pioneering), 탐험(Adventure), 진보적인(Progressive), 새로움(Novelty), 변화(Change) 등</td>
+        </tr>
+        <tr>
+          <td>성취/인정 (Logro/Reconocimiento)</td><td>182</td>
+          <td>야망적인(Ambitious, 24), 천재성(Genius, 29), 지능적인(Intelligent, 37), 진보(Progress/Advance, 40), 성공(Success), 역량(Competent), 탁월한(Exceptional), 효율적인(Efficient) 등</td>
+        </tr>
+        <tr>
+          <td>자애/악 (Benevolencia/Maldad)</td><td>161</td>
+          <td>악인(Malvado, 30), 잔인한(Cruel, 62), 살인자(Murderer, 23), 자애로운(Kind), 친절한(Benevolent), 친근한(Warm), 관대한(Generous), 이타적인(Altruistic) 등</td>
+        </tr>
+        <tr>
+          <td>보편주의/초월 (Universalismo/Trascendencia)</td><td>139</td>
+          <td>평등(Equality, 30), 정의(Justice, 11), 연대(Union, 11), 열린 마음(Open-minded, 9), 인도주의적(Humanitarian), 관용(Tolerance), 지식(Knowledge), 여성 참정권(Women's suffrage, 10) 등</td>
+        </tr>
+        <tr>
+          <td>자유/자율 (Libertad/Autodirección)</td><td>102</td>
+          <td>자유(Freedom, 30), 투쟁가(Fighter, 24), 호기심 있는(Curious, 11), 창의적인(Creative, 20), 결연한(Determined), 용감한(Courageous), 고집스러운(Stubborn), 독립적인(Independent) 등</td>
+        </tr>
+        <tr>
+          <td>권력/사회 조직 (Poder/Organización social)</td><td>159</td>
+          <td>독재자(Dictator, 19), 정복(Conquest, 39), 제국주의(Imperialism, 17), 지도자(Leader, 19), 권위주의(Authoritarian, 17), 권력(Power, 20), 식민화(Colonization, 4) 등</td>
+        </tr>
+        <tr>
+          <td>순응 (Conformidad)</td><td>53</td>
+          <td>반란(Rebellion), 억압(Oppressor), 지배(Domination), 독재(Dictatorship), 보수적인(Conservative), 복종(Submission) 등</td>
+        </tr>
+        <tr>
+          <td>안전 (Seguridad)</td><td>18</td>
+          <td>인도주의적(Humanitarian), 조화(Harmony) 등</td>
+        </tr>
+        <tr>
+          <td>전통/순응 (Tradición/Humildad)</td><td>18</td>
+          <td>신앙(Devotion), 보수적(Conservative), 순응(Conformism), 전통(Tradition) 등</td>
+        </tr>
+        <tr>
+          <td>기타/불명확 (No valor)</td><td>9</td>
+          <td>영원한(Eternal), 전설적인(Legendary), 중요한(Crucial) 등</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="table-source">출처: 연구자 자체 작성. ※ 원본 부록에는 영어로 표기된 수식어 항목들이 열거되어 있으며, 각 항목의 빈도(frequency)가 함께 기재되어 있음.</div>
+  </div>
+</section>
+
+<a href="#top" class="to-top">▲ 맨 위로</a>
+
+</main>
+
+<script>
+  // 스크롤 위치에 따른 사이드바 활성 링크 표시
+  const sections = document.querySelectorAll('section[id], div[id]');
+  const navLinks = document.querySelectorAll('#sidebar nav a');
+
+  function onScroll() {
+    let current = '';
+    sections.forEach(section => {
+      const top = section.getBoundingClientRect().top;
+      if (top <= 80) current = section.id;
+    });
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href') === '#' + current) {
+        link.classList.add('active');
+      }
+    });
+  }
+
+  window.addEventListener('scroll', onScroll);
+
+  // 부드러운 스크롤
+  navLinks.forEach(link => {
+    link.addEventListener('click', e => {
+      const target = document.querySelector(link.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>"걱정 마세요, 트림블 씨" — McCully et al. (2002)</title>
+<style>
+:root {
+  --sidebar-width: 270px;
+  --accent: #1a4a2e;
+  --accent-light: #edf4f0;
+  --text: #1a1a1a;
+  --muted: #555;
+  --border: #d0d7de;
+  --bg: #fafafa;
+  --white: #ffffff;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Noto Serif KR', Georgia, serif; background: var(--bg); color: var(--text); line-height: 1.85; font-size: 15px; }
+
+#sidebar {
+  position: fixed; top: 0; left: 0;
+  width: var(--sidebar-width); height: 100vh;
+  background: var(--white); border-right: 1px solid var(--border);
+  overflow-y: auto; z-index: 100; padding: 20px 0 40px;
+}
+#sidebar .sb-header { padding: 0 18px 16px; border-bottom: 1px solid var(--border); margin-bottom: 12px; }
+#sidebar .sb-title { font-size: 12px; font-weight: 700; color: var(--accent); letter-spacing: .5px; text-transform: uppercase; }
+#sidebar .sb-author { font-size: 11px; color: var(--muted); margin-top: 4px; }
+#sidebar nav a {
+  display: block; padding: 5px 18px; font-size: 12.5px;
+  color: var(--muted); text-decoration: none;
+  border-left: 3px solid transparent; transition: all .2s;
+}
+#sidebar nav a:hover { color: var(--accent); background: var(--accent-light); }
+#sidebar nav a.active { color: var(--accent); border-left-color: var(--accent); background: var(--accent-light); font-weight: 600; }
+#sidebar nav a.sub { padding-left: 32px; font-size: 12px; }
+
+#main { margin-left: var(--sidebar-width); padding: 48px 56px 80px; max-width: 900px; }
+
+.paper-header { border-bottom: 2px solid var(--accent); padding-bottom: 24px; margin-bottom: 32px; }
+.journal-tag { display: inline-block; background: var(--accent); color: #fff; font-size: 11px; padding: 2px 10px; border-radius: 3px; letter-spacing: .4px; margin-bottom: 14px; }
+.paper-header h1 { font-size: 24px; line-height: 1.35; color: var(--accent); margin-bottom: 6px; }
+.paper-header .orig-title { font-size: 13.5px; color: var(--muted); font-style: italic; margin-bottom: 16px; }
+.paper-header .meta { font-size: 13px; color: var(--muted); line-height: 1.7; }
+.paper-header .meta strong { color: var(--text); }
+
+section { scroll-margin-top: 24px; margin-bottom: 44px; }
+section h2 { font-size: 19px; color: var(--accent); border-bottom: 1px solid var(--border); padding-bottom: 8px; margin-bottom: 16px; }
+section h3 { font-size: 15.5px; color: #174029; margin: 20px 0 10px; font-style: italic; }
+section p { margin-bottom: 14px; text-align: justify; }
+section ul, section ol { margin: 8px 0 14px 24px; }
+section li { margin-bottom: 6px; }
+
+blockquote { border-left: 3px solid var(--accent); margin: 16px 0; padding: 10px 20px; background: #f0f6f2; font-size: 14px; font-style: italic; color: #333; }
+
+.callout { float: right; width: 155px; margin: 0 0 16px 20px; padding: 10px 14px; background: var(--accent-light); border-left: 3px solid var(--accent); font-size: 13px; font-style: italic; color: #1a4a2e; line-height: 1.5; clear: right; }
+
+.table-wrap { margin: 20px 0; overflow-x: auto; }
+.table-wrap .caption { font-size: 13px; font-weight: 700; margin-bottom: 8px; color: var(--muted); }
+table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+thead th { background: #e8f2ec; padding: 8px 12px; border: 1px solid #b8d4c0; text-align: left; }
+tbody td { padding: 7px 12px; border: 1px solid #d0d7de; vertical-align: top; }
+tbody tr:nth-child(even) { background: #f7fbf8; }
+
+.frame-box { border: 1px solid var(--border); border-radius: 6px; padding: 18px 22px; margin: 20px 0; background: #f9fafb; }
+.frame-box h4 { font-size: 14px; font-weight: 700; margin-bottom: 12px; color: var(--accent); }
+
+.ref-list { list-style: none; padding: 0; }
+.ref-list li { padding: 7px 0 7px 24px; text-indent: -24px; border-bottom: 1px solid #eee; font-size: 13.5px; line-height: 1.7; }
+.ref-list li:last-child { border-bottom: none; }
+
+.back-to-top { display: block; text-align: center; margin-top: 48px; padding: 10px; background: var(--accent-light); color: var(--accent); border-radius: 4px; text-decoration: none; font-size: 13px; }
+.back-to-top:hover { background: var(--accent); color: #fff; }
+
+@media (max-width: 900px) {
+  #sidebar { display: none; }
+  #main { margin-left: 0; padding: 24px 20px 60px; }
+  .callout { float: none; width: 100%; margin: 10px 0; }
+}
+</style>
+</head>
+<body>
+
+<aside id="sidebar">
+  <div class="sb-header">
+    <div class="sb-title">McCully et al. (2002)</div>
+    <div class="sb-author">Teaching History 106</div>
+  </div>
+  <nav>
+    <a href="#intro">서론: 분열된 사회의 역사교육</a>
+    <a href="#context">교실 관찰과 문제 제기</a>
+    <a href="#match">접근법과 맥락의 조화</a>
+    <a href="#easter">부활절 봉기 해석 수업</a>
+    <a class="sub" href="#plan">수업 계획</a>
+    <a class="sub" href="#lessons">수업 진행</a>
+    <a href="#eval">수업 평가</a>
+    <a href="#conclusion">결론</a>
+    <a href="#refs">각주 및 참고문헌</a>
+  </nav>
+</aside>
+
+<main id="main">
+
+  <header class="paper-header">
+    <div class="journal-tag">Teaching History 106 · 2002 · 시민과 공동체 특집호</div>
+    <h1>"걱정 마세요, 트림블 씨. 우리가 처리할 수 있어요."<br>논쟁적 주제 교육에서 이성과 감정의 균형</h1>
+    <div class="orig-title">'Don't worry, Mr. Trimble. We can handle it.' Balancing the rational and the emotional in the teaching of contentious topics.</div>
+    <div class="meta">
+      <strong>저자</strong>: Alan McCully (얼스터 대학교 교육학부), Nigel Pilgrim (뱅거 아카데미, 다운 주), Alaeric Sutherland, Tara McMinn (퀸스 대학교 킹스턴 온타리오 사범대학 실습생)<br>
+      <strong>저널</strong>: <em>Teaching History</em>, No. 106, pp. 6–12<br>
+      <strong>출판연도</strong>: 2002
+    </div>
+  </header>
+
+  <section id="intro">
+    <h2>서론: 분열된 사회에서의 역사교육</h2>
+    <p>스티브 일링워스는 '학생들은 역사 수업에서 느끼는 것은 물론 생각해야 한다'고 주장했다.<sup>1</sup> 여기서 우리는 그 생각을 북아일랜드에서의 역사교육에 적용한다. 지난 30년 동안 북아일랜드의 많은 교사들이 갈등 사회에서 가르치는 것이 제기하는 도전들에 엄격함과 성실함으로 응해왔다. 1970년대 말, 혁신가들은 탐구·증거·역사의 과정에 대한 강조가 종파적 편협성을 부채질하는 것으로 보이는 신화와 왜곡에 도전하는 수단으로서의 가능성을 인식하며 학교협의회 역사 프로젝트(SCHP)의 원칙들을 열정적으로 수용했다.</p>
+    <p>SCHP의 아이디어는 먼저 북아일랜드 GCSE 교수요목에 자리잡았고, 이후 북아일랜드 교육과정에 내포되었다. 후자는 영국의 것을 크게 반영했지만, 역사의 경우 특히 규정된 내용을 통해 북아일랜드의 특수한 문제들을 다루려는 명확한 시도가 있었다. 아일랜드 역사의 핵심 시기가 확인되었고, 탐구 접근법과 관련된 객관성을 발전시키는 것을 전제로 하는 학습 결과 안에서 틀 지워졌다.<sup>2</sup></p>
+    <p>이 논리의 매력은 분명하다. 먼저 젊은이들이 객관성을 강조하는 다양한 기술들을 갖추도록 한다. 그런 다음 그들이 이 이성적 사고를 아일랜드 역사의 잠재적으로 논쟁적인 측면들에 적용하도록 장려한다. 이를 통해 그들이 좁고 덜 알려진 입장들을 넘어 볼 수 있게 하고, 다양한 관점들을 인정하며, 궁극적으로 이 더 큰 역사적 이해를 자신들의 문화적·정치적 가치에 반영한다.</p>
+    <p>국제적으로 북아일랜드 역사교육은 분열된 사회에서 교과를 가르치는 용감한 모범으로 칭찬받아왔다. 이전에는 주로 종교적 노선을 따라 분리된 교육 체제 안에서 역사 제공이 획일성의 결여를 특징으로 했으며, 그것이 위치한 공동체의 지배적인 문화적·정치적 가치를 반영하는 경향이 있었다. 이제는 모든 학생이 4개 핵심 단계에 걸쳐 아일랜드 역사의 핵심을 받을 권리를 갖게 되었고, 교육과정 틀·평가 절차·교사 교육 규정이 모든 학생이 공통 경험을 갖도록 하는 데 많은 부분 기여한다. 그러나 기존 실천을 비판적으로 성찰하면서, 우리는 역사교육이 사회 변화를 돕는 수단으로서 '이성적' 사고에 부여된 믿음에 대해 의구심을 가지고 있다. 앤드루 렌은 이렇게 선언했다:</p>
+    <blockquote>…역사들은 주어진 것이 아니다; 그것들은 구성되고 사용된다. 인종적 순수성이나 독특성에 대한 신화와 전통들은 현재의 문화적·국가적 자긍심을 강화하며, 역사나 과학이 그 타당성에 얼마나 도전하는가에 상관없이 그것들을 보존하는 데 강력한 기득권을 만든다.<sup>3</sup></blockquote>
+  </section>
+
+  <section id="context">
+    <h2>교실 관찰과 문제 제기</h2>
+    <div class="callout">마치 현재 사건의 언급만으로 감정의 벽이 올라선 것 같았다.</div>
+    <p>의구심은 몇 년 전 선도적인 얼스터 문법학교의 매우 의욕적이고 영리한 11학년 수업에서 학생교사를 관찰한 경험으로 가장 잘 설명된다.<sup>4</sup> 학교는 주로 연합파 도시에 위치해 있었고 학생들도 대체로 그러한 배경 출신이었다. 수업의 초점은 아일랜드 공화주의 운동에 신성한 사건인 1916년 부활절 봉기였다. 학생교사는 매우 효과적인 수업을 가르쳤다. 다양한 1차·2차 자료를 활용하여 학생들은 봉기의 원인과 영국 당국이 반군 지도자들을 처형함으로써 대응한 이유를 더 깊이 이해하게 되었다. 토론에서 학급 대다수가 영국군이 그렇게 대응한 이유는 이해했지만, 그 행동을 아일랜드의 불의 의식을 부채질하고 신페인 지지를 확대하기 확실한 어리석음으로 간주했다. 다시 말해, 학생들은 자신들의 정치적 시각과 반대로 아일랜드 공화파의 관점을 이해하고 심지어 공감하기까지 했다.</p>
+    <p>여기까지는 좋았다. 그러나 수업의 마지막 단계에서 학생교사는 용감하게도 1980년대 후반 임시 IRA의 입장과의 유사성을 제안했으며, 그러한 비교가 논쟁적임을 인정했다. 우려되는 것은 말을 한 대부분의 학생들이 상황의 유사성을 거부했다는 것이 아니라, 이전에 열정적으로 참여했던 상당수가 그 활동의 정당성을 인정하는 것조차 거부했다는 점이었다. 마치 현재 사건들의 언급이 감정의 벽을 세운 것 같았다. 이 벽은 이전에 배양된 비판적 사고에 불침투성인 것처럼 보였다.</p>
+    <p>아직 해야 할 경험적 작업이 많이 있지만, 단순히 과거 사건들의 연구를 통해 비판적 접근법을 육성함으로써 교사들이 반드시 현재의 문화적·정치적 입장들을 명확히 하거나 젊은이들에게 교과의 내재적 가치를 납득시킨다는 견해에 의문을 제기하는 증거가 등장하고 있다.<sup>5</sup> 가족·공동체·또래 정체성에 의해 지지되는 감정적 장벽을 상당한 교사 지원 없이 젊은이들 스스로 통과하기를 기대하는 것이 현실적인가?</p>
+    <p>북아일랜드 역사교육 공동체에서는 규정된 교육과정의 매개변수 내에서 역사적 탐구의 중립적 중재자로서의 역할을 인식하는 교사들과, 젊은이들이 자신들의 역사적 학습을 현대 문제에 직접 적용하도록 장려하기를 원하는 교사들 사이의 근본적인 긴장이 아직 해소되지 않은 채 남아 있다.<sup>6</sup></p>
+  </section>
+
+  <section id="match">
+    <h2>접근법과 맥락의 조화</h2>
+    <p>공통 교육과정의 한 가지 위험은 지역 맥락이 간과될 수 있다는 것이다. 북아일랜드의 모든 역사 교사는 함께 일하는 젊은이들의 사회적·문화적 배경을 고려하고 그에 맞게 가르침을 형성해야 한다.<sup>7</sup> 학생들은, 특히 아일랜드 역사에 관해서는, 거의 빈 서판을 가지고 교실에 들어오지 않는다. 함의상, 아일랜드 역사의 특정 사건들을 가르치는 것은 연합파와 민족주의 지역에서 다른 접근법을 요구할 수 있다.</p>
+    <p>그란샤 고등학교(Gransha High)는 최근 이웃 학교와 합병되었다.<sup>8</sup> 그란샤는 뱅거에 있었는데, 벨파스트에서 16마일 떨어진 해변 도시였다. 뱅거는 번영한 중산층 위성 도시로 인식되지만, 상당한 충성파 준군사 조직의 존재가 있는 주로 개신교 노동자 계급 단지들이 존재한다. 그란샤 역사 부서는 일반적 경향에도 불구하고 잘 유지되었다. 핵심 단계 3 말 역사 선택 비율이 꾸준히 북아일랜드 평균을 웃돌았고 건실한 GCSE 결과를 달성했다.</p>
+    <p>역사 교사 나이젤 필그림은 학생들과의 상호작용에서 많은 이들이 가족과 공동체의 접촉을 통해 자신들 이웃의 지배적인 준군사 문화에 영향받고 있음을 점점 더 인식하게 되었다. 그는 10학년 핵심 학습 단원 '1800-1922년 연합에서 분단까지'가 학생들 주변의 매우 실제적인 정치적 소용돌이를 이해하는 데 거의 도움이 되지 않는다고 결론 내렸다. 이를 해결하기 위해:</p>
+    <ul>
+      <li>역사 부서는 MEG(현 OCR) GCSE 교수요목을 채택했다. 이 교수요목은 학생들이 역사적 학습을 현재 갈등과 연결하는 과제를 수행하도록 요구하는 아일랜드 현대 연구 모듈을 포함한다—NICCEA 교수요목에는 현저히 없는 과제다.</li>
+      <li>'Speak Your Piece'<sup>9</sup>를 통해 나이젤은 자신의 가르침이 국가 정체성·문화·종교·정치 같은 문제에 대한 토론을 어떻게 알리고 시작할 수 있는지를 실험하는 교사 그룹에 합류했다.</li>
+    </ul>
+    <p>이 결정들의 결과는 과거가 먼저 연구되고 그런 다음 현재와의 연결이 모색된다는 정설에 도전했다. Speak Your Piece에서 얻은 교훈은 비판적 사고에 참여하는 동시에 논쟁적 문제에 대한 반응의 감정적 차원을 인식하는 환경을 만드는 것의 중요성을 강조했다. 역사 측면에서 이것은, 과거가 현재를 알려주어야 한다면 후자와 관련된 '짐'을 처음부터 다루어야 한다는 것을 시사했다. 따라서 '과거에서 현재로'의 모델보다 과거 사건들과 현재의 논쟁적 문제들 사이에 더 지속적인 대화를 확립하는 '현재-과거-현재' 모델이 더 결실 있는 접근법일 수 있다.</p>
+  </section>
+
+  <section id="easter">
+    <h2>부활절 봉기 해석 수업</h2>
+    <p>나이젤과 앨런은 '현재-과거-현재' 모델을 여러 소규모 이니셔티브에 적용했다. 여기에 소개된 사례는 부활절 봉기를 주제로 평균 및 평균 이하 능력의 두 10학년 학급과 다섯 차시(+요약 글쓰기)가 포함된 것이었다. 봉기에 대한 언급은 강한 열정을 불러일으키며, 참가자들의 희생은 공화파들(봉기의 경우)과 충성파들(솜의 경우) 각각에 의해 정체성의 핵심이자 자신들의 대의를 위한 정당화로 자주 인용된다. 핵심 아이디어는 해석에 관한 맥알리비의 틀이었다.<sup>10</sup></p>
+
+    <section id="plan">
+      <h3>수업 계획</h3>
+      <div class="table-wrap">
+        <div class="caption">그림 1: 수업 계획표 (워크 플랜)</div>
+        <table>
+          <thead><tr><th>단계</th><th>활동 내용</th><th>시간적 위치</th></tr></thead>
+          <tbody>
+            <tr><td><strong>준비</strong></td><td>학생들에게 〈Rebel Heart〉 시청 과제 부여.<br>부활절 봉기 연대기 소개 수업.</td><td>현재 / 과거</td></tr>
+            <tr><td><strong>1차시</strong></td><td>BBC 방영 금지를 요청한 데이비드 트림블의 이유 검토.<br>이후 Belfast Telegraph 독자 투고·기사 발췌 토론.<br>'편향'과 '해석' 개념 탐구. 핵심 질문 설정:<br>① 〈Rebel Heart〉는 봉기의 공정한 해석인가?<br>② 봉기는 오늘날 어떻게 보아야 하는가?</td><td>현재</td></tr>
+            <tr><td><strong>2·3차시</strong></td><td>〈Rebel Heart〉와 〈마이클 콜린스〉 발췌 시청.<br>토론과 비교표 활용 비교 작업.<br>심화 탐구 주제 선정.</td><td></td></tr>
+            <tr><td><strong>4차시</strong></td><td>컴퓨터실에서 짝 활동으로 구조화된 탐구 수행.</td><td>과거 / 현재</td></tr>
+            <tr><td><strong>5차시</strong></td><td>컴퓨터 활동 결과 공유. 단기·장기 결과 토론.<br>글쓰기 프레임 준비.</td><td></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="lessons">
+      <h3>수업 진행</h3>
+      <p>자극제는 1916년 두 사건(부활절 봉기와 솜 전투)과 관련된 시각적·문서적 1차·2차 자료를 담은 인상적인 CD-롬 〈Lest We Forget〉의 출시였다.<sup>11</sup> 때마침, 기회는 로난 베넷의 논쟁적인 BBC 드라마 〈Rebel Heart〉의 방영과 맞물렸다.<sup>12</sup></p>
+      <p>단원 작업에 들어가면서(그림 1 참조), 서로 다른 해석을 지지하고 비판하는 정당성을 확립하기 위해 프로그램을 둘러싼 공개적 논란을 인정하는 것이 중요했다. 우리는 데이비드 트림블 수상의 비난으로 시작하여 Belfast Telegraph에서 가져온 반응들로 이어갔다(그림 2 참조). 이것은 학생들이 베넷의 배경을 다루고, 더 중요하게는, 미디어가 민족주의자들에게 내재된 동정심을 가지고 있다는 충성파 공동체의 강하게 유지된 시각을 이야기할 수 있게 했다. 그것을 다루고 나서, 학생들은 프로그램을 보지 않고 비판하는 것의 부조리를 인정하고, 시청할 때 잠재적 편향을 다룰 수 있는 자신들의 능력에 자신감을 표현했다.</p>
+
+      <div class="frame-box">
+        <h4>그림 2: 〈Rebel Heart〉에 대한 신문 반응 (수업 활용 자료)</h4>
+        <p><strong>반응 1</strong> — 역사가 루스 더들리 에드워즈, Belfast Telegraph, 2001. 1. 15.</p>
+        <blockquote>제작자들이 베넷이 빠뜨린 것을 주목했을 것이라고 생각할 수도 있다. 반군 사망자들과 지도자들의 처형(그들의 피해자 살해와는 달리 정당화될 수 없는 것으로 표현된)에 대한 보도는 충분하지만, 베넷은 노동자들에 대한 그의 알려진 동조에도 불구하고 봉기 중에 살해된 300명의 더블린 무고한 민간인들에 대해서는 무관심한 것 같다.</blockquote>
+        <p><strong>반응 2</strong> — 베리 브래들리 박사, Belfast Telegraph 독자 투고, 2001. 1. 22.</p>
+        <blockquote>민족주의자로서, 공화파들을 사회병질적이고 표현력이 없는 바보들이 아닌 인간으로 묘사하는 역사 소설 작품을 보는 것은 즐거운 일이다.</blockquote>
+      </div>
+
+      <p>2·3차시는 TV 드라마와 영화 〈마이클 콜린스〉에 묘사된 봉기의 표현들을 비교하는 데 집중했다. 콜린스 발췌본은 비교를 위한 시각적 자극을 제공할 뿐만 아니라, 서로 다른 해석들의 타당성에 대한 구체적 표현을 제공하기 위해서도 사용되었다. 학급 토론의 결과는 학생들 자신이 교과서 저자와 교사들의 배경도 사건을 제시하는 방법에 영향을 미친다는 것을 인식하게 되었다는 것이었다.</p>
+
+      <div class="table-wrap">
+        <div class="caption">그림 3: 두 해석 비교를 위한 프레임워크 (수업 활용 비교표)</div>
+        <table>
+          <thead><tr><th>비교 항목</th><th>〈마이클 콜린스〉</th><th>〈Rebel Heart〉</th></tr></thead>
+          <tbody>
+            <tr><td>항복에 대한 영국의 반응<br>(정전 요청까지 시간 / 정전 원인)</td><td></td><td></td></tr>
+            <tr><td>영국 군인<br>(표정 / 전술 / 포로 취급)</td><td></td><td></td></tr>
+            <tr><td>피어스(Pearse) 처우<br>(신체적·언어적 처우 / 동료·영국군의 존중)</td><td></td><td></td></tr>
+            <tr><td>처형 장면<br>(반군의 태도 / 폭력 수위)</td><td></td><td></td></tr>
+            <tr><td>나의 생각</td><td></td><td></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>전체 토의 이후 심화 탐구 영역을 결정했다: 설명들은 어디서 달라지는가? 어느 것이 1차 증거와 가장 일치하는가? 다른 이들은 봉기를 어떻게 해석하는가? 단기적 결과는 무엇이었는가? 서로 다른 해석들의 오늘날 영향은 무엇인가?</p>
+      <p>4차시에서 CD-롬이 탐구의 데이터베이스가 되었다. 캐나다 학생 앨러릭과 타라가 학생 쌍들에게 경로를 안내했는데, 가능한 한 정치인·준군사 조직원·역사가·일반 시민 등 다양한 시각을 참조하도록 구성했다. 예컨대 한 경로는 봉기를 기념하는 공화파 벽화와 관련된 시각적 이미지를 검토했다.<sup>13</sup></p>
+
+      <div class="frame-box">
+        <h4>그림 4: 학생들의 마무리 반응을 위한 글쓰기 프레임</h4>
+        <p><strong>부활절 봉기: 우리는 어떻게 보아야 하는가?</strong></p>
+        <ul>
+          <li>(〈마이클 콜린스〉 / 〈Rebel Heart〉)는 부활절 봉기의 더 나은 표현이었다. 왜냐하면 ……</li>
+          <li>단기적으로 봉기의 결과는 …… 이었다.</li>
+          <li>봉기의 더 장기적인 영향은 …… 이었다.</li>
+          <li>오늘날 봉기는 …… 때문에 기억된다.</li>
+          <li>오늘날 시민으로서 나는 봉기를 …… 로 본다.</li>
+        </ul>
+      </div>
+    </section>
+  </section>
+
+  <section id="eval">
+    <h2>수업 평가</h2>
+    <div class="callout">'이성적' 반응과 이성적 사고 사이의 균형은 쉽게 달성되지 않을 것이다.</div>
+    <p>서면 반응들은 상당한 동기부여를 보였고 격려가 되었다. 일부는 획득한 역사적 정보 측면에서 반응하려는 시도에 지배되었고(CD-롬 탐구의 영향이 명확하다), 다른 것들은 봉기의 현대적 맥락에서의 영향을 평가하는 도전에 응했다. 마크의 글이 후자의 예다. 그는 과거와 현재의 경향을 이끌어내고 평행선을 그으려 했다—게릴라전을 언급하고 순교를 공화파 대의의 핵심 결집 구호로 식별했다. 그는 또한 객관적으로 노력했다.</p>
+    <blockquote>오늘날 통일 아일랜드를 위해 죽는 순교자들이 있다. 가장 최근에 유명한 이는 아마도 이른바 'H-블록' 안에서 단식 파업으로 사망한 바비 샌즈일 것이다…<br><br>봉기는 영국과 아일랜드 양측 모두에 의해 오늘날 기억된다. 아일랜드는 영국에 대한 승리로 더 기억할 것이다… 영국은 봉기 전투를 훌륭한 승리로 기억할 것이지만 봉기 이후의 사건들을 완전한 재앙으로 기억할 것이다…<br><br>오늘날 시민으로서 나는 봉기를 영국에게 나쁜 사건으로 본다. 왜냐하면 승리 이후의 처형들이 오늘날의 과거와 미래에 파급 효과를 가졌으며, 순교자들과 IRA가 사용한 치고 빠지기 전술을 만들어냈기 때문이다. — 마크의 에세이 발췌 (그림 5)</blockquote>
+    <p>학생 평가들도 모듈이 적어도 몇 가지 목표들을 다루었음을 나타낸다. 많은 이들이 획득한 새 지식 측면에서 접근법을 가치있게 여겼지만 여러 명은 탐구 과정을 인정했다:</p>
+    <blockquote>모든 출처들에서 지식을 배움으로써 나는 봉기에 대한 나 자신의 견해와 의견을 만들 수 있었다.<br><br>나는 이제 봉기가 양측에 의해 어떻게 보였는지를 알기 때문에 봉기에 대한 내 자신의 의견을 갖게 되었다.</blockquote>
+    <blockquote>[벽화들이] 왜 거기 있는지 이해하지 못했었다. 왜 만들어졌는지 그리고 왜 했는지. 하지만 이제 이해한다.</blockquote>
+    <p>그러나 아래 의견은 '직감적 반응'과 이성적 사고 사이의 균형이 쉽게 달성되지 않을 것임을 시사한다. 이 학생은 드라마에서 자신을 기쁘게 하는 이미지들을 보지 못했고, 따라서 초기 단계에서 이미 활동에 대해 마음을 정한 것으로 의심된다:</p>
+    <blockquote>부활절 봉기 수업들은 봉기에서 양측(예를 들어 가톨릭과 개신교)에 무슨 일이 일어났는지를 말하고 보여줌으로써 개선될 수 있다. 왜냐하면 마이클 콜린스와 Rebel Heart는 부활절 봉기에서 일어난 일의 한 측면만을 보여주었기 때문이다.</blockquote>
+  </section>
+
+  <section id="conclusion">
+    <h2>결론</h2>
+    <p>개략된 작업은 핵심 단계 3에서 잠재적으로 논쟁적인 주제에 대한 학생들의 이해를 돕기 위해 '현재-과거-현재' 접근법을 적용하려는 한 가지 시도다. 우리는 더 나이 든 학생들과 다른 예들도 시도했다. 한 GCSE 그룹은 아일랜드 역사 연구를 재검토하고 논쟁적이라고 생각하는 사건들을 식별하도록 요청받았다. 그런 다음, TV 드라마에서 두 명의 양극화되고 편협한 허구적 인물—공화파와 충성파—을 취하여, 그들 각각이 어떤 사건들을 연상시킬지, 각자가 그것들을 어떻게 볼지를 추론하도록 요청받았다.</p>
+    <p>또 다른 경우, 나이젤은 자신의 가르침이 강경한 젊은이들에게 아무런 영향을 미치지 못하고 있다는 걱정이 커져서, 이제 폭력 대안 추구에 완전히 헌신하는 충성파 전직 종신형 수감자(그리고 솜 전투 벽화 화가)의 방문을 주선했다. 이 방문과 다양한 정당의 정치인들의 방문은 학생들에게 역사가 일상 생활을 이해하려 할 때 거리의 관련성을 가진다는 것을 납득시키는 데 어느 정도 기여했다.</p>
+    <p>역사교육이 사회 변화에 기여하기 위해 스스로를 재정의하는 잠재력을 보는 이들에게는, '감정과 생각'을 참여시키는 접근법들을 실험하고 위험을 감수할 준비가 된 교사들이 필요하다. 렌의 말처럼,</p>
+    <blockquote>시민교육은 우리 아이들이 그러한 논쟁들의 중요성을 인식하기 위해 역사적 지식을 활용할 수 있고, 서로 다른 충성과 충성 패턴이 어떻게 구성·표현되거나 강요되는지를 볼 수 있을 때 작동할 것이다.<sup>15</sup></blockquote>
+  </section>
+
+  <section id="refs">
+    <h2>각주 및 참고문헌</h2>
+    <ul class="ref-list">
+      <li>1. Illingworth, I. (2000) 「Hearts, minds and souls: Exploring values through history」 <em>Teaching History</em> 100.</li>
+      <li>2. 북아일랜드 역사 교육과정 발전에 관해서는 McCully A. (1997) 'The Northern Irish History Curriculum and National Identity', in Pendry A. and O'Neill C. ed. <em>Principles and practice</em>, Lancaster, SCHTE, pp 37-44 참조.</li>
+      <li>3. Wrenn, A. (1999) 'Build it in, don't bolt it on: history's opportunity to support critical citizenship' <em>Teaching History</em>, 96, p.11.</li>
+      <li>4. 북아일랜드의 11학년은 중등학교 4학년에 해당하며 영국의 10학년과 대응한다.</li>
+      <li>5. Barton K.C. and McCully A. (2001) 'National Identity and the History Curriculum in Northern Ireland: An Empirical Study of Students' Ideas and beliefs'. Paper presented to the AERA annual meeting, Seattle.</li>
+      <li>6. McCully A. (1998) <em>The teaching of history in a divided society</em>, Strasbourg, Council of Europe, p.14; Gallagher C. (1998) 'The future of history? A plea for relevance', SHP Conference paper, Leeds.</li>
+      <li>7. Robinson A. (1980) <em>The Schools Cultural Studies Project: a contribution to peace in Northern Ireland</em>, Coleraine, pp. 33-36.</li>
+      <li>8. 그란샤와 뱅거 고등학교의 행정 기능은 2001년 1월에 합병되었으며, 구조적 변화는 2001년 9월에 이루어졌다.</li>
+      <li>9. Speak Your Piece는 얼스터 대학교·채널 4 학습·북아일랜드 청소년 위원회가 공동 지원하는 14~17세를 대상으로 한 논쟁적 문제 처리 미디어 기반 프로젝트.</li>
+      <li>10. McAleavy, A. (1993) 'Using the Attainment Targets in Key Stage 3: Interpretations of History' <em>Teaching History</em>, 72; McAleavy, A. (2000) 'Teaching about historical interpretations' in Phillips and Arthur (eds) <em>Issues in History Teaching</em>, Routledge.</li>
+      <li>11. <em>Lest We Forget, The Symbols CD-Rom Experience</em>, Derry: The Nerve Centre. www.symbols.org.uk</li>
+      <li>12. 〈Rebel Heart〉는 2001년 2~3월 BBC에서 방영되었다.</li>
+      <li>13. Walsh, B. (1999) 'Practical classroom approaches to the iconography of Irish history' <em>Teaching History</em>, 97, pp.16-20.</li>
+      <li>14. Arlow M. (1999) 'Citizenship Education in a Contested Society', <em>Development Education Journal</em>, Vol.6 No.1.</li>
+      <li>15. Wrenn, (1999) op.cit. p.12.</li>
+    </ul>
+    <a href="#intro" class="back-to-top">▲ 맨 위로 돌아가기</a>
+  </section>
+
+</main>
+
+<script>
+window.addEventListener('scroll', () => {
+  let current = '';
+  document.querySelectorAll('section[id]').forEach(s => {
+    if (s.getBoundingClientRect().top <= 80) current = s.id;
+  });
+  document.querySelectorAll('#sidebar nav a').forEach(a => {
+    a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+  });
+});
+document.querySelectorAll('#sidebar nav a, .back-to-top').forEach(a => {
+  a.addEventListener('click', e => {
+    e.preventDefault();
+    const t = document.querySelector(a.getAttribute('href'));
+    if (t) t.scrollIntoView({ behavior: 'smooth' });
+  });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>교사의 정치적 견해는 논쟁적 주제 교육에 어떻게 영향을 미치는가? — Hess (2005)</title>
+<style>
+  :root {
+    --sidebar-width: 260px;
+    --accent: #2c5f8a;
+    --accent-light: #e8f1f8;
+    --text: #1a1a1a;
+    --muted: #555;
+    --border: #d0d7de;
+    --bg: #fafafa;
+    --white: #ffffff;
+    --table-head: #f0f4f8;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Noto Serif KR', 'Noto Serif', Georgia, serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.8;
+  }
+
+  /* 사이드바 */
+  #sidebar {
+    position: fixed;
+    top: 0; left: 0;
+    width: var(--sidebar-width);
+    height: 100vh;
+    background: var(--white);
+    border-right: 1px solid var(--border);
+    overflow-y: auto;
+    padding: 20px 0;
+    z-index: 100;
+  }
+
+  #sidebar .sidebar-header {
+    padding: 0 16px 16px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 12px;
+  }
+
+  #sidebar .sidebar-header .journal {
+    font-size: 0.7rem;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 6px;
+  }
+
+  #sidebar .sidebar-header .short-title {
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--accent);
+    line-height: 1.4;
+  }
+
+  #sidebar nav a {
+    display: block;
+    padding: 5px 16px;
+    font-size: 0.8rem;
+    color: var(--muted);
+    text-decoration: none;
+    border-left: 3px solid transparent;
+    transition: all 0.15s;
+  }
+
+  #sidebar nav a:hover {
+    color: var(--accent);
+    background: var(--accent-light);
+  }
+
+  #sidebar nav a.active {
+    color: var(--accent);
+    border-left-color: var(--accent);
+    background: var(--accent-light);
+    font-weight: 600;
+  }
+
+  #sidebar nav .nav-sub {
+    padding-left: 28px;
+    font-size: 0.76rem;
+  }
+
+  /* 메인 콘텐츠 */
+  #main {
+    margin-left: var(--sidebar-width);
+    padding: 48px 56px 80px;
+    max-width: 860px;
+  }
+
+  /* 논문 헤더 */
+  .paper-header {
+    margin-bottom: 32px;
+    padding-bottom: 24px;
+    border-bottom: 2px solid var(--accent);
+  }
+
+  .paper-header .meta-top {
+    font-size: 0.78rem;
+    color: var(--muted);
+    margin-bottom: 10px;
+  }
+
+  .paper-header h1 {
+    font-size: 1.55rem;
+    font-weight: 700;
+    color: var(--accent);
+    line-height: 1.4;
+    margin-bottom: 6px;
+  }
+
+  .paper-header .orig-title {
+    font-size: 0.9rem;
+    color: var(--muted);
+    font-style: italic;
+    margin-bottom: 14px;
+  }
+
+  .paper-header .authors {
+    font-size: 0.88rem;
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+
+  .paper-header .affiliation {
+    font-size: 0.8rem;
+    color: var(--muted);
+    margin-bottom: 10px;
+  }
+
+  .paper-header .biblio {
+    font-size: 0.78rem;
+    color: var(--muted);
+    background: var(--accent-light);
+    padding: 8px 12px;
+    border-radius: 4px;
+    border-left: 3px solid var(--accent);
+  }
+
+  /* 섹션 */
+  section {
+    margin-bottom: 40px;
+    scroll-margin-top: 24px;
+  }
+
+  h2 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 14px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text);
+    margin: 20px 0 10px;
+  }
+
+  p {
+    margin-bottom: 14px;
+    font-size: 0.94rem;
+  }
+
+  /* 인용 블록 */
+  blockquote {
+    margin: 18px 0;
+    padding: 14px 18px;
+    border-left: 4px solid var(--accent);
+    background: var(--accent-light);
+    font-size: 0.9rem;
+    color: #333;
+    border-radius: 0 4px 4px 0;
+  }
+
+  /* 표 */
+  .table-wrap {
+    margin: 24px 0;
+    overflow-x: auto;
+  }
+
+  .table-wrap .caption {
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--accent);
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.87rem;
+  }
+
+  thead tr {
+    background: var(--table-head);
+  }
+
+  th, td {
+    border: 1px solid var(--border);
+    padding: 9px 13px;
+    vertical-align: top;
+  }
+
+  th {
+    font-weight: 700;
+    text-align: left;
+  }
+
+  td strong {
+    color: var(--accent);
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  /* 각주 */
+  .footnotes {
+    margin-top: 32px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border);
+    font-size: 0.8rem;
+    color: var(--muted);
+  }
+
+  .footnotes ol {
+    padding-left: 20px;
+  }
+
+  .footnotes li {
+    margin-bottom: 8px;
+    line-height: 1.6;
+  }
+
+  /* 맨 위로 버튼 */
+  #back-top {
+    display: block;
+    text-align: right;
+    margin-top: 40px;
+    font-size: 0.82rem;
+  }
+
+  #back-top a {
+    color: var(--accent);
+    text-decoration: none;
+    border: 1px solid var(--accent);
+    padding: 5px 12px;
+    border-radius: 4px;
+  }
+
+  #back-top a:hover {
+    background: var(--accent-light);
+  }
+
+  /* 반응형 */
+  @media (max-width: 900px) {
+    #sidebar { display: none; }
+    #main { margin-left: 0; padding: 24px 20px 60px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- 사이드바 -->
+<div id="sidebar">
+  <div class="sidebar-header">
+    <div class="journal">Social Education 69(1), 2005</div>
+    <div class="short-title">교사의 정치적 견해와<br>논쟁적 주제 교육</div>
+  </div>
+  <nav>
+    <a href="#header">📄 논문 정보</a>
+    <a href="#intro">서론</a>
+    <a href="#four-approaches">논쟁적 주제에 대한 네 가지 접근</a>
+    <a href="#denial" class="nav-sub">1. 부정(Denial)</a>
+    <a href="#privilege" class="nav-sub">2. 편향(Privilege)</a>
+    <a href="#avoidance" class="nav-sub">3. 회피(Avoidance)</a>
+    <a href="#balance" class="nav-sub">4. 균형(Balance)</a>
+    <a href="#conclusion">결론</a>
+    <a href="#figure-one">표 1. 네 가지 접근 유형</a>
+    <a href="#notes">각주</a>
+  </nav>
+</div>
+
+<!-- 메인 콘텐츠 -->
+<div id="main">
+
+  <!-- 논문 헤더 -->
+  <div class="paper-header" id="header">
+    <div class="meta-top">민주주의 교육 · Social Education 69(1), pp. 47–48 · © 2005 National Council for the Social Studies</div>
+    <h1>교사의 정치적 견해는 논쟁적 주제 교육에 어떻게 영향을 미치는가?</h1>
+    <div class="orig-title">How Do Teachers' Political Views Influence Teaching about Controversial Issues?</div>
+    <div class="authors">Diana E. Hess</div>
+    <div class="affiliation">위스콘신-매디슨 대학교 교육과정·수업학과 조교수<br>(Department of Curriculum and Instruction, University of Wisconsin-Madison)</div>
+    <div class="biblio">
+      출처: <em>Social Education</em>, 69(1), pp. 47–48. National Council for the Social Studies, 2005.<br>
+      관련 상세 논의: Hess, D. E. (2004). Controversies about controversial issues in democratic education. <em>Politics and Society, 37</em>(2), 257–261.
+    </div>
+  </div>
+
+  <!-- 서론 -->
+  <section id="intro">
+    <h2>서론</h2>
+    <p>
+      많은 교사들은 학생들이 논쟁적인 정치적 쟁점에 대해 숙의하도록 가르치는 것이 정치 참여를 준비시키는 강력한 방법이라고 주장한다. 이 접근법에 대한 지지는 최근 『학교의 시민 사명(Civic Mission of the Schools)』 보고서에서도 나타났는데, 이 보고서는 정치적 논쟁을 교육과정에 포함시킬 것을 권고했다. 구체적으로 다음과 같이 권장하고 있다:
+    </p>
+    <blockquote>
+      현재의 지역·국가·국제 쟁점과 사건들, 특히 청소년들이 자신의 삶에 중요하다고 여기는 쟁점들을 교실 수업에 통합하라. 청소년들이 교실 환경에서 현안을 토론할 기회를 가질 때, 정치에 대한 관심이 높아지고, 비판적 사고 및 의사소통 능력이 향상되며, 시민 지식이 늘어나고, 학교 밖에서도 공적 사안을 토론하려는 관심이 증가하는 경향이 있다.<sup>1</sup>
+    </blockquote>
+    <p>
+      민주주의 교육 문헌에는 논쟁적 주제를 가르치는 다양한 접근법이 풍부하게 존재한다. 대부분의 접근법에 내재되어 있는 것은 쟁점이 어떻게 해결되어야 하는지에 대한 다양한 관점의 분석과 비판을 장려하는 데 초점을 맞추는 것이다. 그러나 이러한 지향은 순진하고 잘못된 것이라는 신랄한 비판의 대상이 되어 왔다. 예를 들어, 세계화에 관한 교육 자료를 소개하면서 William Bigelow와 Robert Peterson은 "교육자들이 중립성을 가장하는 것은 무책임한 행위"라고 밝혔다. 이 사회적 맥락에서 교육의 목표는 '균형'이 아니라 '진실'이 되어야 하는데, 만약 균형이 우리가 거짓이라고 알고 있으며 지배 문화에서 광범위하게 퍼져 있는 주장들에 동등한 신뢰를 부여하는 것을 의미한다면 더욱 그러하다는 것이다.<sup>2</sup>
+    </p>
+    <p>
+      필자는 오랫동안 교사의 정치적 견해가 무엇을 어떻게 가르치는지, 그리고 그 결과 학생들이 무엇을 배우는지에 영향을 미치는 방식에 관한 질문과 논쟁에 관심을 가져 왔다. 이전에는 교사들이 논쟁적 주제를 가르칠 때 내려야 하는 가장 중요한 결정이 학생들에게 자신의 개인적 견해를 공개해야 하는지 여부(그리고 만약 공개한다면 어떤 방식으로)라고 믿었다. '공개 질문(disclosure question)'은 문헌에서 두드러지게 다루어지며, 필자가 다양한 전문성 개발 세미나와 대학원 강좌에서 함께 일한 교사들 사이에서 열띤 논쟁을 일으키고, 필자 자신도 교직 생활 초기부터 씨름해 온 문제이다.
+    </p>
+    <p>
+      필자가 처음 교직을 시작했을 때, 정치적으로 가장 논쟁적인 쟁점 중 하나는 평등권 수정안(Equal Rights Amendment)이 헌법에 추가되어야 하는지 여부였다. 당시 학생들에게 읽힐 찬반 논거 관련 자료를 찾아다니던 기억이 난다. 그런 다음 필자가 가르치던 사회과 수업에서 이 주제에 대한 뜨겁고 종종 흥미로운 토론을 진행하며 중재했다. 신임 교사였던 필자는 이 문제에 대한 학생들의 질문에 어떻게 대응해야 할지 확신이 없었지만, 학생들이 교실을 나가면서 필자가 어떻게 생각하는지를 두고 토론하는 것을 들었을 때 묘하게 기뻤던 것을 기억한다. 그것은 내가 강하게 견지하고 있는 개인적 견해가 학생들에게 쉽게 드러나지 않았다는 신호였다. 그것은 내가 편향적인 교사가 아니라는 증거라고 생각했다.
+    </p>
+    <p>
+      점심 식사 시간에 필자는 다른 교사들에게 우연히 들은 학생들의 대화를 나눴고, 이는 격렬한 토론을 촉발시켰다. 몇몇 동료들은 필자가 어른이 정치적 쟁점을 어떻게 사고하는지를 학생들에게 보여줄 기회를 낭비했다고 생각했다. 한 교사는 필자가 "정치적 거세자(political eunuch)"처럼 행동하고 있다고 하면서, 필자의 정치에 대한 강렬한 관심을 잘 알면서도 "왜 비정치적인 정치 롤모델이 되려고 하느냐?"고 물었다. 점심 식사 자리의 다른 교사들은 동의하지 않았다. "우리의 역할은," 한 교사가 말했다, "학생들이 이 쟁점들을 스스로 생각하도록 돕는 것이지, 우리 자신의 견해를 학생들에게 주입하는 것이 아니다." 또 다른 교사는 이렇게 덧붙였다. "가르칠수록 교사가 학생들에게 갖는 영향력이 얼마나 큰지 더 잘 이해하게 된다. 나는 그 힘을 남용하고 싶지 않다. 그리고 아이들이 내 생각에 동의하는 것이 단지 내가 교사이기 때문인 상황을 원하지 않는다."
+    </p>
+    <p>
+      점심 식사 자리를 떠나면서 필자는 지금 '공개 딜레마(disclosure dilemma)'라고 부르는 것에 대해 여전히 양가적인 감정을 느꼈으며, 그 이후로 다른 교사들이 이에 대한 견해를 이야기할 때 주의 깊게 경청해 왔다. 공개에 반대하는 교사들이 자신의 입장을 좋은 수업의 기준으로 정의하는 경우가 많다는 것을 알게 되었는데, 최근 버지니아 고등학교 교사가 이라크 분쟁에 대해 학생들과 토론을 진행한 것에 대해 다음과 같이 말했다. "나는 학생들이 스스로 결정을 내리도록 독려한다. 내 학생들이 언제라도 내 견해를 알게 된다면, 나는 교사로서 실패한 것이다."<sup>3</sup> 반면 학생들에게 자신의 견해를 공개하는 교사들은 중요한 쟁점에 입장을 취하는 것의 중요성을 모범으로 보여줄 의무가 있다고 주장하는 경우가 많다. 또한 그들은 호혜성을 중요하게 여기며, 자신은 침묵을 유지하면서 학생들에게 쟁점에 대한 공개적 입장 표명을 요구하는 것에 대한 우려를 표명한다.
+    </p>
+    <p>
+      교사가 학생들에게 정치적 쟁점에 대한 개인적 견해를 공개해야 하는지(그리고 만약 공개한다면 어떻게)에 대한 질문은 의심할 여지 없이 중요하다. 그러나 논쟁적 주제의 교수·학습에 관한 필자의 연구와 교직 경험은, 교사들에게 훨씬 더 중요한 질문은 우리의 정치적 견해가 애초에 무엇을 논쟁적 쟁점으로 생각하는지에 어떻게 영향을 미치는지, 그리고 수업에서 쟁점에 접근할지 여부 및 방법을 결정하는 데 어떤 기준을 사용하는지에 대해 묻는 것임을 확신하게 했다.
+    </p>
+  </section>
+
+  <!-- 네 가지 접근 -->
+  <section id="four-approaches">
+    <h2>논쟁적 주제에 대한 네 가지 접근</h2>
+    <p>
+      현재까지 필자는 교사의 정치적 견해가 논쟁적 주제 교육에 영향을 미치는 다양한 방식을 보여주는 네 가지 뚜렷한 접근법을 확인했다(그림 1 참조).
+    </p>
+
+    <section id="denial">
+      <h3>부정(Denial)</h3>
+      <p>
+        첫 번째 접근법은 교사가 어떤 쟁점이 실제로 논쟁적이라는 것을 부정하는 것이다. 교사가 어떤 쟁점을 논쟁적이라고 생각하지 않을 때, 자신의 견해를 공개하더라도 '입장을 취하는' 것이 아니라 '진실을 말하는' 것이 된다. 예를 들어, 한 교사는 미국에서 사형제도를 사용해야 하는지 여부가 논쟁적인 정치 쟁점이 아니라, 학생들이 믿도록 가르쳐야 할 분명한 정답이 있는 문제라고 주장했다. 그녀는 국제 앰네스티(Amnesty International)의 회원으로서 사형을 인가하는 국가에 살고 있다는 것을 매우 부끄럽게 여겼다. 그럼에도 그녀는 교육과정에 사형 제도라는 주제를 포함시키고자 했다. 다만 합법적인 논쟁으로서가 아니라, 미국이 지배적인 세계 여론과 얼마나 동떨어져 있는지를 보여주는 사례로 다루고자 했다. 그렇게 함으로써 그녀는 학생들이 미국이 민주주의로서의 잠재력을 실현하지 못했으며 변화가 필요하다는 것을 이해하기를 바랐다.
+      </p>
+    </section>
+
+    <section id="privilege">
+      <h3>편향(Privilege)</h3>
+      <p>
+        반대로, 두 번째 접근법은 교사가 어떤 주제가 논쟁적이라고 생각하지만 수업에서 특정 관점을 특권화하기를 원하는 경우이다. 이 접근법의 사례는 '진정한 의미의 평등과 해방'을 달성하기 위한 여러 사회 정의 쟁점을 위해 활동하는 정치 활동가 교사에 의해 제공된다. 미국 정부의 친세계화 정책에 항의하기 위해 워싱턴 D.C.로의 주말 여행에서 돌아온 직후, 그는 "편향된 미디어"로부터 학생들이 받는 "세뇌를 상쇄하기" 위해 설계된 착취 공장(sweatshop) 노동에 관한 수업을 진행했다.
+      </p>
+      <p>
+        그 쟁점이 진정한 쟁점임을 인정하면서, 그는 균형을 위한 형식적 노력의 일환으로 Gap 웹사이트에서 가져온 회사의 노동 관행을 설명하는 기사를 하나 소개했다. 그러나 그는 수업이 균형 잡힌 것이 아니라고 인정했다. 그는 교사가 의도적으로 그리고 명시적으로 이념적 교육과정을 만드는 것이 윤리적인지 고민했다. 그럼에도 불구하고 그는 "권력에 진실을 말하고" 학생들이 "어느 편에 설 것인지"를 고려하도록 독려하고 싶었다. 그러나 이렇게 하는 것은 그가 하고자 했던 사회 정의를 위한 교육과, 자신의 관점을 향해 이념적 판을 너무 기울여 놓아서 사실상 학생들을 주입식으로 교육하는 것 사이에 진정한 차이가 있는지에 대해 스스로 의문을 품게 했다.
+      </p>
+    </section>
+
+    <section id="avoidance">
+      <h3>회피(Avoidance)</h3>
+      <p>
+        어떤 주제가 논쟁적 쟁점이라고 생각하더라도, 교사들이 반드시 그것을 교육과정에 포함시키는 것은 아니다. 고등학교 교사 그룹과 함께 고등학교에서 주목받을 만한 대법원 판례에 대해 이야기를 나누던 중, 필자는 회피의 사례를 접했다. 사실상 교사 모두가 로 대 웨이드(Roe v. Wade) 판결을 가르치지 않는다고 말했지만, 그것이 중요한 판례이며 낙태가 여전히 미국에서 중요한 논쟁적 쟁점이라는 것은 인정했다. 이 논쟁을 회피하는 이유는 두 가지 범주에 속했다.
+      </p>
+      <p>
+        일부 교사들은 교실에서 낙태를 언급하는 것만으로도 지역 사회에 소란이 일어날까 봐 두려워했다. 일부는 심지어 그 주제를 다루는 것을 명시적으로 금지한 학교 구역에서 가르치고 있었다. 그러나 더 만연한 것은 교사 자신의 견해의 영향이었다. 독실한 가톨릭 신자인 한 교사는 낙태가 죄라는 개인적 신념으로 인해 쟁점에 공정하게 접근할 수 없을 것이라는 두려움을 토로했다. 낙태 권리를 강력히 지지하는 또 다른 교사는 낙태 반대 단체들이 사용하는 전술에 분개하여, 낙태가 왜 불법이어야 하는지에 대한 학생들의 견해를 들을 엄두가 나지 않는다고 했다. 이처럼 이 교사들은 쟁점이 중요하지 않다고 생각해서가 아니라 정반대의 이유로, 즉 쟁점에 대한 자신들의 강한 견해가 교육학적으로 중립적인 방식으로 학생들에게 가르치는 것을 방해했기 때문에 교육과정에 해당 쟁점을 포함시키는 것을 회피했다.
+      </p>
+    </section>
+
+    <section id="balance">
+      <h3>균형(Balance)</h3>
+      <p>
+        필자가 '균형'이라고 부르는 네 번째 접근법은 일반적으로 어떤 주제가 쟁점인지를 판단하는 기준을 적용하고, 만약 쟁점이라면 특정 관점을 선호하지 않으면서 가르치는 것을 포함한다. 예를 들어, 필자가 연구한 강좌의 두 교사는 학교 밖 세계에서 어떤 주제에 대해 진정한 논쟁이 존재한다면, 그것은 교실에서도 논쟁적 쟁점으로 다루어져야 한다고 믿었다. 부모들이 항의하는 경우에도, 교사들은 특히 논쟁적인 주제들을 합법적인 쟁점으로 다루었으며, 학생들이 쟁점에 대한 다양한 관점을 접할 수 있도록 세심하게 노력했다. 한 교사는 자신의 목표를 이렇게 설명했다:
+      </p>
+      <blockquote>
+        학생들은 자신이 원하는 어떤 의견이든, 어떤 관점이든 가질 권리가 있습니다. 하지만 그들은 어떤 쟁점에 대해 지적으로 입장을 취하기 위해서는 양쪽 관점을 모두 이해해야 합니다. 또한 상대방의 입장을 알면 자신이 지지하는 쪽을 위해 더 효과적으로 변론할 수 있다고 저는 주장합니다.
+      </blockquote>
+      <p>
+        '균형' 접근법은 표면적으로는 많은 교육자, 학교 관리자, 일반 대중에게 매력적으로 보이지만, 문제가 없지는 않다. 합법적인 논쟁이 아니라고 생각하는 주제에 '균형 잡힌' 분석을 적용하는 것은 그들에게 균형 잡힌 것이 아니라 편향된 것으로 보일 것이다. 물론 이러한 우려는 종종 회피로 이어지거나, 실제로 많은 논쟁을 일으키지 않는 논쟁적 쟁점을 선택하게 만든다. 즉, 이러한 형태의 교육이 종종 지지되는 바로 그 이유—청소년들이 진정하고 도전적인 정치적 논쟁에 효과적으로 대처하는 방법을 가르치기 위해—가, 교육과정에서 비교적 '안전한' 쟁점들이 지배적이 된다면 훼손될 수 있다.
+      </p>
+    </section>
+  </section>
+
+  <!-- 결론 -->
+  <section id="conclusion">
+    <h2>결론</h2>
+    <p>
+      교사의 정치적 견해가 논쟁적 주제 교육에 접근하는 방식에 영향을 미치는 방식에는 의심할 여지 없이 다른 방식들도 있겠지만, 필자가 요약한 네 가지 방식은 이 민주주의 교육 형태의 복잡성을 잘 보여주고, 또한 논쟁적 주제에 대한 교육이 왜 논쟁을 불러일으킬 수 있는지를 설명해 준다. 이것은 학생들에게 논쟁적 주제를 가르치는 것을 회피해야 할 이유가 아니다. 오히려 우리 자신의 정치적 견해가 우리가 무엇을 어떻게 가르치는지에 어떤 영향을 미치는지를 확인하고 비판적으로 검토하는 것의 중요성을 보여준다. 그렇게 함으로써, 무엇이 합법적인 논쟁의 문제를 구성하는지, 그리고 우리의 정치적 견해를 학생들에게 공개하는 것이 현명한지와 같은 근본적인 질문들에 대한 '당연하게 여겨지는' 가정들이 드러날 것이다. 그것이 논쟁적 주제에 관한 논쟁들을 사라지게 만들지는 않겠지만(결코 사라지지 않을 것이다), 우리가 왜 그런 방식으로 가르치는지—그리고 우리의 정치적 견해가 어떻게 무엇을 가르치는지에 영향을 미치는 방식을 재고해야 하는지—를 더 잘 이해하는 데 도움이 될 것이다.
+    </p>
+  </section>
+
+  <!-- 표 1: 네 가지 접근 유형 -->
+  <section id="figure-one">
+    <h2>표 1. 교육과정에서 논쟁적 주제에 대한 네 가지 접근 유형</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th style="width:18%">접근 유형</th>
+            <th>설명 및 교사 논리</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>부정 (Denial)</strong></td>
+            <td>논쟁적 정치 쟁점이 아님: "어떤 사람들은 논쟁적이라고 말할 수 있지만, 나는 그들이 틀렸다고 생각한다. 이 문제에는 정답이 있다. 따라서 나는 학생들이 그 답을 발전시킬 수 있도록 논쟁적이지 않은 것처럼 가르칠 것이다."</td>
+          </tr>
+          <tr>
+            <td><strong>편향 (Privilege)</strong></td>
+            <td>논쟁적 정치 쟁점에 대한 특정 관점을 향해 가르침: "그것은 논쟁적이지만, 나는 명백히 옳은 답이 있다고 생각하며 학생들이 그 입장을 취하도록 노력할 것이다."</td>
+          </tr>
+          <tr>
+            <td><strong>회피 (Avoidance)</strong></td>
+            <td>논쟁적 정치 쟁점을 회피함: "그 쟁점은 논쟁적이지만, 나의 개인적 견해가 너무 강하여 내가 그것을 공정하게 가르칠 수 있다고 생각하지 않거나, 그렇게 하고 싶지 않다."</td>
+          </tr>
+          <tr>
+            <td><strong>균형 (Balance)</strong></td>
+            <td>진정한 논쟁적 정치 쟁점으로 다룸: "그 쟁점은 논쟁적이며, 나는 균형을 지향하면서 다양한 입장이 최선의 방식으로 공정하게 다루어지도록 노력할 것이다."</td>
+          </tr>
+        </tbody>
+      </table>
+      <div style="font-size:0.78rem;color:var(--muted);margin-top:6px;">출처: Hess, D. E. (2005). How do teachers' political views influence teaching about controversial issues? <em>Social Education, 69</em>(1), p. 48.</div>
+    </div>
+  </section>
+
+  <!-- 각주 -->
+  <section id="notes">
+    <h2>각주</h2>
+    <div class="footnotes">
+      <ol>
+        <li>Carnegie Corporation of New York and the Center for Information and Research on Civic Learning and Engagement (CIRCLE), <em>The Civic Mission of the Schools</em> (2002): 6. 온라인 열람 가능: www.civicmissionofschools.org/campaign/cms_report.html</li>
+        <li>W. Bigelow and B. Peterson, <em>Rethinking Globalization: Teaching for Justice in an Unjust World</em> [세계화 다시 생각하기: 불의한 세계에서 정의를 위한 교육] (Milwaukee, Wis.: Rethinking Schools Press, 2002): 5.</li>
+        <li>S. Dillon, "Schools Seek Right Balance as Students Join War Debate" [학생들이 전쟁 토론에 참여하면서 학교들은 적절한 균형을 모색한다], <em>The New York Times</em>, March 7, 2003, p. A1.</li>
+      </ol>
+    </div>
+  </section>
+
+  <div id="back-top"><a href="#header">▲ 맨 위로</a></div>
+
+</div><!-- /#main -->
+
+<script>
+  // 스크롤 추적 — 현재 섹션 사이드바 강조
+  window.addEventListener('scroll', () => {
+    let current = '';
+    document.querySelectorAll('section[id]').forEach(s => {
+      if (s.getBoundingClientRect().top <= 80) current = s.id;
+    });
+    document.querySelectorAll('#sidebar nav a').forEach(a => {
+      a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+    });
+  });
+
+  // 부드러운 스크롤
+  document.querySelectorAll('#sidebar nav a').forEach(a => {
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) target.scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+</script>
+
+</body>
+</html>

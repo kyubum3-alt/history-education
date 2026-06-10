@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>최규범의 역사교육론 연구 자료실</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #fff;
+            padding: 30px 0;
+            border-bottom: 1px solid #e0e0e0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        h1 {
+            font-size: 1.8em;
+            margin-bottom: 5px;
+            color: #2c3e50;
+        }
+
+        .subtitle {
+            color: #666;
+            font-size: 0.95em;
+        }
+
+        .main-layout {
+            display: flex;
+            max-width: 1400px;
+            margin: 0 auto;
+            gap: 0;
+            min-height: calc(100vh - 150px);
+        }
+
+        .sidebar {
+            width: 280px;
+            background-color: #fff;
+            border-right: 1px solid #e0e0e0;
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        .content {
+            flex: 1;
+            padding: 30px;
+            background-color: #f8f9fa;
+            overflow-y: auto;
+        }
+
+        .section-item {
+            padding: 12px 15px;
+            margin-bottom: 8px;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: all 0.2s ease;
+            font-size: 0.95em;
+            border-left: 3px solid transparent;
+            color: #666;
+            font-weight: 500;
+        }
+
+        .section-item:hover {
+            background-color: #f0f7ff;
+            border-left-color: #3498db;
+            color: #2c3e50;
+        }
+
+        .section-item.active {
+            background-color: #e3f2fd;
+            border-left-color: #3498db;
+            color: #2c3e50;
+            font-weight: 600;
+        }
+
+        .post-list {
+            background-color: #fff;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .list-title {
+            padding: 20px;
+            background-color: #f5f5f5;
+            border-bottom: 1px solid #e0e0e0;
+            font-size: 1.3em;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        .post-item {
+            padding: 20px;
+            border-bottom: 1px solid #e0e0e0;
+            transition: all 0.2s ease;
+        }
+
+        .post-item:last-child {
+            border-bottom: none;
+        }
+
+        .post-item:hover {
+            background-color: #f9f9f9;
+        }
+
+        .post-item a {
+            text-decoration: none;
+            color: #3498db;
+            font-weight: 500;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .post-item a:hover {
+            color: #2980b9;
+            text-decoration: underline;
+        }
+
+        .post-meta {
+            font-size: 0.9em;
+            color: #999;
+            margin-top: 8px;
+        }
+
+        .empty-state-text {
+            padding: 40px 20px;
+            text-align: center;
+            color: #999;
+            font-size: 1em;
+        }
+
+        @media (max-width: 768px) {
+            .main-layout {
+                flex-direction: column;
+            }
+
+            .sidebar {
+                width: 100%;
+                border-right: none;
+                border-bottom: 1px solid #e0e0e0;
+                max-height: 150px;
+                overflow-x: auto;
+                padding: 10px;
+            }
+
+            .section-item {
+                display: inline-block;
+                width: auto;
+                margin-right: 8px;
+                margin-bottom: 0;
+                white-space: nowrap;
+            }
+
+            .content {
+                padding: 15px;
+            }
+
+            h1 {
+                font-size: 1.4em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>최규범의 역사교육론 연구 자료실</h1>
+            <p class="subtitle">역사교육 관련 논문 및 자료 아카이브</p>
+        </div>
+    </header>
+
+    <div class="main-layout">
+        <div class="sidebar" id="sidebar"></div>
+        <div class="content" id="content"></div>
+    </div>
+
+    <script>
+        let allPosts = {};
+        let currentSection = 'korean';
+
+        const sectionNames = {
+            'korean': '국내',
+            'spanish': '스페인어권',
+            'english': '영어권',
+            'spanish-study-RTVE뉴스': 'RTVE 뉴스'
+        };
+
+        const sectionOrder = ['korean', 'spanish', 'english', 'spanish-study-RTVE뉴스'];
+
+        async function loadPosts() {
+            try {
+                const response = await fetch('posts.json');
+                allPosts = await response.json();
+                init();
+            } catch (error) {
+                console.error('포스트 로딩 실패:', error);
+            }
+        }
+
+        function init() {
+            renderSidebar();
+            showHome();
+        }
+
+        function renderSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            let html = '<div class="section-item" onclick="showHome()" style="margin-bottom: 15px; background-color: #f0f7ff; border-left-color: #3498db; color: #2c3e50;">🏠 홈</div>';
+
+            for (const section of sectionOrder) {
+                const displayName = sectionNames[section] || section;
+                const count = allPosts[section] ? allPosts[section].length : 0;
+
+                html += `<div class="section-item" data-section="${section}" onclick="showSection('${section}')">
+                    ${displayName} (${count})
+                </div>`;
+            }
+
+            sidebar.innerHTML = html;
+        }
+
+        function showHome() {
+            currentSection = null;
+            renderHome();
+
+            document.querySelectorAll('.section-item').forEach(item => {
+                item.classList.remove('active');
+            });
+
+            document.querySelector('[onclick="showHome()"]').classList.add('active');
+        }
+
+        function renderHome() {
+            const content = document.getElementById('content');
+            let html = `<div class="post-list">
+                <div class="list-title">전체 자료</div>`;
+
+            let totalCount = 0;
+            for (const section of sectionOrder) {
+                const posts = allPosts[section] || [];
+                const displayName = sectionNames[section] || section;
+                const count = posts.length;
+                totalCount += count;
+
+                if (count > 0) {
+                    html += `<div style="padding: 15px 20px; border-bottom: 1px solid #e0e0e0;">
+                        <h3 style="color: #2c3e50; margin-bottom: 10px; font-size: 1.1em;">${displayName} (${count})</h3>`;
+
+                    for (const post of posts.slice(0, 3)) {
+                        let meta = '';
+                        if (post.authors) meta += ` — ${post.authors}`;
+                        if (post.year) meta += ` (${post.year})`;
+
+                        html += `<div style="margin-bottom: 8px; padding-left: 10px; border-left: 2px solid #3498db;">
+                            <a href="${post.url}" target="_blank" style="text-decoration: none; color: #3498db; font-size: 0.95em;">${post.title}</a>
+                            <span style="color: #999; font-size: 0.85em;">${meta}</span>
+                        </div>`;
+                    }
+
+                    if (count > 3) {
+                        html += `<div style="padding-left: 10px; color: #999; font-size: 0.9em; margin-top: 5px;">외 ${count - 3}개</div>`;
+                    }
+
+                    html += `</div>`;
+                }
+            }
+
+            html += `<div style="padding: 20px; text-align: center; color: #999;">
+                <p>총 ${totalCount}개의 자료가 등록되어 있습니다.</p>
+            </div></div>`;
+
+            content.innerHTML = html;
+        }
+
+        function showSection(section) {
+            currentSection = section;
+            renderContent();
+
+            document.querySelectorAll('.section-item').forEach(item => {
+                item.classList.remove('active');
+            });
+
+            document.querySelector(`[data-section="${section}"]`).classList.add('active');
+        }
+
+        function renderContent() {
+            const content = document.getElementById('content');
+            const posts = allPosts[currentSection] || [];
+            const displayName = sectionNames[currentSection] || currentSection;
+
+            if (!posts || posts.length === 0) {
+                content.innerHTML = `<div class="post-list">
+                    <div class="list-title">${displayName}</div>
+                    <div class="empty-state-text">${displayName} 섹션에 등록된 자료가 없습니다.</div>
+                </div>`;
+                return;
+            }
+
+            let html = `<div class="post-list">
+                <div class="list-title">${displayName}</div>`;
+
+            for (const post of posts) {
+                html += `<div class="post-item">
+                    <a href="${post.url}" target="_blank">${post.title}</a>
+                    <div class="post-meta">`;
+
+                if (post.authors) {
+                    html += `저자: ${post.authors} | `;
+                }
+                if (post.year) {
+                    html += `${post.year} | `;
+                }
+                if (post.date) {
+                    html += `${post.date}`;
+                }
+
+                html += `</div>
+                </div>`;
+            }
+
+            html += '</div>';
+            content.innerHTML = html;
+        }
+
+        document.addEventListener('DOMContentLoaded', loadPosts);
+    </script>
+</body>
+</html>

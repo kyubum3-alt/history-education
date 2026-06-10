@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>침묵의 독재 — 에스코베도 무게르사 (2023) 한국어 번역</title>
+<style>
+:root {
+  --sidebar-width: 270px;
+  --accent: #2c5f8a;
+  --accent-light: #e8f1f8;
+  --text: #1a1a1a;
+  --muted: #555;
+  --border: #d0d7de;
+  --bg: #fafafa;
+  --white: #ffffff;
+  --table-head: #f0f4f8;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', sans-serif;
+  font-size: 15px;
+  line-height: 1.8;
+  color: var(--text);
+  background: var(--bg);
+}
+
+/* ── 사이드바 ── */
+#sidebar {
+  position: fixed;
+  top: 0; left: 0;
+  width: var(--sidebar-width);
+  height: 100vh;
+  background: var(--white);
+  border-right: 1px solid var(--border);
+  overflow-y: auto;
+  padding: 20px 0 40px;
+  z-index: 100;
+}
+
+#sidebar .sidebar-title {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0 18px 10px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 10px;
+}
+
+#sidebar nav a {
+  display: block;
+  padding: 5px 18px;
+  font-size: 12.5px;
+  color: var(--muted);
+  text-decoration: none;
+  border-left: 3px solid transparent;
+  transition: all .2s;
+  line-height: 1.5;
+}
+
+#sidebar nav a:hover,
+#sidebar nav a.active {
+  color: var(--accent);
+  background: var(--accent-light);
+  border-left-color: var(--accent);
+}
+
+#sidebar nav a.sub {
+  padding-left: 30px;
+  font-size: 12px;
+}
+
+/* ── 메인 콘텐츠 ── */
+#main {
+  margin-left: var(--sidebar-width);
+  padding: 48px 56px 80px;
+  max-width: 860px;
+}
+
+/* 논문 헤더 */
+.paper-header {
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 24px;
+  margin-bottom: 32px;
+}
+
+.paper-journal {
+  font-size: 12px;
+  color: var(--muted);
+  margin-bottom: 10px;
+  letter-spacing: 0.03em;
+}
+
+.paper-title-ko {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--accent);
+  line-height: 1.45;
+  margin-bottom: 8px;
+}
+
+.paper-title-orig {
+  font-size: 14px;
+  color: var(--muted);
+  font-style: italic;
+  margin-bottom: 16px;
+}
+
+.paper-author {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.paper-affil {
+  font-size: 12.5px;
+  color: var(--muted);
+  margin-bottom: 10px;
+}
+
+.paper-meta {
+  font-size: 12px;
+  color: var(--muted);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+/* 초록 */
+.abstract-box {
+  background: var(--accent-light);
+  border-left: 4px solid var(--accent);
+  padding: 20px 24px;
+  margin-bottom: 10px;
+  border-radius: 0 6px 6px 0;
+}
+
+.abstract-box h2 {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.abstract-box p { font-size: 14px; }
+
+.keywords {
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 10px;
+}
+
+.keywords strong { color: var(--text); }
+
+/* 섹션 */
+section {
+  margin-bottom: 44px;
+  scroll-margin-top: 24px;
+}
+
+section h2 {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--accent);
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 8px;
+  margin-bottom: 18px;
+}
+
+section h3 {
+  font-size: 15px;
+  font-weight: 700;
+  margin: 22px 0 12px;
+  color: var(--text);
+}
+
+section p {
+  margin-bottom: 14px;
+}
+
+/* 각주 */
+.footnotes {
+  margin-top: 32px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+}
+
+.footnotes p {
+  font-size: 12.5px;
+  color: var(--muted);
+  margin-bottom: 6px;
+  line-height: 1.6;
+}
+
+sup { font-size: 10px; color: var(--accent); }
+
+/* 인용 블록 */
+blockquote {
+  border-left: 3px solid var(--border);
+  margin: 16px 0;
+  padding: 10px 20px;
+  background: #f5f5f5;
+  font-style: italic;
+  font-size: 14px;
+  color: #444;
+}
+
+/* 참고문헌 */
+.ref-list p {
+  font-size: 13px;
+  margin-bottom: 10px;
+  padding-left: 24px;
+  text-indent: -24px;
+  line-height: 1.65;
+}
+
+/* 맨 위로 버튼 */
+#top-btn {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 44px; height: 44px;
+  font-size: 20px;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,.2);
+  display: flex; align-items: center; justify-content: center;
+  text-decoration: none;
+}
+
+/* 반응형 */
+@media (max-width: 900px) {
+  #sidebar { display: none; }
+  #main { margin-left: 0; padding: 24px 20px 60px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ───── 사이드바 ───── -->
+<aside id="sidebar">
+  <div class="sidebar-title">📄 논문 목차</div>
+  <nav>
+    <a href="#abstract">초록</a>
+    <a href="#intro">1. 역사적 기억의 문제</a>
+    <a href="#metodologia">2. 방법론, 틀과 한계</a>
+    <a href="#victimas">3. 교과서 속 피해자들</a>
+    <a class="sub" href="#guerra">3-1. 내전: 등거리주의와 공동 책임</a>
+    <a class="sub" href="#franquismo">3-2. 프랑코 체제: 억압과 개발주의</a>
+    <a href="#esperanza">4. 희망과 체념 사이</a>
+    <a href="#referencias">참고문헌</a>
+  </nav>
+</aside>
+
+<!-- ───── 메인 ───── -->
+<main id="main">
+
+  <!-- 논문 헤더 -->
+  <div class="paper-header">
+    <div class="paper-journal">
+      Historia y Memoria de la Educación, 17 (2023): 463–489 ·
+      Sociedad Española de Historia de la Educación ·
+      DOI: 10.5944/hme.17.2023.30613 · ISSN: 2444-0043
+    </div>
+    <div class="paper-title-ko">침묵의 독재: 중등학교 및 바칠레라토 교과서 속 내전과 프랑코 체제의 피해자들</div>
+    <div class="paper-title-orig">La dictadura del silencio. Las víctimas de la Guerra Civil y el franquismo en los libros de secundaria y bachillerato</div>
+    <div class="paper-author">이사벨 에스코베도 무게르사 (Isabel Escobedo Muguerza)</div>
+    <div class="paper-affil">사라고사 대학교 철학·문학부 역사학과 · iescobedo@unizar.es</div>
+    <div class="paper-meta">
+      <span>투고: 2021년 4월 7일</span>
+      <span>수락: 2022년 10월 13일</span>
+    </div>
+  </div>
+
+  <!-- ── 초록 ── -->
+  <section id="abstract">
+    <div class="abstract-box">
+      <h2>스페인어 초록 (Resumen)</h2>
+      <p>프랑코 독재 정권은 출범 초기부터 모든 수단을 동원하여 제2공화국의 기억을 악마화하고 말살하려는 기억 정책을 추진하였으며, 이와 함께 내전의 모든 피해자들, 그리고 물론 독재 정권 자체의 피해자들까지 역사 속에서 지워버리려 하였다. 놀랍게도 40년이 훨씬 지난 오늘날에도, 제2공화국·내전·프랑코 억압에 관해 전파된 이 담론의 일부는 프랑코 체제 기관에서 교육받은 세대와 그 자녀들 사이에서뿐 아니라, 현재 중등학교에서 사용되는 학교 교과서에도 여전히 남아 있다. 이 사실은 최근 수십 년간 이 시기에 관한 전문적인 연구가 방대하게 축적되었음에도 불구하고, 그 연구에서 도출된 개념과 결론들이 학교 교과서에 스며들지 못하고 있음을 드러낸다. 이는 이러한 지식을 사회 전반으로 전달하는 데 있어 심각한 장애물이 된다. 이에 본 연구에서는 다양한 출판사의 교과서들을 분석하여, 전체 내용 대비 이 역사적 시기에 할당된 분량의 비율, 교과서에서 가장 많이 다루는 주제와 침묵하거나 은폐된 주제, 그리고 교과서가 내전과 프랑코 체제의 피해자들을 어떻게 형상화하는지를 탐구한다.</p>
+      <div class="keywords"><strong>주요어:</strong> 역사적 기억 / 프랑코 체제 / 내전 / 억압 / 교육</div>
+    </div>
+    <div class="abstract-box" style="margin-top:10px;">
+      <h2>영어 초록 (Abstract)</h2>
+      <p>From its beginnings, the Franco dictatorship developed a policy of memory that tried, by all means, to demonise and then make the memory of the Second Republic disappear, burying with it all the victims of the Civil War and, of course, the victims of the dictatorship itself. Although it may seem surprising, more than forty years later, parts of this discourse transmitted about the Second Republic, the Civil War and Franco's repression are still present not only among those generations who were educated in Franco's institutions and their children, but also in school textbooks currently used in secondary schools. This fact reveals that, despite the fact that in recent decades a great deal of specialised research has been carried out on this period, the ideas and conclusions drawn from this research have not permeated school textbooks. This constitutes a major impediment to the transmission of this knowledge to the rest of society. In this sense, through the analysis of a good number of textbooks from different publishers, this study aims to analyse the proportion of textbook material devoted to this historical period in relation to the rest of the contents; the aspects covered most thoroughly in the textbooks — as opposed to those that are silenced or hidden — and, finally, the vision that is presented in these textbooks about the victims of the Civil War and Franco's regime.</p>
+      <div class="keywords"><strong>Keywords:</strong> Memory; Franco Regime; Civil War; Repression.</div>
+    </div>
+  </section>
+
+  <!-- ── 1. 역사적 기억의 문제 ── -->
+  <section id="intro">
+    <h2>1. 역사적 기억의 문제로서 (La memoria histórica como problema)</h2>
+
+    <p>21세기에도 학교는 우리 사회의 개인적·집단적 정체성의 기반을 이루는 제도화된 기억과 망각을 형성하고 확립하는 데 있어 주된 책임자로서 여전히 특권적인 위치를 점하고 있다.<sup>1</sup> 이러한 교육 세계에서 학교 교과서는 다른 교수 자료들을 크게 능가하여 교육과정을 지배하며, 미래 세대의 집단적 상상력과 과거·현재·미래에 대한 이해와 시각을 구성하는 데 기여한다. 이런 맥락에서 스페인 학교 교과서 분석은 사회과 교육학의 고전적 연구 주제 또는 연구 흐름 중 하나로 자리 잡아, 오늘날 가장 많은 연구 성과가 축적된 분야 중 하나가 되었다.</p>
+
+    <p>교육 현장에서 멀리 떨어진 사람들은 학교 교과서가 이미 교실에서 밀려났으며 다른 수업 방식으로 대체되었다고 생각할 수도 있다. 그러나 교과서 사용은 초등·중등·바칠레라토 교사들 사이에서 여전히 상당히 보편적인 관행이며, 교사와 학생 모두에게 어떤 식으로든 지속적인 영향을 미치고 있다.<sup>2</sup> 프라츠(Prats)나 발스(Valls)도 교사의 90% 이상이 학교 교과서를 수업의 주요 자료로 활용하고 있다는 사실을 상기시킨다.<sup>3</sup> 따라서 교과서에 담긴 텍스트는 역사에 관한 특정한 세계관을 전달하는 데 있어 매우 중요하다. 잘 다루어진 역사 교과목은 인권 옹호에 기반한 교육과정 내용을 도입하기에 이상적인 과목이 될 수 있다. 그러나 현실에서는 여전히 정치·제도 중심의 사실들, 그것도 대부분 학생들이 살아가는 세계와 시간적으로 크게 동떨어진 사실들을 중심으로 가르치고 있으며, 더 나아가 역사 교과목은 국가 정체성 형성과 구축을 위한 도구로 계속 활용되고 있다.<sup>4</sup></p>
+
+    <p>이러한 점에서, 역사의 어떤 시기가 논쟁적이라는 것은 그 시기의 핵심적인 측면에 대한 합의가 존재하지 않는다는 것을 의미하며, 결과적으로 학교 교과서를 통해 전달될 수 있는 표준화된 담론이 존재하지 않는다는 것을 뜻한다. 내전과 프랑코 체제가 바로 이러한 경우이며, 특히 이 역사적 시기의 피해자들을 교과서에서 어떻게 다루는가 하는 문제가 그러하다.<sup>5</sup> 또한 우리는 교과서가 결코 중립적이지 않다는 점을 인식해야 한다. 각 교과서의 편집은 매우 치밀하게 기획되고 구조화되어 있으며, 따라서 소위 '망각'들은 결코 무고하지 않다. 이러한 망각들이 특정한 이데올로기와 구체적 이익관계—교과서를 판매하는 출판 그룹뿐 아니라 그 배후의 압력 집단들—로 물든 역사관을 반영하고 있다는 점을 간과해서는 안 된다. 다양한 출판사들이 서로 다른 이념적 전통을 통합할 수 있도록 허용하여, 각 출판사는 고유한 노선을 유지한다. SM은 가톨릭 노선으로 특징지어지고, 비센스 비베스(Vicens Vives)는 자유주의, 산티야나(Santillana)나 에시르(ECIR)는 보다 진보적인 자유주의로 특징지어진다.<sup>6</sup> 이 상황은 우리가 여기서 다루게 될 문제를 더욱 악화시킨다.</p>
+
+    <p>우리가 연구하는 주제는 아직도 스페인에서 활발히 논쟁 중인 역사적 기억을 둘러싼 논쟁과 밀접하게 연결되어 있다. "오래된 상처를 다시 열어선 안 된다"고 주장하는 사람들과 여전히 열려 있는 상처를 치유하고자 하는 사람들 사이의, 이 문제는 이미 끝났다고 주장하는 사람들과 아직 할 일이 많다고 생각하는 사람들 사이의 논쟁은 계속되며 주기적으로 다시 불거진다. 가장 최근의 계기는 페드로 산체스 정부가 프란시스코 프랑코의 유해를 발굴하기로 결정하고 논란 속에 이를 집행한 일<sup>7</sup>과, 2022년 10월 21일에 발효된 새로운 민주적 기억법(Ley de Memoria Democrática)의 승인이었다.<sup>8</sup> 이 주제는 따라서 반복되는 현안이며, 우리 사회에서 아직 해결되지 않은 숙제이다.</p>
+
+    <p>이 외상적 과거를 둘러싼 반복적인 미디어·사회적 논쟁들은 이 사건들에 대한 기억의 집단적 관리에서 결함을 드러내는 이른바 '기억의 거짓 봉합(cierre en falso de la memoria)'<sup>9</sup>으로 개념화된 것의 결과이다. 한편 국제 기구들은 계속해서 우리의 상황을 경고해 왔다. 2014년 유엔이 발간한 보고서는 스페인 정부가 내전과 프랑코 독재 중 저질러진 인권 범죄를 배상하기 위해 추진한 작업을 분석하면서, 이 과제를 위해 이루어진 작업이 얼마나 부족한지를 강조하였다.<sup>10</sup></p>
+
+    <p>이처럼 역사를 둘러싼 갈등은 교육 분야에도 그대로 반영된다. 또한 이 논쟁들이 계속되는 것은 사회 일부가 내전과 프랑코 체제를 불충분하게 배웠거나 전혀 배우지 못했기 때문이라고도 볼 수 있다. 하물며 프랑코 기관에서 직접 교육받은 세대들은 프랑코 군대가 공산주의의 손아귀에 떨어질 위기에 처한 스페인을 구한 구원자로 등장하는 완전히 왜곡된 내전의 역사를 배웠다.<sup>11</sup> 역사학자 훌리안 카사노바(Julián Casanova)는 이런 맥락에서 다음과 같이 주장한다. "스페인 우파는 40년 동안 반대파를 박해하고, 학살하고, 고문하며 기본적인 시민의 자유를 부정한 독재 정권으로서의 프랑코주의를 전혀 알고 싶어 하지 않는다. 그 시기 서유럽은 민주적 시민 문화와 사회적 법치국가로 발전하고 있었는데 말이다. 그들은 역사를, 그리고 더욱 나쁜 것은 그 역사의 교육을 부정한다." 마찬가지로 많은 역사 연구자와 전문가들은, 전쟁과 독재가 생산한 공포를 알리고 오랫동안 잊혀진 피해자들을 기억하는 것 외에도, 아카이브·박물관·학교와 대학에서의 교육을 기억에 관한 공공 정책의 세 가지 기본 축으로 삼아야 한다고 주장한다. 이는 이미 아르헨티나 같은 나라들에서 풍부한 경험을 통해 실천되고 있는 것이기도 하다.<sup>12</sup></p>
+
+    <div class="footnotes">
+      <p><sup>1</sup> Mario Carretero y Marcelo Borrelli, «Memorias recientes y pasados en conflicto: ¿cómo enseñar historia reciente en la escuela?», <em>Cultura y Educación</em> 20, no. 2 (2008): 203-204. [최근의 기억과 갈등하는 과거: 학교에서 현대사를 어떻게 가르칠 것인가?]</p>
+      <p><sup>2</sup> Raimundo A. Rodríguez Pérez y Glória Solé, «Los manuales escolares de Historia en España y Portugal. Reflexiones sobre su uso en Educación Primaria y Secundaria», <em>Arbor</em> 194-788 (2018): 1-12. [스페인과 포르투갈의 역사 학교 교과서: 초등·중등 교육에서의 활용에 관한 성찰]</p>
+      <p><sup>3</sup> Joaquín Prats, «Criterios para la elección del libro de texto de historia», <em>Íber: Didáctica de las ciencias sociales, geografía e historia</em> 70 (2011): 7-13; Cosme Jesús Gómez Carrasco y Raimundo A. Rodríguez Pérez, «La enseñanza de la historia y el uso de libros de texto ante los retos del siglo XXI: entrevista a Rafael Valls Montés», <em>Historia y Memoria de la Educación</em> 6 (2017): 363-380.</p>
+      <p><sup>4</sup> Miralles Martínez y Cosme Jesús Gómez Carrasco, «Enseñanza de la historia, análisis de libros de texto y construcción de identidades colectivas», <em>Historia y Memoria de la Educación</em> 6 (2017): 9-28; Manuel Barreiro Mariño, «La asignatura de Historia y la enseñanza de los Derechos Humanos de la mujer en el contexto de una nueva ley educativa», <em>Didácticas Específicas</em> 22 (2020): 45.</p>
+      <p><sup>5</sup> 제2공화국의 종말, 특히 스페인 내전을 촉발한 원인들도 이에 해당한다고 볼 수 있다.</p>
+      <p><sup>6</sup> Emilio Castillejo Cambra, «Análisis del contenido ideológico de los manuales de Historia», <em>Bordón. Revista de Pedagogía</em> 61, no 2 (2009): 49.</p>
+      <p><sup>7</sup> Alberto Soler Montagud, «Exhumar a Franco no reabre heridas, las cierra», <em>Nueva Tribuna</em>, 27 de agosto de 2018. [프랑코 발굴은 상처를 다시 여는 것이 아니라 닫는 것이다]</p>
+      <p><sup>8</sup> Vicente Coll, «Aprobada la Ley de Memoria Democrática con el rechazo del PP, Vox y Cs», <em>El Mundo</em>, 5 de octubre de 2022. [PP·복스·시우다다노스의 반대 속에 민주적 기억법 가결]</p>
+      <p><sup>9</sup> Francisco Ferrándiz, «Exhumaciones y políticas de la memoria en España», <em>Hispania Nova</em> 7 (2007): 627. [스페인의 발굴과 기억 정치]</p>
+      <p><sup>10</sup> Manuel Barreiro Mariño, «La memoria histórica en España y su situación en el ámbito educativo», <em>Revista Historia Autónoma</em> 11 (2017): 262.</p>
+      <p><sup>11</sup> 이러한 역사의 '버전'들은 역사학자 엔리케 모라디엘요스(Enrique Moradiellos)가 '친프랑코 수정주의(revisionismo filofranquista)'라 명명한 것으로, 과거를 재검토하고 프랑코 체제가 제2공화국과 내전에 심어놓은 신화들을 반복하는 특정 '연구자'들에 의해 여전히 조장되고 있다.</p>
+      <p><sup>12</sup> Morgan Cowie-Haskell, «La Presencia de la Memoria Histórica y Derechos Humanos en el Sistema Educativo. Una Comparación de Chile y Argentina», <em>Chile: Comparative Education and Social Change</em> 1 (2015): 1-29. [교육 체계에서의 역사적 기억과 인권: 칠레와 아르헨티나 비교]</p>
+    </div>
+  </section>
+
+  <!-- ── 2. 방법론, 틀과 한계 ── -->
+  <section id="metodologia">
+    <h2>2. 방법론, 틀과 한계 (Metodología, marco y límites)</h2>
+
+    <p>학교 교과서에서 분석한 내용을 설명하기에 앞서, 몇 가지 예비적 고려 사항을 제시할 필요가 있다. 첫째는 사용된 방법론이다. 본 연구는 이 교과서들의 담론·내용에 대한 비판적 검토를 목적으로 하며, 내전과 프랑코 독재에 관한 단원(unidades didácticas)에 초점을 맞춘다. 또한 각 자치 공동체별로 생산된 모든 교과서를 포괄하기가 불가능하므로, 앞서 언급한 주요 출판사들과 그들이 대표하는 이념적 흐름을 기준으로 표본을 선정하였다.</p>
+
+    <p>둘째, '내전과 프랑코 체제의 피해자'는 주로 (물리적·경제적) 억압의 피해자를 의미하며, 망명, 마키(maquis, 반프랑코 무장 저항 세력), 반프랑코 투쟁과 같은 비교적 관련된 현상들은 포함하지 않는다. 이 주제들은 이미 학교 교과서에 비교적 많이 통합되어 있기 때문이다. 물론 그 담론들도 크게 개선될 여지가 있다.<sup>13</sup> 아울러 본 분석은 전투와 독재 시기로 한정하며, 이행기(Transición)는 별도로 다루어야 할 문제들이 있으므로 제외한다.<sup>14</sup></p>
+
+    <p>이러한 목적을 달성하기 위해 우리나라의 주요 출판사들이 발행한 중3(4.º de ESO, 의무중등교육 4학년)<sup>15</sup> 및 바칠레라토 2학년(2.º de Bachillerato)<sup>16</sup> 역사 교과서들을 분석하였으며, 분석 대상은 모두 이른바 '역사적 기억법(Ley de Memoria Histórica, 2007)' 공포 이후에 출판된 것들이다. 이 시점을 출발점으로 삼은 이유는, 그 이전에는 내전과 프랑코 체제 피해자들의 역사, 즉 이 역사를 요구하는 어떠한 법률도 존재하지 않았다고 판단했기 때문이다. 민주주의 수립 이후 PP(국민당)와 PSOE(스페인사회주의노동자당) 모두 역사 교육을, 특히 내전과 독재의 역사를 최우선적인 정치적 논쟁의 대상으로 삼아왔으며, 그 과정에서 피해자들은 항상 침묵당하고 잊혀왔다.<sup>17</sup></p>
+
+    <p>그러나 앞서 언급한 법이 법적 차원에서 중요한 전환점을 의미하기는 하지만, 이 법 공포 이후 생산된 교과서들도 교과서라는 측면에서 이전 전통으로부터 자유롭지 않다는 점을 인식해야 한다. 많은 경우, 이 교과서들은 프랑코 체제 교과서뿐만 아니라 이미 민주주의 시대에 작성된 교과서들의 논리·신화·편견을 그대로 계승하고 있다. 이런 맥락에서 이 문제를 연구한 기존 연구들<sup>18</sup>은, 예를 들어 민주주의 시대의 모든 학교 교과서가 공통적으로 갖는 결함 중 하나는 내전의 전투를 상세하게 서술하는 데 지나치게 큰 비중을 둔다는 점으로, 이는 프랑코 체제 시대로부터 물려받은 특성이라고 밝히고 있다. 반면 사회적 합의가 존재하지 않기 때문에 논쟁적이거나 논란을 불러일으킬 수 있는 주제들에는 같은 비중을 두지 않는다. 이 같은 상황을 잘 보여주는 또 다른 사례는 내전의 원인을 설명할 때 이를 양측 모두가 잔학 행위를 저지른 동족 전쟁으로 규정하며 전쟁이 초래한 국가적 비극에 설명의 초점을 맞추는 것인데, 이 전통은 1975년에 발표된 바칠레라토 교육과정에서 비롯된 것으로, 1990년 LOGSE(일반교육체계법) 공포 시까지 유효했으며<sup>19</sup> 따라서 민주주의 시대 상당 기간 교과서에 큰 영향을 미쳤다.</p>
+
+    <p>이러한 한계들을 설정하고 나면, 내전과 프랑코 체제에 관한 주제들이 학교 과목의 모든 역사 단원에 공통적인 일련의 문제점들을 공유하고 있음을 언급해야 한다. 그 첫 번째는 교과서와 최신 연구 성과 사이의 현저한 괴리이다. 교과서들은 흔히 해당 과목 내용의 전문가가 아닌 사람들이 조율하거나 편집하며, 일부 권호에 참여하는 역사학자들의 관여도 매우 제한적이다. 이로 인해 많은 교과서에서 상당히 오래된 텍스트들이나 최신 연구로 검증되지 않은 데이터들이 재생산된다. 이 문제의 대표적 사례가 비센스 비베스의 "내전 1936-1939" 단원<sup>20</sup>으로, 최고 수준의 역사학자가 참여했음에도 불구하고 억압의 피해자, 특히 프랑코 진영의 피해자에 관한 데이터가 매우 낡은 표를 보여주고 있다.</p>
+
+    <p>또 다른 문제는 교육과정의 현저한 방대함이다. ESO(의무중등교육) 현행 편제에서 현대사는 마지막 학년에 가르친다. 주당 3시간으로 18세기부터 현재까지를 다루는 교육과정을 이수하기에는 부족해 보인다. 게다가 중3에서 이 내용들이 충분한 깊이로 가르쳐지는 것이 얼마나 중요한지를 인식해야 한다. 많은 학생들이 학업을 계속하지 않거나 바칠레라토를 선택하지 않아, 고교 스페인 역사 과목에서 이 주제들을 다시 만나지 못하기 때문이다. 따라서 실제로 많은 학생들이 시민으로 편입될 사회의 뿌리에 대한 적절한 지식 없이 중학교를 떠날 가능성이 높다.<sup>21</sup> 이는 기존 연구들로도 확인되는 것 같다. 예를 들어 로센도 마르티네스 로드리게스(Rosendo Martínez Rodríguez)의 연구에 따르면, 인터뷰에 응한 교사의 절반 이상(62%)이 중3에서 스페인의 독재-민주주의 전환기 관련 내용을 가르치지 못한다고 밝혔다.<sup>22</sup></p>
+
+    <p>마지막으로, 낡은 교수법과 교육 자료의 활용, 혹은 해당 시기에 대한 심층적인 이해를 전혀 제공하지 못하는 정치·제도 중심의 암기식 내용도 도움이 되지 않는다. 교과서 단편들이 보여주는 역사적 서술은 순수한 사실 암기에 기반한 매우 선형적인 내러티브에 근거하고 있다.<sup>23</sup> 바칠레라토 2학년 교과서에 접근하는 사람이라면 누구나, 내전 단원에서 가장 중요하게 다루는 것 중 하나가 전쟁의 군사적 단계와 두 진영의 정치적 발전이라는 점을 알 수 있다. 이는 앞서 분석한 전통과 깊이 연관되어 있을 뿐 아니라, 대학입학수능시험(EvAU) 자체에 의해서도 강화되고 있다. 2021년 아라곤의 스페인 역사 교과목 EvAU 지침<sup>24</sup>을 보면, '평가 가능한 학습 기준' 중에 군사적 단계가 포함되어 있지만, 억압에 대해서는 학생이 "전쟁의 인적 비용과 경제적·사회적 결과를 명시한다"는 수준에 그쳐 훨씬 불명확하게 기술되어 있다. 이로 인해 출판사들은 억압보다 군사사에 훨씬 더 많은 공간을 할애하게 된다.<sup>25</sup> 더불어 사실과 연도 중심의 군사사가 훨씬 무색무취하다는 점도 고려해야 한다. 프랑코 체제에 대해서도 비슷한 상황이 발생한다. 억압을 다양한 형태로 설명하기 위한 전용 절을 두는 출판사는 비센스 비베스(Vicens Vives) 단 하나뿐이다.<sup>26</sup></p>
+
+    <div class="footnotes">
+      <p><sup>13</sup> 학교 교과서에서 이 주제들을 어떻게 다루는지에 관심이 있다면, Enrique Javier Díez Gutiérrez (dir.), <em>La memoria histórica en los libros de texto escolares</em> (León: Foro por la Memoria de León, 2012) 참조 권장. [학교 교과서 속 역사적 기억]</p>
+      <p><sup>14</sup> 이행기는 독재자의 사망 이전에 시작된 장기적 과정으로 이해한다. 프랑코주의의 위기와 쇠퇴는 1969년부터 시작된 것으로 볼 수 있으며, 1973년 12월 카레로 블랑코 암살이 중요한 가속 시점이다. 훌리안 카사노바 같은 연구자들은 이행기를 1982년까지 연장하기도 한다.</p>
+      <p><sup>15</sup> ESO 4학년 분석 대상 교과서: Vicens-Vives(2016), Santillana(2015, 2008), Ecir(2008), Edebé(2008), Edelvives(2007), SM(2016), Anaya(2015, 2008) 등 총 8종.</p>
+      <p><sup>16</sup> 바칠레라토 2학년 분석 대상 교과서: McGraw Hill(2009), SM(2016), Santillana(2015), Anaya(2015), Bruño(2009), Vicens-Vives(2015, 2016) 등 총 7종.</p>
+      <p><sup>17</sup> Belén Fernández Muñoz, «La Guerra Civil Española en las Leyes Educativas (1938-2019)», en <em>Actas del II Encuentro de Doctorandos/as e Investigadores/as Noveles de AIDIPE</em> (Madrid: UAM, 2019), 248.</p>
+      <p><sup>18</sup> Emilio Castillejo Cambra, <em>Mito, legitimación y violencia simbólica en los manuales escolares de historia del franquismo (1936-1975)</em> (Madrid: UNED, 2014). [프랑코 체제 역사 학교 교과서의 신화, 정당화, 상징적 폭력 (1936-1975)]; José Antonio Álvarez Osés et al., <em>La guerra que aprendieron los españoles. República y guerra civil en los textos de bachillerato (1938-1983)</em> (Madrid: Los Libros de la Catarata, 2000). [스페인인들이 배운 전쟁: 바칠레라토 교과서 속 공화국과 내전 (1938-1983)]</p>
+      <p><sup>19</sup> Marcos Marina Carranza, «¿Qué guerra nos han explicado? La Guerra Civil en los libros de texto», en <em>Historia, identidad y alteridad: Actas del III Congreso Interdisciplinar de Jóvenes Historiadores</em> (Salamanca: Hergar Ediciones Antema, 2012): 720-721.</p>
+      <p><sup>20</sup> Aróstegui Sánchez (ed.), <em>Historia de España</em>, 296-323.</p>
+      <p><sup>21</sup> Fernando Hernández Sánchez, «El franquismo en la E.S.O», <em>Público</em>, 3 de junio de 2011.</p>
+      <p><sup>22</sup> Rosendo Martínez Rodríguez, «Profesores entre la historia y la memoria. Un estudio sobre la enseñanza de la Transición dictadura-democracia en España», <em>Enseñanza de las Ciencias Sociales</em> 13 (2014): 45.</p>
+      <p><sup>23</sup> 암기 자체가 나쁜 것이 아니라, 이름·사실·연도 중심의 측면에 지나치게 치중하여 해당 시기에 대한 심층적인 이해를 외면한다는 것이다.</p>
+      <p><sup>24</sup> Miralles Martínez, «Enseñanza de la historia», 18; Belén Fernández Muñoz, «La enseñanza y didáctica de la guerra civil española en las aulas de Secundaria y Bachillerato», en <em>Actas XVIII Congreso Internacional de Investigación Educativa</em> (Salamanca: Universidad de Salamanca, 2017): 142.</p>
+      <p><sup>25</sup> 예를 들어 억압 문제는 인권 옹호를 다루기에 이상적인 주제가 될 수 있지만, 교과서들은 전투를 중심적으로 가르침으로써 학생들에게 간접적으로 두 번째 것이 더 중요하다고 가르친다.</p>
+      <p><sup>26</sup> Aróstegui Sánchez (ed.), <em>Historia de España</em>, 324-347; Álvarez Rey (ed.), <em>HE: Historia de España</em>, 358-383.</p>
+    </div>
+  </section>
+
+  <!-- ── 3. 교과서 속 피해자들 ── -->
+  <section id="victimas">
+    <h2>3. 교과서 속 피해자들 (Las víctimas en los manuales escolares)</h2>
+
+    <section id="guerra">
+      <h3>3-1. 내전: 등거리주의와 공동 책임 (La Guerra Civil: equidistancia y culpabilidad compartida)</h3>
+
+      <p>이 절에서 교과서들, 특히 중3 교과서들의 최소공배수는 역사의 이 부분을 문제의 뿌리나 폭력의 기원을 심층적으로 파고들지 않는 포괄적이고 무색무취한 형식으로, 그리고 이 주제를 명확하고 단호하게 다루고자 하지 않는 방식으로 제시하는 것이다. 대부분의 교과서에는 공화군 지역과 반란군 지역의 억압에 대한 언급이 등장하지만, 두 억압의 성격을 구별하는 경우는 극히 드물다. 이 지점은 엄밀성의 결여와 등거리주의에 빠지지 않기 위해 근본적으로 중요하다. 다양한 연구들<sup>27</sup>은 후방에 대한 폭력이 전투와 동시에 진행되었지만 그 성격은 어느 진영을 말하느냐에 따라 매우 달랐다는 것을 충분히 입증해 왔다. 공화군 지역의 억압은 전투 초기 몇 달에 집중되었고, 탈중앙화되어 있었으며 공화국 당국의 묵인을 받지 않았다. 마찬가지로, 교회는 공화군 진영의 억압에서 피해자로 자주 거명되지만, 가해자로서의 역할은 외면된다. 가톨릭교도들의 밀고와 주민 통제·징계에서 가톨릭교도들의 억압 참여는 근본적이었다.<sup>28</sup> 이런 상황은 많은 출판사에서 나타나지만, 특히 교회와 연관된 출판사인 에델비베스(Edelvives)와 SM에서 두드러진다.</p>
+
+      <p>이러한 전반적인 시각 안에서 다소 놀라운 몇 가지 차이가 나타난다. 첫째로, 억압이 아예 등장하지 않는 교과서들이 있다.<sup>29</sup> 둘째로, 중립적으로 보이려고 애쓰지만 전혀 그렇지 않은 교과서들이 있다. 예컨대 한 교과서는 "정부의 권위 부재가 무력 집단들이 수천 명의 민간인, 종교인, 우파 정치인, 재산 소유자의 목숨을 앗아가는 억압적 절차를 자행하도록 허용했다"<sup>30</sup>고 쓰면서도, 프랑코 진영의 억압을 설명할 때는 어떠한 수치도 제시하지 않고 특정 사건의 구체적인 예를 들지 않는다.<sup>31</sup> 이를테면 특히 민간인에게 큰 영향을 미친 '데스반다(La Desbandá)' 사건<sup>32</sup>조차 예로 들지 않는다. 또한 이 그룹에는 페데리코 가르시아 로르카(Federico García Lorca)의 살인자를 언급하기를 '잊어버린' 교과서들도 포함된다.<sup>33</sup></p>
+
+      <p>셋째로, 두 진영 사이에서 어느 정도 차이를 두기는 하지만(공화국 정부가 묵인하지 않은 폭력 vs. 프랑코 진영에서 제도화된 폭력), 이 주제를 양측의 등거리주의와 공동 책임으로 귀결되는 성찰들로 마무리하며 가장 감성적이고 고통스러운 측면을 강조하는 교과서들이 있다:</p>
+
+      <blockquote>[…] 인명 피해는 사망자 약 50만 명, 그리고 그만큼의 망명자에 이르렀다; 최악은 내전이 스페인인들 사이에 뿌린 증오의 씨앗이었다.<sup>34</sup></blockquote>
+
+      <blockquote>[…] 내전 […]은 스페인 역사의 대비극 중 하나였다. 수십만 명의 사망자를 냈고, 그 중 많은 이들이 후방에서 학살되었으며, 스페인인들 사이에 증오와 불화를 뿌렸고, 수십만 명의 남성, 여성, 아이들을 망명길에 올리게 했으며, 그 중 일부는 결코 돌아오지 못했다 […].<sup>35</sup></blockquote>
+
+      <blockquote>분쟁이 도달한 잔혹함은 전례 없는 증오를 낳았고, 이는 사회를 심지어 같은 가족 구성원들 사이에서도 대립시켜 오늘날에도 여전히 열려 있는 사회적 균열을 야기했다.<sup>36</sup></blockquote>
+
+      <p>넷째이자 마지막으로, 중3 교과서의 대다수가 취하는 입장은 두 진영의 불가피한 동일시이다. 대부분의 교과서에서 두 교전 집단을 지속적으로 동일시하려는 시도—아마도 무의식적으로—가 분명하게 나타나며, 교과서가 편향적이라는 비판을 받지 않거나 학생이나 교사 사이에서 마찰을 일으키지 않으려는 목적에서 비롯된 것으로 보인다. 다음 단편들이 좋은 예이다:</p>
+
+      <blockquote>일상생활도 양측이 상대방 지지자들을 대상으로 자행한 보복으로 인해 혼란에 빠졌다. […] 양측에서 많은 사람들이 상대편에 소속되거나 지지한다는 이유로 고발당하고 처형되었다 […] 전쟁 중 양측에서 13만 명이 억압의 피해자가 되었다.<sup>37</sup></blockquote>
+
+      <blockquote>[…] 내전은 거의 50만 명에 이르는 생명을 앗아갔고, 수많은 동포들을 망명길에 올려 나라를 황폐화시켰다. 일상생활도 양측이 상대방 지지자들을 대상으로 자행한 보복으로 인해 혼란에 빠졌다.<sup>38</sup></blockquote>
+
+      <p>보다시피 이러한 담론들은 "우리 모두가 죄인"이라는 노선에 매우 근접해 있다. 21세기에, 프랑코 사망 후 46년이 지난 지금, 대부분의 학교 교과서가 여전히 이러한 담론을 유지하고 있는 것은 어떻게 가능한가? 이미 지적했듯이, 이 상황이 스페인의 역사적 기억 논쟁과 그에 관한 합의의 부재와 깊이 연관되어 있다고 결론 내릴 수 있다. 40년의 독재 기간 동안 프랑코 체제는 동시에 강력한 정치적 정당화 수단이기도 했던 효과적인 기억 정책을 추진했다.<sup>39</sup> 수십 년 동안 체제가 유포한 서술은 스페인에 관한 허위 역사에 기반하였으며, 거기서 제2공화국은 혼란과 무질서의 시기로, 군사 봉기와 전쟁은 평화를 얻기 위한 유일한 방법으로 따라서 정당화된 것으로 묘사되었다.<sup>40</sup> 이것이 프랑코 체제의 기원적 정당성이었고, 여기에 프랑코가 평화의 유일한 보증인이자 경제 발전과 따라서 진보의 제공자라는(1960년대 이후) 행사적 정당성이 더해졌다.<sup>41</sup> 이 정책 전체는 예상대로 스페인 국민에게 깊이 스며들었고<sup>42</sup>, 이행기를 경험한 세대들에게 완벽하게 관찰 가능했다. 이에 따라 정치 엘리트들과 사회 대다수는 제2공화국 실패와 내전 발발에 대한 집단적 죄책감을 표현하는 담론을 반복하며 "양측 모두 잔학 행위를 저질렀다"고 말했다. 동시에 이것은 반란군 진영과 프랑코 체제에 의해 박해받은 피해자들을 외면하는 것을 의미했다.<sup>43</sup></p>
+
+      <p>그러나 이러한 합의의 정치는 1990년대 중반이 되어서야 실질적으로 균열이 가기 시작했다. 이때 훌리오 아로스테기(Julio Aróstegui)가 '화해의 기억'의 종언, 즉 이행기가 지지했던 담론의 종언이라고 명명한 것이 나타났다.<sup>44</sup> 2000년대 초에는 기억 운동과 관련된 다양한 단체들의 탄생이 목격되었고 큰 사회적 반향을 불러일으켰다. 산티아고 마시아스(Santiago Macías)와 에밀리오 실바(Emilio Silva)가 역사적 기억 회복 협회(ARMH)를 설립했다. 이 단체는 반란군 진영의 억압 피해자들이 묻혀 있는 집단묘지의 유해 발굴을 요구했다. 이 사실은 최근의 외상적 역사적 과거를 공적 논쟁의 중심에 두게 된 스페인 사회의 급격한 변화를 부각시켰다. 이 변화는 내전과 프랑코 체제 피해자들을 기억하고 그들의 도덕적·정치적·법적 배상을 요구하는 측과, 이를 이행기의 합의를 깨는 것으로 간주하여 반대하는 측을 대립시켰다.<sup>45</sup> 이러한 사회적 요구들은 2000년 호세 마리아 아스나르의 절대 다수 집권 이전까지는 이 문제에 대해 상당히 중립적인 입장을 취해온 스페인사회주의노동자당(PSOE)이 수용하게 되었다. PSOE는 사회의 요구에 영향을 받거나, 자신의 우측 정치 진영과의 차별화 수단으로 이 주제를 활용하고자 하는 관심에서, 그때까지 자신들보다 좌측의 정당들만이 옹호해왔고 그로 인해 비난받아온 이 요구들을 자신의 것으로 삼기 시작했다.</p>
+
+      <p>이러한 진전과 동시에, 역사학계는 1980년대 초부터 내전과 독재를 깊이 연구하기 시작하여 지금까지 멈추지 않았다. 오늘날 우리는 학교 교과서를 작성할 때 준거 틀로 삼을 수 있는 방대한 전문 학술 문헌을 보유하고 있다. 그러나 피해자들을 기억하려는 사회 각계의 노력과 역사학 분야의 광범위한 진전에도 불구하고, 교과서의 담론들은 예상 수준에 크게 미치지 못하며, "양측 모두 잔학 행위를 저질렀다"는 테제에 더 가깝게 연결되어 있다.</p>
+
+      <p>이러한 맥락에서, 모든 교과서들이 앞서 지적한 결함들을 갖고 있지만 일부는 기억 회복 운동을 언급하기 시작했다는 점을 언급할 필요가 있다. 보다 진보적인 노선의 출판사인 비센스 비베스는 진압 피해자들의 집단묘지 발굴과 역사적 기억 회복 운동에 관한 일부 데이터를 포함하기 시작했다. 중3용 교재에서는 다음 단편이 두드러진다: "수년 후, 그 피해자들의 진실·정의·배상을 요구하는 사회 각계의 압력이 역사적 기억법(2007)의 승인으로 결실을 맺었다."<sup>46</sup> 바칠레라토용으로는 같은 출판사에서 단원 내에 별도의 언급이 없지만, 또 다른 출판사인 SM은 다음을 읽을 수 있는 활동을 포함하고 있다:</p>
+
+      <blockquote>이 상황을 해결하기 위해 역사적 기억 회복 단체들이 결성되어 […] 이러한 작업의 발굴 및 재정 지원에 더 많은 관여를 당국에 요구해 왔다. 그들의 노력에도 불구하고, 남은 과제는 방대하며, 그들의 활동이 야기하는 논쟁은 내전의 상처가 여전히 열려 있다는 분명한 증거이다.<sup>47</sup></blockquote>
+
+      <p>이러한 상황에서, 현재 교과서들이 역사적 기억을 둘러싼 현재의 논쟁에 대해 매우 적극적인 태도를 취했다고는 말할 수 없다. 이 주제가 역사 교과서에 반드시 포함될 필요가 없다고 주장하는 사람도 있을 수 있지만, 지난 수십 년간 스페인 사회에서 이 논쟁이 어디에나 있다는 점을 감안하면 마땅히 다루어져야 할 것으로 보인다.</p>
+
+      <div class="footnotes">
+        <p><sup>27</sup> 폭력 분야의 가장 큰 전문가 중 한 명은 호세 루이스 레데스마(José Luis Ledesma)이다. 대표 저서: <em>Los días de llamas de la revolución: violencia y política en la retaguardia republicana de Zaragoza durante la guerra civil</em> (Zaragoza: Institución Fernando el Católico, 2003). [혁명의 불꽃의 나날: 내전 중 사라고사 공화군 후방의 폭력과 정치]</p>
+        <p><sup>28</sup> Julián Casanova, <em>La iglesia de Franco</em> (Madrid: Ediciones Temas de Hoy, 2001). [프랑코의 교회]</p>
+        <p><sup>29</sup> 오류가 많고 구식인 데이터가 담긴 표 하나만 등장한다. Burgos Alonso, <em>Ciencias sociales, geografía e historia</em>, 173.</p>
+        <p><sup>30</sup> 1936년 11월 7일 마드리드 모델로 감옥의 죄수들이 파라쿠에요스 델 하라마로 끌려가 공화군 민병대에 의해 총살된 것을 가리킨다.</p>
+        <p><sup>31</sup> Cortés Salinas (ed.), <em>Geografía e Historia 4 ESO</em>, 159.</p>
+        <p><sup>32</sup> 반란군 부대가 말라가에 접근할 때, 해안 도로를 통해 공화군이 장악한 알메리아 방향으로 민간인 피란이 발생했다. 1937년 2월 8일 이 민간인들이 해상과 항공으로 공격을 받아 3,000~5,000명이 사망했다. 이 사건은 흔히 '데스반다다(La Desbandada)' 또는 '데스반다(La Desbandá)'로 불린다.</p>
+        <p><sup>33</sup> García Almiñana (coord.), <em>Historia 4 ESO</em>; Peña Vílchez, <em>Historia [h]4</em>.</p>
+        <p><sup>34</sup> Peña Vílchez, <em>Historia [h]4</em>, 163.</p>
+        <p><sup>35</sup> Avilés Farré, <em>Historia de España 2</em>, 283.</p>
+        <p><sup>36</sup> Pereira Castañares, <em>Historia de España</em>, 270.</p>
+        <p><sup>37</sup> Fernández de Bartolomé (ed.), <em>Historia 4 ESO: Aragón</em>, 213-214.</p>
+        <p><sup>38</sup> Juan Redal (ed.), <em>Historia 4 ESO</em>, 206 y 208.</p>
+        <p><sup>39</sup> Carme Molinero, «¿Memoria de la represión o memoria del franquismo?», en <em>Memoria de la Guerra Civil y el franquismo</em>, dir. Santos Juliá (Madrid: Taurus, 2006): 240-241.</p>
+        <p><sup>40</sup> Josefina Cuesta, «Las capas de la memoria. Contemporaneidad, sucesión y trasmisión generacionales en España (1931-2006)», <em>Hispania Nova</em> 7 (2007): 342.</p>
+        <p><sup>41</sup> Paloma Aguilar, <em>Memoria y olvido de la Guerra Civil española</em> (Madrid: Alianza Editorial, 1996), 68-74.</p>
+        <p><sup>42</sup> 망명자 등 공화국과 내전에 대해 다른 기억을 간직한 소수 집단이 있었음을 고려해야 한다.</p>
+        <p><sup>43</sup> Aguilar, <em>Memoria y olvido</em>, 210-212. 스페인 사회가 과거를 잊거나 침묵시킨 것이 아니라, 화해를 위해 일어난 일을 '망각으로 던져버리기(echar al olvido)'로 결정했다고 주장하는 산토스 훌리아(Santos Juliá) 같은 다른 연구자들도 있다.</p>
+        <p><sup>44</sup> Julio Aróstegui, «Traumas colectivos y memorias generacionales: el caso de la guerra civil», en <em>Guerra Civil: mito y memoria</em> (Madrid: Marcial Pons, 2006): 57-92.</p>
+        <p><sup>45</sup> Pedro Ruiz, «Los discursos de la Memoria Histórica en España», <em>Hispania Nova</em> 7 (2007): 320.</p>
+        <p><sup>46</sup> García Sebastián (ed.), <em>GH: Geografía e Historia</em>, 277.</p>
+        <p><sup>47</sup> Pereira Castañares, <em>Historia de España</em>, 275.</p>
+      </div>
+    </section>
+
+    <section id="franquismo">
+      <h3>3-2. 프랑코 체제: 억압과 개발주의 (El franquismo: represión y desarrollismo)</h3>
+
+      <p>군사 독재 정권이 어떠한 사회적 목적을 위해 국가 권력을 장악했는지, 왜 민간인에 대한 광범위한 억압 계획을 추진했는지, 왜 광범위한 세력의 지지를 받거나 다른 집단의 묵인을 얻었는지를 이해하는 것은 프랑코 체제를 이해하는 데 근본적으로 중요하다. 그러나 교과서들은 이 목표에서 상당히 멀리 떨어져 있다. 모든 교과서가 동일한 패턴을 반복한다. 프랑코 초기 억압에 대한 설명을 제시하고 독재의 두 번째 시기에 대한 설명을 재개하지 않아, 억압과 공포가 초기 단계만의 문제라는 느낌을 준다.<sup>48</sup> 학술계에서 최근 수년간 강조해 온 것, 즉 억압이 프랑코 체제 내에서 산발적이거나 반응적인 것이 아니라 오히려 체제의 척추이자 그 본질을 규정하는 요소 중 하나이며 체제의 장기 지속을 이해하는 핵심이라는 점<sup>49</sup>을 감안하면 이는 놀라운 사실이다.</p>
+
+      <p>실제로 이러한 프랑코 체제 시각은 국민들 사이에 상당히 만연해 있으며 심지어 언론 매체와 정치 엘리트들에 의해 강화되는 경우도 많다. 이것은 프랑코 체제 자체에서 평화, 번영, 스페인 가정의 안정을 가져다 준 체제로 자신을 합법화하고자 하는 목적에서 시작되었으며, 1936년에 존재하던 많은 사회적 불평등이 1960년대에도 지속되었다는 사실을 외면했다. 물론 독재가 끝나고 체제를 찬양하던 교과서들도 함께 사라지자, 학교 교과서들은 이전 시기에 비해 약간의 변화를 겪었다(예를 들어 초등 8학년, 중등 3학년 교과서). 그러나 침묵들은 여전하고 현재도 분명하다.<sup>50</sup> 이 공통분모 외에도 중요하게 강조해야 할 두 번째 사항이 있다. 유감스럽게도 분석된 모든 교과서들은—일반적으로 최신 연구와 보다 잘 연결되어 있는 비센스 비베스의 바칠레라토 2학년 교과서조차—경제와 같은 다른 주제에 비해 억압에 할당하는 공간이 극히 적다는 결함을 안고 있다.</p>
+
+      <p>이러한 공통점들을 넘어, 교과서들은 억압을 서로 다른 방식으로 다룬다. 대부분의 중3 교과서들, 특히 SM이나 에델비베스 같은 보수적인 출판사 교과서들은 이 주제를 피상적으로 다루며 프랑코 체제의 핵심 억압 법률<sup>51</sup>에 대한 언급조차 하지 않고, 때로는 감옥, 공직자 숙청, 재산 몰수조차 언급하지 않는다.<sup>52</sup> 다음 그룹에는 중3 나머지 교과서들이 거의 모두 포함된다. 억압 법률은 언급하지만 충분히 심층적으로 다루지 않거나 다양한 억압 유형을 언급하지 않는 교과서들이다.<sup>53</sup> 나머지 교과서들은 현재 역사학 논쟁을 학교 교육 맥락에 잘 적용한 것으로 볼 수 있으며, 물론 그 안에서도 수준 차이가 있다. 다음 단편들이 예시가 될 수 있다:</p>
+
+      <blockquote>스페인은 승리한 진영과 패배한 진영으로 나뉘었으며, 패배한 진영은 공화국에 협력하거나 심지어 공식 이념에 반하는 어떤 정치적 생각을 가졌다는 이유만으로도 구금이나 처벌을 받을지 모른다는 두려움으로 삶이 좌우되는 패배의 결과를 받아들여야 했다.<sup>54</sup></blockquote>
+
+      <blockquote>[…] 죽을 때까지 승리자와 패배자 사이의 분열을 지속시켰다 […] 억압은 잔인했고 자유의 부재는 완전했다 […] 체제는 전쟁 중 시작된 적들에 대한 가차없는 억압을 계속했다.<sup>55</sup></blockquote>
+
+      <p>선택된 두 단편이 패배자에 대한 폭력의 지속성을 분명히 하고 있지만, 이 생각을 강조하거나 억압의 유형들을 심층적으로 탐구하지는 않는다. 예를 들어 특히 특징적인 것은 여성을 향해 특별히 겨냥된 억압—머리 삭발, 피마자기름 강제 복용, 강간 혹은 성적 학대 등—이 외면된다는 것이다. 이뿐만 아니라 '죄수의 아내들(mujeres de preso)'<sup>56</sup>이라는 주제 같은 다른 특징적인 문제들도 마찬가지이다. 이 문제는 역사학계에서 광범위하게 다루어져 왔으며<sup>57</sup>, 교과서들이 참고할 수 있는 방대한 연구 성과들이 있다. 하물며 강제수용소나 강제노동수용소 같은 다른 억압 유형들은 말할 것도 없다.</p>
+
+      <p>분석된 교과서들 중 가장 완성도 높은 것은 바칠레라토 2학년을 위한 비센스 비베스 출판사 교과서들이다.<sup>58</sup> 이 교과서들은 핵심 법률뿐 아니라 재산 몰수, 공직자 숙청, 강제수용소, 노동자 부대를 포함하여 각 억압 유형을 설명하는데, 이는 결코 흔한 일이 아니다: "프랑코 체제는 패배자들과의 화해를 추구하는 데 조금도 관심을 보이지 않았다. 그것의 목표는 항상 체제에 반대하는 모든 이들을 파괴하거나 굴복시키는 것이었다."<sup>59</sup> 그러나 앞서 지적했듯이, 이 교과서조차 1960년대<sup>60</sup>와 1970년대<sup>61</sup>의 노동자·학생에 대한 초법적 암살은 언급하지 않으며, 프랑코 후기의 억압에 대해서도 심층적으로 탐구하지 않는다. 그리고 이것은 학생들이 첫 번째 시기의 폭력이 멈추지 않고, 독재 기간 내내 지속되며 이행기까지 이어진다는 것을 이해하게 하는 데 근본적으로 중요하다. 최근 연구들이 증명했듯이<sup>62</sup>, 폭력과 억압은 이행기에도 일부를 이루었다. 이것은 역사적 기억법 이전 교육 시기부터 이어져 온 가장 중요한 결함 중 하나이다.</p>
+
+      <div class="footnotes">
+        <p><sup>48</sup> 억압, 기아, 공포가 독재의 첫 10년에 더 혹독했던 것은 사실이다. 그러나 그것들이 프란시스코 프랑코 40년 통치 내내 체제의 본질적인 부분을 이루었다는 것도 사실이다. Manuel Ortiz Heras, <em>La violencia política en la dictadura franquista 1939-1977: la insoportable banalidad del mal</em> (Albacete: Bomarzo, 2013). [프랑코 독재에서의 정치적 폭력 1939-1977: 악의 참을 수 없는 평범성]</p>
+        <p><sup>49</sup> Julián Casanova, «Una dictadura de cuarenta años», en <em>Morir, matar, sobrevivir: La violencia en la dictadura de Franco</em>, coord. Julián Casanova (Madrid: Crítica, 2002), 6.</p>
+        <p><sup>50</sup> Carlos Fuertes Muñoz y Mélanie Ibáñez Domingo, «La represión franquista en los manuales escolares: el problemático tratamiento de un tema histórico conflictivo», <em>Didáctica de las Ciencias Experimentales y Sociales</em> 37 (2019): 6. [학교 교과서 속 프랑코 억압: 역사적으로 갈등적인 주제의 문제적 취급]</p>
+        <p><sup>51</sup> 1939-1948년 프랑코 억압 정책의 핵심은 어떠한 절차적 보장도 없는 군사 재판이었다. 이는 1939년 2월 9일 정치적 책임법, 1940년 3월 1일 프리메이슨·공산주의 탄압법, 총괄수사(Causa General) 등으로 보완되었다. 이 법률들 중 어느 것에도 언급이 없다는 것은 놀라운 일이다.</p>
+        <p><sup>52</sup> 이 그룹에는: Peña Vílchez, <em>Historia [h]</em>; Cortés Salinas (ed.), <em>Geografía e Historia 4 ESO</em>; Grupo Edebé (ed.), <em>Ciencias sociales Historia 4 ESO</em>, 236; Burgos Alonso y Muñoz-Delgado y Mérida, <em>Ciencias sociales, geografía</em> (억압에 관한 내용이 전혀 없어 특히 심각한 경우).</p>
+        <p><sup>53</sup> García Sebastián (ed.), <em>GH: Geografía e Historia</em>; Juan Redal (ed.), <em>Historia 4 ESO</em>; Burgos Alonso y Muñoz-Delgado y Mérida, <em>Ciencias sociales</em>, 212; García de Cortázar (coord.), <em>Historia de España 2 Bachillerato</em>.</p>
+        <p><sup>54</sup> Pereira Castañares y De la Mata Carrasco, <em>Historia de España</em>, 290.</p>
+        <p><sup>55</sup> Avilés Farré, <em>Historia de España 2</em>, 299 y 303.</p>
+        <p><sup>56</sup> '죄수의 아내들'은 프랑코 감옥 외부에서 정치범 가족들의 활동을 분석하는 개념으로, 수감된 가족에 대한 개인적 연대와 지원에서 출발하여 부인·억압 피해자로서 자신들의 요구를 관철하기 위한 집단적 의식으로 발전하는 과정을 보여주는 데 목적이 있다. Irene Abad Buil, <em>Las mujeres de los presos políticos represión, solidaridad y movilización en los extramuros de las cárceles franquistas (1936-1977)</em> (Zaragoza: Tesis Doctoral Inédita, 2007).</p>
+        <p><sup>57</sup> 몇 가지 예: Mary Nash (ed.), <em>Represión, resistencias, memoria: Las mujeres bajo la dictadura franquista</em> (Granada: Comares, 2013). David Ginard, «Represión y especificidad de género: en torno a la violencia política contra las mujeres en la España del primer franquismo»</p>
+        <p><sup>58</sup> Aróstegui Sánchez (ed.), <em>Historia de España</em>; Leandro Álvarez Rey (ed.), <em>HE: Historia de España</em>.</p>
+        <p><sup>59</sup> Aróstegui Sánchez (ed.), <em>Historia de España</em>, 328.</p>
+        <p><sup>60</sup> 1960년대 학생·노동자 동원 맥락에서 가장 중요한 사건 중 하나는 1969년 1월 20일 집에서 수색을 받던 중 프랑코 비밀 경찰(정치사회여단)에 의해 법학부 학생 엔리케 루아노(Enrique Ruano)가 살해된 것이다.</p>
+        <p><sup>61</sup> 1970년대에 가장 잘 알려진 사건 중 하나는 프로세소 1001(Proceso 1001)이다. 1972년 6월 24일 노동자위원회 전국 조정위원회가 체포되어 공공질서재판소(TOP)에서 재판을 받아 지도자들에게 총 162년의 형이 선고되었다.</p>
+        <p><sup>62</sup> Sophie Baby, <em>El mito de la transición pacífica: violencia y política en España (1975-1982)</em> (Barcelona: Ediciones Akal, 2018). [평화로운 이행의 신화: 스페인의 폭력과 정치 (1975-1982)]; Ferrán Gallego, <em>El mito de la transición</em> (Barcelona: Crítica, 2008).</p>
+      </div>
+    </section>
+  </section>
+
+  <!-- ── 4. 희망과 체념 사이 ── -->
+  <section id="esperanza">
+    <h2>4. 희망과 체념 사이 (Entre la esperanza y la resignación)</h2>
+
+    <p>지금까지 살펴본 바와 같이, 학교 교과서에서 내전과 프랑코 체제의 피해자들이 처한 상황은 그리 희망적이지 않으며, 아직 가야 할 길이 멀다. 역사 연구 분야에서 도출된 지식과 그 성과들이 학교 교과서에 통합되지 않은 것은 분명하다. 마찬가지로 그 성과들에 근거한 매우 필요한 개념적 재검토도 이루어지지 않았으며, 이는 유사한 다른 연구들도 결론 내리는 바이다.<sup>63</sup> 일반적으로 교사의 대다수는 최근 몇 년간 학교 교육과정에서 이 주제에 더 많은 비중이 주어지기 시작했다고 생각하지만, 교과서에서 매우 실질적인 변화가 있었다고 보지는 않는다. 많은 교사들이 수업 활동에 이 내용을 포함했다고 밝히지만, 이 기사 첫 부분에서 설명한 것처럼 교육과정 대비 가용 시간에 대한 압박이 크기 때문에 간략하고 빠르게 다루는 방식으로 임하고 있다.<sup>64</sup></p>
+
+    <p>교사들이 갖는 이러한 느낌이 현실적인가? 최근 몇 년간 역사적 기억법의 영향 아래 일부 자치 공동체들에서 일련의 민주적 기억법들이 제정된 것으로 보인다(안달루시아 2017, 카탈루냐 2007, 나바라 2013, 카나리아 2018, 에스트레마두라 2019). 아라곤도 이 그룹에 포함된다(2018년 11월 8일자 아라곤 민주적 기억법 14/2018).<sup>65</sup> 그 법 제28조에는 다음과 같이 명시되어 있다:</p>
+
+    <blockquote>교육 분야 소관 부서는 아라곤의 민주적 기억과 연관된 과거 사건들에 관하여 역사 학문의 고유한 과학적 관행에 기반한 정확하고 최신의 정보에 학생들이 효과적으로 접근할 수 있도록 보장하는 방향으로 교육과정을 재검토하고, 갈등 해결을 위한 비폭력적 방법의 활용을 장려하며 존중, 정치적 다원주의, 인권 수호, 평등, 평화 문화에 기반한 공존 모델을 증진할 것이다.</blockquote>
+
+    <p>마찬가지로, 2016년에 각각 승인된 아라곤의 ESO<sup>66</sup> 및 바칠레라토<sup>67</sup> 교육과정은 이런 방향에서 이미 일부 기반을 마련하고 있었다:</p>
+
+    <blockquote>교사가 제공하는 다양한 출처의 정보를 바탕으로 유럽적·국제적 맥락에서 스페인 내전의 원인을 설명하고, 억압과 정치적 도구로서의 폭력 행사의 의미를 적절히 평가하기 위한 민주적 기억을 갖는다; 전후 상황과 스페인에서의 억압, 프랑코 독재의 다양한 단계를 인지하고 그러한 억압 형태와 자유 박탈을 부정적으로 평가하고 이에 반대하는 태도를 취하며 이의 어떠한 재현에도 반대하는 민주적 기억을 갖는다.</blockquote>
+
+    <p>그러나 이러한 법 형태의 초기 움직임들이 학교 교과서에 반향을 일으키지 못하는 것 같다. 한편 다양한 연구들은 학생들이 이 주제들을 알지 못한다는 것을 보여준다.<sup>68</sup> 따라서 내전과 프랑코 체제의 피해자들에 관한 지식은 역사 수업에 체계적으로 통합되지 않고, 오히려 각 교사의 개인적 관심과 헌신에 더 의존하고 있다. 물론 교과서에 절대적인 권력을 부여할 수는 없다. 즉, 교과서의 내용이 학생들에게 직접적으로 전달되는 것이 아니라, 그들의 사회화는 훨씬 더 복잡하다. 그러나 이것이 교사와 학생들이 수업에서 사용하는 자료들을 개선하려는 노력을 멈추는 이유가 되어서는 안 된다.</p>
+
+    <p>이 페이지들을 통해 우리는 분명한 외상적 부담과 역사의 연구 대상으로서 야기하는 논란으로 인해 최근 과거의 연구와 조사를 둘러싼 가장 문제적인 측면들 일부를 제기해왔다. 또한 현재의 행위자들(정치인, 출판사 등)이 이를 전용하고 재의미화하기 위한 다툼과 그것의 공적 활용도 다루었다.<sup>69</sup> 이런 맥락에서, 이 주제들에 관한 사회적 합의가 없는 한 대다수의 학교 교과서들이 내전과 독재의 피해자들을 적절하게 다루기 어려울 것이라고 생각하는 것은 논리적이다.</p>
+
+    <p>그러나 이와 함께 또 다른 일련의 상황들이 갖추어져야 한다. 첫째, 연구의 최전선에 있는 전문 역사가들이 학교 교과서와 대중적 텍스트 작성에도 참여하여 사회가 이 역사적 사건들에 더 가까이 다가갈 수 있도록 도와야 한다. 이는 의심할 여지 없이 학교 교과서 내용의 업데이트에 유익한 영향을 미칠 것이다. 또한 대학에서 학교까지 지식의 이전을 촉진하여 내전을 동족 전쟁으로 해석하거나 양측 진영에서 저지른 폭력을 동일시하는 신화들이 계속 재생산되지 않도록 할 것인데, 이는 역사학계가 이미 오래전에 넘어선 논쟁들이다. 둘째, 역사 교육이 정치·제도 측면의 암기적 학습에 기반하는 것이 아니라, 특정 역사적 시기에 대한 심층적이고 비판적인 이해에 기반하도록 계속 발전시켜야 한다. 셋째, 교사들이 학교 교과서에 존재하는 낡은 담론에 더 비판적이고 교과서 개정판에 의존하지 않도록, 역사학과 역사 교수법의 최신 발전과 연구에 대한 교원 연수가 필요하다. 이러한 제안들은 재판과 내용 업데이트에서 훨씬 더 보수적이고 신화와 금기 타파에 덜 적극적인 출판사들과 그 이념적 노선에 비해 균형을 맞추는 데 도움이 될 것이다.</p>
+
+    <p>역사가 인권 교육에 이상적인 학문이라는 점을 놓쳐서는 안 된다. 이는 외상적 과거를 말할 때 전적으로 필수적인 것으로, 역사는 평화를 달성하고 민주주의적 가치를 발전시키기 위해 기여한 세계적·국가적 차원의 모든 과정을 이해하는 데 도움을 준다. 독재들이 역사에 대한 자신들의 시각을 강요하기 위해 망각을 활용하는 것들이라는 점을 잊지 말아야 한다. 그러나 다양한 교육법들이 이 문제를 특별히 강조하지 않았다는 점, 특히 LOMCE<sup>70</sup>가 인권 문제를 그다지 구체적이지 않은 일부 언급에 맡겨버린 것이 특히 심각하다는 점도 간과해서는 안 된다. 새로운 교육법 프로젝트인 LOMLOE<sup>71</sup> 역시 이 면에서 큰 발전을 도입하지는 않는 것 같다.<sup>72</sup></p>
+
+    <p>따라서 필자의 견해로는, 최근 과거의 논쟁적인 측면들이 교실에서 심층적으로 다루어져야 한다. 역사적 맥락을 깊이 있게 다루고, 다양한 사료와 함께 작업하고, 다원적 인과 설명을 우선시하고, 역사 교육의 현재적 유용성을 강조하며, 학생들 사이의 토론을 개방하는 방식으로 말이다. 다시 말해, 중3과 바칠레라토 2학년 역사 과목이 이행기가 부과한 집단적 기억상실을 아직 극복해 나가며 역사에서 이 정치적 폭력의 피해자들이 차지하는 역할을 기억하는 현재 역사적 시기에, 인권 교육, 역사 의식, 비판적 사고의 교수와 학습을 촉진하는 데 활용되어야 한다. 이것이야말로 학교가 체제 영속화를 위한 기관 그 이상임을 증명해야 하는 지점이다.</p>
+
+    <div class="footnotes">
+      <p><sup>63</sup> José Carlos Mancha Castro, «El franquismo en el libro de texto. Un análisis crítico de tres manuales escolares para 4.º de ESO en Andalucía», <em>Investigación en la Escuela</em> 98 (2019): 11-12. [교과서 속 프랑코 체제: 안달루시아 중3 교과서 세 종에 대한 비판적 분석]</p>
+      <p><sup>64</sup> Gutiérrez (dir.), <em>La memoria histórica</em>, 40; Asunción Criado, «La memoria y la enseñanza de la dictadura franquista en la Enseñanza», 136.</p>
+      <p><sup>65</sup> BOA Nº 226. 22/11/18, 39121-39122.</p>
+      <p><sup>66</sup> Orden ECD/489/2016, de 26 de mayo, por la que se aprueba el currículo de la Educación Secundaria Obligatoria, 22 y 24.</p>
+      <p><sup>67</sup> Orden ECD/494/2016, de 26 de mayo, por la que se aprueba el currículo del Bachillerato, Historia de España.</p>
+      <p><sup>68</sup> "필자의 조사 결과에 따르면 학생들은 역사적 기억 회복 논쟁과 관련하여 제시된 어떤 이미지도 식별할 수 없었으며, 내전과 독재 기간 중 발생한 폭력과 억압의 사건들에 대해 매우 적게 알고 있는 것 같다." Amaia Lamikiz Jauregiondo, «El lugar de la memoria en nuestras clases de historia», en <em>Pensar históricamente en tiempos de globalización</em> (Santiago de Compostela: Universidad de Santiago, 2011), 104.</p>
+      <p><sup>69</sup> Miriam Kriger, «La enseñanza de la historia reciente como herramienta clave de la educación política», <em>Persona y Sociedad</em>, 25/3 (2011): 33-34. [정치 교육의 핵심 도구로서 현대사 교육]</p>
+      <p><sup>70</sup> 교육의 질 향상을 위한 유기법. BOE 295, 2013년 12월 10일.</p>
+      <p><sup>71</sup> LOE(교육유기법) 개정 유기법.</p>
+      <p><sup>72</sup> Barreiro Mariño, «La asignatura de Historia», 42.</p>
+    </div>
+  </section>
+
+  <!-- ── 저자 주석 ── -->
+  <section>
+    <h2>저자 소개</h2>
+    <p>이사벨 에스코베도 무게르사(Isabel Escobedo Muguerza)는 사라고사 대학교 역사학 학사. 마드리드 콤플루텐세 대학교–사라고사 대학교 현대사 대학원 석사. 현재 아라곤 자치 정부 박사 전 계약 연구원으로, 사라고사 대학교 역사학과에서 초기 프랑코 체제 아래의 아라곤 가톨릭교도에 관한 박사 논문을 진행 중이다.</p>
+  </section>
+
+  <!-- ── 참고문헌 ── -->
+  <section id="referencias">
+    <h2>참고문헌 (Referencias)</h2>
+    <div class="ref-list">
+      <p>Abad Buil, Irene. <em>Las mujeres de los presos políticos represión, solidaridad y movilización en los extramuros de las cárceles franquistas (1936-1977)</em> [프랑코 감옥 외부 정치범의 아내들: 억압, 연대, 동원]. Zaragoza: Tesis Doctoral Inédita, 2007.</p>
+      <p>Aguilar, Paloma. <em>Memoria y olvido de la Guerra Civil española</em> [스페인 내전의 기억과 망각]. Madrid: Alianza Editorial, 1996.</p>
+      <p>Álvarez Osés, José Antonio et al. <em>La guerra que aprendieron los españoles. República y guerra civil en los textos de bachillerato (1938-1983)</em> [스페인인들이 배운 전쟁: 바칠레라토 교과서 속 공화국과 내전 (1938-1983)]. Madrid: Los Libros de la Catarata, 2000.</p>
+      <p>Álvarez Rey, Leandro (ed.). <em>HE: Historia de España: Bachillerato: Aula 3D</em>. Barcelona: Vicens-Vives, 2016.</p>
+      <p>Aróstegui, Julio. «El caso de los conflictos españoles del siglo XX. Memoria y revisionismo» [20세기 스페인 갈등의 경우: 기억과 수정주의]. <em>Cuadernos de Pedagogía</em> 362 (2006): 54-59.</p>
+      <p>Aróstegui, Julio (ed.). <em>Historia de España: Bachillerato</em>. Barcelona: Vicens-Vives, 2015.</p>
+      <p>Avilés Farré, Juan. <em>Historia de España 2: Bachillerato</em>. Madrid: McGraw Hill, 2009.</p>
+      <p>Baby, Sophie. <em>El mito de la transición pacífica: violencia y política en España (1975-1982)</em> [평화로운 이행의 신화: 스페인의 폭력과 정치 (1975-1982)]. Barcelona: Ediciones Akal, 2018.</p>
+      <p>Baquero, Juan Miguel. «Memoria histórica en las aulas: asignatura pendiente de la educación en España» [교실 속 역사적 기억: 스페인 교육의 미완성 과제]. <em>El diario</em>, 17 de junio de 2018.</p>
+      <p>Barreiro Mariño, Manuel. «La memoria histórica en España y su situación en el ámbito educativo: la necesidad de crear un museo memorial en España» [스페인의 역사적 기억과 교육 분야에서의 상황: 스페인에 기념 박물관 창설의 필요성]. <em>Revista Historia Autónoma</em> 11 (2017): 261-278.</p>
+      <p>Barreiro Mariño, Manuel. «La asignatura de Historia y la enseñanza de los Derechos Humanos de la mujer en el contexto de una nueva ley educativa» [새 교육법 맥락에서 역사 교과목과 여성 인권 교육]. <em>Didácticas Específicas</em> 22 (2020): 42-58.</p>
+      <p>Burgos Alonso, Manuel y Muñoz-Delgado y Mérida, M.ª Concepción. <em>Ciencias sociales, geografía e historia 4: Educación Secundaria</em>. Madrid: Anaya, 2008.</p>
+      <p>Burgos Alonso, Manuel y Muñoz-Delgado y Mérida, M.ª Concepción. <em>Ciencias sociales, geografía e historia 4 ESO: Aprender es crecer en conexión</em>. Madrid: Anaya, 2015.</p>
+      <p>Carretero, Mario y Borrelli, Marcelo. «Memorias recientes y pasados en conflicto: ¿cómo enseñar historia reciente en la escuela?» [최근의 기억과 갈등하는 과거: 학교에서 현대사를 어떻게 가르칠 것인가?]. <em>Cultura y Educación</em> 20, no 2 (2008): 201-215.</p>
+      <p>Casanova Ruiz, Julián et al. <em>Morir, matar, sobrevivir: La violencia en la dictadura de Franco</em> [죽다, 죽이다, 살아남다: 프랑코 독재의 폭력]. Madrid: Crítica, 2002.</p>
+      <p>Casanova Ruiz, Julián. <em>La iglesia de Franco</em> [프랑코의 교회]. Madrid: Ediciones Temas de Hoy, 2001.</p>
+      <p>Casanova Ruiz, Julián. «La derecha en España niega la Historia, y lo que es peor, su enseñanza» [스페인 우파는 역사를, 그리고 더욱 나쁜 것은 그 역사의 교육을 부정한다]. <em>El Plural</em>, 21 de febrero de 2013.</p>
+      <p>Casanova Ruiz, Julián. «La Guerra Civil que nunca se aprendió en las escuelas» [학교에서 결코 배우지 못한 내전]. <em>El País</em>, 1 de abril de 2014.</p>
+      <p>Castillejo Cambra, Emilio. «Análisis del contenido ideológico de los manuales de Historia» [역사 교과서의 이념적 내용 분석]. <em>Bordón. Revista de pedagogía</em> 61, no 2 (2009): 45-58.</p>
+      <p>Castillejo Cambra, Emilio. <em>Mito, legitimación y violencia simbólica en los manuales escolares de historia del franquismo (1936-1975)</em> [프랑코 체제 역사 학교 교과서의 신화, 정당화, 상징적 폭력 (1936-1975)]. Madrid: UNED, 2014.</p>
+      <p>Cisterna Cabrera, Francisco. «Currículum oculto e ideología en la enseñanza de la historia» [역사 교육의 잠재적 교육과정과 이데올로기]. <em>Revista de ciencias de la educación</em> 180 (1999): 455-472.</p>
+      <p>Cortés Salinas, Carmen (ed.). <em>Geografía e Historia 4 ESO: Savia</em>. Madrid: SM, 2016.</p>
+      <p>Cowie-Haskell, Morgan. «La Presencia de la Memoria Histórica y Derechos Humanos en el Sistema Educativo. Una Comparación de Chile y Argentina» [교육 체계에서의 역사적 기억과 인권: 칠레와 아르헨티나 비교]. <em>Chile: Comparative Education and Social Change</em> 1 (2015): 1-29.</p>
+      <p>De la Asunción Criado, Ana. «La memoria y la enseñanza de la dictadura franquista en la Enseñanza Secundaria. Una perspectiva comparada» [중등 교육에서 프랑코 독재의 기억과 교육: 비교적 관점]. en <em>Actas XVIII Congreso Internacional de Investigación Educativa</em>, 129-139. Salamanca: Universidad de Salamanca, 2017.</p>
+      <p>Delgado Algarra, Emilio José. «Educación ciudadana y memoria histórica en la enseñanza de las Ciencias Sociales» [사회과 교육에서 시민 교육과 역사적 기억]. <em>Enseñanza de las Ciencias Sociales</em> 14 (2015): 97-109.</p>
+      <p>Delgado Algarra, Emilio José y Estepa-Giménez, Jesús. «Ciudadanía y memoria histórica en la enseñanza de la historia: análisis de la metodología didáctica en un estudio de caso en ESO» [역사 교육에서 시민성과 역사적 기억: ESO 사례연구 교수법 분석]. <em>Revista de Investigación Educativa</em> 34, no. 2 (2015): 521-534.</p>
+      <p>Díez Gutiérrez, Enrique Javier (dir.). <em>La memoria histórica en los libros de texto escolares</em> [학교 교과서 속 역사적 기억]. León: Foro por la Memoria de León, 2012.</p>
+      <p>Díez Gutiérrez, Enrique Javier. «La memoria histórica en los libros de texto escolares» [학교 교과서 속 역사적 기억]. <em>Revista Complutense de Educación</em> 25, no 2 (2014): 393-409.</p>
+      <p>Ealham, Chris. «La historiografía reciente sobre la Guerra Civil: el rigor histórico contra el rigor mortis» [내전에 관한 최근 역사학: 역사적 엄밀성 대 사고 경직]. <em>Pasado y Memoria. Revista de Historia Contemporánea</em> 7 (2008): 287-306.</p>
+      <p>Fernández de Bartolomé, María Ángeles (ed.). <em>Historia 4 ESO: Aragón: Proyecto saber hacer</em>. Madrid: Santillana, 2015.</p>
+      <p>Fernández Muñoz, Belén. «La enseñanza y didáctica de la guerra civil española en las aulas de Secundaria y Bachillerato» [중등·바칠레라토 교실에서의 스페인 내전 교육과 교수법]. en <em>Actas XVIII Congreso Internacional de Investigación Educativa</em>. Salamanca: Universidad de Salamanca, 2017.</p>
+      <p>Fernández Muñoz, Belén. «La Guerra Civil Española en las Leyes Educativas (1938-2019)» [교육법 속 스페인 내전 (1938-2019)]. en <em>Actas del II Encuentro de Doctorandos/as e Investigadores/as Noveles de AIDIPE</em>, 244-248. Madrid: UAM, 2019.</p>
+      <p>Fuertes Muñoz, Carlos y Ibáñez Domingo, Mélanie. «La represión franquista en los manuales escolares: el problemático tratamiento de un tema histórico conflictivo» [학교 교과서 속 프랑코 억압: 역사적으로 갈등적인 주제의 문제적 취급]. <em>Didáctica de las Ciencias Experimentales y Sociales</em> 37 (2019): 3-18.</p>
+      <p>Gallego, Ferrán. <em>El mito de la transición. La crisis del franquismo y los orígenes de la democracia (1973-1977)</em> [이행의 신화: 프랑코주의의 위기와 민주주의의 기원 (1973-1977)]. Barcelona: Crítica, 2008.</p>
+      <p>García Almiñana, Eugenio (coord.). <em>Historia 4 ESO: Proyecto Koré</em>. Valencia: Ecir, 2008.</p>
+      <p>García de Cortázar, Fernando (coord.). <em>Historia de España 2 Bachillerato: Aprender es crecer</em>. Madrid: Anaya, 2015.</p>
+      <p>García Noceda, Nuria (ed.). <em>Historia de España 2 Bachillerato: Proyecto Saber Hacer</em>. Madrid: Santillana, 2015.</p>
+      <p>García Sebastián, Margarita (ed.). <em>GH: Geografía e Historia: Educación Secundaria: Aula 3D</em>. Barcelona: Vicens-Vives, 2016.</p>
+      <p>Gibson, Ian. <em>Paracuellos. Cómo fue</em> [파라쿠에요스: 어떻게 일어났는가]. Madrid: Temas de Hoy, 2005.</p>
+      <p>Gil Andrés, Carlos y Casanova, Julián. <em>Historia de España en el siglo XX</em> [20세기 스페인 역사]. Barcelona: Ariel, 2009.</p>
+      <p>Gómez Carrasco, Cosme Jesús y Rodríguez Pérez, Raimundo A. «La enseñanza de la historia y el uso de libros de texto ante los retos del siglo XXI: entrevista a Rafael Valls Montés» [21세기 도전 앞에서의 역사 교육과 교과서 사용: 라파엘 발스 몬테스 인터뷰]. <em>Historia y Memoria de la Educación</em> 6 (2017): 363-380.</p>
+      <p>Ginard, David. «Represión y especificidad de género: en torno a la violencia política contra las mujeres en la España del primer franquismo» [억압과 젠더 특수성: 초기 프랑코 체제 스페인에서 여성에 대한 정치적 폭력을 둘러싸고]. en <em>Represión, resistencias, memoria: las mujeres bajo la dictadura franquista</em>, 23-36. Granada: Comares, 2013.</p>
+      <p>Grupo Edebé (ed.). <em>Ciencias sociales Historia 4 ESO</em>. Barcelona: Edebé, 2008.</p>
+      <p>Hernández Sánchez, Fernando. «El franquismo en la E.S.O» [ESO에서의 프랑코주의]. <em>Público</em>, 3 de junio de 2011.</p>
+      <p>Juliá, Santos. «Echar al olvido: memoria y amnistía en la transición» [망각으로 던져버리기: 이행기의 기억과 사면]. <em>Claves de Razón Práctica</em> 129 (2003): 14-25.</p>
+      <p>Juliá, Santos. <em>Elogio de Historia en tiempo de Memoria</em> [기억의 시대에 역사 찬양]. Madrid: Marcial Pons, 2011.</p>
+      <p>Kriger, Miriam. «La enseñanza de la historia reciente como herramienta clave de la educación política» [정치 교육의 핵심 도구로서 현대사 교육]. <em>Persona y Sociedad</em> 25, no 3 (2011): 29-52.</p>
+      <p>Lamikiz Jauregiondo, Amaia. «El lugar de la memoria en nuestras clases de historia» [역사 수업에서 기억의 자리]. en <em>Pensar históricamente en tiempos de globalización</em> por Ramón López Facal (coord.), 99-110. Santiago de Compostela: Universidad de Santiago de Compostela, 2011.</p>
+      <p>Ledesma, José Luis. <em>Los días de llamas de la revolución: violencia y política en la retaguardia republicana de Zaragoza durante la guerra civil</em> [혁명의 불꽃의 나날: 내전 중 사라고사 공화군 후방의 폭력과 정치]. Zaragoza: Institución Fernando el Católico, 2003.</p>
+      <p>López, Enrique. «Algunos desafíos actuales de la enseñanza de la Historia reciente en la educación secundaria» [중등 교육에서 현대사 교육의 현재적 도전들]. <em>Revista Fermentario</em> 6 (2012): 1-19.</p>
+      <p>Mancha Castro, José Carlos. «El franquismo en el libro de texto. Un análisis crítico de tres manuales escolares para 4.º de ESO en Andalucía» [교과서 속 프랑코 체제: 안달루시아 중3 교과서 세 종에 대한 비판적 분석]. <em>Investigación en la Escuela</em> 98 (2019): 1-15.</p>
+      <p>Marina Carranza, Marcos. «¿Qué guerra nos han explicado? La Guerra Civil en los libros de texto» [어떤 전쟁을 우리에게 설명해 왔는가? 교과서 속 내전]. en <em>Historia, identidad y alteridad: Actas del III Congreso Interdisciplinar de Jóvenes Historiadores</em>, 713-731. Salamanca: Hergar Ediciones Antema, 2012.</p>
+      <p>Martínez Rodríguez, Rosendo. «Profesores entre la historia y la memoria. Un estudio sobre la enseñanza de la Transición dictadura-democracia en España» [역사와 기억 사이의 교사들: 스페인의 독재-민주주의 이행기 교육에 관한 연구]. <em>Enseñanza de las Ciencias Sociales</em>, 13 (2014): 41-48.</p>
+      <p>Miralles Martínez, Pedro y Gómez Carrasco, Cosme Jesús. «Enseñanza de la historia, análisis de libros de texto y construcción de identidades colectivas» [역사 교육, 교과서 분석, 집단 정체성 구성]. <em>Historia y memoria de la educación</em> 6 (2017): 9-28.</p>
+      <p>Molinero, Carme. «Memoria y Democracia» [기억과 민주주의]. <em>El País</em>, 7 de noviembre de 2004.</p>
+      <p>Nash, Mary (ed.). <em>Represión, resistencias, memoria: Las mujeres bajo la dictadura franquista</em> [억압, 저항, 기억: 프랑코 독재하의 여성들]. Granada: Comares, 2013.</p>
+      <p>Ortiz Heras, Manuel. <em>La violencia política en la dictadura franquista 1939-1977: la insoportable banalidad del mal</em> [프랑코 독재에서의 정치적 폭력 1939-1977: 악의 참을 수 없는 평범성]. Albacete: Bomarzo, 2013.</p>
+      <p>Peña Vílchez, Manuel. <em>Historia [h]4: Ciencias sociales: ESO, curso 4: Proyecto 2.2</em>. Zaragoza: Edelvives, 2007.</p>
+      <p>Pereira Castañares, Juan Carlos y de la Mata Carrasco, Alfredo. <em>Historia de España: 2 Bachillerato: Savia</em>. Madrid: SM, 2016.</p>
+      <p>Prats, Joaquín. «Criterios para la elección del libro de texto de historia» [역사 교과서 선택 기준]. <em>Íber: Didáctica de las ciencias sociales, geografía e historia</em> 70 (2011): 7-13.</p>
+      <p>Prieto Prieto, Jaime (ed.). <em>Historia de España [2]: Bachillerato: Humanidades y ciencias sociales</em>. Madrid: Bruño, 2009.</p>
+      <p>Redal, Enrique Juan (ed.). <em>Historia 4 ESO: Proyecto La casa del saber</em>. Madrid: Santillana, 2008.</p>
+      <p>Rodrigo, Javier. «La Guerra Civil: "Memoria", "Olvido", "Recuperación" e "Instrumentación"» [내전: "기억", "망각", "회복", "도구화"]. <em>Hispania Nova. Revista de Historia Contemporánea</em> 6 (2006).</p>
+      <p>Rodríguez Pérez, Raimundo A. y Solé Glória. «Los manuales escolares de Historia en España y Portugal. Reflexiones sobre su uso en Educación Primaria y Secundaria» [스페인과 포르투갈의 역사 학교 교과서: 초등·중등 교육에서의 활용에 관한 성찰]. <em>Arbor</em> 194-788 (2018): 1-12.</p>
+      <p>Velasco Martínez, Luis. «La memoria de las dictaduras en el bachillerato: Franco y Primo de Rivera» [바칠레라토에서 독재 정권의 기억: 프랑코와 프리모 데 리베라]. en <em>Pensar históricamente en tiempos de globalización</em> por Ramón López Facal (coord.), 189-196. Santiago de Compostela: Universidad de Santiago de Compostela, 2011.</p>
+    </div>
+  </section>
+
+</main>
+
+<!-- 맨 위로 버튼 -->
+<a id="top-btn" href="#" title="맨 위로">↑</a>
+
+<script>
+// 스크롤 추적
+window.addEventListener('scroll', () => {
+  let current = '';
+  document.querySelectorAll('section[id]').forEach(s => {
+    if (s.getBoundingClientRect().top <= 80) current = s.id;
+  });
+  document.querySelectorAll('#sidebar nav a').forEach(a => {
+    a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+  });
+});
+
+// 부드러운 스크롤
+document.querySelectorAll('#sidebar nav a, #top-btn').forEach(a => {
+  a.addEventListener('click', e => {
+    e.preventDefault();
+    const target = document.querySelector(a.getAttribute('href'));
+    if (target) target.scrollIntoView({ behavior: 'smooth' });
+    else window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+});
+</script>
+</body>
+</html>

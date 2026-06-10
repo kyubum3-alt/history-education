@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LOMCE와 역사적 역량 - López Facal (2014)</title>
+  <style>
+    :root {
+      --sidebar-width: 260px;
+      --accent: #2c5f8a;
+      --accent-light: #e8f1f8;
+      --text: #1a1a1a;
+      --muted: #555;
+      --border: #d0d7de;
+      --bg: #fafafa;
+      --white: #ffffff;
+      --table-head: #f0f4f8;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Noto Sans', sans-serif;
+      line-height: 1.7;
+      color: var(--text);
+      background: var(--white);
+    }
+
+    #sidebar {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: var(--sidebar-width);
+      height: 100vh;
+      background: var(--bg);
+      border-right: 1px solid var(--border);
+      overflow-y: auto;
+      padding: 24px 16px;
+      z-index: 1000;
+    }
+
+    #sidebar h2 {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--accent);
+      margin-bottom: 16px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    #sidebar nav ul {
+      list-style: none;
+    }
+
+    #sidebar nav ul li {
+      margin-bottom: 8px;
+    }
+
+    #sidebar nav a {
+      display: block;
+      padding: 8px 12px;
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 13px;
+      border-left: 3px solid transparent;
+      transition: all 0.2s ease;
+    }
+
+    #sidebar nav a:hover {
+      color: var(--accent);
+      background: var(--accent-light);
+    }
+
+    #sidebar nav a.active {
+      color: var(--accent);
+      border-left-color: var(--accent);
+      background: var(--accent-light);
+      font-weight: 500;
+    }
+
+    #sidebar nav ul ul {
+      margin-left: 12px;
+      border-left: 1px solid var(--border);
+      margin-top: 4px;
+      padding-left: 0;
+    }
+
+    #sidebar nav ul ul li {
+      margin-bottom: 6px;
+    }
+
+    #sidebar nav ul ul a {
+      font-size: 12px;
+      padding: 6px 8px;
+      color: #777;
+    }
+
+    #sidebar nav ul ul a.active {
+      color: var(--accent);
+    }
+
+    main {
+      margin-left: var(--sidebar-width);
+      padding: 48px;
+      max-width: 900px;
+      background: var(--white);
+    }
+
+    section {
+      scroll-margin-top: 24px;
+      margin-bottom: 48px;
+    }
+
+    h1 {
+      font-size: 32px;
+      font-weight: 700;
+      line-height: 1.3;
+      margin-bottom: 24px;
+      color: var(--accent);
+    }
+
+    h1 .subtitle {
+      display: block;
+      font-size: 18px;
+      color: var(--muted);
+      font-weight: 400;
+      margin-top: 8px;
+    }
+
+    .paper-header {
+      margin-bottom: 40px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .paper-meta {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+
+    .paper-meta strong {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    h2 {
+      font-size: 24px;
+      font-weight: 700;
+      margin-top: 48px;
+      margin-bottom: 20px;
+      color: var(--accent);
+      border-bottom: 2px solid var(--accent-light);
+      padding-bottom: 12px;
+    }
+
+    h3 {
+      font-size: 18px;
+      font-weight: 600;
+      margin-top: 32px;
+      margin-bottom: 16px;
+      color: #333;
+    }
+
+    p {
+      margin-bottom: 16px;
+      text-align: justify;
+    }
+
+    .abstract-box {
+      background: var(--accent-light);
+      padding: 20px;
+      border-left: 4px solid var(--accent);
+      margin: 24px 0;
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+    .abstract-box h4 {
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 8px;
+      letter-spacing: 0.5px;
+    }
+
+    .keywords {
+      margin-top: 12px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .keywords strong {
+      color: var(--text);
+    }
+
+    blockquote {
+      background: #f5f5f5;
+      border-left: 4px solid var(--muted);
+      padding: 16px 20px;
+      margin: 20px 0;
+      font-style: italic;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .reference-item {
+      margin-bottom: 12px;
+      margin-left: 24px;
+      text-indent: -24px;
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .back-to-top {
+      text-align: center;
+      margin-top: 48px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+    }
+
+    .back-to-top a {
+      display: inline-block;
+      padding: 10px 20px;
+      background: var(--accent);
+      color: var(--white);
+      text-decoration: none;
+      border-radius: 4px;
+      font-size: 13px;
+      transition: background 0.2s;
+    }
+
+    .back-to-top a:hover {
+      background: #1e4560;
+    }
+
+    @media (max-width: 900px) {
+      #sidebar {
+        position: absolute;
+        left: -260px;
+        top: 0;
+        height: 100%;
+        transition: left 0.3s;
+        box-shadow: 1px 0 4px rgba(0,0,0,0.1);
+      }
+
+      main {
+        margin-left: 0;
+        padding: 24px;
+      }
+
+      h1 {
+        font-size: 24px;
+      }
+
+      h2 {
+        font-size: 20px;
+      }
+    }
+
+    strong {
+      font-weight: 600;
+    }
+
+    em {
+      font-style: italic;
+    }
+
+    ul, ol {
+      margin: 16px 0 16px 24px;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+  </style>
+</head>
+<body>
+  <div id="sidebar">
+    <h2>📄 목차</h2>
+    <nav>
+      <ul>
+        <li><a href="#header">논문 정보</a></li>
+        <li><a href="#intro">서론</a></li>
+        <li><a href="#before-lomce">LOMCE 이전의 역사 교육</a>
+          <ul>
+            <li><a href="#19th-century">19세기부터 1975년까지</a></li>
+            <li><a href="#lge-logse">LGE와 LOGSE 시대</a></li>
+            <li><a href="#autonomies">자치 공동체의 영향</a></li>
+            <li><a href="#pp-reform">PP의 LOCE 개정 (2002)</a></li>
+          </ul>
+        </li>
+        <li><a href="#contents-lomce">LOMCE의 역사 콘텐츠</a>
+          <ul>
+            <li><a href="#primary">초등교육</a></li>
+            <li><a href="#eso">중등교육 의무과정 (ESO)</a></li>
+            <li><a href="#bachillerato">고등교육 (Bachillerato)</a></li>
+          </ul>
+        </li>
+        <li><a href="#what-to-teach">어떤 역사를 가르칠 것인가</a>
+          <ul>
+            <li><a href="#metahistorical">메타역사적 개념</a></li>
+            <li><a href="#historical-consciousness">역사적 자각</a></li>
+            <li><a href="#conclusion-section">결론</a></li>
+          </ul>
+        </li>
+        <li><a href="#references">참고문헌</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <main>
+    <section id="header" class="paper-header">
+      <h1>LOMCE와 역사적 역량
+        <span class="subtitle">La LOMCE y la competencia histórica</span>
+      </h1>
+      <div class="paper-meta">
+        <div><strong>저자:</strong> Ramón López Facal</div>
+        <div><strong>소속:</strong> Universidade de Santiago de Compostela</div>
+        <div><strong>학술지:</strong> Ayer 94/2014 (2): 273-285</div>
+        <div><strong>ISSN:</strong> 1134-2277</div>
+        <div><strong>수신:</strong> 2014년 1월 23일 | <strong>수락:</strong> 2014년 3월 28일</div>
+        <div><strong>자금 지원:</strong> 연구 프로젝트 EDU2012-37909-C3-1</div>
+      </div>
+
+      <div class="abstract-box">
+        <h4>초록 (Resumen)</h4>
+        <p>본 논문은 새로운 스페인 교육법(LOMCE)에서 대학교 이외의 교육 단계(초등, 중등의무과정, 고등교육)를 위해 제시된 역사 콘텐츠를 비판적으로 분석한다. 스페인의 역사 교육 문제를 역사적으로 규정하는 선행 조건과 상황을 검토하고, 현재 역사 교육 전문가들이 진행 중인 대안들을 논의한다.</p>
+        <div class="keywords"><strong>주요어:</strong> 역사 교육, 교육, 역사적 개념, 역사적 의식</div>
+      </div>
+
+      <blockquote>
+        「정치는 도시에 어떤 학문이 필요한지, 각자가 무엇을 배워야 하며 어느 정도까지 배워야 하는지를 규정하는 것이다」<br>
+        — 아리스토텔레스, 『니코마코스 윤리학』, 1094b2-11
+      </blockquote>
+    </section>
+
+    <section id="intro">
+      <h2>서론 (Introducción)</h2>
+      <p>스페인 정부가 새로운 교육법인 교육 품질 향상을 위한 유기법(LOMCE)을 승인함으로써, 스페인 사회의 광범위한 부문에서 강력한 반발이 일어났다. 반발은 주로 의무교육 교사들, 학부모 협회, 교육 전문가들이 주도했다. 현재 야당은 모두 국민당(PP)이 현재의 의회 다수당을 잃으면 이 법을 폐지하기로 약속했다. 일부 대학 연구자들도 철학자, 경제학자(응용수학 교육 제공 유지 획득으로 드문 시정 사례 중 하나), 또는 실험 과학 연구자들을 포함하여 비판에 동참했다. 또한 일부 역사가들도 주로 윤리적·정치적 이유로 반대의견을 표명했다. 그러나 지금까지 역사 교육의 형성적 기능에 관한 논리적 옹호가 부족했다고 생각한다. 이 논문은 이러한 주장을 제시하고자 한다.</p>
+
+      <p>지면의 제약으로 LOMCE의 세부 분석을 모두 할 수는 없다. 따라서 본 논문은 이 법 승인 이전의 역사 교육 상황을 지적하고, LOMCE에서 비대학 단계(초등, 중등, 고등)의 역사 교육과 학습이 어떻게 다루어지는지 살펴본 후, 마지막으로 현재 역사 교육을 위한 제안들에 관해 간략히 언급하고자 한다. 우리는 이러한 형성을 사회적 필요로 간주한다. 왜냐하면 이를 갖추지 못한 사람들은 시민권 행사에 유용한 지식에서 박탈되기 때문이다.</p>
+    </section>
+
+    <section id="before-lomce">
+      <h2>LOMCE 이전의 역사 교육 (La historia enseñada antes de la LOMCE)</h2>
+
+      <section id="19th-century">
+        <h3>19세기부터 1975년까지</h3>
+        <p>학문으로서의 역사 교육은 19세기에 탄생했지만, 그 기원은 구체제(Antiguo Régimen)까지 거슬러 올라간다. 자유주의 국가는 이를 국가 건설 프로그램의 일부로 편입했으며, 1836년(Pidal 계획), 1845년, 1857년(Moyano 법)부터 기본 방향을 설정했다. 이러한 기본 방향은 스페인에서 Franco 사망 이후 적용이 완료된 1970년 일반교육법(LGE)까지 본질적으로 유지되었다. 이 긴 기간 동안 정준적(canonical)인 것으로 간주되었던 교육 콘텐츠와 관행들이 확립되었고, 많은 사람들이 여전히 그렇게 간주하고 있다.</p>
+
+        <p>유럽의 다른 국가들처럼 역사 교육은 민족화(nationalizing) 목적으로 지향되었다. 역사적 주체는 스페인 민족이었고, 이는 신화적 기원부터 현대적 표현(Isabel 왕정이든 Franco 독재든 그 시대에 따라)까지 시간적 변화 없이 개념화되었다. 19세기와 20세기를 통해 세속적 영감의 학교 역사학(예: Rafael Altamira)과 Bruño, SM, Hijos de Hernando, Calleja, Luis Vives 같은 출판사들의 카톨릭 근본주의 사이에 주목할 만한 차이가 있었다. Franco 독재는 기본주의 전통에 기반한 단일 담론을 강요했을 뿐이다. 자유주의와 기본주의 전통 모두 학교 서사에서 같은 기본 이정표를 공유했다: 고대 카르타고와 로마에 대한 원시사 민족들(iberos, celtas, celtiberos)의 「국가 독립을 위한 투쟁」, 스페인 민족 통합자로서의 西고트 왕국의 신비화, 「아랍 침략」을 통한 「스페인의 상실」, Covadonga에서 천주교군주까지의 7세기 「재정복」, 「스페인의 통일」을 완성한 그들, Carlos I과 Felipe II의 스페인 제국 등. 이러한 사건들의 해석은 달랐다. 예를 들어, 진보적 자유주의자나 민주주의자들에 의한 천주교군주의 칭송은 그들이 봉건 귀족을 제압했기 때문에 정당화되었지만, 기본주의자들은 그들의 스페인 카톨릭 통일 추동을 강조했다. 같은 이정표의 일치는 스페인 과거에 대한 공통의 사회적 표상을 만드는 데 기여했으며, 이는 광범위한 사회 부문 사이에서 여전히 살아있다. 많은 사람들에게 이러한 아이디어는 정준적이며 의무교육 역사 교육을 뒷받침해야 한다고 생각한다. 이들은 개인의 신념에 부합하며, 「상식」이지만, 전문적 역사학은 수십 년 전에 이를 초월했다.</p>
+
+        <p>역사 콘텐츠의 가장 중요한 변화는 사회당의 교육 개혁(LOGSE, 1990) 승인과 함께 발생했다고 일반적으로 주장되지만, 실제로는 일반교육법(LGE, 1975)과 함께 발생했다. 그 Franco 시대 법을 통해 기초교육(EGB)에서 지리와 역사 과목이 사회과학으로 대체되었으며, 이는 낡은 목적론적·민족주의적 담론의 포기를 의미했다. 새로운 프로그램은 Annales 학파의 프랑스 패러다임을 학교 수준에서 적용한 것에 영감을 받았으며, 이는 구성 중인 유럽에 병합되려는 염원과 부합했는데, 유럽은 유럽 국가들 간의 옛 정치적 갈등을 회피할 필요가 있었다. 로마인에 대한 「국가 독립 전쟁」 대신 로마화 연구, 재정복 대신 봉건제와 중대 문화운동, 독립 전쟁 대신 자유주의 혁명을 강조하는 것이 더 편리해 보였다. 공통된 과거에 기초한 공동의 정체성을 강조하면서. 사회당 LOGSE는 이러한 방향을 16세까지 확장된 새로운 의무교육 단계로 확장했으며, 역사 교육을 사회과학 과목에 통합했다. 고등교육에서는 두 과목이 유지되었다: 중등과학·인문 1학년의 세계 현대사, 그리고 모든 고등과정 2학년의 「역사」라는 제목으로 스페인 현대사만을 다루는 과목. 이 과목은 2003년 PP 정부의 교육 개혁(LOCE, 2002)으로 수정되었으며, Atapuerca에서 유로까지의 스페인 일반사로 변경되었다.</p>
+      </section>
+
+      <section id="lge-logse">
+        <h3>자치 공동체의 영향</h3>
+        <p>자치 국가의 건설은 하위 국가 지역주의와 민족주의의 증가를 동반했다. 이러한 운동들은 자신의 염원의 정당성을 과거에서 찾았다. 자치 정부들은 자신의 지역 공동체의 역사와 지리 콘텐츠를 편입했는데, 이는 낡은 스페인 민족주의와 같은 역사적 본질주의를 공유했다. 다만 역사적 주체가 변경되었을 뿐이다(스페인 대신 Galicia, Andalucía, Canarias). 이들의 존재는 제한적이었다. 2000년에 ESO 교과서에서 각 자치 공동체의 자신의 역사 콘텐츠는 법적으로 인정된 최대 45%에서 멀리 떨어져 있었다. Andalucía, Canarias, Valencia, Basque Country에서는 10%를 약간 초과했으며, 「공통」이 90%였다. 오직 Catalonia에서만 지역 역사에 할당된 평균 페이지가 15%에 도달했으며, 이는 표시된 최대치에서 훨씬 멀었다. 그러나 스페인 사회의 특정 부문 사이에 Catalonia와 Basque Country에서의 스페인 민족 감정 위기의 원인 중 하나가, 다른 영역에서도 증가하고 있는데, 국가 통일을 촉진하는 애국적 교육의 부재에 있을 수 있다는 생각이 퍼졌다. 역사 교육은 정치적 논쟁의 중심이 되었다. 국민당(PP)은 스페인 왕립학술원(RAH)과 보수적 언론의 지원을 받아 새로운 교육 개혁(LOCE, 2002)을 실시했으며, 의무교육과 고등교육에 구식의 역사학 담론을 다시 도입했다. 내용은 선사시대부터 현대까지의 일반사를 다루었다. ESO의 3개 과정 중 3개과정과 고등교육 2학년에서 다시 개발되었다. 2004년 사회당이 정부로 돌아오면서 이 PP 개정안의 적용이 중단되었지만, 역사 콘텐츠를 수정하지 않았으므로, 2014년 스페인 전역의 교실에서 공부되는 스페인 역사는 2002년 PP가 승인한 것에 해당한다. LOMCE의 제안은 LOCE로 시작된 신자유주의적 전환을 강화하며, 이데올로기적으로뿐만 아니라 역사학적·교육적으로도 극도로 보수적이다.</p>
+      </section>
+
+      <section id="autonomies">
+      </section>
+
+      <section id="pp-reform">
+      </section>
+    </section>
+
+    <section id="contents-lomce">
+      <h2>LOMCE의 역사 콘텐츠 (Los contenidos de historia en la LOMCE)</h2>
+
+      <p>LOMCE 승인 후 공표된 공식 프로젝트의 내용은 구조와 콘텐츠 모두에서 학교 교육과정에 중요한 변화를 의미한다.</p>
+
+      <section id="primary">
+        <h3>초등교육</h3>
+        <p>초등교육(6~12세)에서 일부 역사 콘텐츠가 포함되어 있던 자연·사회·문화 지식 영역이 자연과학과 사회과학으로 나뉜다. 사회과학은 4개 블록으로 구성된다. 가장 큰 혁신은 4번째 블록의 역사적 내용이 아니라 3번째 「사회에서의 생활」로, 초등 학생들이 「사회 구성원의 기업가 능력과 기업 연구, 즉 사회에서 기업 활동의 역동화 기능」을 배우도록 의도된다.</p>
+
+        <p>이 블록의 내용을 세부적으로 분석할 수는 없다. 그러나 예를 들어 「기업. 시민들의 경제생활. 금융교육」에 관련된 내용이 무엇으로 구체화되는지는 드러나고 (놀랍기도) 하다. 포함된 25개 「학습 표준」 중 4개 샘플(6~12세):
+
+        <blockquote>
+          「팀에서 자신의 환경에 있는 어떤 기업에 대한 연구를 수행하고 조사 결과를 제시한다. 기업의 일반적인 기능과 사회 구성원의 기업가 능력을 설명한다. 주식 시장에 상장된 스페인 기업을 분석한다. 대표적인 역할을 맡으면서 기업가적 측면을 개발하는 인터넷 도구를 사용한다.」
+        </blockquote>
+
+        <p>요구되는 역사적 지식은 초등학교 학생들의 능력뿐만 아니라 단순한 진술 수준 이상의 작업 가능성도 초과한다:</p>
+
+        <blockquote>
+          「인류의 큰 역사적 단계들이 연구될 것인데, 이는 현대 서양 사회가 가정한 특정한 배치와 역학을 이해하기 위한 핵심이므로, 이를 위해서는 다양한 시기에 다양한 역사적 조건, 사건, 인물을 알아야 한다.」
+        </blockquote>
+
+        <p>이러한 일반적 표현은 91개의 「학습 표준」으로 구체화된다. LOMCE가 초등교육 단계 중반과 말(3학년과 6학년)에 모든 학생이 공통의 외부 시험으로 평가될 것을 규정함을 고려할 때, 이러한 「학습 표준」들은 교사들의 교수 활동과 학생들의 학습을 조건지을 것이다. 요구되는 지식은 뚜렷한 이데올로기적 편향을 특징으로 하며, 다시 역사 교육을 도구화하여 본질주의적인 스페인 민족 개념을 촉진하려고 한다. 스페인의 기원을 선사시대로, 西고트족을 거쳐, 중세의 「재통일 과정」과 「재정복」을 거쳐 역사로 거슬러 올린다. 이 광대한 일반사의 낡은 역사학적 개념에서 놀랍게도 17세기에서 19세기로 넘어가며 18세기는 언급조차 되지 않는다. 그리고 20세기 관련 콘텐츠 중 1902년에서 1939년 사이의 어떤 언급도 없다: 제2공화국과 내전이 사라졌다.</p>
+      </section>
+
+      <section id="eso">
+        <h3>중등교육 의무과정 (ESO)</h3>
+        <p>중등교육 의무과정(ESO)에서 지리와 역사 명칭이 회복되며, 내용의 절반 미만이 처음 2개 과정(12~14세)에서 선사시대, 고대사, 중세, 근대를 중심으로 한다. 3학년은 지리, 4학년(15~16세)은 현대사를 다룬다. ESO의 1단계에서는 초등학교에서처럼 선사시대나 고대에 스페인 역사를 언급하는 시대착오를 범하지는 않지만, 엄대한 사건, 데이터, 정보의 축적과 의심스러운 교육적 효율성을 가진 활동을 기반으로 한 역사 학습이 유지된다.</p>
+
+        <p>사용 가능한 초안 작성에는 다양한 방향과 스타일이 나타난다. 4학년에는 현대사와 현재의 세계를 공부하며, 「학습 표준」들은 이전 과정들의 암기를 넘어서려고 한다. 표현들은 초등교육만큼 뚜렷한 이데올로기적 편향을 나타내지 않지만, 콘텐츠는 여전히 매우 광대하며 항상 엄격한 것은 아니다. 특히 연대기 사용 측면에서. 이 과정의 마지막에 선별적 외부 평가 또는 재시험이 있으므로 「학습 표준」들이 매우 관련 있다. 따라서 가용한 3개의 주간 시간으로 엄격하게 작업할 수 있는 현실적 가능성에 맞게 진술을 조정할 필요가 있을 것이다. 한 예로, 「인과적 설명을 활용하여 자유주의 혁명 중 하나의 주요 사실들의 종합적 서사를 작성하며, 장단점을 비교한다」라는 표준은 「19세기 유럽과 미국의 자유주의 혁명: 통합 과정과 독립 과정. 민족주의. 사례: 프랑스, 독일, 스위스, 이탈리아, 스페인(자유주의 혁명과 복구), 이베로아메리카」라는 콘텐츠에 해당한다. 이는 정보 검색, 분석, (2차 사료라 하더라도) 사료 평가의 복잡한 작업을 포함하며 종합적 서사를 작성하기 전에 실시해야 한다. 단일 국가에 대한 것인가? 비교 가능하도록 여러 국가에 대한 것인가? 모두에 대한 것인가? 학생들이 단순한 복사 붙여넣기에 한정되지 않도록 시도하는 것은 최소 1개월 과정을 점유할 수 있는 교실 내 현장 작업을 강요할 것이다. 그리고 이 「학습 표준」은 약 50개 중 하나일 뿐이다.</p>
+      </section>
+
+      <section id="bachillerato">
+        <h3>고등교육 (Bachillerato)</h3>
+        <p>고등교육에서는 사회과학과 인문 학생들을 위한 세계 현대사 과목이 유지되지만, 예술 또는 과학·기술 과정 학생들은 아니다. 그리고 2학년에 역사 스페인(필수)이 유지된다. 즉, 기본적으로 이전과 유사하다. 그러나 콘텐츠와 학생 학습 요구 측면에서 중요한 변화가 도입되었다.</p>
+
+        <p>세계 현대사에서, 약 150개의 「학습 표준」(1개 수업당 거의 2개) 중에는 기계적인 작업과 단순히 암기만 요구하는 것들이 포함되어 있으며, 또한 일반적이고, 개방적이며, 다양하고 산재된 것들(총합적 혼합)이 있어 전체 학생층에게 일반화하기 어렵다. 동일한 언급이 2학년 의무 스페인 역사에도 적용되며, 이는 (2013-2014 과정) 약 50분의 80개 수업 세션을 갖는다. 콘텐츠는 구석기 시대부터 현재까지 포괄한다. 요구되는 학습과 작업들은 가용한 시간 내에 실행할 수 없지만, 고등교육 최종 시험의 일부가 될 것이다. 여기에는 161개의 학습 표준이 포함된다. 예를 들어 12개의 연대표 작성(2주마다 1개), 교실에서의 12개 발표, 12개의 지도, 그래프, 이미지, 텍스트 작성 또는 논평, 6개의 요약, 비교 표, 스키마 등이 있다. 이러한 과도한 활동과 요구되는 지식의 복잡성은 엄격하고 유용한 역사적 지식의 습득을 보장하지 않는다.</p>
+      </section>
+    </section>
+
+    <section id="what-to-teach">
+      <h2>어떤 역사를 가르칠 것인가? (¿Qué historia se debe enseñar y aprender?)</h2>
+
+      <p>일반사 학교 모형을 뒷받침하는 정신은 국가나 기관을 정당화하기 위한 도덕적·예시적 논거와 사례를 제공해야 한다는 믿음과 관련이 있다. 학생들이 단일한 담론, 역사적 진실을 동화하기를 기대한다. 그들에게 요구되는 지적 노력은 기본적으로 암기에 기초한다. 제안된 활동들(연대표, 시간표, 또는 문헌 해설)은 주로 이러한 기억을 강화하기 위해 역할한다.</p>
+
+      <section id="metahistorical">
+        <h3>메타역사적 개념과 학술적 기여</h3>
+        <p>역사가들의 역사 교육 제안에 대한 관여는 제한적이었다. 그리고 그것은 역사학적 콘텐츠나 방향에 대해 논의하기보다는 아이들과 청소년들의 공통적 형성을 위해 필요한 것, 즉 교육 체계에서의 존재를 정당화하는 것에 관해 논의하는 데 더욱 중점을 두지 못했다. 물론 주목할 만한 예외와 기여가 있지만, 더 많이 고등교육에 관한 것이다. 일반적으로 고등학교 역사 교육의 성격에 대한 논쟁을 무시했으며, ESO나 초등학교는 더욱 그러했다.</p>
+
+        <p>역사 교육 교수법 연구로부터 비대학 수준에 대해 제안된 것은 변화와 연속성, 역사적 유의성, 증거 또는 사료(그리고 사료 평가), 인과관계, 공감 같은 메타역사적 개념에 강조를 두는 것이며, 혁명적 자유주의, 식민주의, 파시즘 또는 특정 영토 또는 사회 실체들에 관련된 특정 과정 같은 소수의 특정 실질 개념과 함께하며, 사건과 데이터의 수를 제한하는 것이다.</p>
+      </section>
+
+      <section id="historical-consciousness">
+        <h3>Jörn Rüsen과 역사적 자각</h3>
+        <p>최근 몇 년 동안 Jörn Rüsen의 기여를 강조할 가치가 있으며, 그는 역사 교육이 주요하게는 과거 경험을 내면화함으로써 삶의 방향성을 용이하게 하는 「역사적 자각」을 구축하는 데 기여해야 한다고 생각한다. 그는 이러한 자각이 다양한 유형의 서사를 통해 나타난다고 주장하며, 이는 역사 교육을 위해 흥미로운 관점을 열어준다.</p>
+
+        <p>역사 교육이 기계적인 활동으로 변할 경향이 있을 때, 역사적 과정을 해석하는 능력을 촉진하지 않으며 학생들은 단순한 박식함 이외의 다른 유용성을 인식하지 못한다. 역사 교육은 적용 가능성과 현재의 삶에 대한 유용성에 관한 비판적 논쟁을 필요로 한다. 역사는 과거에 대한 질문에서 비롯되고 긍정적 지식의 단순한 동화로 배워지지 않을 때 문화적 결정의 요소가 된다. 그리하여 그것은 「역사적 자각」(Rüsen)이 되고 「역사적으로 생각하는 능력」(Pierre Vilar)을 개발하는 데 기여한다. 이 과정은 과거의 지식이 재작업되고, 재구조화되며, 의심의 여지가 있게 되고, 상호주관적으로 협상되는 복잡한 상호작용에 기초한다.</p>
+
+        <p>Rüsen이 주장하듯이, 역사를 배우는 것은 심리 발달과 관련된 배타적으로 인지적인 과정이 아니며, 감정적, 미적, 규범적 관점을 포함한다. 흥미 관심과 물론 과거에 관한 실질적 지식도 포함한다. 그 결과는 인간의 과거를 역사로 해석하는 역량에 한정될 수 없다. 과거와 현재의 특수성과 다양성을 포함해야 하며, 현재의 문제들의 분석과 해결에 역사적 지식을 사용하는 실제적 역량을 포함해야 한다. 우리 교육자들은 이 노력에서 역사가들의 도움이 필요하다.</p>
+      </section>
+
+      <section id="conclusion-section">
+        <h3>결론</h3>
+        <p>역사 교육은 모순된 압력에 직면해 있다. 한편으로는 좋은 옛 역사(늘 그래온)의 옹호자들의 압력이고, 다른 한편으로는 기본 역량의 학습에 기반한 교육을 촉진하는 OECD 같은 기관의 압력이며, 「도구적」이고 보편적 표준으로 쉽게 평가될 수 없는 과목들을 주변화로 축소시킨다. 둘 다를 만족시키려는 시도는 콘텐츠의 과잉, 민족주의적 본질주의, 초등교육에서 고등교육 이전 교육까지의 끝없는 일반사의 단조로운 반복... 그리고 과도한 활동 제안으로 이끌었다. 이로써 최선의 경우에도 선언적이고 피상적인 지식만 달성될 수 있으며, 적용 가능한 다른 지식은 불가능하다.</p>
+      </section>
+    </section>
+
+    <section id="references">
+      <h2>참고문헌 (Referencias)</h2>
+      <ul style="list-style: none; padding: 0;">
+        <li class="reference-item">Altamira, Rafael (1900): <em>Psicología del pueblo español, Historia de la educación</em> [스페인 민족의 심리학, 교육의 역사].</li>
+        <li class="reference-item">Barca, Isabel I. (2010): "The importance of history in the curriculum: contradictory signs in Portuguese politics" [교육과정에서 역사의 중요성: 포르투갈의 정치에서의 모순적 신호], en Irene Nakou e Isabel I. Barca (eds.): <em>Contemporary public debates over history education</em>, Charlotte, Information Age.</li>
+        <li class="reference-item">Bruter, Annie (1997): <em>L'Histoire enseignée au Grand Siècle</em> [17세기에 가르쳐진 역사], París, Belin.</li>
+        <li class="reference-item">Calleja (편집사): (초판 불명)</li>
+        <li class="reference-item">Cuesta Fernández, Raimundo (1999): <em>Sociogénesis de una disciplina escolar: la Historia</em> [학교 학문의 사회발생: 역사], Barcelona, Pomares-Corredor.</li>
+        <li class="reference-item">Fontana, Josep (1999): <em>Introducción al estudio de la historia</em> [역사 연구 입문], Barcelona, Crítica.</li>
+        <li class="reference-item">Hijos de Hernando (편집사): (초판 불명)</li>
+        <li class="reference-item">Lee, Peter y Rosalyn Ashby (2000): "Progression in Historical Understanding among Students Ages 7-14" [7~14세 학생들의 역사적 이해의 진행], en Peter Stearns, Peter Seixas y Sam Wineburg (eds.): <em>Knowing, Teaching Learning History</em>, Nueva York, University Press.</li>
+        <li class="reference-item">López Facal, Ramón (2008): "Identificación nacional y enseñanza de la historia: 1970-2008" [국가 정체성과 역사 교육: 1970-2008], <em>Revista de Historia de la Educación. Educación y construcción de las identidades nacionales</em>, 27, pp. 171-193.</li>
+        <li class="reference-item">Luis Vives (편집사): (초판 불명)</li>
+        <li class="reference-item">Moradiellos, Enrique (2013): <em>Clío y las aulas. Ensayos sobre educación e historia</em> [클리오와 교실. 교육과 역사에 관한 에세이], Badajoz, Diputación de Badajoz.</li>
+        <li class="reference-item">Moradiellos, Enrique (2013): <em>El oficio de historiador. Estudiar, enseñar, investigar</em> [역사가의 직업. 공부하고, 가르치고, 연구하기], Madrid, Akal.</li>
+        <li class="reference-item">Ortiz de Orruño, José María (ed.) (1998): "Historia y sistema educativo" [역사와 교육 체계], <em>Ayer</em>, 30, pp. 15-23.</li>
+        <li class="reference-item">Pérez Garzón, Sisinio (2008): "¿Por qué enseñamos geografía e historia? ¿Es tarea educativa la construcción de identidades?" [왜 지리와 역사를 가르치는가? 정체성 구축이 교육 과제인가?], <em>Historia de la Educación</em>, 27, pp. 37-55.</li>
+        <li class="reference-item">Real Academia de la Historia (RAH): 스페인 왕립학술원</li>
+        <li class="reference-item">Rüsen, Jörn (ed.) (2008): <em>Time and History: The Variety of Cultures</em> [시간과 역사: 문화의 다양성], Nueva York, Berghahn Books.</li>
+        <li class="reference-item">Schmidt, Maria Auxiliadora, Isabel I. Barca y Estevão Rezende Martins (comps.) (2010): <em>Jörn Rüsen e o ensino da História</em> [Jörn Rüsen과 역사 교육], Curitiba, UFPR.</li>
+        <li class="reference-item">Segura, Antoni (coord.) (2001): <em>Els llibres d'história, l'ensenyament de la história i altres históries</em> [역사 책들, 역사 교육, 그리고 다른 역사들], Barcelona, Fundació Bofill.</li>
+        <li class="reference-item">Seixas, Peter y Tom Morton (2013): <em>The Big Six Historical Thinking Concepts</em> [6가지 주요 역사적 사고 개념], Toronto, Nelson.</li>
+        <li class="reference-item">SM (편집사): (초판 불명)</li>
+        <li class="reference-item">Santillana (편집사): (초판 불명)</li>
+        <li class="reference-item">Valdeón, Julio (2005): <em>Enseñar historia. Nuevas propuestas</em> [역사 가르치기. 새로운 제안], México, Fontamara.</li>
+      </ul>
+    </section>
+
+    <div class="back-to-top">
+      <a href="#header">▲ 맨 위로</a>
+    </div>
+  </main>
+
+  <script>
+    // 현재 섹션 강조 및 스크롤 추적
+    window.addEventListener('scroll', () => {
+      let current = '';
+      document.querySelectorAll('section[id]').forEach(s => {
+        const rect = s.getBoundingClientRect();
+        if (rect.top <= 80) {
+          current = s.id;
+        }
+      });
+      document.querySelectorAll('#sidebar nav a').forEach(a => {
+        const href = a.getAttribute('href');
+        if (href && href.substring(1) === current) {
+          a.classList.add('active');
+        } else {
+          a.classList.remove('active');
+        }
+      });
+    });
+
+    // 클릭 시 부드러운 스크롤
+    document.querySelectorAll('#sidebar nav a').forEach(a => {
+      a.addEventListener('click', e => {
+        const href = a.getAttribute('href');
+        if (href && href.startsWith('#')) {
+          e.preventDefault();
+          const target = document.querySelector(href);
+          if (target) {
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        }
+      });
+    });
+
+    // 초기 활성화
+    document.querySelectorAll('section[id]').forEach(s => {
+      if (s.id === 'header') {
+        document.querySelector(`#sidebar nav a[href="#header"]`).classList.add('active');
+      }
+    });
+  </script>
+</body>
+</html>

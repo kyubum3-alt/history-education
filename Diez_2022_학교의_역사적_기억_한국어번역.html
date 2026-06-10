@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>학교의 역사적 기억 - Díez Gutiérrez (2022)</title>
+  <style>
+    :root {
+      --sidebar-width: 260px;
+      --accent: #2c5f8a;
+      --accent-light: #e8f1f8;
+      --text: #1a1a1a;
+      --muted: #555;
+      --border: #d0d7de;
+      --bg: #fafafa;
+      --white: #ffffff;
+      --table-head: #f0f4f8;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Noto Sans', sans-serif;
+      line-height: 1.7;
+      color: var(--text);
+      background: var(--white);
+    }
+
+    #sidebar {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: var(--sidebar-width);
+      height: 100vh;
+      background: var(--bg);
+      border-right: 1px solid var(--border);
+      overflow-y: auto;
+      padding: 24px 16px;
+      z-index: 1000;
+    }
+
+    #sidebar h2 {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--accent);
+      margin-bottom: 16px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    #sidebar nav ul {
+      list-style: none;
+    }
+
+    #sidebar nav ul li {
+      margin-bottom: 8px;
+    }
+
+    #sidebar nav a {
+      display: block;
+      padding: 8px 12px;
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 13px;
+      border-left: 3px solid transparent;
+      transition: all 0.2s ease;
+    }
+
+    #sidebar nav a:hover {
+      color: var(--accent);
+      background: var(--accent-light);
+    }
+
+    #sidebar nav a.active {
+      color: var(--accent);
+      border-left-color: var(--accent);
+      background: var(--accent-light);
+      font-weight: 500;
+    }
+
+    #sidebar nav ul ul {
+      margin-left: 12px;
+      border-left: 1px solid var(--border);
+      margin-top: 4px;
+      padding-left: 0;
+    }
+
+    #sidebar nav ul ul li {
+      margin-bottom: 6px;
+    }
+
+    #sidebar nav ul ul a {
+      font-size: 12px;
+      padding: 6px 8px;
+      color: #777;
+    }
+
+    #sidebar nav ul ul a.active {
+      color: var(--accent);
+    }
+
+    main {
+      margin-left: var(--sidebar-width);
+      padding: 48px;
+      max-width: 900px;
+      background: var(--white);
+    }
+
+    section {
+      scroll-margin-top: 24px;
+      margin-bottom: 48px;
+    }
+
+    h1 {
+      font-size: 32px;
+      font-weight: 700;
+      line-height: 1.3;
+      margin-bottom: 24px;
+      color: var(--accent);
+    }
+
+    h1 .subtitle {
+      display: block;
+      font-size: 18px;
+      color: var(--muted);
+      font-weight: 400;
+      margin-top: 8px;
+    }
+
+    .paper-header {
+      margin-bottom: 40px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .paper-meta {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+
+    .paper-meta strong {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    h2 {
+      font-size: 24px;
+      font-weight: 700;
+      margin-top: 48px;
+      margin-bottom: 20px;
+      color: var(--accent);
+      border-bottom: 2px solid var(--accent-light);
+      padding-bottom: 12px;
+    }
+
+    h3 {
+      font-size: 18px;
+      font-weight: 600;
+      margin-top: 32px;
+      margin-bottom: 16px;
+      color: #333;
+    }
+
+    p {
+      margin-bottom: 16px;
+      text-align: justify;
+    }
+
+    .abstract-box {
+      background: var(--accent-light);
+      padding: 20px;
+      border-left: 4px solid var(--accent);
+      margin: 24px 0;
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+    .abstract-box h4 {
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 8px;
+      letter-spacing: 0.5px;
+    }
+
+    .keywords {
+      margin-top: 12px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .keywords strong {
+      color: var(--text);
+    }
+
+    blockquote {
+      background: #f5f5f5;
+      border-left: 4px solid var(--muted);
+      padding: 16px 20px;
+      margin: 20px 0;
+      font-style: italic;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .reference-item {
+      margin-bottom: 12px;
+      margin-left: 24px;
+      text-indent: -24px;
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .back-to-top {
+      text-align: center;
+      margin-top: 48px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+    }
+
+    .back-to-top a {
+      display: inline-block;
+      padding: 10px 20px;
+      background: var(--accent);
+      color: var(--white);
+      text-decoration: none;
+      border-radius: 4px;
+      font-size: 13px;
+      transition: background 0.2s;
+    }
+
+    .back-to-top a:hover {
+      background: #1e4560;
+    }
+
+    @media (max-width: 900px) {
+      #sidebar {
+        position: absolute;
+        left: -260px;
+        top: 0;
+        height: 100%;
+        transition: left 0.3s;
+        box-shadow: 1px 0 4px rgba(0,0,0,0.1);
+      }
+
+      main {
+        margin-left: 0;
+        padding: 24px;
+      }
+
+      h1 {
+        font-size: 24px;
+      }
+
+      h2 {
+        font-size: 20px;
+      }
+    }
+
+    strong {
+      font-weight: 600;
+    }
+
+    em {
+      font-style: italic;
+    }
+
+    ul, ol {
+      margin: 16px 0 16px 24px;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+  </style>
+</head>
+<body>
+  <div id="sidebar">
+    <h2>📄 목차</h2>
+    <nav>
+      <ul>
+        <li><a href="#header">논문 정보</a></li>
+        <li><a href="#intro">서론</a>
+          <ul>
+            <li><a href="#history-memory">역사와 기억의 개념</a></li>
+            <li><a href="#franco-memory">Franco 독재와 기억의 정책</a></li>
+            <li><a href="#democratic-citizenship">민주적 시민권과 역사 기억</a></li>
+          </ul>
+        </li>
+        <li><a href="#method">연구 방법</a>
+          <ul>
+            <li><a href="#methodology">혼합 방법론</a></li>
+            <li><a href="#sample">표본 및 참가자</a></li>
+          </ul>
+        </li>
+        <li><a href="#results">결과</a>
+          <ul>
+            <li><a href="#republic-war">2차 공화국과 내전</a></li>
+            <li><a href="#franco-repression">Franco 독재 억압</a></li>
+            <li><a href="#antifranco-struggle">반Franco 투쟁</a></li>
+            <li><a href="#memory-recovery">기억 회복 운동</a></li>
+          </ul>
+        </li>
+        <li><a href="#conclusion">결론 및 논의</a></li>
+        <li><a href="#references">참고문헌</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <main>
+    <section id="header" class="paper-header">
+      <h1>학교의 역사적 기억
+        <span class="subtitle">La memoria histórica en la escuela</span>
+      </h1>
+      <div class="paper-meta">
+        <div><strong>저자:</strong> Enrique Javier Díez Gutiérrez</div>
+        <div><strong>소속:</strong> Universidad de León</div>
+        <div><strong>학술지:</strong> Hispania, vol. LXXXII, n.º 271, 2022</div>
+        <div><strong>페이지:</strong> 547-571</div>
+        <div><strong>ISSN:</strong> 0018-2141 / e-ISSN: 1988-8368</div>
+        <div><strong>자금 지원:</strong> 스페인 대통령실 장관부 (PRE/786/2010 및 085-MD-2021)</div>
+      </div>
+
+      <div class="abstract-box">
+        <h4>초록 (Resumen)</h4>
+        <p>이 논문은 중등교육을 수료한 청년들이 현재 Franco 독재 억압, 반Franco 투쟁, 그리고 역사적 기억 회복에 관해 가지고 있는 지식에 대한 연구 결과를 제시한다. 혼합 방법론을 사용하여 질적 도구(22명의 학생과 함께 한 5개의 토론 그룹)와 양적 도구(368명의 청년을 대상으로 한 설문지)를 삼각 측정했다. 결과는 이러한 주제들이 항상 다루어지지는 않거나, 때때로 표면적으로만 다루어지며, 개발된 콘텐츠가 비록 소위 「중립적이고 무색의」 관점에서 제시되는 경향이 있지만, 때로는 의도적인 침묵과 은폐를 감춘다는 것을 보여준다. 따라서 대다수의 설문 대상 학생들이 주장한 바와 같이, 이 결론에 도달한다: 역사적 기억을 민주적 시민권의 기초로 회복할 필요가 있으며, 이러한 회복은 민주주의의 질을 강화한다. 지식 없이는 역사적 기억, 진실, 정의, 배상이 불가능하다.</p>
+        <div class="keywords"><strong>주요어:</strong> 역사적 기억, 학교 교육과정, 스페인 역사, Franco 억압, 반Franco 투쟁, 교육</div>
+      </div>
+    </section>
+
+    <section id="intro">
+      <h2>서론</h2>
+
+      <section id="history-memory">
+        <h3>역사와 기억의 개념</h3>
+
+        <p>교육법에서 정하듯이, 역사 연구의 중요성은 학교 활동의 기본 요소로 고려된다. 역사는 개인적이고 집단적인 유산에 대한 지식을 깊게 하기 위해 기여한다. 왜냐하면 과거는 우리의 현재 삶, 개인적이고 집단적 모두에 존재하는 많은 지식 체계와 현실 해석을 형성하기 때문이다. 궁극적으로 과거 역사적 현상과 과정에 대한 이해를 돕는 관련 지식을 제공하며, 이는 현재에 대한 집단적 비전에 영향을 미친다. 역사는 시간에 따른 사회적 기능의 이해에 기여할 뿐만 아니라 집단적 기억을 구축하고 자신의 권리와 사회에 대한 의무를 의식하는 책임감 있는 시민을 형성하는 데 기여한다.</p>
+
+        <p>이렇게 일반적인 방식으로 이해되어 왔다: 역사는 과거에 대한 과학적 연구의 결과로, 그것을 맥락화하고 전통적으로 받아들여진 서사를 고정하며, 기억은 종종 외상적이고 폭력적인 사건이나 사실들의 주관적인 회상을 의미한다. 그러나 1970년대에 기억은 삶의 역사와 자동기전이 나타나기 시작했을 때 학문적 정당성을 얻었으며, 이는 역사학 내에서 주관성을 가치 있게 하게 했다. 사실 구술 역사는 문서화가 잘 못된 역사적 과정들의 재구성, 또는 그들의 검증과 대조를 위한 필수 요소가 되어왔다. 스페인 내전과 Franco주의의 역사는 존재하지 않거나 소실되었거나 보존이 잘못되고 분류된 문서 출처의 큰 부족으로 인해 어려움을 겪고 있으므로, 목격자들의 기억 회상이 역사적 서사를 구축하고 재구축하기 위한 필수적인 출처가 되었다.</p>
+
+        <p>미래 시민들의 형성, 즉 그들의 사회 개선을 위한 약속 - 이는 우리의 학생들의 시민적이고 공개적 차원의 구축 - 은 의심할 여지 없이 학교의 기본 과제 중 하나를 구성한다. 이는 지식, 비판적 이성, 시민권 사이의 연대에서 태어난 계몽 약속의 딸인 민주 학교이다.</p>
+      </section>
+
+      <section id="franco-memory">
+        <h3>Franco 독재와 기억의 정책</h3>
+
+        <p>Franco 독재는 기억의 정책을 개발했으며, 이는 모든 수단을 통해 제2공화국의 기억을 악마화하고 나중에 사라지게 하려고 시도했다. 침묵과 부정의 기계는 그 최종 목표인 망각을 추구했으며, 기억에 대한 완전한 지배, 회상의 취소, 그리고 공식 패러다임의 강요를 찾았다.</p>
+
+        <p>Franco 독재는 제도적 기억 정책을 통해 내전의 패배자들의 기억을 침묵시켰고, 이는 제2공화국의 기억을 악마화하고 사라지게 하려고 시도했다. 이런 식으로, 그것은 자신의 목표에 부합하는 새로운 집단적 기억을 공고히 했다. 독재자의 죽음 이후, 소위 「전환」 기간에 민주 정당성을 옹호한 자들의 인정과 존엄성을 회복하기 위한 투쟁은 이루어지지 않았다. 더욱이, 민주주의로의 전환 이 시기에는 Franco주의 시대에 저질러진 범죄에 대한 사면과 사주(amnesty)가 계속되었다. 이것이 정치인과 정당들 사이의 사실상의 「침묵의 협약」과 동반되었으며, Franco 독재의 「최종선 법령」 또는 사면과 면책의 법령으로 간주될 수 있다. 이렇게 「망각의 정책」이 유지되었으며, 이는 국가의 진정한 민주화에 방해가 되었다.</p>
+
+        <p>민주주의가 공고화된 후에도, 연속된 정부들은 민주적 가치의 찬미에 기반하지 않고, Franco주의에 대항하여 싸웠던 자들의 주장에 기반한 기억 정책을 개발하는 데 관심이 없었다. 즉, 오랜 시간 동안, Franco주의에 의해 창출된 거짓 기억은 과거 민주적 준거에 기반한 새로운 기억 정책으로 제도적으로 대항하지 않았다. 이런 식으로, 전쟁의 패자들의 가치들이 집단적 상상과 과거의 사회적 표현에서 배제되었으며, 그들의 기억은 개별적이거나 가족적 영역으로 추방되었고, 대신 독재적 정치 가치들이, Franco주의에 대항하여 옹호되었던 가치들의 정반대로서, 생존하고 공고해졌다. 이것은 일종의 「상대적 민주주의」가 될 것이었다. 진실은 Primo Levi가 기술했듯이 Franco주의가 시도한 「기억 살인」(memoricide)이 수십 년간 독재 자체의 종식을 초과하여 생존했으며, 공포의 문화와 침묵을 통해 이루어졌다는 것이다.</p>
+
+        <p>이탈리아나 프랑스 같은 다른 민주주의들이 반파시즘의 패러다임 위에 설립된 반면, 스페인은 과거의 「극복」의 패러다임 위에 설립되었다. 그 나라들에서 과거의 구축과 집단적 정체성은 반파시즘 투쟁의 상징적 기억과 이전 정권의 잔학성의 지속적인 기억을 유지함으로써 이루어졌으며, 스페인에서는 반파시즘의 패러다임이 정치적 응집력이나 정당성의 출처가 아니었다. 새로 생겨난 민주 국가는 전환 자체라는 설립 신화로부터 출발했으며, 「민주주의의 기능이 명령의 정당성을 통해 개발되었고, 제2공화국의 상징적 참조처이자 복수 민주주의의 경험으로서의 「기억의 장소」를 명시적으로 거부하고 과거 민주적 경험을 정당성 보장자로서의 언급을 거부함으로써... 국가의 통치 가능성을 위해」.</p>
+      </section>
+
+      <section id="democratic-citizenship">
+        <h3>민주적 시민권과 역사 기억</h3>
+
+        <p>과거를 보지 않고, 전쟁과 그 희생자들을 잊으려는 것이 「화해」의 「요구」라고 가정되었으며, 비폭력적이고 합의된 민주화의 첫 주춧돌이었다. 그러나 이것은 정당성의 「보장인」으로서의 기억에 대한 포기, 「침묵의 협약」, 그리고 「사면과 기억상실의 혼동」을 의미했다. 사실, 스페인 민주주의는 여전히 기억 민주화에 관한 국제 표준과 사회적 요청에 멀리 떨어져 있다는 것이 확인된다.</p>
+
+        <p>1998년 4월 17일 UN 인권 위원회는 「알 권리」가 집단적 권리로서 일어난 일의 진실을 알 수 있는 양도할 수 없는 권리와 「기억할 의무」를 함의한다는 것을 상기시켰다. 민주적 기억 회복을 위한 충동은, 모든 장애물에도 불구하고 상당 부분 유지되고 있으며, 엄격한 과거 지식을 공중 기억에 통합하려는 것을 목표로 한다. 스페인의 경우, 이는 제2공화국이 무엇을 의미했는지, Franco 독재 및 반Franco 저항의 의미를 민주적 가치의 빛 아래 새 세대들에게 전달하는 것을 의미한다.</p>
+
+        <p>새로운 세대들이 이들 역사적 과정을 배우는 것은 청소년기의 마지막에 이루어지며, 그들이 성인기로 진입하여 속한 사회에서 시민으로서 완전히 참여할 준비를 할 때이다. 그들은 자신의 과거, 그들이 능동적으로 삽입되는 자신의 사회 공동체의 역사를 알고 이해할 필요가 있다. 왜냐하면 그들은 진실에 대한 권리를 가지고 있기 때문이다. 더욱이, 이것들은 최근의 역사적 과정들이며, 현재의 사회에 영향을 미쳤고 계속 미치고 있다. 학교는 단지 지식을 전달하는 것이 아니라 그들이 살아가야 하고 그들의 참여로 개선해야 할 세계에 능동적으로 참여하는 미래의 시민들을 형성한다. 이러한 의미에서, 역사적 차원은 시민 형성과 분리할 수 없다. 왜냐하면 역사적 지식의 본질을 이해하는 것이 민주적 가치와 일관된 사회적 위치를 채택할 수 있는 1차 도구이기 때문이다.</p>
+      </section>
+    </section>
+
+    <section id="method">
+      <h2>연구 방법</h2>
+
+      <section id="methodology">
+        <h3>혼합 방법론 접근</h3>
+
+        <p>이 연구의 목표는 최근 비대학 교육을 마친 청년들이 내전의 결과, Franco 억압, 반Franco 투쟁, 그리고 현재의 역사적 기억 회복 운동에 관해 가지고 있는 지식을 조사하는 것이었다.</p>
+
+        <p>조사되는 사회 현실의 복잡성은 연구에서 질적이고 양적인 방법론의 상호 보완적 사용을 선호한다. 이것이 「삼각 측정」이라고 불리는 것이다. 이러한 삼각 측정은 상호를 강화하며, 각각이 따로 제공할 수 없는 관점과 인식을 제공한다. 결과를 대조하고 더욱 정교한 재고찰과 추론을 강요한다. 따라서 두 가지 정보 수집 도구가 사용되었다: 질적 특성의 것, 즉 토론 그룹과 양적 방법론 내에 포함되는 설문지.</p>
+
+        <p>먼저 5개의 토론 그룹이 수행되었다. 이 토론 그룹들의 목표는 연구팀에 의해 규제되고 진행된 논의를 통해 조사 주제와 관련하여 학생들이 가진 지식과 의견을 알고 조사하는 것이었다. 각 토론 그룹에는 7명에서 10명의 학생이 참여했으며 2.5시간 지속되었다. 토론 그룹에서 생산된 담론으로부터, 두 번째 연구 도구인 설문지의 설계를 용이하게 한 「핵심」 측면과 범주들이 포착되었다.</p>
+      </section>
+
+      <section id="sample">
+        <h3>표본 및 참가자</h3>
+
+        <p>연구 대상 모집단은 최근 고등학교 2학년을 완료한 학생들이었다. 연구 대상 모집단의 광대한 수로 인해, 비확률적 표본추출이 무작위 것 대신 사용되었다. 표본추출은 편의적이며 의도적이었다. 편의적으로, 참가자들의 접근성과 가용성의 조건에 따라, 비공식적 메커니즘을 통해 선택을 하며, 따라서 모집단의 완전한 표현을 보장하지 않는다. 이것은 획득된 결과가 일반화될 수 없음을 의미한다. 하지만 또한 의도적으로, 상세한 정보를 제공할 가능성을 위해 참가 학생들을 선택하며, 측정보다는 현상의 이해와 그들이 가진 사회적 인식을 추구한다.</p>
+
+        <p>표본은 5개의 수행된 토론 그룹에 참여한 22명의 학생과 설문지에 응답한 368명의 학생으로 구성되었다. 학생들은 주로 Castilla y León에서 온다(64%), 하지만 모든 자치 공동체들이 표현된다(Galicia 7.5%, Asturias 6.6%, Cantabria 4.3% 등). 53%는 여학생, 47%는 남학생이며, 18세에서 23세 사이의 나이이고, 75.5%는 1학년 학생, 나머지는 2학년과 3학년 학생이다. 표본은 2019년 4월과 7월 사이에 수집되었다.</p>
+      </section>
+    </section>
+
+    <section id="results">
+      <h2>결과</h2>
+
+      <section id="republic-war">
+        <h3>제2공화국과 내전에 관한 내용</h3>
+
+        <p>설문지의 첫 번째 콘텐츠 블록과 관련하여 제2공화국과 내전에 대해, 설문 대상 학생들의 59.8%가 이러한 주제들을 완전하고 충분한 시간을 바쳐 연구했다고 표명했다. 그러나 이 경우 관련 있는 것은 나머지 40.2%이다. 이들은 이러한 주제들이 표면적으로만 다루어졌으며 적은 시간을 할당받았다(33.7%), 또는 소수의 경우에 그 부분이 전혀 다루어지지 않았다(4.3%)고 표명했다.</p>
+
+        <p>가장 주목할 점은 기본적으로 다루어진 것이 제2공화국과 내전에 중심을 둔 콘텐츠였다는 것이다. 하지만 Franco 억압(23%만이 이를 언급)과 반Franco 투쟁(단 2.3%만이 이를 다루어진 콘텐츠로 지칭)에는 훨씬 적었다.</p>
+
+        <p>내전의 시작에 대한 설명과 관련하여, 13%의 학생들이 이것이 민주 정부에 대한 쿠데타로 명확하게 설명되었다고 표명했다. 일반적으로 대다수(45.7%)는 그것이 더 이상의 뉘앙스 없는 「군사 봉기」로 제시되었다고 표명했고, 32.6%는 「두 진영 사이의 투쟁」으로 제시되었다고 표명했다.</p>
+      </section>
+
+      <section id="franco-repression">
+        <h3>Franco 억압</h3>
+
+        <p>Franco 억압과 관련된 블록에서, 단 12%만이 억압의 맥락에서 「paseo」(산책)라는 용어의 의미를 알고 있다고 주장했다. 절반(50%)은 그것에 대해 말해지지 않았다고 표명했고, 34.8%는 그것이 다루어졌으나 그것이 무엇을 의미하는지 기억하지 못한다고 표명했으며, 나머지는 기억하지 못했다. 즉, 절반 이상의 학생들이 이 완곡한 표현 뒤에 무엇이 숨어 있는지 몰랐다.</p>
+
+        <p>Franco 억압의 100,000명 이상의 희생자들이 누워 있는 도랑과 무덤들에 대한 질문에서도 유사한 결과가 나타난다. 단 29.3%만이 자신의 학교에서 다루어진 콘텐츠 내에서 이것에 대해 말해지고 분석되었다고 답했고, 43.5%는 그것이 언급되었으나 어떻게, 누가, 왜인지 명확히 하지 않았다고 보고했다.</p>
+
+        <p>Franco 억압의 다른 측면들과 관련하여 매우 유사한 방식으로 반복되고 있다. 단 20.7%만이 체계적이고 조직된 억압이 수업에서 분석되었다고 생각했다. 40.2%는 그것에 대해 수업에서 말해진 것이 없다고 주장했다. 그리고 38%는 그것이 더 이상의 설명 없이 언급되었다고 주장했다.</p>
+
+        <p>카톨릭 교회의 역할과 그 쿠데타의 공범성 그리고 그 이후의 독재에 대하여, 52.2%는 그것을 다루어지고 설명했다고 기억하며, 17.4%는 수업에서 주어진 것이 없다고 표명했고, 30.4%는 그것이 표면적으로만 주어졌다고 표명했다.</p>
+      </section>
+
+      <section id="antifranco-struggle">
+        <h3>반Franco 투쟁</h3>
+
+        <p>반Franco 투쟁을 다룬 세 번째 블록에서, 39.1%가 그것이 수업에서 말해지고 분석되었다고 표명했다. 유사한 비율(39.1%)은 그것이 언급되었으나 설명하거나 깊이 있게 다루지 않았다고 표명했고, 19.6%는 그 주제가 다루어지지 않았다고 표명했다. 반Franco 투쟁에서 「maquis」(게릴라)의 역할과 관련하여, 45.7%는 그들의 역할과 독재에 대항하여 유지한 투쟁이 설명되었다고 명백히 인정했다. 26.1%는 그들이 명명되었으나 그들이 독재에 대항하여 수행한 역할이 설명되지 않았다고 표명했다. 그리고 21.7%는 「이것이 그 용어를 처음 들었다」고 선언했다.</p>
+
+        <p>토론 그룹에서 모든 참가자들이 반Franco 여성 게릴라들의 역할을 몰랐다는 사실이 두드러졌다. 그들은 그들의 남성 동료들과 공유하는 억압의 침묵뿐만 아니라 공식 역사학의 상당 부분에 의한 망각도 겪은 여성들이다.</p>
+      </section>
+
+      <section id="memory-recovery">
+        <h3>역사적 기억 회복 운동</h3>
+
+        <p>역사적 기억 회복에 전념한 블록에서, 44.6%는 「역사적 기억」에 대해 말해졌는가에 대해 긍정적으로 응답했다. 27.2%는 「뭔가 말해졌지만 매우 표면적으로만」이라고 표명했다. 그리고 28.3%는 그것에 대해 말해진 것이 없다고 표명했다. 단 9.8%만이 역사적 기억 회복 협회들의 작업이 설명되었다고 표명했고, 13%는 그것이 언급되었으나 강조하지 않았다고 표명했으며, 77.2%는 그에 대한 설명을 받지 못했다고 표명했다. Franco 억압의 공통 무덤 발굴에서의 그들의 역할과 관련하여, 단 18.5%만이 그것이 다루어졌다고 주장했고, 31.5%는 그것이 단지 언급되었다고 표명했으며, 48.9%는 그것에 대해 말해진 것이 없다고 표명했다.</p>
+
+        <p>단 15.2%만이 기억의 장소를 방문하도록 이끌어졌다. 나머지 83.7%은 아니었다. 그러나 한 사람은 다음과 같이 표명했다: 「우리는 역사적 기억에 관한 강연에 참석했으며, 그곳에서 우리는 아직도 사라진 친척이나 친구들을 찾으려는 노력을 하는 사람들의 모든 과정과 노력을 설명받았다.」</p>
+
+        <p>91.3%는 Franco 억압과 역사적 기억에 관한 활동이나 작업을 수행하지 않았다고 주장했다. 단 8.7%만이 어떤 활동을 기억했으며, 예시로 들었다: 「우리의 교수가 그들의 동료 두 명을 데려왔으며, 그들은 자신의 발굴에서 시각 자료를 우리에게 가져왔고 강연을 했다」, 「할아버지와 가족들에게 전쟁을 어떻게 살았는지 물어보고, 작은 인터뷰를 한다」, 「Franco 억압 박물관을 방문한다」, 「정보를 찾고 수업에서 그룹으로 제시한다」, 「내전 기념비가 있는 묘지로 간다」, 또는 「역사적 기억 경로의 여행, 엄폐호와 게릴라들이 돌아다니던 유물들이 있는 곳을 방문한다.」</p>
+      </section>
+    </section>
+
+    <section id="conclusion">
+      <h2>결론 및 논의</h2>
+
+      <p>이 연구의 첫 번째 확인은 이 주제가 학교에서 항상 다루어지지는 않거나, 때때로 표면적으로만 다루어진다는 것이다. 「교과내용이 너무 광대해서 시간이 없다」, 「입시 준비를 해야 하고 시간이 모자란다」... 이러한 문구들이 토론 그룹에서 반복되었으며, 이는 설문 대상의 38%가 이러한 주제들이 표면적으로만 다루어졌거나 적은 시간을 받았거나 심지어 그 부분에 도달하지 못했다는 것을 확인한다. 토론 그룹의 일부 참가자들이 「특정 주제들이 여전히 논쟁적인 것으로 간주되기 때문에 다루지 않는다」고 표명했다는 점도 주목할 가치가 있다.</p>
+
+      <p>두 번째 결론은 개발된 콘텐츠가 비록 소위 「중립적이고 무색의」 관점에서 제시되는 경향이 있지만, 실제로는 심각한 침묵과 의도적인 은폐를 감춘다는 것이다. Franco 억압에 관한 것들, 특히 반Franco 투쟁(설문 대상의 단 2.3%만이 다루어진 콘텐츠로 지칭)에 관한 것들은 여전히 학교 교실에서 상당 부분 부재한다. 「이러한 생략들은 의도적으로 독재를 정당화하는 담론, 그 결과를 최소화하는 담론, 그리고 역사 교육을 마치는 학생들 속에서 비판적이지 않은 관점의 채택에 기여하는 담론으로 이해될 수 있다.」</p>
+
+      <p>더욱이, 이 역사적 기간의 분석에서 그리고 내전의 설명에서, 소위 「거리 두기」 또는 「동등화」 이론이 여전히 지속되는 것 같다. 이것은 두 진영 사이의 충돌, 형제 간의 형제 투쟁을 제시하며, 이는 양쪽 모두를 「죄책감」의 표시로 표시한다. 그러나 역사가 Moreno가 잘 말하듯이, 민주주의는 절대 쿠데타에 책임이 없으며 민주 정부는 절대 진영이 아니다.</p>
+
+      <p>Franco 억압의 심각한 주제와 관련하여, 그것의 분석을 잊어버리거나 최소화하는 경향이 있는 것처럼 보인다. 단 20.7%만이 내전으로 시작된 이 억압이 그 이후의 40년 동안 지속된 것으로, 공화 민주주의의 옹호자나 동정자에 대항하여 복수의 갈증이 합법적으로 주선되고 역사적 특성을 가진 것으로 2학년에서 다루어지고 분석되었다고 인정했다.</p>
+
+      <p>이 연구가 나타내는 현실은 반Franco 투쟁의 역사와 매우 유사하다. 단 39.1%만이 반Franco 저항의 역사가 다루어졌다고 주장했고, 45.7%는 게릴라들이 유지한 역할과 투쟁을 알고 있다고 표명했다. 이는 지난 이십 년 동안 반Franco 저항에 관한 많은 연구와 출판물에도 불구하고이다. 토론 그룹에서 모든 참가 사람들이 반Franco 여성 게릴라들의 역할을 몰랐다는 사실이 두드러졌다.</p>
+
+      <p>역사적 기억 회복 운동과 그들의 요구에 대한 부분, 진실, 정의, 배상의 원칙이 효과적이 되도록 주장하는 협회와 집단의 행동에 관해서는, 학교 역사 서사에서 가장 명확하게 계속 부재한다. 단 9.8%만이 그들의 작업이 설명되었다고 표명했고, 18.5%는 Franco 억압의 공통 무덤 발굴이 다루어졌다고 주장했으며, 단 15.2%만이 기억의 장소를 방문하도록 이끌어졌고, 91.3%는 Franco 억압과 역사적 기억에 관한 활동이나 작업을 수행하지 않았다고 주장했다. 이것이 특히 놀라운 이유는 토론 그룹에서 나타났듯이, 「그들이 나치 억압에 대해 스페인 독재에 대해보다 더 많이 알고 있었다」기 때문이다. 일부는 거의 3000 km 떨어진 곳에서 나치 수용소를 「방문했으며」 많은 Franco 수용소에 대해서보다 더 많이 알고 있었다.</p>
+
+      <p>이 비가시화 또는 최소화, 단순히 담장에서 총살되거나 침하나 절벽으로 던져진 자들의 비극뿐만 아니라 「패자」로서 생존한 자들과 그들의 후손들의 비극, 그리고 독재에 대항하여 반항을 유지한 자들의 투쟁도 부분적으로 「기억의 정상화」를 설명할 수 있다.</p>
+
+      <p>확실히, 진보가 이루어졌다고 인정해야 한다. 학교에서의 역사적 기억의 망각, 최소화, 또는 강등은 과거에 훨씬 더 컸다. 사실, 이것은 모든 이러한 년들 동안 성년기에 도달한 세대들이 Franco 독재와 그에 대항하여 유지된 반Franco 투쟁이 의미하는 바에 관한 최소한의 건전한 형성을 결여하도록 초래했다. 그러나 우리가 확인할 수 있듯이, 그리고 다른 최근 연구들도 증명하듯이, 그것은 충분하지 않았다.</p>
+
+      <p>진실은 청년들이 단지 학교 역사 지식에 관한 더욱 크고 명확한 지식을 요구함으로써 민주적 가치에 대한 자신들의 약속을 보여주는 것뿐만 아니라, 파시즘과 그것과 관련된 독재 모델이 추방되어야 한다고 생각하기 때문이다(비록 설문 대상 학생들의 11%가 「Franco주의가 지금보다 더 많은 질서와 평화가 있었다」고 생각한다는 것이 경악할 만하다). 마찬가지로, 가는 것은 청년들 사이에 그토록 높은 합의가 있다는 것을 놀라게 한다. 우리가 본 것처럼, 민주적으로 선택된 공화국을 옹호했는지 또는 쿠데타 진영을 옹호했는지의 전쟁 희생자들의 기억을 위한 기념물을 유지하기 위해. 이것은, 심지어 현재의 법률과도 정면으로 충돌하며, 쿠데타와 그 이후 독재의 책임자들에 대한 모든 기념물과 경의를 제거하고 있다. 이것은 집단적 상상에 정착된 「기억의 망각」을 확인하는 것처럼 보이며, 학교 영역이 비판적으로 분석하는 데 기여하지 않은 것처럼 보인다.</p>
+
+      <p>따라서, 학교 교육과정의 개혁과 조직을 촉진해야 하며, 청년들이 민주적 기억에 관해 보여준 실증적 무지의 현실에 기초한다. 예를 들어, 최근에 스페인에서 시작된 이 콘텐츠들이 명확하고 거짓 동등화 없이 교과서에 포함되도록 하고, 역사 과목에서 적절한 공간과 필요한 시간이 주어지도록 하는 이니셔티브가 있다. 수천의 서명이 이 이니셔티브에 지지를 가입했으며, Paul Preston, Julián Casanova, Mirta Núñez, Ángel Viñas 같은 인정된 전문가 다수가 그것을 주도했다.</p>
+
+      <p>학교 교육에서 민주적 역사적 기억을 회복하는 것은 너무 오랫동안 왜곡된 역사적 서사의 재균형을 의미한다. 또한 진실, 정의, 배상의 방어로서의 집단적 상상을 전달하는 것을 의미하며, 이는 모든 민주주의의 기본적인 가치들이다. 이 연구는 이 노력에서 돕는 것을 목표로 했다.</p>
+    </section>
+
+    <section id="references">
+      <h2>참고문헌</h2>
+      <ul style="list-style: none; padding: 0;">
+        <li class="reference-item">Aguilar Fernández, Paloma, <em>Políticas de la memoria y memorias de la política</em> [기억의 정책과 정치의 기억], Madrid, Alianza Editorial, 2008.</li>
+        <li class="reference-item">Ardoiz Jiménez, Leyre, Fernández Garijo, Inés e Ijalba Pérez, Pablo, «Por una Memoria Histórica Europea: el caso de las exhumaciones tempranas en España del año 1979» [유럽 역사적 기억을 위해: 1979년 스페인의 초기 발굴의 경우], <em>Revista de Estudios Europeos</em>, 75, Madrid, 2020.</li>
+        <li class="reference-item">Arroyo, Charo, «Sin Memoria no hay Historia y sin Historia no hay verdad» [기억 없이 역사 없고 역사 없이 진실 없다], <em>Libre pensamiento</em>, 102, Nicaragua, 2020.</li>
+        <li class="reference-item">Barranquero Texeira, Encarnación, «La memoria de la represión franquista sobre las mujeres en los websites» [웹사이트에서의 여성에 대한 Franco 억압의 기억], <em>Historia y Comunicación Social</em>, 22/2, Madrid, 2017.</li>
+        <li class="reference-item">Barreiro Mariño, María, «La memoria histórica en España y su situación en el ámbito educativo» [스페인의 역사적 기억과 교육 영역에서의 그 상황], <em>Revista Historia Autónoma</em>, 11, Madrid, 2017.</li>
+        <li class="reference-item">Chaves Palacios, Julián, «Consecuencias del franquismo en la España democrática» [민주 스페인에서의 Franco주의의 결과], <em>Historia Contemporánea</em>, 2/60, Madrid, 2019.</li>
+        <li class="reference-item">Cuesta, Raimundo, «Genealogía y cambio conceptual» [족보와 개념적 변화], <em>Archivos Analíticos de Políticas Educativas</em>, 22/23, Almería, 2014.</li>
+        <li class="reference-item">De La Cuesta Arzamendi, Juan Luis y Odriozola-Gurrutxaga, Miren, «Marco normativo de la memoria histórica en España» [스페인의 역사적 기억의 규범 프레임워크], <em>Revista electrónica de Ciencia Penal y Criminología</em>, 20/8, Bilbao, 2018.</li>
+        <li class="reference-item">Díez Gutiérrez, Enrique Javier, <em>La asignatura pendiente</em> [미결 과제], Madrid, Plaza y Valdés, 2020.</li>
+        <li class="reference-item">Erice Sebares, Francisco, <em>Guerras de la memoria y fantasmas del pasado</em> [기억의 전쟁과 과거의 유령들], Oviedo, Eikasia, 2009.</li>
+        <li class="reference-item">Etxeberria, Francisco y Solé, Queralt, «Fosas comunes de la Guerra Civil en el Siglo XXI» [21세기의 내전 공통 무덤들], <em>Historia Contemporánea</em>, 2/60, Madrid, 2019.</li>
+        <li class="reference-item">Ferrer González, Mari Carmen, «Memoria histórica y democrática con perspectiva de género» [성별 관점을 가진 역사적 민주적 기억], <em>PH: Boletín del Instituto Andaluz del Patrimonio Histórico</em>, 27/96, Sevilla, 2019.</li>
+        <li class="reference-item">Fuertes Muñoz, Carlos, «La dictadura franquista en los manuales escolares recientes» [최근 교과서의 Franco 독재], <em>Revista Historia Autónoma</em>, 12, Madrid, 2018.</li>
+        <li class="reference-item">García de las Heras González, Mariano, «La impunidad de la dictadura franquista» [Franco 독재의 면책], <em>Reflexión Política</em>, 21/43, Barcelona, 2019.</li>
+        <li class="reference-item">Hernández Sánchez, Fernando, «Memoria e Historia del Presente» [현재의 기억과 역사], <em>Nuestra Historia: revista de Historia de la FIM</em>, 2, Madrid, 2016.</li>
+        <li class="reference-item">Martínez Sánchez, Sonia, «¿Canes mudos? Los obispos españoles ante la represión franquista» [침묵의 개들? Franco 억압 앞의 스페인 주교들], <em>Historia y política: Ideas, procesos y movimientos sociales</em>, 33, Madrid, 2015.</li>
+        <li class="reference-item">Moreno Gómez, Francisco, <em>La victoria sangrienta 1939-1945</em> [피의 승리 1939-1945], Madrid, Alpuerto, 2014.</li>
+        <li class="reference-item">Muñoz Encinar, Luis, «De la exhumación de cuerpos al conocimiento histórico» [시체 발굴에서 역사적 지식으로], <em>Historia Contemporánea</em>, 260, Madrid, 2019.</li>
+        <li class="reference-item">Prada Rodríguez, Julio, «Franquismo y represión económica» [Franco주의와 경제적 억압], <em>Historia del Presente</em>, 30, Madrid, 2017.</li>
+        <li class="reference-item">Reyes Mate, Manuel, <em>Justicia de las víctimas. Terrorismo, memoria, reconciliación</em> [피해자들의 정의. 테러, 기억, 화해], Barcelona, Anthropos, 2008.</li>
+        <li class="reference-item">Rina Simón, César, «La memoria franquista en el espacio urbano» [도시 공간에서의 Franco 기억], <em>PH: Boletín del Instituto Andaluz del Patrimonio Histórico</em>, 27/96, Sevilla, 2019.</li>
+        <li class="reference-item">Rodrigo, Javier, <em>Hasta la raíz. Violencia durante la Guerra Civil y la dictadura franquista</em> [뿌리까지. 내전과 Franco 독재 기간의 폭력], Madrid, Alianza, 2008.</li>
+        <li class="reference-item">Valls, Rafael, «La Guerra Civil española y la dictadura franquista: las dificultades del tratamiento escolar» [스페인 내전과 Franco 독재: 학교 처리의 어려움], <em>Enseñanza de las Ciencias Sociales</em>, 6, Barcelona, 2007.</li>
+        <li class="reference-item">Yusta, Mercedes, «Hombres armados y mujeres invisibles» [무장한 남자들과 보이지 않는 여자들], <em>Ayer: Revista de Historia Contemporánea</em>, 11/02, Albacete, 2018.</li>
+      </ul>
+    </section>
+
+    <div class="back-to-top">
+      <a href="#header">▲ 맨 위로</a>
+    </div>
+  </main>
+
+  <script>
+    // 현재 섹션 강조 및 스크롤 추적
+    window.addEventListener('scroll', () => {
+      let current = '';
+      document.querySelectorAll('section[id]').forEach(s => {
+        const rect = s.getBoundingClientRect();
+        if (rect.top <= 80) {
+          current = s.id;
+        }
+      });
+      document.querySelectorAll('#sidebar nav a').forEach(a => {
+        const href = a.getAttribute('href');
+        if (href && href.substring(1) === current) {
+          a.classList.add('active');
+        } else {
+          a.classList.remove('active');
+        }
+      });
+    });
+
+    // 클릭 시 부드러운 스크롤
+    document.querySelectorAll('#sidebar nav a').forEach(a => {
+      a.addEventListener('click', e => {
+        const href = a.getAttribute('href');
+        if (href && href.startsWith('#')) {
+          e.preventDefault();
+          const target = document.querySelector(href);
+          if (target) {
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        }
+      });
+    });
+
+    // 초기 활성화
+    document.querySelectorAll('section[id]').forEach(s => {
+      if (s.id === 'header') {
+        document.querySelector(`#sidebar nav a[href="#header"]`).classList.add('active');
+      }
+    });
+  </script>
+</body>
+</html>

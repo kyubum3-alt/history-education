@@ -1,0 +1,1599 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>역사교육에서의 다원적 관점—Stradling (2003)</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Noto+Serif+KR:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #ffffff;
+  --text: #222;
+  --text-light: #666;
+  --text-muted: #999;
+  --accent: #1a1a1a;
+  --accent-subtle: #e8e8e8;
+  --red: #c0392b;
+  --border: #e0e0e0;
+  --box-bg: #fafafa;
+  --sidebar-w: 330px;
+  --content-w: 760px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; font-size: 17px; }
+
+body {
+  font-family: 'Noto Serif KR', Georgia, serif;
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.95;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ─── LAYOUT ─── */
+.wrapper { display: flex; }
+
+nav.toc {
+  position: fixed;
+  left: 0; top: 0;
+  width: var(--sidebar-w);
+  height: 100vh;
+  overflow-y: auto;
+  padding: 2.5rem 1.5rem 3rem 2rem;
+  border-right: 1px solid var(--border);
+  background: var(--bg);
+  z-index: 50;
+}
+nav.toc::-webkit-scrollbar { width: 3px; }
+nav.toc::-webkit-scrollbar-thumb { background: #ddd; border-radius: 3px; }
+
+nav.toc .logo {
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+}
+nav.toc ul { list-style: none; }
+nav.toc > ul > li { margin-bottom: 0.2rem; }
+nav.toc a {
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--text-light);
+  text-decoration: none;
+  display: block;
+  padding: 5px 0;
+  transition: color 0.2s;
+  line-height: 1.5;
+  letter-spacing: -0.03em;
+}
+nav.toc a:hover { color: var(--accent); }
+nav.toc a.active { color: var(--accent); font-weight: 500; }
+nav.toc .sub { padding-left: 1rem; }
+nav.toc .sub a { font-size: 12px; color: var(--text-muted); }
+nav.toc .sub a:hover { color: var(--text-light); }
+nav.toc .divider {
+  height: 1px;
+  background: var(--border);
+  margin: 0.8rem 0;
+}
+
+/* ─── MAIN ─── */
+main {
+  margin-left: var(--sidebar-w);
+  flex: 1;
+  min-width: 0;
+  max-width: var(--content-w);
+  padding: 4rem clamp(1.5rem, 4vw, 3.5rem) 8rem;
+}
+
+/* On wide screens, bump content max-width */
+@media (min-width: 1100px) { :root { --content-w: 800px; } }
+@media (min-width: 1400px) { :root { --content-w: 880px; } }
+@media (min-width: 1700px) { :root { --content-w: 960px; } }
+
+/* ─── COVER ─── */
+.cover {
+  padding: 6rem 0 4rem;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 3rem;
+}
+.cover .label {
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+}
+.cover h1 {
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 2.4rem;
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+  color: var(--accent);
+  margin-bottom: 0.6rem;
+  border: none;
+  padding: 0;
+}
+.cover .subtitle {
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 300;
+  color: var(--text-light);
+  margin-bottom: 2rem;
+}
+.cover .meta {
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.8;
+}
+
+/* ─── TYPOGRAPHY ─── */
+h1 {
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin: 4rem 0 1.5rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid var(--border);
+  letter-spacing: -0.01em;
+  line-height: 1.35;
+}
+h2 {
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--accent);
+  margin: 3rem 0 1rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--border);
+  line-height: 1.4;
+}
+h3 {
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--text);
+  margin: 2rem 0 0.8rem;
+}
+p {
+  margin-bottom: 1.1rem;
+  text-align: justify;
+  word-break: keep-all;
+}
+
+/* ─── BLOCKQUOTES ─── */
+blockquote {
+  margin: 1.5rem 0;
+  padding: 1.2rem 1.5rem;
+  background: var(--box-bg);
+  border-left: 3px solid var(--border);
+  border-radius: 0 4px 4px 0;
+  font-size: 0.92rem;
+  line-height: 1.8;
+  color: var(--text);
+}
+blockquote blockquote {
+  background: #f3f3f3;
+  border-left-color: #ccc;
+  margin: 0.8rem 0;
+}
+blockquote p:last-child { margin-bottom: 0; }
+
+/* ─── BODY QUOTES (본문 인용) ─── */
+blockquote.body-quote {
+  background: transparent;
+  border-left: none;
+  border-radius: 0;
+  padding: 0.8rem 2rem;
+  margin: 1rem 0;
+  font-size: 0.95rem;
+  color: var(--text);
+}
+
+/* ─── TRANSLATOR'S NOTES (역주) ─── */
+.tn-block {
+  margin: 1.5rem 0;
+  padding: 1.2rem 1.5rem;
+  background: #fdf8f0;
+  border-left: 3px solid #b8860b;
+  border-radius: 0 4px 4px 0;
+  font-size: 0.88rem;
+  line-height: 1.85;
+  color: var(--text);
+}
+.tn-block .tn-label {
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  color: #b8860b;
+  text-transform: uppercase;
+  margin-bottom: 0.6rem;
+}
+.tn-block p { margin-bottom: 0.6rem; font-size: 0.88rem; }
+.tn-block p:last-child { margin-bottom: 0; }
+sup.tn {
+  color: #b8860b;
+  font-weight: 500;
+  cursor: default;
+}
+
+/* ─── LISTS ─── */
+ul, ol { margin: 0.8rem 0 1.2rem 1.4rem; }
+li { margin-bottom: 0.35rem; }
+
+/* ─── TABLES ─── */
+.table-wrap { overflow-x: auto; margin: 1.8rem 0; }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+  line-height: 1.7;
+}
+th, td {
+  padding: 10px 14px;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid var(--border);
+}
+th {
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 500;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  border-bottom: 2px solid var(--accent-subtle);
+}
+tr:hover td { background: #fafafa; }
+
+/* ─── DIVIDERS ─── */
+hr {
+  border: none;
+  height: auto;
+  background: none;
+  margin: 4rem 0;
+  text-align: center;
+  overflow: visible;
+}
+hr::after {
+  content: '• • •';
+  display: inline-block;
+  font-size: 1.1rem;
+  letter-spacing: 0.6em;
+  color: #bbb;
+}
+
+/* ─── MISC ─── */
+strong { font-weight: 700; }
+em { font-style: italic; }
+sup { font-size: 0.7em; line-height: 0; color: var(--red); }
+code { font-size: 0.9em; background: #f5f5f5; padding: 2px 5px; border-radius: 3px; }
+
+/* ─── PROGRESS BAR ─── */
+.progress-bar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: var(--accent);
+  transform-origin: left;
+  transform: scaleX(0);
+  z-index: 999;
+  transition: transform 0.1s linear;
+}
+
+/* ─── FONT SIZE CONTROL ─── */
+.font-controls {
+  position: fixed;
+  bottom: 2rem;
+  right: 5rem;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 4px 6px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+  z-index: 100;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.font-controls.show { opacity: 1; }
+.font-controls button {
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  color: var(--text-light);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, color 0.2s;
+}
+.font-controls button:hover {
+  background: #f0f0f0;
+  color: var(--accent);
+}
+.font-controls .size-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  color: var(--text-muted);
+  min-width: 32px;
+  text-align: center;
+  user-select: none;
+}
+
+/* ─── BACK TO TOP ─── */
+.top-btn {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 40px;
+  height: 40px;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  font-size: 16px;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.3s, transform 0.3s;
+  transform: translateY(10px);
+  z-index: 100;
+}
+.top-btn.show { opacity: 1; transform: translateY(0); }
+.top-btn:hover { background: #444; }
+
+/* ─── PRINT ─── */
+@media print {
+  nav.toc, .progress-bar, .top-btn { display: none; }
+  main { margin-left: 0; max-width: 100%; padding: 1cm; }
+  body { font-size: 10.5pt; }
+}
+
+/* ─── TABLET ─── */
+@media (max-width: 1060px) {
+  :root { --sidebar-w: 220px; }
+  nav.toc { padding: 2rem 1rem 3rem 1.2rem; }
+  nav.toc a { font-size: 12px; }
+}
+
+/* ─── MOBILE ─── */
+@media (max-width: 768px) {
+  nav.toc { display: none; }
+  main {
+    margin-left: 0;
+    padding: 2rem 1.2rem 5rem;
+    max-width: 100%;
+    width: 100%;
+  }
+  .cover h1 { font-size: 1.8rem; }
+  h1 { font-size: 1.5rem; }
+  .font-controls { right: 4rem; bottom: 1.2rem; }
+  .top-btn { bottom: 1.2rem; right: 1rem; }
+}
+
+    .page-marker {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.75em;
+      color: #999;
+      background: #f5f5f5;
+      padding: 1px 4px;
+      border-radius: 3px;
+      margin: 0 2px;
+      white-space: nowrap;
+    }
+
+    blockquote p {
+      font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', sans-serif !important;
+    }
+</style>
+</head>
+<body>
+
+<div class="progress-bar" id="progressBar"></div>
+
+<div class="wrapper">
+
+<nav class="toc">
+  <span class="logo" style="text-decoration:none;color:inherit;">Stradling 2003</span>
+  <ul>
+    <li><a href="#cover">표지</a></li>
+    <div class="divider"></div>
+    <li><a href="#sec-foreword">서문</a></li>
+    <div class="divider"></div>
+    <li><a href="#sec-intro">서론 및 배경</a></li>
+    <li class="sub"><a href="#sec-what">다원적 관점이란 무엇인가?</a></li>
+    <li class="sub"><a href="#sec-problems">역사교육에서 다원적 관점의 잠재적 문제점</a></li>
+    <li class="sub"><a href="#sec-foundations">다원적 관점의 토대를 마련하기</a></li>
+    <div class="divider"></div>
+    <li><a href="#sec-learning">학습 활동</a></li>
+    <li class="sub"><a href="#sec-opportunistic">기회를 포착하기</a></li>
+    <li class="sub"><a href="#sec-historiography">학생들에게 사학사 소개하기</a></li>
+    <li class="sub"><a href="#sec-narrative">역사 서사에 다원적 관점 통합하기</a></li>
+    <li class="sub"><a href="#sec-breadth">역사 해석의 폭과 범위 확장하기</a></li>
+    <div class="divider"></div>
+    <li><a href="#sec-conclusion">결론적 고찰</a></li>
+    <div class="divider"></div>
+    <li><a href="#sec-appendix">부록: 사진 자료</a></li>
+  </ul>
+</nav>
+
+<main>
+
+<div class="cover" id="cover">
+  <div class="label">STRADLING · 2003 · Council of Europe</div>
+  <h1 style="font-size:2.4rem; border:none; margin:0 0 0.6rem; padding:0;">역사교육에서의<br>다원적 관점</h1>
+  <div class="subtitle">교사를 위한 안내서</div>
+  <div class="meta">
+    로버트 스트래들링 박사 (Dr Robert Stradling)<br>
+    유럽평의회(Council of Europe) 출판, 2003년 11월
+  </div>
+</div>
+
+<div style="font-size:0.85em; color:#888;">
+<p><em>본 출판물에 표명된 견해는 저자의 것이며, 유럽평의회의 견해를 반드시 반영하는 것은 아니다.</em></p>
+<p><em>모든 권리는 보호된다. 본 출판물의 어떤 부분도 커뮤니케이션·연구 총국(Directorate of Communication and Research) 출판부의 사전 허가 없이 전자(CD-ROM, 인터넷 등), 기계, 복사, 녹음 또는 기타 어떤 형태나 수단으로든 복제, 검색 시스템에 저장 또는 전송될 수 없다.</em></p>
+<p>표지 디자인: 유럽평의회 그래픽 디자인 워크숍(유럽 각국을 다양한 인물로 표현한 만화 지도. 저작권 Mansell/Timepix.)</p>
+<p>63쪽: 겨울궁전 습격, 1917년 10월, V.K. 불라(Bulla) 촬영. 저작권 러시아 국립현대사중앙박물관<br>
+65쪽: 저작권 현대사박물관 및 현대국제기록도서관(Musée d'Histoire Contemporaine-BDIC), 파리<br>
+67쪽: 독일 화가가 묘사한 프랑-티뢰르(franc-tireur)의 독일 군인 공격 장면, 1914년 8월 31일, 출처 "Illustrierte Weltkriegschronik der Leipziger Illustrierten Zeitung, 1914"<br>
+69쪽: 저작권 AKG 런던</p>
+<p>© 유럽평의회, 2003년 11월
+독일에서 인쇄</p>
+</div>
+<hr />
+<h2 id="_2">유럽평의회 소개</h2>
+<p><span class="page-marker">[p.3]</span> <strong>유럽평의회</strong>는 유럽 의회 민주주의 국가들 간의 더 큰 통합을 달성하기 위해 1949년에 설립되었다. 유럽평의회는 유럽 정치 기구 중 가장 오래된 기관으로, 유럽연합 15개 회원국을 포함하여 45개 회원국을 보유하고 있다.<sup>1</sup> 유럽에서 가장 광범위한 정부 간·의회 간 기구이며, 본부는 스트라스부르에 소재한다.</p>
+<p>국방과 관련된 문제만이 유럽평의회의 활동에서 제외되며, 이 기구는 민주주의, 인권과 기본적 자유, 미디어와 커뮤니케이션, 사회·경제 문제, 교육·문화·유산·스포츠, 청소년, 보건, 환경·지역 계획, 지방 민주주의, 법률 협력 등의 분야에서 활동하고 있다.</p>
+<p><strong>유럽문화협약(European Cultural Convention)</strong>은 1954년에 각국의 서명에 개방되었다. 이 국제 조약은 유럽평의회 회원국이 아닌 유럽 국가들에게도 개방되어 있으며, 이들이 유럽평의회의 교육, 문화, 스포츠, 청소년 프로그램에 참여할 수 있게 한다. 현재까지 48개국이 유럽문화협약에 가입했으며, 여기에는 유럽평의회의 정회원국 전체와 벨라루스, 교황청, 모나코가 포함된다.</p>
+<p>네 개의 운영위원회—교육운영위원회, 고등교육·연구운영위원회, 문화운영위원회, 문화유산운영위원회—가 유럽문화협약에 따라 교육 및 문화와 관련된 과제를 수행한다. 이 위원회들은 또한 교육, 문화, 문화유산 분야의 유럽 장관 회의와 긴밀한 협력 관계를 유지하고 있다.</p>
+<p>이 네 위원회의 프로그램은 유럽평의회 활동의 필수적인 부분이며, 다른 부문의 프로그램과 마찬가지로 이 기구의 세 가지 주요 정책 목표에 기여한다:</p>
+<ul>
+<li>인권과 기본적 자유 및 다원적 민주주의의 보호, 강화, 촉진</li>
+<li>유럽 정체성 인식의 증진</li>
+<li>유럽 사회가 직면한 중대한 도전에 대한 공동 대응의 모색</li>
+</ul>
+<p>교육운영위원회와 고등교육·연구운영위원회의 교육 프로그램은 현재 학교 교육, 학교 밖 교육, 고등교육을 포괄하고 있다. 현재 민주시민교육, 역사, 현대어, 학교 간 연계 및 교류, 교육개혁 전략, 종교간·상호문화 대화, 교육 인력 연수, 자격 인정, 형평과 사회 통합을 위한 평생학습, 시민성·학습·교수의 장으로서의 대학, 정보화 사회에서의 학습과 교수, 유럽 내 로마/집시 아동 교육, 홀로코스트 교육, 유럽 대학의 유산 등에 관한 프로젝트가 진행 중이다. 유럽평의회는 또한 2010년까지 유럽고등교육지구(European Higher Education Area)를 구축하는 것을 목표로 하는 볼로냐 프로세스(Bologna Process)의 고등교육 개혁에도 기여하고 있다.</p>
+<p>이러한 다자간 활동은 신규 회원국들이 자국의 교육 시스템을 유럽의 규범과 모범적 관행에 맞추도록 하는 맞춤형 지원으로 보완된다. "교육 혁신을 위한 파트너십" 전략하에 조율되는 프로젝트들이 특히 교육 법제와 구조, 시민성, 역사교육 분야에서 수행되고 있다. 우선 지역은 남동부 유럽과 구소련에서 독립한 국가들이다.</p>
+<blockquote>
+<p><sup>1</sup> 알바니아, 안도라, 아르메니아, 오스트리아, 아제르바이잔, 벨기에, 보스니아 헤르체고비나, 불가리아, 크로아티아, 키프로스, 체코 공화국, 덴마크, 에스토니아, 핀란드, 프랑스, 조지아, 독일, 그리스, 헝가리, 아이슬란드, 아일랜드, 이탈리아, 라트비아, 리히텐슈타인, 리투아니아, 룩셈부르크, 몰타, 몰도바, 네덜란드, 노르웨이, 폴란드, 포르투갈, 루마니아, 러시아 연방, 산마리노, 세르비아 몬테네그로, 슬로바키아 공화국, 슬로베니아, 스페인, 스웨덴, 스위스, "구 유고슬라비아 마케도니아 공화국", 터키, 우크라이나, 영국.</p>
+</blockquote>
+<hr />
+<h2 id="_3">목차</h2>
+<p><span class="page-marker">[p.5]</span></p>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>쪽</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>서문</td>
+<td>7</td>
+</tr>
+<tr>
+<td>서론 및 배경</td>
+<td>9</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;다원적 관점이란 무엇인가?</td>
+<td>13</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;역사교육에서 다원적 관점의 잠재적 문제점</td>
+<td>21</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;다원적 관점의 토대를 마련하기</td>
+<td>26</td>
+</tr>
+<tr>
+<td>학습 활동</td>
+<td>31</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;기회를 포착하기</td>
+<td>31</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;학생들에게 사학사 소개하기</td>
+<td>33</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;역사 서사에 다원적 관점 통합하기</td>
+<td>43</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;역사 해석의 폭과 범위 확장하기</td>
+<td>50</td>
+</tr>
+<tr>
+<td>결론적 고찰</td>
+<td>59</td>
+</tr>
+<tr>
+<td>부록: 사진 자료</td>
+<td>61</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;겨울궁전 습격</td>
+<td>61</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;"잘린 손" 신화에 관한 프랑스 엽서</td>
+<td>62</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;"프랑-티뢰르"의 독일 군인 공격에 대한 독일 화가의 묘사</td>
+<td>63</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;독일군의 잔학 행위를 주장하는 선전 엽서</td>
+<td>64</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h1 id="_4">서문</h1>
+<p><span class="page-marker">[p.7]</span> 유럽평의회는 안정협약(Stability Pact)<sup class="tn">a</sup>의 틀 안에서 남동부 유럽의 역사 및 역사교육에 관한 실무 그룹의 조정을 맡아달라는 요청을 받았다. 이에 더하여, 유럽평의회는 일부 회원국으로부터 남동부 유럽의 역사교육에 관한 자체 활동을 위한 재정 지원을 받았다.</p>
+<p>스위스는 역사 교사 현직연수 작업에 대해 재정적 기여를 했으며, 남은 재원으로 유럽평의회가 본 출판물 "역사교육에서의 다원적 관점: 교사를 위한 안내서"를 위탁할 수 있도록 합의했다. 이 안내서는 남동부 유럽 국가들의 언어로도 번역될 예정이며, 역사 교사들에게 널리 배포될 것이다.</p>
+<p>본 안내서는 "남동부 유럽에서의 제2차 세계대전의 시작"(블레드, 슬로베니아, 2001년 10월)과 "지역적 맥락에서 21세기 역사 교사들이 직면한 과제"(부다페스트, 2001년 11월) 지역 연수 세미나에서의 논의를 영감의 원천으로 삼았다. 남동부 유럽 모든 국가의 교사와 교사 연수 담당자들은 교실에서 활용할 수 있는 다원적 관점 다루기의 사례가 필요하다는 의견을 표명했다.</p>
+<p>그러나 그들은 자국의 상황에 직접적으로 관련되지 않는 사례가 필요하다고 밝혔다. 제공된 사례들은 남동부 유럽 국가들의 상황에 맞게 적용될 수 있다. 일부 사례는 잘 알려진 것이지만 그것을 다루는 방식은 혁신적이며, 다원적 관점의 문제는 안정협약 대상국과 구소련 공화국에서의 일부 지역 연수 세미나에서 다루어진 바 있다. 본 안내서는 향후 교사 연수 세미나의 기초를 제공할 것이다.</p>
+<p>본 안내서의 저자인 로버트 스트래들링 박사는 『20세기 유럽 역사교육 핸드북』(<em>Handbook on Teaching 20th Century European History</em>)<sup class="tn">b</sup>의 저자이며, 안정협약의 틀 안에서 수행된 남동부 유럽의 역사 및 역사교육에 관한 작업을 지속적으로 추적해 왔다. 그는 유럽평의회의 많은 심포지엄과 세미나에서 보고관(rapporteur)<sup class="tn">c</sup>을 역임했으며, 2003년에 시작될 역사교육의 유럽적 차원에 관한 교육운영위원회 신규 프로젝트의 프로젝트 자문관이 될 예정이다.</p>
+<div class="tn-block">
+<div class="tn-label">역주</div>
+<p><sup class="tn">a</sup> <strong>안정협약(Stability Pact for South Eastern Europe)</strong>: 1999년 6월 10일 독일 쾰른에서 유럽연합의 주도로 체결된 국제 협약으로, 코소보 전쟁 등 구유고슬라비아 분쟁의 여파 속에서 남동부 유럽의 평화 정착, 민주화, 경제 재건, 그리고 역내 국가들의 유럽 통합 촉진을 목적으로 수립되었다. 협약은 세 개의 실무 테이블(Working Table)—민주화와 인권, 경제 재건, 안보—로 구성되었으며, 민주화와 인권 분과 산하의 교육 태스크포스를 통해 역사교육 개혁이 추진되었다. 유럽평의회는 이 틀 안에서 남동부 유럽의 역사 및 역사교육에 관한 실무 그룹의 조정 역할을 공식적으로 위임받았다. 안정협약은 2008년 2월 지역협력위원회(Regional Cooperation Council, RCC)로 계승되었다.</p>
+<p><sup class="tn">b</sup> <strong>『20세기 유럽 역사교육 핸드북』</strong>: 2001년 유럽평의회 출판부에서 간행되었다. 유럽평의회의 "20세기 유럽사의 학습과 교수(Learning and Teaching about the History of Europe in the 20th Century)" 프로젝트의 일환으로 제작된 이 핸드북은, 무엇을 가르칠 것인가보다 어떻게 가르칠 것인가에 초점을 맞추어 논쟁적 주제의 다루기, 시각 자료 및 아카이브의 활용, 학교 밖 학습, 기술 통합 등 핵심 교수법적 쟁점을 다루었다. 스트래들링 박사는 유럽평의회의 역사교육 파트타임 자문관으로 활동하면서 다원적 관점 개념의 주류화에 기여한 핵심 인물로, 이후 『유럽 역사의 교차로』(<em>Cross-Roads of European Histories: Multiple Outlooks on Five Key Moments in the History of Europe</em>, 2006) 등 유럽평의회 역사교육 관련 주요 저작을 다수 집필하였으며, EUROCLIO의 Historiana 콘텐츠 팀장을 역임하였다.</p>
+<p><sup class="tn">c</sup> <strong>보고관(rapporteur)</strong>: 국제기구의 심포지엄, 세미나, 위원회 등에서 공식적으로 임명되어 회의의 논의 내용을 기록·종합하고, 핵심 결론과 권고 사항을 정리한 공식 보고서를 작성·발표하는 역할을 수행하는 직책이다. 보고관은 논의를 분석적으로 종합하고 정책적 함의를 도출하는 전문적 역할을 담당하며, 유럽평의회에서는 각 위원회와 산하 기구에 보고관을 공식 지명하는 제도적 관행이 확립되어 있다.</p>
+</div>
+<hr />
+<h1 id="_5">서론 및 배경</h1>
+<p><span class="page-marker">[p.9]</span> "다원적 관점(multiperspectivity)"이라는 용어는 1990년대 이전에는 학교 중심의 역사교육 맥락에서 거의 사용되지 않았다. 다만, 보도 폰 보리스(Bodo von Borries) 교수는 이 개념이 일찍이 1970년대부터 일부 독일 역사학자들(그 자신을 포함하여)에 의해 논의되고 적극적으로 추진되고 있었다고 관찰한 바 있다.<sup>1</sup> 이 용어는 1990년대 초반에 유럽에서, 특히 역사 학술대회, 세미나, 유럽평의회와 EUROCLIO<sup class="tn">d</sup>가 조직한 현직 교사 연수 워크숍에서 더욱 널리 사용되기 시작했다.<sup>2</sup> 그럼에도 불구하고, 용어 자체는 아닐지라도 "다원적 관점" 이면의 이념들은 더 오랜 계보를 가지고 있으며, 학교 교육 내에서 서로 구별되지만 분명하게 연관된 세 가지 발전에 확고히 뿌리를 두고 있다.</p>
+<blockquote>
+<p><sup>1</sup> Von Borries, B. (2001). Multiperspectivity – Utopian pretensions or feasible fundament of historical learning in Europe? In J. van der Leeuw-Roord (Ed.), <em>History for today and tomorrow: What does Europe mean for school history?</em> Körber Stiftung.</p>
+<p><sup>2</sup> 유럽평의회의 "20세기 유럽사의 학습과 교수(Learning and Teaching about the history of Europe in the 20th Century)" 프로젝트 역시 다원적 관점의 이념을 촉진하였으며, 이에 관한 한 장이 이 프로젝트의 결과물인 교사용 핸드북에 포함되었다. Stradling, R. (2000). <em>Teaching 20th-century European history</em>. Council of Europe Publishing. 참조.</p>
+</blockquote>
+<div class="tn-block">
+<div class="tn-label">역주</div>
+<p><sup class="tn">d</sup> <strong>EUROCLIO</strong>: 1992년 프랑스 스트라스부르에서 설립된 역사 교사 단체의 국제 연합체로, 설립 당시 정식 명칭은 European Standing Conference of History Teachers' Associations(유럽역사교사협회상설회의)였다. 약칭 EUROCLIO는 Europa와 Clio(그리스 신화의 역사의 뮤즈)를 합성하여 만들어졌다. 이후 European Association of History Educators(유럽역사교육자협회)로 개명하여 현재에 이르고 있다.</p>
+</div>
+<p>이러한 발전 중 첫 번째는 이른바 "신역사(new history)" 접근법으로, 이는 1970년대와 1980년대 초반에 서유럽과 북유럽에서 원래 등장했으며, 그 이후 유럽 나머지 지역의 역사교육에 점점 더 큰 영향을 미쳐 왔다. 처음에는 남유럽과 동유럽에서, 그리고 1989–90년의 사건들<sup class="tn">e</sup> 이후에는 중부 및 동부 유럽의 상당 부분에서 영향력이 확대되었다. 신역사 접근법은 다음과 같은 점에 중점을 둔 학교 역사교육의 전통적 접근법에 대한 불만을 반영한 것이었다:</p>
+<ul>
+<li>지식의 전달</li>
+<li>정치사와 헌법사에 치우친 교과 내용의 편중</li>
+<li>사건과 인물에 편중된 초점</li>
+<li>내용이 풍부한, 연대기적 자국사 개관 중심의 교육과정 구성</li>
+<li>자국의 역사 서사란 인구의 최대 다수를 이루는 국민 집단과 지배적인 언어·문화 공동체의 역사에 주로 부합한다는 암묵적 전제</li>
+</ul>
+<div class="tn-block">
+<div class="tn-label">역주</div>
+<p><sup class="tn">e</sup> <strong>1989–90년의 사건들</strong>: 1989년 베를린 장벽 붕괴(11월 9일)를 상징적 기점으로 하여 중부 및 동부 유럽 전역에서 연쇄적으로 발생한 공산주의 체제의 붕괴를 가리킨다. 폴란드의 자유선거 실시(1989년 6월), 헝가리의 국경 개방, 체코슬로바키아의 벨벳 혁명(11월), 루마니아 혁명(12월) 등이 이어졌으며, 1990년에는 동독과 서독의 통일(10월 3일)이 이루어졌다. 이 일련의 사건들은 냉전 체제의 종식을 가져왔고, 이후 중부 및 동부 유럽 국가들은 정치·경제 체제의 전환과 함께 교육 시스템, 특히 역사교육과정의 전면적 개혁에 착수하게 되었다.</p>
+</div>
+<p>이에 반해, 신역사 접근법은 연대기와 역사 지식의 중요성을 부정하지 않으면서도, 학생들에게 과거에 대해 가르치는 것과 <span class="page-marker">[p.10]</span> 그것에 대해 역사적으로 사고하는 수단을 제공하는 것 사이에 역사교육 내부에서 더 나은 균형을 수립하는 것을 목표로 했다. 그 결과, 역사 수업에서 다양한 1차 사료와 2차 사료의 증거를 분석·해석·종합하는 방법을 학습하는 데 더 큰 비중이 주어지게 되었다.</p>
+<p>역사적으로 사고하는 법을 배운다는 것은, 과거를 재구성하려는 역사학자들과 그 밖의 사람들—박물관 학예사, 영화 제작자, 텔레비전 프로듀서와 기자 등—이 자신이 접근할 수 있는 사료의 범위에 의해 제약받으며, 동일한 증거를 서로 다른 방식으로 해석하고 사용할 것이고, 증거의 서로 다른 측면을 선택하여 강조할 것이라는 점을 배우는 것이기도 하다. 다시 말해, 대부분은 아니더라도 모든 역사적 현상은 다양한 관점에서 해석되고 재구성될 수 있으며, 여기에는 증거의 한계, 증거를 해석하고 재구성하는 사람들의 주관적 이해관계, 그리고 각 새로운 세대가 과거에서 무엇을 중요하다고 간주하는지를 어느 정도 결정하는, 변화하는 문화적 영향이 반영되어 있다.</p>
+<p>다원적 관점에 대한 최근의 관심에 기여한 두 번째 광범위한 교육적 발전은, 과거에 역사교육이 너무도 자주 단일문화적(mono-cultural), 자문화중심적(ethnocentric), 배타적이며 포용적이지 못한 관점에서, 그리고 자국의 역사 서사가 인구의 최대 다수를 이루는 국민 집단과 지배적인 언어·문화 공동체의 역사에 부합한다는 전제하에 가르쳐져 왔다는 인식이 증대되어 온 것이다. 동일한 경향은 학술 역사의 접근법에서도 흔히 나타났다. 그럼에도 불구하고, 지난 25년간, 특히 사회사, 인류학적 역사, 문화사, 젠더 연구에서의 학술적 발전은 이전에 대체로 무시되어 온 사회적 범주와 집단—여성, 빈곤층, 소수민족, 아동, 가족, 이주민—의 역사에 더 분명한 초점을 맞추는 결과를 낳았다. 이제 이러한 관심이 학교 중심의 역사교육에도 점차 스며들고 있다는 조짐이 나타나고 있다.</p>
+<p>예를 들어, 최근 유럽평의회와 EUROCLIO, 게오르크 에커트 연구소<sup class="tn">f</sup>, 쾨르버 재단<sup class="tn">g</sup> 등 일부 비정부 기구들은 여성의 역사, 일상생활의 역사, 자국사 교육 내에서의 소수자의 위치 등의 주제를 중심으로 역사 교사를 위한 학술대회, 워크숍, 현직 연수 세미나를 조직해 왔다. 유럽평의회는 또한 여성의 역사에 관한 교수 자료집(teaching pack)을 발간한 바 있다.<sup>1</sup> 그러나 이전에 주변화되거나 무시되어 온 집단과 사회적 범주의 역사를 학교 교육과정에 어떻게 도입할 것인가 하는 문제는 여전히 쟁점으로 남아 있다. 해당 집단에 중요한 몇 가지 주제나 인물 또는 사건을 포함시키는 것만으로는 그들을 오히려 더 주변화하는 데 그칠 수 있다. 역사교육과정에 이러한 집단들을 온전히 통합하는 것, 예를 들어 그들이 국가적 역사의 중심인 사건과 전개에 대해 각각 고유한 관점을 가질 수 있음을 인정하는 것—때때로 "주류화(mainstreaming)"라고 불리지만 다중관점적(multiperspectival)이라고도 할 수 있는 접근법—은, 역사교육과정에 이미 다루어야 할 내용이 과밀하게 들어차 있는 상황에서 매우 어려운 일이 될 수 있다.<sup>2</sup></p>
+<blockquote>
+<p><sup>1</sup> Tudor, R. (2000). <em>Teaching 20th century women's history: A classroom approach</em>. Council of Europe Publishing.</p>
+<p><sup>2</sup> 이 문제에 대한 보다 상세한 논의는 여성사와 관련하여 Tudor(2000), 위의 책 참조.</p>
+</blockquote>
+<div class="tn-block">
+<div class="tn-label">역주</div>
+<p><sup class="tn">f</sup> <strong>게오르크 에커트 연구소(Georg-Eckert-Institut)</strong>: 독일의 역사학자이자 교육학자인 게오르크 에커트가 1951년 브라운슈바이크에 설립한 국제교과서개선연구소를 전신으로 하며, 에커트 사후인 1975년 독립 연구 기관으로 정식 설립되었다. 현재 정식 명칭은 라이프니츠 교육매체연구소 | 게오르크 에커트 연구소(Leibniz-Institut für Bildungsmedien | Georg-Eckert-Institut)이다. 세계 최대 규모의 국제 교과서 컬렉션을 보유하고 있으며, 역사·지리·사회 교과서의 비교 연구를 수행하여 교육의 질 향상과 국제적 상호 이해 증진에 기여하고 있다.</p>
+<p><sup class="tn">g</sup> <strong>쾨르버 재단(Körber-Stiftung)</strong>: 1959년 기업가 쿠르트 A. 쾨르버가 독일 함부르크에 설립한 재단으로, 역사교육 분야에서는 2001년부터 EUSTORY 네트워크를 창설·운영하고 있다. EUSTORY는 20개국 이상의 30여 개 시민 단체로 구성된 국제 네트워크로, 청소년을 대상으로 역사 연구 공모전을 시행하여 비판적 역사 사고와 초국적 대화를 촉진하고 있다.</p>
+</div>
+<p><span class="page-marker">[p.11]</span> 세 번째 광범위한 교육적 발전은 민족·문화·언어·종교적 다양성으로 특징지어지는 세계에서 살아가기 위해 학교가 젊은이들을 준비시키기 위해 더 많은 노력을 기울여야 한다는 우려가 증대하는 데서 비롯되었다. 이 우려 역시 처음에는 1970년대에 서유럽과 북유럽에서, 특히 식민지 과거를 가졌거나 일부 산업과 비숙련 직종에서 "이주 노동자(guest workers)"를 고용한 최근의 역사를 가진 국가들에서 등장했다. 유럽연합 회원국들의 인구가 노동력의 이동성 증대로 인해 더 문화적·민족적으로 다양해지면서 추가적인 우려가 대두되었다.</p>
+<p>증가된 문화적 다양성에 대한 초기의 교육적 대응은 동화와 통합을 강조하는 경향이 있었는데, 학교는 이민자 가정의 자녀들에게 토착적 언어, 관습, 문화적 "규범"을 가르치는 데 집중하여 그들이 주류 사회에 쉽게 흡수될 수 있도록 했다. 1980년대 초반이 되면 증가하는 상호문화적 긴장(학교 안팎 모두에서)과 많은 소수민족 아동들 사이에서 구조적으로 낮은 학력 성취가 나타난다는 증거가 드러나면서 이 정책은 점점 더 의문시되었다. 동시에, 이민 소수자를 포함한 소수자들이 자기 자신의 문화적 유산을 유지할 권리를 가진다는 인식이 증가하고 있었다.<sup>2</sup></p>
+<blockquote>
+<p><sup>2</sup> 이 문제들에 대한 하나의 설명으로는 Craft, M. (1984). <em>Education and cultural pluralism</em>. Falmer Press. 참조.</p>
+</blockquote>
+<p>더 새로운 교육적 접근법들은 문화적 다양성을 모든 학생이—문화·언어·민족·국민적 소수자뿐만 아니라—기념해야 할 것으로 제시하기 시작했다. "다문화주의(multiculturalism)"와 "상호문화 교육(inter-cultural education)" 같은 용어가 더 널리 사용되기 시작하면서, 다양한 교과와 교육과정 영역이 다문화적 차원을 어떻게 발전시킬 수 있는지에 대한 탐구가 교육과정 전문가들 사이에서 이루어졌다. 그 결과 서유럽의 일부 역사교육과정에서는 특정한 기존 주제와 테마의 내용이 수정되어, 예를 들어 학생들이 십자군을 공부할 때 기독교적 관점뿐만 아니라 이슬람적 관점에 대해서도 배울 수 있게 되었고, 발견의 항해와 자국의 제국주의적 과거, 탈식민화의 시대를 살펴보면서, "발견되고", 식민화되거나 독립을 "부여받은" 민족들에 대해서도 배울 수 있게 되었다.</p>
+<p>이러한 추세는 세계사와 유럽사 교육에도 함의를 가졌다. 1989년 이전까지, 유럽평의회와 같은 국제 기구에서 유럽사 교수법에 관한 논의는 서유럽 참가자들이 주도해 왔다. 어쩌면 당연하게도, 논의의 중심에는 공통의 역사와 공유된 문화유산으로 정의되는 유럽상(像)이 놓여 있었다. 그리스-로마 및 유대-기독교 전통, 공통의 예술적·건축적 유산, 국민국가의 출현, 그리고 봉건제, 십자군, 르네상스, 종교개혁과 반종교개혁, 계몽주의, 산업혁명, 민족주의, 세계대전, 20세기의 정치적·경제적 위기 등 공유된 역사적 경험이 강조되었던 것이다. 그러나 1989년 이후, 중부·동부 유럽과 <span class="page-marker">[p.12]</span> 구소련에서 진행된 일련의 변화는 유럽사 교육에 반영될 수 있는 관점의 폭을 넓혀야 한다는 필요성을 부각시켰다. 나아가, 광의의 유럽은 공유된 역사와 문화유산보다 오히려 그 다양성—민족·언어·종교·사회·문화적—으로 특징지어진다는 인식이 확산되었다.<sup>1</sup></p>
+<p>1990년대에 정치적·경제적 전환 상태에 있던 이 모든 국가들은 자국의 학교 역사교육과정을 개혁하고 있었다. 러시아 연방과 같은 일부 국가에서는 자국 영토 내에 존재하는 문화, 민족 집단, 종교의 복잡성을 반영하는 새로운 역사교육과정과 교과서를 개발할 필요가 있었다. 이것이 교육과정 내용의 변화 이상의 것을 수반한다는 점이 인식되었다. 다양한 관점을 반영하는 사료를 통합하는 방법, 동일한 사건과 전개에 대한 대조적 해석을 제시하는 방법, 다민족·다문화 사회에서 논쟁적이거나 민감할 가능성이 높은 주제와 이슈를 다루는 방법 등 교수 방법에도 우선순위가 부여되어야 했다.<sup>2</sup> 합병과 점령의 오랜 역사를 지닌 일부 다른 나라들에서는, 개혁자들이 자국의 역사 서사 속 "공백(white spots)"을 회복하거나 재발견하려 하고 있었다. 이 공백은 제국의 관점을, 이어서 소비에트적 관점을 앞세워 온 역대 역사학자들이 의도적으로 지워 온 것이었다.<sup>3</sup></p>
+<blockquote>
+<p><sup>1</sup> 보다 상세한 논의는 Stradling, R. (2000). <em>Teaching 20th-century European history</em>. 제2장 참조.</p>
+<p><sup>2</sup> 이 문제들에 대한 추가 논의는 Stradling, R. (1999). <em>The Secretary General's new initiative: The reform of history teaching and the preparation of new history textbooks</em>. Council of Europe Publishing. 참조.</p>
+<p><sup>3</sup> 위의 책, 31쪽 이하.</p>
+</blockquote>
+<p>이들 국가 대부분에서 국가 역사교육과정과 교과서 개발에 중점이 두어지는 동시에, 인근 국가와의 관계의 역사, 그리고 국내의 민족적·종교적 다수자와 소수자 간 관계의 역사를 균형 있고 민감하게 다루는 방법에 대한 상당한 관심과 우려도 존재했다. 1990년대에 남동부 및 동부 유럽 일부 지역에서의 분쟁—구 유고슬라비아 공화국들 간의 분쟁, 코소보를 둘러싼 세르비아와 알바니아 간의 분쟁, 러시아인과 체첸인 간의 분쟁, 아르메니아와 조지아 간의 국경 분쟁과 긴장, 나고르노-카라바흐를 둘러싼 아제르바이잔과 아르메니아 간의 분쟁—은 또한 역사교육을 적대감과 외국인 혐오를 강화하는 데 사용하지 않는 것의 중요성을 부각시켰다.</p>
+<p>이러한 맥락에서, 유럽평의회, 유네스코, 유럽연합, 남동부 유럽 안정협약 등의 국제 기구와 조직들이 동부 및 남동부 유럽에서 상호 이해와 화해를 촉진하는 데 역사교육이 수행해야 할 잠재적으로 중요한 역할을 인정한 것은 놀라운 일이 아니다. 1994년의 유럽평의회 세미나에서 다원적 관점의 선도적 옹호자 중 한 명인 기타 슈타이너-캄시(Gita Steiner-Khamsi) 교수는 "사회적 응집력, 평화, 민주주의는 과거, 현재, 미래에 대한 공유된 비전을 전제한다"고 관찰했다. 그 자체로는 논쟁의 여지가 없는 진술이다. 그것은 아마도 대부분의 역사교육자들이 동의할 수 있는 것이며, 역사교육이 <span class="page-marker">[p.13]</span> 국가적 정체성과 국가적 충성심을 형성하는 데 중요한 역할을 한다고 주장하는 사람들도 포함된다. 그러나 여기에는 "꼬리의 독침(sting in the tail)"이 있었는데, 슈타이너-캄시 교수가 이어서 이런 종류의 공유된 비전은 사회에서 다수의(또는 지배적인) 민족·언어·종교적 집단을 대표하는 권력자들에 의해 부과될 수 없다고 주장했기 때문이다. 이것은 보편주의보다는 다문화주의와 다원적 관점에 대한 강조에서 비롯되며, 이는 다시 기존의 역사교육과정을 "누구의 역사가 서술되고 있으며 누구의 역사가 배제되고 있는가"를 평가하는 것을 포함한다.<sup>1</sup> 다른 곳에서 그녀는 역사 교과서의 공백과 침묵을 "메우고 깨뜨릴" 필요성을 주장해 왔는데, 이는 민족적으로 배타적이지 않고 소수자를 "희생양으로 삼지" 않는 대안적 서사를 촉진함으로써 이루어져야 한다고 했으며, 이는 이민 소수자가 있는 서유럽 국가들에서와 마찬가지로 토착 소수자와 오래 정착한 소수자가 있는 동유럽 국가들에서도 중요하다고 했다—이는 21세기의 첫 10년을 여는 시점에서 특별한 반향을 갖는 것으로 보이는 지적이다.<sup>2</sup></p>
+<div class="tn-block">
+<div class="tn-label">역주</div>
+<p><sup class="tn">h</sup> <strong>꼬리의 독침(sting in the tail)</strong>: 영어 관용 표현으로, 겉보기에 무해하거나 긍정적인 것의 끝에 예상치 못한 불쾌하거나 해로운 요소가 숨어 있음을 뜻한다. 전갈의 꼬리 끝에 독침이 있는 것에서 유래한 표현이다.</p>
+</div>
+<p>이렇게 제시하면, 다원적 관점, 다문화주의, 다원주의적 역사교육 접근법은 대부분의 유럽 국가에서 현상(status quo)에 대한 중대한 도전을 구성한다. 로버트 필립스(Robert Phillips)가 지적한 바와 같이, 국가적 역사 서사에 복수의 목소리와 관점을 포함할 것을 주장하는 것은 대개 정치적 논쟁으로 이어진다. 그의 저서에서 그는 1990년대에 잉글랜드와 웨일스의 국가교육과정에 더 다문화적인 접근법을 도입하자는 제안이 나왔을 때, 정치인, 매스 미디어, 역사학자, 교육학자, 역사 교사들 사이에서 벌어진 치열한 논쟁을 기록하고 있다.<sup>3</sup></p>
+<p>"다원적 관점"이나 "다문화주의" 같은 용어들은, 그리고 이와 자주 연관되는 다른 개념들도, 서로 다른 사람들에게 매우 다른 것을 의미할 수 있으며, 특정한 정치적·이념적 입장에 맞추기 위해 빈번하게 재정의의 대상이 된다. 따라서 역사 수업에서 다중관점적 접근법을 시행하는 것과 관련된 실제적 문제들을 살펴보기 전에, 이 용어가 의미하는 바와 그러한 접근법이 달성하고자 하는 것이 무엇인지를 검토하는 데 약간의 시간을 할애하는 것이 가치 있을 것이다.</p>
+<hr />
+<h2 id="_6">다원적 관점이란 무엇인가?</h2>
+<p>다원적 관점은 정의된 것보다 사용된 빈도가 더 많은 용어이다. 그럼에도 불구하고 그 주요 특성을 기술하려는 몇 가지 시도가 있어 왔다. K. 페터 프리체(K. Peter Fritzsche)는 그것이 하나의 과정, 즉 <em>"이해의 전략(a strategy of understanding)"</em>이라고 강조했는데, 이 과정에서 우리는 자기 자신의 관점에 더하여 타인의 관점(또는 다른 사람들의 관점들)을 고려한다.<sup>4</sup> 이 과정은 우리도 또한 우리 자신의 문화적 맥락을 통해 걸러진, 우리 자신의 입장과 무엇이 일어났고 왜 일어났는지에 대한 우리 자신의 해석을 반영하는 관점을 가지고 있으며, 무엇이 존재하고 존재하지 않는지에 대한 우리의 견해가</p>
+<blockquote>
+<p><sup>1</sup> Harkness, D. (1994). <em>History teaching and European awareness</em>. Council of Europe.</p>
+<p><sup>2</sup> Steiner-Khamsi, G. (1994). History, democratic values and tolerance in Europe: The experience of countries in democratic transition. Council of Europe Symposium, Sofia.</p>
+<p><sup>3</sup> Phillips, R. (1998). <em>History teaching, nationhood and the state: A study in educational politics</em>.</p>
+<p><sup>4</sup> Fritzsche, K. P. (2001). Unable to be tolerant? In R. Farnen et al. (Eds.), <em>Tolerance in transition</em>.</p>
+</blockquote>
+<p><span class="page-marker">[p.14]</span> 적절하지 않을 수도 있고, 다른 편견과 선입견을 반영할 수도 있다는 점을 이해하는 것을 수반한다. 이런 점에서, 다원적 관점은 단지 과정이나 전략이 아니라 하나의 성향(predisposition), 즉 <em>"[그것은] 다양한 관점에서 상황을 바라볼 수 있고 기꺼이 바라보고자 하는 것을 의미한다(means to be able and willing to regard a situation from different perspectives)"</em>이기도 하다.<sup>1</sup> 이를 위한 전제 조건은, 첫째, 세계를 바라보는 다른 가능한 방식들이 존재하며 이들이 자신의 것과 동등하게 유효하고 동등하게 부분적일 수 있다는 것을 기꺼이 받아들이는 것이고, 둘째, 다른 사람의 입장에 서서 그들이 보는 대로 세계를 보려고 노력하는 것, 즉 감정이입을 실천하는 것이다.</p>
+<p>역사 및 역사교육에서의 다원적 관점은 앤 로우-비어(Ann Low-Beer)에 의해 <em>"여러 관점에서 역사적 사건들을 바라보는(viewing historical events from several perspectives)"</em> 과정으로 기술되어 왔다.<sup>2</sup> 또한 다른 지면에서 그녀는 학교 역사에 관한 유럽평의회 활동을 역사적으로 검토하면서 "다원적 관점"이 역사적 방법에 확고히 뿌리를 두고 있다고 주장한 바 있다:</p>
+<blockquote class="body-quote">
+<p>본질적으로 그것은 역사학의 기본 학문에서, 그리고 역사적 사건을 다양한 관점에서 평가해야 할 필요성에서 비롯된다. 모든 역사학자들은 이를 수행한다.……역사에서 복수의 관점은 일반적인 것이며, 증거에 대해 검증되어야 하고, 판단과 결론에서 설명되어야 한다.<sup>1</sup></p>
+</blockquote>
+<p>기타 슈타이너-캄시는 다원적 관점을 역사적 방법과 연관시키면서도, 모든 역사학자들이 반드시 또는 통상적으로 이를 수행한다는 앤 로우-비어만큼 확신하지는 않는 것으로 보인다.<sup>2</sup> 그녀는 실제로 실행되고 가르쳐지는 역사가 종종 단일문화적, 자민족지배적(ethnocratic), 다원주의적이기보다는 보편주의적이며, 포용적이기보다는 배타적이라는 점을 우리에게 상기시킨다.</p>
+<blockquote>
+<p><sup>1</sup> Low-Beer, A. (1997). <em>The Council of Europe and school history</em>. Council of Europe.</p>
+<p><sup>2</sup> Harkness, D. (1994). <em>History teaching and European awareness</em>. Council of Europe. 에서 인용됨.</p>
+</blockquote>
+<p>넓게 말하자면, 역사와 역사교육에서 다원적 관점의 주된 정의적 특성은, 그것이 하나의 바라보기 방식이자, 역사적 사건, 인물, 발전, 문화, 사회를 하나의 학문 분야로서의 역사의 근본인 절차와 과정에 기반하여 다양한 관점에서 바라보려는 성향이라는 것으로 보인다.</p>
+<p>겉보기에는 단순하고 문제적이지 않으며 자명한 정의이다. 그러나 정의라는 것이 으레 그러하듯, 이것은 답하는 것보다 더 많은 질문을 제기한다. 예를 들어:</p>
+<ul>
+<li>이 맥락에서 관점이란 무엇을 의미하는가?</li>
+<li>역사학자나 역사 교사는 모든 관점을 포함해야 하는가, 아니면 일부만 선택해야 하는가?</li>
+<li>선택을 한다면, 무엇을 포함하고 무엇을 배제할 것인지를 결정할 때 어떤 기준을 적용하는가?</li>
+<li>다원적 관점은 사료의 선별과 해석에만 적용되는가, 아니면 <span class="page-marker">[p.15]</span> 서사의 구성, 설명, 결론, 역사적 의의에 대한 판단을 포함한 역사적 분석의 모든 차원에 침투하는가?</li>
+<li>서로 다른 관점이 상충할 때 역사학자와 교사는 어떻게 하는가?</li>
+<li>다중관점적 접근은 더 진실한 역사적 설명을 보장하는가, 아니면 더 공정한 역사적 설명을 보장하는가, 또는 둘 다인가?</li>
+<li>더 완전하고 포괄적인 설명을 보장하는가, 아니면 더 복잡한 설명을 보장하는가, 또는 둘 다인가?</li>
+<li>그것은 모든 유능한 역사학자가 적용하는 과정이나 절차의 단순한 일부인가, 아니면 일부 사람들이 다른 사람들보다 더 효과적으로 사용하는 기술인가?</li>
+</ul>
+<p>관점(perspective)이란 그것을 표명하는 사람의 입장(standpoint)에 의해 제한되는 견해이다. 이것은 물론, 사료의 "생산자들"(과거 사건의 참여자, 목격자, 연대기 작가, 당국자, 정보 수집자)에게도 역사학자에게와 마찬가지로 적용된다.</p>
+<p>구상 화가의 관점이 기법이나 특정 대상을 그리기 위해 선택하는 위치 같은 실제적 고려에 의해 제약받듯이, 역사학자들이 직면하는 실제적 한계도 분명히 다수 존재한다. 특정 역사적 사건이나 전개에 대한 그들의 관점은 그들이 유창하게 구사하는 관련 언어의 범위, 사용해야 할 문서를 작성한 사람들이 사용한 문자의 종류에 대한 그들의 친숙도, 이용 가능한 정보와 증거의 양, 문맹이거나 준문맹인 사람들의 견해와 경험을 파악하기 위해 사용할 수 있는 사료의 범위, 그리고 그 사료의 접근 가능성에 의해 제한될 것이다. 이러한 것들은 모두 실제적 제약이며, 대체로 대부분의 역사적 설명이 잠재적으로 관련될 수 있는 방대한 정보 가운데 <em>선별된 증거</em>에 의존하게 되는 결과를 낳는다.</p>
+<p>시간과 공간에 대한 유사한 제약은 역사학자가 사용하는 사료와 1차 사료 및 2차 사료를 활용하여 작업하는 법을 배우는 학교 학생들에게도 영향을 미치며, 이 경우 다음을 고려하게끔 가르친다:</p>
+<blockquote class="body-quote">
+<p>사료가 연구 대상 사건에 얼마나 가까웠는가: 참여자, 목격자, 참여자와 목격자를 얼마 후에 인터뷰하는 기자, 신문 사진기자, 텔레비전 기자, 다양한 사료로부터 증거를 취합하는 당국자, 이후에 그것에 대해 글을 쓰는 역사학자 등.</p>
+</blockquote>
+<p>그리고</p>
+<blockquote class="body-quote">
+<p>사료 속의 관찰이 사건 발생 후 얼마 만에 기록되었는가.</p>
+</blockquote>
+<p>아울러 학생들이 사건에 대한 시간적·공간적 근접성이 반드시 더 신뢰할 수 있고 타당한 설명을 보장하지는 않는다는 점 또한 배울 수 있을 것이다. 예시 A가 보여주듯이, 신뢰할 수 있는 목격자들이라 하더라도 일어난 일을 서로 매우 다르게 서술할 수 있다. 여기서 현대 역사학자 하비 피처(Harvey Pitcher)는 1917년 10월 25일, 당시 페트로그라드(현재의 상트페테르부르크)의 스몰니에서 열린 제2차 소비에트 대회에 참석했던 여러 미국인 및 영국인 목격자들의 설명을 비교했다. 이 대회에서 볼셰비키 쿠데타의 신호탄이 된 총성이 울렸고, <span class="page-marker">[p.16]</span> 겨울궁전 점령과 함께 다수의 대표자들이 다른 정당에서 퇴장하게 되었다. 이 사례는 같은 장소, 같은 시간에 있었던 훈련받은 관찰자들조차 서로 크게 다른 관찰을 내놓을 수 있음을 매우 분명하게 보여준다. 나아가 이것은 학생에게 또 다른 가치 있는 교훈을 제시하는데, 사건 당시에 현장 증거를 바탕으로 만들어진 사료가 반드시 다양한 사료를 비교·상호참조할 기회를 가진 역사학자가 훨씬 뒤에 작성한 설명보다 더 신뢰할 수 있는 것은 아니라는 점이다. 피처 자신이 관찰하듯이:</p>
+<blockquote class="body-quote">
+<p>"분명히, 한 명의 목격자가 아무리 많은 정보를 갖추고 열의가 넘친다 해도, 그리고 그의 관찰 지점이 아무리 유리하다 해도, 볼 수 있는 것은 벌어지고 있는 일의 일부에 불과하다. 그러나 서로 다른 관찰 지점에 선 여러 목격자의 증언을 종합하면, 훨씬 더 완전한 그림에 도달할 수 있다."<sup>1</sup></p>
+</blockquote>
+<p>여기서 "관찰 지점(vantage-point)"이라는 용어의 사용이 도움이 된다. 이것은 특정 역사적 사건이나 전개에 대한 관점이 그것을 표명하는 사람의 입장에 의해 제한될 수 있는 한 가지 방식을 기술한다. 그 한계는 물리적이며 시간과 공간에 관련된 것이다.</p>
+<p>그러나 "입장(standpoint)"이라는 용어는 "관점(a point of view)"이라는 두 번째 의미도 가지며, 이는 자기 자신의 기대, 선입견, 선취에 의해 제한되고 이를 반영하는 것이기도 하다.</p>
+<blockquote class="body-quote">
+<p><strong>예시 A</strong></p>
+<p>"이 시점에서 얼마나 많은 대표자가 대회를 떠났는가는 목격자에 따라 달라진다: '50명'(리드), '약 80명'(리스 윌리엄스), '보수적 혁명가의 100명 이상, 전체 대회의 약 20퍼센트'(브라이언트), 즉 100명 이상(필립스 프라이스)."</p>
+<p style="font-size: 0.85em; color: #555; margin-top: 6px;">하비 피처(Harvey Pitcher), 『러시아 혁명의 목격자들』(<em>Witnesses of the Russian Revolution</em>), Pimlico, 2001.</p>
+<p style="font-size: 0.88em;"><strong>주석:</strong></p>
+<div style="font-size: 0.88em; line-height: 1.7;">
+<p><strong>존 리드(John Reed),</strong> 미국의 기자이자 『세계를 뒤흔든 열흘』(<em>Ten Days that Shook the World</em>)의 저자, 1919년 초판 출간.</p>
+<p><strong>앨버트 리스 윌리엄스(Albert Rhys Williams),</strong> 당시 러시아를 방문 중이던 미국 보스턴 출신의 조합교회(Congregational) 목사.</p>
+<p><strong>루이스 브라이언트(Louise Bryant),</strong> 역시 미국인으로 존 리드의 아내. 당시 러시아의 사건에 관한 두 권의 저서—『러시아의 6개월』(<em>Six Red Months in Russia</em>, 1918)과 『러시아 혁명을 관통하여』(<em>Through the Russian Revolution</em>, 1923)—의 저자.</p>
+<p><strong>모건 필립스 프라이스(Morgan Philips Price),</strong> 《맨체스터 가디언》에 기고한 영국 기자. 또한 1921년에 출판된 『나의 러시아 혁명 회상록』(<em>My Reminiscences of the Russian Revolution</em>)의 저자.</p>
+</div>
+</blockquote>
+<p>피처를 한번 더 인용하자면:</p>
+<blockquote class="body-quote">
+<p>"당신이 보는 것은 당신이 어떻게 보느냐보다 덜 중요하다. 한 목격자는 거리에서 자신들을 방해하는 단정치 못한 개인들의 무리를 보고, 다른 목격자는 영웅적인 민중 시위를 보며, 또 다른 목격자는 무엇보다 색채와 장관에 감명을 받는다.……서로 다른 목격자들이 서로 다른 기대와 관심사를 가지고 한 장면에 접근한다. 젊은 미국 목격자들은 완전히 새로운 종류의 인간 사회가 도래하리라는 기대를 가지고 혁명에 다가간 반면, 대부분의 영국 목격자들은 혁명 자체보다는 제1차 세계대전에 대한 그것의 함의에 더 관심이 있었다."<sup>2</sup></p>
+</blockquote>
+<blockquote>
+<p><sup>1</sup> Pitcher, 위의 책, p.xiii.</p>
+<p><sup>2</sup> 같은 책, p.xiii.</p>
+</blockquote>
+<p><span class="page-marker">[p.17]</span> 역사의 목격자로서 그들은 자신이 보는 것을 단지 기술하는 것만이 아니다; 그들은 또한 그것을 해석하고 있다. 즉, 자신이 보고 들은 것에 특정한 의미를 부여하고 있으며, 그 의미는 가정, 선입관, 편견, 고정관념, 기대라는 개인적 틀을 반영하는 것이다.</p>
+<p>역사학자들 또한 자신의 선입견과 관심사를 가지고 있다. 그들의 관점은 그들이 접근할 수 있는 증거에 의해서만 형성되는 것이 아니다. 때로는 이러한 선입견과 관심사가 개인적이고 직업적인 것이다. 일어난 일을 다르게 제시하고, 다른 요인을 강조하며, 특정 결과와 발전에 더 큰 의의를 부여하기 위해 정치적 관점의 사건들을 제공하려는 역사학자는, 이를테면 경제사학자나 사회사학자와는 다른 방식으로 그렇게 할 가능성이 높다.</p>
+<p>마찬가지로, 특정 사건에 관한 다큐멘터리를 제작하는 텔레비전 프로듀서 같은 다른 역사 해석자들의 개인적·직업적 기대와 관심사도 단지 무엇이 일어났고 왜 일어났는지를 시청자에게 말해주는 것 이상의 우려를 반영할 것이며, 그 방식은 좋은 역사 다큐멘터리를 만드는 것이 무엇인가에 대한 현재의 사고를 반영할 수 있는데, 때로는 좋은 역사보다 좋은 텔레비전을 만드는 것에 더 큰 비중이 두어지곤 한다.<sup>1</sup></p>
+<blockquote>
+<p><sup>1</sup> 텔레비전 역사 프로그램에 상당한 기여 경험이 있는 한 역사학자는 <em>"텔레비전은 프로그램 제작의 물류에 대해 열정적으로 관심을 가지며 내용에는 거의 관심이 없다"</em>고 결론짓고 있다. Fernández-Armesto, F. (2002). In D. Cannadine (Ed.), <em>What is history now?</em> Palgrave Macmillan. 에 수록.</p>
+</blockquote>
+<p>동시에, 사학사적 조사(historiographical surveys)가 통상적으로 보여주듯이, 과거에 대한 역사학자와 기타 논평자들은 우리 나머지 사람들과 마찬가지로 자기 시대의 산물이다. 그들의 관점은 그들이 속한 세대에 의해 영향을 받으며, 그들은 현재의 렌즈를 통해 과거를 해석하려는 경향이 있다.</p>
+<p>예시 B가 보여주듯이, 역사학자들은 또한 개념적 도식과 틀을 사용하는데, 이는 어느 정도 문화적으로 결정된 것이며, 역사학자가 기술하고 설명하려는 사건의 참여자들은 이를 동일한 방식으로 사용했을 수도 있고 전혀 사용하지 않았을 수도 있다.</p>
+<blockquote class="body-quote">
+<p><strong>예시 B</strong></p>
+<p>1923년 1월 30일의 로잔 의정서(Lausanne Protocol)는 그리스와 터키 간의 소수민족 강제 교환을 규정했다. 일부 서유럽과 미국의 역사 교과서(그리고 일부 역사학자들도)는 이 의정서를 언급할 때 관련 민족을 민족적 또는 국민적 용어로 기술한다. 즉, 터키에서 그리스로의 그리스인 이송과 그리스에서 터키로의 터키인 이송으로 말이다. 사실 이것은 의정서에서 관련 민족이 어떻게 기술되는가가 아니다. 거기에서 교환 대상자는 매우 구체적으로 "터키에 거주하는 그리스정교 신앙의 터키 국민(Turkish subjects of the Greek orthodox religion)" 및 "그리스에 거주하는 무슬림 종교의 그리스 국민(Greek subjects of the Muslim religion)"으로 지칭된다.</p>
+<p>다시 말해, 이송 대상 개인들은 국민적 소수자로서가 아니라 특정 종교의 신자이자 특정 국가의 국민으로서 식별되었다.</p>
+</blockquote>
+<p>여기까지, 다원적 관점과 잠재적으로 관련되는 세 가지 연관된 차원이 식별되었다:</p>
+<p><span class="page-marker">[p.18]</span> 1. 우리는 역사적 사건과 전개를 다수의 관찰 지점(vantage-points)에서 바라볼 수 있다. 이를 위해서는 당사자들이 무엇을 듣고, 보고, 느꼈는지를 알아야 한다. 또한 각 사료를 얼마나 신뢰할 수 있는지도 알아야 하는데, 이는 한편으로는 각 사료가 제공하는 증거를 비교·상호참조함으로써, 다른 한편으로는 각 사료에 대한 맥락 정보—그들이 누구였는지, 어떤 역할을 했는지, 당시 어디에 있었는지, 무엇을 하고 있었는지, 정보를 어떻게 입수했는지 등—를 평가함으로써 이루어진다. 무엇보다도, 이 평가 과정에서는 물리적이든, 기술적(technical)이든, 스스로 부과한(self-imposed) 것이든, 각 사료가 보고 듣고 느낀 것에 제약을 가했을 수 있는 조건들을 고려해야 한다.</p>
+<p>2. 우리는 역사적 사건과 전개를 다수의 시각(points of view)에서 바라볼 수 있다. 이를 위해서는 다양한 사료의 저자가 지닌 시각이든, 사료 속에 언급된 인물(들)의 시각이든, 그 각각의 시각을 뒷받침하는 동기를 이해해야 한다. 넓게 말해, 이 과정에는 세 가지 구성 요소가 있다. 첫째, 표명되고 있는 시각 이면의 논리를 이해하려는 시도이다. 왜 그들은 이렇게 생각했을까? 이 시각의 근거는 무엇이었을까? 왜 어떤 정보는 믿고 다른 정보는 믿지 않았을까? 왜 어떤 정보를 중요하다고 보고 나머지는 버렸을까? 그들에게 어떤 선택지가 열려 있었으며, 가능한 모든 선택지 가운데 이 특정한 행동 방침을 택하게 된 것은 무엇이었을까? 둘째, 텍스트의 언어를 해체(de-constructing)하는 작업이다. 예컨대 검증 가능한 사실, 전문적 의견, 입증되지 않은 의견, 전문(傳聞)을 구별하고, 서술에서 누락된 것을 기록하며, 감정적 언어의 사용이나 잘못된 유추·고정관념의 사용에 주목하는 것이 이에 해당한다. 이러한 해체 과정은 문서뿐 아니라 구술 증언, 영화, 사진, 포스터, 만화 같은 사료에도 동일하게 적용된다. 셋째, 각 사료에 대한 맥락 정보를 수집·분석하는 작업이다. 이를 통해 어떤 시각(point of view)을 표명하는 사람이 "어디에서 출발하는지"—즉 그의 배경, 교류 관계, 충성심, 소속—를 더 완전하게 파악할 수 있다.</p>
+<p>3. 우리는 또한 역사적 사건과 전개를, 다양한 역사적 설명과 해석—서로 다른 시기에, 서로 다른 목적과 독자를 위해 산출된 설명들을 포함하여—의 다양성을 통해 바라볼 수 있다. 이 작업은 초점, 서사 구조, 해석, 강조에서의 유사점과 차이점, 그리고 합의와 불일치의 핵심 지점들을 주목하는 것, 즉 사학사적 분석을 수반하는 경향이 있다.<sup>1</sup></p>
+<blockquote>
+<p><sup>1</sup> 역사교육에서의 다원적 관점에 대한 또 다른 시각으로는 Von Borries, B. (2001). 위의 책 참조. 우리의 견해는 일부 사안에서 일치하고 다른 사안에서 갈라지며, 어느 정도는 차이가 용어적인 것으로 우리의 서로 다른 교육적 전통을 반영한다.</p>
+</blockquote>
+<p>그렇다면 이것은 다원적 관점이 앤 로우-비어가 제안한 것처럼 모든 역사학자(또는 적어도 모든 뛰어난 역사학자)가 어차피 하는 일을 기술하는 하나의 단어에 불과하다는 뜻인가? 나는 우리가 아직 고려하지 않은 다원적 관점의 또 다른 차원이 있다고 생각한다. 타당하고 신뢰할 수 있는 역사 연구는 다양한 수준에서 수행될 수 있다. 예를 들어, 스페인 내전을 연구하는 역사학자는 군사 작전의 서사적 역사를 쓰거나, 마드리드 방어와 같은 특정 전역에 초점을 맞추거나, 바스크 지방과 같은 스페인의 한 지역에서 일어난 일을 살펴보거나, <span class="page-marker">[p.19]</span> 팔랑헤 또는 공산주의자 같은 한 집단에 초점을 맞추거나, 양측의 테러 사용에 대한 비교 연구를 수행하거나, 핵심 인물 중 한 명의 전기를 쓰거나 심지어 단 한 가지 사건의 역사에 집중할 수도 있다. 각 역사학자는 내전에 관해 이용 가능한 모든 정보 조각들 중에서 선택을 해야 할 것이다. 우리가 우려를 제기할 수 있는 유일한 경우는, 역사학자가 자신의 결론을 뒷받침하지 못할 것이라는 이유로 관련 증거를 누락했거나 관련 사료를 체계적으로 무시했음이 입증될 때뿐이다.</p>
+<p>다원적 관점은 단순히 역사적 방법의 적용이 아니다. 다원적 관점은 특정 토픽이나 현상에 대한 역사적 설명의 폭과 범위를 확장하는 것을 목표로 한다. 이것은 다양한 방식으로 이루어질 수 있다.</p>
+<p>예를 들어, 우리가 특정 역사적 사건이나 전개를 이해하는 데 어떤 관점이 관련되고 어떤 관점이 관련되지 않는지를 둘러싼 관습적 통념에 의문을 제기하는 방식이 있다. 실제로 이러한 작업은 점차, 엘리트나 지배 집단에게 문제를 일으킨 경우를 제외하면 무시되어 온 집단과 사회적 범주—이른바 비가시화된 집단, 즉 여성, 빈곤층, 노예, 이민자, 언어적·종교적·민족적 소수자—의 관점을 역사 서술에 통합하는 방향으로 전개되어 왔다. 여기서의 논거는 단일문화적 또는 단일민족적 역사가 무효라는 것이 아니라, "균형(balance)"이 결여되어 왔다는 것이다. 머컬러(McCullagh)는 이 구별을 논하면서 매우 명쾌하게 설명한다:</p>
+<blockquote class="body-quote">
+<p>"내 개가 귀가 하나, 눈이 하나, 다리 하나, 꼬리가 하나 있다고 말한다면, 그 진술은 문자적으로 사실일 것이다. 개에게는 그것들이 모두 있다. 그러나 그 진술은 내 개에 대한 공정한 묘사를 제공하지 못하는데, 내 개에게는 귀가 둘, 눈이 둘, 다리가 넷, 꼬리가 하나 있기 때문이다."<sup>1</sup></p>
+</blockquote>
+<blockquote>
+<p><sup>1</sup> McCullagh, C. B. (1999). <em>The truth of history</em>. Routledge.</p>
+</blockquote>
+<p>여기서의 쟁점은 진실의 문제라기보다 공정성의 문제이다.</p>
+<p>다원적 관점은 또한 서로 다른 관점들이 어떻게 서로 관련되는지, 그들이 어떻게 서로를 형성해 왔고 서로에 의해 형성되어 왔는지를 검토함으로써 역사적 설명의 범위를 확장할 수 있다. 이것은 역사적 사건과 과정의 역동성에 구체적으로 초점을 맞추는 다원적 관점의 한 차원이다: 다양한 관점을 대표하는 사람들이 어떻게 서로 상호작용해 왔는지, 무엇이 일어났고 왜 일어났는지에 대한 더 복잡한 설명을 생산하는 상호 영향, 연결, 상호의존 관계. 특정 사건이나 전개에 관한 증거를 검토하는 이러한 종류의 다자간, 역동적 접근법을 채택하는 것에는 네 가지 잠재적 이점이 있다.</p>
+<p>첫째, 역사적 서사에 추가적인 차원을 더해준다. 어떤 의미에서, 서사적 형식은 <em>"그리고 그 다음에(and thens)"</em>의 연속—즉, 이것이 일어났고…… 그리고 그 다음에 이것이 일어났고…… 그리고 그 다음에—으로 기술될 수 있다. 다원적 관점은 이 선형적 과정을 "중요한 타자(significant others)"의 반응과 후속 행동을 전달하는 <em>"그 사이에(meanwhiles)"</em>의 연속으로 보충한다. 그 결과는 더 풍부하고 더 복잡한, 서로 맞물리는 서사들에 기반한 설명으로, 이는 다양한 당사자들의 관점이 상황 변화에 따라 변동하거나 고착되었을 뿐만 아니라, <span class="page-marker">[p.20]</span> 상대편이 어떤 입장을 취하고 있었는지, 무엇을 하고 있었는지에 대한 정보의 부재에 의해서도 형성되었음을 보여줄 것이다. 이에 대한 좋은 예는 제1차 세계대전을 종결시키기 위한 휴전 협상이다. 이 협상을 이해하려면, 각국 정부와 군부 사령부가 항상 서로 협의하거나 자신의 행동을 상대에게 알리고 있었던 것이 아니며, 사태가 전개됨에 따라 각자의 입장도 이동하고 있었음을 인식할 필요가 있다. 여기에는 휴전 조건에 대해 동맹국들과 협의하기를 꺼린 윌슨의 태도, 각 정부의 서로 다른 우려와 우선순위, 벨기에 스파에 주둔한 독일 육군 최고사령부와 베를린 민간 정부 사이의 증대하는 긴장, 독일 잠수함의 렌스터호 격침 이후 미국과 영국에서의 여론 경직화, 독일 국내의 증가하는 정치적 긴장 등이 포함된다. 서사는 단순히 선형적인 것이 아니다("그 사이에"가 "그리고 그 다음에"만큼이나 무엇이 일어났는지를 이해하는 데 필수적이다).</p>
+<p>둘째, 한 국가 내의 서로 다른 집단들, 인접 국가들, 동맹과 경쟁, 점령자와 피점령자 간의 상호 영향을 부각시킬 수 있다. 예를 들어, 지난 2천 년간의 유럽 역사를 보면, 지역, 대륙, 대륙간 제국, 영토 점령, 국경 분쟁, 내전, 온갖 종류의 소수자 억압의 수많은 사례가 있었다. 많은 역사학자들이 제국 및 점령 강대국이 그들이 침략한 민족과 영토에 미친 영향을 기록해 왔다. 많은 역사학자들, 특히 식민화되고 점령된 국가 출신의 역사학자들은 피식민·피점령 민족의 관점에서 설명을 생산해 왔다. 식민화나 점령이 식민자나 점령자에게 미친 영향까지 조사하거나, 식민 또는 점령 강대국 의사결정자들의 선택지에 피식민 또는 피점령 영토에서 영향을 주었거나 제약을 가했던 무수한 방식들을 검토하는 다자간 설명의 예는 훨씬 적다.<sup>1</sup></p>
+<blockquote>
+<p><sup>1</sup> 제국 강대국과 그 식민지 간의 관계 연구에 대한 다층적·다자간 접근법의 보다 상세한 논거로는, Colley, L. (2002). What is imperial history now? In D. Cannadine (Ed.), 위의 책 및 Wesseling, H. (1991). Overseas history. In P. Burke (Ed.), <em>New perspectives on historical writing</em>. Polity Press. 참조.</p>
+</blockquote>
+<p>셋째, 갈등 상황을 보다 깊이 조명하는 데 기여할 수 있다. 갈등은 해석의 충돌 속에서 발생하고 지속되며 형성되는 경우가 많은데, 이때 분쟁의 각 당사자는 구체적 증거가 아닌 오랜 가정·선입견·편견·고정관념에 기대어 상대방의 행동에 동기와 의도를 부여한다. 갈등 상황에서 신화가 출현하는 것 역시 이러한 과정의 한 사례이며, 학습 활동 섹션에는 제1차 세계대전 중 양측의 잔학 행위를 둘러싸고 등장한 대항 신화(counter-myths)에 기반한 사례가 수록되어 있다(즉, 프랑-티뢰르의 활동과 프랑스·벨기에 민간인의 손이 잘렸다는 이야기).</p>
+<p>넷째, 일부 역사적 상황에서 관점들이 공생적(symbiotic) 방식으로 관련되어 있음을 보여줄 수 있다. 이것은 다수자와 소수자 사이의 역사적 관계, 또는 서로 다른 소수 집단 사이의 역사적 관계, <span class="page-marker">[p.21]</span> 또는 강대국과 그들의 덜 강력한 이웃, 동맹, 위성국 사이의 관계를 연구할 때 특히 관련이 있다. 기타 슈타이너-캄시가 지적하듯이:</p>
+<blockquote class="body-quote">
+<p>"소수자를 문화적·역사적으로 이질적인 '타자'로 묘사하는 것은 다수를 차지하는 사람들이 스스로를 한 공동체의 구성원으로 보도록 돕고, 고향에 있다는 소속감과 느낌을 돕는 경우가 많다.……소속감과 고향의 느낌은 종종 이 나라에 속하지 않으며 속해서는 안 되는 집단을 식별함으로써 만들어진다—이민자와 전통적 소수자."<sup>1</sup></p>
+</blockquote>
+<blockquote>
+<p><sup>1</sup> Steiner-Khamsi, G. (1994). History, democratic values and tolerance in Europe: The experience of countries in democratic transition. Council of Europe Symposium, Sofia.</p>
+</blockquote>
+<p>이러한 관계에서 더 작은 나라가 자국의 역사를 실질적으로 더 강력한 지배적 이웃과의 관계 중심으로 서술하는 반면, 지배적인 국가는 자국의 역사를 다른 강대국들과의 관계 중심으로 서술하는 경향이 있는 역사의 사례도 많이 존재한다.</p>
+<p>이상은 다원적 관점이 무엇이고 무엇이 아닌지에 대한 상당히 긴 논의였다—역사 서술보다는 역사 교육에 주로 관심을 두는 책자치고는 특히 그러하다. 그러나 교실 실천을 살펴보기에 앞서, 다양한 사료와 서로 다른 관점에 접근하는 것이 필수 전제 조건일 수는 있되 그것만으로는 접근법이 다중관점적이 되리라고 보장할 수 없는 이유를 이해할 필요가 있었다. 아울러, 다원적 관점이 왜 서로 다른 관점들이 어떻게 상호 관련되는지에 대한 분석과, 각 관점이 더 큰 무언가—더 복잡하면서도 더 완전한 그림—의 일부라는 인식까지 요구하는지를 이해하는 것도 중요했다.</p>
+<p>역사 수업에서 다원적 관점의 활용을 제약할 수 있는 다수의 실제적 문제가 존재한다는 점을 인식하는 것도 중요하다.</p>
+<hr />
+<h2 id="_7">역사교육에서 다원적 관점의 잠재적 문제점</h2>
+<p>우선, 학교 역사교육이 다중관점적으로 이루어질 수 있는 범위를 제한하는 실제적 문제와 제약이 다수 존재한다. 이러한 문제는 시간, 공간, 비용, 범위, 그리고 교육과정 내 유연성의 정도를 중심으로 전개된다.</p>
+<p>역사 교사의 관점에서 보면, 시간과 교육과정 유연성이라는 이중의 문제가 있다. 수업에서 진정으로 다양한 관점을 활용하면서 학생들에게 각 관점을 분석하고 맥락 속에서 이해할 기회까지 보장하려면 시간이 필요하다. 역사교육과정의 내용이 방대하고 교사가 비교적 짧은 시간 안에 많은 주제를 다루어야 하는 상황에서, 자국사에 대해 진정한 다원주의적 접근을 취하기란 어렵다. 다원적 관점은 역사 과목에 어느 정도 유연성을 허용하는 교육과정 구조를 필요로 한다. 민족, 국민, 문화적 다양성이 큰 나라에서는 자국사의 핵심 부분과 함께 다양한 소수자에 관한 선택 단원을 둘 수 있는 교육과정 구조를 통해, 그동안 주변화되거나 국가 서사에서 비가시화된 사회 집단과 소수자를 훨씬 폭넓게 포괄할 수 있을 것이다. 이러한 접근은 <span class="page-marker">[p.22]</span> 특정 소수자가 지리적으로 밀집해 있는 곳에서 특히 적절해 보이며, 실제로 러시아 연방에서는 수년간 이 방향의 논의가 진행되어 왔다.<sup>1</sup></p>
+<p>이처럼 더 유연한 교육과정 구조는 소수자의 역사, 여성의 역사, "아래로부터의 역사", 일상생활의 역사를 전통적인 학교 역사교육과정에 통합하는 데 도움이 될 수 있다. 그러나 그것만으로는 다원적 관점의 핵심 문제, 즉 서로 다른 관점과 경험을 지닌 다양한 집단들 사이의 관계를 다루는 데까지는 이르지 못할 수 있다.</p>
+<p>그러나 아무리 역사교육과정에 내용이 과밀하게 편성되어 있더라도, 학생들이 다수의 사료와 해석, 관점을 활용하여 어떤 사건이나 전개에 대해 가능한 한 완전한 설명을 재구성하는 작업에 익숙해질 수 있도록 매년 한두 개의 사례 연구를 포함시킬 여지는 있어야 한다. 나머지 시간에는 규모는 작고 완전하지 않더라도 어느 정도의 다원적 관점을 역사 학습에 통합시킬 수 있다. 결국, 여기서의 목적은 모든 사건에 대해 항상 다양하고 대조적인 관점을 분석·해석하여 가능한 한 완전한 그림을 제공하는 것이 아니라, 그러한 분석과 해석을 어떻게 하는지를 배우도록 돕는 데 있다.</p>
+<p>교과서 출판의 관점에서 보면, 다원적 관점의 범위는 종종 지면과 비용에 의해 제한된다. 하나의 주제나 테마를 다양한 관점에서 접근하면 통상적인 교과서 서술보다 훨씬 많은 페이지가 필요하다. 이는 교과서가 연대기적 개관을 중심으로 구성되어 있을 때 특히 실질적인 문제가 되며, 학습 자료나 보조 교재의 경우에는 상대적으로 수월하다. 특정 주제나 테마에 대해 진정한 다중관점적 접근을 시도해 본 교과서 저자라면 그것이 매우 시간이 많이 들고 노동 집약적인 작업임을 잘 알 것이다.</p>
+<p>교과서 집필의 일반적 관행 역시 다원적 관점에 잠재적 제약이 된다. 사료 발췌문은 대개 꽤 짧고, 선택된 각 사료에 대해 풍부한 맥락 정보를 함께 제공하는 경우도 여전히 드물다. 학생에게 서로 다른 사료의 증거를 비교하거나 상호참조하도록 요구하는 경우가 있기는 하지만, 유럽의 일부 지역에서는 학생이 사료에서 정보를 추출하기만 하면 되고 관점이나 해석의 차원에서 구체적으로 분석할 필요는 없는 교과서 설계 전통이 여전히 남아 있다. 교과서의 이른바 "사료 A–F 접근법"은 너무나 자주 학생에게 상당히 제한된 증거에 기초하여 매우 폭넓은 판단과 일반화를 내리도록 요구하는데, 정작 그러한 판단과 일반화는 교과서 저자가 관련 사학사에 대한 자신의 독서를 바탕으로 이미 만들어 놓은 것이다. 이로써 예시적 자료는 은연중에 "확정적 증거(hard evidence)"로 둔갑하게 된다. 서로 다른 나라에서, 서로 다른 시기에 글을 쓴 역사학자들의 사료를 비교할 수 있도록 함께 수록하여 학생들에게 기초적인 사학사 분석을 소개하는 것 역시 여전히 드문 실정이다.</p>
+<blockquote>
+<p><sup>1</sup> 이에 대한 논의는 Stradling, R. (1999). <em>The Secretary General's new initiative: The reform of history teaching and the preparation of new history textbooks</em>. Council of Europe Publishing. 제2장 참조.</p>
+</blockquote>
+<p><span class="page-marker">[p.23]</span> 지역, 유럽, 세계적 차원을 지닌 주제와 테마를 다룰 때의 마지막 실제적 제약은, 다원적 관점의 범위가 역사 교사와 학생이 읽을 수 있는 언어의 수에 의해 제한될 가능성이 높다는 점이다. 19–20세기 역사에 관한 방대한 양의 사료—공식·비공식 관점, 동시대적·사후적 관점 모두를 아우르는—가 현재 인터넷에서 원문 및 편집된 형태로 이용 가능하다. 1차 사료에 더하여 여러 역사학자의 다양한 관점 또한 인터넷에서 찾을 수 있다. 그러나 이러한 역사 웹사이트의 상당수가 미국에 기반을 두고 있어 자료의 선별이 미국의 관심사와 선입견을 반영하며, 이용자가 영어에 능통해야 한다는 한계가 있다. 그럼에도 상황은 점차 개선되고 있다. 미국 이외의 유럽 각국에서 운영하는 역사 웹사이트가 점점 늘어나고 있으며, 이들은 여러 언어로 접근 가능하고, 일부는 알타 비스타 같은 주요 검색 엔진이 제공하는 번역 기능을 활용하기도 한다.</p>
+<p>이러한 실제적 문제에 더하여, 다원적 관점은 학습자에게도 여러 잠재적 문제를 야기할 수 있다. 이미 살펴보았듯이, 다원적 관점은 역사 학습자에게 감정이입을 요구한다. 1990년대 후반, 유럽 각국 청소년의 역사교육에 대한 태도를 조사한 대규모 범국가적 연구가 실시된 바 있다.<sup>1</sup> 이 조사의 한 질문에서 응답자들은, 15세기에 자신이 선택하지 않은 사람과 강제로 결혼하게 되는 젊은 남성 혹은 여성의 입장에 자신을 놓아보도록 요청받았다. 당시에 살고 있었다면 어떻게 했겠느냐는 질문에 여섯 가지 선택지가 주어졌다:</p>
+<ul>
+<li>비인간적이고 부도덕하며 부당하므로 진정한 사랑 없이 누군가와 결혼하도록 강요하는 것을 거부한다</li>
+<li>가족에게는 열정적인 사랑보다 좋은 경제적 여건이 더 중요하므로 복종한다</li>
+<li>수녀원/수도원으로 도피한다, 왜냐하면 종교적 삶이 세속적 삶보다 가치가 있으므로</li>
+<li>거의 모든 젊은이들이 부모의 결정에 따라 결혼해 왔으므로 동의한다</li>
+<li>사랑을 위해 결혼하는 것은 모든 개인의 자연적 권리이므로 저항한다</li>
+<li>"부모의 뜻에 반하는 반란은 신의 법에 반하는 반란"이므로 복종한다</li>
+</ul>
+<p>참여국 간에 차이가 있기는 했으나, 대다수의 젊은이들은 전통, 부권(父權), 전통이나 성서적 계명에 뒷받침된 복종 등 15세기에 일반적이었을 법한 사고방식을 재구성하고 인정하며 수용하는 데 어려움을 보였다. <span class="page-marker">[p.24]</span> 대신 그들은 대부분 사랑과 천부인권이라는 이름 아래 불복종과 저항이라는 현대적 선호를 표명했다.</p>
+<blockquote>
+<p><sup>1</sup> Angvik, M., & Von Borries, B. (1997). <em>A comparative European survey on historical consciousness and political attitudes among adolescents</em>. Körber Stiftung.</p>
+</blockquote>
+<p>이 결과를 분석하고 보고한 연구팀 일부가 선호한 해석은, 대부분의 학생이 다른 시대를 살았던 사람의 입장에 자신을 놓고 당시에 작동했을 법한 사고방식을 적용하는 데 실패했다는 것이었다.</p>
+<p>이것은 비관적 결론이다. 예를 들어 안드레아스 쾨르버(Andreas Körber)는 콜버그(Kohlberg)의 인지 발달 이론에 기초하여, 중등학생들이 자기 자신의 도덕성이 아직 발달 과정 중에 있는 까닭에 자신의 도덕관으로부터 한 발 물러서야 하는 인지적 작업을 수행할 능력이나 의지가 없어서 이러한 종류의 역사적 감정이입이 어려운 것은 아닌지 의문을 제기한다.<sup>1</sup></p>
+<p>더 낙관적인 결론은, 질문이 아무런 맥락 없이 제시되었으므로 많은 젊은이들에게서 이런 반응이 나온 것은 놀랄 일이 아니라는 것이다. 이 질문에 답하면서 감정이입을 실천하려면, 15세기 사회를 어느 정도 깊이 있게 공부하고, 중세의 심성에 대한 일정한 통찰을 갖추며, 당시 사람들이 무엇을 기대했을지에 관한 기초적 맥락 정보를 제공받았어야 했을 것이다.<sup>2</sup> 이러한 맥락 정보 없이, 많은 학생이 자신의 현대적 도덕관, 경험, 태도, 편견, 감정, 고정관념을 과거에 역투영(back-projecting)함으로써 시대착오적 사고에 빠지는 것은 당연한 결과이다.</p>
+<p>문제적이든 아니든, 그리고 비관론자와 낙관론자 모두 감정이입(및 인과적 사고)이 청소년에게 어려울 수 있다는 데 동의하지만, 과거 사람들의 감정과 경험을 재현하고자 할 때 우리 자신의 현대적 가정과 관점을 유보하려 노력해야 한다는 점은 분명하다. 감정이입은 선택 사항이 아니며, 역사 교사는 학생들이 이 기술을 실천할 수 있도록 돕는 방법을 찾아야 한다—이는 이 책자의 후반부에서 다시 다루게 될 쟁점이다.<sup>3</sup></p>
+<blockquote>
+<p><sup>1</sup> Körber, A. (1998). Can our pupils fit into the shoes of someone else? In J. van der Leeuw-Roord (Ed.), <em>The state of history education in Europe</em> (pp.123–138). Körber-Stiftung.</p>
+<p><sup>2</sup> McAleavy, T. (1998). Commentary on the paper by Andreas Körber. In J. van der Leeuw-Roord (Ed.), 위의 책, pp.139–142.</p>
+<p><sup>3</sup> 인과적 사고에 관해서도 역사교육자들 사이에 유사한 논쟁이 진행 중이다. 예를 들어, 인과적 사고가 많은 청소년에게 반직관적 기술이라고 주장하는 측이 있다. 이들에 따르면, 청소년의 직관은 사건이나 전개의 발단에 가장 직접적으로 영향을 미치는 인과 요인—예컨대 1914년 6월 28일 사라예보에서의 프란츠 페르디난트 대공과 그의 아내 소피의 암살—이 가장 중요한 것이어야 한다고 판단하는 쪽으로 기운다. 이는 일상생활에서의 인과 관계에 대한 인식과 합치한다. 이에 반대하는 측은, 이러한 경향에 대처하기 위해 학생이 잠재적 인과 기여 요인—예컨대 개인의 행동, 정치적 요인, 경제적 요인, 사회·문화·종교적 차이와 관련된 요인—에 대한 정보를 조직하는 법을 먼저 배운 다음, 이들 원인 중 하나 이상에 우선순위를 부여하는 경쟁적 논거를 평가할 수 있어야 한다고 주장한다. 인과적 사고에 관한 논의는 Lee, P., Ashby, R., &amp; Dickinson, A. (1996). Progression in children's ideas about history. In M. Hughes (Ed.), <em>Progression in learning</em>. Multilingual Matters. 참조.</p>
+</blockquote>
+<p>다원적 관점이 역사 학습자에게, 특히 저학년 중등학생이나 학습 능력이 낮은 학생에게 제기할 수 있는 또 다른 문제는, <span class="page-marker">[p.25]</span> 역사 탐구 과정 자체에 대한 좌절감과 회의감을 키울 수 있다는 점이다. 실제로 이는 사료 기반 역사 교수·학습 전반에 해당하는 잠재적 문제이기도 하다. 이용 가능한 증거가 서로 모순되어 사건에 대한 하나의 정확한 설명이 존재하지 않는 것처럼 보일 때, 동일한 증거가 역사학자마다 다르게 해석될 수 있을 때, 겉보기에 분명하고 모호하지 않은 진술이 관점과 상황에 따라 사람마다 다른 의미를 가질 수 있을 때, 또는 동일한 사건에 대한 서로 다른 증거 선택이 모두 동등하게 타당할 수 있을 때, 일부 학생에게는 이것이 특히 큰 문제가 된다.</p>
+<p>각 과목에서 확실한 답을 추구하며, 학습을 "습득"하고 기억할 수 있는 명제적 지식의 획득으로 여기는 학생들은 이처럼 다소 이질적인 교수·학습 방식에 적응하기가 매우 어려울 것이다. 이러한 문제는 역사 교사가 지식 전달 방식의 역사 교수에서 앞서 기술한 신역사 접근법으로 막 전환하기 시작한 경우에도 발생할 수 있다.</p>
+<p>서로 다른 관점들 사이의 관계—연결, 상호작용, 상호의존—에 초점을 맞출 때 일부 학생에게 발생할 수 있는 추가적 문제도 있다. 이 문제는 사료를 분석·해석하고 그 신뢰성과 사료를 판단하며, 특정 역사적 사건이나 전개를 이해하는 데 사료가 얼마나 관련되는지를 배운 학생들에게도 해당된다. 그러나 역사 이해는 한 단계 더 나아가, 자신이 평가하는 다양한 증거 조각들이 서로 어떻게 맞물리는지를 고려할 것을 요구한다. 다시 말해, 증거에 일정한 구조를 부여함으로써 역사적 설명을 구성하는 과정이 필요하다. 전통적인 지식 전달 방식의 역사 교수에서는 증거의 지위가 전제되었고 구조는 교사와 교과서가 제공했다. 사료 기반 역사 접근법에서는 학생이 각 사료의 지위를 평가한 뒤 증거로부터 설명을 어떻게 구성할 것인지 스스로 사고하도록 가르친다(실제로는 대부분의 역사 교과서가 여전히 기성의 구조를 제공하고 있지만).</p>
+<p>그러나 다원적 관점은 여기에 또 다른 복잡성을 더한다. 역사적 설명에 도입되는 층위와 관점이 많아질수록 설명은 더 복잡해지고, 다양하고 대조적인 관점, 해석, 결론을 다루어야 할 때 학생이 판단을 내리고 결론에 도달하기가 그만큼 어려워진다. 서로 다른 관점들이 상호 반응하고 상호작용하는 다양한 방식까지 풀어내려 하면 난이도는 한층 더 높아진다. 교사는 관점 간의 연결과 상호의존을 학생에게 보다 가시적이고 덜 추상적으로 만들 방법을 찾아야 한다. 예를 들어, 다자간 타임라인과 서사적 설명("그 사이에"와 "그리고 그 다음에")을 개발하도록 돕거나, 특정 사건이 진행되는 동안 보도자료, 선전물, 만화 등을 검토하면서 서로에 대한 사람들의 인식이 어떻게 변화했는지를 살펴보는 방식이 있다.</p>
+<p>이러한 다양한 문제가 어느 정도까지 해결될 수 있는지, 특히 다원적 관점에 수반되는 잠재적 학습 어려움을 어떻게 극복할 수 있는지는 교사의 전반적인 역사 접근법과 학생을 어떻게 준비시키느냐에 크게 달려 있다.</p>
+<hr />
+<h2 id="_8">다원적 관점의 토대를 마련하기</h2>
+<p><span class="page-marker">[p.26]</span> 역사교육에서 다원적 관점을 실천하기 위해, 학생들이 사료를 분석하고 증거를 해석하며 정보를 종합하여 자기 나름의 역사적 설명을 구성하는 데 반드시 숙련되어 있어야 하는 것은 아니다. 그러나 그러한 능력이 있으면 분명 도움이 된다.</p>
+<p>학생들이 문서 자료든, 시각 자료든, 시청각 자료든 자신이 접하는 모든 사료에 분석적 질문의 틀을 적용하는 데 익숙해져 있다면, 서로 다른 사료에 담긴 관점을 비교·대조하는 작업이 훨씬 수월해질 것이다. 다른 출판물에서 저자는 다양한 종류의 사료를 분석하는 방법을 학생에게 가르치는 여러 가지 방식을 소개한 바 있다.<sup>1</sup> 그 접근법의 근본에는 다섯 가지 큰 분석적 과정으로 묶을 수 있는 일련의 질문이 놓여 있다:</p>
+<blockquote class="body-quote">
+<p><strong>기술(Description):</strong> 이것은 어떤 종류의 사료인가? 누가 만들었는가? 해당 사건에 대한 생산자의 관여도는 어떠한가(참여자, 목격자, 보도자, 논평자, 당국자 등)? 언제 만들어졌는가? 해당 사건 이후 얼마나 지나서 만들어진 것인가? 의도된 독자나 수신자가 누구였는지 알 수 있는가? 의도된 목적이 무엇이었는지 알 수 있는가? 특정 역사적 사건이나 전개에 대해 무엇을 말해주거나 보여주는가?</p>
+<p><strong>해석(Interpretation):</strong> 생산자를 알 수 없는 경우, 사료 자체(관여 수준, 사건에 대한 근접성, 입장(standpoint), 접촉 범위, 역할 등)로부터 생산자에 대해 무엇을 추론할 수 있는가? 생산자가 정보를 어떻게 입수했는지에 관한 단서가 있는가? 정보의 신뢰성에 관한 단서가 있는가? 검증 가능한 사실, 전문가의 견해, 개인적 의견을 구별할 수 있는가? 사료의 관점에서 특정 입장에 대한 지지나 다른 입장에 대한 편견 등의 패턴을 감지할 수 있는가? 사료가 어떤 결론을 제시하는가? 그 결론은 증거에 의해 뒷받침되는가, 아니면 의견에 기반한 것인가?</p>
+<p><strong>선행 지식과의 연결(Links to prior knowledge):</strong> 사료의 정보가 다른 관련 사료에서 확인할 수 있는 정보와 일치하는가, 아니면 모순되는가?</p>
+<p><strong>증거의 공백 식별(Identification of gaps in the evidence):</strong> 위의 질문들에 답하는 데 도움이 될 만한, 빠져 있는 이름이나 날짜, 기타 사실 정보가 있는가?</p>
+<p><strong>추가 정보 사료의 식별(Identification of sources of further information):</strong> 이 사료의 정보나 생산자의 해석을 검증하려면 어떤 자료를 참조할 수 있는가?</p>
+</blockquote>
+<blockquote>
+<p><sup>1</sup> Stradling, R. (2000). <em>Teaching 20th century European history</em>. 특히 제8, 10, 15, 16, 17장 참조.</p>
+</blockquote>
+<p>그러나 사료 기반 접근법이 역사적 방법과 탐구를 역사교육의 핵심에 놓기는 하지만, 이러한 강조에는 잠재적 위험 요소가 다수 수반되며(이 모두가 다중관점적 접근에 부정적 영향을 미칠 수 있다), 이에 효과적으로 대응하기 위한 조치를 취할 필요가 있다.</p>
+<p>첫째, 사료가 우리에게 말해주거나 보여주는 검증 가능한 정보를 추출하고 기술하는 과정이 해석, 추론, 사료의 신뢰성에 대한 결론 도출과 관련된 과정보다 이해하기 쉽다. 일부 학생들은 이러한 분석적 구별을 명확히 하고 적용하는 데 도움이 필요하다. 역사 교사들은 이를 위한 여러 전략을 개발해 왔다.</p>
+<p><span class="page-marker">[p.27]</span> 한 가지 접근법은 학생들에게 예시 C와 같은 격자표를 제공하여, 사료가 무엇을 말해주는지, 무엇을 시사하는지(무엇을 추론할 수 있는지), 그리고 사료가 언급하지 않는 것은 무엇인지를 구별하도록 하는 것이다.<sup>1</sup> 이러한 접근법에 익숙해지면 학생들은 더 정교한 분석으로 나아갈 수 있는데, 예를 들어 동일한 증거 자료를 토대로 하면서도 서로 다른 해석과 결론에 도달하는 사료를 포함하여 여러 사료를 비교·대조하는 데 도움이 된다.</p>
+<blockquote>
+<p><sup>1</sup> 이것은 Riley, C. (1999). Evidential understanding, period knowledge and the development of literacy. <em>Teaching History</em>, 99 및 Wiltshire, T. (2000). Telling and suggesting in the Conwy Valley. <em>Teaching History</em>, 100에서 개발된 접근법에 기반한 것이다.</p>
+</blockquote>
+<blockquote class="body-quote">
+<p><strong>예시 C</strong></p>
+<table style="border-collapse: collapse; width: 100%;">
+<tr>
+<td colspan="3" style="border: 1px solid #000; padding: 8px;"><strong>사료에서 발췌:</strong></td>
+</tr>
+<tr>
+<td colspan="3" style="border: 1px solid #000; padding: 8px; height: 80px;">&nbsp;</td>
+</tr>
+<tr>
+<td style="border: 1px solid #000; padding: 8px; width: 33%; vertical-align: top;"><strong>이 사료는 나에게 다음을 말해준다:</strong></td>
+<td style="border: 1px solid #000; padding: 8px; width: 33%; vertical-align: top;"><strong>이 사료는 다음을 시사한다:</strong></td>
+<td style="border: 1px solid #000; padding: 8px; width: 33%; vertical-align: top;"><strong>이 사료가 언급하지 않는 것:</strong></td>
+</tr>
+<tr>
+<td style="border: 1px solid #000; padding: 8px; height: 60px;">&nbsp;</td>
+<td style="border: 1px solid #000; padding: 8px; height: 60px;">&nbsp;</td>
+<td style="border: 1px solid #000; padding: 8px; height: 60px;">&nbsp;</td>
+</tr>
+<tr>
+<td style="border: 1px solid #000; padding: 8px; height: 60px;">&nbsp;</td>
+<td style="border: 1px solid #000; padding: 8px; height: 60px;">&nbsp;</td>
+<td style="border: 1px solid #000; padding: 8px; height: 60px;">&nbsp;</td>
+</tr>
+</table>
+</blockquote>
+<p>또 다른 전략은, 학생들에게 서로 다른 색상의 형광펜이나 색연필로 밑줄을 긋거나 표시하게 하여, 사실적 진술, 기술적(descriptive) 진술, 그리고 추론을 구분하도록 하는 것이다.</p>
+<blockquote class="body-quote">
+<p><strong>예시 D: 사료 기반 분석을 위한 쓰기 틀</strong></p>
+<p>사료 A는 1946년 모스크바에 주재하던 미국 외교관인 ______ 이/가 ______에 관해 작성한 보고서이다.</p>
+<p>그의 보고서는 ______에게 보내졌다.</p>
+<p>그는 소련 정부가 ______ 하기를 원한다고 설명한다.</p>
+<p>그는 이 정책의 배경에 있는 이유가 ______이라고 시사한다.</p>
+<p>그는 미국 정부가 ______해야 한다고 권고한다.</p>
+</blockquote>
+<p>학생들이 증거에 관한 이러한 핵심적 구별을 해낼 수 있도록 돕는 또 다른 전략은, 분석 과정의 모형을 보여주는 쓰기 틀(writing frames)을 제공하는 것이다(예시 D 참조). 이 역시 기본적으로 학생을 사료 기반 분석에 입문시키기 위한 수단으로 고안된 것이며, 숙련도가 높아지면 더 이상 사용하지 않아도 되는 전략이다.</p>
+<p>사료 기반 학습의 광범위한 활용에 따르는 두 번째 잠재적 위험은, 일부 역사 교사들이 발견한 바와 같이, 일부 학생—특히 학업 능력이 낮거나 역사에 특별한 <span class="page-marker">[p.28]</span> 관심이 없는 학생—이 이 과정을 역사 이해라는 목적을 위한 수단이 아니라 과제 수행 그 자체를 목적으로 여기는 경향이 있다는 점이다. 예컨대, 일부 학생들은 전문 용어(증거, 편향, 1차 사료, 2차 사료 등)를 사용하기는 하되 그 의미를 제한적으로만 이해한 채 사료를 분석하는, 일종의 의사 증거적(pseudo-evidential) 접근법을 취한다. 그 결과, 사료 내 특정 진술이 '편향'되었을 수 있다는 근거가 조금이라도 있으면 그 사료 자체가 유용하지도 타당하지도 않다고 판단하거나, 당시에 작성되었다는 이유만으로 1차 사료가 자동적으로 '더 좋다'고 가정하는 식이다. 이러한 상황에서는 '편향(biased)'과 같은 용어의 사용을 지양하고, 대신 동기, 목적, 의도, 시각, 관점 등의 측면에서 생각하도록 유도하는 것이 더 바람직할 것이다.</p>
+<p>셋째, 일부 교사들은 학생들이 연습을 통해 사료 분석 방법을 배우기는 하지만, 서로 다른 사료에서 추출한 정보 조각들을 서로 연결 짓고 기존 지식과 관련지어 일관된 역사적 설명을 구성하는 데는 더 큰 어려움을 겪는다는 점을 관찰해 왔다. 한 연구자가 지적한 바와 같이, 신역사 접근법에는 학생들이 아직 스스로 생각해 보지도, 질문하는 법을 배우지도 않은 물음에 답하기 위해 정보를 얻는 방법만 가르치게 될 실질적 위험이 있다.<sup>1</sup> 따라서 초기 단계에서는 탐구를 조직하고 구조화하는 데에도 도움이 필요하다.</p>
+<blockquote>
+<p><sup>1</sup> Shemilt, D. (1987). Adolescent ideas about evidence and methodology in history. In C. Portal (Ed.), <em>The history curriculum for teachers</em>. Falmer Press.</p>
+</blockquote>
+<p>이것은 특히 두 가지 상황에 적용된다:</p>
+<ul>
+<li>학생들이 학습하고 있는 주제나 테마와, 자신이 검토하는 구체적이고 상세한 증거 조각 사이의 연결을 짓는 데 도움이 필요한 경우</li>
+<li>사용되는 사료들이 사건에 대해 대조적이거나 상충하는 견해와 해석을 제공하는 경우</li>
+</ul>
+<p>전자의 경우, 학생들은 주제 웹(topic webs)이나 네트워크 다이어그램을 활용하도록 유도하거나, 전략적 지점마다 양자택일(either/or) 또는 예/아니오(yes/no) 질문이 배치된 플로우차트를 제공하여, 이용 가능한 증거가 과거에 대한 특정 주장을 뒷받침하는지 여부를 스스로 판단하게 하면 역량을 키울 수 있다. 이를 통해 정보가 어떻게 증거로 전환되는지를 이해하는 데에도 도움이 된다. 카드 분류(card sorting) 활동도 유용한데, 서로 다른 증거 조각(또는 역사학자들의 서로 다른 관점이나 해석 등)을 별도의 카드에 적은 뒤, 학생들이 카드를 분류하고 상호 관련시키는 방식을 탐구하면서 논거 또는 사건에 대한 일관된 설명을 구성하도록 하는 것이다. 주제가 서사적 형식에 적합한 경우, 병렬 타임라인과 '플롯 만들기(plotting) 연습'을 통해서도 연결 짓기를 도울 수 있다. 예를 들어, 특정 역사적 사건을 소재로 한 영화나 텔레비전 대본의 플롯을 구성하는 방식으로 생각해 보도록 유도할 수 있다. 이러한 활동은(병렬 타임라인과 마찬가지로) 서로 다른 사료의 증거를 사용하여 사건의 순서를 파악하는 데 도움이 될 뿐 아니라, 핵심 행위자들이 서로에게 그리고 사건에 어떻게 반응하고 있었는지를 살펴볼 기회를 제공하기도 한다.</p>
+<p><span class="page-marker">[p.29]</span> 학생들이 대조적이거나 상충하는 관점이 담긴 사료들을 처음 접할 때 대처할 수 있도록 하는 데 활용할 수 있는 전략도 여러 가지 있다. 한 가지 방법은 잘 알려진 현대 또는 역사적 형사 재판 사례(영화나 텔레비전 드라마도 가능하다)를 활용하여, 학생들에게 다음 사항을 검토하도록 하는 것이다:</p>
+<ul>
+<li>증인들이 각기 다른 역할을 수행한다(목격 증인, 성격 증인, 전문가 증인, 검찰 측 증인과 변호 측 증인)</li>
+<li>증인들이 서로 모순된다</li>
+<li>그들의 증거가 다른 증인의 진술을 반박하거나 뒷받침할 수 있다</li>
+<li>변호 측과 검찰 측의 변호사가 증거를 선택적으로 사용하거나 동일한 증거를 사용하여 대립하는 논거를 구성한다</li>
+<li>배심원이 상충하는 증거와 그 증거에 기반한 논거에 반응한다</li>
+</ul>
+<p>또 다른 방법은, 구술 증언을 살펴보고 이를 상세히 분석하는 작업을 거친 뒤에 다원적 관점 학습을 시작하는 것이다. 이를 통해 학생들은 기억이 구술 증언에 어떻게 영향을 미치는지, 같은 사건에 대해 이야기하는 사람들이 어떻게 매우 다르게 기술하고 해석할 수 있는지를 직접 경험하게 될 것이다.</p>
+<p>학생들이 사료 기반의 역사 학습 접근법에 익숙해지고, 필요한 기술을 발전시키며, 점점 더 복잡한 사건과 전개 과정에 대해 다양한 관점을 활용하는 연습을 쌓고 나면, 서로 다른 사료, 대조적 해석, 경합하는 역사적 설명이 담긴 다양한 관점을 자신 있게 다룰 수 있게 될 것이다. 이 책자의 마지막 섹션에서는 다원적 관점을 염두에 두고 설계된 다양한 학습 활동을 소개한다.</p>
+<hr />
+<h1 id="_9">학습 활동</h1>
+<p><span class="page-marker">[p.31]</span> 이와 같이 비교적 짧은 책자에서는, 복수의 역사적 관점에 대한 학생의 이해를 발전시키는 데 도움이 될 수 있는 학습 활동과 교수 접근법의 몇 가지 사례만을 제공할 수 있을 뿐이다. 앞서 서술한 이유들로 인해, 그리고 역사 교수와 학습에서 다원적 관점이 단지 '좋은 역사 교수' 이상의 것을 의미한다고 필자는 생각하기 때문에, 교사 양성 교육이나 현직 연수에 통합할 수 있을 만한 체계적인 우수 실천 사례는 아직 확인되지 않았다. 따라서 이하의 내용은 교실 실천을 위한 청사진이라기보다는 토론과 논의를 위한 자극으로 간주되어야 한다.</p>
+<hr />
+<h2 id="_10">기회를 포착하기</h2>
+<p>역사적 사건과 전개를 얼마나 폭넓고 빈번하게 다중관점적으로 바라볼 수 있는지에 관해 많은 교사가 큰 제약을 안고 있다는 점을 감안하면, 기회가 될 때 적극적으로 포착해야 할 강력한 이유가 있다.</p>
+<p>2001년 9월 11일의 사건 이후, 전 세계의 많은 역사 교사들은 학생들로부터 같은 종류의 즉석 질문을 받았을 것이다. 학생들은 이런 일이 어떻게, 왜 일어날 수 있었는지뿐만 아니라, 비행기를 납치하여 세계무역센터 쌍둥이 빌딩과 펜타곤에 돌진한 이들의 행위 뒤에 있는 이유와 동기도 파악할 필요가 있었다. 바로 이런 순간에 일부 역사 교사들은 연대기적 교육과정의 틀 밖으로 벗어나 시간과 공간을 가로지르는 연결을 시도하며, 한 학기, 1년, 또는 수년 전에 다루었던 전개와 과정이 오늘날의 사건을 형성하고 그에 영향을 미치는 데 어떻게 기여했는지를 학생에게 보여주는 방법을 모색한다. 이는 다중관점적 접근법 없이는 실행하기 매우 어렵다.</p>
+<p>텔레비전 보도, 대중의 반응, 무슨 일이 일어났는지를 이해하려는 논평자들의 시도 모두가 가까운 과거와 먼 과거에 걸친 서방과 중동의 관계에 대한 역사적 언급으로 가득했다. 그러한 언급이 담긴 표현 역시 역사적 반향(resonances)으로 가득했다. 예컨대 불과 며칠 후 부시 대통령은 테러리즘에 대한 '십자군(crusade)'이라는 표현을 처음 사용했는데, 이는 측근 자문관, 외교관, 그리고 다른 나라들의 압력을 받아 '테러와의 전쟁'으로 변경되었다. '십자군'이라는 용어는 부적절할 뿐 아니라 정치적·외교적으로도 현명하지 못한 것으로 여겨졌다. 그러나 여기에는 역사 수업에서 이 단어의 사용을 논의하고, 관련 당사자 모두에게 그 단어가 지닐 수 있는 서로 다른 함의(connotations)를 탐구할 기회가 있었다. 나아가 '십자군'이라는 단어가 다른 역사적 맥락에서 어떻게 전유되어 왔는지를 살펴볼 기회이기도 했다.</p>
+<p><span class="page-marker">[p.32]</span> 예를 들어, 현대에 들어 '십자군'이라는 용어는 양차 세계대전에서 선전가들에 의해 사용되었다. 제1차 세계대전 당시 영국 총리는 그것을 "위대한 십자군(a great crusade)"이라고 묘사했고, 아이젠하워 장군은 제2차 세계대전 회고록의 제목을 『유럽에서의 십자군』(<em>Crusade in Europe</em>)라 붙였다. 이 단어는 또한 1917–18년에 예루살렘과 다마스쿠스가 터키군에게서 탈환된 팔레스타인과 시리아에서의 영국군 작전 맥락에서도 널리 사용되었다. 스페인의 팔랑헤는 1936년 공화정부에 대한 "십자군" 또는 성전을 말했고, 친공화파 국제여단의 일부 대원들은 파시즘에 맞서 십자군을 수행하고 있다고 말했다. 1980년대에는 리비아 지도자 가다피 대령이 미국의 "십자군들"에 맞서 성전 또는 지하드를 촉구했다. 가장 최근에는 1991년 걸프전 당시 미국 전략가들이 사담 후세인에 대한 도덕적 십자군을 언급했고, 후세인은 차례로 스스로를 그들을 중동에서 몰아낼 현대의 살라딘<sup class="tn">i</sup>으로 공개적으로 동일시했다.</p>
+<p>이런 종류의 반향을 불러일으키는 다른 역사적 용어들도 있으며, 현대의 사건이 다양한 관점에서 여러 쟁점과 질문을 제기할 때 이를 탐구할 필요가 있을 수 있다. 세계 각지의 대량 학살로 인해 일부 관찰자들은 '홀로코스트'라는 용어를 사용하게 되었지만, 립스타트(Lipstadt) 교수와 같은 이들은 홀로코스트 또는 쇼아<sup class="tn">j</sup>가 보편적 의의를 가진 고유한 사건이라고 주장해 왔다.<sup>1</sup> 이런 점에서, '제노사이드(genocide)'와 '디아스포라(diaspora)' 같은 용어 역시 다양한 맥락에서 어떻게 사용되는지를 학생들이 이해할 수 있도록 다중관점적 접근을 요하는 쟁점을 제기한다. 이들 용어는 어느 경우든, 한 집단이 다른 집단(또는 여러 집단)에게 당한 처우를 기술하기 위해 사용하는 것인데, 정작 상대 집단은 통상적으로 그 용어가 실제 사태에 적합하다는 것을 부정한다. 앞서 지적한 바와 같이, 다중관점적 분석의 중요한 한 차원은 단어의 의미와 그것이 특정 역사적 맥락에서 어떻게 사용되는가이다.</p>
+<blockquote>
+<p><sup>1</sup> Lipstadt, D. (1993). <em>Denying the Holocaust: The growing assault on truth and memory</em>. Free Press.</p>
+</blockquote>
+<div class="tn-block">
+<div class="tn-label">역주</div>
+<p><sup class="tn">i</sup> <strong>살라딘(Saladin, 1137/38–1193)</strong>: 쿠르드계 무슬림 술탄으로, 아이유브 왕조의 창시자이다. 1187년 하틴 전투에서 십자군을 격파하고 예루살렘을 탈환하여 이슬람 세계의 영웅적 상징이 되었다. 사담 후세인이 스스로를 '현대의 살라딘'으로 내세운 것은, 서방 세력에 맞서 중동을 수호하는 지도자라는 이미지를 구축하려는 정치적 수사였다.</p>
+<p><sup class="tn">j</sup> <strong>쇼아(Shoah)</strong>: '파국' 또는 '파멸'을 뜻하는 히브리어로, 나치 독일에 의한 유대인 대량 학살을 가리킨다. '홀로코스트'가 원래 '번제(燔祭, 불에 태워 바치는 제물)'를 뜻하는 그리스어에서 유래하여, 유대인 학살을 종교적 제의에 빗대는 듯한 부적절한 함의가 있다는 비판에서, 사건의 유대인 고유성을 강조하고자 하는 학자들과 당사자들이 선호하는 용어이다.</p>
+</div>
+<p>기념일, 100주년 행사, 기타 공적 기념행사도 역사적 다원적 관점을 실천할 수 있는 즉흥적(ad hoc) 기회를 제공한다. 미국독립혁명과 프랑스혁명의 200주년은 이런 종류의 분석에 좋은 기회를 제공했다. 이들은 미국인이나 프랑스인뿐 아니라 많은 사람들이 그러한 역사적 전개가 자기 자신과 세계 전체에 미친 장기적 의의를 다시 돌아본 세계적 기념일이었다. 이러한 계기는 학생들이 예를 들어 50년, 100년, 150년, 200년 후의 역사학자들이 해당 사건의 역사적 의의를 어떻게 재평가했는지를 살펴보는, 흥미로운 사학사적 분석의 기회를 제공할 수 있다.</p>
+<p>많은 나라와 많은 민족·문화적 소수자가 이런 종류의 반향을 불러일으키는 과거의 사건을 자국의 역사 속에 갖고 있을 것이다. 예시 E는 하나의 예시를 제공하며, 저자가 아일랜드계이고 대학원생으로서 아일랜드 역사를 공부한 바 있어 특별한 관심을 갖고 있기는 하지만, 상당히 지역적인 것이다.</p>
+<blockquote class="body-quote">
+<p><strong>예시 E: 1798년 아일랜드 반란</strong></p>
+<p>아일랜드에서, 프랑스혁명의 소식은 벨파스트의 장로교 공동체와 더블린의 개신교도 및 가톨릭교도의 구성원들을 포함하는 '통합 아일랜드인 협회'<sup class="tn">k</sup>와 같은 운동을 급진화시켰다. 그 지도자인 울프 톤(Wolfe Tone, 1763–1798)은 더블린 출신의 개신교도로, 영국의 지배를 종식시키고자 파리로 가서 아일랜드에서의 봉기를 지원하기 위한 원정대를 파견하겠다는 프랑스 총재정부<sup class="tn">l</sup>의 약속을 확보했다. 그러나 첫 번째 원정대의 선박들은 1796년 12월 아일랜드 해안에서 폭풍으로 난파되었다. 앙베르(Humbert) 장군이 지휘하는 더 작은 원정대가 단 1,000명의 병력으로 1798년 8월 아일랜드 북서부 해안에 상륙했다. 앙베르는 조직된 아일랜드군이 자신을 기다리고 있을 것으로 기대했다. 사실 그는 아일랜드 의용군으로 병력을 겨우 배증시켰다. 한 달도 채 되지 않아 그는 더 큰 영국군에 패배했다. 울프 톤은 나중에 프랑스 군복을 입고 체포되어 처형을 기다리며 자살을 감행했다. 봉기와 프랑스의 침공은 1800년의 합병법<sup class="tn">m</sup>을 이끌어냈고, 이를 통해 아일랜드는 영국의 일부가 되었으며, 영국은 국명을 '그레이트브리튼 및 아일랜드 연합왕국'으로 변경하였다.</p>
+<p>1798년의 사건은 한 세기 후인 1898년에 아일랜드 민족주의자들에 의해, 그리고 다시 1998년에 아일랜드 공화국에 의해 기억되고 기념되었다. 아일랜드 작가 콜름 토빈(Colm Tóibín)과 역사학자 디어미드 페리터(Diarmaid Ferriter)는 [<em>The Irish Famine</em>, A Documentary, London, Profile Books (2001) p.41] 1798년의 사건이 두 기념일에서 어떻게 다르게 해석되었는지를 기록했다:<sup class="tn">n</sup></p>
+<p>"아일랜드 역사의 기이한 점 중 하나는 사건들이 해석에 완전히 열려 있는 방식이다. 예를 들어 1898년, 민족주의적 아일랜드에게 1798년은 사제들이 이끈 영국에 대한 가톨릭 민족주의 반란이어야 했다. 1998년, 친유럽적이고 반(半)다원주의적인(semi-pluralist) 아일랜드에게 1798년은 유럽 합리주의에 뿌리를 둔 개신교 지식인이 이끈 농민 반란이어야 했다. 매번 1798년의 반란은 몸을 누여 현재 정치의 물결이 그 위를 휩쓸고 지나가게 했다."</p>
+</blockquote>
+<div class="tn-block">
+<div class="tn-label">역주</div>
+<p><sup class="tn">k</sup> <strong>통합 아일랜드인 협회(Society of United Irishmen)</strong>: 1791년 벨파스트에서 장로교도 급진파를 중심으로 결성된 정치 단체로, 초기에는 의회 개혁과 가톨릭 해방을 목표로 하였으나 프랑스혁명의 영향 아래 점차 급진화되어 아일랜드 독립을 추구하는 공화주의 비밀결사로 변모했다. 벨파스트 장로교도, 더블린 개신교도, 가톨릭교도를 망라하는 초교파적 구성이 특징적이었다.</p>
+<p><sup class="tn">l</sup> <strong>프랑스 총재정부(French Directory)</strong>: 1795–1799년 프랑스 공화국의 행정부. 공포정치 이후 수립되어, 대외적으로 혁명 이념 확산을 위한 군사 원정을 활발히 전개하였다. 아일랜드 원정은 영국을 약화시키려는 총재정부의 대영(對英) 전략의 일환이었다.</p>
+<p><sup class="tn">m</sup> <strong>1800년 합병법(Act of Union)</strong>: 1798년 봉기를 계기로 영국 정부가 아일랜드에 대한 직접 통치의 필요성을 절감하여 통과시킨 법률로, 1801년 1월 1일부로 아일랜드 의회를 폐지하고 아일랜드를 영국에 합병하였다. 이후 아일랜드 독립운동의 핵심 쟁점이 되었으며, 1922년 아일랜드 자유국 수립으로 남아일랜드에 대해서는 사실상 폐기되었다.</p>
+<p><sup class="tn">n</sup> <strong>토빈·페리터 인용의 맥락</strong>: 1798년 봉기는 프랑스혁명의 파급, 영국 의회 개혁 실패에 대한 아일랜드 급진파의 좌절, 그리고 가톨릭 해방 운동이 교차하는 지점에서 발생했다. 봉기 실패 후 영국은 아일랜드 의회를 폐지하고 직접 합병했으며, 이것이 19세기 아일랜드 자치(Home Rule) 운동, 20세기 독립전쟁, 그리고 북아일랜드 분쟁으로 이어지는 긴 서사의 기점이 된다. 1898년은 게일어 부흥 운동과 민족주의 고양기로 1798년 봉기를 가톨릭 민족 정체성의 서사로 전유했고, 1998년은 벨파스트 협정(Good Friday Agreement) 체결의 해로 같은 사건을 초교파적·계몽주의적 운동으로 재해석했다.</p>
+</div>
+<p>다원적 관점으로 접근할 수 있는 세 번째 기회 포착 방법은, 학교에서 더 이상 사용되지 않는 낡은 교과서를 활용하는 것이다. 일부 교사는 <span class="page-marker">[p.33]</span> 학교 도서관이나 자료실, 또는 자신의 책장에서 운 좋게 그러한 책을 발견할 수도 있다. 다른 교사는 공공 도서관이나 교사 양성 대학의 도서관에서 찾을 수 있을 것이다. 이마저 여의치 않으면, 게오르크 에커트 교과서분석연구소의 도움을 구할 수 있을 것이다. 현대 교과서와 20세기의 서로 다른 시기에 제작된 교과서에서 특정 국가사 또는 국제사의 사건이 어떻게 다루어지는지를 비교하는 것은, 학생에게 사학사를 소개하는 유용한 출발점이 된다. 이웃 나라에서 가르치는 동료와 교류를 마련할 수 있다면 다중관점적 분석의 범위는 더욱 커진다. 그렇다면 시간과 공간을 넘어 관점을 비교할 기회가 생길 것이다.</p>
+<hr />
+<h2 id="_11">학생들에게 사학사 소개하기</h2>
+<p>앞서 언급한 바와 같이, 사학사적 분석은 다원적 관점의 핵심 요소이다. 이하에서는 역사학자들의 저술을 학생에게 소개하고, 또한 공공역사(public history)를 생산하는 사람들—박물관 학예사, 영화 제작자, 텔레비전 프로듀서, 기자, 소설가—의 관점을 소개함으로써 이를 달성할 수 있는 여러 가지 방법을 살펴본다.</p>
+<p>이런 종류의 첫 번째 사례는 역사학자들 간의 논쟁에 초점을 맞춘다. 이른바 호스바흐 비망록(Hossbach Memorandum)에 대한 상반된 해석은, 히틀러의 의도와 외교 정책을 둘러싼 가장 격렬한 역사학 논쟁 중 하나의 원천이 되어 왔다. <span class="page-marker">[p.34]</span> 비망록은 1937년 11월 5일 베를린 제국수상관저에서 열린 회의의 기록으로, 호스바흐 대령이 작성했다. 회의에는 히틀러, 괴링, 노이라트, 레더, 블롬베르크, 프리치가 참석했다. 이 자리에서 히틀러는 외교 문제에 대한 자신의 입장을 개진했으며, 특히 독일 국민을 위한 생활권(Lebensraum) 획득에 대한 결의를 밝혔다. 핵심 내용 일부는 예시 F에 요약되어 있다.</p>
+<p>현재 호스바흐 비망록의 전문을 아발론 프로젝트<sup>1</sup> 웹사이트에서 다운로드할 수 있으며, 역사학자들 사이의 논쟁도 많은 교과서에서 다루어지고 있다. 주된 쟁점은 이를 교실에서 어떻게 효과적으로 다룰 것인가이다. 한 가지 가능성은 학생들이 자료를 읽은 다음 역사학자들이 채택한 다양한 입장을 비교하게 하는 것이다. 그런 다음 이미 획득한 지식과 관련 1차·2차 사료에 기반하여 자기 자신의 결론에 도달하게 한다.</p>
+<blockquote>
+<p><sup>1</sup> 이 비망록 및 기타 유용한 자료는 아발론 프로젝트: 뉘른베르크 전범재판(The Avalon Project: The Nuremberg War Crimes Trials) 페이지에서 이용 가능하다.</p>
+</blockquote>
+<p>또 다른 가능성은, 동료 교사에게 대립하는 역사학자 진영 중 한쪽의 관점에서 사례를 제시하도록 요청하고, 자신은 대안적 입장을 제시하는 것이다. 공개 토론 형식이 될 수도 있고, 한 교사가 한 수업에서 사례를 발표하고 질의에 응한 뒤 다른 교사가 후속 수업에서 대안적 사례를 제시하는 방식도 있다. 어느 경우든 교사들은 "핫 시트"<sup class="tn">o</sup>에 앉을 준비를 하고 "역할에 충실"할 준비가 되어 있어야 한다. 여기서 전체적인 학습 목표는 어느 한 입장에 대해 확고한 결론에 도달하는 것이 아니라, 쟁점이 어떻게 논쟁되는지, 논쟁의 본질이 무엇인지, 해당 문서가 어떻게 대안적 해석에 열려 있는지, 각 해석의 근거와 그 상대적 강점 및 약점을 더 분명하게 이해하게 하는 것이다. 각 입장에 대한 평가는 쌍 또는 소그룹으로, 가능하면 논거에 대한 서로의 평가를 "핫시팅"하면서 이루어질 수 있다.</p>
+<div class="tn-block">
+<div class="tn-label">역주</div>
+<p><sup class="tn">o</sup> <strong>핫시팅(hot seating)</strong>: 특정 인물이나 입장의 역할을 맡은 사람이 '핫 시트(뜨거운 자리)'에 앉아 다른 참가자들의 질문에 해당 역할의 관점에서 즉석으로 답변하는 교육 기법이다. </p>
+</div>
+<blockquote class="body-quote">
+<p><strong>예시 F: 호스바흐 비망록</strong></p>
+<p>총통은 [다음과 같이 진술했다]:
+독일 정책의 목표는 인종 공동체를 확보하고 보존하며 확대하는 것이었다. 따라서 그것은 공간의 문제였다. 독일 인종 공동체는 8,500만 명 이상으로 구성되어 있었다. 그 수와 유럽 거주 가능 공간의 좁은 한계로 인해, 다른 어떤 나라에서도 찾아볼 수 없는 촘촘하게 밀집된 인종적 핵심을 이루고 있었으며, 이는 다른 민족들의 경우보다 더 큰 생활공간에 대한 권리를 함축하는 것이었다.……</p>
+<p>30–40년 전과 비교하여 생활수준이 전반적으로 상승함에 따라, 생산자, 즉 농민들 측에서조차 수요와 자체 소비가 증가했다.……장기적으로, 대륙에서 실질적으로 공통된 생활수준을 향유하면서 그 수준을 낮추거나 합리화를 통해 식량 공급 문제를 해결하는 것은 불가능했다.……</p>
+<p>생존을 외국 무역에 의존하는 국가들에는 뚜렷한 군사적 약점이 있었다. 우리의 대외 무역은 영국이 지배하는 해로를 통해 수행되었으므로, 외환보다는 수송의 안전이 문제였으며, 이는 전시에 우리 식량 사정의 전적인 취약성을 드러냈다. 유일한 해결책—우리에게는 공상적으로 보일 수도 있는 것이지만—은 더 큰 생활공간의 획득에 있었다.……이것은 인구를 획득하는 문제가 아니라 농업적으로 유용한 공간을 확보하는 문제였다. 더구나 원자재 생산 지역도 해외보다는 제국(Reich)에 직접 인접한 유럽에서 더 유용하게 모색될 수 있었다.……독일이 당면한 문제는, 최소의 비용으로 최대의 이익을 어디서 달성할 수 있는가였다.</p>
+<p><span class="page-marker">[p.35]</span> 독일 정책은 증오에 고무된 두 적대자, 영국과 프랑스를 고려해야 했는데, 그들에게 유럽 중심부의 독일이라는 거대한 존재는 가시와 같은 것이었고, 양국 모두 유럽 또는 해외에서의 독일 지위의 추가 강화에 반대했다.……</p>
+<p>독일의 문제는 오직 무력에 의해서만 해결될 수 있었으며, 이는 결코 위험 없이 이루어질 수 없었다.……무력 행사와 그에 수반되는 위험을 이하 논의의 기초로서 받아들이더라도, "언제" 그리고 "어떻게"라는 질문에 답하는 것이 여전히 남아 있었다.……다루어야 할 세 가지 경우가 있었다:</p>
+<p>사례 1: 1943–1945년 기간.
+이 시기 이후에는 우리의 관점에서 상황이 악화되는 변화만을 예상할 수 있었다.……그때까지 다른 나라들이 실행했을 재무장에 비해 우리의 상대적 군사력은 감소할 것이다. 만약 1943–45년까지 행동하지 않는다면, 어느 해든 비축 부족으로 인해 식량 위기가 발생할 수 있었고, 이에 대처하는 데 필요한 외환도 확보할 수 없을 것이며, 이는 "체제의 약화 시점"으로 간주되어야 한다.……1943–45년의 상황이 어떻게 될지 오늘날 아무도 알지 못했다. 한 가지만은 확실했다—우리는 더 이상 기다릴 수 없었다.……</p>
+<p>사례 2:
+프랑스의 내부 분쟁이 프랑스군을 완전히 소진시킬 만한 국내 위기로 발전하여, 독일에 대한 전쟁에 투입할 수 없게 된다면, 체코에 대한 행동의 시기가 온 것이다.</p>
+<p>사례 3:
+프랑스가 다른 국가와의 전쟁에 깊이 휘말려 독일에 대해 "진군"할 수 없는 경우. 우리가 전쟁에 휘말리게 될 경우, 첫 번째 목표는 체코슬로바키아와 오스트리아를 동시에 전복하여, 서방에 대한 어떠한 작전에서도 측면의 위협을 제거하는 것이어야 했다.……독일이 이 전쟁을 이용하여 체코와 오스트리아 문제를 해결한다면, 영국—자신이 이탈리아와 전쟁 중인—은 독일에 대해 행동하지 않기로 결정할 것이라 가정해야 했다. 영국의 지원 없이는 프랑스의 독일에 대한 호전적 행동은 기대할 수 없었다.</p>
+<p><strong>역사학자들 사이의 논쟁</strong></p>
+<p>이 비망록은 이후 뉘른베르크 재판에서 연합군 검찰측에 의해 피고인들의 제2차 세계대전 계획 참여의 증거로 제시되었다. 역사학자들 사이의 논쟁은, 비망록이 히틀러의 1937년 당시 사고에 대한 명확하고 직접적인 증거를 제공하는지 여부에 초점을 맞추어 왔다. 특히 13년 전 『나의 투쟁』(<em>Mein Kampf</em>)에서 개진된 광범위한 목표가 확정적인 행동 계획으로 구체화되었는지가 쟁점이었다.</p>
+<p>일부 역사학자—예컨대 독일의 힐데브란트(Hildebrand)와 영국의 트레버 로퍼(Trevor Roper)—는 세 가지 사이에 일관성이 있다고 주장해 왔다. 즉, 『나의 투쟁』에서의 히틀러의 팽창주의적 목표, 국가사회주의 초기부터의 그의 행동, 그리고 호스바흐 비망록에서 개진된 외교 정책이 하나의 일관된 노선을 이룬다는 것이다. 이 입장을 뒷받침하는 증거로, 그들은 1937년 12월 중순에 독일군의 지시가 오스트리아와 체코슬로바키아에 대한 군사적 공격을 포괄하도록 변경된 사실을 지적했다.</p>
+<p>다른 역사학자들, 특히 영국 역사학자 A. J. P. 테일러(A. J. P. Taylor)는, 히틀러의 경력은 그가 자신의 모든 행동과 정책을 결정하는 사전 계획을 가진 인물이 아니라, 사건을 기다렸다가 이를 활용하는 기회주의자였음을 보여준다고 주장해 왔다:</p>
+<p>"히틀러의 발표는 대부분 몽상이었다.……그는 자신의 가장 내밀한 생각을 드러내지 않았다.……비망록은 우리가 이미 아는 것, 즉 히틀러가(다른 모든 독일 정치인처럼) 유럽의 패권국이 되고자 했다는 것을 말해준다. 또한 그가 어떻게 이를 달성할 수 있는지를 추측했다고 말해준다. 그의 추측은 잘못된 것으로 판명되었다. 그것은 1939년의 실제 전쟁 발발과 거의 관련이 없다."</p>
+<p>30년 후에 글을 쓴 노먼 데이비스(Norman Davies)는, 테일러를 포함한 논쟁 참여자 모두가 독일의 의도에 대한 논의에만 국한했다고 지적했다. 소련의 의도는 살펴보지 않았으며, 양국의 행동이 어느 정도 상대국의 목표와 계획에 대한 가정에 의존했는지도 검토하지 않았다는 것이다.</p>
+</blockquote>
+<p><span class="page-marker">[p.36]</span> 30년 전쟁은 학생들에게 사학사적 논쟁을 소개하는 또 다른 가능성이다. 한 국가에 국한되지 않는 주제이며, 학생이 17세기 전체를 조망하는 데 도움이 된다. 지난 300년에 걸쳐 여러 세대의 역사학자들이 이 전쟁을 매우 다른 방식으로 접근하고 해석해 왔기 때문이다. 일부 역사학자에게 그것은 영주들과 황제 사이의 장기간에 걸친 독일 내 갈등의 일부였다. 다른 이들에게는 가톨릭과 개신교 사이의 종교전쟁의 연장이었다. 또 다른 이들에게는 유럽 대륙의 패권을 둘러싼 열강 간 투쟁에서의 중요한 단계였다. 그리고 또 다른 이들에게는 이 모든 것이었다.</p>
+<p>예시 G는 150년 이상에 걸쳐 글을 쓴 다섯 명의 역사학자의 견해를 담고 있다. 국가사 또는 유럽사의 연대기에서 이미 한 주기를 마쳐 17세기와 18·19·20세기를 모두 다룬 고학년 학생이라면, 이 다섯 가지 서로 다른 입장 뒤에 있는 맥락을 생각하게 할 수 있을 것이다. 즉, 교사의 지원과 배경 자료를 바탕으로, 다음과 같은 질문을 고려하게 하는 것이다:</p>
+<blockquote class="body-quote">
+<p>1860년대에 17세기에 대해 글을 쓰는 독일 역사학자의 사고에 어떤 당대의 사건과 전개가 영향을 미칠 수 있는가? 그룹 브레인스토밍은 독일 통일, 슐레스비히-홀슈타인 문제, 프로이센 팽창주의, 오스트리아와의 관계, 민족주의, 지역 정치 등의 요인을 도출할 수 있을 것이다.</p>
+<p>1950년대 초에 17세기에 대해 글을 쓰는 영국 역사학자의 사고에 어떤 당대의 사건과 전개가 영향을 미칠 수 있는가? 브레인스토밍은 유럽 대부분에 파괴적 영향을 미친 대규모 세계대전의 종결, 갈등과 위기의 50년, 냉전 초기 단계 등의 당대적 우려를 도출할 수 있을 것이다.</p>
+<p>1960년대에 글을 쓰는 역사학자의 17세기에 대한 사고에 어떤 당대의 사건과 전개가 영향을 미칠 수 있는가? 브레인스토밍은 두 초강대국의 출현과 두 진영, 패권 다툼, 특히 중부 유럽을 중심으로 한 것을 식별할 수 있을 것이다.</p>
+</blockquote>
+<p>저학년 학생, 특히 19세기와 20세기를 아직 학습하지 않은 학생의 경우에는, 이 서로 다른 역사학자들의 관점에 영향을 미치거나 그것을 채색했을 수 있는 정치적·사회적·경제적 맥락을 이해하는 데 도움이 되는 맥락적 정보를 제공할 필요가 있을 수 있다. 한 가지 가능성은 쌍 또는 소그룹으로 다섯 장의 카드—각 카드에 역사학자 한 명의 발췌문이 담긴—를 제시하고, 그들의 견해에서 유사점과 차이점을 기록하게 하는 것이다. 그런 다음 그들의 결론을 학급 전체가 토론하여 합의된 결론을 도출해야 한다.</p>
+<p>그 다음, 여전히 쌍 또는 소그룹으로 작업하면서, 예시 H에 있는 것과 유사한 두 번째 카드 세트를 검토하게 해야 한다. 이 카드에는 각 역사학자가 글을 쓸 당시에 발생한 주요 유럽 사건과 전개가 표시되어 있다. 관련 있는 맥락 정보와 관련 없는 맥락 정보를 함께 제시하는 것이 유용하다. 교사는 학생들이 여기서 추가적인 도움이 필요한지 여부를 판단하여, 날짜와 설명을 포함할지를 결정해야 한다. 여기서 과제는 각 역사학자가 글을 쓴 시기와 관련될 수 있는 카드를 선별하여, 각 역사학자의 관점을 대표하는 카드 옆에 작은 더미로 모아 놓는 것이다. <span class="page-marker">[p.37]</span> 세 번째 과제는 서술 카드의 각 더미를 하나하나 살펴보고, 그중 어떤 것이 해당 역사학자의 사고에 간접적 영향을 미쳤을 수 있는지를 판단하는 것이다. 그런 다음 학생들에게 더 큰 그룹이나 학급 전체에서 자신의 선택을 논의하고 정당화하도록 요청해야 한다.</p>
+<p>학생들이 이 과정은 역사학자의 견해를 설명하는 것이 아니라 해석하는 것임을 이해하도록 하는 것이 결정적으로 중요하다. 이런 연습에서 학생들은 무엇을 배우는가? 첫째, 역사학자들은 자기 시대의 산물로서 그들의 사고가 어느 정도 당대의 관심사와 쟁점을 통해 여과된다는 것이다. 그러나 둘째, 역사학자들은 이전 세대의 역사학자들로부터 과거를 해석하는 틀도 물려받았으며, 이러한 틀 역시 그들의 사고에 영향을 미친다는 것이다. 마지막으로, 그리고 아마도 가장 중요한 것으로, 최근 역사학자들의 작업이 이전 역사학자들의 작업보다 반드시 "더 좋거나", "더 타당하거나", "더 신뢰할 만하거나", "더 완전한" 것은 아니라는 점, 그것은 다른 것이라는 점을 배우게 된다. 그것은 특정 역사적 사건이나 시대를 이해하는 데 무엇이 중요하거나 관련 있는지를 결정하기 위해 다른 틀과 기준을 적용한다.</p>
+<blockquote class="body-quote">
+<p><strong>예시 G: 30년 전쟁</strong></p>
+<table style="width:100%; border-collapse: separate; border-spacing: 0 8px;">
+<tr><td style="border: 1px solid #999; padding: 12px;">
+<p>19세기 독일 역사학자 구스타프 프라이탁은 이 전쟁을 독일의 지역 지배자들과 합스부르크 제국 황실 사이의 갈등이자 개신교와 가톨릭 사이의 갈등으로 기술했다: "합스부르크 가문의 이해관계와 독일 국민의 이해관계 사이, 그리고 낡은 신앙과 새로운 신앙 사이의 대립은 유혈적 파국으로 이어졌다."</p>
+<p style="font-size: 0.85em; color: #555; margin-top: 6px;">구스타프 프라이탁(G. Freytag), 『독일 삶의 풍경화: 15·16·17세기』(<em>Pictures of German Life in the XVth, XVIth and XVIIth Centuries</em>), 제2판, 1862.</p>
+</td></tr>
+<tr><td style="border: 1px solid #999; padding: 12px;">
+<p>19세기 후반, 가디너는 사건들을 유럽 각국 내에서의 종교적 관용을 위한 투쟁으로 해석했다. 합스부르크 같은 통치자들은 종교적 이견을 용인하지 않아 왕국이 깨어졌고, 반면 프랑스처럼 리슐리외(Richelieu)가 종교적 이견자들에게 종교적 자유를 약속한 곳은 왕국을 온전히 유지했다. 다시 말해, 그는 전쟁 자체가 아니라 당시에 작동하고 있었으며 갈등에 의미를 부여한 과정에 초점을 맞추었다.</p>
+<p style="font-size: 0.85em; color: #555; margin-top: 6px;">S. R. 가디너(S. R. Gardiner), 『30년 전쟁, 1618–1648』(<em>The Thirty Years War, 1618–1648</em>), 제8판, London, Longman, 1889.</p>
+</td></tr>
+<tr><td style="border: 1px solid #999; padding: 12px;">
+<p>1950년대에 C. V. 웨지우드는 거의 모든 전투원이 "정복이나 신앙의 열정보다는 공포에 의해 추동되었다"고 쓰고 있었다. "그들은 평화를 원했고 그것을 확보하기 위해 30년간 싸웠다. 그들은 당시에도, 그리고 그 이후에도, 전쟁이 오직 전쟁만을 낳는다는 것을 배우지 못했다."</p>
+<p style="font-size: 0.85em; color: #555; margin-top: 6px;">C. V. 웨지우드(C. V. Wedgwood), 『30년 전쟁』(<em>The Thirty Years War</em>), London, 1957, p.460.</p>
+</td></tr>
+<tr><td style="border: 1px solid #999; padding: 12px;">
+<p>S. H. 슈타인베르크는 프라이탁에 이의를 제기하며, 30년 전쟁을 "부르봉과 합스부르크 사이의 유럽 패권을 둘러싼 더 큰 투쟁"에서의 한 단계로 제시했는데, 이 투쟁은 1609년부터 1659년까지 지속되었다. "프랑스의 부르봉 정부는 합스부르크의 포위를 깨뜨리기 위해 싸웠다."</p>
+<p style="font-size: 0.85em; color: #555; margin-top: 6px;">S. H. 슈타인베르크(S. H. Steinberg), 『"30년 전쟁"과 유럽 패권 분쟁 1600–1660』(<em>The "Thirty Years War" and the Conflict for European Hegemony 1600–1660</em>), London, Edward Arnold, 1966.</p>
+</td></tr>
+<tr><td style="border: 1px solid #999; padding: 12px;">
+<p>더 최근에 다수의 역사학자들은 30년 전쟁이 17세기 전반기 유럽 대부분에 걸친 "일반위기(general crisis)"의 일부였다고 제안해 왔다. 이 위기는 잇따른 흉작, 경제적 인플레이션, 인구 정체와 감소, 증세와 공공지출에 대한 원망, 대규모 상비군, 관료적 부패, 그리고 유럽 정치체제 내의 정치적 긴장과 주요 갈등으로 이어진 정치적 봉기로 특징지어졌다.</p>
+<p style="font-size: 0.85em; color: #555; margin-top: 6px;">예: 제프리 파커(G. Parker), 『위기의 유럽, 1589–1648』(<em>Europe in Crisis, 1589–1648</em>), Glasgow, Fontana, 1979.</p>
+</td></tr>
+</table>
+<p><strong><span class="page-marker">[p.38]</span> 예시 H: 30년 전쟁 사학사를 위한 맥락 카드</strong></p>
+<table style="width:100%; border-collapse: separate; border-spacing: 10px 8px;">
+<tbody>
+<tr>
+<td style="border: 1px solid #999; padding: 10px; text-align: center; width: 50%;">크림 전쟁 1854</td>
+<td style="border: 1px solid #999; padding: 10px; text-align: center; width: 50%;">이탈리아 통일</td>
+</tr>
+<tr>
+<td style="border: 1px solid #999; padding: 10px; text-align: center;">19세기 민족주의의 대두</td>
+<td style="border: 1px solid #999; padding: 10px; text-align: center;">독일 통일</td>
+</tr>
+<tr>
+<td style="border: 1px solid #999; padding: 10px; text-align: center;">유럽 대부분에서의 의회 성장</td>
+<td style="border: 1px solid #999; padding: 10px; text-align: center;">1866년 오스트리아-프로이센 전쟁</td>
+</tr>
+<tr>
+<td style="border: 1px solid #999; padding: 10px; text-align: center;">19세기 산업화의 성장</td>
+<td style="border: 1px solid #999; padding: 10px; text-align: center;">19세기 도시의 성장</td>
+</tr>
+<tr>
+<td style="border: 1px solid #999; padding: 10px; text-align: center;">19세기 철도의 성장</td>
+<td style="border: 1px solid #999; padding: 10px; text-align: center;">1870년 보불전쟁</td>
+</tr>
+<tr>
+<td style="border: 1px solid #999; padding: 10px; text-align: center;">1880년대의 아프리카 식민지 쟁탈전</td>
+<td style="border: 1px solid #999; padding: 10px; text-align: center;">제1차 세계대전</td>
+</tr>
+<tr>
+<td style="border: 1px solid #999; padding: 10px; text-align: center;">제2차 세계대전</td>
+<td style="border: 1px solid #999; padding: 10px; text-align: center;">원자폭탄</td>
+</tr>
+<tr>
+<td style="border: 1px solid #999; padding: 10px; text-align: center;">국제연합의 형성</td>
+<td style="border: 1px solid #999; padding: 10px; text-align: center;">냉전의 시작</td>
+</tr>
+<tr>
+<td style="border: 1px solid #999; padding: 10px; text-align: center;">유럽 경제 회복을 위한 마셜 플랜</td>
+<td style="border: 1px solid #999; padding: 10px; text-align: center;">NATO와 바르샤바 조약기구 형성</td>
+</tr>
+<tr>
+<td style="border: 1px solid #999; padding: 10px; text-align: center;">한국전쟁 1950–53</td>
+<td style="border: 1px solid #999; padding: 10px; text-align: center;">1940–60년대의 탈식민화</td>
+</tr>
+<tr>
+<td style="border: 1px solid #999; padding: 10px; text-align: center;">유럽경제공동체의 형성과 확대</td>
+<td style="border: 1px solid #999; padding: 10px; text-align: center;">공산주의 진영 내 불만의 증대</td>
+</tr>
+<tr>
+<td style="border: 1px solid #999; padding: 10px; text-align: center;">초강대국 간 데탕트의 출현</td>
+<td style="border: 1px solid #999; padding: 10px; text-align: center;">소련 붕괴와 민주적 전환</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<p><span class="page-marker">[p.39]</span> 예시 H의 맥락 카드는 단지 예시일 뿐이라는 점이 강조되어야 한다. 이 카드들이 모든 맥락을 망라하려는 것은 아니며, 역사 교사들은 자신의 교육과정과 해당 국가의 사정에 맞게 변형하고자 할 것이다. 이것들은 교실에서 사용할 수 있는 "기성품(off-the-shelf)" 자료를 제공하기 위해서가 아니라 접근법을 시범적으로 보여주기 위해 포함된 것이다. 그러나 유사한 접근법은 학생들이 이해하기를 원하는 다른 주제와 테마에도 잘 적용될 것이며, 흥미로운 사학사적 주제를 가진 것들, 예를 들어 십자군, 르네상스, 프랑스혁명 등에도 적용된다.</p>
+<p>나의 세 번째 예는 1917년 10월 25일 밤과 10월 26일 이른 시간에 페트로그라드에서 벌어진 "겨울궁전 습격"이다. 이것을 포함시킨 이유는 주로 두 가지이다. 첫째, 외국 관찰자와 참가자를 포함한 사건 목격자들의 증언이 매우 풍부하며, 그들 사이에 흥미로운 불일치가 존재한다. 둘째, 기자들이 때로는 직접 목격자로서, 또한 궁전이 점령된 직후 현장의 사람들과 대화하는 방식으로도 사건을 보도하고 있었다. 셋째, 외교관들이 자국 외무부에 보고하면서 사건에 자기 나름의 "해석(spin)"을 덧붙이고 있었다. 넷째, 사건에 대한 대중적 인식은 세르게이 에이젠슈타인(Sergei Eisenstein)의 영화 《10월》<sup class="tn">p</sup>, 사회주의 리얼리즘 화가 타마라 다닐렌코(Tamara Danilenko)<sup class="tn">q</sup>의 낭만화된 이미지, 그리고 유리 안넨코프(Yuri Annenkov)가 고안하여 1920년 3주년 기념일에 겨울궁전 앞 광장에서 열린 대규모 기념 연극 공연<sup class="tn">r</sup> 등에 의해 형성되었으며, 어느 정도는 지금도 여전히 그러하다.</p>
+<div class="tn-block">
+<div class="tn-label">역주</div>
+<p><sup class="tn">p</sup> <strong>영화 《10월》(<em>October</em>, 1928)</strong>: 세르게이 에이젠슈타인이 10월 혁명 10주년을 기념하여 제작한 무성영화. 실제 겨울궁전과 페트로그라드 거리에서 수천 명의 엑스트라를 동원하여 촬영했으며, 겨울궁전 습격을 대규모 무력 충돌로 극화했다. "지적 몽타주" 기법의 실험적 활용으로 영화사에서 중요한 위치를 차지하며, 이 영화가 창출한 이미지가 실제 사건 자체보다 더 강력한 역사적 기억으로 정착하여 이후 혁명에 대한 대중적 인식을 지배하게 되었다.</p>
+<p><sup class="tn">q</sup> <strong>타마라 다닐렌코(Tamara Danilenko)</strong>: 1937년 우크라이나 크라스노돈 출생의 소비에트/우크라이나 화가로, 1963년 키예프 미술대학을 졸업하였으며, 콜호즈(집단농장) 생활을 소재로 한 장르화와 초상화, 풍경화를 주로 제작했다. 겨울궁전 습격을 그린 대표적인 사회주의 리얼리즘 회화로는 파벨 소콜로프-스칼랴(Pavel Sokolov-Skalya)의 《겨울궁전 습격, 1917년 10월 25일》(1939, 모스크바 혁명박물관)과 블라디미르 세로프(Vladimir Serov)의 《겨울궁전 함락!》(1954, 국립 트레티야코프 미술관) 등이 있으나, 다닐렌코와 겨울궁전 습격 회화의 연관성은 확인되지 않는다.</p>
+<p><sup class="tn">r</sup> <strong>1920년 《겨울궁전 습격》 재현극</strong>: 1920년 11월 7일, 혁명 3주년 기념일에 겨울궁전 앞 궁전 광장에서 거행된 대규모 야외 재현극이다. 연출은 니콜라이 예브레이노프(Nikolai Evreinov, 1879–1953)가 맡았으며, 유리 안넨코프는 무대디자인을 담당했다. 원문은 안넨코프가 "고안(devised)"한 것으로 기술하고 있으나, 안넨코프의 역할은 무대디자이너였으며 총연출은 예브레이노프가 담당했다. 이 공연은 아지트-드라마(agit-drama)라 불리는 대중 선전극의 일종으로, 실제 사건보다 훨씬 극적인 습격 이미지를 대중에게 확립하는 데 결정적 역할을 했으며, 이 재현극의 사진이 이후 1917년 실제 사건의 역사적 기록으로 오인·유통되기도 했다. 이 재현극에 대한 상세한 자료 및 분석은 Inke Arns, Sylvia Sasse, &amp; Igor Chubarov (Eds.), <em>Nikolai Evreinov &amp; Others: "The Storming of the Winter Palace"</em>, Diaphanes, 2017 참조.</p>
+</div>
+<p>이하에 서술되는 학습 활동은, 학생들이 1917년 러시아 혁명을 막 공부하기 시작하려 하거나, 2월 혁명에 대한 학습을 마치고 같은 해 10월 볼셰비키 쿠데타로 이어지는 사건들을 살펴보고 있거나, 제1차 세계대전 공부의 일환으로 러시아의 전개를 살펴보고 있다고 가정한다. 이 활동들은 순서대로 수행될 경우, 새로운 정보가 특정 역사적 사건을 바라보는 방식을 어떻게 바꾸는지를 이해하고, 특정 사료에 대한 가정을 검증하며, 의미와 해석의 새로운 층위를 도입하고, 역사 탐구 과정 자체에 대해 성찰할 기회를 제공한다. 이 과정은 한 장의 사진으로 시작한다(부록 61쪽, 예시 I 참조). 이 단계에서 학생들에게는 이 사진에 대해 아무것도 알려주지 않으며, 심지어 1917년 10월 겨울궁전 습격을 담은 것으로 표방되는 사진이라는 점조차 알려주지 않는다. 자원이 허락한다면, 소그룹으로 작업하게 하되, 각자 오른쪽에 사진이 있고 왼쪽에 "질문 상자"가 있는 종이를 가지게 한다. 이 상자들은 학생들에게 그들이 볼 수 있는 것을 묘사하고, 무엇이 일어나고 있는 것 같은지 제안하며, 누가 관련되어 있을 수 있는지, 그리고 이것이 사진인지 영화의 한 장면인지(실제로 1920년의 기념식 사진이다) 추측하게 한다.</p>
+<p>이 과정은 약 20분이 소요되어야 한다. 완료 후에는 관찰 결과를 비교하고, 사진에서 충분한 단서를 찾아내어 무엇이 일어나고 있었는지에 대해 적절히 추측했는지를 확인하는 시간이 있어야 한다. 교사가 에이젠슈타인의 영화를 비디오나 DVD로 가지고 있다면, 이 단계에서 아브로라호와 페트로·바울 요새에서 신호탄이 발사되기까지의 대기 기간, 적위대와 수병들이 사관생도 및 여성 "죽음의 대대"와 교전하는 장면, 바리케이드 돌파, 정문 강행 및 궁전 진입 장면 등 10–15분을 보여주면 유용할 것이다.</p>
+<blockquote class="body-quote">
+<p><strong><span class="page-marker">[p.40]</span> 예시 J: 겨울궁전 습격에 대한 목격자 증언</strong></p>
+<table style="width:100%; border-collapse: separate; border-spacing: 0 8px;">
+<tr><td style="border: 1px solid #999; padding: 12px;">
+<p>"잠시 침묵이 흘렀다; 그러다 세 발의 소총 사격이 정적을 깨뜨렸다. 우리는 말없이 서서 반격 사격을 기다렸다; 그러나 유일한 소리는 깨진 유리 파편이 조약돌 위에 카펫처럼 부서지는 소리뿐이었다. 겨울궁전의 창문들이 산산이 부서져 있었다. 갑자기 어둠 속에서 한 수병이 나타났다. '끝났어!' 그가 말했다. '그들이 항복했어.'"</p>
+</td></tr>
+<tr><td style="border: 1px solid #999; padding: 12px;">
+<p>"검은 강물처럼 온 거리를 가득 채우며, 노래도 환호도 없이 우리는 붉은 아치문을 통해 쏟아져 들어갔다. 바로 앞의 남자가 낮은 목소리로 내게 말했다: '조심하시오, 동지들! 저들을 믿지 마시오. 틀림없이 쏠 것이오!' 탁 트인 곳에서 우리는 뛰기 시작했다, 몸을 낮추고 함께 뭉쳐서, 알렉산드르 기둥의 받침대 뒤에 갑자기 모여들었다. '저들이 당신들 중 몇이나 죽였소?' 내가 물었다. '모르오. 한 열 명쯤.…'"</p>
+</td></tr>
+<tr><td style="border: 1px solid #999; padding: 12px;">
+<p>"저녁 6시에 임시정부 각료들에게 즉시 항복할 것을 촉구하는 메시지가 보내졌으나, 답변이 돌아오지 않았고, 예비적 경고로 요새에서 몇 발의 공포탄이 발사되면서 궁전에 대한 공격이 시작되었다. 이어서 모든 방향에서의 대규모 공격이 뒤따랐는데, 장갑차와 기관총이 광장의 아치문 아래에서 궁전을 향해 사격하고, 때때로 요새나 순양함 아브로라의 포가 전반적인 소란을 뚫고 천둥처럼 울리며 작렬했다."</p>
+</td></tr>
+<tr><td style="border: 1px solid #999; padding: 12px;">
+<p>볼로댜 아베르바흐는 겨울궁전에 대한 최후의 공격이 벌어지던 바로 그 무렵인 밤 11시경, 궁전 광장에서 불과 100야드 떨어진 고골 거리를 걸어서 집에 가고 있었다. "거리는 완전히 인적이 끊겼다. 밤은 고요했고 도시는 죽은 것 같았다. 보도 위에서 우리 자신의 발소리의 메아리까지 들을 수 있었다."</p>
+</td></tr>
+<tr><td style="border: 1px solid #999; padding: 12px;">
+<p>"공격자들의 일부는 약탈을 노리고 옆 입구를 통해 침입했다. 처음에 이 무리들은 소규모였고 무장해제당했으나, 수병들의 더 큰 무리, 파블로프스키 연대……무장 노동자들이 뒤이어 들어왔고, 이들이 수비대를 무장해제시킴으로써 상황을 역전시켰다. 수비대는 거의 사격하지 않았으며 부상자는 단 세 명의 사관생도뿐이었다고 전해진다.……새벽 2시 30분에……궁전은 점령되었다."</p>
+</td></tr>
+<tr><td style="border: 1px solid #999; padding: 12px;">
+<p>"약 11시에 우리는 문을 부수고 들어갔고 여러 계단을 하나씩, 또는 작은 무리지어 올라갔다. 계단 꼭대기에 도착했을 때 사관생도들이 우리의 총을 빼앗았다; 그래도 우리 동료들이 조금씩 계속 올라왔고, 마침내 우리 쪽이 다수가 되었다. 그때 우리가 돌아서서 사관생도들의 총을 빼앗았다."</p>
+</td></tr>
+</table>
+</blockquote>
+<p>다음 활동인 예시 J는 학생들에게 무엇이 일어났는지에 대해 보도된 설명 일부를 검토하도록 요구한다. 네 건은 목격자 증언이며, 세 건은 사건이 전개되는 동안 실제로 겨울궁전 앞 광장에 있었던 사람들의 것이다. 이 목격자 중 두 명은 미국 기자였고, 세 번째는 돌격대의 일원인 크론슈타트 해군 기지 출신의 수병이었다. 네 번째 목격자인 볼로댜 아베르바흐는 광장에 있지는 않았지만 겨울궁전 주변 지역이 어떠했는지에 대한 목격자였다. 다섯 번째 서술, 메리엘 뷰캐넌의 것은 전문(傳聞)에 기반한 것으로, 궁전이 공격받고 있을 당시 그녀는 영국 대사관 안에서 영국 외교관, 군사 옵서버 등으로부터 들어오는 보고를 듣고 있었다. 여섯 번째 목격자는 군 구역사령관이 파견한 장교로 궁전의 방어 태세를 보고하도록 보내진 인물이며, "반대편"의 설명을 제공한다.</p>
+<blockquote class="body-quote">
+<p><strong><span class="page-marker">[p.41]</span> 예시 J의 사료:</strong></p>
+<ol>
+<li>베시 비티(Bessie Beatty), 《샌프란시스코 불레틴》 소속 미국 기자이자 목격자.</li>
+<li>존 리드(John Reed), 미국 기자이자 목격자.</li>
+<li>메리엘 뷰캐넌(Meriel Buchanan), 페트로그라드 주재 영국 대사의 딸.</li>
+<li>올란도 피게스(Orlando Figes), 『인민의 비극』(<em>A People's Tragedy</em>), p.493에 인용된 볼로댜 아베르바흐(Volodya Averbakh).</li>
+<li>겨울궁전 습격에 참가한 한 수병.</li>
+<li>공격 당시 궁전에 있던 러시아 장교 라고신(Ragosin).</li>
+</ol>
+</blockquote>
+<p>이 목격자 설명에 접근하는 가장 좋은 방법은 아마도 처음에는 "포스트잇" 메모로 덮어두는 것이다. 그런 다음 인용문이 적힌 종이를 학생들 자신의 생각이 적힌 종이 옆에 나란히 놓고, 한 번에 하나씩 각 인용문을 드러내며 다음으로 넘어가기 전에 검토하게 한다.<sup>1</sup> 사료를 범주화(예: 목격자, 참가자, 전문(傳聞) 등)한 후, 이 "새로운" 정보가 사진에 묘사된 사건을 이해하는 데 어떤 도움이 되는지를 판단해야 한다. 여섯 가지 사료 모두를 드러내고 검토한 후에는, 그것들을 서로 비교해야 한다. 예를 들어, 비티와 리드는 사실상 같은 장소에 거의 같은 시간에 있었지만 그들의 설명에는 약간의 불일치가 있다. 그러나 주된 차이는 아마도 문체와 언어의 차이일 것이다. 리드의 서술이 더 극적이다. 메리엘 뷰캐넌의 설명과 리드 및 비티의 것 사이에는 더 분명한 불일치가 있지만, 뷰캐넌의 설명은 흥미롭게도 트로츠키의 것(예시 K 참조)과 상당히 유사하다. 뷰캐넌의 설명을 볼로댜 아베르바흐의 것과 관련짓기도 어려운데, 아베르바흐는 광장에 가까이 있었음에도 기관총 소리를 듣지도, 장갑차나 군중을 보지도 못하기 때문이다. 수병과 수비대 장교는 비록 반대편에 있었지만, 서로의 증거를 확증하는 것으로 보인다.</p>
+<blockquote>
+<p><sup>1</sup> 이 활동은 Bunyan, S., & Marshall, A. (2001). Let's see what's under the blue square. <em>Teaching History</em>, 102에서 개발된 접근법에 기반한 것이다.</p>
+</blockquote>
+<p>세 번째이자 마지막 활동인 예시 K는 학생들에게, 이 사건들 직후에 글을 쓴 트로츠키와 케렌스키의 설명, 그리고 수십 년 후에 글을 쓴 역사학자들의 설명—학생들과 마찬가지로 매우 유사한 사료와 증거에 의거한—과 자신들의 결론을 비교할 기회를 제공한다.</p>
+<p>현재로서, 이것은 본질적으로 앞서 제시된 세 종류의 관점—관찰 지점(vantage point), 관점(point of view), 역사 해석—을 구별하는 연습이다. 다른 차원을 도입하여 더 넓은 범위의 관점을 소개하는 것도 가능할 것이다. 예를 들어, 예시 K에 다른 나라의 역사학자들이 쓴 논평 발췌문, 케렌스키, 트로츠키, 레닌 등과 동시대인이었던 다른 나라 정치 지도자들의 반응, 그리고 다른 시기에 글을 쓴 역사학자들의 발췌문을 추가할 수 있을 것이다. 또한 목격자에 대한 더 자세한 정보—그곳에 있었던 이유, 정치적 성향 등—를 제공하여 추가적인 해석의 층위를 도입하는 것도 가능할 것이다. 예를 들어, 존 리드는 볼셰비키에 매우 깊이 동조했는데, 이는 그와 아내 루이스 브라이언트를 다룬 영화 《레즈》<sup class="tn">s</sup>에서 분명히 볼 수 있다. 한편, <span class="page-marker">[p.42]</span> 베시 비티는 러시아혁명의 지지자이기는 했지만, 볼셰비키 대의에 대한 헌신은 리드보다 덜했다. 뷰캐넌 양은 그녀의 배경을 감안하면 예상할 수 있듯이, 볼셰비키 대의에 거의 또는 전혀 공감하지 않았다.<sup>1</sup></p>
+<div class="tn-block">
+<div class="tn-label">역주</div>
+<p><sup class="tn">s</sup> <strong>영화 《레즈》(<em>Reds</em>, 1981)</strong>: 워런 비티(Warren Beatty)가 감독·주연한 미국 영화. 미국 기자 존 리드와 그의 아내 루이스 브라이언트의 생애를 다루며, 리드가 러시아혁명을 직접 목격하고 『세계를 뒤흔든 열흘』을 집필하는 과정을 묘사한다. 아카데미상 감독상 등 3개 부문을 수상했다.</p>
+</div>
+<blockquote>
+<p><sup>1</sup> 보다 상세한 내용은 Pitcher, H. (2001). <em>Witnesses of the Russian Revolution</em>. Pimlico의 서장 참조.</p>
+</blockquote>
+<blockquote class="body-quote">
+<p><strong>예시 K: 겨울궁전 습격에 대한 다른 관점들</strong></p>
+<table style="width:100%; border-collapse: separate; border-spacing: 0 8px;">
+<tr><td style="border: 1px solid #999; padding: 12px;">
+<p>"겨울궁전에는 매우 많은 입구가 있어서 적위대는 꽤 쉽게 밀고 들어갈 수 있었다; 복도와 그림 갤러리에서는 몸싸움도, 총격도 없었다. 그들이 겨울궁전을 점령했을 때 사망자는 단 6명이었다."</p>
+<p style="font-size: 0.85em; color: #555; margin-top: 6px;">노먼 스톤(Norman Stone), 영국 역사학자, 《더 타임스》 기고, 1987년 10월 24일.</p>
+</td></tr>
+<tr><td style="border: 1px solid #999; padding: 12px;">
+<p>"도시가 볼셰비키 통제하에 들어가는 데 3일이 걸렸고, 전체 에피소드에서의 전투는 놀라울 정도로 적었다. 사망자는 5명을 넘지 않는 것으로 보인다. 단순한 사실은 임시정부가 동원할 수 있는 군사 자원이 거의 없었다는 것이다. 탈영으로 인해 페트로그라드 주둔군은 충성스러운 소수의 사관생도, 소규모 코사크 부대, 그리고 케렌스키가 그해 초 러시아 민중의 전투 정신의 본보기로 특별 모집한 '아마존(Amazons)'으로 알려진 여성 전투원 대대로 축소되었다. 적위대와 맞닥뜨린 코사크는 탈영했고, 사관생도와 아마존은 저항 시도가 무용할 것이라고 설득당했다. 적위대가 겨울궁전에 접근했을 때 그들은 최소한의 저항에 직면했다. 네바 강에 정박 중이던 순양함 아브로라호가 포성을 울리자—승무원은 이미 소비에트에 대한 지지를 선언한 상태였다—정부의 나머지 구성원들은 자신들의 처지가 절망적임을 확신하게 되었다. 가능한 한 많은 이들이 들키지 않고 건물 밖으로 빠져나왔다."</p>
+<p style="font-size: 0.85em; color: #555; margin-top: 6px;">마이클 린치(Michael Lynch), 『반동과 혁명: 러시아 1881–1924』(<em>Reaction and Revolutions: Russia 1881–1924</em>), 1992, p.94.</p>
+</td></tr>
+<tr><td style="border: 1px solid #999; padding: 12px;">
+<p>"10월의 소수의 현존 사진들은 반란 세력의 규모가 얼마나 작았는지를 분명히 보여준다. 사진 속에는 반쯤 비어 있는 거리에서 소수의 적위대와 수병들이 서성이는 모습이 담겨 있다. 인민혁명의 익숙한 이미지들—거리의 군중, 바리케이드, 전투—은 어디에도 보이지 않았다.……겨울궁전의 바로 인접 지역만이 10월 25일에 심각한 혼란을 겪은 도시의 유일한 부분이었다. 페트로그라드의 나머지 지역에서 일상은 정상적으로 진행되었다. 시가 전차와 택시는 평소처럼 다녔고, 넵스키 대로는 평소의 군중으로 가득했으며, 저녁에는 상점, 식당, 극장, 영화관까지 문을 열었다."</p>
+<p style="font-size: 0.85em; color: #555; margin-top: 6px;">올란도 피게스(Orlando Figes), 『인민의 비극』(<em>A People's Tragedy</em>), 1997.</p>
+</td></tr>
+<tr><td style="border: 1px solid #999; padding: 12px;">
+<p>"겨울궁전에 피신한 각료들은……여성 대대 1개 중대와 사관학교 생도 몇 명에 의해서만 호위되고 있었다.……즉시 항복할 것을 요구하는 메시지가 그들에게 보내졌으나 답변이 없었고, 예비적 경고로 요새에서 몇 발의 공포탄이 발사되면서 궁전에 대한 공격이 시작되었다. 이어서 모든 방향에서의 대규모 공격이 뒤따랐는데, 장갑차와 기관총이 광장의 아치문 아래에서 궁전을 향해 사격하고, 때때로 요새 또는 순양함 아브로라의 포가 전반적인 소란 위로 천둥치며 작렬했다.……여성 군인과 사관생도 모두 용감히 방어했으나 크게 열세였고, 볼셰비키가 한 입구를 확보했을 때……내실 중 하나에 모인 각료들은 항복만이 유일한 희망임을 알았다."</p>
+<p style="font-size: 0.85em; color: #555; margin-top: 6px;">레프 트로츠키(L. D. Trotsky), 『러시아 혁명사』(<em>The History of the Russian Revolution</em>)<sup class="tn">t</sup></p>
+</td></tr>
+<tr><td style="border: 1px solid #999; padding: 12px;">
+<p>"그 밤은 긴장된 기대의 시간이었다. 우리는 전선에서 군대가 도착하기를 기다리고 있었다. 내가 적시에 소집해 둔 부대로, 아침에 맞추어 페트로그라드에 도착할 예정이었다. 그러나 군대 대신 우리가 받은 것은 철도가 방해공작을 당하고 있다는 전보와 전화 메시지뿐이었다. 밤의 시간은 고통스럽게 흘러갔다. 어디에서나 우리가 기대한 증원군은 나타나지 않았다. 코사크 연대와의 끝없는 전화 협상이 이루어졌다. 여러 핑계를 대며 코사크들은 완고히 자기 막사에 머물렀다."</p>
+<p style="font-size: 0.85em; color: #555; margin-top: 6px;">알렉산드르 케렌스키(Aleksandr Kerensky)<sup class="tn">u</sup>, 사회혁명당 지도자이자 1917년 10월에 볼셰비키에 의해 전복된 연립정부의 총리.</p>
+</td></tr>
+</table>
+</blockquote>
+<div class="tn-block">
+<div class="tn-label">역주</div>
+<p><sup class="tn">t</sup> <strong>『러시아 혁명사』(<em>The History of the Russian Revolution</em>)</strong>: 트로츠키가 1929년 소련에서 추방된 뒤 터키 프린키포 섬 망명 중에 집필한 저작이다. 러시아어 원고는 1931–1932년에 영어로 번역·출간되었으며, 2월혁명부터 10월혁명까지의 과정을 당사자의 시점에서 상세히 서술한 것이다.</p>
+<p><sup class="tn">u</sup> <strong>알렉산드르 케렌스키(Aleksandr Kerensky, 1881–1970)</strong>: 러시아의 정치인으로, 1917년 7월부터 10월혁명 때까지 러시아 임시정부의 총리를 역임했다. 볼셰비키 혁명으로 실각한 뒤 프랑스를 거쳐 미국으로 망명하여, 스탠퍼드 대학교 후버 연구소에서 러시아혁명 관련 자료를 정리하며 여생을 보냈다.</p>
+</div>
+<p><span class="page-marker">[p.43]</span> 학생들이 이 일련의 활동을 완료할 때쯤이면, 역사학도가 증거를 교차검토(corroborate)하기 위해 거쳐야 하는 과정, 그리고 궁극적으로 특정 역사적 사건에 대한 특정 관점—이 경우, 소비에트 영화, 그림, 교과서에 수록된 사진으로 대표되는 1917년 10월 25일 밤에 일어난 일에 대한 대중적 관념—이 입증될 수 있는지 여부를 판단하기 위해 거쳐야 하는 과정에 대해 더 명확한 개념을 가지게 될 것이다.</p>
+<hr />
+<h2 id="_13">역사 서사에 다원적 관점 통합하기</h2>
+<p>이 책자의 앞부분에서, 다중관점적 서사란 특정 역사적 설명의 통상적인 "그리고 그 다음에"의 순서에 일련의 "그 사이에"를 추가하는 것이라고 제안된 바 있다. 이는 비교적 접근법을 시사한다. 그러나 서사에 대한 다중관점적 접근법에는 또 다른 차원이 고려되어야 한다: 의사결정이 이루어지고 그에 따라 행동이 취해지는 맥락, 그리고 의사결정자들의 동기가 바로 그것이다. 이를 위해서는 다원적 관점의 두 가지 중요한 구성 요소를 추가로 도입할 필요가 있다. 첫째는 감정이입(empathy)이다. 둘째는 관계적 차원이다. 이는 사람들의 결정과 행동이 객관적 상황만이 아니라 "타자(the other)"—동맹이든 적이든, 지지자든 반대자든, 동료든 이방인이든, 자국민이든 외국인이든—의 예상되는 반응과 의도에 대한 이해와 가정에 의해서도 영향을 받는다는 것을 의미한다.</p>
+<p>이것은 학생들이 역사 해석의 과정을 이해하도록 돕는 것을 포함한다. 역사 해석이란 일정 기간에 걸쳐 무슨 일이 일어나고 있었는지를 파악하기 위해 여러 층위의 증거와 사료를 비판적으로 검토하는 과정이다. 모든 서사에서 첫 번째 층위는 연대기적인 것이다: 무엇이 언제 일어났고 다음에 무엇이 일어났는가. 예시 L이 이를 잘 보여주는데, 1918년 11월 11일 대전을 종식시킨 휴전 서명으로 이어지는 일련의 사건을 다루고 있다. 학교 교과서는 종종 휴전 부분을 간략히 다루고 곧바로 <span class="page-marker">[p.44]</span> 1919년 1월의 파리 평화 회의 심의로 넘어가곤 한다.</p>
+<p>학생들이 역할극에 참여하거나 평화 회의를 본격적으로 시뮬레이션해 볼 여지는 충분히 있다.<sup>1</sup> 다만, 이러한 시뮬레이션이나 역할극이 효과적으로 이루어지려면, 학생들이 사건의 전말뿐 아니라 회의에 참석한 각 당사자의 관점에 관해서도 충분한 배경 지식과 맥락 정보를 미리 갖추고 있어야 한다. 외교 서신과 휴전으로 이어진 협상 과정에 초점을 맞추면 이러한 맥락적 배경을 제공할 수 있다.</p>
+<blockquote>
+<p><sup>1</sup> 션 랭(Sean Lang)의 1919년 파리 평화 회의에 관한 시뮬레이션의 세부 사항은 유럽평의회 웹사이트 중 하나에서 다운로드할 수 있다(http://culture.coe.fr/hist20).</p>
+</blockquote>
+<p>예시 L이 보여주는 것과 같은 플로우차트는 사건의 연대기를 부각시키거나, 이 예시의 경우에는 의사결정과 그 과정에 관여한 다양한 당사자 간의 연결을 드러내는 데 유용한 방법이 될 수 있다. 이것은 동시에 당시 베를린, 파리, 런던, 워싱턴에서 각각 무슨 일이 일어나고 있었는지를 반영하는 병렬 타임라인이기도 하다. 학생들이 교과서, 인터넷, 기타 자료를 활용하여 차트 속 행위 시퀀스에 날짜를 채워 넣도록 한다면, 보다 탐구 중심의 활동으로 전환할 수 있을 것이다.</p>
+<p>두 번째 단계는 카드에 쓰인 맥락 정보를 활용하여(a) 구체적으로 어떤 행동이 왜 취해졌는지, (b) 그 행동이 무엇이었는지, (c) 의사결정자에게 영향을 미친 요인이 무엇이었는지를 학생들이 이해하도록 돕는 카드 분류 활동이다. 이 접근법을 보여주기 위해 일부 카드가 예시 M에 포함되어 있다. 예시 H와 마찬가지로, 이것들은 망라적인 것이 아니다. 교과서와, 대전 및 전후사를 전공하는 역사학자들의 최근 저작에서 발췌한 것이다. 이 자료의 상당 부분은 여러 인터넷 웹사이트에서도 다운로드할 수 있다. 여기서의 목표는 당시 다양한 의사결정자들의 사고와 논리—그들의 가정, 기대, 목표, 동기—에 대한 통찰을 얻는 것이다. 이와 같은 카드 분류 활동은 학생에게 자신의 역사 지식에 대한 주인의식(ownership)을 부여함으로써, 특정 사건이나 전개를 바라보는 대안적 방식을 자유롭게 탐구하고, 정보를 그 중요도에 따라 분류하며, 사료가 제공한 증거에 대해 비판적으로 사고할 수 있게 한다.</p>
+<p>이 일련의 활동 중 마지막 학습 활동은, 학생들이 이 연대기적·맥락적 정보를 활용하여 휴전 서명으로 이어지는 과정에서 다양한 핵심 행위자의 "입장에 서볼" 기회를 제공한다. 이러한 접근법을 흔히 핫시팅이라 부른다. 소그룹으로 작업하면서, 개별 학생이 차례로 핵심 행위자 중 한 명의 역할을 맡고 그룹의 다른 구성원들이 던지는 질문에 답하는 방식이다. 학생들이 이 접근법에 익숙하지 않은 경우, 교사가 먼저 직접 핫 시트에 앉아 시범을 보이는 것이 바람직하다. 학생들은 역할 준비와 핫 시트에 앉은 사람에게 던질 질문을 결정하는 데에도 도움이 필요할 수 있다. 보다 일반적인 교수법의 관점에서 볼 때, 이 활동은 학생들이 자신의 역사 지식을 논거나 주장으로 조직하는 방법과, 활용하는 사료에 대해 적절한 질문을 제기하는 방법을 익히는 데 도움이 된다.</p>
+<blockquote class="body-quote">
+<p><strong><span class="page-marker">[pp.45–46]</span> 예시 L: 1918년 휴전 협상: 연대기</strong></p>
+<table style="width:100%; border-collapse: collapse; font-size: 0.82em; line-height: 1.45;">
+<thead>
+<tr>
+<th style="border: 1px solid #999; padding: 8px; width: 16%; font-size: 1.1em; text-align: center;">전개 상황</th>
+<th style="border: 1px solid #999; padding: 8px; width: 21%; font-size: 1.1em; text-align: center;">워싱턴</th>
+<th style="border: 1px solid #999; padding: 8px; width: 21%; font-size: 1.1em; text-align: center;">베를린</th>
+<th style="border: 1px solid #999; padding: 8px; width: 21%; font-size: 1.1em; text-align: center;">파리</th>
+<th style="border: 1px solid #999; padding: 8px; width: 21%; font-size: 1.1em; text-align: center;">런던</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="border: 1px solid #999; padding: 8px; vertical-align: top;">26.9.18 연합군 합동 공세 개시(Z-Day)</td>
+<td style="border: 1px solid #999; padding: 8px;"></td>
+<td style="border: 1px solid #999; padding: 8px;"></td>
+<td style="border: 1px solid #999; padding: 8px;"></td>
+<td style="border: 1px solid #999; padding: 8px;"></td>
+</tr>
+<tr>
+<td style="border: 1px solid #999; padding: 8px;"></td>
+<td style="border: 1px solid #999; padding: 8px;"></td>
+<td style="border: 1px solid #999; padding: 8px; vertical-align: top;">29.9.18 루덴도르프, 즉각적인 평화 요구를 권고.<br><br>4.10.18 독일 정부, 윌슨 대통령에게 윌슨의 평화 협상 프로그램을 공식 수용하고 즉각적 휴전 주선을 요청하는 각서를 발송.</td>
+<td style="border: 1px solid #999; padding: 8px;"></td>
+<td style="border: 1px solid #999; padding: 8px;"></td>
+</tr>
+<tr>
+<td style="border: 1px solid #999; padding: 8px; vertical-align: top;">5.10.18 영국군 캉브레 진입</td>
+<td style="border: 1px solid #999; padding: 8px;"></td>
+<td style="border: 1px solid #999; padding: 8px;"></td>
+<td style="border: 1px solid #999; padding: 8px;"></td>
+<td style="border: 1px solid #999; padding: 8px;"></td>
+</tr>
+<tr>
+<td style="border: 1px solid #999; padding: 8px;"></td>
+<td style="border: 1px solid #999; padding: 8px; vertical-align: top;">6.10.18 윌슨, 독일 각서를 받고 3가지 질문을 하는 회신 초안 작성. 독일은 14개조에 기초한 협상에 동의하는가? 독일은 연합국 영토에서 즉시 철수하겠는가? 독일 총리는 독일의 정당하게 구성된 권력 당국을 실제로 대표하는가?</td>
+<td style="border: 1px solid #999; padding: 8px;"></td>
+<td colspan="2" style="border: 1px solid #999; padding: 8px; vertical-align: top;">6.10.18 영국, 프랑스, 이탈리아 총리들이 독일의 대(對)윌슨 각서와 그에 대한 윌슨의 응답 소식이 전해졌을 때 파리에서 회동 중이었다. 윌슨과 상의 없이 그들은 휴전이란 군사 전문가들이 조건을 확정해야 하는 군사적 합의임을 지적하는 각서를 윌슨에게 작성했다. 그들은 또한 점령 영토의 철수만으로는 독일이 적대행위를 재개하지 않으리라는 보장이 되지 않는다고 판단했다.</td>
+</tr>
+<tr>
+<td style="border: 1px solid #999; padding: 8px; vertical-align: top;">10.10.18 다수의 미국인과 영국인을 태우고 있던 렌스터호가 독일 어뢰 2발에 피격되어 침몰, 527명 사망. 미국과 영국의 여론에 큰 영향을 미침.</td>
+<td style="border: 1px solid #999; padding: 8px;"></td>
+<td style="border: 1px solid #999; padding: 8px;"></td>
+<td style="border: 1px solid #999; padding: 8px;"></td>
+<td style="border: 1px solid #999; padding: 8px;"></td>
+</tr>
+<tr>
+<td style="border: 1px solid #999; padding: 8px;"></td>
+<td style="border: 1px solid #999; padding: 8px;"></td>
+<td style="border: 1px solid #999; padding: 8px; vertical-align: top;">12.10.18 베를린, 윌슨의 3가지 질문 모두에 "예"로 응답. 다만 14개조가 협상의 기초가 아닌 협상의 전제 조건으로 취급되는 데에 불만을 표시.</td>
+<td style="border: 1px solid #999; padding: 8px;"></td>
+<td style="border: 1px solid #999; padding: 8px;"></td>
+</tr>
+<tr>
+<td style="border: 1px solid #999; padding: 8px;"></td>
+<td style="border: 1px solid #999; padding: 8px; vertical-align: top;">14.10.18 윌슨, 제2차 독일 각서에 대한 응답 초안 작성. 더 많은 선박이 침몰하면 연합국은 휴전을 고려하지 않을 것이며, 휴전 조건은 군사 전문가들이 정해야 하고 "현재 전장에서의 미국과 연합국의 군사적 우위를 유지"하는 것이어야 한다고 경고.</td>
+<td style="border: 1px solid #999; padding: 8px;"></td>
+<td style="border: 1px solid #999; padding: 8px;"></td>
+<td style="border: 1px solid #999; padding: 8px;"></td>
+</tr>
+<tr>
+<td style="border: 1px solid #999; padding: 8px; vertical-align: top;">17.10.18 영국군 릴(Lille)과 두에(Douai) 진입</td>
+<td style="border: 1px solid #999; padding: 8px;"></td>
+<td style="border: 1px solid #999; padding: 8px;"></td>
+<td style="border: 1px solid #999; padding: 8px;"></td>
+<td style="border: 1px solid #999; padding: 8px;"></td>
+</tr>
+<tr>
+<td style="border: 1px solid #999; padding: 8px;"></td>
+<td style="border: 1px solid #999; padding: 8px;"></td>
+<td style="border: 1px solid #999; padding: 8px; vertical-align: top;">20.10.18 독일 정부, 여객선에 대한 어뢰 공격 중단을 선언하고 연합국 군사 고문이 휴전 조건을 결정해야 한다는 원칙을 수용하는 제3차 각서 발송.</td>
+<td style="border: 1px solid #999; padding: 8px;"></td>
+<td style="border: 1px solid #999; padding: 8px;"></td>
+</tr>
+<tr>
+<td style="border: 1px solid #999; padding: 8px;"></td>
+<td style="border: 1px solid #999; padding: 8px; vertical-align: top;">23.10.18 윌슨, 독일 정부에 보내는 제3차 각서 초안 작성. 항복, 독일 내 헌법적 변화, 14개조에 기초한 평화, 연합국 군사 전문가가 정한 휴전 조건을 요구. 독일 정부에 먼저 발송한 뒤 연합국 정부에도 전달될 것.</td>
+<td style="border: 1px solid #999; padding: 8px;"></td>
+<td style="border: 1px solid #999; padding: 8px; vertical-align: top;">클레망소, 장군들에게 휴전 조건 초안 작성에 착수하도록 요청.</td>
+<td style="border: 1px solid #999; padding: 8px; vertical-align: top;">로이드 조지와 그의 정부, 14개조가 협상 평화의 기초가 되는 것에 우려를 표명. 특히 해양의 자유에 관한 제2조와 윌슨의 각서에 알자스-로렌에 대한 언급이 없는 점을 문제시.</td>
+</tr>
+<tr>
+<td style="border: 1px solid #999; padding: 8px;"></td>
+<td style="border: 1px solid #999; padding: 8px;"></td>
+<td style="border: 1px solid #999; padding: 8px; vertical-align: top;">27.10.18 독일 정부, 윌슨의 조건을 수용하고 "정의로운 평화를 향한 첫 걸음이 될 휴전 제안을 기다린다"고 발표.</td>
+<td colspan="2" style="border: 1px solid #999; padding: 8px; vertical-align: top;">25.10.18 포슈, 연합군 최고사령관들을 소집하여 독일의 적대행위 재개를 방지하고 전쟁 배상금이 프랑스에 지급되도록 하기 위해 라인강 좌안 점령 계획을 논의. 휴전 조건 초안을 작성하고, 이를 윌슨에게 전신으로 전달.</td>
+</tr>
+<tr>
+<td style="border: 1px solid #999; padding: 8px;"></td>
+<td style="border: 1px solid #999; padding: 8px; vertical-align: top;">5.11.18 윌슨, 휴전 조건을 베를린에 발송.</td>
+<td style="border: 1px solid #999; padding: 8px;"></td>
+<td style="border: 1px solid #999; padding: 8px;"></td>
+<td style="border: 1px solid #999; padding: 8px;"></td>
+</tr>
+</tbody>
+</table>
+<p><strong><span class="page-marker">[p.47]</span> 예시 M: 전후 처리에 대한 목표와 의도</strong></p>
+<div style="border: 1px solid #999; padding: 10px 14px; margin: 8px 0; background: #fafafa; line-height: 1.55; letter-spacing: -0.02em;">
+<p style="margin: 0 0 4px 0;"><strong>우드로 윌슨 대통령의 14개조:</strong></p>
+<p style="margin: 0;">1. 국가 간 비밀 거래나 조약이 있어서는 안 된다.<br>
+2. 평시와 전시를 불문하고 해양의 자유가 보장되어야 한다.<br>
+3. 국가 간 자유 무역이 보장되어야 한다.<br>
+4. 군비는 국내 안보에 적절한 수준으로만 축소되어야 한다.<br>
+5. 식민지 민족들의 미래 결정에 관한 주장에 식민지 정부에 부여되는 것과 동등한 비중이 주어져야 한다.<br>
+6. 러시아 영토를 점령 중인 모든 국가의 군대가 철수해야 한다.<br>
+7. 독일 점령군이 벨기에를 떠나야 한다.<br>
+8. 프랑스를 점령 중인 독일군이 떠나야 하며 알자스-로렌은 프랑스에 반환되어야 한다.<br>
+9. 이탈리아 국경은 민족적 경계에 따라 조정되어야 한다.<br>
+10. 오스트리아-헝가리 민족들에게 자결권이 부여되어야 한다.<br>
+11. 점령군은 발칸을 떠나야 한다.<br>
+12. 오스만 제국의 비터키계 민족들에게 자결권이 부여되어야 한다.<br>
+13. 해양 접근권을 가진 독립 폴란드가 수립되어야 한다.<br>
+14. 모든 국가의 평화와 정치적 독립을 보장하기 위해 국제연맹이 구성되어야 한다.</p>
+</div>
+<div style="border: 1px solid #999; padding: 10px 14px; margin: 8px 0; background: #fafafa; line-height: 1.55; letter-spacing: -0.02em;">
+<p style="margin: 0 0 4px 0;"><strong>영국 총리 데이비드 로이드 조지, 1918년 1월 5일 연설에서 평화에 대한 목표를 밝힘:</strong></p>
+<p style="margin: 0;">우리는 독일 국민에 대한 침략 전쟁을 벌이고 있는 것이 아닙니다. 오스트리아-헝가리를 파괴하거나, 터키의 수도나 소아시아와 트라키아의 풍요롭고 저명한 영토를 빼앗으려고 싸우는 것도 아닙니다.……우리는 1871년의 대과오를 재검토하라는 프랑스 민주주의의 요구에 죽음을 불사하며 함께 서고자 합니다.……이 전쟁에 참전한 것이 단지 독일의 제국 헌법을 변경하거나 파괴하기 위해서만도 아닙니다. 비록 우리는 그 군국주의적이고 전제적인 헌법을 20세기의 위험한 시대착오로 보고 있지만 말입니다. 우리가 보기에, 독일이 진정한 민주 헌법을 채택한다면 그것이야말로 오래된 군사적 지배의 정신이 이 전쟁과 함께 진정으로 소멸했다는 가장 설득력 있는 증거일 것이며, 독일과 폭넓은 민주적 평화를 맺는 일을 훨씬 수월하게 해줄 것입니다. 그러나 결국 그것은 독일 국민이 결정할 문제입니다.<br>
+첫째 요건은……벨기에 독립의 정치적·영토적·경제적 완전 회복과, 도시 및 지방의 황폐화에 대한 최대한의 배상입니다. 그 다음은 세르비아, 몬테네그로, 그리고 프랑스·이탈리아·루마니아의 점령 지역 회복입니다. 외국 군대의 완전한 철수와 부정의에 대한 배상은 항구적 평화의 근본 조건입니다. 우리는 1871년의 대과오—즉 알자스-로렌의 프랑스 반환—를 재검토하라는 프랑스 민주주의의 요구에 죽음을 불사하며 함께 서고자 합니다.<br>
+그러나 우리는, 진정으로 폴란드의 일부가 되기를 원하는 모든 폴란드계 주민을 포괄하는 독립 폴란드 수립이 서유럽의 안정을 위해 긴급히 필요하다고 믿습니다.……<br>
+우리는 전쟁의 대안으로서 국제 분쟁을 해결할 국제기구 설립이라는 위대한 시도가 이루어져야 한다고 확신합니다.</p>
+</div>
+<div style="border: 1px solid #999; padding: 10px 14px; margin: 8px 0; background: #fafafa; line-height: 1.55; letter-spacing: -0.02em;">
+<p style="margin: 0 0 4px 0;"><strong>독일의 전쟁 목표</strong>는 벨기에가 침공된 1914년 9월 2일에 작성된 비망록에 명시되어 있었다. 독일 역사학자 프리츠 피셔에 따르면, 독일의 전쟁 목표는 1914년부터 1918년 가을까지 사실상 변하지 않았다:</p>
+<p style="margin: 0;">유럽 국가들의 연합이 창설되어 베를린에서 통치될 것이다. 영국의 세계 정세 지배력은 종식될 것이다. 폴란드와 발트해 연안국들은 독일에 합병될 것이다. 벨라루스와 우크라이나는 독립을 부여받을 것이다. 독일은 벨기에, 룩셈부르크, 불로뉴까지의 프랑스 해안에 대한 군사적 통제권을 유지할 것이다. 프랑스 식민지는 독일에 이양될 것이다.</p>
+</div>
+<div style="border: 1px solid #999; padding: 10px 14px; margin: 8px 0; background: #fafafa; line-height: 1.55; letter-spacing: -0.02em;">
+<p style="margin: 0 0 4px 0;"><strong>프랑스 총리 조르주 클레망소, 1918년 9월 17일 프랑스 상원 연설에서 평화에 대한 자신의 의도를 매우 분명히 밝힘:</strong></p>
+<p style="margin: 0;">평화는 군사적 결정으로 이룰 수 없다고들 합니다.……그것은 독일인들이 평화로운 유럽에 전쟁의 참화를 퍼부었을 때 한 말이 아니었습니다.……가장 끔찍한, 민족 대 민족의 결산이 열렸습니다. 반드시 치러야 할 대가입니다.</p>
+</div>
+<p style="margin-top: 28px;"><strong><span class="page-marker">[p.48]</span> 예시 M: 휴전 제안에 대한 반응과 대응</strong></p>
+<div style="border: 1px solid #999; padding: 10px 14px; margin: 8px 0; background: #fafafa; line-height: 1.55; letter-spacing: -0.02em;">
+<p style="margin:0;">9월 28일, 루덴도르프 장군은 독일 총리 헤르틀링 백작에게 군사 상황이 너무나 나빠서 즉각적인 평화 요구가 필요하다고 통보했다. 그는 "군대를 온전히 유지하고 싶다, 군대에 숨 돌릴 공간이 필요하다"고 결론지었다. 헤르틀링은 황제에게 보고하고 총리직에서 사임했다. 이후 10월 1일, 루덴도르프는 자신의 고위 장교들에게 이유를 더 자세히 설명했고, 폰 토이어 대령이 이를 기록했다. 루덴도르프는 '전쟁에서 더 이상 승리할 수 없으며, 피할 수 없는 확실한 패배가 기다리고 있다'고 설명했다. 불가리아는 이미 잃었다. 이미 힘이 다한 오스트리아와 터키도 곧 무너질 것이었다. 불행히도 독일 자체 군대 역시 스파르타쿠스-사회주의 사상의 독에 심하게 오염되었으며, 병사들은 더 이상 신뢰할 수 없다고 그는 말했다. 8월 8일 이후로 상황은 급속히 악화되었다. 그 결과, 일부 부대의 신뢰성이 워낙 떨어져 전선에서 신속히 후퇴시켜야 했다.……믿을 수 없는 사단들로는 더 이상 작전을 수행할 수 없다고 그는 말했다.……따라서 가까운 장래에 적이 대승을 거두어 대규모 돌파를 달성하리라는 것은 충분히 예견할 수 있다고 그는 이어 말했다. 그렇게 되면 서부전선군은 최후의 거점을 잃고 라인강 너머로 완전히 와해된 채 퇴각하면서 독일 본토에 혁명을 불러일으킬 것이었다. 3일 후 새 독일 총리 막스 폰 바덴 왕자가 윌슨 대통령에게 휴전을 요청하는 첫 번째 독일 각서를 보냈다.</p>
+</div>
+<div style="border: 1px solid #999; padding: 10px 14px; margin: 8px 0; background: #fafafa; line-height: 1.55; letter-spacing: -0.02em;">
+<p style="margin:0;">윌슨 대통령이 첫 번째 독일 각서를 받았을 때, 개인 고문인 하우스 대령은 독일의 요청을 거부하라고 조언하며 이렇게 말했다: "[마셜] 포슈가 서부에서 강타하고 당신이 외교적 압박을 한층 강화하고 있으니, 전쟁이 연말까지 끝날 가능성도 충분하다." 하우스는 또한 각서 접수만 확인하는 답신을 보낸 뒤 추가 대응 전에 동맹국들과 협의하라고 조언했다. 그러나 윌슨은 독일 각서가 너무 모호해서 동맹국과 협의할 명분이 되지 않는다며, 일련의 질문으로 각서에 대응하겠다고 했다. "그것은 회신이 아니라", 그는 말했다, "탐문일 뿐이다."</p>
+</div>
+<div style="border: 1px solid #999; padding: 10px 14px; margin: 8px 0; background: #fafafa; line-height: 1.55; letter-spacing: -0.02em;">
+<p style="margin:0;">로이드 조지와 정부 고문단이 독일 각서와 윌슨의 회신 소식을 들었을 때, 분노했다고 전해진다. 독일 각서가 독일군이 시간을 벌어 새 방어선으로 물러나게 하려는 술책이라고 보았고, 윌슨이 사전 협의를 하지 않은 점에 분개했으며, 14개조 일부, 특히 해양의 자유 조항이 협상 평화의 기초가 되는 것을 우려했다. 클레망소는 윌슨의 회신 어조에 비교적 만족했는데, 연합국에 아무런 의무도 지우지 않으면서 독일은 현재 점령 중인 영토를 철수해야 했기 때문이다. 그러나 양측은 공동으로 윌슨에게 서한을 보내어, 독일군이 새 진지를 구축하여 전쟁을 계속하는 것을 막을 군사적 보장이 없다는 점을 비판했다. 또한 윌슨에게 파리 논의에 참가할 개인 특사를 보내달라고 요청했다. 아울러 휴전 조건은 군사 전문가가 확정해야 한다는 점도 지적했다. 포슈 총사령관 휘하의 연합군 사령관들에게 휴전 조건 초안 작성을 요청했다.</p>
+</div>
+<div style="border: 1px solid #999; padding: 10px 14px; margin: 8px 0; background: #fafafa; line-height: 1.55; letter-spacing: -0.02em;">
+<p style="margin:0;">윌슨은 연합국 지도자들이 자신과 협의 없이 휴전 조건 작성에 착수한 데 "매우 충격받았다"고 전해지며, 하우스 대령에게 항의했다. 한편 윌슨은 독일 각서에 대한 자신의 회신을 미국 언론에 공개한 뒤, 독일에 충분히 강경하지 않다며 공화당 반대파의 공격을 받고 있었다. 반대파는 무조건 항복을 원했으며, 전 대통령 시어도어 루스벨트의 말처럼, "휴전은 타자기가 아닌 기관총으로 쟁취해야 한다."</p>
+</div>
+<div style="border: 1px solid #999; padding: 10px 14px; margin: 8px 0; background: #fafafa; line-height: 1.55; letter-spacing: -0.02em;">
+<p style="margin:0;">베를린에서는 윌슨의 회신을 받고 어느 정도 만족과 안도가 있었다. 그들은 14개조가 협상 가능한 논의의 기초이고 점령 영토 철수에 대한 시간표가 제시되지 않았으므로 시간을 벌 수 있을 것으로 판단했다. 따라서 제2차 각서에서 긍정적으로 대응하기로 했다. 다만 독일 최고사령부 일부에서는 전선이 아직 유지되고 있는데 휴전 요청이 너무 이르지 않았나 하는 의문이 일기 시작했다. 한편 모든 전선에서 전투가 계속되고 있었다.</p>
+</div>
+<div style="border: 1px solid #999; padding: 10px 14px; margin: 8px 0; background: #fafafa; line-height: 1.55; letter-spacing: -0.02em;">
+<p style="margin:0;">렌스터호 침몰로 수많은 미국과 영국 민간인이 사망하면서 미국 내 분노가 일었고, 공화당 반대파는 대통령의 접근법을 한층 더 비판했다. 11월 5일 의회 선거를 앞둔 윌슨으로서는 국내 여론을 무시할 처지가 아니었다. 휴전 조건은 군사 전문가가 정해야 하며 아무런 보장 없이 점령 영토만 철수하는 것으로는 부족하다는 동맹국들의 압력도 받고 있었다. 이러한 이유로, 제2차 독일 각서에 대한 윌슨의 회신은 한층 강경한 노선을 취했다. 윌슨은 또한 하우스 대령을 개인 대표로 파리에 보내 동맹국들과의 관계를 개선하기로 했다. 그러나 베를린에 보내는 제2차 각서를 작성하면서도, 여전히 동맹국들과 협의하지 않았다.</p>
+</div>
+<div style="border: 1px solid #999; padding: 10px 14px; margin: 8px 0; background: #fafafa; line-height: 1.55; letter-spacing: -0.02em;">
+<p style="margin:0;">윌슨의 제2차 회신은 베를린에 당혹감을 안겼다. 정치 고문들은 기동의 여지가 거의 없다고 보았고, 군 고위 참모진은 의견이 갈렸다. 루덴도르프는 가을이 깊어지고 날씨 변화로 연합국 공세가 둔화되면서 점점 낙관적으로 변해갔다. 그의 조언은 "휴전 협상을 계속 진행하되……적대행위 재개를 불가능하게 만드는 조건은 수용하지 말라"는 것이었다. 그러나 전선에 더 가까이 있던 장군들은 그런 낙관에 근거가 없으며 독일군이 대규모로 항복하고 있다고 보고했다. 비관적인 견해가 우세해져, 제3차 독일 각서를 작성하여 윌슨에게 발송했다.</p>
+</div>
+<div style="border: 1px solid #999; padding: 10px 14px; margin: 8px 0; background: #fafafa; line-height: 1.55; letter-spacing: -0.02em;">
+<p style="margin:0;">윌슨은 내각 회의—휴전 문제에 관해 내각과 처음으로 협의한 자리—를 거친 뒤 베를린에 대한 제3차 회신을 작성했다. 공화당 반대파가 독일에 대한 조건이 미흡하다고 공개 비판하고 있었고 선거가 더욱 다가오고 있었기에 즉각 대응이 필요했다. 각서에서 윌슨은 독일과의 모든 서신을 연합국 정부들에 전달하고 공개할 것이며, 연합국이 14개조를 기초로 평화를 협상할 준비가 되었다면 군사 고문들에게 휴전 조건 제출을 요청하겠다고 제안했다. 한 각료는 동맹국들의 동의 없이 서신을 공개하면 강압으로 비칠 수 있다고 지적했다. 윌슨은 강압이 필요하다고 답했다.</p>
+</div>
+<div style="border: 1px solid #999; padding: 10px 14px; margin: 8px 0; background: #fafafa; line-height: 1.55; letter-spacing: -0.02em;">
+<p style="margin:0;">베를린에서 루덴도르프와 힌덴부르크는 독일 언론에 윌슨의 최신 메시지가 "어떤 군인에게도 수용 불가능하며……" [그리고] "전투를 전력을 다해 계속해야 한다"는 내용의 성명을 발표했다. 황제는 루덴도르프의 사임을 요구했고, 힌덴부르크는 그대로 직위에 남았다. 한편 독일 총리는 윌슨에게 "독일 정부는 휴전을 위한 제안을 기다리는 것이지, 항복 제안을 기다리는 것이 아니다"라고 회신할 것을 제안했다. 그러나 독일 정부는 이를 수용하지 않았다. 사회민주당의 필리프 샤이데만(후에 바이마르 공화국의 독일 총리)은 그러한 회신은 받아들일 수 없으며, 윌슨이 그러한 답변을 받으면 협상을 중단할 것이라고 매우 분명히 했다.</p>
+</div>
+<div style="border: 1px solid #999; padding: 10px 14px; margin: 8px 0; background: #fafafa; line-height: 1.55; letter-spacing: -0.02em;">
+<p style="margin:0;">파리에서 열린 연합국 최고전쟁회의에서는 독일이 야기한 파괴에 대한 배상 문제, 그리고 14개조 중 일부 조항—특히 해양의 자유—의 희석 문제에 논의가 집중되었다. 결국 하우스 대령이 대통령을 대신하여 해양의 자유 원칙은 수용하되 전시 봉쇄와 같이 적용될 수 없는 특정 상황이 있음을 인정하는 타협안을 수용했다.</p>
+</div>
+</blockquote>
+<p><span class="page-marker">[p.49]</span> 예시 M에서 볼 수 있듯이, 여기에 제공되는 맥락적 정보에는 두 가지 층위가 있다. 첫째는 각 정부의 목표와 의도를 개관하는 정보로, 윌슨의 14개조, 독일 정부의 전쟁 목표, 영토 문제 해결에 대한 영국 정부의 관심, 배상과 독일의 적대행위 재개 방지에 대한 프랑스 정부의 관심이 이에 해당한다. <span class="page-marker">[p.50]</span> 그러나 학생들이 이해해야 할 중요한 점이 또 있다. 관련 정부들은 서로의 의도와 계획에 대해 제한적이고 불완전한 정보만을 가진 채, 끊임없이 변화하는 상황에 대응하고 있었다는 것이다. 예를 들어, 윌슨의 입장은 국내 정치적 압력과 동맹국들의 압력에 따라 변화했고, 독일 정부의 입장은 전선의 상황과 국내 정치의 전개에 따라 변화하고 있었다. 다중관점적 접근법의 이점 중 하나는, 50년, 100년, 150년 전의 사건을 서술할 때 교과서 저자가 자칫 부여하기 쉬운 불가피성의 인상에 대항하는 데 도움이 된다는 것이다.</p>
+<p>카드에 제공된 정보는 상당히 상세하다. 시간적 여유가 있다면, 목표와 의도에 관한 정보를 추출할 수 있는 보다 완전한 원본 문서를 학생들에게 제공하거나, 관련 인터넷 웹사이트에서 직접 자료를 찾게 함으로써 탐구 기반 활동을 한층 강화할 수 있을 것이다. 시간이 충분하지 않다면, 쌍이나 소그룹으로 작업하는 학생들에게 "목표와 의도" 카드와 "반응과 대응" 카드를 예시 L에 제시된 타임라인의 특정 결정 및 행동과 연결하도록 요청해야 한다.</p>
+<hr />
+<h2 id="_14">역사 해석의 폭과 범위 확장하기</h2>
+<p>앞서 다원적 관점은 더 완전하고 공정한 그림을 목표로 한다는 점을 관찰하였다. 여기서는 이것이 어떻게 이루어질 수 있는지를 사례로 보여주기 위해 두 가지 주제를 선택하였다. 첫 번째는 유럽 대부분의 역사교육과정과 교과서에서 찾을 수 있는 주제인 십자군이다.</p>
+<p>일반적으로, 이 주제는 거의 전적으로 십자군의 관점에서 다루어지며, 살라딘(살라흐 앗-딘 유수프, Salah al-Din Yūsuf)이나 쟁기(이마드 앗-딘 쟁기, Imād al-Din Zangī) 같은 지도자에 대한 간헐적 언급과 이슬람의 기원과 신앙에 관한 짧은 섹션이 교과서에 있을 수 있다. 그러나 이제 그 시대 아랍 연대기 작가들의 작품 다수가 다양한 유럽 언어로 번역되었으며, 그 서술에 크게 의존하는 여러 저서도 출판되었다.<sup>1</sup> 이러한 자원과 주로 기독교 사료에 의존하는 기존의 전통적 자료를 함께 활용하면, 십자군 시기의 핵심 사건들을 골라 기독교와 아랍 연대기 작가 양측이 이를 어떻게 인식했는지를 비교할 수 있다. 예를 들어, 1099년 예루살렘 탈환, 1187년 하틴 전투, 1189–91년 아크레 포위전, 1289년 트리폴리 함락 등이 그러하다.</p>
+<blockquote>
+<p><sup>1</sup> 예를 들어, Maalouf, A. (1984). <em>The Crusades through Arab Eyes</em> (J. Rothschild, Trans.). Al Saqi Books.</p>
+</blockquote>
+<p>그러나 프랑크족과 무슬림이 특정 사건을 각각 어떻게 서술했는지를 비교하는 것으로 시작하기보다는, 양측이 서로를 어떻게 보았고, 그러한 인식이 직접적 경험과 변화하는 사건에 따라 어떻게 달라졌는지를 살펴보는 것이 이 주제의 출발점으로서 훨씬 타당하다. <span class="page-marker">[p.51]</span> 아랍 연대기 작가들의 주요 저작은 기독교 침략자들—아랍인들이 흔히 프랑크족이라 불렀던—에 대한 무슬림의 관점을 흥미롭고 때로는 대조적으로 보여준다(예시 N 참조). 많은 현대 교과서에 이슬람과 무슬림에 대한 기독교도 인식의 일부 사례가 포함되어 있으므로, 지면 관계상 여기서는 영국 교과서에서 몇 가지만 가져왔다. 다른 나라의 독자라면 여기에 추가할 만한 자국의 사례를 갖고 있을 것이다. 기독교도나 무슬림과 직접 함께 살았던 교양 있는 관찰자들 사이에서도 당시 만연했던, 상호 간 오해를 반영하는 인용문을 포함하는 것이 유용할 수 있다. 예를 들어, <em>Gesta Francorum</em>의 익명의 저자는 남부 이탈리아 출신으로 무슬림과의 의사소통이 일상적이었고 터키인에 맞서 3년간 싸웠다. 그럼에도 그는—이슬람에서 그리스도가 예언자로 숭경됨에도 불구하고—무슬림을 "그리스도의 적들"로 묘사하고, 셀주크 지도자 케르보가가 무함마드와 모든 신에게 맹세하는 것처럼 상상하여 마치 그가 다신교도인 것처럼 묘사한다. 마찬가지로, 사료 K에서 볼 수 있듯이 예루살렘에서 수년간 무슬림 사이에서 살았던 샤르트르의 풀셰(Fulcher of Chartres)도 무슬림이 무함마드를 숭배하고 그의 모습으로 만든 우상을 경배한다고 잘못 추정한다.</p>
+<p>아울러 세 가지 사료도 포함했다. 사료 N은 시리아의 에미르 우사마 이븐 문키드(Usāma Ibn Munqidh)의 글이고, 사료 P는 현대 영국 역사학자 J. M. 로버츠(J. M. Roberts)의 것이며, 사료 O는 제1차 십자군에 참가한 뒤 27년간 예루살렘에 살았던 샤르트르의 풀셰의 것이다. 이 사료들은 특히 1099년 예루살렘 탈환 이후 일부 십자군이 정착하면서 현지의 생활양식과 태도를 어느 정도 받아들인 양상을 보여준다. 이런 점에서, 1099년 예루살렘 탈환 당시 현지에 있었고 이후 27년간 그곳에서 살았던 십자군 기사 풀셰의 두 인용문(사료 K와 L)을 대조하여 견해의 변화를 살펴보는 것이 특히 흥미롭다.</p>
+<p>여기서 제안하는 접근법은 세 종류의 카드군(群)을 갖추는 것이다. 십자군에 대한 무슬림의 인식을 예시하는 사료, 무슬림에 대한 십자군의 인식을 예시하는 사료, 그리고 양측 간 상호작용과 상호 영향, 심지어는 통합의 증거를 제공하는 사료(사료 I와 J에서처럼)이다. 개별적으로 또는 짝끼리 작업하면서, 학생들은 정보를 수집하는 데 그치지 않고 "적극적 읽기 전략"을 사용하여 각 집단이 상대를 어떻게 보았는지의 상을 구축하고, 각 공동체 내 개별 사료 간 관점의 차이를 식별하며, 사료가 작성된 대략적 시기를 활용하여 인식이 시간에 따라 어떻게 변화했을 수 있는지를 분석해야 한다.</p>
+<p>이 과정에서는 각 사료의 구체적 내용뿐만 아니라 사용된 언어도 분석해야 한다. 즉, 고정관념의 사례, 소문이나 단일 사례에 기반하여 공동체 전체를 일반화하는 진술 등을 찾는 것이다. 여기서 "적극적 읽기"란 다른 색상의 형광펜이나 색연필을 사용하여 구문과 단어에 밑줄을 긋거나 강조하면서 다음을 식별하는 것을 뜻한다: 증거에 의해 검증 가능한 진술, 고정관념적 사고의 예, 풍문에 기반한 일반화, 그리고 "타자(the other)"에게 공정하려고 노력하는 글쓴이의 예.</p>
+<blockquote class="body-quote">
+<p><strong><span class="page-marker">[p.52]</span> 예시 N: 십자군 단원 소개</strong></p>
+<p><strong>십자군에 대한 무슬림의 인식:</strong></p>
+<div style="border: 1px solid #999; padding: 10px 14px; margin: 8px 0; background: #fafafa; line-height: 1.55; letter-spacing: -0.02em;">
+<p style="margin: 0 0 4px 0;"><strong>사료 A:</strong></p>
+<p style="margin: 0;">"북방 사분면의 사람들에 관해 말하자면, 북쪽으로 나아갈수록 천정에서 태양이 먼 이들로, 슬라브족, 프랑크족, 그리고 그 이웃 민족들이 그러하다. 태양의 힘은 그들과의 거리 때문에 약해진다. 추위와 습기가 그 지역에 만연하며, 눈과 얼음이 끝없이 이어진다. 온화한 기질이 그들에게는 부족하다. 몸은 크고, 본성은 거칠며, 예법은 조잡하고, 이해력은 둔하며, 혀는 무겁다. 피부색이 지나치게 하얘서 푸르스름해 보인다.……눈도 푸르러 피부색과 어울린다. 머리카락은 습한 안개 때문에 축 늘어지고 붉은빛을 띤다. 종교적 신앙에 견고함이 없으니, 이는 추위의 속성과 온기의 결핍 때문이다. 북쪽으로 갈수록 더 어리석고, 거칠고, 야만적이 된다."</p>
+<p style="margin: 4px 0 0 0; font-size: 0.9em; color: #555;">10세기에 글을 쓴 학자 알-마수디(Al-Mas'ūdī). C. Pellat 프랑스어 번역, Paris, 1971.</p>
+</div>
+<div style="border: 1px solid #999; padding: 10px 14px; margin: 8px 0; background: #fafafa; line-height: 1.55; letter-spacing: -0.02em;">
+<p style="margin: 0 0 4px 0;"><strong>사료 B:</strong></p>
+<p style="margin: 0;">프랑크족에 대해 잘 아는 이들은 모두 그들을 용기와 전투 열정에서만 뛰어나고 그 외에는 아무것도 아닌 야수로 보았다. 동물이 힘과 공격성에서만 뛰어난 것과 마찬가지였다.</p>
+<p style="margin: 4px 0 0 0; font-size: 0.9em; color: #555;">에미르 우사마 이븐 문키드, 12세기의 작가이자 외교관. 『십자군 시대의 아랍-시리아 귀족과 전사』(<em>An Arab-Syrian Gentleman and Warrior in the Period of the Crusades</em>)에서 발췌, P.K. Hitti 번역, New York, 1929.</p>
+</div>
+<div style="border: 1px solid #999; padding: 10px 14px; margin: 8px 0; background: #fafafa; line-height: 1.55; letter-spacing: -0.02em;">
+<p style="margin: 0 0 4px 0;"><strong>사료 C:</strong></p>
+<p style="margin: 0;">프랑크랜드(Frankland): 그 백성은 기독교도이며, 용기와 대군(大軍)과 통치력을 갖춘 왕이 있다. 그는 이슬람 땅 한가운데, 우리 쪽 해안에 두세 개의 도시를 보유하고 자기 편에서 이를 지킨다. 무슬림이 그곳에 군대를 보낼 때마다 그도 자기 편에서 방어군을 보내며, 그의 병사들은 대단한 용기를 지녀 전투 중에도 도주를 생각하지 않고 오히려 죽음을 택한다.</p>
+<p style="margin: 4px 0 0 0; font-size: 0.9em; color: #555;">13세기에 글을 쓴 자카리야 이븐 무함마드 알-카즈비니(Zakariyā ibn Muhammad al-Qazvīnī). Bernard Lewis, 『이슬람의 유럽 발견』(<em>The Muslim Discovery of Europe</em>)에서 인용.</p>
+</div>
+<div style="border: 1px solid #999; padding: 10px 14px; margin: 8px 0; background: #fafafa; line-height: 1.55; letter-spacing: -0.02em;">
+<p style="margin: 0 0 4px 0;"><strong>사료 D:</strong></p>
+<p style="margin: 0;">프랑크족은 명예심이 전혀 없다. 그들 중 한 명이 아내와 함께 거리를 걷다가 다른 남자를 만나면, 그 남자가 아내의 손을 잡고 한쪽으로 데려가 말을 걸며, 남편은 대화가 끝날 때까지 곁에 서서 기다린다.……이 모순을 상상해 보라! 이 사람들은 질투심도 명예심도 없으면서 대단히 용감하다. 허나 용기란 오직 명예심과 악에 대한 경멸에서 나오는 법인데!</p>
+<p style="margin: 4px 0 0 0; font-size: 0.9em; color: #555;">에미르 우사마 이븐 문키드. 아민 말루프(Maalouf), 『아랍의 눈으로 본 십자군』(<em>The Crusades through Arab Eyes</em>), p.39에서 인용.</p>
+</div>
+<div style="border: 1px solid #999; padding: 10px 14px; margin: 8px 0; background: #fafafa; line-height: 1.55; letter-spacing: -0.02em;">
+<p style="margin: 0 0 4px 0;"><strong>사료 E:</strong></p>
+<p style="margin: 0;">무슬림에게 닥치는 불행 중 하나는, 이슬람의 일반 백성이 자기 통치자들의 억압을 불평하면서도 자신들을 정복하고 정의로 다스린 적, 곧 프랑크족의 행위는 칭찬한다는 것이다. 이런 일에 대해 불평해야 할 대상은 오직 신이시다.</p>
+<p style="margin: 4px 0 0 0; font-size: 0.9em; color: #555;">1184년에 글을 쓴 이븐 주바이르(Ibn Jubayr). R. C. J. Broadhurst 영역, 『이븐 주바이르 여행기』(<em>The Travels of Ibn Jubayr</em>), London, 1953.</p>
+</div>
+<div style="border: 1px solid #999; padding: 10px 14px; margin: 8px 0; background: #fafafa; line-height: 1.55; letter-spacing: -0.02em;">
+<p style="margin: 0 0 4px 0;"><span class="page-marker">[p.53]</span> <strong>사료 F:</strong></p>
+<p style="margin: 0;">그들보다 더 더러운 자를 보지 못할 것이다. 배신과 비열함이 그들의 본성이다. 일 년에 한두 번밖에 목욕하지 않으며, 그나마 찬물로 씻는다. 옷은 처음 입은 때부터 닳아 조각이 날 때까지 빨지 않는다. 수염을 깎고 나면 역겨운 그루터기만 남긴다.</p>
+<p style="margin: 4px 0 0 0; font-size: 0.9em; color: #555;">10세기 중반에 프랑스, 네덜란드, 독일, 중부 유럽을 여행한 유대인 의사였을 수 있는 이브라힘 이븐 야쿠브(Ibrahim ibn Ya'qub).</p>
+</div>
+<div style="border: 1px solid #999; padding: 10px 14px; margin: 8px 0; background: #fafafa; line-height: 1.55; letter-spacing: -0.02em;">
+<p style="margin: 0 0 4px 0;"><strong>사료 G:</strong></p>
+<p style="margin: 0;">프랑크족을 보라! 보라, 자기 종교를 위해 싸우는 그 완강함을! 반면 우리 무슬림은 성전을 치를 열의조차 보이지 않는다.</p>
+<p style="margin: 4px 0 0 0; font-size: 0.9em; color: #555;">살라딘. 말루프, 『아랍의 눈으로 본 십자군』, p.v에서 인용.</p>
+</div>
+<div style="border: 1px solid #999; padding: 10px 14px; margin: 8px 0; background: #fafafa; line-height: 1.55; letter-spacing: -0.02em;">
+<p style="margin: 0 0 4px 0;"><strong>사료 H:</strong></p>
+<p style="margin: 0;">예루살렘 함락 후, 프랑크족은 검은 옷을 입고 바다 너머 모든 땅, 특히 위대한 로마에 원조를 구했다. 사람들을 복수로 선동하기 위해 메시아—그에게 평화가 깃들기를—의 그림을 가져왔는데, 아랍인이 그를 때려 피를 흘리는 모습이었다. 그들은 말하곤 했다: "보라, 이것이 메시아이고 이것은 무슬림의 예언자 무함마드가 그를 때려 죽이는 장면이다!" 프랑크족은 감동하여 남녀 할 것 없이 함께 모였고, 직접 갈 수 없는 이들은 참전하는 이들의 비용을 부담했다. 한 적군 포로가 내게 말하기를, 자기는 외아들이었고 어머니가 집을 팔아 장비를 마련해 주었다고 했다.</p>
+<p style="margin: 4px 0 0 0; font-size: 0.9em; color: #555;">1189년 아크레 포위전 당시에 글을 쓴 이븐 알-아시르(Ibn al-Athir). 연대기 작가이자 『완전한 역사』(<em>The Perfect History</em>)의 저자.</p>
+</div>
+<p style="margin-top: 24px;"><strong>십자군의 무슬림에 대한 인식:</strong></p>
+<div style="border: 1px solid #999; padding: 10px 14px; margin: 8px 0; background: #fafafa; line-height: 1.55; letter-spacing: -0.02em;">
+<p style="margin: 0 0 4px 0;"><strong>사료 I:</strong></p>
+<p style="margin: 0;">초기 십자군 기록에서 드러난 이슬람에 대한 견해는 완전히 부정적이었으며, 무슬림은 신의 적이자 악마의 하수인으로 묘사되었다.</p>
+<p style="margin: 4px 0 0 0; font-size: 0.9em; color: #555;">J. 라일리-스미스(Riley-Smith), 『십자군 도감』(<em>The Atlas of the Crusades</em>), 1991.</p>
+</div>
+<div style="border: 1px solid #999; padding: 10px 14px; margin: 8px 0; background: #fafafa; line-height: 1.55; letter-spacing: -0.02em;">
+<p style="margin: 0 0 4px 0;"><strong>사료 J:</strong></p>
+<p style="margin: 0;">살라딘의 성공에 충격을 받은 프랑크족은 필사적으로 그 이유를 찾으려 했다. 그들이 내린 결론은, 그토록 성공적인 자라면 틀림없이 프랑크족의 피가 흐르고 있으리라는 것이었다.</p>
+<p style="margin: 4px 0 0 0; font-size: 0.9em; color: #555;">S. 램버트(Lambert), 『중세 세계』(<em>Medieval World</em>), 1991.</p>
+</div>
+<div style="border: 1px solid #999; padding: 10px 14px; margin: 8px 0; background: #fafafa; line-height: 1.55; letter-spacing: -0.02em;">
+<p style="margin: 0 0 4px 0;"><strong>사료 K:</strong></p>
+<p style="margin: 0;">사라센인은 주님의 신전(Temple of the Lord)을 큰 공경으로 대했다. 다른 곳보다 여기에서 자기 신앙의 기도를 드리는 것을 더 선호했으나, 그 기도는 무함마드의 이름으로 세워진 우상 앞에 바쳐지는 것이었으므로 헛된 것이었다.</p>
+<p style="margin: 4px 0 0 0; font-size: 0.9em; color: #555;">샤르트르의 풀셰, 1095–1127년 예루살렘 원정의 역사(F. R. Ryan 번역, 1969), 1130년경 작성.</p>
+</div>
+<div style="border: 1px solid #999; padding: 10px 14px; margin: 8px 0; background: #fafafa; line-height: 1.55; letter-spacing: -0.02em;">
+<p style="margin: 0 0 4px 0;"><strong>사료 L:</strong></p>
+<p style="margin: 0;">오, 그토록 열렬히 바라던 날이여! 오, 시대를 통틀어 가장 기억할 만한 날! 오, 다른 모든 업적에 앞서는 업적이여!……그들은 이교 주민의 미신으로 오래도록 더럽혀진 이 장소가 그 오염으로부터 정화되기를 바랐다.</p>
+<p style="margin: 4px 0 0 0; font-size: 0.9em; color: #555;">샤르트르의 풀셰, 같은 책, 1130년경 작성.</p>
+</div>
+<div style="border: 1px solid #999; padding: 10px 14px; margin: 8px 0; background: #fafafa; line-height: 1.55; letter-spacing: -0.02em;">
+<p style="margin: 0 0 4px 0;"><span class="page-marker">[p.54]</span> <strong>사료 M:</strong></p>
+<p style="margin: 0;">그들은 예루살렘을 정복하기 위해 죽는 것을 두려워하지 않는다. 바빌론인들, 아프리카인들, 에티오피아인들이 그들을 돕는다.……지금, 우리의 죄 때문에 어둔 날이 무어인의 무리를 데려왔다.……기독교도는 소수이니, 양보다도 적다. 무어인은 많으니, 별보다도 많다.</p>
+<p style="margin: 4px 0 0 0; font-size: 0.9em; color: #555;">E. 아센시오(Asensio), 「아, 예루살렘이여!」(<em>Ay Iherusalem!</em>), Nueva Revista de Filología Hispánica, 14, pp.247–270(번역, 1960). 13세기에 쓰인 스페인 노래.</p>
+</div>
+<p style="margin-top: 24px;"><strong>상호작용과 상호 영향의 증거:</strong></p>
+<div style="border: 1px solid #999; padding: 10px 14px; margin: 8px 0; background: #fafafa; line-height: 1.55; letter-spacing: -0.02em;">
+<p style="margin: 0 0 4px 0;"><strong>사료 N:</strong></p>
+<p style="margin: 0;">프랑크족 중에는 이 나라에 정착하여 무슬림과 교류하는 이들이 있다. 이들은 새로 온 이들보다는 낫지만, 규칙의 예외일 뿐 그들로부터 일반적 추론을 이끌어낼 수는 없다. 한 가지 사례를 들겠다. 한번은 사업차 사람을 안티오크에 보냈다. 당시 테오도로 소피아노스 총독이 그곳에 있었고, 그와 나는 친구 사이였다. 그가 당시 안티오크에서 막강한 세력을 가지고 있었다. 어느 날 그가 내 사람에게 말했다: "나의 프랑크 친구 중 한 명이 초대했다. 같이 가서 그들이 어떻게 사는지 보자." 내 사람이 내게 이를 전했다. 그래서 우리는 제1차 프랑크 원정에 참가했던 옛 기사 중 한 명의 집으로 갔다. 그는 이미 군복무와 국사에서 은퇴하여 안티오크에 재산을 두고 살고 있었다. 맛있고 깔끔하게 차린 훌륭한 식탁을 마련해 주었다. 내가 먹기를 꺼리는 것을 보더니 말했다: "맘 편히 드시오. 나는 프랑크 음식을 먹지 않소. 이집트 여자 요리사를 고용하고 있고, 돼지고기에 가까운 것은 아무것도 먹지 않소. 내 집에 돼지고기가 들어온 적도 없소." 그래서 먹기는 했으나 다소 조심하면서. 그리고 우리는 자리를 떠났다.</p>
+<p style="margin: 4px 0 0 0; font-size: 0.9em; color: #555;">우사마 이븐 문키드.</p>
+</div>
+<div style="border: 1px solid #999; padding: 10px 14px; margin: 8px 0; background: #fafafa; line-height: 1.55; letter-spacing: -0.02em;">
+<p style="margin: 0 0 4px 0;"><strong>사료 O:</strong></p>
+<p style="margin: 0;">서방인이었던 우리는 이제 동방인이 되었다. 로마인이나 프랑크족이었던 자가 이 땅에서 갈릴리인이나 팔레스타인인이 되었다. 랭스나 샤르트르 출신이었던 자가 티르나 안티오크의 시민이 되었다. 우리는 이미 고향을 잊었다. 그 장소들은 우리 대다수에게 알려져 있지 않거나 더 이상 입에 오르지도 않는다.……일부는 시리아인이나 아르메니아인 여성을 아내로 맞았고, 심지어 세례를 받은 사라센인도 있다.……한 사람은 자기 포도밭을 가꾸고, 다른 사람은 자기 밭을 경작한다. 서로 다른 언어를 말하면서도 이미 서로를 이해하는 법을 터득했다.……완전히 다른 인종들이 신뢰 속에 함께 살고 있다.</p>
+<p style="margin: 4px 0 0 0; font-size: 0.9em; color: #555;">샤르트르의 풀셰, 1130년경 작성.</p>
+</div>
+<div style="border: 1px solid #999; padding: 10px 14px; margin: 8px 0; background: #fafafa; line-height: 1.55; letter-spacing: -0.02em;">
+<p style="margin: 0 0 4px 0;"><strong>사료 P:</strong></p>
+<p style="margin: 0;">이슬람과 접촉이 이루어진 곳이면 어디든—십자군 영토, 시칠리아, 스페인—서유럽인들은 감탄할 만한 것들을 발견했다: 비단 옷, 향수, 그리고 더 잦은 목욕.</p>
+<p style="margin: 4px 0 0 0; font-size: 0.9em; color: #555;">J. M. 로버츠, 『세계의 역사』(<em>History of the World</em>), 1980.</p>
+</div>
+</blockquote>
+<p>어떤 의미에서, 위에서 제안한 접근법은 역사의 특정 시기에 서로 대비되는 심성에 대한 연구에 학생들을 소개하려는 것이다. 이와 비슷하게 카드 분류를 활용한 분석을 인접 국가 간, 또는 국가 내 집단 간, 또는 다수자와 소수자 간의 관계를 이해하는 데에도 사용할 수 있다. 아마도 특정 사건이나 갈등을 분석하기 전의 예비 연습으로 활용할 수도 있다.</p>
+<p><span class="page-marker">[p.55]</span> 두 번째 사례 역시 심성에 대한 학습이다. 이는 다중관점적 접근을 통해, 사람들의 서로 다른 가정과 기대가 사건에 대한 반응을 어떻게 형성할 수 있는지를 보여주려는 시도이다. 이러한 가정과 기대는 이전의 역사적 사건과 관계에 뿌리를 두는 경우가 많으며, 동시에 동시대의 선전과 미디어 보도에도 영향을 받는다. 주제는 제1차 세계대전 초기인 1914년 양측에서 보고된 잔학 행위에 관한 대조적 관점이다: 사라진 손 사건(부록 사진 62쪽 참조).</p>
+<p>독일군이 1914년 8월 4일 벨기에를 침공한 직후, 프랑스와 벨기에 민간인에 의한 게릴라 활동, 이른바 "프랑-티뢰르(francs-tireurs)" 또는 "자유사수(free-shooters)"에 대한 소문이 독일군 사이에 퍼졌다(부록 사진 63쪽 참조). 곧이어 이러한 민간인에게 매복당하고 훼손당하는 병사들에 관한 독일 신문 기사가 뒤따랐다. 이 보도는 통상적으로 "전쟁의 규칙"이 지켜지지 않고 있다고 강조했다: 부상을 입어 방어할 수 없는 상태의 병사들이 등에 총을 맞고, 시력을 잃고, 거세되거나 그 외의 방식으로 훼손당했다는 것이었다. 곧이어 연합국 측에서도 독일 군인이 벨기에와 프랑스 민간인에게 저지른 잔학 행위에 대한 이야기가 등장하기 시작했다. 벨기에, 프랑스, 영국 신문이 이 이야기들을 빠르게 보도했다. 적에게 "공정"할 의향도 없었고, 어차피 전시에 이러한 소문과 주장을 검증할 수도 없었던 기자들은 이를 확인된 사실인 양 보도했다(부록 사진 64쪽 참조). 여기서 공통된 주제는 특히 손이 잘린 여성과 아이들에 대한 잔학 행위였다. 당시 수집되던 이야기 유형 중 몇 가지 사례를 예시 O에 수록하였다.</p>
+<blockquote>
+<p><sup>1</sup> Horne, J., & Kramer, A. (2001). <em>German atrocities, 1914: A history of denial</em>. Yale University Press.</p>
+</blockquote>
+<p>혼(Horne)과 크레이머(Kramer)가 수집한 증거에 따르면, "프랑-티뢰르"에 대한 독일의 두려움은 보불전쟁에 뿌리를 두고 있었다. 나폴레옹 3세의 패배 이후 프랑스 비정규군인 프랑-티뢰르가 신생 공화국을 위해 프로이센군을 상대로 게릴라전을 벌였기 때문이다.<sup>1</sup> 따라서 독일군이 벨기에 국경을 넘었을 때 그러한 예상은 이미 자리 잡고 있었다. 후퇴하는 군대의 저항은 곧바로 게릴라 활동으로 해석되었다. 독일로 전해진 부상병의 보고와, 포로가 되거나 전사한 군인에게서 입수한 일기는, 일종의 심성이 얼마나 빠르게 출현했는지를 보여주었다. 불에 탄 집은 더 이상 전시의 불가피한 부수적 피해가 아니라 독일군의 위치를 적에게 알리는 신호로 간주되었다. 후퇴 병력과의 교전은 민간인을 체포·처형하고 마을을 보복으로 불태우는 사태로 이어졌다. 민간인을 게릴라 사격으로부터 병사를 보호하기 위한 인간 방패로 사용하는 사례도 있었다. 개전 10일 이내에 독일 최고사령부는 민간인의 이러한 행위가 사실이라고 확신했고, 독일 황제는 1914년 9월 7일 윌슨 대통령에게 보낸 서한에서 "나의 장군들은 죄인을 처벌하고, 비열한 살인과 공포를 자행하는 피에 굶주린 자들이 만행을 계속하지 못하도록 위협하기 위해, 가장 과감한 조치를 취하지 않을 수 없었다"고 설명했다. 한편 프랑스와 영국의 언론도 포로로 잡힌 독일 군인의 일기에서 발췌한 내용을 독일군의 대(對)민간인 잔학 행위 증거로 활용하고 있었다.</p>
+<p><span class="page-marker">[p.56]</span> 1914년 9월 무렵, 프랑스 정부는 민간인에게 공포를 유발할 수 있다는 우려로 프랑스 신문의 잔학 행위 기사 게재를 이미 금지한 상태였다. 벨기에, 영국, 프랑스, 독일 정부가 주도한 공식 조사는 민간인에 대한 보복이 있었다는 데는 동의했으나 그 정당성에 대해서는 의견이 달랐다. 그러나 어떤 조사도 민간인이 독일 병사를 절단했다거나 독일 병사가 벨기에 및 프랑스 여성과 아동을 절단했다는 식으로 널리 퍼진 이야기를 뒷받침하지 못했다. 거의 모두가 소문인 것으로 판명되었으며, 당국자들은 사지가 절단된 아동 혹은 시력을 잃거나 거세된 군인의 흔적을 찾지 못했다.</p>
+<p>전후에 연합국에서는, 잔학 행위에 대한 공적인 관심은 그것을 "정당한 전쟁(just war)"의 근거로 삼던 데서 전반적인 인명 피해라는 측면에서 전쟁 비용에 대한 공포로 옮겨 갔다. 정부들은 전쟁에 대한 대중의 지지를 끌어올리기 위해 선전을 활용한 것에 대해 비난받았다. 독일에서는 전쟁에 대한 죄책감과 책임을 부인하고 베르사유 조약의 조건에 반박하는 과정의 일환으로, 잔학 행위를 선전의 산물로 제시하려는 경향이 광범위하게 나타났다. 전간기 역사학자들도 1914–15년의 선전전에 초점을 맞추는 경향이 있었다.</p>
+<p>이 문제 전체가 다중관점적 접근에 적합한 이유는, 혼과 크레이머 같은 현대 역사학자의 저작에 더하여, 군인과 민간인의 관점, 각국 정부의 관점, 공식 조사 보고서, 공식·비공식 선전물, 그리고 각국 신문에 실린 다양한 정치적·국가적 사건 해석 등을 보여주는 사료를 매우 폭넓게 이용할 수 있기 때문이다. 그러나 이것은 제1차 세계대전의 전개에서 부차적인 요소이며, 제1차 세계대전 교육과정의 제약 안에서 이를 상세히 다룰 시간적 여유가 있는 역사 교사는 아마 거의 없을 것이다.</p>
+<blockquote class="body-quote">
+<p><strong>예시 O: 제1차 세계대전 초기 잔학 행위에 관한 증거라는 것</strong></p>
+<div style="border: 1px solid #999; padding: 10px 14px; margin: 8px 0; background: #fafafa; line-height: 1.55; letter-spacing: -0.02em;">
+<p style="margin: 0 0 4px 0;"><strong>사료 1:</strong></p>
+<p style="margin: 0;">1914년 9월, 파리의 한 경찰관이 "한 목격자"로부터 들은 바를 보고했다. <em>"6살 된 벨기에 소녀를 보았는데, 뤼 드 라 플랑드르에 사는 정육점 주인인 친척과 함께 있었다. 독일 병사들이 마을에 도착했을 때, 그들은 그 소녀의 양손을…… 도끼로…… 잘라냈다."</em></p>
+</div>
+<div style="border: 1px solid #999; padding: 10px 14px; margin: 8px 0; background: #fafafa; line-height: 1.55; letter-spacing: -0.02em;">
+<p style="margin: 0 0 4px 0;"><strong>사료 2:</strong></p>
+<p style="margin: 0;">파드칼레 출신의 한 피란민은, 그 지역의 헌병들이 독일 병사 일부를 포획하여 수색했더니 외투 주머니에서 잘린 손이 나왔다고 보고했다.</p>
+</div>
+<div style="border: 1px solid #999; padding: 10px 14px; margin: 8px 0; background: #fafafa; line-height: 1.55; letter-spacing: -0.02em;">
+<p style="margin: 0 0 4px 0;"><strong>사료 3:</strong></p>
+<p style="margin: 0;">프랑스 신문 《르 마탱》은 1914년 9월 20일, 파리 병원에서 치료 중인 두 명의 부상 독일 병사의 외투 주머니에서 잘린 손 두 개—하나는 여성의, 하나는 어린 소녀의 것—가 발견되었다는 기사를 실었다.</p>
+</div>
+<div style="border: 1px solid #999; padding: 10px 14px; margin: 8px 0; background: #fafafa; line-height: 1.55; letter-spacing: -0.02em;">
+<p style="margin: 0 0 4px 0;"><strong>사료 4:</strong></p>
+<p style="margin: 0;">어느 독일 연대의 한 의무장교는, 한 독일 병사의 장례식에서 매장조가 조총(弔銃)을 발사하자 이를 적의 공격으로 오인한 병사들이 마구잡이로 사격을 시작했다고 보고했다—"아군 오사(friendly fire)"의 초기 사례인 셈이다.</p>
+</div>
+<div style="border: 1px solid #999; padding: 10px 14px; margin: 8px 0; background: #fafafa; line-height: 1.55; letter-spacing: -0.02em;">
+<p style="margin: 0 0 4px 0;"><strong>사료 5:</strong></p>
+<p style="margin: 0;">프랑스 측이 입수한 제178보병연대 소속 독일 장교의 일기는, 1914년 8월 벨기에를 횡단하던 병사들의 감정을 생생하게 보여주었다. 처음에는 우호적으로 맞이해 주었고, 한 노파는 일기 저자에게 "당신들은 야만인이 아닙니다. 우리 농작물을 아껴주셨군요"라고 말했다. 60킬로미터를 더 가자 병사들은 매복에 대한 두려움에 사로잡혀 안전 대책으로 인질을 잡았다.……다음날 그는 디낭에 진입할 때 프랑-티뢰르의 완강한 저항에 부딪혔다고 확신했는데, 그중 200명에서 250명이 체포되어 처형되었다. 일기 저자는 프랑스에서 처음 진입한 마을에서 한 독일 병사가 우발적으로 총을 발사하자 공격받는 줄 알고 마을에 불을 질렀다고도 기록한다.</p>
+<p style="margin: 4px 0 0 0; font-size: 0.9em; color: #555;">혼 &amp; 크레이머, 『독일의 잔학 행위 1914: 부인의 역사』(<em>German Atrocities 1914, A History of Denial</em>).</p>
+</div>
+</blockquote>
+<p><span class="page-marker">[p.57]</span> 나는 오히려 이 이야기의 한 측면만을 집중적으로 다루어 볼 것을 제안하고 싶다. 제1차 세계대전에 관한 단원이나 모듈을 시작할 때 학생들의 관심과 상상력을 사로잡는 "갈고리(hook)"로 활용한 뒤, 원인과 기여 요인, 전쟁의 전개, 조약, 장기적 결과를 검토하도록 하는 것이다. 이 주제는 전쟁의 흥미로운 여러 측면을 보여주는데, 이는 20세기의 다른 주요 세계적·지역적 갈등을 분석할 때에도 요긴하게 적용된다:</p>
+<ul>
+<li>전쟁의 진행 양상은 군사적 측면뿐만 아니라, 과거 갈등(이 경우 1870년 보불전쟁)에 뿌리를 둔 적의 행동에 대한 대중의 기대와 가정도 어느 정도 반영한다는 것. 프랑스와 벨기에의 민간인과 병사들은 "프로이센 군국주의"를 예상했고, 독일 최고사령부는 1870년에 경험했던 종류의 민간인 및 "비정규적" 저항을 예상했다. 전쟁 초기에 독일 병사들은 예상보다 빠르게 적지를 통과하고 있었고, 때로는 군사적 지원에서 단절된 느낌을 받았다.</li>
+<li>선전이란 전쟁 목표에 대한 대중적 지지를 동원하고, 남성들의 입대를 독려하며, 잠재적 동맹국이 자기 편에서 전쟁에 참여하도록 설득하는 것(이 경우 미국과 이탈리아)만이 아니라, 적과 자기 편 모두에 대한 대중적 기대, 가정, 가치관, 고정관념에 부합하는 방식으로 사건을 설명해야 할 필요성에 관한 것이기도 하다—제2차 세계대전 발발, 냉전, 한국전쟁, 그리고 더 최근에는 걸프전에서의 선전에서도 명백히 나타난 과정이다.</li>
+<li>특정 사건에 초점을 맞추는 선전은 종종 사실 자체보다 "사실"에 부여된 의미에 더 관심을 가진다는 것. 이 경우 잔학 행위를 둘러싼 문제 전체가 특정한 기대, 가정, 가치를 강화하는 신화에 초점을 맞추었다. 여러 면에서 이는 대의를 위한 행동과 지지를 동원하기보다 공포와 두려움, 나아가 히스테리를 조장한 뒤 냉소주의로 이어졌다는 점에서 선전으로서 오히려 역효과를 냈다.</li>
+</ul>
+<p>대부분의 교과서는 전쟁 발발에 이르기까지의 몇 주 사이에 제작된 선전 포스터를 포함하고 있으며, 현재는 관련된 모든 나라의 접근법을 반영하는 <span class="page-marker">[p.58]</span> 신뢰할 수 있는 웹사이트에서 사례를 다운로드할 수도 있다. 이러한 자료를, 이어지는 페이지에 수록된 유형의 포스터 및 엽서와 함께 활용하면, 두 가지 차원에서 비교 접근이 가능하다. 하나는 국가 간 비교이고, 다른 하나는 전쟁 전 "공식" 선전과 개전 첫 주간 "잔학 행위"에 대한 "비공식" 대응 사이의 비교이다. 이를 통해 학생들은 지배적 심성의 표상이 실제 사건이나 전략적·전술적 전개 못지않게 여론, 정부, 군의 반응에 영향을 미칠 수 있음을 이해할 수 있을 것이며, 이는 유용한 다중관점적 방법이 될 수 있다.</p>
+<p>이러한 접근법은 국가 내부 및 국가 간 대부분의 사회적·문화적 갈등 연구에도 마찬가지로 적용할 수 있다. 이를 통해 학생은, 어떤 갈등 상황에서든 오랫동안 자리 잡은 가정이 반드시 사실이나 직접적 경험에 확고히 기반하는 것은 아닌데도 각 당사자가 상대에게 거는 기대, 상대의 발언에 대한 해석, 상대의 행동에 부여하는 동기와 의도에 계속 영향을 미친다는 점을 더 잘 이해하게 된다. 이러한 상황에서 누가 옳고 누가 그른지, 어떤 행동이 정당화될 수 있고 어떤 것이 그렇지 않은지를 따지려는 시도는 무의미하다. 목표는 각 당사자가 어떤 입장에서 출발하는지, 왜 그렇게 생각하고 행동하는지를 이해하려고 노력하는 것이다.</p>
+<hr />
+<h1 id="_15">결론적 고찰</h1>
+<p><span class="page-marker">[p.59]</span> 이 짧은 책자에서 특정 역사적 사건과 주제에 관한 수업용 자료를 제작하려 한 것은 나의 의도가 아니었다—교사나 교사 연수 담당자가 기성품처럼 가져다가 적절한 언어로 번역하고, 특정 교육과정에 맞추어 수업에 바로 활용할 수 있는 그런 자료 말이다. 여기서 제시한 사례들은 본문의 핵심 논점을 예시하고, 역사교육에 다원적 관점을 도입하는 다양한 방법을 보여주기 위한 발견적(heuristic) 장치였다.</p>
+<p>본질적으로 이 책자는 다원적 관점을 실제로 구현해 보이기보다는, 역사교육에서의 다원적 관점에 관해 논한 것이었다. 따라서 역사에 보다 다중관점적인 접근법을 도입하고자 하는 교사나 교과서 저자가 유념해야 할 몇 가지 핵심 사항을 다시 강조하며 결론을 맺고자 한다.</p>
+<p>다원적 관점은 기타 슈타이너-캄시가 "단일문화적·자민족지배적·보편주의적"이라 특징지은 전통적 역사교육 접근법에 비해 더 다원적이고 포용적이며 통합적이고 포괄적인 것을 지향한다. 이는 곧, 역사학자·역사 교사·학생 모두가 다음을 고려해야 한다는 뜻이다. 대다수 역사학자가 무시해 온 사료까지 포함하여 더 넓은 범위의 사료에 기반한 설명이, 해당 사건에 관련되거나 그 영향을 받은 모든 이의 관점을 더 공정하게(즉, 더 정당하게) 다루는지, 그리고 더 완전한 설명인지를 말이다.</p>
+<p>그러나 역사적 설명이 더 다중관점적이라고 해서 반드시 더 객관적인 것은 아니다. 첫째, 특정 설명에 포함된 모든 관점이 동등한 비중과 가치를 지닐 가능성은 낮다. 둘째, 여기서 "관점(perspective)"이라는 용어의 의미를 유념해야 한다. 관점이란 그것을 표현하는 사람의 입장에 따라 제한되는 견해로, 그 사람이 참여자이든, 목격자이든, 기자이든, 역사학자이든 마찬가지이며, 그 한계가 물리적인 것이든 태도적·문화적·기술적·직업적인 것이든 마찬가지이다. 특정 역사적 설명이 다른 것보다 더 많은 관점을 담고 있다고 해서 이러한 한계나 제약이 사라지는 것은 아니다. 동일한 역사적 사건이나 현상에 대해 다수의 관점에서 나온 증거를 검토한다고 해서, 그것만으로 더 완전한 기술이나 더 철저한 설명에 이를 수 있으리라고 가정할 수는 없다. 오히려 다중관점적 접근법은, 특히 정치적·사회적 갈등에 적용할 때, 확고한 결론에 도달하기가 얼마나 어려운지를 잘 보여줄 수 있다. 갈등의 각 당사자가 저마다 다른 해석·가정·선입견·편견에 기반하여 상대의 행동·목표·반응·동기를 매우 다르게, 심지어 모순적으로 인식하기 때문이다.</p>
+<p>이로써 문제의 핵심에 이른다. 교육과정 내용을 보다 다양하게 구성하고, 더 넓은 범위의 사료를 활용하며, 역사적 사건에 대해 <span class="page-marker">[p.60]</span> 대조되는 설명을 학생들이 읽어 볼 기회를 확보함으로써, 역사 수업을 보다 다중관점적으로 만들고 단일문화적·배타적·보편주의적 성격에서 벗어나게 할 수 있다. 그러나 다원적 관점은 역사교육과정의 내용 변화나 더 넓은 범위의 사료 활용에 그치지 않는다. 학생들이 과거를 역사적으로 사고하도록 돕는 것이기도 하다.</p>
+<p>역사교육의 구체적 맥락에서, 다원적 관점은 학생들에게 하나의 분석 과정을 소개하는 것이다. 곧, 특정 역사적 사건이나 전개에 관련된 증거와 그 해석이, 물리적 요인이나 증거 출처의 충성 관계, 태도와 편견, 동기, 사건을 설명하고 행동을 결정할 때 적용하는 논리, 서로에 대한 기대와 편견, 인식과 해석에 영향을 미치는 문화적 틀과 전통 등에 의해 어떻게 제약받아 왔는지를 분석하는 방법이다. 이 책자의 앞부분에서 제시한 예시들에서 보았듯이, 다원적 관점은 이처럼 서로 다른 해석을 상호 관련시키려는 시도도 포함한다.</p>
+<p>이는 역사 교사, 교육과정 기획자, 교과서 저자 및 출판사에 여러 시사점을 던진다. 첫째, 학생들이 다양한 관점을 효과적으로 다룰 수 있는 자신감과 역량을 갖추려면, 다중관점적 접근법의 핵심인 분석 기술을 연습할 기회를 제공해야 한다. 이를 위해 이 책자에서는 카드 분류 활동, 핫시팅, 갈등 상황에서 서로에 대한 인식 비교, 플로우차트와 타임라인 활용, 선전물과 뉴스 보도 분석을 통해 대비되는 심성을 이해하고 해석하는 것 등 여러 교수·학습 접근법을 기술하였다.</p>
+<p>둘째, 다원적 관점은 특정 주제에 대한 심층 연구의 기회를 필요로 한다. 내용이 풍부한 연대기적 역사 개관을 학생들에게 제시하도록 설계된 교육과정 틀 안에서는 매우 어려울 수 있다. 그럼에도 불구하고, 이러한 교육과정 틀 안에서도 학생들이 관련 분석 과정에 익숙해질 기회를 제공하기 위해 매년 한두 가지 주제에 다중관점적 접근법을 도입하는 것은 여전히 가능할 것이다. 마찬가지로, 학생에게 제시하는 관점의 범위가 반드시 포괄적일 필요는 없다.</p>
+<p>마지막으로, 많은 교과서 저자 및 출판사, 그리고 사료 기반 수업을 표방하는 일부 역사 교사들도 자신의 접근법을 재고할 필요가 있을 수 있다. 현실에서는 너무도 자주, 학생들은 다양한 사료에서 가져온 짧은 발췌문만 제시받고 있다. 그 뒤에 따라오는 질문은 사실적 정보를 뽑아내거나, 저자나 교사가 원하는 결론을 입증하거나, "객관적" 사료와 "편향된" 사료를 구별하도록 유도하는 것이다. 다원적 관점은, 과거를 공부하는 사람이라면 누구나 불일치, 모순, 모호함, 이견, 반쪽짜리 진실, 부분적 관점, 편견, 선입견을 마주하고 받아들여야 한다는 근본적 가정에 기초한다. 이 가정이, 다양한 관점을 대변하는 사료에 어떤 종류의 질문과 활동을 곁들여야 하는지를 구상하는 데 지침이 되어야 한다.</p>
+<hr />
+<h1 id="_16">부록: 사진 자료</h1>
+<p><span class="page-marker">[p.61]</span></p>
+<h2 id="1917-10-25">겨울궁전 습격</h2>
+<p><img src="appendix_winter_palace.jpg" alt="겨울궁전 습격, 1917년 10월 25일" style="max-width: 100%; height: auto; margin: 12px 0; border: 1px solid #ccc;"></p>
+<p><strong>질문 상자:</strong></p>
+<table>
+<thead>
+<tr>
+<th>여기에서 정확히 무엇이 보이는지 묘사하시오.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>무슨 일이 일어나고 있다고 생각하는가?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>이 사람들은 누구라고 생각하는가?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>이 사진이 언제 촬영되었다고 생각하는가?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>이것이 사진이라고 생각하는가, 아니면 영화의 한 장면이라고 생각하는가?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="1914-10">"잘린 손" 신화에 관한 프랑스 엽서</h2>
+<p><img src="appendix_french_postcard.jpg" alt="잘린 손 신화를 제시하는 1914년 10월의 프랑스 엽서" style="max-width: 480px; height: auto; margin: 12px 0; border: 1px solid #ccc;"></p>
+<p><strong>설명:</strong> "잘린 손"의 신화를 제시하는 1914년 10월의 프랑스 엽서.</p>
+<div style="border: 1px solid #aaa; border-radius: 4px; padding: 10px 14px; margin: 10px 0; background: #f7f6f2; font-family: 'Noto Sans KR', 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif; line-height: 1.6;">
+<p style="margin: 0 0 4px 0; font-weight: bold; font-size: 0.9em;">그림 속 텍스트</p>
+<p style="margin: 0 0 2px 0; font-size: 0.88em; color: #333;">원문 | Leurs trophée de guerre / Une main avec des bagues, ça / faut mieux qu'un drapeau.</p>
+<p style="margin: 0; font-size: 0.88em; color: #555;">번역 | 그들의 전쟁 전리품 / 반지 낀 손 하나면 / 깃발보다 낫지.</p>
+</div>
+<hr />
+<h2 id="-">"프랑-티뢰르"의 독일 군인 공격에 대한 독일 화가의 묘사</h2>
+<p><img src="appendix_franc_tireur.jpg" alt="프랑-티뢰르의 독일 군인 공격을 묘사한 독일 화가의 그림" style="max-width: 100%; height: auto; margin: 12px 0; border: 1px solid #ccc;"></p>
+<p><strong>설명:</strong> 프랑-티뢰르(franc-tireur)가 독일 군인을 공격하는 장면을 묘사한 1914년 8월 독일 화가의 그림.</p>
+<hr />
+<h2 id="_17">독일군의 잔학 행위를 주장하는 선전 엽서</h2>
+<p><img src="appendix_leurs_victoires.jpg" alt="독일군의 잔학 행위를 주장하는 선전 엽서 LEURS VICTOIRES" style="max-width: 480px; height: auto; margin: 12px 0; border: 1px solid #ccc;"></p>
+<p><strong>설명:</strong> 독일군의 잔학 행위를 주장하며 1914년에 제작된 선전 엽서.</p>
+<div style="border: 1px solid #aaa; border-radius: 4px; padding: 10px 14px; margin: 10px 0; background: #f7f6f2; font-family: 'Noto Sans KR', 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif; line-height: 1.6;">
+<p style="margin: 0 0 4px 0; font-weight: bold; font-size: 0.9em;">그림 속 텍스트</p>
+<p style="margin: 0 0 2px 0; font-size: 0.88em; color: #333;">제목 원문 | LEURS VICTOIRES</p>
+<p style="margin: 0 0 6px 0; font-size: 0.88em; color: #555;">제목 번역 | 그들의 승리</p>
+<p style="margin: 0 0 2px 0; font-size: 0.88em; color: #333;">본문 원문 | Trop lâches pour pouvoir faire d'autres prouesses / De village en village, ils vont triomphants / Mettant le feu partout, insultant la vieillesse / Massacrant, sans pitié les femmes, les enfants</p>
+<p style="margin: 0; font-size: 0.88em; color: #555;">본문 번역 | 다른 공훈을 세우기엔 너무 비겁하여 / 마을에서 마을로 의기양양하게 행진하며 / 곳곳에 불을 지르고 노인을 모욕하며 / 무자비하게 여성과 아이들을 학살한다</p>
+</div>
+
+</main>
+</div>
+
+<div class="font-controls" id="fontControls">
+  <button onclick="changeFontSize(-1)" title="글씨 작게">A−</button>
+  <span class="size-label" id="sizeLabel">100%</span>
+  <button onclick="changeFontSize(1)" title="글씨 크게">A+</button>
+  <button onclick="changeFontSize(0)" title="원래 크기" style="font-size:11px;">↺</button>
+</div>
+<button class="top-btn" id="topBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+// Font size control
+let fontLevel = 0; // -3 to +5
+const BASE = 17;
+function changeFontSize(dir) {
+  if (dir === 0) fontLevel = 0;
+  else fontLevel = Math.max(-3, Math.min(5, fontLevel + dir));
+  const px = BASE + fontLevel;
+  document.documentElement.style.fontSize = px + 'px';
+  document.getElementById('sizeLabel').textContent = Math.round(px / BASE * 100) + '%';
+}
+
+// Progress bar + show controls
+window.addEventListener('scroll', () => {
+  const h = document.documentElement.scrollHeight - window.innerHeight;
+  document.getElementById('progressBar').style.transform = `scaleX(${window.scrollY / h})`;
+  const show = window.scrollY > 500;
+  document.getElementById('topBtn').classList.toggle('show', show);
+  document.getElementById('fontControls').classList.toggle('show', show);
+});
+
+// Heading ID injection
+document.addEventListener('DOMContentLoaded', () => {
+  const map = {
+    '서문': 'sec-foreword',
+    '유럽평의회 소개': 'sec-coe',
+    '서론 및 배경': 'sec-intro',
+    '다원적 관점이란 무엇인가?': 'sec-what',
+    '역사교육에서 다원적 관점의 잠재적 문제점': 'sec-problems',
+    '다원적 관점의 토대를 마련하기': 'sec-foundations',
+    '학습 활동': 'sec-learning',
+    '기회를 포착하기': 'sec-opportunistic',
+    '학생들에게 사학사 소개하기': 'sec-historiography',
+    '역사 서사에 다원적 관점 통합하기': 'sec-narrative',
+    '역사 해석의 폭과 범위 확장하기': 'sec-breadth',
+    '결론적 고찰': 'sec-conclusion',
+    '부록: 사진 자료': 'sec-appendix',
+  };
+  document.querySelectorAll('h1, h2').forEach(el => {
+    const txt = el.textContent.trim();
+    if (map[txt]) el.id = map[txt];
+  });
+
+  // Active TOC highlighting
+  const links = document.querySelectorAll('nav.toc a');
+  const sections = [];
+  links.forEach(a => {
+    const id = a.getAttribute('href')?.slice(1);
+    const target = id && document.getElementById(id);
+    if (target) sections.push({ el: target, link: a });
+  });
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      const match = sections.find(s => s.el === entry.target);
+      if (match) match.link.classList.toggle('active', entry.isIntersecting);
+    });
+  }, { rootMargin: '-20% 0px -70% 0px' });
+
+  sections.forEach(s => observer.observe(s.el));
+
+  // Wrap tables for responsive scroll
+  document.querySelectorAll('main table').forEach(t => {
+    if (!t.parentElement.classList.contains('table-wrap')) {
+      const wrap = document.createElement('div');
+      wrap.className = 'table-wrap';
+      t.parentNode.insertBefore(wrap, t);
+      wrap.appendChild(t);
+    }
+  });
+});
+</script>
+</body>
+</html>
