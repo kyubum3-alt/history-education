@@ -17,6 +17,27 @@
   ],
   "spanish": [
     {
+      "title": "프랑코주의 억압 연구: 소진되지 않은 문제",
+      "authors": "Mir Curcó",
+      "year": 2001,
+      "url": "Mir_2001_프랑코주의 억압 연구 소진되지 않은 문제.html",
+      "uploadDate": "2026-06-24"
+    },
+    {
+      "title": "역사 교육: 과거, 현재, 미래의 도전",
+      "authors": "Rodríguez-Moneo et al.",
+      "year": 2025,
+      "url": "Rodriguez-Moneo_2025_역사 교육- 과거, 현재, 미래의 도전.html",
+      "uploadDate": "2026-06-24"
+    },
+    {
+      "title": "스페인 내전과 프랑코 독재",
+      "authors": "Valls",
+      "year": 2007,
+      "url": "Valls_2007_한국어번역.html",
+      "uploadDate": "2026-06-24"
+    },
+    {
       "title": "가치와 역사 교육 — 예비교사의 역사적 유의성 사회적 표상",
       "authors": "Ortuño, Bellatti, Molina",
       "year": 2025,
@@ -158,6 +179,34 @@
     }
   ],
   "english": [
+    {
+      "title": "중등 역사 교육과정에서 감정이입 교수·평가",
+      "authors": "Harris & Foreman-Peck",
+      "year": 2004,
+      "url": "Harris_Foreman-Peck_2004_한국어번역.html",
+      "uploadDate": "2026-06-24"
+    },
+    {
+      "title": "학생의 사고를 가시화하기: 역사가처럼 비공식적으로 쓰기를 가르치기",
+      "authors": "Bain",
+      "year": 2026,
+      "url": "Bain_2026_한국어번역.html",
+      "uploadDate": "2026-06-24"
+    },
+    {
+      "title": "내전 사학사의 최근 동향",
+      "authors": "Ealham",
+      "year": 2008,
+      "url": "Ealham_2008_내전 사학사의 최근 동향.html",
+      "uploadDate": "2026-06-24"
+    },
+    {
+      "title": "나는 제국의회에 있었다: 역할극 재사고",
+      "authors": "Luff",
+      "year": 2000,
+      "url": "Luff_2000_한국어번역.html",
+      "uploadDate": "2026-06-24"
+    },
     {
       "title": "그들은 다르게 할 수 있었을까",
       "authors": "Goldberg",
@@ -416,6 +465,42 @@
       "date": "2026년 4월 21일",
       "url": "https://kyubum3-alt.github.io/rtve-news/RTVE_10minutos_21abril2026.html",
       "uploadDate": "2026-04-21"
+    },
+    {
+      "title": "2026년 5월 19일 - RTVE 10분뉴스",
+      "date": "2026년 5월 19일",
+      "url": "RTVE_10minutos_19052026_final.html",
+      "uploadDate": "2026-05-19"
+    },
+    {
+      "title": "2026년 5월 21일 - RTVE 10분뉴스",
+      "date": "2026년 5월 21일",
+      "url": "RTVE_10minutos_21052026_final.html",
+      "uploadDate": "2026-05-21"
+    },
+    {
+      "title": "2026년 5월 27일 - RTVE 10분뉴스",
+      "date": "2026년 5월 27일",
+      "url": "RTVE_10minutos_27052026_final.html",
+      "uploadDate": "2026-05-27"
+    },
+    {
+      "title": "2026년 6월 1일 - RTVE 10분뉴스",
+      "date": "2026년 6월 1일",
+      "url": "RTVE_10minutos_01062026_final.html",
+      "uploadDate": "2026-06-01"
+    },
+    {
+      "title": "2026년 6월 8일 - RTVE 10분뉴스",
+      "date": "2026년 6월 8일",
+      "url": "RTVE_10minutos_08062026_final.html",
+      "uploadDate": "2026-06-08"
+    },
+    {
+      "title": "2026년 6월 9일 - RTVE 10분뉴스",
+      "date": "2026년 6월 9일",
+      "url": "RTVE_10minutos_09062026_final.html",
+      "uploadDate": "2026-06-09"
     }
   ]
 }

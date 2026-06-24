@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>학생의 사고를 가시화하기: 역사가처럼 비공식적으로 쓰기를 가르치기 — Bain (2026) 한국어 번역</title>
+<style>
+  :root {
+    --sidebar-width: 260px;
+    --accent: #2c5f8a;
+    --accent-light: #e8f1f8;
+    --text: #1a1a1a;
+    --muted: #555;
+    --border: #d0d7de;
+    --bg: #fafafa;
+    --white: #ffffff;
+    --table-head: #f0f4f8;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.8;
+    font-size: 15px;
+  }
+
+  /* ── 사이드바 ── */
+  #sidebar {
+    position: fixed;
+    top: 0; left: 0;
+    width: var(--sidebar-width);
+    height: 100vh;
+    background: var(--white);
+    border-right: 1px solid var(--border);
+    overflow-y: auto;
+    z-index: 100;
+    padding: 20px 0 40px;
+  }
+
+  #sidebar .sidebar-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--accent);
+    padding: 0 18px 12px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 12px;
+    letter-spacing: 0.03em;
+  }
+
+  #sidebar nav a {
+    display: block;
+    padding: 5px 18px;
+    font-size: 12.5px;
+    color: var(--muted);
+    text-decoration: none;
+    border-left: 3px solid transparent;
+    transition: all 0.15s;
+    line-height: 1.5;
+  }
+
+  #sidebar nav a:hover,
+  #sidebar nav a.active {
+    color: var(--accent);
+    background: var(--accent-light);
+    border-left-color: var(--accent);
+  }
+
+  #sidebar nav a.sub {
+    padding-left: 30px;
+    font-size: 12px;
+  }
+
+  /* ── 메인 ── */
+  #main {
+    margin-left: var(--sidebar-width);
+    padding: 40px 60px 80px;
+    max-width: 900px;
+  }
+
+  /* ── 논문 헤더 ── */
+  .paper-header {
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 20px;
+    margin-bottom: 28px;
+  }
+
+  .paper-header .label {
+    font-size: 12px;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 8px;
+  }
+
+  .paper-header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--accent);
+    line-height: 1.4;
+    margin-bottom: 6px;
+  }
+
+  .paper-header .subtitle {
+    font-size: 14px;
+    color: var(--muted);
+    margin-bottom: 14px;
+    font-style: italic;
+  }
+
+  .meta-grid {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 4px 14px;
+    font-size: 13px;
+  }
+
+  .meta-grid .key { color: var(--muted); font-weight: 600; }
+  .meta-grid .val { color: var(--text); }
+
+  /* ── 초록 ── */
+  .abstract-box {
+    background: var(--accent-light);
+    border-left: 4px solid var(--accent);
+    border-radius: 4px;
+    padding: 18px 22px;
+    margin-bottom: 36px;
+  }
+
+  .abstract-box h2 {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .abstract-box p { font-size: 14px; color: var(--text); }
+
+  /* ── 섹션 ── */
+  section {
+    margin-bottom: 40px;
+    scroll-margin-top: 24px;
+  }
+
+  section h2 {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--accent);
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 8px;
+    margin-bottom: 16px;
+  }
+
+  section h3 {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--text);
+    margin: 22px 0 10px;
+  }
+
+  p { margin-bottom: 14px; }
+
+  /* ── 표 ── */
+  .table-wrap {
+    margin: 24px 0;
+    overflow-x: auto;
+  }
+
+  .table-wrap .caption {
+    font-size: 13.5px;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 8px;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13.5px;
+  }
+
+  th {
+    background: var(--table-head);
+    color: var(--text);
+    font-weight: 700;
+    padding: 9px 14px;
+    border: 1px solid var(--border);
+    text-align: left;
+  }
+
+  td {
+    padding: 8px 14px;
+    border: 1px solid var(--border);
+    vertical-align: top;
+  }
+
+  tr:nth-child(even) td { background: #f7f9fb; }
+
+  .table-source {
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 6px;
+    font-style: italic;
+  }
+
+  /* ── 목록 ── */
+  ul, ol {
+    margin: 10px 0 14px 24px;
+  }
+
+  li { margin-bottom: 6px; }
+
+  /* ── 인용 블록 ── */
+  blockquote {
+    border-left: 3px solid var(--accent);
+    padding: 10px 18px;
+    margin: 16px 0;
+    background: #f0f4f8;
+    font-size: 14px;
+    color: var(--muted);
+    font-style: italic;
+  }
+
+  /* ── 각주 ── */
+  .footnotes {
+    border-top: 1px solid var(--border);
+    margin-top: 30px;
+    padding-top: 14px;
+    font-size: 12.5px;
+    color: var(--muted);
+  }
+
+  .footnotes p { margin-bottom: 8px; }
+
+  /* ── 맨 위로 버튼 ── */
+  .back-top {
+    display: inline-block;
+    margin-top: 40px;
+    padding: 8px 18px;
+    background: var(--accent);
+    color: white;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 13px;
+  }
+
+  .back-top:hover { background: #1e4568; }
+
+  /* ── 강조 박스 (비공식 쓰기 유형 목록 등) ── */
+  .highlight-box {
+    background: #f5f9ff;
+    border: 1px solid #c8dff5;
+    border-radius: 4px;
+    padding: 14px 20px;
+    margin: 16px 0;
+  }
+
+  /* ── 반응형 ── */
+  @media (max-width: 900px) {
+    #sidebar { display: none; }
+    #main { margin-left: 0; padding: 24px 20px 60px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══════════════ 사이드바 ══════════════ -->
+<aside id="sidebar">
+  <div class="sidebar-title">📄 목차</div>
+  <nav>
+    <a href="#header">논문 정보</a>
+    <a href="#intro">서론: 가르치기와 평가의 딜레마</a>
+    <a href="#reframing">역사 글쓰기의 재개념화</a>
+    <a href="#difference">공식 vs 비공식 글쓰기</a>
+    <a href="#benefits">비공식 글쓰기의 교육적 효과</a>
+    <a href="#types">비공식 글쓰기의 유형과 기능</a>
+    <a class="sub" href="#story">스토리 쓰기</a>
+    <a class="sub" href="#writing-to-read">읽기를 위한 쓰기</a>
+    <a class="sub" href="#debate">상상 토론: 논거 구성</a>
+    <a class="sub" href="#dialogue">동료와의 침묵 대화</a>
+    <a class="sub" href="#overtime">동일 질문 반복 응답</a>
+    <a class="sub" href="#community">낭독을 통한 공동체 형성</a>
+    <a href="#conclusion">결론</a>
+    <a href="#references">각주 및 참고문헌</a>
+  </nav>
+</aside>
+
+<!-- ══════════════ 메인 ══════════════ -->
+<div id="main">
+
+  <!-- 논문 헤더 -->
+  <div class="paper-header" id="header">
+    <div class="label">학술 강연 원고 (사전배포본) | 한국어 번역</div>
+    <h1>학생의 사고를 가시화하기: 역사가·사회과학자처럼 비공식적으로 글쓰기 가르치기</h1>
+    <div class="subtitle">Making Student Thinking Visible: Teaching Students to Write Informally Like Historians and Social Scientists</div>
+    <div class="meta-grid">
+      <span class="key">저자</span><span class="val">Bob Bain, Ph.D.</span>
+      <span class="key">소속</span><span class="val">University of Michigan, Marsal School of Education / Department of History</span>
+      <span class="key">이메일</span><span class="val">bbain@umich.edu</span>
+      <span class="key">발표</span><span class="val">서울대학교 초청 강연, 2026년 7월 24일, 서울 (대한민국)</span>
+      <span class="key">유형</span><span class="val">강연 원고 사전배포본 (penultimate draft) — 인용 불가, 최종본은 2026년 8월 이후 저자에게 문의</span>
+    </div>
+  </div>
+
+  <!-- ══ 서론 ══ -->
+  <section id="intro">
+    <h2>서론: 가르치기와 평가의 딜레마</h2>
+
+    <p>글쓰기를 배우고 잘 쓸 수 있게 되는 것은 오래전부터 여러 분야에서 성공을 정의하는 핵심 기술 중 하나였다. 지난 30여 년간 수많은 정책 보고서와 교육과정 문서들이 대학·직업 준비에 있어 글쓰기의 중요성을 강조해 왔다. 어느 보고서는 "글쓰기는 단연코 대학 성공과 가장 긴밀하게 연결된 단일 학문 기술"이라고 주장하며, 대학에서는 "논거를 명확히 제시하고, 각 논점을 뒷받침하며, 논문 작성 시 스타일 매뉴얼의 기초를 활용하는" 글쓰기가 요구된다고 설명한다.<sup>1</sup> 역사가처럼 읽기 가르치기에 비해 주목을 훨씬 덜 받지만, 역사가처럼 쓰기를 가르치는 것 역시 고등학생과 대학생에게 동등하게 가치 있는 목표다. 그러나 모든 학생이 이 기준을 충족하도록 돕는 일은 교사에게 상당하고도 복잡한 부담을 안겨준다.</p>
+
+    <p>어느 역사 교사에게 물어봐도, 지금보다 훨씬 더 자주 학생의 글쓰기 과제를 내주고 피드백을 주고 싶다고 할 것이다. 그러나 역사 에세이를 내주는 교사는 거의 없다.<sup>2</sup> 중학교, 고등학교, 대학의 개론 수업에서 빈번하고 실질적이며 공식적인 글쓰기는 사실상 사라진 상태다.</p>
+
+    <p>역사 교사와 학생 모두 역사 글쓰기를 교수학적·지적으로 버겁게 느끼는 데는 몇 가지 이유가 있다. 첫째, 모든 역사 교사가 역사 글쓰기를 효과적으로 지도하는 데 필요한 경험이나 전문성을 갖추고 있지는 않다. 역사 글쓰기에서 역사가들은 세 가지 장르—서사(narrative), 설명(explanation), 논증(argument)—를 활용하며, 각각은 독특한 구조적·증거적 특성을 지닌다.<sup>3</sup> 각 장르에 대한 충분한 지식과 실용적인 교수 활동이 모두 요구된다. 둘째, 25명의 학생에게도 글쓰기 과제를 평가하고 피드백을 주는 데는 상당한 시간이 필요하다—그런데 중학교, 고등학교, 대학 교사 중 그렇게 적은 학생을 가르치는 이가 얼마나 되겠는가? 셋째, 내용 중심의 기준과 선다형 시험에 초점을 맞추라는 요구가 글쓰기 과정과 평가 기대 사이의 괴리를 낳았다. 시험과 기준의 압박은 산발적인 사실과 역사·사회과학 내용을 다루는 데 급급하여 글쓰기를 포기하는 자기정당화 논리를 만들어 냈다. 글쓰기를 포기하고 '광범위한 내용 다루기'를 선택한 결과는 눈덩이처럼 불어났다—하위 학년 학생들이 쓰기 경험을 쌓지 못하면서, '상류'의 교사들에게 더 큰 교수 부담이 전가되었다. 마지막으로, 학생들도 일관성 있는 증거 기반 에세이를 구성하는 것을 스트레스로 느끼며, 이는 '하기 싫은' 학생들에게 동기를 부여하는 것을 더욱 어렵게 만든다.</p>
+
+    <p>학생의 글쓰기를 향상시키는 것이 중등 교사와 대학 교수 모두에게 매력적이고 긍정적이며 기대되는 목표임에도 불구하고, 그 목표에 도달하기 위해 필요한 사고, 시간, 기술, 노력은 이를 달성하거나 심지어 시도하는 데도 장애물을 만들어왔다. 그 결과, 학생들이 잘 쓸 수 있도록 가르치는 것은 역사·사회과학 교육에서 가장 가치 있지만 가장 간과되는 실천 중 하나로 남아 있다.</p>
+
+    <p>이상적이지 않더라도, 글쓰기를 무시하는 것은 중등 교직의 현실에 대한 합리적인 대응이다. 과다한 학급 규모, 다양한 능력과 동기를 가진 학생들, 외부 시험의 요구, 그리고 여러 직업적·개인적·삶의 헌신에 직면했을 때, 수백 편의 논문 채점을 업무에 추가하지 않는 교사들을 이해할 수 있다. Ted Sizer는 그의 저서 『Horace의 타협(Horace's Compromise)』에서, 선의의 교사 Horace가 직면하는 상황—점점 늘어나는 요구를 감당하기 위해 더 많은 과제를 내주거나 심층 학습 및 비판적 사고를 촉진하는 일을 멈추는 것—을 완벽하게 포착해냈다.<sup>4</sup> Horace는 업무 부담을 줄이기 위해 글쓰기 과제의 양을 줄였고, 학생들이 피상적인 표준화 시험을 통과하도록 가르치는 것에 만족하게 되었다.</p>
+
+    <p>학교가 달성하고자 한다고 주장하는 것과 실제 교실에서 일어나는 것 사이의 이 간극은 매우 심각하다. 교육과정 문서, 정책 보고서, 전문가 단체들은 사회과 교사들이 학생의 논증적·설득적 글쓰기를 가르치고 평가해야 한다고 기대한다. 그러나 미국 학교교육의 구조와 맥락은 사회과 교사들이 이 전문적 책임을 충실히 이행하기 극히 어렵게 만들어, 상당한 딜레마를 낳는다.</p>
+
+    <p>이 딜레마를 어떻게 해결할 것인가? 한 세기 이상 개혁가들은 포괄적이고 구조적인 개혁을 주창해왔다. Sizer는 예컨대 학교가 학급 규모를 줄이고, 교사의 학생 수를 대폭 줄이며, 교사가 계획하고 읽고 사고하고 학생 및 동료와 상담하며 학생의 글쓰기를 평가하고 피드백을 제공할 시간을 수업 일과에 포함시킬 것을 제안했다.<sup>5</sup> 포괄적인 구조 개혁은 바람직하고 필요하지만, 교사의 통제 범위를 벗어난다. 실제로, Beckett의 『고도를 기다리며』의 인물들처럼 교사들은 그러한 의미 있는 변화를 끝없이 기다려왔다. 그리고 설령 주 정부가 실질적인 개혁을 시작한다 해도, Sizer의 제안대로라면 그 포괄적 개혁이 교사와 학생에게 닿기까지 수년이 걸릴 것이다.</p>
+
+    <p>요컨대, 미래 지향적인 포괄적 개혁은 교사와 학생의 현재 필요를 충족할 수 없다.</p>
+
+    <p>그러나 교사의 통제 범위 안에서 이 딜레마를 처리하는 또 다른 방식이 있다. 글쓰기를 학생이 자신의 사고와 결론을 타인이 읽을 수 있도록 가시화하고 접근 가능하게 만드는 총괄적·공식적 산출물로 보는 대신, 교사들은 의미 구성과 추론 과정에서의 글쓰기 역할을 인정함으로써 교과별 글쓰기의 가치와 실천을 재구성할 수 있다. '교과별 글쓰기로 인정되는 것'의 범위를 넓힘으로써, 교사들은 평가하고 피드백을 주는 교수 부담을 늘리지 않으면서도 학생들이 더 자주, 자연스럽게, 생산적이고 비공식적으로 쓰도록 요구할 수 있다.</p>
+
+    <div class="footnotes">
+      <p><sup>1</sup> David T Conley, <em>Redefining College Readiness</em> (Eugene, Or: Education Policy Improvement Center, 2007), 5, 14.</p>
+      <p><sup>2</sup> Will Fitzhugh, "High School Flight from Reading and Writing," <em>Academic Questions</em> 24, no. 4 (December 2011): 412–18.</p>
+      <p><sup>3</sup> Caroline Coffin, <em>Historical Discourse: The Language of Time, Cause and Evaluation</em> (London, New York: Continuum, 2006); Caroline Coffin, "Learning the language of school history: the role of linguistics in mapping the writing demands of the secondary school curriculum," <em>Journal of Curriculum Studies</em> 38, no. 4 (2006); Mary J. Schleppegrell, Mariana Achugar, and Teresa Oteiza, "The Grammar of History: Enhancing Content-Based Instruction Through a Functional Focus on Language," <em>TESOL Quarterly</em> 38, no. 1 (2004).</p>
+      <p><sup>4</sup> Theodore R. Sizer, <em>Horace's Compromise: The Dilemma of the American High School</em> (Houghton Mifflin, 1984).</p>
+      <p><sup>5</sup> 1984년 『Horace의 타협』 출판과 함께 Sizer는 '학생들이 마음을 잘 활용하여 배우도록' 돕는 교육을 강조하는 개혁 운동인 핵심학교연합(Coalition of Essential Schools, CES)을 출범시켰다. CES는 개인화 학습, 소규모 학급, 표준화 시험이 아닌 숙달 기반 평가, '학생-작업자, 교사-코치' 모델을 중심으로 학교를 재구조화하는 원칙들을 내세웠다. Larry Cuban에 따르면, CES는 2007년 약 1,000개 중등학교로 정점에 달했으나 이후 100개 미만의 회원 학교로 줄어들었다. (Larry Cuban, "Whatever Happened to the Coalition of Essential Schools?" <em>Larry Cuban on School Reform and Classroom Practice</em>, August 9, 2024 참조.)</p>
+    </div>
+  </section>
+
+  <!-- ══ 역사 글쓰기의 재개념화 ══ -->
+  <section id="reframing">
+    <h2>역사·사회과학에서의 글쓰기 재개념화</h2>
+
+    <p>거의 한 세기 전, 역사가 Carl Becker는 바로 이러한 재개념화를 촉구했다. "글쓰기"는, Becker가 교사들에게 상기시켰듯이, "결국 행위—반드시 수행되어야 하는 무언가"다. Becker는 "만들어진 것의 관점"에서 글쓰기에 접근하는 것이 아니라, "만드는 사람의 관점"에 초점을 맞추어 창작 과정을 고찰하라고 촉구했다.<sup>6</sup> 이 관심의 전환은 역사와 사회과학을 연구·학습·가르치는 데 관련되는 다른, 덜 형식적인 글쓰기 형태들을 시야에 들어오게 한다—이것은 초임 교사로서의 나에게 결정적이었던 재구성이다.</p>
+
+    <p>역사 글쓰기를 완성된 세련된 에세이나 논문과 동일시함으로써, 교사와 정책 입안자들은 범주 오류를 범하고 있다. 역사가나 사회과학자의 모든 글쓰기가 타인이 읽을 것을 의도하는 것은 아니다. 실제로 학자들은 가장 자주, 나중에 사용할 정보를 포착하고 사료를 두고 고민하며 생각을 종이나 컴퓨터에 기록하는 과정에서 자신을 위해 스스로에게 쓴다. 많은 역사가와 학자들이 자신의 메모·기록 관행을 지나가듯 언급하지만, 학자들이 공개적인 결론을 구성하는 데 필요한 이해를 발전시키기 위해 사용하는 과정과 도구에 대해서는 놀라울 정도로 주목이 이루어지지 않았다.</p>
+
+    <p>나의 학부 과정에서 대학 역사 교수들은 내게 총괄적·최종 논문을 작성하도록 배정했다. 과제는 출처의 수, 인용 형식, 구조 같은 최종 산출물의 형식 요건을 규정했다. 나의 교사 교육 과정과 현장 실습 교사들도 총괄적·최종 과제에 초점을 맞췄다. 그러나 그들은 나의 미래 학생들이 완성할 총괄 글쓰기 과제를 만드는 데 나를 집중시켰다.</p>
+
+    <p>초임 세계사 교사로서 나는 이러한 경험과 모델을 활용하여 첫 몇 개 단원의 최종 에세이 특성과 루브릭을 설계했다. 루브릭은 여러 긴 주말에 걸쳐 채점한 수백 편의 학생 논문을 평가하고 논평하는 데 도움이 되었다. 나는 논문에 덧붙인 광범위한 피드백이 뿌듯했지만, 채점에 쏟아붓는 시간이 그렇게 뿌듯하지는 않았다.</p>
+
+    <p>그러나 첫 몇 세트의 학생 논문을 돌려준 후, 뿌듯함은 사라졌다. 나는 학생 행동에서 당혹스럽고 낙담스러운 패턴을 발견했다. 첫째, 광범위한 피드백에도 불구하고 논문에서 논문으로 성장을 거의 확인할 수 없었다. 특히 가장 많이 향상이 필요한 학생들에게서 그랬다. 둘째, 채점된 논문을 수업을 나가면서 내 쓰레기통에 버린 학생들이 여럿 있다는 것을 알게 되었다.</p>
+
+    <p>무슨 일이 일어나고 있었을까?</p>
+
+    <p>그래서 나는 물었다. 버려진 논문 몇 장을 회수하여 학생들에게 돌려주며 장난스럽게 "이 논문을 잘못된 폴더에 정리한 것 같아"라고 말한 후, "내 코멘트가 너희가 향상하는 데 도움이 될 거라고 생각하지 않니?"라고 물었다.</p>
+
+    <p>"아니요," 학생들은 두 가지 이유를 내놓았다.</p>
+
+    <p>첫째, 여러 학생이 그 논문의 점수가 이미 성적부에 기록되었기 때문에, 그 논문을 개선하기 위한 내 제안에 주의를 기울일 필요가 없다고 느꼈다고 말했다.<sup>7</sup> 둘째, 그들은 내가 제안한 변경 사항—정보 추가, 개념 정교화, 더 관련성 있는 출처 사용, 논거를 구성하기 위한 논문 구조화—을 어떻게 해야 하는지 알거나 그럴 자원이 있었다면 이미 그렇게 했을 것이라고 설명했다. 본질적으로, 그들은 점수와 코멘트가 논문의 단점을 확인했지만, 자신들은 내 코멘트에서 그 단점을 바로잡을 경로를 볼 수 없었다고 말했다.</p>
+
+    <p>충격이었다. 나는 이 9학년 학생들이 코멘트를 저장하고 몇 주 후, 다른 내용에 관해 다음 과제로 전이할 기술과 동기가 있을 것이라고 순진하게 가정했다. 논문을 쓰레기통에 버린 학생들은 피드백을 다시 참고할 수 없었고, 짧은 학급 토론만으로도 다음 과제를 쓸 때 채점된 논문을 되돌아보는 학생이 거의 없다는 것을 알 수 있었다.</p>
+
+    <p>나는 또한 나의 수업이 2~3주마다 있는 선다형 시험이나 역사적 논거를 개념과 증거를 사용하여 구성하는 에세이를 완성하기 위해 학생들을 얼마나 잘 준비시키고 있는지에 대한 가정을 의심하기 시작했다. 나는 계획 질문을 "다음 수업에서 나는 무엇을 해야 하는가?"에서 "학생들은 무엇을 해야 하는가?"로 서서히 전환했다. 나는 학생들이 활동에 참여하고 있다는 사실만으로 그들이 과제를 완성하기 위한 도구와 자원을 갖추고 있다는 나의 가정을 의심하기 시작했다.</p>
+
+    <p>고등학교에서 가르치면서 동시에 역사학 대학원 과정을 수강하게 되면서, 나는 교사로서의 역할과 학생으로서의 역할을 어떻게 구분해왔는지 인식하게 되었다. 교수들이 학생인 나에게 논문을 내줬듯이, 나도 내 학생들에게 읽을 것들을 내주고 연구 논문을 쓰게 했다. 학생으로서 나는 최종 에세이를 쓰기 훨씬 전부터 수업 안팎에서 항상 쓰고 있었다. 책을 읽으며 문장에 밑줄을 긋고, 단어를 동그라미 치고, 여백에 코멘트를 달기 위해 연필을 손에 쥐고 있었다. 역사적·사학적 정보를 담기 위한 색인 카드를 만들고, 아이디어를 정리하고 사고의 기록을 남기기 위한 저널을 유지했다. 이 메모, 비망록, 낙서, 표시들은 최종 논문을 쓰는 데 필수적이었다. 실제로, 나는 저널과 색인 카드를 차 열쇠만큼이나 소중히 여겼다. 역사를 공부하는 학생으로 배운 것을, 나는 역사 교사가 되는 데 활용하지 않았던 것이다.</p>
+
+    <p>서서히 나는 이것을 학생의 사고를 단원의 끝에서만이 아니라 단원 전체에 걸쳐, 나에게만이 아니라 학생들 자신에게도 가시적이고 활용 가능하게 만드는 문제로 보게 되었다.<sup>8</sup> 나는 관련 연구를 찾아보았고, 글쓰기를 "종이 위의 사고"이자 타인에게 배운 것을 전달하는 수단이 아닌 학습 도구로 보는 학술 문헌을 발견했다.<sup>9</sup> 나는 학생들에게 저널을 유지하도록 요구하기 시작했고, 활동을 시작하기 전의 짧은 2분 '자유 쓰기', 강의나 영화를 멈추며 사고를 탐색하는 쓰기, 수업 마지막 5분에 그날 수업에 대한 반응 쓰기 등으로 저널을 채워 나갔다. 나는 학생들이 자신의 글쓰기를 활용하도록 보상하는 방법과 내가 교사로서 직면하는 도전들을 관리하는 데 도움이 되는 새로운 비공식 글쓰기 관행을 찾았다. 종종 우리는—나를 포함하여—토론을 시작하기 전에 저널의 섹션을 읽었고, 이를 통해 탄탄한 아이디어 세트를 가지고 대화를 시작할 수 있었다. 나는 탐구 과정의 다양한 지점—조사할 문제를 설정하고, 사료를 분석하고, 반론을 초안 잡고, 심지어 동료의 글쓰기에 코멘트하는 것—에서 아이디어를 포착하기 위해 비공식 글쓰기를 사용하는 다양한 형식과 목적을 실험했다.</p>
+
+    <div class="footnotes">
+      <p><sup>6</sup> Carl Becker, "The Art of Writing," in <em>Detachment and the Writing of History: Essays and Letters of Carl L. Becker</em>, ed. Phil L. Snyder (Ithaca, NY: Cornell University Press, 1958), 127; Quoted in Bain, "Learning to Write Like (Informally) Historians."</p>
+      <p><sup>7</sup> 이 장에서 다루지 않지만, 학생들의 반응은 내가 학생들이 이미 채점된 평가를 다시 하고 논문을 다시 쓰도록 장려하는 방법을 찾는 것의 중요성을 깨닫게 해주었다. Benjamin Bloom의 1968년 보고서 <em>Learning for Mastery</em>와 John B. Carroll의 "A Model of School Learning"을 발견한 것이 숙달 학습(mastery learning)을 접하는 계기가 되었으며, 나는 교사 첫해에 이를 제한적으로 활용했다가 이후 더욱 완전하게 적용하도록 수정했다.</p>
+      <p><sup>8</sup> 문제 설정의 중요성에 관한 명언들이 있다. 예컨대 Albert Einstein은 "한 시간 안에 문제를 해결해야 한다면, 55분은 문제를 정의하는 데, 5분은 해결하는 데 쓰겠다"고 말했다고 전해진다. 발명가이자 General Motors 임원인 Charles Kettering도 유사한 생각을 표현했다: "잘 진술된 문제는 반쯤 해결된 문제다."</p>
+      <p><sup>9</sup> 예를 들어: Henry Steffens, "Using Informal Writing in Large History Classes," <em>The Social Studies</em> 82, no. 3 (1991): 107–9; Barry K. Beyer, "Using Writing to Learn in History," <em>The History Teacher</em> 13, no. 2 (1980): 167; Raghu N. Singh and N. Prabha Unnithan, "Free to Write," <em>Teaching Sociology</em> 17, no. 4 (1989): 465; Andrew August, "The Reader's Journal in Lower-Division History Courses," <em>The History Teacher</em> 33, no. 3 (2000): 343; John Michael Currin, <em>Informal Writing in Comprehensive History Survey Courses</em> (Minneapolis: Center for Interdisciplinary Studies of Writing, University of Minnesota, 2003); Suzanne S. Hudd, Robert A. Smart, and Andrew W. Delohery, "'My Understanding Has Grown, My Perspective Has Switched'," <em>Teaching Sociology</em> 39, no. 2 (2011): 179–89.</p>
+    </div>
+  </section>
+
+  <!-- ══ 공식 vs 비공식 ══ -->
+  <section id="difference">
+    <h2>공식 글쓰기와 비공식 글쓰기의 차이</h2>
+
+    <p>이러한 관행들을 명명하고, 그것들의 가치를 설명하고, 몇 가지에 대한 세부 사항을 제공하기 전에, 공식 글쓰기와 비공식 글쓰기의 의미를 명확히 해두는 것이 도움이 될 것이다.</p>
+
+    <p>공식 글쓰기와 비공식 글쓰기는 목적, 독자, 형식, 시간, 관습, 산출물에서 차이가 있다. 공식적으로 쓸 때, 필자는 자신의 사고, 결론, 또는 연구를 타인이 읽고, 연구하고, 평가하거나 활용할 수 있도록 만들고자 한다. 비공식 글쓰기는 철저히 개인적 사용을 위한 것으로, 자신의 사고를 기록하는 사적인 도구다. 가장 사적인 이 독자를 위해 쓸 때, 필자는 완전한 문장이나 단락, 적절한 참고문헌, 심지어 완전한 단어조차 사용할 필요가 없다—그림이나 도식으로도 충분하기 때문이다. 공식 글쓰기와 비공식 글쓰기는 소요 시간, 형식, 산출물 등의 측면에서도 차이가 있으며, 이는 아래 표 1에 나타나 있다.</p>
+
+    <div class="table-wrap">
+      <div class="caption">표 1. 공식 글쓰기와 비공식 글쓰기의 차이</div>
+      <table>
+        <thead>
+          <tr>
+            <th>구분</th>
+            <th>공식 글쓰기</th>
+            <th>비공식 글쓰기</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>독자</strong></td>
+            <td>외부 독자(교사, 채점자, 대중 등)를 위해 쓴다.</td>
+            <td>필자 자신을 위해 쓴다.</td>
+          </tr>
+          <tr>
+            <td><strong>목적</strong></td>
+            <td>결론 또는 발견을 타인에게 전달한다.</td>
+            <td>자신의 사고와 사고의 변화를 자신에게 전달한다.</td>
+          </tr>
+          <tr>
+            <td><strong>장르 또는 형식</strong></td>
+            <td>역사학의 전형적 장르를 사용한다:<br>• 서사(Narrative)<br>• 설명(Explanation)<br>• 논증(Argument)<br><br>다양한 형식:<br>• 학술 논문 및 저서<br>• 블로그 게시물<br>• 영상물</td>
+            <td>기능적 형식을 사용한다:<br>• 자유 쓰기, 브레인스토밍<br>• 여백 메모<br>• 개요 또는 목록<br>• 개념 지도<br><br>다양한 형식:<br>• 저널<br>• 색인 카드</td>
+          </tr>
+          <tr>
+            <td><strong>시간</strong></td>
+            <td>여러 수정 초안이 필요한 시간 집약적 작업.</td>
+            <td>훨씬 덜 시간 집약적; 수정이 아닌 검토의 대상.</td>
+          </tr>
+          <tr>
+            <td><strong>문법 및 관습</strong></td>
+            <td>적절한 문법, 구문, 철자법, 언어, 인용, 기타 관습 사용이 필수.</td>
+            <td>올바른 문법, 구문 등을 사용할 필요 없음. 단, 정확한 인용 기록은 반드시 필요.</td>
+          </tr>
+          <tr>
+            <td><strong>산출물</strong></td>
+            <td>타인이 읽고, 평가하고, 채점하거나 활용하도록 출판 또는 제출됨.</td>
+            <td>타인이 읽거나 평가하거나 채점하지 않도록 개인 파일이나 폴더에 보관됨.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ══ 비공식 글쓰기의 효과 ══ -->
+  <section id="benefits">
+    <h2>비공식 글쓰기의 교육적 효과</h2>
+
+    <p>학생들에게 비공식적인 방식(채점 없이)으로 쓸 기회를 제공하는 것은 중요한 역사적 개념에 대한 견고한 이해를 발전시키고, 필자로서, 그리고 자신만의 아이디어, 의견, 개념 연결 방식을 가진 역사가로서의 정체성을 발전시키는 데 필수적이다. 이는 학습을 보조하는 도구다. 비공식 글쓰기에 의도적이고 목적적으로 학생들을 참여시키는 것의 다양한 교육적 효과가 있다:</p>
+
+    <ul>
+      <li>메모하기, 주석 달기, 저널 쓰기, 초안 작성 같은 비공식 글쓰기는 역사가들이 역사적 사건과 개념을 고찰하고 비판적으로 사고하며 시대에 대한 깊은 이해를 형성하는 과정에서 수행하는 활동들을 학생들에게 경험하게 한다.</li>
+      <li>아이디어를 공고히 하고 개념, 사건, 시대에 대한 기억과 이해를 지원한다.</li>
+      <li>비공식 글쓰기는 학생들이 타인과 공유하기 전에 혼자 의견을 시험해보고 다양한 방식으로 아이디어를 조합할 수 있는 자신만의 독자를 갖게 한다.</li>
+      <li>비공식으로 쓰는 것은 학생들이 아이디어를 말로 표현하고 사건을 자신의 언어로 분석하거나 묘사하는 연습을 가능하게 한다. 비공식 글쓰기는 학생들이 구축하고, 수정하고, 정교화할 수 있는 출발점을 제공한다.</li>
+      <li>비공식 글쓰기는 교사가 학생들이 어떻게 내용 이해를 쌓아가는지 보고 최적의 지원과 다음 단계를 고려할 기회를 제공한다.</li>
+      <li>쓰기 유창성과 자신감을 기른다.</li>
+      <li>공평한 실천을 구축한다. 예컨대, 전체 토론 전에 학생들에게 질문에 대해 먼저 쓰게 하면 빨리 생각하는 학생만이 아니라 모든 학생이 나눌 아이디어를 생각할 시간을 갖게 된다. 생각을 종이에 담음으로써 모든 학생이 자신의 아이디어를 가치 있게 볼 수 있다.</li>
+    </ul>
+
+    <p>교사들은 학생들이 동료와 교사에게 저널 항목을 선택하여 공유할 기회를 제공해야 한다. 이러한 활동에서 학생들은 저위험(low-risk) 맥락에서 동료의 생각을 읽으며 사고의 공통점과 차이점을 논의하고 질문하거나 코멘트를 달아 서로의 이해를 심화할 수 있다. 교사들은 교사가 읽고 코멘트할 저널 항목을 학생들이 선택하도록 요청해야 하며, 이는 교사가 학생들을 개인으로서 더 잘 알고 그들이 역사적 사건, 시대, 개념을 얼마나 잘 이해하는지 파악할 수 있는 방법을 제공한다. 채점되지 않는 비공식 글쓰기는 또한 교사가 학생들의 사고를 보고 다음 수업 단계를 계획할 수 있게 한다. 교사들에게 학생들의 특정 학습 필요를 충족하는 수업을 설계하고 참여를 높일 수 있는 더 많은 기회를 제공한다.</p>
+
+    <p>가장 중요한 것은, 비공식 글쓰기가 학생들이 자신이 배우는 것에 대한 생각을 보게 해준다는 것이다. 그것은 공간—페이지 위의 공간—을 제공하여 학생들이 추가된 정보가 사건이나 인물에 대한 다른 정보와 어떻게 반영되는지, 역사적 개념과 어떤 관련이 있는지, 자신에게 어떻게 자리 잡는지, 세계가 어떻게 작동하는지를 고찰할 수 있게 한다. 학생들에게 자신의 생각, 해석, 이의, 질문, 퍼즐 맞추기를 표현하도록 요청하는 것은 학생을 수동적 정보 수용자에서 지식 창조자, 의미를 구성하고 자신이 배운 것에 대한 어느 정도의 주체성을 주장하는 행위자로 이동시킨다.</p>
+
+    <p>우리가 학생들에게 공식적이고 고부담(high-stakes)이며 채점되는 과제를 위해서만 쓰도록 요구할 때, 충분한 연습 없이 최선의 글을 생산하라는 압박을 주는 것이다. 학생들이 매일 거의 또는 전혀 부담 없이 쓸 기회를 가질 때, 글쓰기에 대한 전반적인 불안이 줄어든다. 정보를 탐색할 수 있게 하고 전체 토론 전에 쓸 시간을 줌으로써, 학생들은 자신이 말할 것을 생각하고 글쓰기를 통해 리허설할 시간을 갖는다. 학급 앞에서 말할 때, 그들은 참고할 메모가 있어 주제를 벗어나지 않고 전체 경험이 덜 두렵다. 많은 학생들이 쓴 후에 더 기꺼이 말하려 하며, 이는 교실의 형평성을 높인다.</p>
+  </section>
+
+  <!-- ══ 유형과 기능 ══ -->
+  <section id="types">
+    <h2>비공식 글쓰기의 다양한 유형과 인지적·교수적 기능</h2>
+
+    <p>다양한 비공식 글쓰기 유형은 학생들이 사고의 다양한 측면을 포착하도록 돕는 서로 다른 인지적 기능을 수행할 수 있다. 마찬가지로, 비공식 글쓰기의 독특한 형식들은 교사들이 역사와 같은 복잡한 교과를 가르치는 데 내재한 교수적 도전을 관리하는 데 도움이 된다. 다음은 역사·사회과 학생들을 위한 비공식 글쓰기 유형 샘플이다.</p>
+
+    <div class="highlight-box">
+      <ul>
+        <li>자유 쓰기(Free-writing) 또는 유도 자유 쓰기(prompted free-writing)</li>
+        <li>마무리 자유 쓰기: 수업에서 나가며 쓰기</li>
+        <li>도입 자유 쓰기: 수업으로 들어가며 쓰기</li>
+        <li>브레인스토밍</li>
+        <li>문제 설정 쓰기</li>
+        <li>변증법적 쓰기</li>
+        <li>읽기를 위한 쓰기(Writing to read)</li>
+        <li>아이디어 발전 쓰기</li>
+        <li>추측적·추론적 쓰기</li>
+        <li>이전 비공식 글쓰기에 대한 성찰</li>
+        <li>패턴 쓰기</li>
+        <li>토론 준비를 위한 자유 쓰기</li>
+        <li>추가 정보가 자신의 사고를 어떻게 뒷받침·확장·도전하는지 설명하는 쓰기</li>
+        <li>메타인지적 쓰기</li>
+        <li>선택 항목 낭독을 통한 공동체 형성</li>
+        <li>동일 질문에 시간을 두고 반복 응답하기</li>
+        <li>스토리 쓰기</li>
+        <li>논거 구성을 위한 상상 토론</li>
+        <li>동료와의 침묵 대화</li>
+      </ul>
+    </div>
+
+    <p>이 모든 프롬프트는 사고를 자극하는 촉발제로 시작한다: "…에 대해 무엇을 알고 있나요? …에 대해 어떻게 생각하나요? 이 주제에 어떤 태도를 가지고 오나요? 어떤 질문이 있나요? 유사한 상황에서 어떻게 반응할 것인가요? 어떤 점이 어렵나요? 이 문제에서 가장 중요한 것은 무엇이라고 생각하나요? 가장 기억에 남는 것은? 놀라운 점은? 무엇을 발견했나요?"</p>
+
+    <p>이런 질문들은 학생들이 전체 학급과 논의하기 전에 독립적으로 문제나 이슈를 탐색하도록 장려한다. 학생들이 주제에 대한 자신의 사고를 고찰하도록 요구한다. 가장 중요하게는, 학생들의 기존 아이디어, 태도, 질문, 가치를 드러낸다. 현재의 사고를 저널 페이지에 기록하는 것은 나중에 고찰하기 더 쉽게 만들어 준다. 또한 나중에 나타날 수 있는 "나는 항상 그렇게 생각했어"라는 현재주의(presentism)에 대한 점검을 제공한다.</p>
+
+    <h3 id="story">스토리 쓰기(Story Writing)</h3>
+
+    <p>스토리 쓰기는 학생들이 학습 단원의 사실이나 사건으로부터 이야기를 발전시키도록 유도한다. 교과서, 사료, 강의는 너무 자주 학생들에게 일관된 시작, 중간, 끝이 없는 단편적인 사실로 나타난다. 스토리 쓰기는 학생들이 이야기 구조를 만들도록 장려한다. 과제는 단순하다—그냥 학생들에게 학습 중인 사건, 시대, 역사적 과정의 이야기를 쓰거나 개요를 잡거나 그림으로 그리도록 요청한다. 나는 종종 학생들에게 메모나 교과서를 참고하지 않고 자신들이 공부하는 사건이나 시대의 이야기를 하도록 요청한다. 이는 이름이나 날짜를 기억하지 못한다고 해서 일관된 이야기를 하는 것을 방해받지 않도록 장려한다. 또는 하나의 이야기를 쓴 후, 다른 시작점과 끝점에서, 또는 다른 서술자의 관점—사건에서 다른 역사적 행위자나 다른 역사적 관점을 사용하는—에서 이야기를 다시 하도록 요청할 수 있다. 그런 다음, 학생들에게 메모, 교과서, 사료를 다시 참고하여 이야기를 다시 쓰도록 요청할 수 있다.</p>
+
+    <p>이 유형의 비공식 글쓰기는 학생들이 세부 사항들 사이의 연결 고리를 만들고, 스토리텔러의 목소리를 탐색하거나, 다양한 관점에서 이야기를 다시 하도록 한다. 이러한 과정은 학생들이 역사적 이야기를 조합하고 만드는 시행착오에 참여하도록 한다. 이 활동은 교사들이 중요한 역사적 질문을 제기할 수 있게 한다. 이야기 전달에서 무엇이 바뀌었는가? 어떤 특정 사실이 이야기를 바꾸었는가? 당신의 이해가 바뀌었는가? 이야기 전달에서 누구의, 또는 어떤 관점을 취했는가?</p>
+
+    <h3 id="writing-to-read">읽기를 위한 쓰기(Writing-to-Read)</h3>
+
+    <p>학생들은 비공식 글쓰기를 사용하여 역사 텍스트를 읽는데, 이는 단순히 저자의 말을 기록하는 것이 아니라 텍스트에 대한 자신의 반응을 기록하도록 그들을 촉구한다. 읽기 메모 작성과 달리, 이 활동은 학생들에게 자료의 이해와 그 중요성에 대해 쓰도록 요청함으로써 그들을 재위치시킨다.</p>
+
+    <p>읽기를 시작하기 전에도, 나는 학생들에게 주제에 대한 자신의 초기 "추측" 또는 "이론", 또는 텍스트에서 발견할 것으로 예상하는 것을 포착하도록 했다. 이 사전 읽기 저널 항목은 읽기가 자신의 초기 아이디어에 미친 영향, 즉 텍스트가 자신의 생각을 어떻게 뒷받침하거나 확장하거나 도전하거나 놀라게 했는지에 대해 쓸 수 있는 기준점을 제공한다.</p>
+
+    <p>초기 아이디어를 종이에 담은 후, 나는 학생들에게 텍스트에서 두세 군데의 정지 지점을 찾아 저널을 열고 다음과 같은 여러 프롬프트 중 하나에 응답하여 항목을 작성하도록 요청한다:</p>
+
+    <ul>
+      <li>왜 여기서 멈추었나요?</li>
+      <li>이 텍스트가 어떤 질문이나 혼란을 야기하나요?</li>
+      <li>이 텍스트가 질문에 답하거나 혼란을 해소하나요?</li>
+      <li>이 텍스트가 다른 무언가를 떠올리게 하나요?</li>
+      <li>좋아하거나 싫어한 구절이나 인용문이 있나요? 어떤 것이었고 왜 그런 반응을 가졌나요?</li>
+      <li>저자에게 필수적이라고 생각한 구절이 있었나요? 당신이 중요하다고 생각한 것과 저자가 중요하다고 생각한 것 사이에 차이가 있나요?</li>
+      <li>이 텍스트가 답하려는 질문은 무엇인가요?</li>
+      <li>텍스트에 대한 전반적인 견해는 무엇인가요?</li>
+      <li>이것이 처음에 생각했던 것을 어떻게 뒷받침하거나 확장하거나 도전하나요?</li>
+      <li>이것이 읽었거나 보거나 들은 다른 것들을 뒷받침하거나 확장하거나 도전하나요?</li>
+    </ul>
+
+    <p>이것을 몇 번 한 후, 나는 많은 학생들이 내 프롬프트를 필요로 하지 않는다는 것을 발견했지만, 여전히 그것이 필요한 학생들에게는 계속 제공했다. 많은 교사와 학자들이 저널에서 이중 기입(double-entry) 방법을 사용한다. 학생들은 한 열에 인용문을 가져오거나 텍스트를 바꿔 말하고, 맞은편 열이나 맞은편 페이지에서 텍스트에 응답한다. 이 쓰기 형식은 독자와 텍스트 사이의 대화를 확립하고 포착하는데, 전문적인 독자들이 텍스트를 접할 때 마음속에서 구성하는 것과 유사하다.</p>
+
+    <p>텍스트와 학생의 사고 사이를 왔다 갔다 하는 것은 강의나 교육 영상을 포함하여 학생들이 읽는 어떤 텍스트에도 가치 있는 실천이다. 교사는 학생들이 종이에 사고를 포착할 수 있도록 몇 군데 핵심 정지 지점을 정할 수 있다. 때로 이런 설정에서 교사들은 학생들이 몇 분을 원할 때 손을 들어 저널에 사고를 기록할 수 있게 하기도 한다.</p>
+
+    <h3 id="debate">논거 구성을 위한 상상 토론(Imaginative Debates to Construct Arguments)</h3>
+
+    <p>학생들은 종종 대안적 관점을 고려하지 않고 결론에 도달한다. 그들이 다양한 사학적 입장을 탐색하도록 돕는 한 가지 방법은 문제를 설정하고 두 입장 사이의 상상 토론을 시작하여, 학생들이 다음 몇 수업에 걸쳐 논의를 완성하도록 요청하는 것이다. 예컨대, 나의 세계사 수업 중 하나에서 나는 학생들이 19세기 말~20세기 초 유럽이 두각을 나타내게 된 다양한 설명들을 고민하기를 원했다. 나는 이 자유 쓰기 과제로 두 입장 사이의 토론을 시작했다:</p>
+
+    <blockquote>
+      <p><strong>토론: "서구의 부상"</strong></p>
+      <p>서론: Ellen과 Greg은 지난 200년간 유럽과 서구가 권력과 위상에서 성장했다는 데 동의한다. 그들은 이 변화의 이유에 대해 의견이 다르다. 그들은 다음과 같이 토론을 시작한다:</p>
+      <p><strong>Ellen:</strong> "유럽의 성장은 기적적이었어. 그것은 독특한 유럽의 사건들, 상황들, 그리고 독자적인 문화적 변화의 부산물이었지."</p>
+      <p><strong>Greg:</strong> "어떻게 그런 말을 할 수 있어? 유럽의 성장은 유럽 밖에서, 훨씬 유럽 밖에서 일어난 일련의 사건들, 과정들, 그리고 우연들에 달려 있었어."</p>
+      <p><strong>당신의 과제:</strong> Ellen이 자신의 입장을 뒷받침하기 위해 할 수 있는 주장 두 가지와 Greg이 자신의 입장을 뒷받침하기 위해 할 수 있는 주장 두 가지, 그리고 각자의 응답을 포함하여 토론을 완성하시오.</p>
+    </blockquote>
+
+    <h3 id="dialogue">동료와의 침묵 대화(Silent Dialogues with Classmates)</h3>
+
+    <p>학생들은 종종 교사를 위해서만 글을 쓴다. 그러나 학급이 내용이나 새로운 실천을 배우는 과정에서 동료들이 서로의 비공식 글쓰기를 읽고 코멘트하는 데 큰 이점이 있다. 나는 학생들에게 읽은 질문이나 자료에 대해 약 15분간 비공식으로 쓰도록 요청하여 이 과제를 구성한다. 문법이나 구조에 대해 걱정하지 말고, 자신이 이해하지 못하는 질문이나 것들을 포함하여 사고를 포착하라고 말한다. 그런 다음, 세 명의 그룹에서 학생들에게 자신의 종이를 동료에게 건네도록 요청한다. 동료는 읽고 그 종이가 자신의 사고를 어떻게 뒷받침하거나 확장하거나 도전했는지 설명하는 코멘트를 적어도 세 개 달아야 한다. 그런 다음 다음 그룹 구성원에게 건네는데, 그는 읽고 적어도 세 개의 코멘트를 달되, 이번에는 이전 코멘트와 저자의 종이 모두에 코멘트할 수 있다. 마지막으로, 학생들은 종이를 저자에게 돌려 보낸다. 저자는 모든 코멘트를 읽은 후 동료의 코멘트나 두 다른 종이를 읽으며 배운 것에 코멘트한다.</p>
+
+    <p>코멘트를 주고받는 기술이 발전함에 따라, 나는 학생들에게 읽고 응답하기 전에 역할—"텍스트의 옹호자", "의심자", "믿는 사람", 또는 "우호적 비평가"—을 배정할 수 있다.</p>
+
+    <p>이러한 변증법적·상호작용적 글쓰기는 학생들을 역사적 문제를 둘러싼 비공식적이고 서면으로 이루어지는 대화에 참여시킨다. 아주 소박한 방식으로, 그것은 학자들이 학술대회, 동료 교류, 이메일을 통해 나누는 논의를 모방한다. 상호작용적 저널 쓰기는 학생들 사이에 유사한 교류의 기회를 만들어내며, 이를 통해 유사한 이점을 거둔다.</p>
+
+    <h3 id="overtime">동일 질문에 반복 응답하기(Responding to the Same Prompt Over Time)</h3>
+
+    <p>나는 종종 학생들에게 단원이나 탐구 전반에 걸쳐 동일한 핵심 문제나 단원 질문을 거듭 고찰하도록 요청한다. 학생들에게 새롭게 획득한 정보가 자신의 이해를 어떻게 변화시켰는지(또는 변화시키지 않았는지), 그리고 변화했다면 어떻게 변화했는지 평가하기 위한 지속적인 기록을 유지하도록 요청한다. 그것이 이미 생각하고 있던 것을 확인했는가, 반증했는가, 또는 조정했는가? 그것이 읽은 다른 정보를 확인했는가, 반증했는가, 또는 조정했는가?</p>
+
+    <p>학생 에세이로 끝나는 단원이나 중요한 연구 논문으로 끝나는 학기를 위해, 나는 학생들에게 자신의 질문이나 문제에 대해 알고 생각하는 것, 제시할 수 있는 주장, 그 주장을 뒷받침할 증거를 기술하도록 요청하는 15분의 짧은 자유 쓰기로 시작한다. 그런 다음 우리는 그들이 쓴 것에 대해—특히 말하고 싶거나, 질문하거나, 아이디어에 대한 피드백을 원하는 경우—몇 분을 토론한다. 이러한 정기적인 수업 내 쓰기 프롬프트는 학생들이 논거나 설명의 초안을 작업하고, 개념과 사실을 사용하여 논거나 설명을 뒷받침하도록 촉구한다. 더 나아가, 학생들에게 더 높은 부담을 지는 공식 글쓰기 활동의 저위험 리허설을 제공한다.</p>
+
+    <h3 id="community">낭독을 통한 공동체 형성(Community Building through Public Readings)</h3>
+
+    <p>학생들이 비공식 글쓰기가 미완성되었으며 아직 평가 준비가 되지 않았다는 것을 인식하기 시작하면, 의미를 구성하려는 노력에서 다른 비공식 필자들과 아이디어를 공유하는 것에 더 편안함을 느끼게 된다. 이런 일이 생기면, 나는 학생들에게 저널 항목을 학급에서 큰 소리로 읽도록 요청하기 시작한다. 다시, 동료들에게 잠정적 결론을 발표하는 학술대회나 교수 활동에서 동료들에게 말하는 역사가들과 유사하게, 학생들은 자신의 형성적 생각을 공개적으로 공유한다. 학생들은 대부분—전부가 아니라면—의 학생이 읽을 때까지 코멘트를 보류하며 차례로 저널에서 짧은 항목들을 읽는다. 이러한 빠른 공유는 학생들이 자신이 말할 것에 집중하는 것이 아니라 동료들의 말을 들을 수 있게 해방시킨다. 동료들보다 수업 토론에 합류하기 더 느린 학생들이 자신의 생각을 말하고 다른 사람들이 들을 수 있게 한다. 다른 사람이 이미 유사한 응답을 읽었더라도 모든 학생이 자신이 쓴 것을 읽는다. 이는 또한 학급이 집단적 응답에서 패턴을 찾고 아이디어와 관점의 변이를 지적할 수 있게 한다.</p>
+
+    <p>이 과정에서의 교사 참여는 필수적이지만 위험을 수반한다. 학생들처럼, 교사들도 저널에 쓰고, 수업에서 큰 소리로 읽고, 저널 교환 그룹에 참여해야 한다. 이 모델은 학생들과 교사들이 역사적 문제에 잠정적으로 접근하고, 필요에 따라 조정하고, 수정하고, 시험하고, 수정할 수 있게 한다. 비공식 글쓰기 활동에 합류하는 것은 교사를 탐구 공동체 안에 위치시킨다.</p>
+  </section>
+
+  <!-- ══ 결론 ══ -->
+  <section id="conclusion">
+    <h2>결론</h2>
+
+    <p>수십 년간 개혁가들은 교사들에게 글쓰기를 역사·사회과학 교실의 핵심 요소로 만들 것을 촉구해왔다. 빈번한 글쓰기의 가치를 인정하면서도, 너무 자주 교사와 학생들은 이것을 주요 에세이나 연구 논문으로 귀결되는 과제로 생각한다. 그러한 과제는 학생들이 완성하는 데 상당한 시간이 필요하고, 교사들이 평가하고 코멘트하며 채점하는 데 훨씬 더 많은 시간이 필요하다. 그 결과, 대부분의 교사들은 그것들을 드물게, 또는 전혀 내주지 않는다.</p>
+
+    <p>비공식 글쓰기는 교사나 학생 모두에게 상당한 시간 투자를 요구하지 않으면서도 학생들에게 필수적인 이점을 제공할 수 있다. 그것은 회피나 우회로가 아니다. 왜냐하면 비공식 글쓰기는 역사가와 다른 학자들이 연구를 수행하고 결론을 전달하는 데 사용하는 글쓰기 유형과 유사하기 때문이다. 비공식 글쓰기를 규칙적이고 일관성 있게 사용하는 것은 학생들이 역사가처럼 생각하고, 읽고, 쓰는 법을 배우는 데 도움이 된다.</p>
+
+    <p>비공식 글쓰기를 학습의 필수적이고 정기적인 요소로 만드는 것은 읽고, 평가하거나 피드백을 주는 교사의 의무와 책임에서, 학생들이 자신의 사고를 포착하고 성찰하는 기질과 역량을 개발하도록 돕는 것으로 전환시킨다. 그것은 글쓰기를 목표로 채택하는 데 따르는 일부 도전을 줄이며, 이는 교사와 학생 모두에게 이점이 된다.</p>
+  </section>
+
+  <!-- ══ 참고문헌 ══ -->
+  <section id="references">
+    <h2>각주 및 참고문헌</h2>
+
+    <p><strong>Bain, Bob.</strong> "Learning to Write Like (Informally) Historians." [미출판 원고, 서울대학교 강연 기반]</p>
+
+    <p><strong>Becker, Carl.</strong> "The Art of Writing." In <em>Detachment and the Writing of History: Essays and Letters of Carl L. Becker</em>, edited by Phil L. Snyder. Ithaca, NY: Cornell University Press, 1958. [칼 베커, "글쓰기의 기술"]</p>
+
+    <p><strong>Beyer, Barry K.</strong> "Using Writing to Learn in History." <em>The History Teacher</em> 13, no. 2 (February 1980): 167. [배리 K. 베이어, "역사에서 쓰기를 통한 학습"]</p>
+
+    <p><strong>Coffin, Caroline.</strong> <em>Historical Discourse: The Language of Time, Cause and Evaluation</em>. London, New York: Continuum, 2006. [캐롤라인 코핀, 『역사적 담론: 시간, 원인, 평가의 언어』]</p>
+
+    <p><strong>Coffin, Caroline.</strong> "Learning the language of school history: the role of linguistics in mapping the writing demands of the secondary school curriculum." <em>Journal of Curriculum Studies</em> 38, no. 4 (2006). [캐롤라인 코핀, "학교 역사의 언어 배우기: 중등학교 교육과정의 쓰기 요구 매핑에서 언어학의 역할"]</p>
+
+    <p><strong>Conley, David T.</strong> <em>Redefining College Readiness</em>. Eugene, OR: Education Policy Improvement Center, 2007. [데이비드 T. 콘리, 『대학 준비도 재정의』]</p>
+
+    <p><strong>Cuban, Larry.</strong> "Whatever Happened to the Coalition of Essential Schools?" <em>Larry Cuban on School Reform and Classroom Practice</em>, August 9, 2024. [래리 쿠반, "핵심학교연합은 어떻게 되었는가?"]</p>
+
+    <p><strong>Currin, John Michael.</strong> <em>Informal Writing in Comprehensive History Survey Courses: An Experiment in the Use of Informal Writing Assignments in "Introduction to Western Civilization" at the University of Minnesota, 1989–1990</em>. Minneapolis, MN: Center for Interdisciplinary Studies of Writing, University of Minnesota, 2003. [존 마이클 커린, 『포괄적 역사 개론 과목에서의 비공식 글쓰기』]</p>
+
+    <p><strong>Fitzhugh, Will.</strong> "High School Flight from Reading and Writing." <em>Academic Questions</em> 24, no. 4 (December 2011): 412–18. [윌 피츠휴, "독서와 글쓰기에서 도망치는 고등학교"]</p>
+
+    <p><strong>Hudd, Suzanne S., Robert A. Smart, and Andrew W. Delohery.</strong> "'My Understanding Has Grown, My Perspective Has Switched': Linking Informal Writing to Learning Goals." <em>Teaching Sociology</em> 39, no. 2 (April 2011): 179–89. [허드·스마트·델로허리, "'나의 이해가 성장하고, 관점이 바뀌었다': 비공식 글쓰기와 학습 목표 연결"]</p>
+
+    <p><strong>Schleppegrell, Mary J., Mariana Achugar, and Teresa Oteiza.</strong> "The Grammar of History: Enhancing Content-Based Instruction Through a Functional Focus on Language." <em>TESOL Quarterly</em> 38, no. 1 (2004). [슐레페그렐·아추가르·오테이자, "역사의 문법: 언어에 대한 기능적 초점을 통한 내용 기반 교수 강화"]</p>
+
+    <p><strong>Singh, Raghu N., and N. Prabha Unnithan.</strong> "Free to Write: On the Use of Speculative Writing in Sociology Courses." <em>Teaching Sociology</em> 17, no. 4 (October 1989): 465. [싱·우니탄, "자유롭게 쓰기: 사회학 과목에서의 추측적 글쓰기 활용"]</p>
+
+    <p><strong>Sizer, Theodore R.</strong> <em>Horace's Compromise: The Dilemma of the American High School</em>. Boston: Houghton Mifflin, 1984. [시어도어 R. 사이저, 『Horace의 타협: 미국 고등학교의 딜레마』]</p>
+
+    <p><strong>Steffens, Henry.</strong> "Using Informal Writing in Large History Classes: Helping Students to Find Interest and Meaning in the History." <em>The Social Studies</em> 82, no. 3 (June 1991): 107–9. [헨리 스테펜스, "대형 역사 수업에서의 비공식 글쓰기 활용: 학생들이 역사에서 흥미와 의미를 찾도록 돕기"]</p>
+
+    <p><strong>August, Andrew.</strong> "The Reader's Journal in Lower-Division History Courses: A Strategy to Improve Reading, Writing and Discussion." <em>The History Teacher</em> 33, no. 3 (May 2000): 343. [앤드루 어거스트, "하위 학년 역사 과목에서의 독자 저널: 읽기, 쓰기, 토론을 향상시키기 위한 전략"]</p>
+  </section>
+
+  <a class="back-top" href="#header">▲ 맨 위로</a>
+</div>
+
+<script>
+  // 스크롤 추적 → 사이드바 강조
+  window.addEventListener('scroll', () => {
+    let current = '';
+    document.querySelectorAll('section[id]').forEach(s => {
+      if (s.getBoundingClientRect().top <= 80) current = s.id;
+    });
+    document.querySelectorAll('#sidebar nav a').forEach(a => {
+      a.classList.toggle('active',
+        a.getAttribute('href') === '#' + current);
+    });
+  });
+
+  // 클릭 시 부드러운 스크롤
+  document.querySelectorAll('#sidebar nav a').forEach(a => {
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) target.scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+</script>
+</body>
+</html>
