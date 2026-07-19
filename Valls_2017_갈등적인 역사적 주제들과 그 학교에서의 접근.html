@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>갈등적인 역사적 주제들과 그 학교에서의 접근: 스페인의 사례 (한국어 번역)</title>
+<style>
+:root {
+  --sidebar-width: 270px;
+  --accent: #2c5f8a;
+  --accent-light: #e8f1f8;
+  --text: #1a1a1a;
+  --muted: #555;
+  --border: #d0d7de;
+  --bg: #fafafa;
+  --white: #ffffff;
+  --table-head: #f0f4f8;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: -apple-system, "Noto Sans KR", "Malgun Gothic", sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.75;
+}
+#sidebar {
+  position: fixed;
+  top: 0; left: 0;
+  width: var(--sidebar-width);
+  height: 100vh;
+  overflow-y: auto;
+  background: var(--white);
+  border-right: 1px solid var(--border);
+  padding: 20px 0 40px;
+  z-index: 100;
+}
+#sidebar h2 {
+  font-size: 14px;
+  color: var(--muted);
+  padding: 0 20px;
+  margin: 0 0 12px;
+  letter-spacing: 0.03em;
+}
+#sidebar nav a {
+  display: block;
+  padding: 7px 20px;
+  font-size: 13.5px;
+  color: var(--text);
+  text-decoration: none;
+  border-left: 3px solid transparent;
+}
+#sidebar nav a.sub {
+  padding-left: 34px;
+  font-size: 12.5px;
+  color: var(--muted);
+}
+#sidebar nav a:hover {
+  background: var(--accent-light);
+}
+#sidebar nav a.active {
+  border-left: 3px solid var(--accent);
+  background: var(--accent-light);
+  color: var(--accent);
+  font-weight: 600;
+}
+#main {
+  margin-left: var(--sidebar-width);
+  max-width: 820px;
+  padding: 48px 56px 100px;
+}
+.paper-header { margin-bottom: 32px; border-bottom: 2px solid var(--accent); padding-bottom: 20px; }
+.paper-header h1 { font-size: 24px; margin: 0 0 6px; color: var(--accent); }
+.paper-header .orig-title { font-size: 15px; color: var(--muted); font-style: italic; margin-bottom: 14px; }
+.paper-header .meta { font-size: 13.5px; color: var(--muted); }
+.paper-header .meta div { margin-bottom: 3px; }
+.abstract-box {
+  background: var(--accent-light);
+  border-left: 4px solid var(--accent);
+  padding: 18px 22px;
+  margin: 24px 0;
+  border-radius: 4px;
+  font-size: 14.5px;
+}
+.abstract-box h3 { margin-top: 0; font-size: 14px; color: var(--accent); }
+.abstract-box .keywords { margin-top: 10px; font-size: 13px; color: var(--muted); }
+section { padding-top: 8px; scroll-margin-top: 24px; }
+section h2 {
+  font-size: 20px;
+  color: var(--accent);
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 8px;
+  margin-top: 48px;
+}
+section h3 {
+  font-size: 16.5px;
+  color: var(--text);
+  margin-top: 30px;
+  scroll-margin-top: 24px;
+}
+p { font-size: 15.5px; margin: 14px 0; text-align: justify; }
+blockquote {
+  background: var(--white);
+  border-left: 3px solid var(--accent);
+  margin: 18px 0;
+  padding: 14px 18px;
+  font-size: 14.5px;
+  color: var(--text);
+}
+.note-block {
+  font-size: 13px;
+  color: var(--muted);
+  border-top: 1px solid var(--border);
+  margin-top: 40px;
+  padding-top: 16px;
+}
+.note-block ol { padding-left: 20px; }
+.note-block li { margin-bottom: 10px; }
+#biblio p { font-size: 13.5px; margin: 8px 0; text-align: left; }
+#biblio .entry { padding-left: 24px; text-indent: -24px; }
+.back-to-top {
+  display: inline-block;
+  margin-top: 40px;
+  font-size: 13px;
+  color: var(--accent);
+  text-decoration: none;
+  border: 1px solid var(--accent);
+  padding: 6px 14px;
+  border-radius: 4px;
+}
+.back-to-top:hover { background: var(--accent-light); }
+@media (max-width: 900px) {
+  #sidebar { display: none; }
+  #main { margin-left: 0; padding: 30px 20px; }
+}
+</style>
+</head>
+<body>
+
+<div id="sidebar">
+  <h2>📄 논문 정보</h2>
+  <nav>
+    <a href="#top">논문 정보 · 초록</a>
+    <a href="#intro">서론</a>
+    <a href="#franquismo">1. 프랑코 시대의 교과서 (1938–1975)</a>
+    <a href="#transicion">2. 민주화 이행기 교과서 (1975–1985)</a>
+    <a href="#recientes">3. 최근 교과서 (1990–2015)</a>
+    <a href="#actuales">4. 현행 교과서 (2016–2017)</a>
+    <a href="#aula">5. 교실 속 역사교육: 학생·교사의 시각</a>
+    <a href="#amnistia">6. 사면과 화해: 미완의 과제</a>
+    <a href="#conclusion">결론적 고찰</a>
+    <a href="#referencias">참고문헌</a>
+    <a href="#notas">주(註)</a>
+  </nav>
+</div>
+
+<div id="main">
+
+<div class="paper-header" id="top">
+  <h1>갈등적인 역사적 주제들과 그 학교에서의 접근: 스페인의 사례</h1>
+  <div class="orig-title">Los temas históricos conflictivos y su abordaje escolar: un ejemplo español.</div>
+  <div class="meta">
+    <div>라파엘 바스(Rafael Valls) · 다비드 파라(David Parra) · 카를로스 푸에르테스(Carlos Fuertes)</div>
+    <div>발렌시아 대학교(Universidad de Valencia), 스페인</div>
+    <div>rafael.valls@uv.es · david.parra@uv.es · carlos.fuertes@uv.es</div>
+    <div>Clío &amp; Asociados. La historia enseñada. 2017(25), ISSN 2362-3063 (digital), pp. 8-21</div>
+    <div>Universidad Nacional del Litoral – Universidad Nacional de La Plata (Santa Fe/La Plata – Argentina)</div>
+    <div>투고: 2017년 9월 15일 · 게재승인: 2017년 9월 29일</div>
+  </div>
+</div>
+
+<div class="abstract-box">
+  <h3>국문 요약</h3>
+  <p>이 연구는 최근 스페인 역사의 "어려운 시기들"(내전과 프랑코 독재, 1936–1975)이 역사 교과서와 교실 내부에서 각각 어떻게 다루어져 왔는지를 분석한다. 한편으로는 역사학적·교육학적으로 이루어진 진전을, 다른 한편으로는 진정으로 민주적이고 화해적인 관점에서 볼 때 이러한 접근이 지닌 현재의 불충분함과 결함을 확인하고자 한다. 그 진전은 스페인 사회 전체의 사회적 표상 차원에서나 학교에서의 제시 방식 차원에서나 매우 더디게 이루어져 왔다. 이러한 사실들은 이 문제가, 세계 양 반구의 수많은 다른 국제적 사례들과 마찬가지로, 여전히 갈등적이고 문제적이며 첨예한 사안임을 확인시켜 준다. 오랜 시간에 걸쳐 형성되고 구조화된 이러한 갈등에는 아마도 손쉬운 해결책이 존재하지 않을 것이다. 그러나 기초 교육 단계에서부터 이 문제들이 적절히 다루어져, 민주적이고 자신의 미래에 대해 책임 있는 시민의식을 형성하는 데 기여하는 일이 필수불가결해 보인다.</p>
+  <div class="keywords"><strong>핵심어</strong>: 갈등적인 역사적 시기, 역사교육과 화해, 교과서, 역사교육</div>
+</div>
+
+<div class="abstract-box">
+  <h3>Abstract (원문)</h3>
+  <p>This investigation analyses the way the "difficult times" in recent Spanish history have been dealt with in school textbooks and in the classrooms, establishing, on the one hand, the historiographic and didactic advances and, on the other, the present shortcomings and deficiencies of such approaches from the perspective of a really democratic and reconciliatory treatment. In summary, the representation of the period between 1931 and 1975 in history textbooks has changed in many ways, and often in positive ones. These changes took place over the last twenty-five years but accelerated during the past fifteen. However, the most problematic aspects—those linked, on the one hand, to violence and repression, especially during the civil war and the Franco period, and, on the other, to the legal process of reconciliation between Spaniards after the Francoist dictatorship—have been paid the least attention and introduced last, and only partially, in the history textbooks. This last is the aspect that we believe, because of its enormous importance, has been tackled in the least satisfactory way.</p>
+  <div class="keywords"><strong>Keywords</strong>: conflictive historic times, history teaching and reconciliation, textbooks, history teaching</div>
+</div>
+
+<section id="intro">
+<h2>서론</h2>
+<p>스페인 20세기 역사에서 가장 갈등적이고 극적인 시기는 의심할 여지 없이 내전과 프랑코 독재 시기이다<sup>2</sup>. 이러한 특성으로 인해 이 시기는 역사 교과서에서 다루기에 가장 민감한 주제 가운데 하나가 되기도 하였다. 프랑코 체제(1939–1975) 시기에 그 시절들을 다루었던 극도로 이분법적인 시각은 오늘날 이미 극복되었으며, 현재의 교과서들은 그 시기의 역사적 재구성에 필수적인 일련의 자료들을 제공함과 동시에, 오늘날 역사가 공동체 대다수가 받아들이는 것과 부합하는 훨씬 더 정교한 해석 또한 제공하고 있다. 이 시기 학교 교육에서의 처리 방식이 지닌 주요 특징들을 서술하기에 앞서, 비록 매우 간략하게나마 이러한 심대한 해석적 변화가 가능해진 정치적 맥락을 먼저 다루고자 한다.</p>
+<p>흔히 민주화 이행기라 불리는 시기의 초기, 정확히는 1977년에 스페인의 다양한 정치 세력들 사이에서 이중의 합의에 기초한 협약이 이루어졌다. 하나는 내전과 프랑코 독재를 정치적·이념적 대립의 대상으로 삼지 않는다는 것이었고, 다른 하나는 그 시기의 주역들이 저질렀을 수 있는 정치적 또는 형사적 책임에 대해 소급적인 정의 요구 없이 전면적인 사면을 적용한다는 것이었다. 이 협약에서 더 관대한 정치적 태도를 취한 쪽은 반(反)프랑코 세력이었는데, 이는 그들이 가장 가혹하고 오랫동안 탄압을 겪었으면서도, 프랑코 체제 편의 희생자들이 처음부터 받았던 것과는 전혀 다르게, 어떠한 종류의 배상도 받지 못했던 세력이었기 때문이다. 이러한 태도는 프랑코 체제로부터 탄압받은 사람들의 정치적 기억과 명예 회복이 오늘날까지도 어려운 상황에 부정적인 영향을 미쳤을 가능성이 있다.</p>
+<p>독재자 프랑코가 사망한 지 정확히 27년이 지난 2002년 말에 이르러서야 스페인 의회의 모든 정당이, 한편으로는 정치적 신념을 강요하고 전체주의 체제를 수립하기 위한 폭력 사용을 규탄하고(내전의 기원을 명백히 가리키는 표현이었다), 다른 한편으로는 그 전쟁의 모든 희생자들과 프랑코 독재에 의해 탄압받은 이들을 도덕적으로 인정하는 결의안을 채택하였다. 이 시점 이전, 1996년부터 2004년까지 집권한 보수 성향의 국민당(Partido Popular)은 이러한 유형의 결의안 채택을 거부해 왔다. 사회당 정부 하에서 매우 긴 의회 논쟁을 거친 끝에 2007년 말에 이르러서야, 흔히 '역사적 기억법'이라 불리는 법이 통과되었고, 이는 스페인 사회 내에서 보다 실질적이고 완전한 화해에 관해 미해결로 남아 있던 수많은 사회적 요구들을 상당 부분 충족시켰다<sup>3</sup>.</p>
+<p>그러나 지난 40년 동안 역사가들은 아무런 제약 없이 바로 이 시기를 연구해 왔으며, 내전과 프랑코 체제에 관한 출판물들은 수없이 많았고, 오늘날 스페인의 전문 역사학계 거의 전체가 대체로 받아들이는 수많은 사실적 내용과 해석을 정립하며 중요한 지식을 축적해 왔다는 점 또한 사실이다<sup>4</sup>.</p>
+<p>1931년부터 1975년까지, 즉 스페인 제2공화국(1931–1939), 내전(1936–1939), 프랑코 독재(1939–1975)를 아우르는 이 시기—여기에 오늘날의 스페인을 다루는 네 번째 절을 더할 것이다—를 현행 역사 교과서들이 어떻게 다루는지 살펴보기에 앞서, 프랑코 체제 시기의 교과서들과 민주화 이행 초기 몇 년간의 교과서들이 지닌 일반적 특징을 먼저 정립할 필요가 있다.</p>
+</section>
+
+<section id="franquismo">
+<h2>1. 프랑코 시대의 교과서 (1938–1975)</h2>
+<p>길고 긴 프랑코 독재 시기 동안의 다양한 역사 교과과정은 거의 40년에 걸친 기간 동안 거의 변화를 겪지 않았다. 군사 봉기와 그 이후의 군사적 승리를 정당화해야 할 필요성은 거의 필연적으로 제2공화국 시기 동안 이루어진 모든 개혁 시도와 그 주역들을 악마화하는 결과로 이어졌다. 공화국 시기 동안 이루어진 모든 활동은 반복적으로 "반민족적이고, 반가톨릭적이며, 외세지향적이고, 분리주의적이며, 마르크스주의적이고, 볼셰비키적이며, 재난과 무질서와 범죄를 초래한" 것으로 규정되었다. 프랑코 체제의 교과서들에 따르면, 바로 이러한 행태가 필연적으로 "스페인의 진정한 역사적 본질을 회복"해야 할 필요성을 초래하였으며, 이 교과서들은 이를 어떤 경우에는 구국전쟁(Guerra de Salvación), 다른 경우에는 해방전쟁(Guerra de Liberación) 혹은 십자군전쟁(Cruzada)이라 명명하였다.</p>
+<p>프랑코 시대의 교과서들은 제2공화국과 내전에 관한 구체적인 역사 자료를 거의 제공하지 않았으며, 그 서술은 공화국 시기 전체에 대한 가치평가적 비난에 국한되었다. 주요 인물들의 이름과 그들의 개혁적 지향은 생략되었고, 학생들이 그 전개 과정을 이해할 수 있도록 돕는 최소한의 시기 구조화조차 회피되었다(Valls, 1984; Álvarez Oses 외, 2000).</p>
+<p>내전 역시 이 교과서들에서 거의 서술되지 않았으며, 대체로 극도로 이분법적인 방식으로 제시되어, 공화국 측에 대해서는 매우 부정적인 평가로("모든 것이 무질서와 무정부 상태였다") 축소되고, 봉기 세력에 대해서는 신화적인 찬양으로("사회에 남아 있던 건강한 모든 것") 축소되었다.</p>
+<p>이 교과서들에는 내전 중 봉기 세력에 의해 자행된 탄압과 폭력, 그리고 프랑코 체제 초기에 이루어진 탄압에 관해서는 아무것도 언급되지 않았다. 전쟁 종료 시점에 발생한 대규모 망명이나, 1940년대와 1950년대에 걸쳐 스페인 국민 대다수가 겪은 온갖 종류의 극심한 궁핍에 대해서도 다루지 않았다.</p>
+<p>군사적 승리를 통해 정당성을 확보해야 했고 내전이 필연적이고 불가피했다고 여겨야 했던 프랑코 체제의 필요성으로 인해, 교과서들은 이 독재 체제의 40년 동안 거의 변화하지 않았다. 오직 1970년대에 들어, 즉 독재 체제의 말기에 이르러서야 당시의 주요 정당들과 그 대표적인 지도자들에 관해 다소 상세한 내용을 담은 공화국 시기 서술이 도입되기 시작하였다.</p>
+<p>공식 교육과정이 내전을 지칭하기 위해 "스페인 전쟁(Guerra de España)"이라는 개념의 사용을 받아들이기까지는 1975년까지 기다려야 했으며, 이 개념이 역사 교과서에서 일반적으로 사용되기까지는 그로부터도 몇 년이 더 걸렸다. 오직 일부 교과서에서만, 예외적으로 제2공화국의 긍정적인 개혁 의도가 언급되었는데, 그럴 경우에도 곧바로 공화국이 "이내 분파주의와 무정부 상태로 명백히 기울었다"는 서술이 덧붙여졌다. 내전에 관해서는, 프랑코 체제 말기의 일부 교과서에서 "양측 모두에서 영웅적 행위가 있었다"고 서술되기도 하였다. 또한 프랑코 체제 초기가 "내부적으로 화해하기 어려운 시기"였다는 표현이 나타나기 시작하였다.</p>
+<p>마찬가지로, 내전의 양 교전 세력에 대한 외국의 개입이 언급되기 시작하였고, 프랑코 체제의 승리로 인한 결과로서 주로 문화적 성격의 상당한 규모의 국외 망명이 존재하였다는 사실도 이름이 붙기 시작하였다(Gastaminza y Arenaza, 1970:285-301).</p>
+</section>
+
+<section id="transicion">
+<h2>2. 민주화 이행기 교과서 (1975–1985)</h2>
+<p>1970년대 말과 1980년대 초에는 여전히 가치평가적 성격이 두드러지고 사실 관계 서술은 상대적으로 부족한 해석이 지배적이었다. 다만 이 시기 교과서들이 제시한 주된 관점은, 한편으로는 내전의 발발과 전개에 대해 모든 스페인인이 공유하는 전반적인 책임을 인정하는 방향으로, 다른 한편으로는 그러한 일이 "다시는" 일어나서는 안 된다는 권고로 집중되었다.</p>
+<p>제2공화국에 대한 분석은 더욱 폭넓어지고 더욱 균형 잡힌 방향으로 나아가기 시작했는데, 이는 그 개혁적이고 근대화 지향적인 제안들과 동시에 그것을 실현하는 과정에서 부딪혔던 엄청난 어려움 또한 함께 강조되었다는 의미에서 그러하다: "(민주적이고 지역주의적이며 세속적이고 광범위한 사회 개혁에 개방적인) 국가를 수립하려는 (공화국의) 제안들은… 노동자층의 압박… 그리고 우파 정당들… 및 가톨릭 세력에 의해 저지되었다."</p>
+<p>이러한 정치적 이행기, 즉 1970년대 후반의 교과서들에서는 이미 "내전(Guerra Civil)"이라는 개념의 사용이 점차 빈번해지기 시작하였으나, 이는 군사 봉기를 가리키던 프랑코 체제의 용어인 "봉기(Alzamiento)"와 여전히 공존하였다. 같은 맥락에서, 대립하던 양측을 "국민파(nacionales)"(봉기 세력을 가리키되, 이제는 그 명칭에 인용부호가 붙거나 이것이 봉기 세력 스스로가 자신을 지칭한 방식이었다는 주석이 달렸다)와 "공화파(republicanos)"(프랑코 체제 내내 거의 전적으로 경멸적으로 "빨갱이(rojos)"라 불렸던 이들)로 지칭하는 것이 이미 일반적이었다.</p>
+<p>내전 중 자행된 탄압이 매우 간략한 형태로나마 교과서에 등장하기 시작하였는데, 이는 봉기 세력보다는 공화파 쪽의 책임으로 더 많이 귀속되었다. 프랑코 독재 시기에 이루어진 가혹한 탄압은 매우 미미하게만 암시되어 있었다. 또한 이 시기부터, 독일 공군에 의해 폭격당한 바스크 지방의 도시 게르니카와 파블로 피카소의 유명한 그림 게르니카 모두에 대한 언급이 교과서에 등장하기 시작하였는데, 이는 공화국 측 기억의 주요한 장소 가운데 하나가 되었고 프랑코 체제 하에서 검열되었던 대상으로, 내전을 다룬 장(章)에서 가장 빈번하게 등장하는 도상 중 하나가 되었다. 이 교과서들에서 피카소의 그림은, 전쟁 일반의 야만성을 상징하는 것으로 평가되기도 하고, 근대 전쟁에서 민간 사회가 겪는 고통, 혹은 보다 특정하게는 스페인 공화국 측 국민이 겪은 고통에 대한 좀 더 구체적인 고발로 평가되기도 하는 등 상당히 다양한 해석의 대상이 되었다. 이후의 일부 교과서에서는 피카소의 게르니카가 내전의 증언이자 스페인인들 사이의 화해의 도구로서 보완적으로 분석되기도 하였다(Tusell, 1996:318-321).</p>
+<p>이 교과서들에서는 이미 프랑코 체제 초기 수십 년 동안 스페인 사회가 겪은 어려움과 고통뿐 아니라, 1950년대 이후 독재에 반대한 스페인의 사회적·정치적 운동들 또한 부각되기 시작하였다(Mañero 외, 1976).</p>
+<p>보다 예외적으로, 이 시기의 일부 교과서들은 다소 다른 해석을 제시하기도 하였다. 어떤 경우에는 1930년대 스페인 사회의 개혁적이고 근대화 지향적인 제2공화국의 기획을 더욱 심도 있게 옹호하였고, 다른 경우에는 프랑코 독재와 그 억압적 성격에 대해 더욱 강한 비판을 전개하였다(Valdeón 외, 1977). 반면 다른 교과서들은 1970년대 초의 특징적인 해석적 기조를 별다른 유의미한 변화 없이 그대로 유지하였다(Plans 외, 1977; Garmendia y García, 1977).</p>
+</section>
+
+<section id="recientes">
+<h2>3. 최근 교과서 (1990–2015)</h2>
+<p>1990년대와 21세기 초에 저술된 교과서들만이 제2공화국, 내전, 프랑코 체제에 대해 가치평가적이기보다 훨씬 더 사실 관계에 충실한 시각을, 최근 수십 년간 전개된 역사학적 연구 성과와 부합하는 검증된 자료와 함께 제시하기 시작하였다. 여기에는 내전 기간, 그리고 그보다 더욱 두드러지게는 오랜 프랑코 독재 기간 동안 발생한 폭력과 탄압에 관한, 그때까지 교과서에서 부재했던 정보들이 포함되었다.</p>
+<p>중등교육을 위한 이 최근 세대의 역사 교과서들에서 제2공화국은 1930년대의 국제적 맥락에서의 어려움과, 강한 사회적 갈등 및 스페인 사회 구조의 근대화를 둘러싼 스페인 특유의 정치적 조건이라는 특수한 상황 모두를 고려하여 분석된다.</p>
+<p>교과서에 새롭게 반영된 역사학적 성과들은 내전 발발의 책임 분담에 관해 이전까지 주장되어 온 균등한 배분론에 의문을 제기하며, 풍부한 문헌 자료를 통해 1936년 시민-군사 쿠데타를 추진한 세력들과 그 이후 프랑코 독재를 지탱한 세력들의 반민주적이고 반사회적인 성격을 부각시킨다. 마찬가지로, 상세하고 폭넓게 검증된 정량적 정보를 통해 양측이 각각 행한 탄압 사이의 뚜렷한 차이 또한 강조된다.</p>
+<p>프랑코 시기는 그 논쟁적인 정의(전체주의 체제, 군사 독재, 파시즘 국가)와 그 시기 구분 방식을 포함하는 상세한 연구의 대상이 된다. 이와 함께 그 주요 특징들도 다루어지는데, 그중에서도 깊이 억압적인 성격이 기록되는 동시에, 상황에 따라 강도는 다르지만 스페인 사회 일부가 주도한 지속적인 사회적·정치적 반대운동의 존재 또한 강조된다.</p>
+<p>이 시기 교과서들이 학생들에게 제시하는 질문, 문제, 또는 소규모 탐구 과제들은 대체로 이 전체 시기가 구성하는 각 절에서 다루어진 다양한 측면들을 다룬다. 가장 빈번한 유형은 교과서에 수록된 정보—저자들이 작성한 본문이든, 교과서에 풍부하게 포함된 문헌 자료들이든—를 요약하거나 종합하도록 학생들에게 요구하는 것이다. 이러한 경향은 대형 출판사들이 발행한 중등교육 교과서, 즉 바치예라토(17–18세 학생 대상)와 의무중등교육(12–16세 학생 대상) 교과서 모두에서 지배적이다. 다만 후자에서는 이따금, 이른바 일상생활사와 연계된 역사학적 접근과 보다 참여적인 교육학적 지향이 더 많이 반영된 결과로, 학생 개인이나 가족의 관여도가 더 높은 다른 유형의 질문과 소규모 탐구 과제들이 등장하기도 한다. 이러한 새로운 경향의 예로 다음의 두 활동을 들 수 있다: "내전 중 당신이 사는 지역에서 일어난 어떤 사건에 관한 정보를 수집하여 이에 관한 짧은 보고서를 작성하시오"(Prats 외, 1998:259), 또는 "망명을 떠나야 했던 공화파 가족의 상황을 상상하며 이 주제에 관한 짧은 글을 써 보시오"(Santacana y Zaragoza, 1994:167). 보다 성찰적이고 문제제기적인 교육 방식을 표방하며 교사들 사이에서는 상대적으로 덜 받아들여지는, 더욱 혁신적인 교과서들에서는 이러한 유형의 질문이 더 자주 등장한다. 가족 구술 자료를 활용한 한 교과서의 탐구 과제 제안이 그 예가 될 수 있다. 내전과 프랑코 체제 하에서 가족이 겪은 경험에 관해 제시된 질문들 가운데는 다음과 같은 것들이 있다: "정치적 또는 종교적 이유로 어떤 형태로든 탄압을 받거나 목격한 적이 있는가?, 내전이 끝났을 때 자신을 패자로 여겼는가 승자로 여겼는가?, 본인이나 아는 사람이 망명을 떠났는가?, 혹은 전쟁이 끝난 뒤 어떤 형태로든 탄압을 받았는가?"(Caba 외, 2001:31). 같은 교과서는 프랑코 독재를 다룰 때도 비슷한 성격의 질문들을 던진다. 예를 들어: "독재 기간 동안 조부모님이나 부모님이 어떤 시위, 파업, 또는 정치 모임에 참여한 적이 있는지 여쭈어보시오. 그 이유와 금지된 활동에 참여할 때 느꼈던 감정에 대해서도 여쭈어보시오"(Caba 외, 2001:112).</p>
+<p>1990년대 후반 이후 발행된 바치예라토 교과서들은 전쟁 희생자 수의 정밀한 정량화와 더불어, 이러한 탄압이 실행된 다양한 방식에 대한 충분한 서술을 제공하는 최초의 교과서들이다. 이들은 또한 난민과 망명이라는 비극을 가장 상세하게 다루는 교과서이기도 하다. 마찬가지로, 이들은 내전에 관한 다양한 시각과 해석을 가장 강도 높게 대비시키려 하며, 당대의 여러 문헌과 양측이 사용한 일부 선전 매체(주로 포스터와 노래)를 통해 학생들에게 일련의 질문과 의문을 제기한다. 내전 중 탄압에 관한 앞선 분석은 프랑코 체제를 다룰 때, 특히 1940년대를 다룰 때 이어지는데, 이 10년간의 정치범 관련 자료가 제시되고 프랑코 체제가 시행한 주요 탄압 형태들에 대한 서술이 이루어진다. 투셀(Tusell)이 편찬한 교과서와 같은 경우, 프랑코 체제의 탄압에 관한 정량적 자료를 제시한 후 "프랑코주의의 최악의 측면은 그 탄압 정책이었다"는 단호한 결론으로 서술을 마무리한다(Tusell 외, 1996:327).</p>
+<p>1990년대와 21세기 첫 10년의 역사 교과서들이 제2공화국부터 이후 민주화 이행기에 이르는 시기를 다루는 구체적인 방식은 특별한 교육적 논쟁을 불러일으키지 않았다. 교과서가 제공하는 역사적 해석의 점진적인 변화는, 이 어려운 시기의 특징에 대해 점점 더 사실에 기반하고 역사학적으로 뒷받침된 서술 방식에 근거해 왔으며, 프랑코 독재 시기 동안 이 시기가 겪었던 선험적 가치평가와 찬양·악마화를 피하는 방향으로 이루어져 왔다. 민주화 이행 초기부터 이러한 점진적 변화를 이끈 두 가지 요소는 근본적으로 역사적 분석의 엄밀성을 견지해야 할 필요성, 그리고 사회 내 서로 다른 견해와 감수성 사이에서 문명화된 공존을 위한 가장 좋은 체제이자 기본 가치로서 민주주의를 촉진하고 강화하고자 하는 열망이었다.</p>
+</section>
+
+<section id="actuales">
+<h2>4. 현행 교과서 (2016–2017)</h2>
+<p>교육의 질 향상을 위한 조직법(LOMCE) 체제 하에서 2016년에 출간된 가장 최근 세대의 교과서 분석을 통해, 1990년대부터 시작된 일부 역사학적·교육학적 변화의 심화와 더불어, 두 측면 모두에서 여전히 확인되는 상당한 불충분함 또한 동시에 파악할 수 있다(Fuertes Muñoz, 근간). 주요 출판사들(Vicens Vives, Anaya, Santillana, SM)이 발행한 바치예라토 2학년 교과서 내의 프랑코 독재를 다루는 교육 단원들에 초점을 맞추어 볼 때, 성찰과 탐구를 위한 일부 활동들이 지닌 풍부함과 함께, 자료에 관한 구체적인 질문들이 대다수 포함되어 있다는 점이 주목할 만하다. 학생과의 관계라는 측면에서는, 프랑코 체제에 관한 학생들의 사전 지식을 탐구하고자 하는 이따금씩의 활동들, 그리고 무엇보다도 디지털·시청각 자료의 활용이 증가하는 경향, 그리고 독재 시기와 연결되는 현재의 중요한 문제들—스페인의 "역사적 기억" 논쟁, 서사하라(1975년까지 스페인의 식민지였던)의 현재 상황, 또는 오늘날의 이주와 망명 문제—에 대한 언급이 존재한다는 점 또한 확인되었다(Álvarez Rey 외, 2016; Fernández Ros 외, 2016; Pereira Castañares 외, 2016).</p>
+<p>그러나 이러한 요소들은, 비판적이고 유의미한 프랑코 체제 역사 학습을 전혀 촉진하지 못하는 특징들이 여전히 지배적인 전체 지형 속에서, 예외 혹은 국지적인 오아시스로 이해되어야 한다. 다만 각 교과서 사이에 차이가 발견되기도 하였는데, 특히 비센스 비베스(Vicens Vives)의 경우에는 이러한 진단을 좀 더 조정해서 이해할 필요가 있다. 어떤 경우든, 무엇보다도, 분석된 교과서들은 설명 위주-암기 중심-수동적인 유형의 역사 교육 모델이 명백히 지배적임을 보여준다. 이러한 의미에서 내용의 문제화(problematización)는 전적으로 불충분하다. 사용된 자료와 활동들은, 전반적으로 매우 풍부하고 가치 있게 다루어지고는 있으나, 충분히 활용되지는 못하고 있다. 특히 실망스러운 점은 집단적 활동과 안내 질문(preguntas-guía)이 거의 전무하다는 점, 그리고 기계적 재생산과 교과서 내용의 재구성 활동이 압도적으로 우세하다는 점이다. 교과서에 포함된 자료에 관해서는, 무엇보다도 이미지를 "사료(documento)"로 간주하는 정도가 여전히 미흡하다는 점, 그리고 이러한 자료들과 나머지 사료들이 활동을 통해 충분히 활용되지 못하는 경우가 빈번하다는 점이 아쉬운 부분으로 지적되어야 한다. 이러한 예외와 진전이 존재함에도 불구하고, 프랑코 체제를 다루는 교육 단원들은 폐쇄적인 역사학의 이미지를 전달하며, 학생들과의 관계를 충분히 다루지 못하고 있다.</p>
+<p>인식론적 접근이라는 측면에서도 낙관적인 전망을 이끌어낼 수 없는데, 최근의 역사학 연구와는 뚜렷이 대조적으로, 거시적 정치사와 경제사를 중심에 둔 서사적-역사학적 모델이 지속되고 있으며, 프랑코 체제에 관한 사회문화사 분야의 진전은 미미한 상황으로, 이는 이 주제에 관한 수많은 연구들과 명백히 대조를 이룬다(Gracia y Ruiz, 2001; Saz, 2004; Del Arco 외, 2013). 이러한 모델은 아나야(Anaya, García de Cortázar 외, 2016)의 경우에 훨씬 더 두드러지게 나타나는데, 이 교과서에서는 여성사와 젠더 관계, 역사적 현상으로서의 민족 정체성 문제화, 혹은 프랑코 체제 하에서 살았던 평범한 사람들의 태도와 경험이 거의 자리를 차지하지 못하고 있다. 가장 경직된 설명 방식과 단일 원인론이 표면적으로는 극복된 것처럼 보임에도 불구하고, 이번 분석을 통해 그러한 전통적 역사 개념과 결부된 다양한 환원주의적 설명 방식이 여전히 지속되고 있음을 확인할 수 있었다.</p>
+<p>마지막으로, 이러한 접근을 통해 프랑코 독재에 대한 충분히 비판적이지 못한 시각들이 우려스럽게 지속되고 있다는 점 또한 확인할 수 있었다. 실제로 우리는 이러한 불충분함을 구체적으로 짚어내기 어렵다는 중요한 난점에 직면해 있다. 왜냐하면 네 종의 교과서 모두에서 프랑코 체제의 독재적이고 억압적인 성격을 명확히 인정하는, 균형 잡힌 서술을 발견할 수 있기 때문이다. 동시에, 독재를 찬양하거나 정당화하는 주장은 눈에 띄지 않으며, 적어도 가장 명시적인 형태에 있어서는 프랑코 체제 역사서술의 상당 부분이 극복되었음을 확인할 수 있다. 그러나 피상적이고 서술적이며 짐짓 무색무취한 척하는 시각들이 존재하고, 세부 사항과 성찰, 문제화가 문제적으로 결여되어 있어, 프랑코 체제에 대한 복합적이고 명백히 비판적인 이해를 여전히 어렵게 만들고 있다. 이는 때때로, 명시적인 문제제기의 부재로 인해, 교과서가 오늘날에도 언론이나 가정과 같은 학교 밖 사회화 통로를 통해 여전히 확산되고 있는 프랑코 체제를 정당화하는 특정 담론의 재생산에 계속 기여하는 결과로 이어질 수 있다.</p>
+</section>
+
+<section id="aula">
+<h2>5. 교실 속 최근 어려운 시기의 역사교육: 학생과 교사의 시각</h2>
+<p>교실 내부에서 실제로 일어나는 일을 파악하는 것은 상당한 물적 수단과 가용 시간을 필요로 하는 어려운 작업이다. 본 연구에서는 역사 교과서 분석을, 교실 내부에서 벌어지는 일에 대해 학생과 교사가 지닌 시각, 그리고 이미 중등교육을 마친 학생들이 습득한 지식과 그러한 역사 수업에 대해 지니고 있는 평가와 결합하였다. 이를 위해 두 부분으로 구성된 설문을 활용하였다. 첫 번째 부분은 분석 대상 주제들에 관한 지식(학생의 경우) 혹은 이에 부여하는 중요도(교사의 경우)와 관련된 일련의 문항들로 구성되어 있으며, 1점에서 5점 척도로 평가하도록 하였다. 두 번째 부분은 이러한 주제들의 교육적 처리 방식, 그것이 지닐 수 있는 교육적 목적, 그리고 적절하다고 여겨질 경우 개선 방안에 관한 보다 개방형의 질문들로 구성되었다. 모든 설문과 면담은 2008년 초 몇 달 동안 진행되었다.</p>
+<p>분석 표본은 이전 5년 이내에 중등교육을 마친 대학생 68명이었다. 설문에 응한 중등학교 교사는 20명으로, 모두 20년 이상의 교직 경력을 가지고 중등교육기관에서 현직으로 재직 중인 교사들이었다. 이 중 4명의 교사는 이후 개방형 질문지를 바탕으로 면담이 이루어졌다.</p>
+<p>학생 응답에서 가장 놀라운 결과 중 하나는, 본 연구가 대상으로 삼는 주제들을 의무중등교육 과정에서 배우지 않았다고 답한 학생의 비율이 상당히 높다(28.5%)는 점이다. 학생들에 따르면 이러한 상황의 주된 원인은 오로지, 이 주제들을 다루어야 하는 과목(선사시대부터 현재까지의 세계사 및 스페인사를 아우르는 "세계"사와 스페인사)의 교육과정이 지나치게 방대하여 본 연구의 대상이 되는, 교육과정 말미에 위치한 주제들에까지 진도가 도달하지 못했다는 데 있다.</p>
+<p>가장 먼저 확인할 수 있는 사실은 이 주제들에 관해 학생들이 기억하고 있는 지식이 상대적으로 부족하다는 점이며, 특히 제2공화국에 관해서는 분석된 네 개 주제 가운데 가장 낮은 평균값을 보였다.</p>
+<p>내전과 관련해서는, 학생들이 군사 봉기의 특징(그리고 이를 주도한 주요 군인들)에 대해, 그리고 (지난 10년간의 교육과정에서 강조된) 국제적 차원과 양측의 탄압 및 폭력과 관련된 측면에 대해 상대적으로 더 잘 기억하고 있다는 점이 주목할 만하다. 이는 이러한 결과가 중등교육이 아니라 대학교육에서 비롯된 일종의 오염 효과로 해석될 수도 있는데, 이는 우리가 충분히 명확히 규명하지 못한 문제이다.</p>
+<p>프랑코 시기는 학생들에게 가장 잘 기억되는 시기로, 전체적으로 가장 높은 점수를 받았다. 이번에도 탄압, 폭력, 망명(다만 망명은 앞의 두 요소보다는 낮은 비중으로)과 관련된 측면들, 그리고 1940년대와 1950년대 국민 대다수가 겪은 기아와 빈곤과 관련된 측면들이 다양한 항목에서 높은 결과를 보였다. 1960년대 이후 일어난 사회적·경제적 변화, 그리고 프랑코 체제에 대한 반대운동에 관한 학생들의 지식 역시 마찬가지로, 이는 교과서에 상대적으로 최근에야 도입되었음에도 불구하고 학생들이 기억하는 지식 가운데 이미 자리를 잡은 측면이다.</p>
+<p>스페인의 민주화 이행 과정에 관해서는, 민주화 과정 자체가 가장 높은 점수를 받은 반면, 부분적으로는 모순되게도, 그 과정의 어려움과 이를 저지하거나 방해하려 한 시도들은 이 항목 전체에서 가장 낮은 점수를 받았다는 점이 눈에 띈다. 이러한 결과는 교과서(그리고 아마도 대다수 언론매체)가 전달하는, 이행기 전체 과정에 대해 비판적이지 못하고 다소 자기만족적인 이미지의 산물로 해석될 수 있을까? 이는 아직 경험적으로 충분히 검증된 답을 제시할 수 없는 질문들이지만, 학생들에게 적절한 역사의식을 형성하는 것—우리가 생각하기에 역사교육의 근본적인 목적 가운데 하나로서, 학생들이 확장된 과거의 역사적 경험에 대한 이해를 바탕으로 현재의 경험을 이해할 수 있도록 하는 것—과 직접적으로 관련되어 있는 만큼, 이를 염두에 두고 더 깊이 탐구할 필요가 있다.</p>
+<p>교사들의 응답을 분석할 때 가장 먼저 짚어야 할 점은, 제시된 문항 전반에 걸쳐 교사와 학생이 각 항목에 부여하는 점수가 매우 다르다는 점이다. 5점 만점을 기준으로, 소수의 예외를 제외하면 두 집단 간의 평균 차이는 대체로 1점 정도이며, 때로는 1.5점을 넘기도 한다.</p>
+<p>이러한 차이는 제2공화국 시기가 두 집단으로부터 받는 처우에서 가장 뚜렷하게 나타난다. 앞서 살펴본 바와 같이 학생들에게는 가장 기억이 희미한 시기이지만, 교사들에게는 교실에서 가장 많이 다루어지는 시기이다. 내전에 관해서는, 역사적 인물들이나 전투 사실 서술과 관련된 측면에 교사들이 상대적으로 낮은 중요도를 부여한다는 점이 가장 두드러진다. 봉기군 측 군인과 공화국에 충성한 군인 사이의 이름 인지도에서 나타나는 1점의 차이는, 프랑코 체제 동안 전자가 지녔던 더 큰 정치적 존재감과, 교과서가 이들에게 부여했고 정도는 약해졌지만 여전히 부여하고 있는 더 큰 비중 모두로 인해 상당히 납득할 만하다(이는 프랑코 체제와 공화국 측 기억의 장소들이 역사적으로 획득한 서로 다른 비중—매우 강력한 이유들로 인해—의 가장 대표적인 사례 가운데 하나일 수 있으며, 이는 학교에서 추진되는 역사적 기억 안에서 아직 균형이 잡히지 않은 부분이다). 프랑코 독재는 교사들로부터 특별한 관심의 대상이 되고 있는데, 이는 높은 점수를 받고 있다는 사실에서 드러난다.</p>
+<p>설문의 두 번째 부분은 두 집단이 교실에서의 교육적 문제들에 대해 부여하는 평가를 파악하는 데 할애되었다. 수업에서 가장 많이 활용되는 교육 방법론에 관해, 학생과 교사의 평가는 부분적으로 엇갈리는데, 이는 역사교육에 관한 여러 연구에서 이미 확인된 바와 같다(Angvik y Von Borries, 1997). 학생들에게는 교사의 설명과 교과서의 활용이 가장 기본적인 준거이지만, 우리가 실시한 설문에서는 문헌 사료의 활용과 논평 또한 상당한 비중을 차지하는 것으로 나타났으며, 여기에 훨씬 더 산발적으로 관련 영화와 다큐멘터리 시청이 보완적으로 이루어진다. 학생들에 따르면 토론은, 이러한 주제들이 지닌 문제적 성격과 일부 교과서가 이따금씩 제안 활동 가운데 토론 실시를 권장함에도 불구하고, 우리가 연구한 주제들에서 사실상 존재하지 않는 활동이다. 이러한 학생들의 세부적인 응답에도 불구하고, 가장 빈번한 서술은 그들이 받은 역사교육이 교사의 설명(수업 필기)과 역사 교과서에 규정된 내용을 암기하고 반복하는 것을 학습의 근본적인 축으로 삼았다는 것이며, 이는 다른 교육법 하에서 이전 시기에 공부한 이들을 대상으로 한 다른 연구들에서 지적된 바와도 일치한다(Parra, 2013).</p>
+<p>교사들의 해석은, 그들의 설명과 교과서에 담긴 정보에 부여되는 근본적인 비중, 그리고 문헌 사료 분석과 논평(대부분 교과서 자체에서 가져오지만, 통상적으로 교과서에 제시된 분석 지침을 따르지는 않는다)이 이루어진다는 점을 부인하지는 않는다. 다만 다른 시청각 자료 활용의 빈도, 그리고 그보다 더욱 두드러지게는 수업 중 토론이나 가족·지역의 구술사를 활용한 소규모 탐구 활동의 실시라는 측면에서는 학생들의 평가와 거리를 둔다.</p>
+<p>바치예라토 2학년(중등교육의 마지막 학년) 역사 교육과정의 방대함이 전반적인 교수-학습 과정에 매우 부정적인 조건으로 작용한다는 평가, 그리고 특히 우리가 연구하는 주제들—1975년부터 1992년까지 이 교육 단계의 마지막 학년을 특징지었던 스페인 통사 교육과정의 말미에 위치했다가, 1990년대에 축소된 이후 2001년 교육과정과 가장 최근인 2007년 및 2015년 교육과정에서 다시 도입된 주제들—에 관해서는 더욱 강도 높고 부정적으로 작용한다는 평가에 있어서, 교사와 학생 사이의 견해 일치도는 매우 높다.</p>
+<p>설문에 응한 학생 대다수는 이 문제적인 최근 과거에 대한 학습과 오늘날 스페인 사회의 특징 사이에 교사가 설정하는 관계가 미흡하다는 점을 지적한다. 이는 대체로 교사들이 공유하지 않는 평가인데, 그들의 응답에서는 역사 학습, 특히 현대사 학습이 근본적으로 학생들이 자신이 살아가는 사회, 그 주요 특징, 그리고 그 사회가 지닌 문제들에 대한 더 깊은 이해를 발전시키는 데 기여해야 한다는 생각이 자주 등장하기 때문이다.</p>
+<p>학생들은 자신들이 받은 역사교육의 개선 방안을 제안하면서, 교수-학습 과정의 전개에서 자신들에게 더 능동적인 역할을 부여할 수 있는 측면들을 강조한다. 상당수의 학생들이 수업 전개 과정에서 "더 많고 더 능동적인 참여"를 문자 그대로 요구한다는 점, 그리고 특히 가장 최근 시기와 관련된 주제와 문제들에 대한 자기 자신의 성찰이 더 큰 비중을 차지하는—즉 더 많은 관심과 시간이 할애되는—역사 학습을 요구한다는 점은 매우 의미심장하다. 교사들의 분석은 학생들의 평가와 차이를 보이는데, 특히 수업 전개 과정에서 학생의 자발적 참여 정도와 관련하여 그러하며, 다만 몇몇 구체적인 의문 사항의 해소와 관련된 요청에 있어서는 예외이다.</p>
+<p>우리가 다루고 있는, 잠재적으로 갈등적인 주제들을 학습할 때 더 많은 관심과 강조가 이루어져야 한다고 생각하는 측면을 지적할 때, 학생들은 우리가 실용적이거나 유용하거나 실천적인 지향이라 정의할 수 있는, 명확히 시민적이고 비판적인 접근에 상당히 의견이 일치한다. 이러한 확인은 매우 의미심장한데, 이는 학생들이—역사를 과거에 대한 지식으로 여기는 지배적인 사회적 표상의 산물일 가능성이 크지만—역사적 지식을 흔히 동일시하곤 하는, 학구적이고 과거지향적인 뚜렷한 성격을 강조하는 다른 연구들의 결과를 반박하거나 완화하는 것으로 보이기 때문이다. 학생들은 분석된 주제 학습에서 강조되어야 할 가장 흥미로운 질문으로, 한편으로는 진전과 후퇴를 거듭한 20세기에 걸친 스페인 사회의 민주화라는 역사적 과정, 그리고 사회의 다양한 사회적·정치적 조직 형태를 추진한 사회 집단들에 대한 학습을 꼽는데, 특히 독재와 민주주의, 탄압과 자유 사이의 대립, 그리고 한 사회 구성원들 사이에서 수용 가능한 공존을 이루고 이를 실현하는 평화적인 방식으로서 민주주의를 옹호하는 데 있어서의 어려움들에 특별히 주목한다. 학생들은 또한, 현재의 문제와 필요, 긴급한 사안들로부터 단절된 과거의 일련의 사실과 인물을 암기하는 데 근본적으로 기초한 협소한 학구적 개념을 넘어서고자 하는 모든 역사 학습에 필수불가결하고 본질적인 부분으로서 역사학적 방법론을 포함할 필요성 또한 강조한다.</p>
+</section>
+
+<section id="amnistia">
+<h2>6. 역사교육에서의 사면과 화해: 미완의 과제</h2>
+<p>스페인 사회와 그 어려운 최근 과거 사이의 정치적·법적 화해 과정에 기울여진 미미한 관심은, 중등교육의 최근 역사 교과서들이 지닌 가장 놀랍고, 가장 미흡하며, 가장 비판받아 마땅한 요소 가운데 하나이다. 이는 1970년대 말의 다양한 사면 절차, 그리고 이후 이루어진 부분적이고 불완전한, 공화국군 구성원과 봉기 세력 및 이미 제도화된 프랑코 체제로부터 탄압받은 이들, 혹은 1940년대 독재에 저항한 이들에 대한 복권 및 인정 절차를 가리킨다. 이 교과서들에서는 1970년대 말의 다양한 부분적 사면들에 대한 언급을 찾기가 어려우며, 언급되는 경우에도 매우 간략하고 간접적인 방식으로 이루어질 뿐, 근본적인 문제를 다루지 않거나, 오직 민주화 이행 초기 당시의 탄압받은 이들만을 언급하는 데 그친다. 일부 교과서에서는 1976년 반대세력의 요구사항만이 명시적으로 언급되는데, 그중에는 "예외 없는 정치범·조합원 수감자의 즉각적 석방, 망명자의 귀환, 그리고 모든 권리를 회복시키는 사면…"에 관한 요구가 포함되어 있었다(Prats 외, 1998:275). 다른 교과서에서는 이러한 언급이, 독재자 프랑코 사망 이후 제시된 매우 제한적인 초기 사면에 대해 민주적 반대세력이 이를 받아들이지 않았다는 사실에 국한되어 있다(Ardit 외, 1998:289). 대다수의 의무중등교육 교과서에는 스페인 사회와 최근 과거 사이의 이 복잡한 화해 과정에 대한 어떠한 언급도 나타나지 않는데, 이는 그 자체로 민주화 이행의 한 특징이기도 하다. 다만 이는 만족스럽게 해결되지 못한 문제의 부재로서가 아니라 존재로서 나타나는 것이다.</p>
+<p>바치예라토 교과서들 역시 이 문제에 대해 역사학적 관점에서도 학생의 민주 시민 교육이라는 관점에서도 적절한 관심을 기울이지 않는다. 오직 예외적으로만 일부 교과서가 사면과 화해라는 주제를, 그러한 법적 조치에 대한 간략한 언급을 넘어서는 방식으로 다루는데, 이 경우에도 오로지 민주화 이행기에 한정되며, 당시 전개된 사면 과정이 지닌 불충분하고 미완성적인 성격을 보여준다:</p>
+<blockquote>
+동원의 주된 요인은 프랑코 체제 정치범들에 대한 전면적 사면, 즉 범죄 자체를 완전히 잊는 것이었다(형벌만을 면제하는 특별사면과는 구별된다). 이는 내전의 승자와 패자 사이의 실질적인 공존을 가능하게 하기 위한 필수불가결한 조치였다… 아리아스 정부는 특별사면을 시행했지만, 갓 임명되어 반대세력의 지지를 얻고자 했던 수아레스 정부가 1976년 사면법을 통과시켰으며, 이는 (선거를 3개월 앞둔) 1977년 3월의 확대 조치, 그리고 마지막으로 1977년 10월 15일의 또 다른 확대 조치로 이어졌다. 이 마지막 조치는 대인 범죄까지 포함하는 것이었다. 이로 인해 프랑코 체제에 맞서 싸운 이들뿐만 아니라 탄압에 가담했던 이들 또한 석방되는 결과를 낳았다. 그럼에도 불구하고, 공화국 측 군인들과 민주군사동맹(Unión Militar Democrática) 반대파에 대한 인정 문제는 미해결로 남았으며, 이는 다음 10년이 되어서야 해결되었다. 한편, 수아레스 정부가 보인 자유화의 조짐은 아직 생존해 있던 수많은 망명자들의 점진적인 귀환을 가능케 하였다. 흔히 조용히 이루어진 이들의 귀환은 정치적 삶의 정상화와 국민적 화해의 표징이었다. 이들 중 다수는 정치적으로나 문화적으로나 공화국 과거를 대표하는 진정한 상징들이었다…(Proyecto Kairós, 1999:291)
+</blockquote>
+<p>요약하자면, 스페인의 중등교육 역사 교과서들은 1931년부터 1975년까지의 시기를 제시하는 방식을 매우, 그리고 매우 긍정적으로 변화시켜 왔다. 이러한 변화는 지난 40년에 걸쳐 이루어졌으나, 근본적으로는 최근 25년 동안 가속화되었다. 다만 가장 문제적인 측면들, 즉 한편으로는 폭력과 탄압—특히 내전과 프랑코 독재 시기의—과 관련된 측면들, 다른 한편으로는 프랑코 독재 이후 스페인인들 사이의 법적 화해 과정과 관련된 측면들은 가장 소홀히 다루어졌으며, 가장 늦게 그리고 오직 부분적으로만 역사 교과서에 도입되었다. 우리 견해로는, 그 엄청난 중요성에도 불구하고 가장 불충분하게 다루어져 온 측면은 바로 이 마지막 측면이다.</p>
+</section>
+
+<section id="conclusion">
+<h2>결론적 고찰</h2>
+<p>스페인의 역사교육이, 특히 최근 25년 동안, 학생들이 1931년부터 1975년까지의 최근 어려운 시기에 대해 더 깊고 논리적인 지식을 갖추는 데 기여해 왔다는 점은 의심의 여지가 없다. 또한 지배적인 접근이 청년들의 민주적 가치와 신념을 강화하고 공고히 하며, 독재와 폭력적 행태를 거부하는 방향으로 이루어져 왔다는 점 역시 사실이다. 이는 교과서의 내용과 교사 및 학생들의 진술로부터 명확히 드러난다. 그러나 스페인인들 사이에서 자신들의 과거에 관한 화해라는 주제가 이 교과서들과 교실 안에서 거의 완전히 부재한 문제라는 점 또한 부인할 수 없다. 사면과 법적 화해 과정은 생존자들에 대해서는 사실상 부재하며, 이미 사망한 이들에 대해서는 완전히 부재한다. 이는 매우 복잡하고 민감한 주제로, 진보 진영을 포함한 정당들이 불과 몇 달 전까지 감히 정면으로 다루지 못했던 것처럼, 역사 교과서들도 감히 정면으로 마주하지 못하고 있다. 오직 현대사를 연구하는 일부 역사가들과 시민사회의 일부, 특히 역사적 기억 회복 협회(Asociación por la Recuperación de la Memoria Histórica)<sup>5</sup>를 통해서만 이러한 요구가 두드러지게 제기되어 왔다. 전자는 새롭게 갱신되고 매우 값진 역사학적 작업을 통해, 후자는 내전 패배자들과 프랑코 체제 탄압 희생자들에 대한 망각을 고발하는 캠페인, 그리고 여전히 존속하고 있는 공동묘지에 버려진 희생자들을 되찾는 활동을 통해 이러한 요구를 제기해 왔다. 이 모든 것은 극히 최근까지도 거의 아무런 제도적 지원 없이 이루어졌다.</p>
+<p>어쩌면 1970년대 말과 1980년대의 초기 스페인 민주주의는 그 이상을 할 수 없었을지도 모른다. 잔혹하고 비정한 독재 체제로부터 국가 권력의 어떤 조직에도 어떠한 정화(depuración)조치도 없이 취약한 민주주의로 이행하는 과정에서 존재했던 문제들은 너무나 많고 복잡했고, 이 때문에 적어도 상황에 따라서는 "과거를 망각으로 돌리며"(Juliá, 2003a) 민주화 과정을 공고히 하는 데 집중하였다. 1980년대 초에는 이해할 만했던 이러한 태도는 1990년대를 지나 극히 최근까지도 합리적인 수준을 넘어 지속되었으나, 최근 들어 상황은 크게 변화하였다. 이러한 변화 과정은 2002년 11월 (프랑코 체제를 직접 언급하지는 않은 채) 독재를 규탄하고 내전 희생자와 프랑코 체제 탄압 희생자에 대한 도덕적 인정을 재확인한 의회의 공동 성명으로 시작되었다(이 경우 전쟁의 희생자와 독재의 희생자를 구분하지 않았는데, 이 둘은 본질적으로 성격이 다르다). 이는 이전까지 이러한 유형의 선언을 거부해 왔던 국민당의 일시적인 태도 변화로 인해 가능했다. 다만 앞서 인용한 성명이 간접적으로 이루어졌다는 사실에서 확인할 수 있듯이, 국민당은 사안들을 제 이름으로 부르는 것을 받아들이지 않았다. 마찬가지로, 봉기군에 의해 자행된 희생자들의 공동묘지를 되찾는 작업을 진행하던 협회들에 대해서는 어떠한 경제적 지원도 배정되지 않은 반면, 제2차 세계대전 당시 나치의 소련 침공에 자원병으로 참전한 이들에게는 그러한 지원이 이루어졌다. 국민당에게 이 문제는 이미 종결된, 끝난 사안이었는데, 이는 스페인이 과거가 아닌 미래를 바라보아야 할 안정된 민주주의 국가이기 때문이라는 것이었다. 보수 진영에서는 또한 매우 신뢰도가 낮은 수정주의 역사학(Moa, 2003; Paine, 2003)이 촉진되기도 하였는데, 이는 내전에 관한 프랑코 체제의 신화와 거짓을 되살리려 시도한 것으로, 이 분야의 저명한 전문가들로부터 비판받았다(Juliá, 2003b; Moradiellos, 2003; Reig Tapia, 2003; Balfour, 2006). 그러나 스페인의 나머지 국회 정당들이나 스페인 사회의 일부는 이렇게 생각하지 않았는데, 이들은 이러한 미해결 사안들이 분노나 복수심 없이 다루어지고 있던 그 시점이, 더 큰 민주적 질과 민주적 문화의 산물인 더 정의롭고 완전한 해결책을 찾을 좋은 기회라고 여겼다. 2004년 3월 국민당의 선거 패배는 새로운 국면이 열릴 것처럼 보였으나, 이후 몇 달 동안 이른바 어려운 시기<sup>6</sup>를 다루는 데 내재된 어려움들이 확인될 수 있었다. 즉 2004년 6월에 "희생자들에 대한 도덕적·사회적·경제적 배상"에 관한 보고서를 작성하기 위한 부처 간 위원회 설치가 발표되었다. 그로부터 석 달 뒤 "내전 및 프랑코 체제 희생자 상황 연구를 위한 부처 간 위원회"라는 공식 명칭으로 이 위원회가 구성되었다. 최종 보고서는 1년 안에 작성될 예정이었으나, "엄청나게 복잡하고 매우 민감한" 성격으로 인해 그렇게 되지 못했다. 보고서 완료 시점은 2006년 상반기로 연기되었다.</p>
+<p>이에 더하여, 2006년은 (국민당이 계속 불참한 가운데) 스페인 의회에 대표된 모든 정치 세력에 의해 2월 초 "역사적 기억의 해"로 선포되었으며, 동시에 3월에는 유럽평의회(Consejo de Europa)가 프랑코 체제에 대한 최초의 대대적인 국제적 규탄을 진행하며 7월 18일을 국제적 규탄의 날로 제안하였다. 앞서 언급한 바와 같이, 이 법이 스페인 의회에서 통과되기까지는 2007년 12월 말까지 기다려야 했다.</p>
+<p>역사 교과서들이, 폭력과 탄압을 사실화한 것처럼 이 미완의 과제 또한 감당하게 되기를 바라는 것이 바람직할 것이나, 향후 몇 년 내에 이를 기대하기는 어렵다. 특히 역사 교과서는, 사회적으로 지배적이며 통상적으로 보수적인 상식이 강하게 작동하는 관점에서 근본적으로 작성된다. 가장 혁신적인 역사학적 성과는 매우 높은 수준의 과학적 합의에 도달했을 때에야 비로소 교과서에 반영될 수 있다. 이런 의미에서, 스페인에서 사실상 존재하지 않는 교과서에 대한 검열이나 행정적 통제는, 교과서 저자들과 출판사들 스스로의 자기검열—교사들의 수용과 그들의 상식에 매우 신경을 쓰는—만큼 강력하지는 않다.</p>
+<p>본 연구에서 다룬 어려운 주제들에 관한 현재 역사교육 상황에 대한 우리의 평가는 희망적이다. 매우 중요한 긍정적 변화들이 있었기 때문이다. 그러나 자기만족적이지는 않으며, 스페인의 민주화 과정 자체와 마찬가지로 이를 모범적인, 즉 이러한 문제들에 대한 모범적 처리 방식이라는 의미로 간주해서는 안 된다고 우리는 생각한다. 우리가 이해하는 바에 따르면, 모범적이었던 것은 이 과정에서 폭력이 사실상 부재했다는 점이며, 이는 매우 중요한 사실이다. 그러나 폭력 행위자와 탄압자들에 대해 존재했던 높은 수준의 불처벌, 그리고 그 희생자 대다수에 대한 사실상의 망각은 모범적이지 않았다.</p>
+<p>화해 과정은 언제나 매우 복잡하며, 많은 시간을 필요로 하고, 오늘날 세계 거의 모든 대륙(라틴아메리카, 아프리카, 아시아, 유럽)에서 현재 진행 중인 과정들에서 확인할 수 있듯이 수많은 변주를 지닌다(Barahona de Brito 외, 2002; Carretero 외, 2006; Cole, 2007; Kaufman, 2007; AA.VV, 2008; Viz y Rollemberg, 2013; Psaltis 외., 2017). 스페인의 화해와 민주화 과정은 많은 긍정적인 측면을 지녔지만, 오랜 세월 동안 그 "잊혀진 이들" 또한 지니고 있었다. 이는 여전히 살아 있는 프랑코 체제 탄압 피해자들뿐 아니라 내전 희생자였던 그들의 선조들을 위해서도 정당한 대우를 계속 요구하는 사회운동들이 보여주는 바와 같다. 이들의 요구는 분노나 복수심 없이, 그러나 아직 그들에게 충족되지 않은 깊은 정의에 대한 요구로부터 이루어진다. 문제는 여전히 근본적으로 정치적인 것이다. 즉 사회학적으로 프랑코주의의 자연스러운 계승자이면서도, 과거에 대한 민주적 복권을 아직 자신의 책무로 여기지 않는 매우 보수적이고 권위주의적인 우파의 문제인 것이다.</p>
+<p>중등교육의 역사교육에 관해 말하자면, 지난 25년간 그 기여는 상당하였으나, 내전 기간과 오랜 프랑코 독재 기간 동안 스페인 국민 대다수에게 초래된 폭력과 탄압의 고통에 관하여 보다 인간적이고 생생한 차원을 촉진하는 데는 아직 충분히 성공하지 못했다는 점에서 충분하지는 않다. 이 딜레마는 해결하기 쉽지 않은데, 상당수의 교사들이 여전히 역사적 지식을 근본적으로 정치적 과정과 위대한 인물들을 지향하는 학문으로 여기며, 사람들의 삶, 그들의 고통과 기쁨, 그들의 경험, 희망과 절망이 자리할 수 있는 사회과학으로 여기지 않기 때문이다. 삶과 더 밀접히 연결되고, 더 유용하고 실천적이며, 과거의 오류로부터 논리적이고 검증된 방식으로 배울 수 있는 역사를 반복적으로 요구하는 학생들은 이렇게 생각하지 않으며, 이는 타당하다.</p>
+</section>
+
+<section id="referencias">
+<h2>참고문헌</h2>
+<div id="biblio">
+<p class="entry">AA.VV (2003). Memoria y olvido del franquismo <em>(프랑코 체제의 기억과 망각)</em>. Pasajes de pensamiento contemporáneo, 11.</p>
+<p class="entry">AA.VV (2008). Memoria histórica y educación <em>(역사적 기억과 교육)</em>. Íber. Didáctica de las Ciencias Sociales, Geografía e Historia, 55.</p>
+<p class="entry">Aguilar Fernández, P. (1996). Memoria y olvido de la Guerra Civil española <em>(스페인 내전의 기억과 망각)</em>. Madrid: Alianza.</p>
+<p class="entry">Álvarez Oses, J. A. 외 (2000). La guerra que aprendieron los españoles. República y guerra civil en los textos de bachillerato (1938-1983) <em>(스페인인들이 배운 전쟁: 바치예라토 교재 속의 공화국과 내전, 1938-1983)</em>. Madrid: Los libros de la Catarata.</p>
+<p class="entry">Álvarez Rey, L.; García Sebastián, M.; Gatell Arimont, C.; Gibaja Velázquez, J. C. &amp; M. Risques Corbella (2016). Historia de España. 2º Bachillerato <em>(스페인사, 바치예라토 2학년)</em>. Madrid: Vicens Vives.</p>
+<p class="entry">Angvik, M. &amp; B. Von Borries (1997). Youth and history. A comparative European survey on historical consciousness and political attitudes among adolescents <em>(청년과 역사: 청소년의 역사의식과 정치적 태도에 관한 유럽 비교 조사)</em>. Hamburgo: Koerber Stiftung, 2 vols.</p>
+<p class="entry">Ardit, M.; Dardé, C.; Burdiel, I.; Alcañiz, M.; Valls, R. &amp; T. Peris (1998). Historia. Segundo Ciclo ESO <em>(역사, 의무중등교육 2주기)</em>. Madrid: Santillana.</p>
+<p class="entry">Aróstegui, J. (2006). Traumas colectivos y memorias generacionales: el caso de la Guerra Civil <em>(집단적 트라우마와 세대적 기억: 내전의 사례)</em>. En Aróstegui, J. &amp; F. Godicheau (eds.). Guerra Civil: mito y memoria (57-94). Madrid: Marcial Pons.</p>
+<p class="entry">Balfour, S. (2006). El revisionismo histórico y la Guerra Civil <em>(역사수정주의와 내전)</em>. Pasajes de pensamiento contemporáneo, 19, 61-65.</p>
+<p class="entry">Barahona de Brito, A.; Aguilar, P. &amp; C. González (eds.) (2002). Las políticas hacia el pasado. Juicios, depuraciones, perdón y olvido en las nuevas democracias <em>(과거를 향한 정책들: 신생 민주주의 국가에서의 재판, 정화, 용서와 망각)</em>. Madrid: Istmo.</p>
+<p class="entry">Caba, A. 외 (2001). El siglo XX en primera persona. Educación Secundaria Obligatoria. 4º curso <em>(1인칭으로 보는 20세기, 의무중등교육 4학년)</em>. Barcelona: Octaedro.</p>
+<p class="entry">Carretero, M.; Rosa, A. &amp; M. F. González (2006). Enseñanza de la historia y memoria colectiva <em>(역사교육과 집단기억)</em>. Buenos Aires: Paidós.</p>
+<p class="entry">Casanova, J. (2007). República y Guerra Civil <em>(공화국과 내전)</em>. Madrid: Crítica-Marcial Pons.</p>
+<p class="entry">Cole, E. A. (ed.) (2007). Teaching the violent Past: History education and reconciliation <em>(폭력적 과거를 가르치기: 역사교육과 화해)</em>. Nueva York: Rowman &amp; Littlefield Publishers.</p>
+<p class="entry">Del Arco, M. A.; Fuertes, C.; Hernández, C. &amp; J. Marco (eds.) (2013). No sólo miedo. Actitudes políticas y opinión popular bajo la dictadura franquista (1936-1977) <em>(공포만은 아니었다: 프랑코 독재 하의 정치적 태도와 대중 여론, 1936-1977)</em>. Granada: Comares.</p>
+<p class="entry">Fernández Ros, J. M.; González Salcedo, J.; León Navarro, V. &amp; G. Ramírez Aledón (2016). Historia de España. 2º Bachillerato <em>(스페인사, 바치예라토 2학년)</em>. Madrid: Santillana.</p>
+<p class="entry">Fuertes Muñoz, C. (근간). Pervivencias en las narrativas sobre la dictadura franquista en los manuales escolares actuales <em>(현행 교과서에 나타난 프랑코 독재 서사의 지속성)</em>. En Parra Monserrat, D. &amp; C. Fuertes Muñoz (eds.). Reinterpretar la tradición, transformar las prácticas: Ciencias Sociales para una educación crítica. Valencia: Tirant lo Blanch.</p>
+<p class="entry">García de Cortázar, F.; Donézar, J. M.; Valdeón, J.; Del Val, M.; Fernández, M. &amp; A. Gamazo (2016). Historia de España. 2º Bachillerato <em>(스페인사, 바치예라토 2학년)</em>. Madrid: Anaya.</p>
+<p class="entry">Garmendia, J. A. &amp; P. García (1977). Geografía e Historia de España y de los países hispánicos <em>(스페인 및 이베로아메리카 국가들의 지리와 역사)</em>. Madrid: SM.</p>
+<p class="entry">Gastaminza, F. &amp; I. Arenaza (1970). Historia de España y universal. Cuarto curso <em>(스페인사와 세계사, 4학년)</em>. Madrid: SM.</p>
+<p class="entry">Gracia, J. &amp; M. A. Ruiz (2001). La España de Franco (1939-1975). Cultura y vida cotidiana <em>(프랑코의 스페인: 문화와 일상생활)</em>. Madrid: Síntesis.</p>
+<p class="entry">Juliá, S. (2003a). Echar al olvido. Memoria y amnistía en la transición <em>(망각으로 돌리기: 이행기의 기억과 사면)</em>. Claves de razón práctica, 129, 14-24.</p>
+<p class="entry">Juliá, S. (2003b). Últimas noticias de la Guerra Civil <em>(내전에 관한 최신 소식)</em>. Revista de libros, 81, 6-8.</p>
+<p class="entry">Juliá, S. (ed.) (1999). Víctimas de la Guerra Civil <em>(내전의 희생자들)</em>. Madrid: Temas de hoy.</p>
+<p class="entry">Kaufman, C. (dir.) (2007). Educación y Dictadura. Los textos escolares en la historia argentina reciente <em>(교육과 독재: 최근 아르헨티나 역사 속 교과서)</em>. Buenos Aires: Miño y Dávila.</p>
+<p class="entry">López Facal, R. (2006). Reseña <em>(서평)</em>. Iber. Didáctica de las Ciencias Experimentales y Sociales, 47, 111-112.</p>
+<p class="entry">Mañero, M.; Sánchez, D. J. &amp; I. González (1976). Ciencias Sociales. 8º de EGB <em>(사회과학, 기초일반교육 8학년)</em>. Salamanca: Anaya.</p>
+<p class="entry">Mèlich, J. C. (2006). El trabajo de la memoria o el testimonio como categoría histórica <em>(기억의 작업 혹은 역사적 범주로서의 증언)</em>. Enseñanza de las Ciencias Sociales, 5, 115-124.</p>
+<p class="entry">Moa, P. (2003). Los mitos de la Guerra Civil <em>(내전의 신화들)</em>. Madrid: La Esfera.</p>
+<p class="entry">Moradiellos, E. (2003). La Guerra Civil: los mitos de Pío Moa <em>(내전: 피오 모아의 신화들)</em>. Revista de libros, 79/80, 57.</p>
+<p class="entry">Pagés, J. &amp; M. Casas (2005). Republicans i republicanes als camps de concentració nazis. Testimonis i recursos didàctics per a l'ensenyament secundari <em>(나치 강제수용소의 공화파 남녀: 중등교육을 위한 증언과 교육 자료)</em>. Barcelona: Ajuntament de Barcelona.</p>
+<p class="entry">Paine, S. G. (2003). Mitos y tópicos de la Guerra Civil <em>(내전의 신화와 통설)</em>. Revista de libros, 79-80, 3-5.</p>
+<p class="entry">Parra Monserrat, D. (2013). La conceptualización de la Historia escolar y sus implicaciones didácticas. Un estudio a partir del recuerdo de estudiantes de BUP <em>(학교 역사의 개념화와 그 교육적 함의: BUP 졸업생의 기억을 바탕으로 한 연구)</em>. Didáctica de las Ciencias Experimentales y Sociales, 27, 3-22.</p>
+<p class="entry">Pereira Castañares, J. C. &amp; A. De la Mata Carrasco (2016). Historia de España. 2º Bachillerato <em>(스페인사, 바치예라토 2학년)</em>. Madrid: SM.</p>
+<p class="entry">Plans, P.; Sancho, J. M. &amp; J. A. Gallego (1977). Geografía e Historia. Tercer curso de bachillerato <em>(지리와 역사, 바치예라토 3학년)</em>. Madrid: Magisterio Español.</p>
+<p class="entry">Prats, J. J.; Castelló, E.; García, Mª C.; Izuzquiza, I.; Loste, Mª A. &amp; M. Pongiluppi (1998). Ciencias Sociales, Geografía e Historia. Educación Secundaria Obligatoria. 2º ciclo. Comunidad Valenciana <em>(사회과학, 지리와 역사, 의무중등교육 2주기, 발렌시아 자치주)</em>. Madrid: Anaya.</p>
+<p class="entry">Proyecto Kairós (1999). Historia. 2º Bachillerato <em>(역사, 바치예라토 2학년)</em>. Barcelona: Rialla-Octaedro.</p>
+<p class="entry">Psaltis, Ch. 외. (2017). History education and conflict transformation. Social psychological theories, history teaching and reconciliation <em>(역사교육과 갈등 전환: 사회심리학 이론, 역사교육과 화해)</em>. Luxemburg: Palgrave Macmillan.</p>
+<p class="entry">Reig Tapia, A. (2003). Qousque tandem Pio Moa. Participación en foro de debate virtual. Disponible en www.h-debate.com (30-7-03: Guerra Civil, 64).</p>
+<p class="entry">Rein, R. &amp; J. M. Thomàs (2016). Guerra civil y franquismo: una perspectiva internacional <em>(내전과 프랑코주의: 국제적 관점)</em>. Zaragoza: Prensas de la Universidad de Zaragoza.</p>
+<p class="entry">Santacana, J. &amp; G. Zaragoza (1994). Historia. Segundo ciclo. Educación Secundaria Obligatoria <em>(역사, 의무중등교육 2주기)</em>. Madrid: SM.</p>
+<p class="entry">Saz, I. (2004). Fascismo y franquismo <em>(파시즘과 프랑코주의)</em>. Valencia: PUV.</p>
+<p class="entry">Saz, I. (2013). Las caras del franquismo <em>(프랑코주의의 여러 얼굴)</em>. Granada: Comares.</p>
+<p class="entry">Tusell, J. 외 (1996). Historia de España Contemporánea. 2º Bachillerato <em>(스페인 현대사, 바치예라토 2학년)</em>. Madrid: Santillana.</p>
+<p class="entry">Valdeón, J.; González, I.; Mañero, M. &amp; D. J. Sánchez (1977). Geografía e Historia de España y de los países hispánicos <em>(스페인 및 이베로아메리카 국가들의 지리와 역사)</em>. Salamanca: Anaya.</p>
+<p class="entry">Valls, R. (1984). La interpretación de la historia de España, y sus orígenes ideológicos, en el bachillerato franquista (1938-1953) <em>(프랑코 체제 바치예라토에서의 스페인사 해석과 그 이념적 기원, 1938-1953)</em>. Valencia: Universidad de Valencia.</p>
+<p class="entry">Viz Quadrat, S. &amp; D. Rollemberg (orgs.) (2013). História e memória das ditaduras do século XX <em>(20세기 독재의 역사와 기억)</em>. Rio de Janeiro: Editora FGV.</p>
+</div>
+</section>
+
+<section id="notas">
+<h2>주(註)</h2>
+<div class="note-block">
+<ol start="1">
+<li>본 연구는 스페인 경제산업경쟁력부(MINECO) 국가 연구개발혁신계획(EDU2015-65621-C3-1-R)의 재정 지원을 받았으며, EU FEDER 기금의 공동 지원을 받았다.</li>
+<li>역사가 훌리오 아로스테기(Julio Aróstegui)는 본고에서 다루는 시기를 "예외적인 집단적 외상 사건"으로 정의한 바 있다(Aróstegui, 2006:58).</li>
+<li>이 법의 공식 명칭은 "내전 및 독재 기간 동안 박해 또는 폭력을 겪은 이들을 위해 권리를 인정·확대하고 조치를 마련하는 법"이다(스페인 관보, 2007년 12월 27일).</li>
+<li>민주화 이행 시기 동안 내전과 프랑코주의 시기가 어떻게 다루어졌는지에 관한 기본적인 연구로는 팔로마 아길라르 페르난데스(Paloma Aguilar Fernández, 1996)가 스페인 내전의 기억과 망각을 다룬 저작이 있다. 지난 40년간 내전과 프랑코 독재에 관해 이루어진 주요 연구들을 모두 요약하는 것은 불가능하다. 이 갈등의 희생자에 관한 좋은 종합은 훌리아(Juliá, 1999)에서, 그리고 같은 저자가 최근 출판물들을 언급하며 신프랑코주의적 수정론에 대해 강도 높게 학문적으로 반박한 훌리아(Juliá, 2003b)에서 볼 수 있다. "프랑코주의의 기억과 망각"을 다룬 계간지 파사헤스 데 펜사미엔토 콘템포라네오(Pasajes de pensamiento contemporáneo, 제11호, 2003년 봄호)의 특집호 역시 여러 저명한 역사가들의 기고를 담고 있어 매우 유용하다. 새로운 역사학적 성과들을 종합한 출판물로는 카사노바(Casanova, 2007)의 저작이 있으며, 사스(Saz, 2013)의 연구도 마찬가지이다. 마지막으로, 국제적 관점에서는 레인과 토마스(Rein y Thomàs, 2016)가 편찬한 저작을 언급할 수 있다.</li>
+<li>역사적 기억 회복 협회(Asociación por la Recuperación de la Memoria Histórica)는 2000년에 설립된 단체로, 내전 공화국 측 희생자와 프랑코 독재 초기 몇 년간의 희생자들의 기억(그리고 여전히 존재하는 공동묘지 속 유해)을 되찾기 위한 운동에서 스페인의 가장 대표적인 협회이다. 매우 상세한 정보는 http://www.memoriahistorica.org/ 에서 확인할 수 있다.</li>
+<li>이러한 유형의 문제를 다루는 어려움은, 후안 파헤스와 몬세라트 카사스(Joan Pagés y Montserrat Casas, 2005)의 훌륭한 제안이 출판되면서 불거진 논란과 그 이후의 검열을 통해서도 다시 한번 드러난 바 있다. 이 제안에 대한 매우 긍정적인 평가는 로페스 파칼(López Facal, 2006)의 서평과 멜리치(Mèlich, 2006)의 논문에서 볼 수 있다.</li>
+</ol>
+</div>
+<a class="back-to-top" href="#top">▲ 맨 위로</a>
+</section>
+
+</div>
+
+<script>
+window.addEventListener('scroll', () => {
+  let current = '';
+  document.querySelectorAll('section[id]').forEach(s => {
+    if (s.getBoundingClientRect().top <= 100) current = s.id;
+  });
+  document.querySelectorAll('#sidebar nav a').forEach(a => {
+    a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+  });
+});
+document.querySelectorAll('#sidebar nav a').forEach(a => {
+  a.addEventListener('click', e => {
+    e.preventDefault();
+    const target = document.querySelector(a.getAttribute('href'));
+    if (target) target.scrollIntoView({ behavior: 'smooth' });
+  });
+});
+</script>
+
+</body>
+</html>
