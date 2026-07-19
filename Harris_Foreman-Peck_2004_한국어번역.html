@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Harris & Foreman-Peck (2004) — 중등 역사 교육과정에서 감정이입 교수·평가</title>
+<style>
+:root {
+  --sidebar-width: 260px;
+  --accent: #2c5f8a;
+  --accent-light: #e8f1f8;
+  --text: #1a1a1a;
+  --muted: #555;
+  --border: #d0d7de;
+  --bg: #fafafa;
+  --white: #ffffff;
+  --table-head: #f0f4f8;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Noto Serif KR', Georgia, serif; background: var(--bg); color: var(--text); font-size: 16px; line-height: 1.85; }
+
+#sidebar {
+  position: fixed; top: 0; left: 0;
+  width: var(--sidebar-width); height: 100vh;
+  background: var(--white); border-right: 1px solid var(--border);
+  overflow-y: auto; padding: 20px 14px; z-index: 100;
+}
+#sidebar .paper-info { font-size: 11.5px; color: var(--muted); margin-bottom: 16px; border-bottom: 1px solid var(--border); padding-bottom: 12px; line-height: 1.6; }
+#sidebar .paper-info strong { color: var(--accent); display: block; margin-bottom: 4px; font-size: 12.5px; }
+#sidebar nav a {
+  display: block; padding: 5px 8px; border-radius: 4px;
+  font-size: 12.5px; color: var(--text); text-decoration: none;
+  transition: background .15s;
+}
+#sidebar nav a:hover { background: var(--accent-light); }
+#sidebar nav a.active { background: var(--accent-light); color: var(--accent); font-weight: bold; }
+#sidebar nav a.sub { padding-left: 20px; font-size: 11.5px; color: var(--muted); }
+
+main { margin-left: var(--sidebar-width); padding: 40px 52px 80px; max-width: 860px; }
+
+.paper-header { margin-bottom: 32px; border-bottom: 2px solid var(--accent); padding-bottom: 20px; }
+.paper-header h1 { font-size: 1.55rem; line-height: 1.4; color: var(--accent); margin-bottom: 6px; }
+.paper-header .orig-title { font-size: 1rem; color: var(--muted); font-style: italic; margin-bottom: 12px; }
+.paper-header .meta { font-size: 13px; color: var(--muted); line-height: 1.8; }
+
+.abstract-box {
+  background: var(--accent-light); border-left: 4px solid var(--accent);
+  padding: 18px 22px; margin-bottom: 36px; border-radius: 4px;
+}
+.abstract-box h2 { font-size: 1rem; color: var(--accent); margin-bottom: 10px; }
+.abstract-box p { font-size: 14.5px; }
+.abstract-box .keywords { margin-top: 10px; font-size: 13px; color: var(--muted); }
+
+section { margin-bottom: 40px; scroll-margin-top: 24px; }
+section h2 { font-size: 1.25rem; color: var(--accent); border-bottom: 1px solid var(--border); padding-bottom: 6px; margin-bottom: 16px; }
+section h3 { font-size: 1.05rem; color: #34495e; margin: 20px 0 10px; }
+p { margin-bottom: 14px; }
+
+blockquote {
+  border-left: 3px solid var(--accent); margin: 16px 0;
+  padding: 10px 18px; background: #f5f8fc; font-style: italic; color: #333;
+  font-size: 15px;
+}
+
+.footnote-box { border-top: 1px solid var(--border); margin-top: 28px; padding-top: 14px; font-size: 12.5px; color: var(--muted); line-height: 1.7; }
+.footnote-box p { margin-bottom: 6px; }
+
+#referencias { }
+#referencias ul { list-style: none; padding: 0; }
+#referencias ul li { font-size: 13.5px; margin-bottom: 10px; padding-left: 1.5em; text-indent: -1.5em; color: var(--text); line-height: 1.7; }
+#referencias ul li .ko { color: var(--muted); font-style: italic; }
+
+.back-to-top { position: fixed; bottom: 24px; right: 28px; background: var(--accent); color: #fff; border: none; border-radius: 50%; width: 44px; height: 44px; font-size: 20px; cursor: pointer; box-shadow: 0 2px 8px rgba(0,0,0,.2); }
+
+@media (max-width: 900px) {
+  #sidebar { display: none; }
+  main { margin-left: 0; padding: 20px 18px 60px; }
+}
+</style>
+</head>
+<body>
+
+<nav id="sidebar">
+  <div class="paper-info">
+    <strong>Harris &amp; Foreman-Peck (2004)</strong>
+    International Journal of Historical Learning, Teaching and Research, 4(2)<br>
+    역사교육에서의 감정이입 교수·평가
+  </div>
+  <nav>
+    <a href="#abstract">초록</a>
+    <a href="#intro">1. 서론</a>
+    <a href="#concept">2. 감정이입의 개념</a>
+    <a href="#definitions">3. 역사에서의 감정이입 정의</a>
+    <a href="#contested">4. 감정이입이 논쟁적이 된 이유</a>
+    <a class="sub" href="#theoretical">4-1. 이론적 반론</a>
+    <a class="sub" href="#assessment">4-2. 평가 관련 문제</a>
+    <a class="sub" href="#practice">4-3. 실천 관련 반론</a>
+    <a href="#perspective">5. 문제의 균형 잡기</a>
+    <a href="#principles">6. 교수·평가 원칙</a>
+    <a href="#referencias">참고문헌</a>
+  </nav>
+</nav>
+
+<main>
+
+<div class="paper-header">
+  <h1>「다른 사람의 신발 신기」: 중등 역사 교육과정에서 감정이입 교수와 평가</h1>
+  <div class="orig-title">'Stepping into Other Peoples' Shoes': Teaching and Assessing Empathy in the Secondary History Curriculum</div>
+  <div class="meta">
+    <strong>저자:</strong> Richard Harris (사우샘프턴 대학교, 영국) / Lorraine Foreman-Peck (노샘프턴 대학교, 영국)<br>
+    <strong>게재지:</strong> International Journal of Historical Learning, Teaching and Research, Vol. 4, No. 2 (2004)<br>
+    <strong>키워드:</strong> 감정이입 개념, 역사 교수, 감정이입 평가, 감정이입 교수
+  </div>
+</div>
+
+<div class="abstract-box" id="abstract">
+  <h2>초록</h2>
+  <p>감정이입 개념이 역사 교수에 관한 전문적 담론에 다시 등장하고 있다. 저자들은 이 문제적 개념에 대한 개념적 분석을 제공하고, 1980~90년대에 제기된 반론들을 재검토하며, 감정이입이 오늘날 역사 교수의 가치 있는 목표라고 결론짓는다. 감정이입 교수와 평가에 관한 문제점 및 반론이 논의되고, 실천을 안내하는 원칙들이 제안된다.</p>
+  <div class="keywords"><strong>키워드:</strong> 감정이입 개념 / 역사 교수 / 감정이입 평가 / 감정이입 교수</div>
+</div>
+
+<!-- 1. 서론 -->
+<section id="intro">
+  <h2>1. 서론</h2>
+  <p>감정이입은 역사 교수 분야에서 논쟁적인 주제다(Skidelsky, 1988a, 1988b; Jenkins, 1991; Low-Beer, 1989). Phillips(2002)가 말한 것처럼:</p>
+  <blockquote>
+    20세기 후반의 역사 교수에서 감정이입 교수만큼 뜨겁게 논쟁되고 논란이 된 측면도 거의 없었다. … 감정이입은 신우파의 '비난 담론' 안에서 — 정치인과 미디어로부터 — 겉보기에 잘못 안내된, 막연하고 이념적인 '새로운 역사'의 전형으로 유독 표적이 되었다. … 감정이입을 둘러싼 논란 때문에 많은 역사 교사들은 '이(E)자'로 해석될 수 있는 어떤 것이라도 가르치려는 자신감을 잃었다(p. 45).
+  </blockquote>
+  <p>이 논쟁은 1980년대 영국에서 역사 교수 방식이 크게 변화한 이후 발생했다. 1970년대의 학교 역사 프로젝트(Schools History Project)는 아동 중심 교수 접근법과 역사의 절차적 성격에 대한 새로운 강조를 도입하였고, 이는 새로운 역사 국가시험의 일부가 되었다. 신우파는 기술 강조가 내용의 가치를 약화시키고, 공통 문화적 가치와 정체성 감각을 희석시킬 것을 우려했다. 기술은 회의주의를 조장하고, 지식의 문제적 성격을 강조하며, 논리적 결론으로 이어지면 과거는 알 수 없다는 것을 보여줄 것이라고 주장되었다. 아동 중심 접근법은 역사를 관련성 있게 만드는 것을 강조하여 전통적인 과거 관점에서 멀어지는 새로운 역사 연구 영역으로 이어졌다. 신우파는 대신 공통 가치와 문화적 정체성을 창출하는, 과거에 대한 확실성에 기반한 역사를 주장했다. 감정이입은 너무 복잡하고, 막연하며, Deuchar(1987)의 표현처럼 '일반화된 감상주의'라는 이유로 특히 공격받았다. 역할극과 시뮬레이션 같은 교수 방법은 학생들이 역사를 관련성 있게 만든다는 허황된 개념에 근거하여 과거의 자신을 자유롭게 상상할 수 있도록 허용하는 질 낮은 교수라는 이유로 공격받았다. 이러한 공격의 결과로 감정이입은 전문적 담론에서 사라졌다.</p>
+  <p>잉글랜드의 국가교육과정 역사(DfEE &amp; QCA, 1999)와 새로운 시민성 국가교육과정(DfEE &amp; QCA, 1999) 도입에는 감정이입 교수가 포함되어 있는데, 비록 그 단어 자체는 사용되지 않는다.<sup>1</sup> 감정이입 개념은 영국, 미국, 뉴질랜드의 역사 및 사회과 교수에 관한 최근의 전문적 담론에도 등장한다(예: Cooper, 2000; Luff, 2000; Davis Jr, 2001; Levstik, 2001; Dawson &amp; Banham, 2002). 따라서 감정이입은 역사적 이해뿐 아니라 아동의 도덕 발달에도 중요한 개념이므로, 역사에서 그 위치를 재검토하는 것이 시의적절하다.</p>
+  <p>본 논문의 전략은 개념을 재방문하여 1980~90년대에 제기된 반론을 충족할 수 있도록 '지도'화할 수 있는지 살펴보는 것이다. 먼저 개념을 분석하여 경계를 설정하고, 학교 역사 교수 적용 맥락에서 감정이입 개념에 대한 과거의 정의와 반론을 검토한다. 마지막으로 과거의 비판에 부응하고 실천을 위한 보다 건전한 원칙을 제공하는 개념 분석을 제안한다.</p>
+</section>
+
+<!-- 2. 감정이입의 개념 -->
+<section id="concept">
+  <h2>2. 감정이입이란 무엇인가 — 일반적 의미와 역사적 사고에서의 의미</h2>
+  <p>'감정이입(empathy)'은 일반적으로 일상적 의미에서 다른 사람의 마음 상태를 이해하는 맥락에서, 대개 그들이 곤경이나 불리한 상황에 처했을 때 사용된다. 그것은 복잡한 형태의 주관적 이해를 표현하기 위해 흔히 사용된다. 예를 들어 사회복지사는 '보호자'에 의해 학대받는 아동과 감정이입할 수 있어야 한다고 기대된다. 그것은 일반적으로 다른 사람의 신념, 가치, 생각을 인식할 뿐 아니라 그들의 곤경이나 상황이 그들에게 갖는 의미와 그들이 경험하고 있을 감정을 이해하는 것을 의미한다. 감정이입하는 능력은 정보에 근거한 상상력의 노력을 필요로 한다.</p>
+  <p>문학에서 상상력의 노력은 직유와 은유 사용으로 독자에게 '쉬워진다'. 예를 들어 어떤 사람이 '신발 속의 돌처럼' 느껴진다고 말하는 것은 제거하고 싶은 지속적인 짜증이나 고통의 감정을 전달한다(Foreman-Peck, 1983). 감정이입하는 것은 다른 사람들의 마음과 상황에 통찰이 필요한 상황에서 발휘되는 성향이 될 수 있다. 타인에 대한 고려는 타인을 이해하는 것을 필요로 하기 때문에 어느 정도의 감정이입적 사고가 도덕 발달에 필요하다고 주장할 수 있다.</p>
+  <p>타인의 감정과 느낌을 이해하는 것은 우리 자신의 경험과의 유추적 사고 과정(Barnes &amp; Thagard, 1997)을 통해 달성된다. 우리는 문자적 의미에서 다른 사람의 감정을 경험할 수 없다(그것은 불가능하다). 그러나 그것은 다른 사람의 감정 상태를 이해하는 것을 포함한다. 우리는 '당신의 슬픔을 느낀다'고 하지 않지만(은유적으로를 제외하고), '당신이 겪고 있는 것을 이해한다'고 말할 수는 있다.</p>
+  <p>개인적 경험이 비교의 유일한 원천은 아니다. 이전 개인 경험이 없는 경우, 문학, 드라마, 역할극, 텔레비전 드라마가 제공하는 '가상의' 경험이 통찰의 원천이 될 수 있다. 감정이입적 이해는 '일반적인' 이해와 다른데, 그것은 다른 사람의 인지적(이유) 및 정의적(감정) 상태와 그 관계를 아는 것이기 때문이다. '아는 것'의 성격이 중요하다: 그것은 다른 사람이 겪고 있는 감정의 경험에 대한 통찰을 갖는다는 것을 의미한다. 그러나 이것이 공감의 감정을 동반하지 않을 수도 있다.</p>
+  <p>우리는 감정이입할지 선택할 수 있다는 점에 주목했다. 그리고 일반적으로, 일상적인 현대 삶에서 감정이입은 우리가 상황을 어떻게 평가하고 무엇을 (있다면) 해야 할지 결정해야 할 때 도덕적 맥락에서 사용된다. 감정이입에 관련된 사고는 또한 허구적 퍼즐을 이해하기 위해 사용될 수도 있다. 추리소설이 좋은 예다. 실제로 Collingwood(1946)는 역사가가 탐정처럼 과거 사건을 재구성한다고 제안했다.</p>
+  <p>Collingwood는 감각이나 경험을 과거의 생각처럼 재구성할 수 있다고 믿지는 않았지만, 우리는 역사적 사실을 이해하기 위해 전형적인 의도와 동기에 대한 지식과 같은 인간 본성에 대한 일반적인 지식을 활용한다. [John Doe 살인 사건 탐정 예시] — 탐정은 물리적 단서뿐 아니라 용의자들이 소유했을 지식, 용의자들의 알려진 성격 특성, 행동의 일반적인 그럴듯함을 사용하여 용의자들의 움직임을 재구성한다. 즉, 우리는 사람들이 일반적으로 무엇을 하고 느끼는지에 대한 이해를 바탕으로, 사건의 사실들과 우리 자신의 개인적 삶의 경험이 주어진 상황에서 그 사람이 아마도 느끼고 있었던 것에 대해 추론을 한다.</p>
+  <p>과거에 초점을 맞출 때 감정이입적 이해에 참여하는 것은 더 어려울 수 있다. 감정이입에 관한 핵심 질문은 다음인 것 같다: '이 사람의 상황은 나의 실제 또는 가상 경험과 진정으로 유사한 마음 상태를 추론할 수 있는 것인가?'</p>
+  <p>감정이입은 복잡한 개념이며, 위의 논의는 감정이입 교수가 혼란스러운 과제가 되지 않으려면 명확성이 필요한 영역을 부각시켰다. 특히 다음 개념들이 어떤 의미를 갖는지 파악해야 한다:</p>
+  <ul style="margin-left:1.5em; margin-bottom:14px; line-height:2;">
+    <li>다른 사람의 감정, 감각 경험하기</li>
+    <li>다른 사람의 생각과 가치 재구성하기</li>
+    <li>감정이입할지 선택하기</li>
+    <li>삶의 경험/가상 경험에 따라 감정이입의 정도 달라짐</li>
+  </ul>
+</section>
+
+<!-- 3. 역사에서의 감정이입 정의 -->
+<section id="definitions">
+  <h2>3. 역사에서의 감정이입 정의</h2>
+  <p>역사학 분야에서 감정이입은 중요한 개념이다. Leopold von Ranke(Tosh, 1999; Marwick, 1989 재인용)의 연구가 이 점에서 선구적이었다. 그는 과거가 현재와 다르며 현재의 가치로 판단해서는 안 된다고 주장했다. Tosh(1999)가 설명하듯:</p>
+  <blockquote>
+    역사주의자들의 접근법에서 새로웠던 것은, 형식적인 사건 기록이 어떤 의미를 갖기 위해서는 과거 시대의 분위기와 사고방식도 재구성되어야 한다는 인식이었다. 역사가의 주요 과제는 사람들이 왜 그들이 한 것처럼 행동했는지, 그들의 신발 속으로 걸어 들어가서, 그들의 눈을 통해 세계를 보고, 가능한 한 그들의 기준으로 판단함으로써 알아내는 것이 되었다(pp. 5-6).
+  </blockquote>
+  <p>따라서 우리 시대와 이전 시대 사이에는 간극이 있으며, 과거를 이해하기 위해서는 그 시대의 가치와 태도를 인식해야 한다는 것이 인정되었다. 다른 관점에서 사물을 보는 능력이 역사 실천에서 중요해졌다. Elton(1967)은 역사가가 '내부에서' 주어진 문제를 이해해야 한다고 말했다(p. 31). Collingwood(1946)는 모든 역사는 마음의 역사라고 주장했다.</p>
+  <p><em>역사 교수에서의 감정이입 정의</em>: 교육부(DES, 1985) 장학관 보고서 『초등 및 중등 학년의 역사: HMI의 관점』은 역사 교수의 근본적 목적 중 하나로 감정이입 증진을 확인하고, HMI는 이를 다음과 같이 설명했다: "과거의 다른 사람들의 딜레마나 관점에 대해 정보에 근거한 인식으로 들어가는 능력."</p>
+  <p>교사들이 감정이입을 이해하고 학생들 사이의 감정이입 능력을 어떻게 증진할지 파악하도록 돕기 위해, Shemilt(1984)는 과거 사람들의 행동에 관한 학생 설명을 연구했다. 이를 바탕으로 그는 감정이입적 이해의 단계를 설명하는 틀을 도출했으며, 이것이 교수 가능하고 평가 가능하다는 것을 시사했다. Shemilt는 학생 반응을 네 단계로 분석했다:</p>
+  <ol style="margin-left:1.5em; margin-bottom:14px; line-height:2.2;">
+    <li>과거의 사람들은 어리석었다</li>
+    <li>과거 행동은 현재의 가치와 태도를 사용하여 설명된다</li>
+    <li>과거 사람들의 행동은 동시대 개념으로 판단되지만 모든 사람에게 적용된다</li>
+    <li>과거의 다른 시간대의 다른 사람들이 서로 다른 견해, 가치, 관심 등을 가졌을 수 있다는 이해</li>
+  </ol>
+  <p>Ashby &amp; Lee(1987)의 연구(CHATA 프로젝트의 일환)도 독립적으로 아동이 감정이입적 사고에 어떻게 참여하는지를 설명하는 유사한 범주를 제시했다.</p>
+  <p>감정이입이 단순히 증거와 무관한 허구적 연습이 아니라 연구 중인 시기에 당대적인 증거 사용과 밀접하게 관련되어 있다는 점은 특히 Ashby &amp; Lee(1987)에 의해 강조되었다. 그들은 감정이입 과정이 '증거적 재구성'에 기반해야 한다고 주장했다.</p>
+  <p>정의와 감정이입이 과거의 어느 형태의 증거적 재구성에 기반한다는 데 대한 광범위한 합의가 있지만, 감정이입에 관련된 정신 행위의 종류에 대해서는 논쟁이 있다. Shemilt(1984)는 감정이입을 인지적 기술로 보고, Ashby &amp; Lee(1987)는 그것을 성향이자 성취로 언급하며, Low-Beer(1989)는 그것을 정의적 영역의 일부로 본다. Knight(1989)는 감정이입을 단일 구성물이 아닌 다차원적 개념으로 볼 때의 문제를 부각시킨다.</p>
+  <p>그러나 앞의 분석에서 보았듯이 감정이입은 세 가지 모두다 — 증거로부터 행위자의 생각을 재구성하는 것을 포함한다는 점에서 인지적 기술이고, 성향 또는 경향(감정이입할 선택을 할 수 있다)이며, 특정 주의 사항과 함께 우리 자신의 것과 비교한 과거 사람들의 가능한 감정에 대한 이해다.</p>
+</section>
+
+<!-- 4. 감정이입이 논쟁적이 된 이유 -->
+<section id="contested">
+  <h2>4. 감정이입이 논쟁적이 된 이유</h2>
+  <p>역사에서 감정이입에 대한 반론은 다양하며, 이론적, 평가 관련, 실천 관련으로 분류할 수 있다.</p>
+
+  <h3 id="theoretical">4-1. 이론적 반론</h3>
+  <p>Jenkins &amp; Brickley(1989)는 과거의 단어와 구문의 의미가 변화하여 과거 사람들을 이해하는 데 추가적 장벽을 만들기 때문에, 아동은 물론 성인도 감정이입적 이해를 달성하는 것이 불가능하다고 주장한다. 물론 과거의 단어와 구문의 의미에 관한 정보가 없을 때 우리의 주장은 자격을 갖추어야 하고 잠정적이어야 한다. 그러나 이것은 모든 지식 주장에 적용되므로 결정적인 반론이 되지 않는 것 같다.</p>
+  <p>Jenkins(1991)는 포스트모더니즘적 관점에서 반론을 확장하여, 역사는 역사가의 산물이므로 과거를 이해하려면 과거 자체가 아닌 과거에 대해 쓴 역사가를 이해해야 한다고 단호하게 재진술한다. 그러나 이 입장을 따른다면 역사는 허구로 전락할 것이다. 역사가들은 반면에 증거에 기반하여 작업해야 하며, 그들의 해석은 그 증거에 의해 정당화되어야 한다. 홀로코스트를 부정하는 사람들이 홀로코스트의 공포를 말하는 사람들과 동등한 위치를 갖게 허용하는 도덕적 상대주의를 창출하기 때문에, 역사를 허구와 동일시하려는 모든 시도는 위험하다.</p>
+
+  <h3 id="assessment">4-2. 평가 관련 문제</h3>
+  <p>평가는 특히 GCSE에서 특별한 문제임이 입증되었다. Low-Beer(1989)는 이 영역과 연결된 여러 반론을 제기한다. 그녀의 우려는 정의적 결과를 규정하는 GCSE 평가의 서술형 채점 기준에 있다. 부분적으로 이것은 학생 반응이 필연적으로 자신의 경험에 기반하므로 삶의 경험 부족으로 인해 제한될 수 있다는 우려다. 그러나 이것은 또한 역사 교수가 학생들이 특정 방식으로 사건에 반응하도록 기대되는 도덕적 선전의 한 형태가 될 수 있다는 두려움에서도 비롯된다.</p>
+  <p>이에 대한 응답으로 Clements(1996)는 아마도 가장 간단한 해결책이 감정이입을 전혀 평가하지 않는 것이라고 주장했다. 그러나 평가에 관한 이러한 반론이 유효하지 않다고 우리는 주장한다. Shemilt(1984)와 Ashby &amp; Lee(1987) 모두 평가의 기반으로 사용될 수 있는 틀을 제공한다.</p>
+  <p>Low-Beer(1989)는 또한 학생들에게 흔히 설정되었던 감정이입 질문의 유형을 비판한다. 이것들은 종종 '당신은 어떻게 느낄 것인가' 형식이나 '독일 사람들이 어떻게 반응했을지 설명하라' 형식이었다. 그러나 이러한 종류의 반론은 감정이입 교수가 이루어지지 않았다고 전제하는 것 같다. 학생들이 자신과 다른 관점을 가져보도록 도울 수 있는 접근법, 특히 역할극이 있다. Luff(2000)는 학생들이 유추적 사고에 참여하는 데 필요한 가상의 경험을 얻기 위해 역할극에 참여해야 할 필요성을 설득력 있게 서술했다. 예를 들어 1930년대 초 제국의회의 분위기를 재현함으로써 학생들이 정상적인 정치 운영 방식이 어떻게 붕괴되었는지를 이해할 수 있다; 그로부터 히틀러가 자신의 이익을 위해 제국의회 상황을 어떻게 이용할 수 있었는지를 더 풍부하게 탐구할 수 있다. 이러한 경험이 없으면 학생들은 아무런 근거를 갖지 못할 것이다.</p>
+
+  <h3 id="practice">4-3. 실천 관련 반론 — 감정이입을 학습하는 아동이 직면하는 문제</h3>
+  <p>Portal(1983)은 감정이입의 역사 교수 적용을 효과적으로 주장하면서도 학생들이 직면하는 몇 가지 문제를 부각시켰다. 최근 Husbands &amp; Pendry(2000)는 학생들이 과거를 이해하는 데 갖는 문제를 논의한다:</p>
+  <blockquote>
+    학생들에게 '자신이 ...라고 상상하라'거나 '...의 입장에 서라'고 초대하는 것은 그들이 과거를 이해하는 것의 모든 의미와 함께 자신을 과거에 있도록 적극적으로 장려하는 표현이다. 최선의 경우에도 학생들은 역사적 맥락을 재창조할 수 있지만, 그 다음에는 자신의 기존 감정과 설명 틀에 의존하여 '자신처럼' 행동할 것이다(p. 133).
+  </blockquote>
+  <p>학생들이 직면하는 본질적인 어려움은 다른 시대 사람의 사고방식에 들어가는 것이다.<sup>5</sup> 그 사람은 어린이일 수도 있지만 더 자주 어른의 사고방식을 인식하도록 요구된다. Tosh(1999)는 다음과 같이 설명한다:</p>
+  <blockquote>
+    감정이입에 대한 보다 현실적인(그리고 더 엄격한) 해석은 우리의 경험에서 어떤 것과도 불가역적으로 거리가 있는 과거 사고방식에 침투하는 데 필요한 상상력의 노력에 초점을 맞춘다 … 어떤 학술적 탐구에서든 과거의 낯섦이 전경화되는 경향이 있는데, 왜냐하면 시간의 흐름이 한때 평범했던 것을 이국적으로 만들었기 때문이다(p. 7).
+  </blockquote>
+  <p>따라서 교실의 감정이입 작업에서 부족한 것은 아동이 필요한 상상력의 도약을 하기 위한 맥락적 지식, 삶의 경험, 역사적 증거인 것 같다. 결과적으로 감정이입은 학생들에게 가르치기 너무 어렵다고 여겨졌다.</p>
+  <p>그러나 비판자들은 아이러니하게도 감정이입의 중요성을 주장한다. Skidelsky(1988a)는 감정이입을 '유효한 역사적 개념'이라고 부르며, Low-Beer(1989)는 "감정이입 훈련은 이 역사적 증거를 이해하고 다른 시간, 다른 맥락에서 사물이 달랐다는 것을 알아가는 방법"이라고 말한다. 이것은 역사 교사들에게 딜레마를 제시한다.</p>
+</section>
+
+<!-- 5. 문제의 균형 잡기 -->
+<section id="perspective">
+  <h2>5. 문제의 균형 잡기</h2>
+  <p>역사적 감정이입적 이해에 참여하도록 요청받은 학생들이 직면하는 문제들은 분명해야 한다. 첫째, 그들은 다른 사람의 가능한 감정 상태에 유추적 추론을 하기 위한 제한된 범위의 삶과 가상의 경험을 가지고 있다; 둘째, 그들은 감정이입하려는 과거 어른들보다 자신의 도덕 발달 단계에서 덜 앞서 있을 수 있다(Peters, 1963); 셋째, 그들은 일부 유추가 유효하지 않다는 것을 알기 위해 역사적 증거에 대한 꽤 정교한 이해가 필요하다.</p>
+  <p>첫 번째 고려사항에 대한 응답으로, 시간이 지나도 사람들에게 중요성이 변하지 않은 것 같은 많은 경험들이 있고 그것이 학생들의 경험 안에 있다는 점에 주목해야 한다. 예를 들어 배고픔, 피곤함, 두려움, 위협받음, 희망, 친구가 되는 것. 역할극, 시, 문학을 신중하게 사용하면 학생들에게 이용 가능한 경험의 범위를 확장할 수 있다.</p>
+  <p>도덕 발달에 관한 점도 염두에 두어야 한다. 아이들이 감정이입에서 자신의 가치를 과거에 투영하는 문제는 교수와 역할극 사용을 통해 도전받을 수 있다. 이것의 함의는 감정이입적 이해 훈련이 처음에는 범주의 사람들(예: 군인들)보다는 특정 인물들에 기반해야 한다는 것이다.</p>
+</section>
+
+<!-- 6. 교수·평가 원칙 -->
+<section id="principles">
+  <h2>6. 역사적 감정이입 교수·평가의 좋은 실천을 안내하는 원칙을 도출할 수 있는가?</h2>
+  <p>감정이입 교수와 연결된 많은 문제들은 이론적이다. 이론적 혼란은 혼란스러운 교수와 감정이입적 글쓰기를 판단해야 하는 기준에 대한 약한 이해로 이어질 수 있다. 잘못된 실천을 구성하는 감정이입적 글쓰기의 측면은 일반화되고, 맥락적 지식이 없으며, 현재 가치가 작업에 스며들도록 허용하는 과제에서 비롯되는 것 같다.</p>
+  <p><strong>나쁜 과제의 특징</strong> (저자 중 한 명이 관찰한 실제 사례): GCSE 혼합 능력 학급이 페터만 학살(Fetterman massacre)을 기반으로 전투에서 인디언 중 한 명이 된 것을 상상하고 무엇을 보고 느꼈는지를 서술해야 했다. 과제는 공격의 사실적 설명을 사용하여 구성되었지만, 학생들이 기반으로 삼을 맥락적 정보를 거의 제공하지 않았으며, 설명을 뒷받침할 동시대 증거도 제공되지 않았다. 반응은 예측할 수 있게 자극적이고 역사적 가치가 없었다.</p>
+  <p><strong>일기 쓰기나 역사적 인물로부터의 편지 쓰기</strong> — 특히 상상의 인물의 경우 — 도 문제를 만들 수 있다. 많은 학교가 1차 세계대전 참호에서 온 편지 아이디어를 사용하여 보통 군인들의 조건을 서술한다. 학생들은 종종 '쥐', '참호 발', '진흙' 등의 용어를 포함하도록 지시받는다. Portal(1983)은 이러한 훈련을 적절한 제목 아래 사실 정보를 단순히 나열하는 것 이상이 아니라고 비판한다.</p>
+  <p><strong>더 풍부한 접근법</strong>의 예: 퓨리턴으로 엘리자베스 1세의 명령으로 오른손이 잘린 John Stubbs의 이야기를 학생들에게 소개할 수 있다. 이 이야기는 대부분의 학생들의 관심을 얻을 가능성이 크지만, 그 다음 여왕의 명령에 대한 Stubbs의 가능한 반응에 대해 가설을 세우도록 요청받을 수 있다. 그 다음, 그가 단지 왼손을 사용하여 모자를 들어 올리고 '하나님 여왕을 구하소서!'라고 외쳤다는 것을 알게 된다 — 많은 사람들을 놀라게 할 결과다. 이것은 권위에 대한 복종 개념과 같이 그의 반응을 설명하는 데 도움이 되는 당시의 정치적, 종교적 분위기에 대한 탐구로 이어질 수 있다.</p>
+  <p>학생들이 다른 사람의 관점에서 사물을 볼 수 있도록 돕기 위해서는 그렇게 하는 과제를 만들어야 하며, 이는 주로 학생들이 분석하고 설명하고 서술하도록 요구할 것이다. 과제는 이용 가능한 동시대 증거에 잘 기반해야 한다. 역사적 인물들의 사고와 태도를 이해하는 것에 직접 관련된 다른 적합한 과제들이 있다. 이것은 역할극이나 아이디어를 연결하는 형태로 올 수 있다.</p>
+  <p>평가 측면에서 분석적 접근법은 과제의 목적이 더 정확하고, 제시된 사례를 뒷받침하는 데 사용된 증거와 논증의 질, 그리고 그 곤경에서 그 사람의 가능한 정서적 경험에 대한 통찰로 판단할 수 있기 때문에 평가하기가 더 쉬워 보인다.</p>
+  <p>감정이입은 교수 목표로서 바람직하고 실현 가능한 것으로 보인다. 그러나 교사들은 좋은 실천이 무엇인지에 대해 명확해야 한다. <strong>실제 개인에 기반하고, 증거에 근거하며, 문제 해결 요소를 제공하고, 사람들의 관점과 동기를 검토하는 과제</strong>가 가치 있는 감정이입 작업을 이끌어 낼 가능성이 더 높다.</p>
+
+  <div class="footnote-box">
+    <p><strong>각주</strong></p>
+    <p><sup>1</sup> 역사에서 KS2 학생들은 "연구한 시기와 사회의 특징적 특성, 과거의 남성, 여성, 아동의 사상, 신념, 태도와 경험"을 살펴보도록 요청받고, KS3에서는 "연구한 시기와 사회의 특징적 특성, 과거 남성, 여성, 아동의 경험과 다양한 사상, 신념과 태도"로 표현된다. 시민성 지시는 학생들에게 "다른 사람의 경험을 고려하기 위해 상상력을 사용하고 자신의 것이 아닌 관점을 생각하고 표현하고 설명할 수 있을 것"을 더 명시적으로 요청한다. Luff(2000)은 이것이 역사적 감정이입을 의미한다고 주장하고, Ashby &amp; Lee(2001)는 Davis Jr, Yeager &amp; Foster(편) 『사회과에서의 역사적 감정이입과 관점 취하기』에서 감정이입을 이유, 신념과 태도를 포함하는 것으로 이야기한다.</p>
+    <p><sup>2</sup> 역사주의자는 과거 시대를 자신의 시대와 다른 것으로 보는 사람들을 말하는 용어다. 각 시대는 독특한 사고방식과 전망을 갖고 있으므로 현재 기준으로 판단해서는 안 된다.</p>
+    <p><sup>3</sup> GCSE(General Certificate in Secondary Education)는 1986년에 첫 시험을 치렀으며 영국의 모든 16세 학생들이 치르는 주요 시험이다.</p>
+    <p><sup>4</sup> Luff는 역할극의 가치에 대한 새로운 관심을 불러일으킨 것 같다. 물론 역할극을 위한 장소를 옹호한 이전 교사들도 있다. 예를 들어 Blackwell에서 출판한 Evidence 시리즈의 Jon Nichol, Chris Jordan과 Tim Wood(그들의 작업에는 The Ancient World, England in the Middle Ages, Old World New World 같은 교과서 시리즈와 Wood의 역할극 책 Playback: History Roleplays(1982)가 포함된다). www.ex.ac.uk/history resource 도 참조.</p>
+    <p><sup>5</sup> 이것은 Shemilt와 Ashby &amp; Lee의 학생 감정이입적 이해의 범주화에서 지적된 점이다. 기간의 '내부'에서 대안적 관점을 인식하는 데 실패한 사람들은 1단계 또는 2단계에서 작동하는 것으로 보인다.</p>
+  </div>
+</section>
+
+<!-- 참고문헌 -->
+<section id="referencias">
+  <h2>참고문헌</h2>
+  <ul>
+    <li>Ashby, R. &amp; Lee, P. J. (1987). Children's concepts of empathy and understanding in history [아동의 역사에서 감정이입과 이해 개념]. In Portal, C. (Ed), <em>The History Curriculum for Teachers</em>. London: Falmer Press.</li>
+    <li>Barnes, A. &amp; Thagard, P. (1997). Empathy and Analogy [감정이입과 유추]. http://cogsci.uwaterloo.ca/Articles/Pages/Emapthy.html</li>
+    <li>Cairns, J. (1989). Some Reflections on Empathy in History [역사에서 감정이입에 관한 몇 가지 성찰]. <em>Teaching History</em>, 89, 13–18.</li>
+    <li>Clements, P. (1996). Historical Empathy – R.I.P.? [역사적 감정이입 — 영면(安眠)?] <em>Teaching History</em>, 85, 6–8.</li>
+    <li>Collingwood, R. G. (1946). <em>The Idea of History</em> [역사의 이념]. London: Oxford University Press.</li>
+    <li>Cooper, H. (2000). (3rd ed.) <em>The Teaching of History in the Primary Schools</em> [초등학교에서 역사 교수]. London: David Fulton Ltd.</li>
+    <li>Davis Jr, O. L. (2001). In Pursuit of Historical Empathy [역사적 감정이입의 추구]. In Davis Jr, O.L., Yeager, E.A. &amp; Foster, S.J. (Eds), <em>Historical Empathy and Perspective Taking in the Social Studies</em>. Oxford: Rowman &amp; Littlefield.</li>
+    <li>Dawson, I. &amp; Banham, D. (2002). Thinking from the inside: je suis le roi [내부에서 생각하기: 나는 왕이다]. <em>Teaching History</em>, 108, 12–18.</li>
+    <li>DES (1985). <em>History in the Primary and Secondary Years: an HMI view</em> [초등 및 중등 학년의 역사: HMI의 관점]. London: HMSO.</li>
+    <li>Deuchar, S. (1987). <em>History and GCSE: A Critique</em> [역사와 GCSE: 비판]. York: Campaign for Real Education.</li>
+    <li>DfEE &amp; QCA (1999). <em>Citizenship: The National Curriculum for England</em> [시민성: 잉글랜드 국가교육과정]. London: DfEE &amp; QCA.</li>
+    <li>DfEE &amp; QCA (1999). <em>History: The National Curriculum for England</em> [역사: 잉글랜드 국가교육과정]. London: DfEE &amp; QCA.</li>
+    <li>Elton, G. R. (1967). <em>The Practice of History</em> [역사의 실천]. London: Fontana.</li>
+    <li>Foreman-Peck, L. (1983). Learning from Literature [문학에서 배우기]. <em>Journal of Aesthetic Education</em>, 17(21).</li>
+    <li>Husbands, C. &amp; Pendry, A. (2000). Thinking and feeling: pupils' preconceptions about the past and historical understanding [생각하고 느끼기: 과거와 역사적 이해에 대한 학생들의 선입견]. In Arthur J. &amp; Phillips R. (Eds), <em>Issues in History Teaching</em>. London: Routledge.</li>
+    <li>Jenkins, K. &amp; Brickley, P. (1989). Reflections on the Empathy Debate [감정이입 논쟁에 관한 성찰]. <em>Teaching History</em>, 55, 18–23.</li>
+    <li>Jenkins, K. (1991). <em>Re-thinking History</em> [역사 다시 생각하기]. London: Routledge.</li>
+    <li>Knight, P. (1989). Empathy: concept, confusion and consequence in a national curriculum [감정이입: 국가교육과정에서의 개념, 혼란 및 결과]. <em>Oxford Review of Education</em>, 15(1), 41–53.</li>
+    <li>Levstik, L. S. (2001). Crossing the Empty Spaces: Perspective Taking in New Zealand Adolescents' Understanding of National History [빈 공간 넘기: 뉴질랜드 청소년의 국가 역사 이해에서의 관점 취하기]. In Davis Jr. O.L., Yeager, E.A. &amp; Foster, S.J. (Eds), <em>Historical Empathy and Perspective Taking in the Social Studies</em>. Oxford: Rowman &amp; Littlefield.</li>
+    <li>Low-Beer, A. (1989). Empathy and History [감정이입과 역사]. <em>Teaching History</em>, 55, 8–12.</li>
+    <li><strong>Luff, I. (2000). 'I've been in the Reichstag: re-thinking role-play' [나는 제국의회에 있었다: 역할극 재사고]. <em>Teaching History</em>, 100, 8–17.</strong></li>
+    <li>Marwick, A. (1989). <em>The Nature of History</em> (3rd ed.). London: MacMillan.</li>
+    <li>Peters, R. S. (1963). Reason and Habit: The Paradox of Moral Education [이성과 습관: 도덕 교육의 역설]. In Niblett, W.R. (Ed), <em>Moral Education in a Changing Society</em>. London: Faber and Faber Ltd.</li>
+    <li>Phillips, R. (2002). <em>Reflective Teaching of History, 11–18</em> [역사의 성찰적 교수, 11–18]. London and New York: Continuum.</li>
+    <li>Portal, C. (1983). Empathy as an Aim for Curriculum: Lessons from History [교육과정 목표로서의 감정이입: 역사에서의 교훈]. <em>Journal of Curriculum Studies</em>, 15(3), 303–310.</li>
+    <li>Shemilt, D. (1984). Beauty and the Philosopher: Empathy in History and Classroom [미녀와 철학자: 역사와 교실에서의 감정이입]. In Dickinson, A.K., Lee, P.J. &amp; Rogers, P.J. (Eds), <em>Learning History</em>. London: Heinemann Educational Books.</li>
+    <li>Skidelsky, R. (1988a). History as social engineering [사회공학으로서의 역사]. <em>The Independent</em>, 1 March.</li>
+    <li>Skidelsky, R. (1988b). A question of values [가치의 문제]. <em>The Times Educational Supplement</em>, 27 May.</li>
+    <li>Tosh, J. (1999). <em>The Pursuit of History</em> (3rd ed.) [역사 추구]. London: Longman.</li>
+  </ul>
+</section>
+
+</main>
+
+<button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="맨 위로">↑</button>
+
+<script>
+window.addEventListener('scroll', () => {
+  let current = '';
+  document.querySelectorAll('section[id], div[id]').forEach(s => {
+    if (s.getBoundingClientRect().top <= 90) current = s.id;
+  });
+  document.querySelectorAll('#sidebar nav a').forEach(a => {
+    a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+  });
+});
+document.querySelectorAll('#sidebar nav a').forEach(a => {
+  a.addEventListener('click', e => {
+    e.preventDefault();
+    const target = document.querySelector(a.getAttribute('href'));
+    if (target) target.scrollIntoView({ behavior: 'smooth' });
+  });
+});
+</script>
+</body>
+</html>

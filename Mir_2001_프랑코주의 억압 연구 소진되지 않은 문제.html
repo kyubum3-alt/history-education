@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>프랑코주의 억압 연구: 소진되지 않은 문제 | Conxita Mir Curcó</title>
+<style>
+  :root {
+    --sidebar-width: 270px;
+    --accent: #2c5f8a;
+    --accent-light: #e8f1f8;
+    --text: #1a1a1a;
+    --muted: #555;
+    --border: #d0d7de;
+    --bg: #fafafa;
+    --white: #ffffff;
+    --table-head: #f0f4f8;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Nanum Myeongjo', 'Georgia', serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.85;
+    font-size: 16px;
+  }
+
+  /* 사이드바 */
+  #sidebar {
+    position: fixed;
+    top: 0; left: 0;
+    width: var(--sidebar-width);
+    height: 100vh;
+    background: var(--white);
+    border-right: 1px solid var(--border);
+    overflow-y: auto;
+    z-index: 100;
+    padding: 0 0 40px 0;
+  }
+
+  #sidebar .sidebar-header {
+    background: var(--accent);
+    color: white;
+    padding: 18px 16px 14px;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 0.03em;
+  }
+
+  #sidebar .sidebar-header span {
+    display: block;
+    font-size: 11px;
+    font-weight: normal;
+    opacity: 0.85;
+    margin-top: 4px;
+  }
+
+  #sidebar nav { padding: 12px 0; }
+
+  #sidebar nav a {
+    display: block;
+    padding: 7px 16px;
+    font-size: 13px;
+    color: var(--muted);
+    text-decoration: none;
+    border-left: 3px solid transparent;
+    transition: all 0.18s;
+    line-height: 1.5;
+  }
+
+  #sidebar nav a:hover,
+  #sidebar nav a.active {
+    color: var(--accent);
+    border-left-color: var(--accent);
+    background: var(--accent-light);
+  }
+
+  #sidebar nav a.sub {
+    padding-left: 28px;
+    font-size: 12px;
+  }
+
+  #sidebar nav .nav-section {
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    color: #999;
+    padding: 14px 16px 4px;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+
+  /* 메인 콘텐츠 */
+  #main {
+    margin-left: var(--sidebar-width);
+    padding: 48px 56px 80px 56px;
+    max-width: 900px;
+  }
+
+  /* 논문 헤더 */
+  .paper-header {
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 28px;
+    margin-bottom: 32px;
+  }
+
+  .paper-title-ko {
+    font-size: 26px;
+    font-weight: bold;
+    color: var(--accent);
+    line-height: 1.4;
+    margin-bottom: 8px;
+  }
+
+  .paper-title-es {
+    font-size: 16px;
+    color: var(--muted);
+    font-style: italic;
+    margin-bottom: 20px;
+  }
+
+  .paper-meta {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 5px 16px;
+    font-size: 14px;
+    color: var(--muted);
+  }
+
+  .paper-meta .label {
+    font-weight: bold;
+    color: var(--text);
+    white-space: nowrap;
+  }
+
+  /* 초록 */
+  .abstract-box {
+    background: var(--accent-light);
+    border-left: 4px solid var(--accent);
+    padding: 22px 26px;
+    margin-bottom: 40px;
+    border-radius: 0 6px 6px 0;
+  }
+
+  .abstract-box h2 {
+    font-size: 14px;
+    color: var(--accent);
+    letter-spacing: 0.05em;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+  }
+
+  .abstract-box p {
+    font-size: 15px;
+    line-height: 1.8;
+    color: #333;
+  }
+
+  /* 섹션 */
+  section {
+    margin-bottom: 48px;
+    scroll-margin-top: 24px;
+  }
+
+  section h2 {
+    font-size: 20px;
+    color: var(--accent);
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 8px;
+    margin-bottom: 20px;
+  }
+
+  section h3 {
+    font-size: 17px;
+    color: #2a4a6a;
+    margin: 28px 0 12px;
+  }
+
+  p {
+    margin-bottom: 16px;
+    text-align: justify;
+  }
+
+  /* 각주 */
+  .footnotes {
+    margin-top: 36px;
+    padding-top: 18px;
+    border-top: 1px solid var(--border);
+    font-size: 13px;
+    color: var(--muted);
+  }
+
+  .footnotes p {
+    margin-bottom: 8px;
+    line-height: 1.6;
+  }
+
+  /* 인용 블록 */
+  blockquote {
+    border-left: 3px solid var(--accent);
+    margin: 20px 0;
+    padding: 12px 20px;
+    background: #f5f8fc;
+    font-style: italic;
+    color: #444;
+  }
+
+  /* 맨 위로 버튼 */
+  .back-to-top {
+    display: block;
+    text-align: center;
+    margin-top: 60px;
+    padding: 10px;
+    color: var(--accent);
+    text-decoration: none;
+    font-size: 14px;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    transition: background 0.2s;
+  }
+
+  .back-to-top:hover { background: var(--accent-light); }
+
+  /* 반응형 */
+  @media (max-width: 900px) {
+    #sidebar { display: none; }
+    #main { margin-left: 0; padding: 24px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- 사이드바 -->
+<div id="sidebar">
+  <div class="sidebar-header">
+    📄 프랑코주의 억압 연구
+    <span>Conxita Mir Curcó, 2001</span>
+  </div>
+  <nav>
+    <div class="nav-section">논문 정보</div>
+    <a href="#header">제목 · 저자 · 서지</a>
+    <a href="#abstract">초록</a>
+
+    <div class="nav-section">본문</div>
+    <a href="#intro">서론: 연구의 현황</a>
+    <a href="#divulgacion">1. 대중화의 시도</a>
+    <a class="sub" href="#periodismo">언론과 역사학 사이</a>
+    <a href="#renovacion">2. 혁신의 방향과 지역 연구의 비중</a>
+    <a class="sub" href="#archivos">군사 문서고의 개방</a>
+    <a class="sub" href="#local">지역 연구와 미시사</a>
+    <a class="sub" href="#miedo">공포와 주관성</a>
+    <a href="#conclusion">결론</a>
+  </nav>
+</div>
+
+<!-- 메인 콘텐츠 -->
+<div id="main">
+
+  <!-- 논문 헤더 -->
+  <div class="paper-header" id="header">
+    <div class="paper-title-ko">프랑코주의 억압 연구: 소진되지 않은 문제</div>
+    <div class="paper-title-es"><em>El estudio de la represión franquista: una cuestión sin agotar</em></div>
+    <div class="paper-meta">
+      <span class="label">저자</span><span>Conxita Mir Curcó (콘시타 미르 쿠르쏘)</span>
+      <span class="label">소속</span><span>Universidad de Lleida (예이다 대학교)</span>
+      <span class="label">게재지</span><span><em>Ayer</em>, núm. 43, 2001</span>
+      <span class="label">성격</span><span>연구사 정리 논문 (특집호 서문 겸 연구 현황 개관)</span>
+    </div>
+  </div>
+
+  <!-- 초록 -->
+  <div class="abstract-box" id="abstract">
+    <h2>초록 / 개관</h2>
+    <p>이 논문은 프랑코주의 억압을 주제로 한 학술 연구의 흐름을 개관한다. 1993년 CINDOC(스페인 과학정보문서화센터)가 발행한 프랑코주의 관련 참고문헌 목록에서 '억압'이 독립된 연구 분야로 분류되지 않았을 만큼, 이 주제는 오랫동안 학술적 관심의 사각지대에 놓여 있었다. 이 논문은 대중적 역사 출판물에서 학술 연구에 이르기까지 최근 수년간 이루어진 연구 성과를 검토하면서, 지역 연구와 미시사(微視史) 방법론이 억압 연구를 어떻게 풍요롭게 해왔는지, 그리고 앞으로 어떤 방향으로 나아가야 하는지를 논한다. 이 글은 저자가 편집한 <em>Ayer</em> 43호 특집호 「프랑코주의 억압에 관한 새로운 연구들」의 서론을 겸한다.</p>
+  </div>
+
+  <!-- 서론 -->
+  <section id="intro">
+    <h2>서론: 억압 연구의 현황</h2>
+    <p>1993년 스페인 과학정보문서화센터(CINDOC)는 프랑코주의에 관한 참고문헌 목록을 발행하면서, 해당 시기의 역사서술을 경제·사회운동·반대파·망명·가톨릭교회·군대·국제관계·민주화이행·언론·검열·교육·문학·예술·도시 등 여러 블록으로 분류하였다. 그러나 프랑코주의하에서의 정치적 폭력에 관한 연구가 이미 10년 이상 진행된 시점임에도, 어떤 항목에서도 '억압(represión)'은 독자적인 연구 범주로 다루어지지 않았다. 관련 연구들은 여러 항목에 분산되어 수록되어 있을 뿐이었다. 이는 억압이 공사(公私) 생활 모든 측면에 걸친 파급 효과를 지닌다는 점에서, 연구의 횡단성(transversalidad)을 가장 잘 구현하면서도 동시에 가장 달성하기 어려운 역사적 문제들 중 하나임을 보여준다.</p>
+
+    <p>분명히 많은 연구가 이루어졌다. 이는 조셉 폰타나(Josep Fontana)가 카를레스 산타카나(Carles Santacana)의 저서 『프랑코주의와 카탈루냐인들. 국민운동 국가평의회의 보고들(1936-1971)』(Afers, 2000)에 대한 서평에서 지적한 바와 같이, 억압·반프랑코 투쟁·노동운동이라는 지나치게 협소한 관점에서 이 정권의 역사가 구축되어왔음을 의미하기도 한다. 폰타나는 억압을 분석하는 데 있어, 정권과 공모한 자들과 협력자들에 대한 연구에 더 많은 관심을 기울이는 새로운 방향으로 나아가야 한다고 주장한다.</p>
+
+    <p>이러한 논점들은, 군 문서고가 이미 개방되어 군사 재판 기록에 접근할 수 있게 된 반면 교회 문서고는 여전히 강한 저항을 보이고 있는 상황에서 더욱 분명하게 부각된다. 프랑코 장군 본인의 개인 문서들도 여전히 가족과 유언집행인의 수중에 있다. 그럼에도 군사 재판 기록, 강제수용소 관련 문서, 일부 교회 자료 등에 대한 접근이 점진적으로 확대됨에 따라, 억압자들의 시각에서 정권을 이해하고 프랑코주의 폭력이 정권 공고화 과정에서 수행한 역할에 대한 이해가 심화되고 있다.</p>
+
+    <p>프랑코 사망 25주년 또는 세기 교체를 계기로, 이 분야에서 몇 가지 주목할 만한 연구사 정리 작업이 이루어졌다. 이 글은 그러한 작업들을 바탕으로 삼아, 정치적 폭력에 관한 역사적 지식의 대중화 의지와, 지역·부문별 연구라는 학술적 성과의 무게 사이에서 최근 수년간 어떤 균형이 유지되어왔는지를 간략히 살펴본다. 산토스 훌리아(Santos Juliá)의 표현을 빌리면, 이 지역·부문별 연구의 성과는 대부분 학술적 영역을 좀처럼 벗어나지 못하고 있다.</p>
+  </section>
+
+  <!-- 섹션 1 -->
+  <section id="divulgacion">
+    <h2>1. 대중화의 시도: 신문 연대기와 역사학 사이</h2>
+
+    <h3 id="periodismo">언론과 역사학 사이</h3>
+    <p>역사 과학과 대중화는 언제나 편안한 동반자 관계는 아니었다. 일각에서는 역사서술이 지나치게 학술적이라 비판하고, 다른 쪽에서는 대중적 역사서술이 곧 역사의 평이화를 의미한다고 주장한다. 프랑코주의하의 정치적 억압과 전후 사회통제에 관한 한, 최근 몇 년 사이 언론인들의 손에서 수많은 대중 역사서들이 쏟아져 나왔다. 이사야스 라푸엔테(Isaías Lafuente)의 저서 『굶주림의 시대. 전후 스페인 여행』(Temas de Hoy, 1999)의 서문에서 이냐키 가빌론도(Iñaki Gabilondo)가 밝힌 목표는 과거를 「친절하고 소화하기 좋은 방식으로」 설명하여, 특히 젊은 세대가 「프랑코주의가 어떤 것이었는지에 대한 매우 구체적인 관념」을 가질 수 있도록 하는 것이다.</p>
+
+    <p>호아킨 바르다비오(Joaquín Bardavío)와 후스티노 시노바(Justino Sinova)는 『프랑코와 모든 것. A부터 Z까지의 프랑코주의와 반프랑코주의』(Plaza & Janés, 2000)에서, 오늘날 프랑코가 많은 이들에게 「낯선 존재」가 되었기 때문에 프랑코주의와 반프랑코주의의 주요 사실과 인물들을 한데 모은 800개 항목의 사전을 편찬했다고 솔직히 밝히고 있다.</p>
+
+    <p>또한 「오늘날 사회의 커뮤니케이션 현상의 연구자」로 소개되는 아숨프타 보우라(Assumpta Boura)는 1942년과 1952년의 스페인 도덕 실태 보고서들을 참고하여 『전쟁 후의 여성들. 전후 스페인의 도덕과 매춘에 관한 보고들』(Flor del Viento Ediciones, 1998)이라는 가볍게 읽을 수 있는 또 하나의 책을 펴냈다. 이 책은 카르메 몰리네로(Carme Molinero) 교수에 의해 특히 도덕성과 관련된 보고서들에서 취합된 정보로 인해 관심을 끌며, 역사에서 대중의 시선을 사로잡을 수 있는 주제를 일반에 제공하려는 드문 시도로 평가받고 있다.</p>
+
+    <p>오랫동안 채워지지 않았던 수요로 인해, 마키스(maquis)와 반프랑코 게릴라의 역사는 언론인과 아마추어 연구자뿐만 아니라 전문 역사가들에게도 화제의 주제가 되고 있다. 이 분야에서 가장 진지한 종합 연구는 레오네스 게릴라 연구로부터 시작된 이 주제의 전문가 세쿤디노 세라노(Secundino Serrano)의 『마키스. 반프랑코 게릴라의 역사』(Temas de Hoy, 2001)로, 출판 몇 달 만에 다섯 쇄를 기록한 이 책은 오랜 저항 투사들에 대한 좋은 입문서를 제공한다. 억압의 또 다른 전문가 프란시스코 모레노(Francisco Moreno)는 동시에 방대한 분량의 저서 『프랑코에 대한 무장 저항. 마키스와 게릴라의 비극』(Crítica, 2001)을 출간했다.</p>
+
+    <p>가장 중요한 연구로는 산토스 훌리아 교수가 편집한 『내전의 희생자들』(Temas de Hoy, 1999)을 꼽아야 한다. 이 책은 내전과 전후 양측에 걸친 억압의 규모를 수치화하려는 가장 중요한 시도로서, 다음을 확인했다: 국민 진영 측 사망자는 72,527명으로 살라스 라라사발(Salas Larrazábal)이 제시한 수치의 두 배에 달하며, 미조사 지방까지 포함하면 이 수치는 배가될 것으로 추산된다. 공화 진영 측 사망자는 현재까지 37,843명으로, 기존 공식 역사서술이 제시한 수치보다 이만 명이 더 많다.</p>
+
+    <p>이 시기를 처음으로 학술적으로 다룬 연구들을 회고해보면, 1960년대 중반까지는 휴 토머스(Hugh Thomas, 1961)와 가브리엘 잭슨(Gabriel Jackson, 1965)의 저서들뿐이었고, 1980년대 초에 이르러서야 알베르토 레이그 타피아(Alberto Reig Tapia)가 방법론적 고찰을 제시하기 시작했다. 이는 라몬 살라스 라라사발(Ramón Salas Larrazábal)이 『내전의 인명 손실』(Barcelona, Planeta, 1977)에서 유포한 해석에 대한 응답이었다. 이후 하비에르 R. 무뇨스(Javier R. Muñoz, 1978, 아스투리아스), 에르난데스 가르시아·에레로 발사(A. Hernández García·G. Herrero Balsa, 1982, 소리아), 에르난데스(Hernández, 1984, 라 리오하), 솔레 이 사바테·빌라로야(J. M. Solé i Sabaté·Joan Vilarroya, 카탈루냐), 모레노(Francisco Moreno, 코르도바) 등의 연구들이 이어졌다. 1999년 『희생자들』 출간 시점까지 24개 지방의 프랑코 진영 억압 관련 데이터와 22개 지방의 공화 진영 억압 관련 데이터가 수집되었다.</p>
+  </section>
+
+  <!-- 섹션 2 -->
+  <section id="renovacion">
+    <h2>2. 혁신의 방향과 지역 연구의 비중</h2>
+
+    <h3 id="archivos">군사 문서고의 개방과 새로운 연구 가능성</h3>
+    <p>이 특집호의 기고문 중 하나는 마넬 리스케스(Manel Risques)가 집필한 것으로, 1936년 7월 반란에 충실했던 바르셀로나 시민경비대 간부들에 대해 열린 약식 군사재판을 다루고 있다. 「1936년의 기강, 1939년의 처형」이라는 제목 아래, 이 글은 7월 봉기 당시 시민경비대의 역할을 재평가하면서, 억압자들이 요구한 「흔들리지 않는 충성심」의 문제를 천착하고 있다.</p>
+
+    <p>군사 문서고에 대한 접근이 새로운 연구 영역을 여는 것은 분명하다. 정권의 억압을 집행하는 가장 주요하고 조직적인 기관, 즉 사법부—일반 법원과 특별 법원 모두—에 대한 연구를 계속 심화할 기회를 제공하기 때문이다. 이 분야에서는 모니카 라네로(Mónica Lanero)가 전후 직후의 프랑코 사법 정치에 관한 선구적 연구를 이미 진행한 바 있다. 군사 재판 기록을 연구한 이들은 그것이 억압 연구뿐만 아니라 전쟁 그 자체에 대한 이해를 심화하는 데도 매우 중요한 자료임을 확인했다. 전시 사건들을 이론적으로 재판하기 위해 개설된 이 기록들에는 풍부한 정보가 담겨 있다.</p>
+
+    <p>마드리드 전후 총살형에 관한 미르타 누녜스(Mirta Núñez)와 안토니오 로하스(Antonio Rojas)의 연구(1997), 조셉 베넷(Josep Benet)이 1970년대부터 진행해온 루이스 콤파니스(Lluís Companys) 재판에 관한 연구 등이 이 방향의 선구적 작업들이다. 1980년대 초 마이클 리처즈(Michael Richards)의 『침묵의 시간. 프랑코 스페인의 내전과 억압의 문화(1936-1945)』(Crítica, 1999)도 중요한 기여를 했다. 이 책은 자급자족 경제 정책의 폭력적 결과들이 민중 계층의 일상생활에 미친 영향을 분석하며, 자급자족 모델의 부과가 제2차 세계대전과 그에 따른 국제적 고립의 결과가 아니라 정권이 자유롭게 선택한 옵션이었다는 통념에 의문을 제기한다.</p>
+
+    <p>프란시스코 에스피노사 마에스트레(Francisco Espinosa Maestre)는 『케이포의 정의. 1936년 제2사단에서의 억압적 폭력과 파시스트 공포』(Sevilla, 2000)에서 세비야 군사법원 제2구역에 보존된 재판 기록들을 토대로, 많은 사람들이 군사재판에 회부되는 정황을 설명하고 있다.</p>
+
+    <h3 id="local">지역 연구와 미시사: 억압 연구의 핵심 방법론</h3>
+    <p>억압의 실제 영향을 평가하려면, 영토를 점령하자마자 촉발된 앙갚음에 구실을 제공한 개인 간 관계들을 전면에 내세울 필요가 있다. 억압의 역학은 정권에 대한 적극적인 지지로 그 기능을 담보하는 가족·이웃 간 충성 네트워크를 형성하게 만들었다. 이는 군사 재판 기록에 반영되어, 진술서 작성, 증언 동원, 보증서 부여, 선언문 구술 등에 각 공동체의 권력 집단들이 어떻게 기능을 분담했는지를 관찰할 수 있게 한다. 이는 1950년대 초에 이르러 정권이 법적 보증을 부여하기에 충분한 안정감을 느끼기 전까지 새로운 지역 유력자들에게 위임된 임무였다.</p>
+
+    <p>프랑코주의하의 농촌 세계는 억압이 가장 높은 수준의 물리적·도덕적 파괴를 기록한 곳이었다. 억압에 대한 이해는 바로 그 지역으로부터의 심층적인 시선에서 출발해야 한다. 지역 사례 연구에 대한 기여는 무수히 많으며, 대부분 논란의 여지 없는 관심사를 지니고 있다. 밀고와 고발 과정을 탐구하는 데 있어 가장 좋은 자료는 군사 재판 기록들이다. 이를 통해, 억압이 국가기관의 활동이라기보다는 오히려 비국가적 사회의 활동이었음—혈연 집단을 통해 작동하며 복수의 의지로 강화되고 결속되는—을 이해할 수 있다.</p>
+
+    <p>안토니오 카조를라 산체스(Antonio Cazorla Sánchez)의 『승리의 정치들. 새로운 프랑코 국가의 공고화, 1938-1953』(Marcial Pons, 2000)과 프란시스코 코보 로메로(Francisco Cobo Romero)의 『농촌 갈등과 정치적 폭력. 독재로의 긴 여정. 하엔, 1917-1950』(Jaén, 1998) 등이 이 방향에서 이루어진 대표적 연구들이다. 이스마엘 사스(Ismael Saz)와 A. 고메스 로다(A. Gómez Roda)가 편집한 『발렌시아의 프랑코주의. 전후 사회적 삶의 형태와 태도들』(Episteme, 1999)도 주목할 만한 성과이다.</p>
+
+    <h3 id="miedo">공포와 주관성: 새로운 자료와 방법론</h3>
+    <p>공포—종종 야만화를 초래하는—에 뿌리내린 감정들을 탐구하는 데 있어, 많은 연구자들이 회고록이나 구술 증언, 또는 평범한 사람들의 전기를 활용하고 있다. 푸엔산타 에스쿠데로 안두하르(Fuensanta Escudero Andújar)의 『살아온 대로 이야기한다. 무르시아의 공화국·전쟁·억압』(Universidad de Murcia, 2000)은 구술 자료 활용의 또 하나의 사례다. 요르디 폰트 이 아굴로(Jordi Font i Agulló)의 『내세가라, 들판이여! 카탈루냐 북부 농촌 지역의 초기 프랑코주의와 정치적 태도들』(Diputació de Girona, 2001)도 구술 기억을 활용하여 농촌 맥락에서의 새로운 국가 건설이 지녔던 특수성들을 재현한다.</p>
+
+    <p>주관성의 역사적 변수로서의 통합은, 소외된 이들의 일상 감정과 관심사를 재현하는 데 활용되는 다른 독특한 자료들—감옥에서 쓴 편지들, 망명자들과 가족들 사이에서 교환된 글들—을 통해서도 이루어지고 있다.</p>
+
+    <p>오랫동안 주목받지 못했던 또 다른 민감한 주제가 현재 진지하게 논의되기 시작하고 있다: 억압의 도구로서 일반 사법부가 수행한 역할이다. 특히 여성이 의심의 주체로 등장하는 도덕성 분야에서, 일반 법원의 영향력은 사회통제의 수단으로서 충분히 부각되지 않았다. 억압의 피해자로서 여성에 관한 연구도 진행되어왔다. 가옥·형사, 망명 등이 그 주제들이다. 리카르드 비니에스(Ricard Vinyes)는 프랑코 감옥 여성 세계에 대한 연구를, 토마사 쿠에바스(Tomasa Cuevas)가 1970년대 말과 1980년대에 심어 놓은 씨앗을 수확하는 형태로 진행하고 있다.</p>
+  </section>
+
+  <!-- 결론 -->
+  <section id="conclusion">
+    <h2>결론</h2>
+    <p>민주화이행이 자발적 망각에 기반하여 민주주의를 세웠다는 자기 검열적 구속들이, 불편한 기억에 맞선 갑옷으로서의 기능을 계속하기를 거부하고 있다. 이 논문의 검토가 보여주듯, 프랑코주의의 억압이라는 화두가 과거에 던진 질문들은 역사서술적 탐구로서만이 아니라 그 이해를 심화하기 위한 것으로서 계속되고 있다. 이는 우리 생각에 미래를 건설해 나가기 위한 가장 좋은 보증—일라리 라게르(Hilari Raguer)의 말을 빌리자면 「필요한 정화(catarsis)」—을 구성한다.</p>
+
+    <p>억압에 관한 연구는 여전히 소진되지 않았다. 군사 문서고와 지방 아카이브에 대한 접근이 확대됨에 따라, 앞으로도 지역 연구와 미시사적 방법론이 이 분야의 중추가 될 것이다. 동시에, 학술 연구와 대중적 역사서술 사이의 간극을 메우는 과제, 그리고 국가 차원의 종합 연구를 완성하는 과제도 여전히 남아 있다.</p>
+  </section>
+
+  <!-- 각주 -->
+  <div class="footnotes">
+    <p><strong>※ 번역 주</strong>: 이 논문은 각주가 풍부한 학술 논문으로, 본문 내 인명과 저서 제목은 스페인어 원어를 유지하고 최초 언급 시 한국어 번역을 병기하였다. 각주 번호(1~39)는 원문의 방대한 서지 정보를 담고 있으며, 주요 내용은 본문 서술에 통합하여 반영하였다.</p>
+    <p><strong>주요 각주 정보 (원문 선별)</strong></p>
+    <p>3 — GONZALEZ CALLEJA, E.: «Violencia política y represión en la España franquista: consideraciones teóricas y estado de la cuestión», en MORALES MOYA, R., y SEVILLANO CALERO, F. (eds.): <em>El franquismo. Visiones y balances</em>, Universidad de Alicante, 1999.</p>
+    <p>4 — MIR, C.: «Violencia política, coacción legal y oposición interior», artículo preparado para el monográfico coordinado por SÁNCHEZ RECIO, G.: «El primer franquismo (1936-1950)». <em>Ayer</em>, núm. 33, 1999, pp. 115-147.</p>
+    <p>9 — RODRIGO, J.: «La bibliografía sobre la represión franquista: Hacia el salto cualitativo». En <em>Spagna Contemporanea</em>, núm. 19, Torino, 2001.</p>
+    <p>10 — JULIÁ, S. (dir.): <em>Violencia política en la España del siglo XX</em>, Madrid, Taurus, 2000.</p>
+    <p>11 — JULIÁ, S. (coord.); CASANOVA, J.; SOLÉ I SABATÉ, J. M.; VILARROYA, J., y MORENO, F.: <em>Víctimas de la Guerra Civil</em>, Madrid, Temas de Hoy, 1999, pp. 411-412.</p>
+  </div>
+
+  <a href="#header" class="back-to-top">▲ 맨 위로</a>
+
+</div>
+
+<script>
+  window.addEventListener('scroll', () => {
+    let current = '';
+    document.querySelectorAll('section[id], div[id]').forEach(s => {
+      if (s.getBoundingClientRect().top <= 100) current = s.id;
+    });
+    document.querySelectorAll('#sidebar nav a').forEach(a => {
+      a.classList.toggle('active',
+        a.getAttribute('href') === '#' + current);
+    });
+  });
+
+  document.querySelectorAll('#sidebar nav a').forEach(a => {
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) target.scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+</script>
+
+</body>
+</html>

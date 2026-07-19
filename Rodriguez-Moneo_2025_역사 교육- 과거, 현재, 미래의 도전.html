@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>역사 교육: 과거, 현재, 미래의 도전 — Rodríguez-Moneo et al. (2025) 한국어 번역</title>
+<style>
+:root {
+  --sidebar-width: 270px;
+  --accent: #2c5f8a;
+  --accent-light: #e8f1f8;
+  --text: #1a1a1a;
+  --muted: #555;
+  --border: #d0d7de;
+  --bg: #fafafa;
+  --white: #ffffff;
+  --table-head: #f0f4f8;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Noto Serif KR', 'KoPubWorld Batang', Georgia, serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.85;
+  font-size: 16px;
+}
+
+#sidebar {
+  position: fixed;
+  top: 0; left: 0;
+  width: var(--sidebar-width);
+  height: 100vh;
+  background: var(--white);
+  border-right: 1px solid var(--border);
+  overflow-y: auto;
+  z-index: 100;
+  padding: 0 0 40px 0;
+}
+
+#sidebar .sb-header {
+  background: var(--accent);
+  color: var(--white);
+  padding: 18px 16px 14px;
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  line-height: 1.5;
+}
+
+#sidebar .sb-icon { font-size: 18px; margin-bottom: 4px; display: block; }
+
+#sidebar nav { padding: 10px 0; }
+
+#sidebar nav a {
+  display: block;
+  padding: 6px 18px;
+  font-size: 13px;
+  color: var(--muted);
+  text-decoration: none;
+  border-left: 3px solid transparent;
+  transition: all 0.15s;
+  line-height: 1.5;
+}
+
+#sidebar nav a:hover { color: var(--accent); background: var(--accent-light); }
+#sidebar nav a.active { color: var(--accent); border-left-color: var(--accent); background: var(--accent-light); font-weight: 700; }
+#sidebar nav a.sub { padding-left: 32px; font-size: 12px; }
+
+#main {
+  margin-left: var(--sidebar-width);
+  padding: 48px 60px 80px;
+  max-width: 900px;
+}
+
+.paper-header {
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 28px;
+  margin-bottom: 32px;
+}
+
+.journal-badge {
+  display: inline-block;
+  background: var(--accent);
+  color: var(--white);
+  font-size: 11px;
+  padding: 3px 10px;
+  border-radius: 2px;
+  letter-spacing: 0.05em;
+  margin-bottom: 12px;
+}
+
+.paper-title-ko {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--accent);
+  line-height: 1.4;
+  margin-bottom: 8px;
+}
+
+.paper-title-en {
+  font-size: 13px;
+  color: var(--muted);
+  font-style: italic;
+  margin-bottom: 18px;
+}
+
+.meta-grid {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 4px 14px;
+  font-size: 13.5px;
+}
+
+.meta-label { color: var(--muted); font-weight: 600; white-space: nowrap; }
+.meta-value { color: var(--text); }
+
+.abstract-box {
+  background: var(--accent-light);
+  border-left: 4px solid var(--accent);
+  border-radius: 4px;
+  padding: 22px 26px;
+  margin: 30px 0;
+}
+
+.abstract-box h3 {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: 0.05em;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.abstract-box p { font-size: 14.5px; margin-bottom: 0; }
+
+section {
+  margin-bottom: 48px;
+  scroll-margin-top: 24px;
+}
+
+section h2 {
+  font-size: 19px;
+  font-weight: 700;
+  color: var(--accent);
+  border-bottom: 1.5px solid var(--border);
+  padding-bottom: 8px;
+  margin-bottom: 20px;
+}
+
+p { margin-bottom: 16px; text-align: justify; }
+
+.highlight-box {
+  background: #f0f4f8;
+  border-left: 3px solid var(--accent);
+  padding: 14px 18px;
+  margin: 20px 0;
+  font-size: 14px;
+  border-radius: 3px;
+}
+
+.highlight-box strong { color: var(--accent); }
+
+#referencias ol { padding-left: 22px; }
+
+#referencias li {
+  font-size: 13px;
+  color: var(--text);
+  margin-bottom: 9px;
+  line-height: 1.65;
+}
+
+.ref-ko {
+  display: block;
+  color: var(--muted);
+  font-size: 12px;
+  font-style: italic;
+  margin-top: 2px;
+}
+
+.ref-star {
+  color: var(--accent);
+  font-weight: 700;
+  margin-right: 4px;
+}
+
+.further-box {
+  background: #fff8f0;
+  border-left: 3px solid #e08020;
+  padding: 14px 18px;
+  margin: 12px 0;
+  font-size: 13px;
+  border-radius: 3px;
+}
+
+.further-box .ref-num {
+  font-weight: 700;
+  color: #e08020;
+  margin-right: 6px;
+}
+
+.back-to-top {
+  position: fixed;
+  bottom: 32px;
+  right: 36px;
+  background: var(--accent);
+  color: var(--white);
+  border: none;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  font-size: 18px;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  z-index: 200;
+}
+
+.back-to-top:hover { background: #1e4266; }
+
+@media (max-width: 900px) {
+  #sidebar { display: none; }
+  #main { margin-left: 0; padding: 24px 18px 60px; }
+}
+</style>
+</head>
+<body>
+
+<aside id="sidebar">
+  <div class="sb-header">
+    <span class="sb-icon">📄</span>
+    Rodríguez-Moneo et al. (2025)<br>
+    역사 교육: 과거, 현재, 미래의 도전<br>
+    <span style="font-weight:400; font-size:11px;">Current Opinion in Psychology, 67</span>
+  </div>
+  <nav>
+    <a href="#abstract">초록</a>
+    <a href="#objectives">역사 교육의 교육 목표</a>
+    <a href="#teaching">역사 교수·학습</a>
+    <a href="#narratives">역사 교육과 국가 서사</a>
+    <a href="#challenges">역사 교육의 도전 과제</a>
+    <a href="#referencias">참고문헌</a>
+    <a href="#further">주요 문헌 해설</a>
+  </nav>
+</aside>
+
+<main id="main">
+
+  <div class="paper-header">
+    <div class="journal-badge">Current Opinion in Psychology · vol. 67 · Article 102188 · 2025/2026 · 리뷰 논문</div>
+    <div class="paper-title-ko">역사 교육: 과거, 현재, 미래의 도전</div>
+    <div class="paper-title-en">History education: Past, present, and challenges for the future</div>
+    <div class="meta-grid">
+      <span class="meta-label">저자</span><span class="meta-value">María Rodríguez-Moneo, Mario Carretero, María Gutiérrez-Cano</span>
+      <span class="meta-label">소속</span><span class="meta-value">마드리드 자치대학교(Universidad Autónoma de Madrid, Spain); Mario Carretero는 FLACSO(아르헨티나) 겸임</span>
+      <span class="meta-label">교신저자</span><span class="meta-value">María Rodríguez-Moneo (maria.rodriguez@uam.es)</span>
+      <span class="meta-label">저널</span><span class="meta-value">Current Opinion in Psychology</span>
+      <span class="meta-label">권호</span><span class="meta-value">vol. 67, Article 102188</span>
+      <span class="meta-label">온라인 게재</span><span class="meta-value">2025년 10월 1일</span>
+      <span class="meta-label">DOI</span><span class="meta-value">10.1016/j.copsyc.2025.102188</span>
+      <span class="meta-label">라이선스</span><span class="meta-value">CC BY 4.0 (오픈 액세스)</span>
+      <span class="meta-label">특집호</span><span class="meta-value">집단 기억(Collective Memory, 2025) — 편집: Ignacio Bresco de Luna, Brady Wagoner</span>
+      <span class="meta-label">재원</span><span class="meta-value">Marie Curie Staff Exchanges Project 10108606 (EU); PID20201-127529OB-100 (스페인 국가연구청); FPI 박사 장학금(마드리드 자치 공동체)</span>
+    </div>
+  </div>
+
+  <!-- 초록 -->
+  <section id="abstract">
+    <div class="abstract-box">
+      <h3>초록</h3>
+      <p>이 논문은 역사 교육의 현재 및 과거 목표를 고찰한다. 또한 역사 교수·학습에서 두 가지 주요 교육적 흐름인 역사적 사고(historical thinking)와 역사 의식(historical consciousness)을 분석한다. 학교에서 가르치는 다양한 유형의 역사적 지식과 역사 서사도 함께 검토하며, 서로 다른 교육 목표가 학생 학습에 미치는 영향을 살펴본다. 마지막으로 미래의 역사 교육 개선을 위한 몇 가지 도전 과제가 제시된다.</p>
+    </div>
+  </section>
+
+  <!-- 역사 교육의 교육 목표 -->
+  <section id="objectives">
+    <h2>역사 교육의 교육 목표</h2>
+
+    <p>현재 학교에서 가르치는 대부분의 내용은 수학, 물리학, 철학 같은 오랫동안 확립된 학문 분야에 기반하고 있다. 그러나 역사적 내용의 경우는 그렇지 않다. 사학(史學)과 학교 역사 교육 모두 학문으로서 존재한 역사가 200년이 채 되지 않는다 [1].</p>
+
+    <p>한편, 19세기에 전 국민이 공교육에 접근하게 된 이래, 교육 정책은 국민 국가의 발전을 촉진하는 데 활용되어 왔다 [2–5]. 이는 종종 발명된 전통들을 포함하는 국가의 상징과 전통에 대한 애착과 충성심을 바탕으로 시민들에게 국가 정체성을 함양하기 위한 것이었다 [6]. 이 모든 과정에서 역사 교육은 핵심적인 역할을 담당하여 [8–11], 국가 집단 기억 형성에 기여하는 과거 지식의 구성을 촉진했다.</p>
+
+    <p>20세기 전반에는 사학사적 민족주의의 발전이 있었고, 이는 전간기의 극단적 민족주의적·외국인 혐오적 역사 교육과 동시에 나타났다. 이로 인해 국제연맹(유엔의 전신)이 이 교육 과목을 폐지하려는 반응이 일어났다. 냉전이 끝난 20세기 후반에는 사학사적 민족주의에 대해 더 비판적인 시기가 시작되었다. 비록 국가 집단 정체성을 촉진하는 국가 사학이 완전히 포기되지는 않았지만 [12], 더 이상 주된 초점은 아니었다. 이 시기에는 집단적 국가 기억보다 역사 학문에 더 밀접하게 연결된 교육적 제안들이 발전했다 [13–15]. 그러나 현재 일부 국가에서는 학문적·학교 교육적 역사 지식 모두에서 극단적 민족주의와 외국인 혐오의 현저한 증가가 나타나고 있다는 점을 주목할 필요가 있다.</p>
+
+    <p>연구자들은 역사 교수에 나타나는 두 가지 유형의 교육 목표를 확인했다 [8, 9, 16].</p>
+
+    <div class="highlight-box">
+      <strong>낭만적 목표(romantic objectives)</strong>: 국가와 국가 집단의 과거, 현재, 미래에 대한 긍정적이고 최소한으로 비판적인 평가를 통해 학생들의 국가 정체성을 함양하고자 하는 목표.<br><br>
+      <strong>계몽적 목표(enlightened objectives)</strong>: 학문적 지식의 촉진을 추구하는 목표. 즉, 역사가들이 사용하는 방법론에 대한 능동적 접근과 과거·현재·미래의 관계에 대한 비판적 성찰의 확립을 통해 역사 이해와 역사적으로 사고하는 능력 개발을 촉진하는 것.
+    </div>
+
+    <p>이 두 목표는 시간이 지남에 따라 역사 교수에서 서로 다른 역할을 담당해 왔으며, 전자가 특히 중요하게 여겨져 왔다. 오늘날 이러한 지향들은 여전히 여러 나라의 교육적 제안들에 존재한다 [17]. 역사 교수에서는 교육과정, 교과서, 기타 교육 자원에서 볼 수 있듯이 두 교육 목표 모두 공존하는 경향이 있다.</p>
+  </section>
+
+  <!-- 역사 교수·학습 -->
+  <section id="teaching">
+    <h2>역사 교수·학습</h2>
+
+    <p>1970년대까지 역사 교수는 사실, 날짜, 이름, 사건의 암기 학습에 집중되어 있었다. 이 시기에 오늘날까지도 유효한 두 가지 주요 흐름이 발전했다.</p>
+
+    <p>한편으로, 영국의 흐름은 브루너(Bruner)와 피아제(Piaget) 같은 저자들의 영향을 받아 학생들의 인지 활동을 촉진하고 학교 내용을 학문 분야의 작업 방식에 더 가깝게 하는 것을 강조했다. 리(Lee) 등이 주도하는 이 흐름은 [18, 19] 역사적 사고(HT, historical thinking)의 발전을 지향한다. 다른 한편으로, 뤼젠(Rüsen)이 주도하는 독일의 흐름은 역사 의식(HC, historical consciousness)의 발전을 지향한다 [20, 21]. 이 흐름들 안에서 이루어진 연구와 교육 실천은 여러 나라에서 적용되는 서로 다른 교육적 제안들의 발전으로 이어졌다.</p>
+
+    <p>역사적 사고(HT)의 교육 모델은 역사가들이 작업하는 방식, 즉 그들이 제기하는 질문들, 이와 관련된 추론, 그리고 사료 분석에 기반하여 과거에 대한 해석을 구성하는 방식에 초점을 맞춘다 [22]. 비록 HT 틀 안에서 일정한 변형을 가진 다양한 모델들이 제안되었지만 [14, 23–26], 모든 모델의 바탕에는 위너버그(Wineburg)가 [27] "근본적인 역사적 이해"라고 부른 것이 깔려 있다. 이것은 과거가 현재와 질적으로 다르며, 그것을 분석하고 이해하기 위해서는 역사학의 특수한 방법론이 필요하다는 것을 말한다. 이는 역사가들이 사용하는 방법을 반영하는 "2차 개념(second-order concepts)" [19]—"역사적 사고 개념(historical thinking concepts)"이라고도 불리는 [21]—에 학생들이 익숙해질 것을 요구한다.</p>
+
+    <p>역사 의식(HC)에 기반한 교육적 제안들 [20, 28]은 시간 속에서 사람들이 자신을 정위할 수 있게 해 주는 과거-현재-미래의 관계를 핵심에 두고 있다. 역사 의식은 역사 서사에서 의미를 획득하는 합리적 지식과 도덕적 판단을 포함한다. 이것은 우리 모두가 기본적인 역사 의식을 가지고 있으며, 이것이 서로 다른 수준의 역사 의식을 표현하는 점차 복잡해지는 역사적으로 정보를 갖춘 서사의 여러 단계를 통해 발전한다는 생각에 기반한다 [29]. 역사 의식은 과거의 학문적 지식과 현재의 이해 및 지침을 위한 그 활용 사이의 관계를 다루는 "3차 개념(third-order concepts)" [30, 31]의 일부로 간주된다. 이 개념들은 또한 여러 나라의 일부 교육 목표에서 "역사의 활용(use of history)"을 통해 나타난다 [32].</p>
+
+    <p>이처럼 역사적 사고(HT)와 역사 의식(HC)이라는 두 흐름에 대한 연구는 학생들이 역사를 배울 때 습득하는 서로 다른 유형의 지식을 확인했다.</p>
+
+    <div class="highlight-box">
+      <strong>1차 개념(first-order concepts) / 실체적 개념(substantive concepts)</strong>: 내용 지식을 반영하는 개념 [19, 33, 34]. 역사의 무엇, 누구, 어디서, 언제, 어떻게에 답하는 개념들 [35]. 예: "민족", "세계대전", "민주주의".<br><br>
+      <strong>2차 개념(second-order concepts) / 학문적 개념(disciplinary concepts)</strong>: 역사가들이 과거를 연구할 때 다루는 문제들 [21]과 절차 방식 [23, 36]으로 이해될 수 있다. 이 개념들의 확인과 수는 역사적 사고 모델에 따라 다르다 [23, 24]. 여러 모델에 나타나는 예로는 "증거", "원인과 결과" 또는 "연속성과 변화"가 있다. 2차 개념은 실체적 지식을 조직하고 의미를 부여하는 것을 가능하게 한다.<br><br>
+      <strong>3차 개념(third-order concepts)</strong>: 역사 교수에서 수년간 다루어져 온 세 가지 핵심 개념—"역사 의식", "역사 문화(historical culture)", "역사의 활용"—을 포함한다 [30]. 2차 개념 또는 학문적 개념이 학문의 강력한 지식을 반영하는 반면, 3차 개념은 이 지식을 과거-현재-미래의 관계와 결합함으로써 확장한다 [30]. 이 개념들은 새로운 연결과 아이디어를 생성하는 능력을 향상시키고, 더 나은 이해를 촉진하며 시민 생활에서 능동적이고 비판적인 참여를 장려한다 [37, 38].
+    </div>
+
+    <p>21세기 초에, 학문적 지식을 심화할 필요성으로 인해 "강력한 지식(powerful knowledge)"의 개념이 등장했다 [38–41]. 이 개념은 사회적 실재론의 인식론적 틀 안에서 발전했다. 한편으로는 사회적 구성주의에 대한 반응을 나타냈고, 다른 한편으로는 21세기 일반 역량 중심 교육이 학문적 지식 습득에 미치는 부정적 영향에 대응하는 것을 목표로 했다 [37, 42–44]. 역사 교수에서 강력한 지식의 개념은 광범위한 성찰 [13, 22, 38, 45]과 논쟁 [46, 47]의 대상이 되어왔다.</p>
+  </section>
+
+  <!-- 역사 교육과 국가 서사 -->
+  <section id="narratives">
+    <h2>역사 교육과 국가 서사</h2>
+
+    <p>보통 학교 역사 지식은 서사 형식으로 제시된다 [48, 49]. 동시에 이 형식은 학생들이 과거, 현재, 미래에 대해 배우고 의미를 만들기 위해 사용하기도 한다 [11, 28, 29]. 이런 이유로 서사의 사용은 여러 장점을 가지고 있지만 [48, 50, 51], 단점들도 있다. 때로 서사는 과거의 완전한 복잡성을 반영하지 못한다. 예를 들어 전통적으로 비가시화된 집단들을 무시할 수 있다 [48]. 또한 그것들이 생산되고 사용되는 맥락과 이해관계에 의해 편향된 해석인 경우가 많다 [52, 53]. 또한 과거의 제한된 해석이 아니라 절대적인 반영으로 학습될 위험도 있다 [54].</p>
+
+    <p>공식적 맥락에서, 전통적 역사 교수에 존재하는 낭만적 목표는 국가 마스터 서사의 수동적 수용을 촉진하고, 이와 함께 더 단순하고 종종 암기적이며 비판적이지 않은 학습을 장려한다. 반면 계몽적 목표는—국가적인 것을 포함한—서사에 대한 능동적 성찰을 사료 분석과 역사적 사고의 발전에 기반하여 촉진하며, 이와 함께 더 복잡하고 의미 있으며 비판적인 학습을 이끌어낸다.</p>
+
+    <p>전통적 역사 교수는 실체적 개념을 학습함으로써 "역사 알기(knowing history)"에 더 초점을 맞춰왔다 [55]. 그러나 1970년대 이래 반복적으로 지적되었듯이, 이 지식은 역사적 사고 개념을 사용하여 역사 서사에 대한 성찰과 재구성을 촉진하는 "역사 하기(doing history)"와 [56] 결합되어야 한다 [24]. 이렇게 함으로써 학생들은 과거에 더 많은 의미를 부여하는 것 외에도 역사가들이 사용하는 방법을 활용할 수 있게 된다. 그럼에도 불구하고 최근 몇 년간 강력한 지식을 함양하기 위해서는 3차 개념도 필요하다는 점이 지적되어 왔다 [30]. 현재를 이해하고 미래를 전망하기 위해 과거를 돌아보아야 할 필요성 때문만이 아니라, 학생들이 역사에 관한 학문적 지식을 적용하여 현재에 이성적이고 도덕적으로 개입하고 그렇게 함으로써 "역사 하기"의 범위를 확장할 수 있도록 하기 위해서이기도 하다.</p>
+  </section>
+
+  <!-- 역사 교육의 도전 과제 -->
+  <section id="challenges">
+    <h2>역사 교육의 도전 과제</h2>
+
+    <p>사회와 교육의 관계는 상호적이다 [57]. 교육 교육과정은 학문적 기준 외에 사회적 기준을 고려하여 개발된다 [13]. 또한 교육의 산물인 학생 학습은 사회에 변화를 만들어낸다. 역사 교육의 경우, 습득된 지식은 과거 지식을 넘어서는 영향을 가지며 사회적 자산이 된다 [13, 20, 22]. 역사 지식은 본질적으로 우리가 사회적 세계에서 매일 마주치는 것들과 크게 다르지 않은 문제들에 관한 풍부한 정보를 제공한다 [27]. 이런 의미에서 과거 지식은 현재 사건들에 대한 성찰적이고 비판적인 접근을 가능하게 하여 현재에 대한 더 깊은 이해와 능동적 참여를 허용한다. 이리하여 역사적 사고(HT) 모델에 대한 일부 비판은 과거-현재-미래의 상호 관계에 대한 제한된 주의에 초점을 맞춘다 [21]. 또한 과거-현재-미래의 관계가 역사의 학문적 지식에 기반해야 한다는 것도 고려된다 [28]. 이 모든 것은 역사 교수의 도전 과제 중 하나를 중심으로 전개된다: 목표와 교수학적 제안에서 역사적 사고(HT)와 역사 의식(HC)의 더 크고 더 엄밀한 통합.</p>
+
+    <p>또한 수많은 연구들은 국가적 또는 문화적 정체성 서사 같은 서로 다른 정체성 서사들이 과거의 이해 [31]와 현재 사회의 갈등 및 미래 기대와의 관계에 미칠 수 있는 영향을 지적한다. 오늘날 민족 국가들은 종종 서로 다른 문화적 배경을 가진 사회 집단들로 구성되어 있다. 이런 방식으로, 배제적 정체성 서사에 기반한 역사 의식은 오늘날 지속 가능하지 않으며 [20] 교실 안팎에서 상당한 갈등으로 이어질 수 있다 [31, 53]. 따라서 역사 교수의 핵심적인 도전은 현대 사회에 존재하는 서사와 집단 기억의 이러한 다양성을 고려하는 것이다. 가능한 갈등을 해결하기 위해서는 다관점성(multiperspectivity)에 기반한 접근법 [31, 58]과 대화적 교수법 [59, 60]을 채택할 필요가 있다. 이런 방식으로 역사 지식은 역사적 사고의 기준을 고려하면서 서사에 의문을 제기함으로써 [61] 더 편향이 적고 더 광범위하며 복잡한 방식으로 역사 서사를 재구성할 수 있게 풍부해질 것이다.</p>
+
+    <p>오늘날 이러한 갈등들은 교실뿐만 아니라 디지털 미디어에도 존재한다. 사회의 디지털화는 역사 교육에 대응해야 할 중대한 도전을 제기하는데, 이는 역사를 가르치고 배우는 새로운 방식을 만들어내기 때문이다 [16]. 이에 따라 학생들의 집단 기억에 강한 영향을 미치는 디지털 플랫폼에 대한 연구를 확대할 필요가 있다. 예를 들어, 비디오 게임의 사용이 어떻게 역사 학습을 촉진할 수 있는지에 대해 우리는 아직 거의 알지 못하며, 이 주제에 대한 더 많은 연구가 필요하다. 이와 관련하여 학생들이 역사적 시청각 문화를 어떻게 이해하는지에 대한 지식도 높여야 한다. 학생들은 틱톡(TikTok)이나 인스타그램(Instagram) 같은 플랫폼에서 시청각 콘텐츠를 점점 더 많이 사용하고 있으며, 그 사용은 교과서 같은 전통적인 콘텐츠보다 훨씬 더 영향력이 클 수 있다. 그러나 이 주제에 관한 연구는 아직 거의 없다 [62, 63]. 의심할 여지 없이 가장 긴급한 도전 과제 중 하나는 역사 학습에서 인공지능(AI)의 활용이다. 일부 저자들은 학생들이 특히 포용적인 역사 서사 생성과 관련하여 도전적인 질문을 하기 위한 대형 데이터베이스로 사용할 수 있게 하는 대화 과정 발전을 위한 교육 도구로서 AI의 활용을 제안했다 [64]. 이는 과거에 대한 더 복잡하고 성찰적인 시각을 촉진할 것이다. 또한 AI는 탐구 활동에 큰 가능성을 제공하며 역사적 사고의 발전을 촉진할 수 있다 [65]. 디지털화와 연결된 또 다른 도전은 교사 교육과 관련된 것이다. 역사 학습을 촉진하기 위해 교사들은 여기서 제기된 문제들과 관련하여 학문의 기술 교수 내용 지식(TPACK)을 갖추어야 한다 [66].</p>
+
+    <p>마지막으로, 많은 나라에서 역사 교수는 여전히 국가적 과거에 기반하고 있으며, 세계 각지 다양한 유형의 사회 발전을 다루는 세계사는 거의 없다. 비록 국가사가 계속 가르쳐지고 있지만, 국민 국가는 오늘날 200년 전 만들어질 당시와 같은 기능과 구조를 갖지 않는다. 기후 변화, 이민, 진전되는 디지털화 같은 문제들은 동시에 많은 나라들에 영향을 미치는 문제들로, 그 과거는 교실에서 함께 연구되어야 한다. 이처럼 역사 교수의 또 다른 도전은 그것이 세계사 교수가 되어야 한다는 것이다.</p>
+  </section>
+
+  <!-- 참고문헌 -->
+  <section id="referencias">
+    <h2>참고문헌</h2>
+    <p style="font-size:12.5px; color:var(--muted); margin-bottom:14px;">※ **: 특별히 중요한 문헌 / *: 중요한 문헌 (원문 표기 준수)</p>
+    <ol>
+      <li>Berger S: <em>The past as history: national identity and historical consciousness in modern Europe.</em> Basingstoke: Palgrave Macmillan; 2015.<span class="ref-ko">과거로서의 역사: 근대 유럽의 국가 정체성과 역사 의식.</span></li>
+      <li>Green A: <em>Education and state formation. Europe, east Asia and the USA.</em> 2nd ed. Basingstoke (UK): Palgrave Macmillan; 2013.<span class="ref-ko">교육과 국가 형성. 유럽, 동아시아, 미국.</span></li>
+      <li>Mandler P: Educating the nation I: schools. <em>Trans R Hist Soc.</em> 2014, 24:5–28.<span class="ref-ko">민족 교육하기 I: 학교들.</span></li>
+      <li>Tröhler D: From national exceptionalism to national imperialism: changing motives of comparative education. <em>Stud Comp Int Educ.</em> 2022, 43:441–459.<span class="ref-ko">국가적 예외주의에서 국가적 제국주의로: 비교 교육의 변화하는 동기.</span></li>
+      <li>Zinkina J, Korotayev A, Andreev A: Mass primary education in the nineteenth century. <em>Globalistics and Globalization Studies;</em> 2016:63–70.<span class="ref-ko">19세기의 대중 초등 교육.</span></li>
+      <li>Tröhler D: National literacies, or modern education and the art of fabricating national minds. <em>J Curric Stud</em> 2020, 52:620–635.<span class="ref-ko">국가적 리터러시, 또는 현대 교육과 국가적 정신 만들기의 기예.</span></li>
+      <li>Hobsbawm E: <em>Nations and nationalism since 1780. Programme, myth, reality.</em> Cambridge: Cambridge University Press; 1990.<span class="ref-ko">1780년 이래의 민족과 민족주의. 프로그램, 신화, 현실.</span></li>
+      <li>Carretero M: <em>Constructing patriotism: teaching history and memories in global worlds.</em> Charlotte (NC): Information Age Publishing; 2011.<span class="ref-ko">애국심 구성하기: 세계화 시대의 역사와 기억 교수.</span></li>
+      <li>Carretero M, Rodríguez-Moneo M, Asensio M: History education and the construction of national identity. In <em>History education and the construction of national identities.</em> Charlotte (NC). Edited by Carretero M, Asensio M, Rodríguez-Moneo M, Information Age Publishing; 2012:1–14.<span class="ref-ko">역사 교육과 국가 정체성 구성.</span></li>
+      <li>Grever M, van der Vlies T: Why national narratives are perpetuated: a literature review on new insights from history textbook research. <em>Lond Rev Educ</em> 2017, 15:286–301.<span class="ref-ko">국가 서사가 지속되는 이유: 역사 교과서 연구의 새로운 통찰에 관한 문헌 고찰.</span></li>
+      <li>Rodríguez-Moneo M, López C: Concept acquisition and conceptual change in history. In <em>Palgrave handbook of research in historical culture and education.</em> Edited by Carretero M, Berger S, Grever M, London: Palgrave Macmillan; 2017:469–490.<span class="ref-ko">역사에서의 개념 습득과 개념 변화.</span></li>
+      <li>Berger S: History writing and constructions of national space: the long dominance of the national in modern European historiographies. In <em>Palgrave handbook of research in historical culture and education.</em> Edited by Carretero M, Berger S, Grever M, London: Palgrave Macmillan; 2017:39–57.<span class="ref-ko">역사 서술과 국가적 공간의 구성: 근대 유럽 사학에서 국가의 오랜 지배.</span></li>
+      <li><span class="ref-star">**</span>Khawaja A, Puustinen M, Chapman A, Nordgren K: Complex outcomes of recontextualised history: comparing lower secondary national curricula in Sweden, England and Finland. <em>J Curric Stud</em> 2025, 57:402–421.<span class="ref-ko">재맥락화된 역사의 복잡한 결과: 스웨덴, 영국, 핀란드의 중학교 국가 교육과정 비교.</span></li>
+      <li>Levesque S, Clark P: Historical thinking: definitions and educational applications. In <em>The Wiley international handbook of history teaching and learning.</em> Edited by Metzger SA, Harris LM, Hoboken (NJ): Wiley; 2018:119–148.<span class="ref-ko">역사적 사고: 정의와 교육적 적용.</span></li>
+      <li>Seixas P: History in schools. In <em>The Palgrave handbook of state-sponsored history after 1945.</em> Edited by Bevernage B, Wouters N, London: Palgrave Macmillan; 2018:273–288.<span class="ref-ko">학교에서의 역사.</span></li>
+      <li>Carretero M, Rodríguez-Moneo M, Cantabrana M, Parellada C: History education in the digital age. In <em>History education in the digital age.</em> Edited by Carretero M, Cantabrana M, Parellada C, Cham: Springer; 2022:1–26.<span class="ref-ko">디지털 시대의 역사 교육.</span></li>
+      <li>Chapman AE, Haydn T: Editorial: history education in changing and challenging times. <em>Hist Educ Res J</em> 2020, 17.<span class="ref-ko">사설: 변화하고 도전적인 시대의 역사 교육.</span></li>
+      <li>Carretero M, Lee P: Learning historical concepts. In <em>The Cambridge handbook of the learning sciences.</em> Edited by Sawyer RK, Cambridge: Cambridge University Press; 2014:587–604.<span class="ref-ko">역사적 개념 학습.</span></li>
+      <li>Lee PJ: History teaching and philosophy of history. <em>Hist Theor</em> 1983, 22:19–49.<span class="ref-ko">역사 교수와 역사 철학.</span></li>
+      <li>Ahonen S: Form or substance? Weighing critical skills against identity narratives in history education. In <em>The Palgrave handbook of history and social studies education.</em> Edited by Berg CW, Christou TM, Cham: Palgrave Macmillan; 2020:145–163.<span class="ref-ko">형식인가 내용인가? 역사 교육에서 비판적 기능과 정체성 서사의 비교.</span></li>
+      <li>Seixas P: A model of historical thinking. <em>Educ Philos Theor</em> 2017, 49:593–605.<span class="ref-ko">역사적 사고의 모델.</span></li>
+      <li>Benger A: Social realism and school history: the role of the historical discipline in substantive knowledge selection. <em>J Curric Stud</em> 2023, 55:646–660.<span class="ref-ko">사회적 실재론과 학교 역사: 실체적 지식 선택에서 역사 학문의 역할.</span></li>
+      <li>Chapman A: Historical interpretation as the foundational concept for history education. <em>Rev Hist</em> 2024, 1:1–25.<span class="ref-ko">역사 교육의 기초 개념으로서의 역사적 해석.</span></li>
+      <li>Gibson L, Peck C, Miles J, Duquette C: Historical thinking: trends, critiques, and future directions. <em>Curr Opin Psychol</em> 2025, 65.<span class="ref-ko">역사적 사고: 동향, 비판, 미래 방향.</span></li>
+      <li>van Boxtel C, van Drie J, Stoel G: Improving teachers' proficiency in teaching historical thinking. In <em>The Palgrave handbook of history and social studies education.</em> Edited by Berg CW, Christou TM, Cham: Palgrave Macmillan; 2020:97–117.<span class="ref-ko">역사적 사고 교수에서 교사 전문성 향상.</span></li>
+      <li>van Drie J, van Boxtel C: Historical reasoning: towards a framework for analyzing students' reasoning about the past. <em>Educ Psychol Rev</em> 2008, 20:87–110.<span class="ref-ko">역사적 추론: 학생들의 과거에 관한 추론 분석 틀을 향하여.</span></li>
+      <li>Wineburg S: <em>Historical thinking and other unnatural acts. Charting the future of teaching the past.</em> Philadelphia (PA): Temple University Press; 2001.<span class="ref-ko">역사적 사고와 다른 부자연스러운 행위들. 과거 가르치기의 미래를 그리며.</span></li>
+      <li>Rüsen J: The didactics of history in West Germany: towards a new self-awareness of historical studies. <em>Hist Theor</em> 1987, 26:275–286.<span class="ref-ko">서독의 역사 교수학: 역사학의 새로운 자기 인식을 향하여.</span></li>
+      <li>Rüsen J: Historical consciousness: narrative structure, moral function, and ontogenetic development. In <em>Theorizing historical consciousness.</em> Edited by Seixas P, Toronto: University of Toronto Press; 2004:63–85.<span class="ref-ko">역사 의식: 서사 구조, 도덕적 기능, 개체 발생적 발전.</span></li>
+      <li>Alvén F: Opening or closing Pandora's box? – Third-order concepts in history education for powerful knowledge. <em>FdP</em> 2021, 12:245–263.<span class="ref-ko">판도라의 상자를 열 것인가 닫을 것인가? – 강력한 지식을 위한 역사 교육의 3차 개념.</span></li>
+      <li><span class="ref-star">**</span>Alvén F: Controversial issues in history teaching. <em>J Curric Stud</em> 2024, 56:537–553.<span class="ref-ko">역사 교수에서의 논쟁적 쟁점들.</span></li>
+      <li>Nordgren K: How to do things with history: use of history as a link between historical consciousness and historical culture. <em>Theor Res Soc Educ</em> 2016, 44:479–504.<span class="ref-ko">역사로 무언가를 하는 방법: 역사 의식과 역사 문화를 연결하는 역사의 활용.</span></li>
+      <li>Lee P: Putting principles into practice: understanding history. In <em>How students learn: history, mathematics, and science in the classroom.</em> Edited by National Research Council, Washington (DC): National Academies Press; 2005:31–77.<span class="ref-ko">원리를 실천에 옮기기: 역사 이해.</span></li>
+      <li>Lee P, Ashby R: Progression in historical understanding among students ages 7-14. In <em>Knowing, teaching, and learning history: national and international perspectives.</em> Edited by Stearns P, Seixas P, Wineburg SS, New York: New York University Press; 2000:199–222.<span class="ref-ko">7–14세 학생들의 역사적 이해 발전.</span></li>
+      <li>Van Sledright B, Limón M: Learning and teaching in social studies: cognitive research on history and geography. In <em>The handbook of educational psychology.</em> 2nd ed., Mahwah (NJ): Lawrence Erlbaum Associates; 2006:545–570.<span class="ref-ko">사회과에서의 학습과 교수: 역사와 지리에 관한 인지 연구.</span></li>
+      <li>Thorp R, Persson A: On historical thinking and the history educational challenge. <em>Educ Philos Theor</em> 2020, 52:891–901.<span class="ref-ko">역사적 사고와 역사 교육의 도전에 관하여.</span></li>
+      <li>Hudson B, Gericke N, Olin-Scheller C, Stolare M: Trajectories of powerful knowledge and epistemic quality: analysing the transformations from disciplines across school subjects. <em>J Curric Stud</em> 2023, 55:119–137.<span class="ref-ko">강력한 지식과 인식론적 질의 궤적: 학교 교과 전반에 걸친 학문으로부터의 변형 분석.</span></li>
+      <li>Muller J, Young M: Knowledge, power and powerful knowledge revisited. <em>Curric J</em> 2019, 30:196–214.<span class="ref-ko">지식, 권력, 강력한 지식 재고찰.</span></li>
+      <li>Young M: Education, globalisation and the 'voice of knowledge'. <em>J Educ Work</em> 2009, 22:193–204.<span class="ref-ko">교육, 세계화, '지식의 목소리'.</span></li>
+      <li>Young M, Muller J: On the powers of powerful knowledge. <em>Rev Educ</em> 2013, 1:229–250.<span class="ref-ko">강력한 지식의 힘에 관하여.</span></li>
+      <li>Wheelahan L: How competency-based training locks the working class out of powerful knowledge: a modified Bernsteinian analysis. <em>Br J Sociol Educ</em> 2007, 28:637–651.<span class="ref-ko">역량 기반 훈련이 어떻게 노동 계급을 강력한 지식에서 배제하는가: 수정된 번스타인식 분석.</span></li>
+      <li>Deng Z: Powerful knowledge, educational potential and knowledge-rich curriculum: pushing the boundaries. <em>J Curric Stud</em> 2022, 54:599–617.<span class="ref-ko">강력한 지식, 교육적 잠재력, 지식 풍부 교육과정: 경계 밀어붙이기.</span></li>
+      <li>Deng Z, Chapman A, Gericke N: Powerful knowledge, school subjects and the curriculum: an international and comparative perspective. <em>J Curric Stud</em> 2025, 57:365–381.<span class="ref-ko">강력한 지식, 학교 교과, 교육과정: 국제 비교적 관점.</span></li>
+      <li><span class="ref-star">*</span>Talbot D: Knowledge, knowers, and power: understanding the 'power' of powerful knowledge. <em>J Curric Stud</em> 2023, 55:633–645.<span class="ref-ko">지식, 지식인, 권력: 강력한 지식의 '힘' 이해하기.</span></li>
+      <li>Chapman A: Introduction: historical knowing and the 'knowledge turn'. In <em>Knowing history in schools: powerful knowledge and the powers of knowledge.</em> Edited by Chapman A, London: UCL Press; 2021:1–31.<span class="ref-ko">서론: 역사적 앎과 '지식 전환'.</span></li>
+      <li><span class="ref-star">*</span>Barton KC: Knowledge without disciplines: a critique of social realism's disciplinary fixation. <em>J Curric Stud</em> 2024, 56:235–245.<span class="ref-ko">학문 없는 지식: 사회적 실재론의 학문적 고착에 대한 비판.</span></li>
+      <li>Hordern J: On the intellectual horizons of social realism: a response to Barton. <em>J Curric Stud</em> 2024, 57:47–55.<span class="ref-ko">사회적 실재론의 지적 지평에 관하여: 바턴에 대한 응답.</span></li>
+      <li>Barton KC, Levstik LS: <em>Teaching history for the common good.</em> New York (NY): Routledge; 2004.<span class="ref-ko">공동선을 위한 역사 교수.</span></li>
+      <li>Wertsch J: Specific narratives and schematic narrative templates. In <em>Theorizing historical consciousness.</em> Edited by Seixas P, Toronto: University of Toronto Press; 2004:49–62.<span class="ref-ko">특수 서사와 도식적 서사 템플릿.</span></li>
+      <li>Bruner J: <em>Acts of meaning.</em> Cambridge (MA): Harvard University Press; 1990.<span class="ref-ko">의미의 행위들.</span></li>
+      <li>Wertsch JV: <em>How nations remember: a narrative approach.</em> Oxford: Oxford University Press; 2021.<span class="ref-ko">민족들이 기억하는 방법: 서사적 접근.</span></li>
+      <li>López C: When 'we' are the alien forces: misremembering the conquest of America through the 'triumph over alien forces' schematic narrative template. <em>Cult Psychol</em> 2019, 27:3–17.<span class="ref-ko">'우리'가 이방 세력일 때: '이방 세력에 대한 승리' 도식적 서사 템플릿을 통한 아메리카 정복의 잘못된 기억.</span></li>
+      <li>Wertsch JV, Roediger HL: Themes for future research on memory, mind and media. <em>Mem Mind Media</em> 2022, 1, e18.<span class="ref-ko">기억, 정신, 미디어에 관한 미래 연구 주제들.</span></li>
+      <li>Carretero M: Teaching history master narratives: fostering imagi-nations. In <em>Palgrave handbook of research in historical culture and education.</em> Edited by Carretero M, Berger S, Grever M, London: Palgrave Macmillan; 2017:511–528.<span class="ref-ko">역사 마스터 서사 가르치기: 상상된 민족들 함양하기.</span></li>
+      <li>Havekes H, Arno-Coppen P, Luttenberg J, van Boxtel C: Knowing and doing history: a conceptual framework and pedagogy for teaching historical contextualization. <em>Int J Hist Learn Teach Res</em> 2012, 11:72–93.<span class="ref-ko">역사 알기와 역사 하기: 역사적 맥락화 교수를 위한 개념 틀과 교수법.</span></li>
+      <li>Gestsdóttir S, van Boxtel C, van Drie J: Teaching historical thinking and reasoning: construction of an observation instrument. <em>Br Educ Res J</em> 2018, 44:960–981.<span class="ref-ko">역사적 사고와 추론 가르치기: 관찰 도구 구성.</span></li>
+      <li>Westberg J, Primus F: Rethinking the history of education: considerations for a new social history of education. <em>Paedagog Hist</em> 2023, 59:1–18.<span class="ref-ko">교육사 재사고: 새로운 교육 사회사를 위한 고찰.</span></li>
+      <li>Grever M, Adriaansen RJ: Historical culture: a concept revisited. In <em>Palgrave handbook of research in historical culture and education.</em> Edited by Carretero M, Berger S, Grever M, London: Palgrave Macmillan; 2017:73–89.<span class="ref-ko">역사 문화: 재검토된 개념.</span></li>
+      <li>Carretero M, Pérez-Manjarrez E: <em>Global perspectives on the role of dialogue in history education: socio-cultural, psychological, and digital dimensions.</em> London: Routledge; 2024.<span class="ref-ko">역사 교육에서 대화의 역할에 관한 세계적 관점: 사회문화적, 심리적, 디지털 차원.</span></li>
+      <li>van Boxtel C, van Drie J: Engaging students in historical reasoning: the need for dialogic history education. In <em>Palgrave handbook of research in historical culture and education.</em> Edited by Carretero M, Berger S, Grever M, London: Palgrave Macmillan; 2017:573–589.<span class="ref-ko">학생들을 역사적 추론에 참여시키기: 대화적 역사 교육의 필요성.</span></li>
+      <li><span class="ref-star">*</span>Santiago M, Dozono T: History is critical: addressing the false dichotomy between historical inquiry and criticality. <em>Theor Res Soc Educ</em> 2022, 50:173–195.<span class="ref-ko">역사는 비판적이다: 역사적 탐구와 비판성 사이의 거짓 이분법 다루기.</span></li>
+      <li>Adriaansen RJ, Smit R: Collective memory and social media. <em>Curr Opin Psychol</em> 2025, 65.<span class="ref-ko">집단 기억과 소셜 미디어.</span></li>
+      <li>Kansteiner W: Film, the past, and a didactic dead end: from teaching history to teaching memory. In <em>Palgrave handbook of research in historical culture and education.</em> Edited by Carretero M, Berger S, Grever M, London: Palgrave Macmillan; 2017:169–190.<span class="ref-ko">영화, 과거, 교수학적 막다른 길: 역사 가르치기에서 기억 가르치기로.</span></li>
+      <li><span class="ref-star">**</span>Carretero M, Gartner E: Artificial intelligence and historical thinking: a dialogic exploration of ChatGPT / Inteligencia artificial y pensamiento histórico: una exploración dialógica del ChatGPT. <em>Stud Psychol</em> 2024, 45:80–102.<span class="ref-ko">인공지능과 역사적 사고: ChatGPT의 대화적 탐구.</span></li>
+      <li>Hughes-Warrington M, Martin A, Yarlupurka O'Brien L: <em>Artificial historians.</em> London: Routledge; 2025.<span class="ref-ko">인공 역사가들.</span></li>
+      <li>Koehler MJ, Mishra P, Cain W: What is technological pedagogical content knowledge (TPACK)? <em>J Educ</em> 2017, 193:13–19.<span class="ref-ko">기술 교수 내용 지식(TPACK)이란 무엇인가?</span></li>
+      <li>Berg CW, Christou TM: <em>The Palgrave handbook of history and social studies education.</em> Cham: Palgrave Macmillan; 2020.<span class="ref-ko">역사·사회과 교육 팰그레이브 핸드북.</span></li>
+    </ol>
+  </section>
+
+  <!-- 주요 문헌 해설 -->
+  <section id="further">
+    <h2>주요 문헌 해설</h2>
+
+    <div class="further-box">
+      <span class="ref-num">13**</span>이 논문은 세 나라의 역사 교육과정을 비교한다. 영국 문서는 역사적 탐구를 동시에 진행하면서도 일관된 국가 서사를 전달한다. 핀란드의 목표는 역사 해석과 능동적 시민성을 향한 도제식 교육에 초점을 맞춘다. 스웨덴의 교육과정은 역사 의식을 강조하는 다각적인 접근법을 채택한다. 마지막으로 결과는 강력한 지식과 그것의 '~할 수 있는 힘(power to)' 측면의 관점에서 논의된다.
+    </div>
+
+    <div class="further-box">
+      <span class="ref-num">31**</span>이 논문은 역사 교수에서의 논쟁들을 다룬다. 학생들이 종종 서로 다른 정체성에 의해 형성되는 과거와 현재에 대한 서로 다른 해석으로부터 다양한 갈등이 발생할 수 있다고 주장한다. 논문은 다양한 정체성과 관점들이 명시적으로 표현되고 적절하게 다루어진다는 전제하에 교실에 포함하는 것의 이점을 강조한다. 이러한 차이와 잠재적 갈등을 다루기 위해 3차 개념과 역사적 공감의 활용에 기반한 모델이 제안되며, 역사 교수에서 건설적인 토론을 발전시키기 위한 제안도 포함된다.
+    </div>
+
+    <div class="further-box">
+      <span class="ref-num">44*</span>이 논문은 강력한 지식 이론에 기여한다. 개념의 기원과 발전을 성찰한다. 강력한 지식이 통합하는 힘의 유형들을 탐구하고 학생들의 인지 발달과의 관련성에 초점을 맞춘다. 또한 강력한 지식과 권력자의 지식 사이의 구분을 강조한다.
+    </div>
+
+    <div class="further-box">
+      <span class="ref-num">46*</span>이 논문은 강력한 지식에 대한 비판을 제시한다. 학문 외부에서 생산된 지식을 고려하지 않고 학문적 지식에만 자신을 국한하는 그것의 한계에 의문을 제기한다. 또한 학문의 응집성과 한계도 논의한다. 더불어 교육의 사회적 목적과 그에 연관된 지식에 대한 고려 부족에 반대한다. 호든(Horden)은 이미 인용된 논문에서 이러한 비판들에 응답했다.
+    </div>
+
+    <div class="further-box">
+      <span class="ref-num">61*</span>이 논문은 역사적 탐구가 본질적으로 비판적이며 "비판성"을 역사 연구에 대한 별도의 추가물로 보는 것은 거짓 이분법을 만든다고 주장한다. 역사적 사고는 이미 정치적·이념적 행위이며, 역사 교육 연구는 비판적 학문과 공통된 헌신을 공유한다고 주장하면서, 이 분야가 역사적 탐구를 "비판적"이고 "비정치적" 진영으로 구획화하는 것 대신 그 긴장과 지식의 다양한 형태들을 수용할 것을 촉구한다.
+    </div>
+
+    <div class="further-box">
+      <span class="ref-num">64**</span>이 논문은 역사적 사고 발전을 위한 교수학적 도구로서 ChatGPT의 잠재력을 검토한다. 이를 위해 역사적 사건을 둘러싼 상호작용적 과정의 분석을 제시한다. 논증적 개입을 통해 AI가 제공하는 정보에 의문을 제기하는 대화가 구성되며, AI가 수정하고 자신의 담론에 역사적 사고의 요소들을 통합할 수 있는 능력을 증명한다.
+    </div>
+  </section>
+
+</main>
+
+<button class="back-to-top" onclick="window.scrollTo({top:0, behavior:'smooth'})" title="맨 위로">▲</button>
+
+<script>
+window.addEventListener('scroll', () => {
+  let current = '';
+  document.querySelectorAll('section[id]').forEach(s => {
+    if (s.getBoundingClientRect().top <= 80) current = s.id;
+  });
+  document.querySelectorAll('#sidebar nav a').forEach(a => {
+    a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+  });
+});
+
+document.querySelectorAll('#sidebar nav a').forEach(a => {
+  a.addEventListener('click', e => {
+    e.preventDefault();
+    const target = document.querySelector(a.getAttribute('href'));
+    if (target) target.scrollIntoView({ behavior: 'smooth' });
+  });
+});
+</script>
+</body>
+</html>

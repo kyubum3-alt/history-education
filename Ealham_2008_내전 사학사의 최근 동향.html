@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>내전 사학사의 최근 동향 — Ealham (2008) 한국어 번역</title>
+<style>
+:root {
+  --sidebar-width: 270px;
+  --accent: #2c5f8a;
+  --accent-light: #e8f1f8;
+  --text: #1a1a1a;
+  --muted: #555;
+  --border: #d0d7de;
+  --bg: #fafafa;
+  --white: #ffffff;
+  --table-head: #f0f4f8;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Noto Serif KR', 'KoPubWorld Batang', Georgia, serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.85;
+  font-size: 16px;
+}
+
+#sidebar {
+  position: fixed;
+  top: 0; left: 0;
+  width: var(--sidebar-width);
+  height: 100vh;
+  background: var(--white);
+  border-right: 1px solid var(--border);
+  overflow-y: auto;
+  z-index: 100;
+  padding: 0 0 40px 0;
+}
+
+#sidebar .sb-header {
+  background: var(--accent);
+  color: var(--white);
+  padding: 18px 16px 14px;
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  line-height: 1.5;
+}
+
+#sidebar .sb-icon { font-size: 18px; margin-bottom: 4px; display: block; }
+
+#sidebar nav { padding: 10px 0; }
+
+#sidebar nav a {
+  display: block;
+  padding: 6px 18px;
+  font-size: 13px;
+  color: var(--muted);
+  text-decoration: none;
+  border-left: 3px solid transparent;
+  transition: all 0.15s;
+  line-height: 1.5;
+}
+
+#sidebar nav a:hover { color: var(--accent); background: var(--accent-light); }
+#sidebar nav a.active { color: var(--accent); border-left-color: var(--accent); background: var(--accent-light); font-weight: 700; }
+#sidebar nav a.sub { padding-left: 32px; font-size: 12px; }
+
+#main {
+  margin-left: var(--sidebar-width);
+  padding: 48px 60px 80px;
+  max-width: 900px;
+}
+
+.paper-header {
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 28px;
+  margin-bottom: 32px;
+}
+
+.journal-badge {
+  display: inline-block;
+  background: var(--accent);
+  color: var(--white);
+  font-size: 11px;
+  padding: 3px 10px;
+  border-radius: 2px;
+  letter-spacing: 0.05em;
+  margin-bottom: 12px;
+}
+
+.paper-title-ko {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--accent);
+  line-height: 1.4;
+  margin-bottom: 8px;
+}
+
+.paper-title-es {
+  font-size: 13px;
+  color: var(--muted);
+  font-style: italic;
+  margin-bottom: 18px;
+  line-height: 1.6;
+}
+
+.meta-grid {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 4px 14px;
+  font-size: 13.5px;
+}
+
+.meta-label { color: var(--muted); font-weight: 600; white-space: nowrap; }
+.meta-value { color: var(--text); }
+
+.note-box {
+  background: #fffbe6;
+  border-left: 4px solid #f0c040;
+  border-radius: 4px;
+  padding: 14px 20px;
+  margin: 24px 0;
+  font-size: 13.5px;
+  color: var(--muted);
+}
+
+section {
+  margin-bottom: 48px;
+  scroll-margin-top: 24px;
+}
+
+section h2 {
+  font-size: 19px;
+  font-weight: 700;
+  color: var(--accent);
+  border-bottom: 1.5px solid var(--border);
+  padding-bottom: 8px;
+  margin-bottom: 20px;
+}
+
+section h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #2a4a6a;
+  margin: 28px 0 14px;
+  padding-top: 8px;
+  border-top: 1px dashed var(--border);
+}
+
+p { margin-bottom: 16px; text-align: justify; }
+
+.footnotes {
+  border-top: 1px solid var(--border);
+  margin-top: 32px;
+  padding-top: 16px;
+}
+
+.footnotes h4 {
+  font-size: 13px;
+  color: var(--muted);
+  font-weight: 700;
+  margin-bottom: 10px;
+  letter-spacing: 0.05em;
+}
+
+.fn-item {
+  display: flex;
+  gap: 8px;
+  font-size: 12.5px;
+  color: var(--muted);
+  margin-bottom: 8px;
+  line-height: 1.6;
+}
+
+.fn-num {
+  min-width: 24px;
+  font-weight: 700;
+  color: var(--accent);
+  font-size: 11px;
+  padding-top: 2px;
+}
+
+#referencias ol { padding-left: 22px; }
+
+#referencias li {
+  font-size: 13.5px;
+  color: var(--text);
+  margin-bottom: 10px;
+  line-height: 1.7;
+}
+
+.ref-ko {
+  display: block;
+  color: var(--muted);
+  font-size: 12.5px;
+  font-style: italic;
+  margin-top: 2px;
+}
+
+.back-to-top {
+  position: fixed;
+  bottom: 32px;
+  right: 36px;
+  background: var(--accent);
+  color: var(--white);
+  border: none;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  font-size: 18px;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  z-index: 200;
+  transition: background 0.2s;
+}
+
+.back-to-top:hover { background: #1e4266; }
+
+@media (max-width: 900px) {
+  #sidebar { display: none; }
+  #main { margin-left: 0; padding: 24px 18px 60px; }
+}
+</style>
+</head>
+<body>
+
+<aside id="sidebar">
+  <div class="sb-header">
+    <span class="sb-icon">📄</span>
+    Ealham, C. (2008)<br>
+    내전 사학사의 최근 동향<br>
+    <span style="font-weight:400; font-size:11px;">Pasado y Memoria, núm. 7</span>
+  </div>
+  <nav>
+    <a href="#intro">서론</a>
+    <a href="#historiografia">사학사의 전개</a>
+    <a href="#origenes" class="sub">내전의 기원</a>
+    <a href="#internacional" class="sub">국제화와 외국의 개입</a>
+    <a href="#militar" class="sub">군사 전략과 공화국의 저항</a>
+    <a href="#violencia" class="sub">폭력과 탄압</a>
+    <a href="#exilio" class="sub">망명</a>
+    <a href="#revisionismo">수정주의 비판</a>
+    <a href="#conclusion">결론</a>
+    <a href="#referencias">참고문헌</a>
+  </nav>
+</aside>
+
+<main id="main">
+
+  <div class="paper-header">
+    <div class="journal-badge">Pasado y Memoria. Revista de Historia Contemporánea · núm. 7 · 2008 · pp. 287–306</div>
+    <div class="paper-title-ko">내전 사학사의 최근 동향: 역사적 엄밀성 대 경직된 과거. '수정주의'가 분노한 목소리로 표현된 어제의 신화로의 회귀에 불과할 때</div>
+    <div class="paper-title-es">La historiografía reciente sobre la Guerra Civil: el rigor histórico contra el rigor mortis. Cuando el «revisionismo» no es nada más que la vuelta a los mitos de ayer expresados con la voz indignada del pasado</div>
+    <div class="meta-grid">
+      <span class="meta-label">저자</span><span class="meta-value">Chris Ealham</span>
+      <span class="meta-label">저널</span><span class="meta-value">Pasado y Memoria. Revista de Historia Contemporánea</span>
+      <span class="meta-label">권호</span><span class="meta-value">núm. 7</span>
+      <span class="meta-label">출판연도</span><span class="meta-value">2008</span>
+      <span class="meta-label">페이지</span><span class="meta-value">287–306</span>
+      <span class="meta-label">비고</span><span class="meta-value">2006년 12월 이탈리아 몬팔코네 국제 역사 학술대회 발표문을 기반으로 함</span>
+    </div>
+  </div>
+
+  <div class="note-box">
+    ※ 이 논문은 초록 없이 본문이 바로 시작됩니다. 논문 전체가 단일 흐름으로 구성되며, 중반부에 소제목 「프랑코주의의 재탕 '신화'에 맞선 엄밀한 역사 연구」가 등장합니다.
+  </div>
+
+  <!-- 서론 -->
+  <section id="intro">
+    <h2>서론</h2>
+
+    <p>스페인 내전이 지난 세기 유럽 파시즘에 맞선 투쟁의 결정적인 순간이었다면, 스페인 사람들에게 그 전쟁은 현대사에서 가장 결정적인 사건이었다. 전쟁의 종결은 거의 40년에 걸친 프랑코 독재의 탄압을 가져왔고, 어떤 의미에서는 현재까지도 민주주의의 발전을 조건 짓고 있다. 내전에 관해서는 이미 1만 5천 권이 넘는 책이 출판되었음에도 불구하고, 지금 우리는 결정적인 시기를 지나고 있기에 분쟁의 사학사에 관해 쓰기에 흥미진진한 시대를 살고 있다. 그러나 현재 사학사의 상태를 들여다보기 전에, 먼저 그 전개 과정을 살펴볼 필요가 있다.</p>
+
+    <p>수십 년 동안 내전의 사학사는 분쟁의 기원과 그 결과에 집중하는 제한된 시각을 가지고 있었다. 프랑코 독재의 긴 세월 동안, 독재의 어용 학자들은 전쟁을 불가피한 것으로, "악"의 세력—바스크인과 카탈루냐인, 무신론자, 프리메이슨, 공산주의자, 아나키스트로 이루어진 모스크바의 교묘한 손에 조종받는 다양한 연합체인 이른바 '반스페인'—에 맞선 도덕적 십자군으로 보는 시각을 강요했다.<sup>1</sup> 이 역사관은 '승자'와 '패자'의 구별을 결코 포기하지 않은 독재에 의해 탄압의 수단으로 유지되었다. 비록 분쟁이 반동적 세력의 실패한 쿠데타 이후 시작되었음에도, 우파는 내전의 책임을 좌파에게 돌리면서 사회적 저항을 위계, 가족, 종교라는 스페인의 전통적 가치에 충실한 대중을 정복하는 데 전념한 소수의 '도발자들' 또는 '빨갱이들'의 범죄적 소행으로 돌렸다. 이런 방식으로 내전은 기독교 문명의 포위된 세력이 공산주의적 허무주의의 위협을 받는 스페인을 구하기 위해 수행한 영웅적 재정복으로 제시되었다.<sup>2</sup></p>
+
+    <p>국외에서도 이 이분법적 시각은 거의 같은 형태로 지속되었다. 예를 들어, 전쟁을 '민주주의와 파시즘' 사이의 갈등으로 보는 스탈린주의적 시각이 있었다.<sup>3</sup> 분명히 프랑코파와 스탈린주의적 시각은 이 시기 서로를 강화하며, 전쟁 이전 공식 공산주의 운동의 중요성을 과장하고 스페인 혁명—아마도 역사상 가장 중요한 사회 혁명—의 중요성을 축소하는 일련의 판단에서 일치했다. 이리하여 스탈린주의자들과 프랑코주의자들 모두 인민전선 창설에서 스페인 공산당(PCE)의 역할을 과대평가하는 결과를 낳았다.<sup>4</sup></p>
+
+    <p>과거에 대부분의 역사가들이 '두 스페인'—하나는 '자유주의적, 진보적, 세속적', 다른 하나는 '전통적, 보수적, 가톨릭적'—을 이야기했다면, 지난 10년 사이 이 이분법적 개념을 극복하여 '세 스페인'을 이야기하게 되었다. 일부 역사가들에 따르면 제3의 길은 중도를 찾으려 한 이들의 것이다.<sup>5</sup> 다른 이들은 '제3의 스페인'을 '혁명적 스페인'으로 보며, 그 영향력이 중도보다 훨씬 더 컸다고 여긴다.<sup>6</sup> 또 다른 시사적인 접근은 20세기 초 수십 년간 스페인 사회의 분열을 강조한다.<sup>7</sup> 현재는 스페인 전쟁이 복합적인 원인들로 인해 발생했다는 것도 수용되어 있다. 예를 들어 산토스 훌리아(Santos Juliá)는 '많은 전쟁들'—소작농 대 대지주, 노동자 대 자본가, 연방주의자 대 중앙집권주의자, 공화주의자 대 군주주의자—등을 이야기한다.<sup>8</sup></p>
+
+    <div class="footnotes">
+      <h4>각주</h4>
+      <div class="fn-item"><span class="fn-num">1</span><span>참조: Comín Colomer, Eduardo, <em>Historia del Partido Comunista de España</em> (스페인 공산당사), 3권, Madrid, 1965.</span></div>
+      <div class="fn-item"><span class="fn-num">2</span><span>사례로: Marrero, Vicente, <em>La guerra española y el trust de cerebros</em> (스페인 전쟁과 두뇌 집단), Madrid, 1961; Calvo Serer, Rafael, <em>Los motivos de las luchas intelectuales</em> (지적 투쟁의 동기), Madrid, 1955 및 동저자, <em>La literatura universal sobre la guerra de España</em> (스페인 전쟁에 관한 세계 문학), Madrid, 1962.</span></div>
+      <div class="fn-item"><span class="fn-num">3</span><span>Ibárruri, Dolores, et al., <em>Guerra y revolución en España, 1936–1939</em> (스페인의 전쟁과 혁명, 1936–1939), 4권, Moscú, 1966–1971.</span></div>
+      <div class="fn-item"><span class="fn-num">4</span><span>Comín Colomer, Eduardo, <em>Historia del anarquismo español</em> (스페인 아나키즘사), 2권, Barcelona, 1956, pp. 178–80; Ibárruri, Dolores, <em>El único camino</em> (유일한 길), Paris, pp. 215–219.</span></div>
+      <div class="fn-item"><span class="fn-num">5</span><span>Preston, Paul, <em>Las tres Españas del 36</em> (36년의 세 스페인), Barcelona, 1998; Ruiz Portella, Javier (ed.), <em>La Guerra Civil: ¿dos o tres Españas?</em> (내전: 두 스페인인가 세 스페인인가?), Barcelona, 1999.</span></div>
+      <div class="fn-item"><span class="fn-num">6</span><span>Moradiellos, Enrique, <em>1936. Los mitos de la Guerra Civil</em> (1936. 내전의 신화들), Barcelona, 2004.</span></div>
+      <div class="fn-item"><span class="fn-num">7</span><span>특히 다음을 참조: Graham, Helen, <em>Breve Historia de la Guerra Civil</em> (내전 소사), Madrid, 2006 및 <em>La República española en guerra (1936–1939)</em> (전쟁 중의 스페인 공화국, 1936–1939), Madrid, 2006.</span></div>
+      <div class="fn-item"><span class="fn-num">8</span><span>Juliá, Santos, <em>Un siglo de España. Política y sociedad</em> (스페인의 한 세기. 정치와 사회), Madrid, 1999, p. 118.</span></div>
+    </div>
+  </section>
+
+  <!-- 사학사의 전개 -->
+  <section id="historiografia">
+    <h2>사학사의 전개</h2>
+
+    <p>독재의 종식과 수십 년간 '금기'였던 주제들을 자유롭게 이야기할 수 있게 된 것은 전쟁 사학사의 쇄신을 가능하게 했으며, 이 사학사는 지난 30년 동안 상승 곡선을 그려왔다.<sup>9</sup> 오늘날에는 이전에 역사에서 자리를 부정당했던 집단들에 관한 연구가 많이 나와 있다.<sup>10</sup> 프랑코 사망 직후 노동 운동에 관한 방대한 저작들이 출판된 것은 노동조합에 대한 독재의 야만적으로 탄압적인 성격의 반영일 것이다.<sup>11</sup> 그러나 1980년대 초에는 민주적 전환이 역사 연구의 초점을 바꿔놓았음에도 많은 역사가들의 방법론이 여전히 과거의 무게에 제약받고 있었고, 사학사의 쇄신이 그다지 강하지 않았음이 드러났다. 무엇보다도 연구 방법은 전통적인 정치사 쪽으로 지나치게 기울어져 있었고, 이것이 사회사의 발전을 제한했다. 노동사의 경우, 노동조합의 저변 문화는 거의 모든 경우에 무시되었다. 이리하여 대부분의 연구들은 노동 운동 기관들의 역사, 노동조합과 정당 사이의 조직적 관계, 그리고 거의 비판 없이 분석되어 결국 노동 운동 지도자들을 '왕' 또는 '세속적 성인'으로 묘사하는 '위인 역사'의 새 버전에 불과한 것이 되어버린 이념적 논쟁들에 집중했다.<sup>12</sup> 이러한 맥락에서 호세 알바레스 훙코(José Álvarez Junco)와 마누엘 페레스 레데스마(Manuel Pérez Ledesma)는 1982년 스페인 현대사학사 내에서, 특히 사회사와 노동사에 관해, '제2의 단절'의 필요성을 논하는 유명한 글을 발표했다.<sup>13</sup></p>
+
+    <p>마찬가지로 1970년대와 1980년대의 정치적 맥락도 포스트프랑코 사학사에 자체적인 제약을 부과했다. 새로운 민주주의에 안정을 부여하기 위해, 정치 계급은 쿠데타에 대한 대중의 두려움을 이용하여 이른바 '망각의 협약'으로 알려지게 된 것을 만들어냈다. 이 '망각의 협약'에 따르면, 전쟁과 분쟁 중·후의 탄압에 대한 책임은 모든 스페인 사람들에게 똑같이 있었다.<sup>14</sup> 민주화 이행과 '민족 화해'를 위태롭게 하지 않기 위해서는 내전의 책임에 관한 어려운 질문들을 하지 않는 것이 더 나았다. 지불해야 할 대가는 '기억 상실'이었다. 실제로 '패자'들은 탄압의 고통스러운 기억을 구석으로 밀어 넣어야 했다.<sup>15</sup> 스페인의 민주적 이행은 남아프리카의 진실화해위원회와 유사한 어떤 것도 가지지 못했다. 사실 스페인에서는 정반대의 일이 일어났다. 전쟁 중과 그 후 공화주의자들의 탄압에 관한 공적 기억을 요구하는 목소리들은 억압되었고, 국가 보안군이나 우파 준군사 집단의 구성원들은 결코 재판을 받지 않았다. 이 모든 것 때문에 1980년대 초에는, 역사 연구의 초점 전환에도 불구하고, 스페인 내전 사학사에는 여전히 '금기'인 주제들이 있었다.</p>
+
+    <section id="origenes">
+      <h3>내전의 기원과 사회적 동원</h3>
+
+      <p>그러나 상황은 변하려 하고 있었다. 1980년대부터 시작된 연구들은 프랑코주의 탄압 피해자들의 기억 회복 과정에서 결정적인 역할을 했다.<sup>16</sup> 이 지역 연구들은 탄압의 중요한 지도를 그려냈기에 매우 중요한 역할을 했다.<sup>17</sup> 이 작업들의 공로는 막대한데, 독재 기간 동안 그 존재를 지우려 했고 가장 심한 탄압을 받은 집단들의 역사를 재구성하는 데 필요한 단편적이고 분산된 문서들을 재구성하기 위해서는 상당한 전문성과 세심함이 필요하기 때문이다. 이를 통해 우리는 프랑코주의가 탄압한 집단들이 어떤 '음모'의 일부가 아니라 오히려 시민 사회 내에 깊이 뿌리내리고 있었음을 알 수 있다.</p>
+
+      <p>이 경향은 1990년대와, 더 최근에는 전쟁 70주년 기념 행사들 동안 훨씬 더 두드러졌다.<sup>18</sup> 오늘날 스페인에서는 민주주의의 공고화와 극우에 대한 두려움에 얽매이지 않는 새로운 세대의 집권으로, 내전과 전후에 대한 대중적 관심이 새로워졌다. 점점 더 많은 사람들이 우파의 탄압에 대해 감히 질문을 제기하고 있다. 집단 매장지, 투옥, 강제 노동, 그리고 다른 형태의 탄압에 관한 많은 이야기들이 세상에 나왔다.<sup>19</sup> 한편, 역사 기억 회복 협회(Asociación para la Recuperación de la Memoria Histórica)와 프랑코 독재 희생자 가족들의 지칠 줄 모르는 노력은 집단 매장지에서 시신들을 발굴하고 식별하는 작업과, 이전에 숨겨져 있던 탄압의 경관들을 지도화하는 작업으로 이어졌다. 독재 시절과 민주화 이행기에 프랑코 희생자들의 숨겨진 무덤에 대해 감히 말하지 못하게 했던 두려움이 이제 사라졌다. 그렇기에 오늘날에는 전쟁과 그 인간적 결과에 관해 해결되지 않은 과제들이 남아 있다는 것이 일반적으로 받아들여진다. 진정한 화해가 이루어지기 위해서는 과거에 대한 책임의 공적 인정이 있어야 한다고 주장하는 이들도 있다. 공화주의 기억의 회복을 위한 이러한 요구들은 독재 기간 탄압받은 이들에 대한 법적 인정과 금전적 보상을 위한 투쟁과 맞닿아 있다. 마침내 스페인 정부는—많은 이들이 혜택을 받기에 너무 늦게, 사실 너무나 늦게—역사 기억법(Ley de la Memoria Histórica) 초안을 승인했다. 이 법안은 적어도 프랑코 정권에 의해 살해된 이들에게 존엄성을 제공하고, 강제 수용소와 노동 대대의 생존자들처럼 인도에 반한 죄의 피해자들에게 제한적인 금전적 보상을 제공할 수 있을 것이다.</p>
+
+      <p>이것이 전쟁 사학사의 최근 변화들을 둘러싼 맥락이다. 이제 이 변화들을 더 자세히 분석해 보겠다.</p>
+
+      <p>내전의 직접적 기원과 관련하여, 오늘날에는 전쟁 이전의 증가하는 사회적·정치적 동원을 기술하는 훌륭한 지역 연구들이 있다.<sup>20</sup> 따라서 우리는 전쟁이 공산주의적 전복의 결과가 아니었음을 알고 있다. 폭력이 성장한 맥락과 일부 노동조합 및 정당들이 준군사 조직을 창설한 방식에 관한 중요한 연구들도 나왔다.<sup>21</sup> 그러나 이제 더 이상 일반적으로 수용되지 않는 것은 무장 충돌이 불가피했다는 것이다. 이것은 라파엘 크루스(Rafael Cruz)가 내전 이전 몇 달에 관해 최근 출판한 중요한 책에서 확인된다.<sup>22</sup> 크루스는 스페인 우파가 자신들의 '두려움의 담론'을 언론에서 일상적 폭력의 고립된 사례들을 과장하고 갈등을 부풀리는 방식으로 표현하며 공화국을 신뢰 실추시키려 했음을 보여 준다.</p>
+
+      <p>현재, 역사가들이 특별한 관심을 가지고 수용하는 한 가지 논거는 스페인의 상황을 서유럽 전체에 영향을 미치는 일반적 과정들의 반영으로 제시한다. 어떤 측면에서 1930년대와 1940년대 스페인의 위기는 거의 모든 유럽과의 유사성을 부각시킨다.<sup>23</sup> 이 논거에 따르면, 내전은 전간기 위기에 관한 그 광범위한 유럽사의 스페인 장이다: 1936년 스페인은 1922년 이탈리아와 1933년 독일처럼 파시즘의 심연 앞에 선 나라였다. 내전 이전 스페인에서 우리는 우파의 급진화와 독재적 외국 정부들, 특히 나치 독일에 대한 상류층과 중간 계급의 늘어나는 경탄의 사례를 가지고 있다.<sup>24</sup></p>
+    </section>
+
+    <section id="internacional">
+      <h3>내전의 국제화와 외국의 개입</h3>
+
+      <p>오늘날에는 분쟁의 기원이 국내적이었음에도 내전이 시작되자마자 국제화되었다는 것도 수용된다. 앙헬 비냐스(Ángel Viñas)는 전쟁의 국제화에 관한 가장 중요한 저작들의 저자다.<sup>25</sup> 현재 비냐스는 역사가들의 미래 참조점이 될 전쟁의 반향에 관한 3부작을 계획하고 있다. 제1권은 스페인 공화국과 소련의 관계를 다루고<sup>26</sup>, 제2권은 전쟁 전반에 걸친 민주주의 국가들(특히 프랑스와 영국)의 입장에 헌정되며<sup>27</sup>, 제3권은 파시스트 독재 국가들의 프랑코에 대한 지원을 분석한다.</p>
+
+      <p>주로 러시아 문서에 기반한 책 『공화국의 고독(La soledad de la República)』에서 우리는 불개입 정책이 공화국을 소련의 품 안으로 몰아갔음을 알 수 있다. 러시아 문서들의 공개와 지금까지 알려지지 않았던 외교 문서들에 대한 접근은 소련의 스페인 내전 개입에 관한 중요한 연구들을 낳았다. 제럴드 하우슨(Gerald Howson)의 대작<sup>28</sup>은 스페인에 보내진 소련 무기와 비행기의 수량과 불균등한 품질에 관한 많은 정보를 밝혀냈다.</p>
+
+      <p>러시아 문서들이 여전히 혼란스러운 상태이기 때문에 아직 해야 할 일이 많이 남아 있을 가능성이 높다. 따라서 소련의 역할에 관한 합의가 아직 이루어지지 않은 것은 놀랍지 않으며, 냉전이 수십 년 전에 끝났음에도 불구하고 스페인 분쟁에서의 소련 참여를 둘러싼 격렬한 논쟁이 가라앉을 것 같지 않다.<sup>29</sup> 냉전 시기의 소련이 스페인에서 권력을 장악하려 했다는 주장은 최근 러시아계 미국인 전문가 집단의 편향된 연구에서 다시 등장했는데<sup>30</sup>, 이는 역사적 매카시즘이라는 비판을 받았다.<sup>31</sup></p>
+
+      <p>모스크바의 코민테른이 조직한 연대 운동과 관련하여, 레미 스쿨레츠키(Remi Skouletsky)는 국제 여단의 역사 검토에서 소련 자료들의 공개를 가장 잘 활용했다.<sup>32</sup> 그의 책 『전선의 새소식(Novedad en el frente)』은 유럽 각지에 흩어진 문서들을 10년 이상 연구한 결실이며, 국가별 역사들의 한계를 피하면서 국제 여단에 관한 유일한 엄밀한 전체적 연구라는 큰 장점을 가진다. 스쿨레츠키는 여단원들의 사회적 기원, 정치적·개인적 야망, 조직을 분석한다. 그의 연구는 오랫동안 추정되어 온 것—자원병들의 대다수는 젊고 미혼인 노동 계급 출신으로 파시스트 침략으로부터 공화국을 방어하기 위해서뿐만 아니라 매우 막연한 의미에서 그들이 '공산주의'라고 이해한 것을 위해 싸우기 위해 스페인에 왔다—을 확인해 주었다.</p>
+
+      <p>영국 정부의 대응은 분쟁의 전개에 있어 핵심적이었다. 현재 스페인에서의 영국 정책이 유럽 정세를 진정시키는 데 기여하지 못하고 오히려 독재자들을 더 공격적으로 만들었다는 데 역사가들 사이에 합의가 있다.<sup>33</sup> 영국이 히틀러의 개입에 반응하지 않자, 나치 정부는 스페인에서 완전한 자유로 행동할 수 있다는 결론을 내렸지만, 때 이른 전쟁을 도발해서는 안 된다는 점은 의식했다. 비록 영국 정부가 공식적으로는 새로운 세계 대전 회피 의지를 강조했지만, 그 정책은 강한 반공화국적·반공주의적 성향과 스페인에서의 경제적 이익에 크게 영향받았다. 사실 여러 연구들은 영국 정부의 최우선 과제가 스페인에서의 영국 상업적 이익을 가장 잘 보호하는 정치적 틀을 찾는 것이었음을 보여 주었다. 많은 면에서 영국의 국제 정책은 이탈리아나 독일보다 공화국에 더 위험했다: 프랑코파의 승리가 영국 엘리트들이 바라는 결말이었고, 불개입이 그것을 이루는 수단이었다. 역설적으로 불개입에서의 영국의 적대적 입장은 공화국의 소련 의존도를 증가시켰고, 이는 다시 공화국이 전복적 정권이라는 영국 외교 정책 담당자들의 의심을 강화했다.<sup>34</sup></p>
+
+      <p>최근 이 주제에 관한 연구들은 이탈리아와 독일의 군사 지원이 무기와 자재의 지속적인 공급 및 군사적 훈련과 자문 등 모든 면에서 프랑코의 승리에 결정적이었음을 보여 준다. 이탈리아 개입에 관한 최근 연구들에 따르면, 무솔리니는 히틀러에 의해 반란군에 대한 더 큰 개입을 강요당한 것이 아니라, 이전 시기 동안 극우를 도운 반공화국적 감정에 이끌려 처음부터 대단한 열의로 내전에 참여했다. 최근 한 책에서 모르텐 헤이베르그(Morten Heiberg)는 이미 잘 연구된 것으로 여겨졌던 주제에 새로운 접근법을 제시하며 혁신적인 결론에 도달했다. 그때까지 접근 불가능했던 이탈리아 자료들에 기반하여, 헤이베르그는 두체(Duce)가 그의 '마레 노스트룸(mare nostrum)' 계획과 연결된 자신의 제국적 이익과 꿈에 이끌려 스페인에 개입했음을 보여 준다. 논리적으로, 일단 전쟁에 개입하고 과달라하라에서 이탈리아 군대가 패배한 후, 파시즘의 국제적 위상은 스페인의 반란군 승리에 의존하게 되었다.</p>
+
+      <p>따라서 이탈리아의 참여는 나치 독일의 참여보다<sup>35</sup> 훨씬 더 강하고 이전에 생각했던 것보다 훨씬 더 실질적이었던 것으로 보인다.<sup>36</sup> 특히 무솔리니가 보낸 높은 수의 병사들은 프랑코의 승리에 결정적이었다. 따라서 이탈리아 파시즘은 실질적으로 스페인 공화국과 전쟁 중이었다고 말할 수 있다. 무솔리니에게 스페인 모험은 전혀 즐겁지 않았다. 스페인 내전에서의 집중적이고 대규모 개입은 이탈리아 군사력을 심각하게 약화시켜, 제2차 세계 대전 초기 이탈리아의 군사적 역량을 떨어뜨렸다. 게다가 그는 프랑코의 승리가 신속할 것이고 그 후 복종적인 프랑코를 자신의 지배하에 두게 될 것이라 확신했다. 그러나 프랑코의 스페인은 무솔리니가 기대했던 충실한 동맹이 되지 않았다. 프랑코는 유럽 전쟁 동안 중립을 지켰고, 더욱 나쁘게도 결국 북아프리카 프랑스 식민지 통제를 둘러싼 이탈리아의 잠재적 경쟁자가 되었다.<sup>34</sup></p>
+
+      <p>전쟁 중 무기 공급과 관련하여, 하우슨의 책은 철저한 연구를 통해 공화국이 직면해야 했던 적대적인 국제적 맥락을 보여 주며 중요한 결론에 도달한다. 전쟁 동안 스페인에 도착한 무기에 관한 모든 것을 상세히 분석하면서, 하우슨은 두 진영이 국제적 후원자들로부터 대략 같은 지원을 받았다는 낡은 프랑코주의 신화를 무너뜨린다. 하우슨은 공화국의 죽음이 소련의 조건부 지원, 영국의 적대적 태도, 이탈리아와 독일의 호전성의 결과였음을 보여 준다.</p>
+    </section>
+
+    <section id="militar">
+      <h3>군사 전략과 공화국의 저항</h3>
+
+      <p>민족주의 세력이 그토록 많은 유리한 요소들을 가지고 있었으므로, 전쟁이 3년이나 지속된 것이 민족주의 군사 전략과 프랑코 장군의 전투 능력에 관한 논쟁을 불러일으킨 것은 놀랍지 않다.<sup>37</sup> 그러나 폴 프레스턴(Paul Preston)이 독재자의 전기에서 설명하듯, 프랑코는 나폴레옹 이후 유럽 역사상 가장 젊은 장군이 되었는데, 그것은 그가 천재여서가 아니라 피에 굶주렸기 때문이었고, 이런 자질은 스페인 군대의 고위 장교들이 매우 높이 평가하는 것이었다. 다른 한편, 총사령관의 전략은 적의 섬멸에 기반하고 있었으며, 이는 전쟁이 길어질 수밖에 없음을 의미했다. 이리하여 『프랑코(Franco)』와 『복수의 정치(La política de la venganza. El fascismo y el militarismo en la España del siglo XX)』에서 프레스턴은 공화국 영토를 점진적으로 정복하는 프랑코파 군사 전략이 후방에서의 체계적인 탄압을 용이하게 하는 것을 목표로 했음을 보여 준다.<sup>38</sup></p>
+
+      <p>이에 비해, 무기 부족이 공화주의자들의 군사적 투쟁에 가장 큰 영향을 미친 요소였다. 공화국 진영에 대한 무기 공급은 지속적인 공세를 가능하게 하지 못했다. 지배적인 공화국 군사 전략은 상당히 보수적이었는데, 스페인의 전쟁이 정통적인 군대에 의해 수행되는 정통적인 전쟁임을 세상에 납득시켜야 하는 정치적 필요의 산물이었다. 게릴라전은 스페인의 지형이 19세기 초 프랑스 군대에 맞선 해방 전쟁에서 처음 사용된 이 전술에 적합했음에도 불구하고 거의 활용되지 않았다. 마찬가지로 공화국 당국은 국제적인 민주주의 국가들을 소외시키고 모로코에서의 자신들의 이익에 손해를 끼칠까 두려워 모로코 독립을 선언하기를 꺼렸다. 모로코 독립은 프랑코파 후방에서 심각한 문제를 일으키고 반은 무어인으로 이루어진 군대 내부에서 문제를 야기했을 것이다.</p>
+
+      <p>이 군사 전술은 전쟁 전반에 걸쳐 혁명적 충동에 맞서 반파시스트 진영에서 자리를 잡은 정통 공화주의·공산주의 노선의 영향을 반영한다. 오늘날 공화국 진영에서 전쟁 처음 몇 주간 권력의 '이원화'보다는 분열을 가져온 깊은 사회 혁명이 일어났다는 것이 받아들여진 사실이다. 소련이 스페인 혁명에 반대했지만, 최근 사학사는 보통 혁명 실패의 유일한 이유로 공식 공산주의의 책략을 강조하지 않으며, '반파시스트 단결'을 강화하기 위해 공화국 국가의 기관들과 '정치 게임'에 참여하는 역사적 결정을 내린 아나키스트 지도자들의 정치적·이념적·전략적 한계에 더 초점을 맞춘다.<sup>39</sup> 그러나 전쟁의 새로운 맥락과 전통적 좌파의 위기 속에서 PCE의 부상을 부정할 수는 없다.</p>
+
+      <p>대부분의 역사가들이 공화국의 도래가 사회적 동원의 증가를 가져왔다는 데 동의하는 반면, 마이클 사이드먼(Michael Seidman)은 대부분의 스페인 사람들이 정치에 무관심했다고 주장하며 공화국 진영의 민중적 혁명의 존재에 의문을 제기했다.<sup>40</sup> 마찬가지로 사이드먼은 전쟁 피로감—예를 들어 탈영 행위에서 볼 수 있는—을 언급하며 공화국에 대한 집단적 지지라는 생각에 의문을 제기한다. 그러나 사이드먼은 공화국이 프랑코, 히틀러, 무솔리니의 공세에 그토록 오랫동안 저항할 수 있었던 것이 실질적으로 유일하고 불가결한 자원인 민중적 지지 없이 어떻게 가능했는지 설명하지 못한다. 또한 사이드먼의 제한적인 접근법은 파시즘에 맞선 마드리드 시민들의 집단적이고 지속적인 투쟁을 설명하지 못한다.</p>
+    </section>
+
+    <section id="violencia">
+      <h3>폭력과 탄압</h3>
+
+      <p>내전에서의 폭력 문제는 여전히 많은 현재성을 가진다. 에두아르도 곤살레스 카예하(Eduardo González Calleja)는 스페인 정치사에서 폭력의 역할이라는 일반적인 문제를 지적이고 전문적으로 다루었다.<sup>41</sup> 약 35만 명의 스페인 사람들이 전쟁의 공식적 기간 동안 목숨을 잃었다. 이 모든 사망자들 중 높은 비율이 전장에서 발생한 것이 아니라 후방에서 자행된 탄압의 결과였다.</p>
+
+      <p>역사가들 사이의 전반적인 합의는 공화국 진영의 공포가 민족주의 진영의 공포와 달랐다는 것이다. 공화국 진영의 공포는 자발적인 성격을 띠었고 당국이 곧 그것을 억제했기 때문이다.<sup>42</sup> 지역 연구들은 공화국 진영에서 약 5만 건의 처형을 지적하며, 그 절반은 전쟁 처음 6주 동안 이루어졌다.<sup>43</sup> 오늘날 공화국 진영 폭력의 상당 부분이 가장 혁명적인 집단들과 무관했다는 것이 알려져 있다. 예를 들어 바르셀로나에서—공화국의 가장 중요한 혁명적 중심이었던—발생한 살인의 대부분은 지역 당국의 소행이었다. 더불어 지역 연구들은 공화국 후방에서의 탄압이 아나키즘이 강한 지역이나 그렇지 않은 지역 모두에서 광범위하게 퍼져 있었음을 보여 주었다.<sup>44</sup> 공화국 진영의 탄압과 관련하여 매우 논란이 많은 주제는 노동자통일마르크스주의당(POUM)—전쟁 중 소외된 반스탈린주의 반체제 공산주의 정당—과 CNT-FAI 지도자들의 인민전선 정책을 지지하지 않은 아나키스트 전투원들에 대한 국가의 공세다. 최초로 활용된 1차 자료들에 기반한 프랑수아 고디쇼(François Godicheau)의 책 덕분에, 우리는 이제 1937년 '5월 사건' 이후 혁명가들에 대한 탄압에 관해 매우 광범위한 분석을 갖게 되었다.<sup>45</sup></p>
+
+      <p>공화국 진영의 탄압과 달리, 민족주의자들의 테러 캠페인은 체계적이고, 도처에 만연해 있었으며, 사전에 계획된 것이었다. 공화국 진영의 테러에 대한 반응이나 전쟁 경과의 결과로 발생한 것이 아니었다. 가장 중요한 새로운 연구들은 프랑코 테러가 이탈리아와 독일에서 같은 시대에 일어난 것과 마찬가지로 탄압적인 국가 건설에서 중심적인 역할을 했다는 데 일치한다.<sup>46</sup> 전쟁 중과 후에, 정치적 적에 대한 프랑코 폭력은 헬렌 그레이엄(Helen Graham)의 견해에 따르면 독일 나치즘이나 이탈리아 파시즘만큼이나 테러적 성격을 가졌으며, 히틀러의 독일만큼 "야만적으로 위계적이고 차별적"이었다.<sup>47</sup> 그러나 파시즘과 나치즘과 달리 프랑코 체제는 제2차 세계 대전 중 군사적으로도 정치적으로도 패배하지 않았다. 1939년 말, 체제의 계산에 따르면 프랑코 감옥에는 27만 명이 넘는 남녀가 있었고, 그곳에서 정치적 처형이 자행되었으며 구타, 자살, 굶주림, 전염병이 만연했다. 20만 명이 넘는 스페인 사람들이 정치적 탄압, 굶주림, 질병의 결과로 '프랑코의 평화' 처음 몇 해 동안 사망한 것으로 추정된다. 나치 독일에서처럼 정치범들은 강제 노동에 동원되었고, 끔찍한 식단과 최소한의 위생 시설 및 의료 혜택 없이 착취당했다. 일반 인구에서도 전쟁만이 아니라 프랑코의 경제적·사회적 정책으로 인한 굶주림과 질병으로 수만 명이 사망했다.<sup>48</sup></p>
+
+      <p>가까운 미래에 우리는 그레이엄이 '프랑코주의의 형벌 우주'라고 부른 것에 관한 두 저명한 영국 스페인학자—폴 프레스턴과 헬렌 그레이엄—의 진행 중인 연구 결과를 접할 수 있을 것이다. 이미 우리는 그레이엄의 『내전 소사(Breve Historia de la Guerra Civil)』에서 그녀의 명석한 분석을 볼 기회가 있었다. 거기서 그녀는 냉정하게 독재 기간 동안 국가 탄압의 다양한 기능을 해부하며, 전통적 질서의 재부과라는 틀 안에서의 그 중요성, 그리고 '패자'들에게 '권력의 교훈과 패배의 의미'를 보여 주는 '갈등적인 사회 변화의 잔인한 관리'에서의 그 규율적 역할을 분석한다.<sup>49</sup></p>
+    </section>
+
+    <section id="exilio">
+      <h3>망명</h3>
+
+      <p>분명히 많은 사람들이 '새로운 국가' 안에서 살 수 없었고 약 50만 명이 전쟁 후 망명했다. 이들 중 수천 명이 프랑코의 복수를 피해 도망친 후 프랑스 난민 수용소에서 끝을 맞이했다. 1940년 5월 이후 많은 이 공화주의자들은 프랑스 레지스탕스에서 싸웠다. 체포된 이들 중 독일은 많은 수를 처형하기 위해 스페인으로 송환했고, 다른 이들은 나치 절멸 수용소에 수용되었다. 5천에서 7천 명에 이르는 스페인 망명자들이 마우트하우젠 수용소에서 사망했는데, 이는 데이비드 윙게이트 파이크(David Wingeate Pike)의 감동적이고 충격적인 연구에서 밝혀졌다.<sup>50</sup></p>
+    </section>
+  </section>
+
+  <!-- 수정주의 비판 -->
+  <section id="revisionismo">
+    <h2>프랑코주의의 재탕 '신화'에 맞선 엄밀한 역사 연구</h2>
+
+    <p>최근 몇 년간 '전쟁의 손자들'에 의한 공화주의 기억의 회복은 분쟁을 둘러싼 새로운 질문들을 제기하게 했다. 공화주의 가족의 아이들이 정부에 의해 압수되어 반스페인을 근절하기 위한 체제 캠페인의 일환으로 가톨릭 고아원에 보내지거나 입양된 사례들이 있다.<sup>51</sup> 사회사 역시 중요한 역할을 했는데, 탄압의 일상적이고 세속적인 성격과 광범위한 두려움의 감각이 어떻게 자리 잡았는지를 개략했다. 또한 젠더사의 중요성도 강조되어야 한다. 우리는 '빨갱이 여성들'이 퇴폐적인 여성으로 묘사되어 체계적으로 공개적으로 굴욕을 당하고 프랑코 군대에 의해 강간당했음을 알고 있다.<sup>52</sup> 독재 기간 동안 강제 노동의 역할은 지금까지 거의 탐구되지 않은 또 다른 주제다.<sup>53</sup></p>
+
+    <p>역사와 마찬가지로 사학사에도 아이러니가 있다. 이제 더 젊은 세대가 자신들의 역사의 탄압적 과거와 대면하고 있을 때, 스페인 우파의 일부는 독재 범죄에 대한 최근의 검토에 분개하며 공격적으로 반응하고, 프랑코주의 시대에 만들어진 낡은 신화들을 되살리려 하고 있다. 그러나 오늘날 신빙성을 잃은 역사 서사의 재활용과 동일시되기를 원하는 저자나 출판사는 없다. 그것을 피하기 위해, 프랑코주의 '사학사'의 전설과 우화들은 현재 좌파 지식인들이 스페인 대학들을 통제하며 퍼뜨리고 있다고 추정되는 '내전의 신화'에 대한 수정으로 제시된다.<sup>54</sup> 이 재활용 작업은 좌파를 악마화하고 주요 보수 정당인 국민당(PP)의 반카탈루냐·반바스크 프로그램을 지지하는 데 항상 열심인 우파 미디어(민영 텔레비전, 라디오 방송, 인쇄 언론)에서 전례 없는 보도를 통해 막대한 혜택을 받았다. 예를 들어 PP의 '싱크탱크'인 FAES 재단은 미국 역사가 스탠리 페인(Stanley Payne)의 작업을 적극적으로 후원한다.</p>
+
+    <p>페인은 전문 역사가들 중 유일하게 피오 모아(Pío Moa)를 공개적으로 지지한다. 모아는 극우와 많은 보수주의자들이 가장 좋아하는 '역사가'가 된 논객이다. 모아의 책 중 하나의 서문을 쓴 것 외에도, 페인은 프랑코주의에 관한 대중적 역사 서사에 대한 모아의 '재해석'(독창성이 전혀 없고 단순한 되새김에 불과한)을 열렬히 옹호한다. 사실 페인은 프랑코주의 스페인의 해안을 향해 역류하며, 모아를 제외하고는 스페인 국적의 역사가들이 내전에 관해 쓰기 위한 냉정함과 성숙함이 없으며, 매우 양극화된 맥락에서 입장을 취해 왔다고 그들을 비난한다. 페인의 독특한 입장의 핵심은 거의 모든 서방의 문화적 병폐 중 가장 해로운 것인 '정치적 올바름'에 대한 그의 적대감인데, 그것이 전문 역사가들의 신뢰성을 훼손하고 그들을 새로운 사회민주주의적 합의의 대리인으로 만들었다는 것이다.<sup>55</sup> 또한 페인은 학자들이 모아처럼 비전문 역사가들에게 지적 오만함을 보인다고 비판하며, 훌륭한 역사 작업이 학문 세계에서만 나올 수 있다고 믿는다. 그의 최근 출판물의 낮은 품질을 보면, 페인은 이 마지막 주장에 신빙성을 부여하는 것 같다.</p>
+
+    <p>사실, 접근 방식은 제쳐두고, 페인과 모아를 비냐스, 프레스턴, 스쿨레츠키, 그레이엄, 곤살레스 카예하, 하우슨, 크루스 같은 역사가들과 구별하는 것은, 최근에 전자는 도넛처럼 책을 찍어내는 반면 후자는 그들이 접할 수 있는 참고 문헌과 문서 자료들을 꼼꼼히 연구하고 조사하는 데 수년을 보낸다는 점이다. 근본적으로 그것은 게으른 역사가와 부지런한 역사가의 문제가 아니라 본질적으로 정치적인—더 정확히는 잘못된 방향으로 정치적인—문제다. 프랑코주의의 재탕 신화들의 새로운 대변자들은 자신들의 '작업'을 시작하기 전에 이미 하고 싶은 말을 알고 있다. 왜냐하면 그들의 '메시지'는 새로운 것이 아니기 때문이다—그것은 이미 리카르도 데 라 시에르바(Ricardo de la Cierva)나 에두아르도 코민 코로메르(Eduardo Comín Colomer) 같은 프랑코 시대의 '위대한' 역사가들이 써 놓은 것이다. 그들의 후계자들에게 그것은 단지 자신들의 과거 '해석'에 맞도록 참조하는 자료들(그리 많지도 않은)을 다루는 문제일 뿐이다. 실제로 그들이 하는 것은 역사가 아니라 정치다. 이리하여 페인은 1930년대 좌파를 비판하면서 오늘날 좌파에 맞선 무기를 만들어내거나, 그가 '좌파의 뒤틀린 논리'라고 부르는—과거 폭력의 거의 모든 책임이 있는—것을 만들어낸다.<sup>56</sup> 페인에 따르면, 전쟁 이전 가장 중요한 우파 조직으로 많은 이들이 권위주의적 또는 반파시스트 집단으로 여기는 스페인 자치우파연맹(CEDA)은 '합법주의적'(p.309)이고 '합리적'이며 심지어 '온건한'(p.100)이었다. 그러나 페인은 CEDA 내 일부 집단들의 파시즘과의 연애, 또는 나중에 팔랑헤에 가담한 그 청년 운동 '청년 행동당(JAP)'의 폭력에 대해서는 언급하지 않는다. 결국 인민전선이 승리한 후 우파는 스페인의 민주 정부의 개혁적 열망을 막기 위한 쿠데타를 조직하려 음모를 꾸몄다. 프레스턴의 말처럼, 우파는 경기에서 진 후 경기장을 파괴하는 축구 팀처럼 행동했다.<sup>57</sup> 사실 페인은 『소련, 공산주의, 그리고 스페인의 혁명: (1931–1939)(Unión Soviética, comunismo y revolución en España: (1931–1939))』에서 CEDA 정부가 '아마도 공화주의 민주주의의 종말을 가져왔을 것'이라고 솔직하게 인정한다.<sup>58</sup></p>
+
+    <p>좌파에 대한 페인의 끊임없는 공격의 행렬과 우파에 대한 그의 온화함은 스페인 사학사에 대한, 구체적으로는 스페인 역사가들이 편을 든다는 비난에 대한 그의 비판의 무게를 분명히 떨어뜨린다. 페인이 먼저 편을 드는 사람이기에, 스페인 현대사 역사가들의 대다수가—외국인이든 아니든—서로 매우 다른 입장에서 페인이 그토록 열성적으로 옹호하는 신화들을 산산조각 냈다는 것 외에 달리 결론 내릴 수 없다.</p>
+
+    <div class="footnotes">
+      <h4>각주</h4>
+      <div class="fn-item"><span class="fn-num">9</span><span>Núñez-Seixas, Xose-Manoel, "New Interpretations of the Spanish Civil War" (스페인 내전의 새로운 해석들), <em>Contemporary European History</em>, n.º 13, 4 (2004), pp. 517–527.</span></div>
+      <div class="fn-item"><span class="fn-num">10</span><span>예로: Díez Medrano, Juan, <em>Naciones divididas. Clase, política y nacionalismo en el País Vasco y Cataluña</em> (분열된 민족들. 바스크 지방과 카탈루냐의 계급, 정치, 민족주의), Madrid, 1999 외 다수.</span></div>
+      <div class="fn-item"><span class="fn-num">11</span><span>Balcells, Albert, <em>Marxismo y catalanismo, 1930–1936</em>, Barcelona, 1977 외 다수.</span></div>
+      <div class="fn-item"><span class="fn-num">12</span><span>Juliá, Santos, "Fieles y mártires. Raíces religiosas de algunas prácticas sindicales en la España de los años treinta" (신실한 자들과 순교자들. 1930년대 스페인 노동조합 관행의 종교적 뿌리), <em>Revista de Occidente</em>, n.º 23 (1983), pp. 61–75.</span></div>
+      <div class="fn-item"><span class="fn-num">13</span><span>Álvarez Junco, José y Pérez Ledesma, Manuel, "Historia del movimiento obrero. ¿Una segunda ruptura?" (노동 운동사. 제2의 단절?), <em>Revista de Occidente</em>, n.º 12 (1982), pp. 19–41.</span></div>
+      <div class="fn-item"><span class="fn-num">14</span><span>Aguilar Fernández, Paloma, <em>Memoria y olvido de la guerra civil española</em> (스페인 내전의 기억과 망각), Madrid, 1996.</span></div>
+      <div class="fn-item"><span class="fn-num">15</span><span>Reig Tapia, Alberto, <em>Memoria de la Guerra Civil. Los mitos de la tribu</em> (내전의 기억. 부족의 신화들), Madrid, 1999.</span></div>
+      <div class="fn-item"><span class="fn-num">16</span><span>Casanova, Julián, et al., <em>El pasado oculto: fascismo y violencia en Aragón (1936–1939)</em> (숨겨진 과거: 아라곤의 파시즘과 폭력, 1936–1939), Madrid, 1992.</span></div>
+      <div class="fn-item"><span class="fn-num">17</span><span>Molinero, Carme y Ysàs, Pere, "Patria, Justicia y Pan", <em>La repressió franquista a Catalunya, 1939–1951</em>, Barcelona, 1985 외 다수.</span></div>
+      <div class="fn-item"><span class="fn-num">18</span><span>Mir, Conxita, <em>Vivir es sobrevivir: justicia, orden y marginación en la Cataluña rural de la postguerra (1939–1951)</em> (살아남는 것이 곧 사는 것: 전후 농촌 카탈루냐의 정의, 질서, 소외, 1939–1951), Lleida, 2000 외 다수.</span></div>
+      <div class="fn-item"><span class="fn-num">19</span><span>예로: Silva, Emilio y Macías, Santiago, <em>Las fosas de Franco: los republicanos que el dictador dejó en las cunetas</em> (프랑코의 무덤들: 독재자가 길가에 버려둔 공화주의자들), Madrid, 2003.</span></div>
+      <div class="fn-item"><span class="fn-num">20</span><span>예로: Ealham, Chris, <em>La lucha por Barcelona: clase, cultura y conflicto, 1898–1937</em> (바르셀로나를 위한 투쟁: 계급, 문화, 갈등, 1898–1937), Madrid, 2005 외 다수.</span></div>
+      <div class="fn-item"><span class="fn-num">21</span><span>González Calleja, Eduardo, "The symbolism of violence during the Second Republic in Spain, 1931–1936", in Ealham y Richards (eds.), <em>The Splintering of Spain</em> 외 다수.</span></div>
+      <div class="fn-item"><span class="fn-num">22</span><span>Cruz, Rafael, <em>En el nombre del pueblo. República, rebelión y guerra en la España de 1936</em> (인민의 이름으로. 1936년 스페인의 공화국, 반란, 전쟁), Madrid, 2006.</span></div>
+      <div class="fn-item"><span class="fn-num">23</span><span>Luebbert, Gregory, <em>Liberalismo, fascismo o socialdemocracia. Clases sociales y orígenes políticos de los regímenes de la Europa de entreguerras</em> (자유주의, 파시즘, 사회민주주의. 전간기 유럽 체제의 사회 계급과 정치적 기원), Zaragoza, 1997.</span></div>
+      <div class="fn-item"><span class="fn-num">24</span><span>Bowen, Wayne, <em>Spaniards and Nazi Germany: Collaboration in the New Order</em> (스페인 사람들과 나치 독일: 신질서에서의 협력), Columbia, MO, 2000.</span></div>
+      <div class="fn-item"><span class="fn-num">25</span><span>Viñas, Ángel, <em>Guerra, dinero y dictadura</em> (전쟁, 돈, 독재), Barcelona, 1984; <em>Franco, Hitler y el estallido de la Guerra Civil</em> (프랑코, 히틀러, 내전의 발발), Madrid, 2001.</span></div>
+      <div class="fn-item"><span class="fn-num">26</span><span>Viñas, Ángel, <em>La soledad de la República</em> (공화국의 고독), Barcelona, 2006.</span></div>
+      <div class="fn-item"><span class="fn-num">27</span><span>Howson, Gerald, <em>Armas para España: la historia no contada de la Guerra Civil española</em> (스페인을 위한 무기: 스페인 내전의 알려지지 않은 역사), Barcelona, 2000.</span></div>
+      <div class="fn-item"><span class="fn-num">28</span><span>Viñas, Ángel, "La decisión de Stalin de ayudar a la República: un aspecto controvertido en la historiografía de la Guerra Civil" (스탈린의 공화국 지원 결정: 내전 사학사의 논쟁적 측면), <em>Historia y Política</em>, n.º 16, 2 (2006), pp. 65–108.</span></div>
+      <div class="fn-item"><span class="fn-num">29</span><span>Radosh, Ronald, Habeck, Mart R. y Sevostianov, Grigor (eds.), <em>España traicionada: Stalin y la guerra civil</em> (배신당한 스페인: 스탈린과 내전), Barcelona, 2002.</span></div>
+      <div class="fn-item"><span class="fn-num">30</span><span>Graham, Helen, "Spain Betrayed? The new historical McCarthyism" (배신당한 스페인? 새로운 역사적 매카시즘), <em>Science & Society</em>, n.º 68, 3 (2004), pp. 364–368.</span></div>
+      <div class="fn-item"><span class="fn-num">31</span><span>Skouletsky, Remi, <em>Novedad en el frente</em> (전선의 새소식), Madrid, 2006.</span></div>
+      <div class="fn-item"><span class="fn-num">32</span><span>Alpert, Michael, <em>Aguas peligrosas. Nueva historia internacional de la guerra civil española, 1936–1939</em> (위험한 물. 스페인 내전의 새로운 국제사, 1936–1939), Madrid, 1998; Howson, <em>Armas para España</em>, op. cit.</span></div>
+      <div class="fn-item"><span class="fn-num">33</span><span>Howson, <em>Armas para España</em>, op. cit.; Alpert, <em>Aguas peligrosas</em>, op. cit.; Moradiellos, Enrique, <em>La perfidia de Albión. El Gobierno británico y la guerra civil española</em> (알비온의 배신. 영국 정부와 스페인 내전), Madrid, 1996.</span></div>
+      <div class="fn-item"><span class="fn-num">34</span><span>Heiberg, Morten, <em>Emperadores del mediterráneo. Franco, Mussolini y la guerra civil española</em> (지중해의 황제들. 프랑코, 무솔리니, 스페인 내전), Barcelona, 2004.</span></div>
+      <div class="fn-item"><span class="fn-num">35</span><span>Preston, Paul, "La aventura española de Mussolini: del riesgo limitado a la guerra abierta" (무솔리니의 스페인 모험: 제한된 위험에서 전면전으로), in Preston (ed.), <em>La República asediada</em>, Barcelona, 2001, pp. 41–69; Preston, "Italy and Spain in Civil War and World War 1936–1943", in Balfour y Preston (eds.), <em>Spain and the Great Powers in the Twentieth Century</em>, London, 1999, pp. 151–184.</span></div>
+      <div class="fn-item"><span class="fn-num">36</span><span>Blanco Escolá, Carlos, <em>La incompetencia militar de Franco</em> (프랑코의 군사적 무능), Madrid, 2000.</span></div>
+      <div class="fn-item"><span class="fn-num">37</span><span>Preston, Paul, <em>Franco caudillo de España</em> (프랑코, 스페인의 카우디요), Barcelona, Grijalbo, 1994; <em>La política de la venganza. El fascismo y el militarismo en la España del siglo XX</em> (복수의 정치. 20세기 스페인의 파시즘과 군국주의), Barcelona, 2004.</span></div>
+      <div class="fn-item"><span class="fn-num">38</span><span>Ealham, <em>La lucha por Barcelona</em>, op. cit.; Graham, <em>La República española en guerra</em>, op. cit.; Casanova, Julián, <em>De la calle al frente. El anarcosindicalismo en España, 1931–1939</em> (거리에서 전선으로. 스페인의 아나르코생디칼리즘, 1931–1939), Barcelona, 1997.</span></div>
+      <div class="fn-item"><span class="fn-num">39</span><span>Graham, Helen, <em>El PSOE en la Guerra Civil: poder, crisis y derrota (1936–1939)</em> (내전 중의 PSOE: 권력, 위기, 패배, 1936–1939), Barcelona, 2005.</span></div>
+      <div class="fn-item"><span class="fn-num">40</span><span>Seidman, Michael, <em>A ras de suelo: historia social de la República durante la Guerra Civil</em> (지면에서: 내전 중 공화국의 사회사), Madrid, 2003.</span></div>
+      <div class="fn-item"><span class="fn-num">41</span><span>González Calleja, Eduardo, <em>La razón de la fuerza</em> (힘의 이유), Madrid, 1998; <em>El máuser y el sufragio</em> (마우저 소총과 참정권), Madrid, 1999.</span></div>
+      <div class="fn-item"><span class="fn-num">42</span><span>Richards, Michael, <em>Un tiempo de silencio: la guerra civil y la cultura de la represión en la España de Franco, 1936–1945</em> (침묵의 시간: 내전과 1936–1945년 프랑코의 스페인에서의 탄압 문화), Barcelona, 1999.</span></div>
+      <div class="fn-item"><span class="fn-num">43</span><span>Juliá, Santos (ed.), <em>Víctimas de la Guerra Civil</em> (내전의 희생자들), Madrid, 1999; Preston, Paul, <em>La guerra civil española</em> (스페인 내전), Barcelona, 2006.</span></div>
+      <div class="fn-item"><span class="fn-num">44</span><span>Graham, <em>La República española en guerra</em>, op. cit.</span></div>
+      <div class="fn-item"><span class="fn-num">45</span><span>Godicheau, François, <em>La guerre d'Espagne. République et révolution en Catalogne (1936–1939)</em> (스페인 전쟁. 카탈루냐의 공화국과 혁명, 1936–1939), Paris, 2004.</span></div>
+      <div class="fn-item"><span class="fn-num">46</span><span>Casanova, Julián (ed.), <em>Morir, matar, sobrevivir. La violencia en la dictadura de Franco</em> (죽고, 죽이고, 살아남기. 프랑코 독재에서의 폭력), Barcelona, 2002.</span></div>
+      <div class="fn-item"><span class="fn-num">47</span><span>Graham, <em>Breve Historia de la Guerra Civil</em> (인용은 영어판에서 번역: <em>A Very Short Introduction to the Spanish Civil War</em>, Oxford, 2005, p. 86).</span></div>
+      <div class="fn-item"><span class="fn-num">48</span><span>Beaumont, Edurne y Mendiola, Fernando, <em>Esclavos del Franquismo en el Pirineo</em> (피레네의 프랑코주의 노예들), Navarra, 2006; Juliá (ed.), <em>Víctimas de la guerra civil</em>, op. cit.; Casanova (ed.), <em>Morir, matar, sobrevivir</em>, op. cit.</span></div>
+      <div class="fn-item"><span class="fn-num">49</span><span>Graham, <em>A Very Short Introduction</em>, p. 86 및 p. 135.</span></div>
+      <div class="fn-item"><span class="fn-num">50</span><span>Wingeate Pike, David, <em>Españoles en el holocausto: vida y muerte de los republicanos en Mauthausen</em> (홀로코스트의 스페인 사람들: 마우트하우젠에서 공화주의자들의 삶과 죽음), Barcelona, 2003.</span></div>
+      <div class="fn-item"><span class="fn-num">51</span><span>Vinyes, Armengou y Belis, <em>Els nens perduts del franquisme</em> (프랑코주의에서 잃어버린 아이들), Barcelona, 2002.</span></div>
+      <div class="fn-item"><span class="fn-num">52</span><span>Mangini, Shirley, <em>Recuerdos de la resistencia: la voz de las mujeres de la guerra civil española</em> (저항의 기억: 스페인 내전 여성들의 목소리), Barcelona, 1997; Mir, <em>Vivir es sobrevivir</em>, op. cit.</span></div>
+      <div class="fn-item"><span class="fn-num">53</span><span>Beaumont y Mendiola, <em>Esclavos del Franquismo en el Pirineo</em>, op. cit.</span></div>
+      <div class="fn-item"><span class="fn-num">54</span><span>『내전의 신화들(Los mitos de la Guerra Civil)』은 이 흐름을 가장 잘 대표하는 논객 피오 모아의 책 제목이다.</span></div>
+      <div class="fn-item"><span class="fn-num">55</span><span>Payne, Stanley, "Mitos y tópicos de la Guerra Civil" (내전의 신화와 상투적 견해), <em>Revista de Libros</em>, n.º 79–80 (2003), pp. 3–5.</span></div>
+      <div class="fn-item"><span class="fn-num">56</span><span>Payne, Stanley, <em>The Collapse of the Spanish Republic, 1933–1936: Origins of the Civil War</em>, Yale, 2006, p. 198 (스페인어판: <em>El Colapso de la República: los orígenes de la guerra civil (1933–1936)</em>, Madrid, 2005).</span></div>
+      <div class="fn-item"><span class="fn-num">57</span><span>Preston, <em>La guerra civil española</em>, op. cit.</span></div>
+      <div class="fn-item"><span class="fn-num">58</span><span>영어판에서 번역: <em>The Spanish Civil War, the Soviet Union and Communism</em>, Yale, 2004, p. 84. 스페인어판: <em>Unión Soviética, comunismo y revolución en España (1931–1939)</em>, Barcelona, 2003.</span></div>
+    </div>
+  </section>
+
+  <!-- 결론 -->
+  <section id="conclusion">
+    <h2>결론</h2>
+
+    <p>마지막으로, 전쟁 70년 후, 전쟁에 관한 금기 주제들은 점점 줄어들고 있으며 연구자들이 이에 관해 자유롭게 쓸 자유는 점점 늘고 있다. 내전에 관한 프랑코주의 신화들은 대학에서는 완전히, 그리고 당연하게도 신뢰를 잃었지만, 원시적 우파를 통해 계속 명맥을 유지하며 시민 사회 내에서 영향력을 행사하고 있다. 역사가들은 지식인으로서 시민 사회 내에서 공적 사명을 가지고 있으며 역사의 조작에 저항해야 한다. 이리하여, 전쟁 70년 후, 스페인과 스페인학자들은 격렬하고 양극화된 언어 전쟁에 직면해 있다.</p>
+  </section>
+
+  <!-- 참고문헌 -->
+  <section id="referencias">
+    <h2>참고문헌</h2>
+    <ol>
+      <li>Aguilar Fernández, Paloma, <em>Memoria y olvido de la guerra civil española</em>, Madrid, 1996.<span class="ref-ko">스페인 내전의 기억과 망각.</span></li>
+      <li>Alpert, Michael, <em>Aguas peligrosas. Nueva historia internacional de la guerra civil española, 1936–1939</em>, Madrid, 1998.<span class="ref-ko">위험한 물. 스페인 내전의 새로운 국제사, 1936–1939.</span></li>
+      <li>Álvarez Junco, José y Pérez Ledesma, Manuel, "Historia del movimiento obrero. ¿Una segunda ruptura?", <em>Revista de Occidente</em>, n.º 12 (1982), pp. 19–41.<span class="ref-ko">노동 운동사. 제2의 단절?</span></li>
+      <li>Balcells, Albert, <em>Marxismo y catalanismo, 1930–1936</em>, Barcelona, 1977.<span class="ref-ko">마르크스주의와 카탈루냐주의, 1930–1936.</span></li>
+      <li>Bar, Antonio, <em>La CNT en los años rojos</em>, Madrid, 1981.<span class="ref-ko">붉은 시절의 CNT.</span></li>
+      <li>Beaumont, Edurne y Mendiola, Fernando, <em>Esclavos del Franquismo en el Pirineo</em>, Navarra, 2006.<span class="ref-ko">피레네의 프랑코주의 노예들.</span></li>
+      <li>Blanco Escolá, Carlos, <em>La incompetencia militar de Franco</em>, Madrid, 2000.<span class="ref-ko">프랑코의 군사적 무능.</span></li>
+      <li>Bonamusa, Francesc, <em>El Bloc Obrer i Camperol: Els primers anys, 1930–1932</em>, Barcelona, 1974.<span class="ref-ko">노동자·농민 블록: 초기 시절, 1930–1932.</span></li>
+      <li>Bosch Sánchez, Aurora, <em>Ugetistas y libertarios. Guerra civil y revolución en el País Valenciano, 1936–1939</em>, Valencia, 1983.<span class="ref-ko">UGT 조합원들과 자유주의자들. 발렌시아 지방의 내전과 혁명, 1936–1939.</span></li>
+      <li>Bowen, Wayne, <em>Spaniards and Nazi Germany: Collaboration in the New Order</em>, Columbia, Mo, 2000.<span class="ref-ko">스페인 사람들과 나치 독일: 신질서에서의 협력.</span></li>
+      <li>Calvo Serer, Rafael, <em>Los motivos de las luchas intelectuales</em>, Madrid, 1955.<span class="ref-ko">지적 투쟁의 동기.</span></li>
+      <li>Calvo Serer, Rafael, <em>La literatura universal sobre la guerra de España</em>, Madrid, 1962.<span class="ref-ko">스페인 전쟁에 관한 세계 문학.</span></li>
+      <li>Casanova, Julián, et al., <em>El pasado oculto: fascismo y violencia en Aragón (1936–1939)</em>, Madrid, 1992.<span class="ref-ko">숨겨진 과거: 아라곤의 파시즘과 폭력(1936–1939).</span></li>
+      <li>Casanova, Julián, <em>De la calle al frente. El anarcosindicalismo en España, 1931–1939</em>, Barcelona, 1997.<span class="ref-ko">거리에서 전선으로. 스페인의 아나르코생디칼리즘, 1931–1939.</span></li>
+      <li>Casanova, Julián (ed.), <em>Morir, matar, sobrevivir. La violencia en la dictadura de Franco</em>, Barcelona, 2002.<span class="ref-ko">죽고, 죽이고, 살아남기. 프랑코 독재에서의 폭력.</span></li>
+      <li>Comín Colomer, Eduardo, <em>Historia del Partido Comunista de España</em>, 3 tomos, Madrid, 1965.<span class="ref-ko">스페인 공산당사, 3권.</span></li>
+      <li>Comín Colomer, Eduardo, <em>Historia del anarquismo español</em>, 2 tomos, Barcelona, 1956.<span class="ref-ko">스페인 아나키즘사, 2권.</span></li>
+      <li>Corcuera Atienza, Javier, <em>Orígenes, ideología y organización del nacionalismo vasco (1876–1904)</em>, Madrid, 1979.<span class="ref-ko">바스크 민족주의의 기원, 이념, 조직(1876–1904).</span></li>
+      <li>Cruz, Rafael, <em>El Partido Comunista de España en la II República</em>, Madrid, 1987.<span class="ref-ko">제2공화국에서의 스페인 공산당.</span></li>
+      <li>Cruz, Rafael, <em>En el nombre del pueblo. República, rebelión y guerra en la España de 1936</em>, Madrid, 2006.<span class="ref-ko">인민의 이름으로. 1936년 스페인의 공화국, 반란, 전쟁.</span></li>
+      <li>Cuadrat, Xavier, <em>Socialismo y anarquismo en Cataluña (1899–1911): los orígenes de la CNT</em>, Madrid, 1976.<span class="ref-ko">카탈루냐의 사회주의와 아나키즘(1899–1911): CNT의 기원.</span></li>
+      <li>Del Rosal Diaz, Amaro, <em>Historia de la UGT en España, 1901–1939</em>, Barcelona, 1977.<span class="ref-ko">스페인 UGT사, 1901–1939.</span></li>
+      <li>Díez Medrano, Juan, <em>Naciones divididas. Clase, política y nacionalismo en el País Vasco y Cataluña</em>, Madrid, 1999.<span class="ref-ko">분열된 민족들. 바스크 지방과 카탈루냐의 계급, 정치, 민족주의.</span></li>
+      <li>Ealham, Chris, <em>La lucha por Barcelona: clase, cultura y conflicto, 1898–1937</em>, Madrid, 2005.<span class="ref-ko">바르셀로나를 위한 투쟁: 계급, 문화, 갈등, 1898–1937.</span></li>
+      <li>Ealham, Chris y Richards, Michael (eds.), <em>The Splintering of Spain. Cultural History and the Spanish Civil War, 1936–1939</em>, Cambridge, 2005.<span class="ref-ko">스페인의 파열. 스페인 내전의 문화사, 1936–1939.</span></li>
+      <li>Estruch, Joan, <em>Historia del PCE (1920–1939)</em>, Barcelona, 1978.<span class="ref-ko">PCE사(1920–1939).</span></li>
+      <li>Godicheau, François, <em>La guerre d'Espagne. République et révolution en Catalogne (1936–1939)</em>, Paris, 2004.<span class="ref-ko">스페인 전쟁. 카탈루냐의 공화국과 혁명(1936–1939).</span></li>
+      <li>González Calleja, Eduardo, <em>La razón de la fuerza. Orden público, subversión y violencia política en la España de la Restauración (1874–1917)</em>, Madrid, 1998.<span class="ref-ko">힘의 이유. 왕정복고기 스페인의 공공질서, 전복, 정치적 폭력(1874–1917).</span></li>
+      <li>González Calleja, Eduardo, <em>El máuser y el sufragio. Orden público, subversión y violencia política en la crisis de la Restauración (1917–1931)</em>, Madrid, 1999.<span class="ref-ko">마우저 소총과 참정권. 왕정복고 위기기의 공공질서, 전복, 정치적 폭력(1917–1931).</span></li>
+      <li>Graham, Helen, "Spain Betrayed? The new historical McCarthyism", <em>Science & Society</em>, n.º 68, 3 (2004), pp. 364–368.<span class="ref-ko">배신당한 스페인? 새로운 역사적 매카시즘.</span></li>
+      <li>Graham, Helen, <em>El PSOE en la Guerra Civil: poder, crisis y derrota (1936–1939)</em>, Barcelona, 2005.<span class="ref-ko">내전 중의 PSOE: 권력, 위기, 패배(1936–1939).</span></li>
+      <li>Graham, Helen, <em>Breve Historia de la Guerra Civil</em>, Madrid, 2006.<span class="ref-ko">내전 소사.</span></li>
+      <li>Graham, Helen, <em>La República española en guerra (1936–1939)</em>, Madrid, 2006.<span class="ref-ko">전쟁 중의 스페인 공화국(1936–1939).</span></li>
+      <li>Heiberg, Morten, <em>Emperadores del mediterráneo. Franco, Mussolini y la guerra civil española</em>, Barcelona, 2004.<span class="ref-ko">지중해의 황제들. 프랑코, 무솔리니, 스페인 내전.</span></li>
+      <li>Howson, Gerald, <em>Armas para España: la historia no contada de la Guerra Civil española</em>, Barcelona, 2000.<span class="ref-ko">스페인을 위한 무기: 스페인 내전의 알려지지 않은 역사.</span></li>
+      <li>Ibárruri, Dolores, et al., <em>Guerra y revolución en España, 1936–1939</em>, 4 tomos, Moscú, 1966–1971.<span class="ref-ko">스페인의 전쟁과 혁명, 1936–1939, 4권.</span></li>
+      <li>Ibárruri, Dolores, <em>El único camino</em>, Paris.<span class="ref-ko">유일한 길.</span></li>
+      <li>Juliá, Santos, "Fieles y mártires. Raíces religiosas de algunas prácticas sindicales en la España de los años treinta", <em>Revista de Occidente</em>, n.º 23 (1983), pp. 61–75.<span class="ref-ko">신실한 자들과 순교자들. 1930년대 스페인 노동조합 관행의 종교적 뿌리.</span></li>
+      <li>Juliá, Santos, <em>Un siglo de España. Política y sociedad</em>, Madrid, 1999.<span class="ref-ko">스페인의 한 세기. 정치와 사회.</span></li>
+      <li>Juliá, Santos (ed.), <em>Víctimas de la Guerra Civil</em>, Madrid, 1999.<span class="ref-ko">내전의 희생자들.</span></li>
+      <li>Luebbert, Gregory, <em>Liberalismo, fascismo o socialdemocracia. Clases sociales y orígenes políticos de los regímenes de la Europa de entreguerras</em>, Zaragoza, 1997.<span class="ref-ko">자유주의, 파시즘, 사회민주주의. 전간기 유럽 체제의 사회 계급과 정치적 기원.</span></li>
+      <li>Mangini, Shirley, <em>Recuerdos de la resistencia: la voz de las mujeres de la guerra civil española</em>, Barcelona, 1997.<span class="ref-ko">저항의 기억: 스페인 내전 여성들의 목소리.</span></li>
+      <li>Marin Silvestre, Dolors, <em>Clandestinos: el Maquis contra el Franquismo, 1934–1975</em>, Barcelona, 2002.<span class="ref-ko">비밀 조직원들: 프랑코주의에 맞선 마키, 1934–1975.</span></li>
+      <li>Marrero, Vicente, <em>La guerra española y el trust de cerebros</em>, Madrid, 1961.<span class="ref-ko">스페인 전쟁과 두뇌 집단.</span></li>
+      <li>Mir, Conxita, <em>Vivir es sobrevivir: justicia, orden y marginación en la Cataluña rural de la postguerra (1939–1951)</em>, Lleida, 2000.<span class="ref-ko">살아남는 것이 곧 사는 것: 전후 농촌 카탈루냐의 정의, 질서, 소외(1939–1951).</span></li>
+      <li>Molinero, Carme y Ysàs, Pere, "Patria, Justicia y Pan", <em>La repressió franquista a Catalunya, 1939–1951</em>, Barcelona, 1985.<span class="ref-ko">조국, 정의, 빵: 카탈루냐의 프랑코주의 탄압, 1939–1951.</span></li>
+      <li>Moradiellos, Enrique, <em>La perfidia de Albión. El Gobierno británico y la guerra civil española</em>, Madrid, 1996.<span class="ref-ko">알비온의 배신. 영국 정부와 스페인 내전.</span></li>
+      <li>Moradiellos, Enrique, <em>1936. Los mitos de la Guerra Civil</em>, Barcelona, 2004.<span class="ref-ko">1936. 내전의 신화들.</span></li>
+      <li>Núñez-Seixas, Xose-Manoel, "New Interpretations of the Spanish Civil War", <em>Contemporary European History</em>, n.º 13, 4 (2004), pp. 517–527.<span class="ref-ko">스페인 내전의 새로운 해석들.</span></li>
+      <li>Payne, Stanley, <em>Unión Soviética, comunismo y revolución en España: (1931–1939)</em>, Barcelona, 2003.<span class="ref-ko">소련, 공산주의, 스페인의 혁명(1931–1939).</span></li>
+      <li>Payne, Stanley, "Mitos y tópicos de la Guerra Civil", <em>Revista de Libros</em>, n.º 79–80 (2003), pp. 3–5.<span class="ref-ko">내전의 신화와 상투적 견해.</span></li>
+      <li>Payne, Stanley, <em>El Colapso de la República: los orígenes de la guerra civil (1933–1936)</em>, Madrid, 2005.<span class="ref-ko">공화국의 붕괴: 내전의 기원(1933–1936).</span></li>
+      <li>Pereira, Dionisio, <em>A CNT na Galicia, 1922–1936</em>, Santiago de Compostela, 1994.<span class="ref-ko">갈리시아의 CNT, 1922–1936.</span></li>
+      <li>Preston, Paul, <em>Franco «caudillo de España»</em>, Barcelona, Grijalbo, 1994.<span class="ref-ko">프랑코, 스페인의 카우디요.</span></li>
+      <li>Preston, Paul, <em>Las tres Españas del 36</em>, Barcelona, 1998.<span class="ref-ko">36년의 세 스페인.</span></li>
+      <li>Preston, Paul, "Italy and Spain in Civil War and World War 1936–1943", in Balfour, Sebastian y Preston, Paul (eds.), <em>Spain and the Great Powers in the Twentieth Century</em>, London, 1999, pp. 151–184.<span class="ref-ko">내전과 세계대전에서의 이탈리아와 스페인, 1936–1943.</span></li>
+      <li>Preston, Paul, "La aventura española de Mussolini: del riesgo limitado a la guerra abierta", in Preston, Paul (ed.), <em>La República asediada</em>, Barcelona, 2001, pp. 41–69.<span class="ref-ko">무솔리니의 스페인 모험: 제한된 위험에서 전면전으로.</span></li>
+      <li>Preston, Paul, <em>La política de la venganza. El fascismo y el militarismo en la España del siglo XX</em>, Barcelona, 2004.<span class="ref-ko">복수의 정치. 20세기 스페인의 파시즘과 군국주의.</span></li>
+      <li>Radcliff, Pamela, <em>De la movilización a la guerra civil. Historia política y social de Gijón (1900–1937)</em>, Barcelona, 2004.<span class="ref-ko">동원에서 내전으로. 히혼의 정치·사회사(1900–1937).</span></li>
+      <li>Radosh, Ronald, Habeck, Mart R. y Sevostianov, Grigor (eds.), <em>España traicionada: Stalin y la guerra civil</em>, Barcelona, 2002.<span class="ref-ko">배신당한 스페인: 스탈린과 내전.</span></li>
+      <li>Reig Tapia, Alberto, <em>Memoria de la Guerra Civil. Los mitos de la tribu</em>, Madrid, 1999.<span class="ref-ko">내전의 기억. 부족의 신화들.</span></li>
+      <li>Richards, Michael, <em>Un tiempo de silencio: la guerra civil y la cultura de la represión en la España de Franco, 1936–1945</em>, Barcelona, 1999.<span class="ref-ko">침묵의 시간: 내전과 1936–1945년 프랑코의 스페인에서의 탄압 문화.</span></li>
+      <li>Ruiz Portella, Javier (ed.), <em>La Guerra Civil: ¿dos o tres Españas?</em>, Barcelona, 1999.<span class="ref-ko">내전: 두 스페인인가 세 스페인인가?</span></li>
+      <li>Santacana i Torres, Carles, <em>Victoriosos i Derrotats: el Franquisme a l'Hospitalet, 1939–1951</em>, Barcelona, 1994.<span class="ref-ko">승자들과 패자들: 로스피탈레트의 프랑코주의, 1939–1951.</span></li>
+      <li>Seidman, Michael, <em>A ras de suelo: historia social de la República durante la Guerra Civil</em>, Madrid, 2003.<span class="ref-ko">지면에서: 내전 중 공화국의 사회사.</span></li>
+      <li>Silva, Emilio y Macías, Santiago, <em>Las fosas de Franco: los republicanos que el dictador dejó en las cunetas</em>, Madrid, 2003.<span class="ref-ko">프랑코의 무덤들: 독재자가 길가에 버려둔 공화주의자들.</span></li>
+      <li>Skouletsky, Remi, <em>Novedad en el frente</em>, Madrid, 2006.<span class="ref-ko">전선의 새소식.</span></li>
+      <li>Souto, Sandra, <em>«Y ¿Madrid? ¿Qué hace Madrid?» Movimiento revolucionario y acción colectiva (1933–1936)</em>, Madrid, 2004.<span class="ref-ko">그래서 마드리드는? 마드리드는 무엇을 하는가? 혁명 운동과 집단 행동(1933–1936).</span></li>
+      <li>Vega, Eulàlia, <em>Entre revolució i reforma. La CNT a Catalunya (1930–1936)</em>, Lleida, 2004.<span class="ref-ko">혁명과 개혁 사이. 카탈루냐의 CNT(1930–1936).</span></li>
+      <li>Vinyes, Ricard, <em>La formación de las Juventudes Socialistas Unificadas (1934–1936)</em>, Madrid, 1978.<span class="ref-ko">사회주의통합청년단의 형성(1934–1936).</span></li>
+      <li>Vinyes, Ricard, Armengou, Montse y Belis, Ricard, <em>Els nens perduts del franquisme</em>, Barcelona, 2002.<span class="ref-ko">프랑코주의에서 잃어버린 아이들.</span></li>
+      <li>Viñas, Ángel, <em>Guerra, dinero y dictadura: ayuda fascista y autarquía en la España de Franco</em>, Barcelona, 1984.<span class="ref-ko">전쟁, 돈, 독재: 프랑코의 스페인에서의 파시스트 지원과 자급자족 경제.</span></li>
+      <li>Viñas, Ángel, <em>Franco, Hitler y el estallido de la Guerra Civil: antecedentes y consecuencias</em>, Madrid, 2001.<span class="ref-ko">프랑코, 히틀러, 내전의 발발: 전후 사정.</span></li>
+      <li>Viñas, Ángel, <em>La soledad de la República</em>, Barcelona, 2006.<span class="ref-ko">공화국의 고독.</span></li>
+      <li>Viñas, Ángel, "La decisión de Stalin de ayudar a la República: un aspecto controvertido en la historiografía de la Guerra Civil", <em>Historia y Política</em>, n.º 16, 2 (2006), pp. 65–108.<span class="ref-ko">스탈린의 공화국 지원 결정: 내전 사학사의 논쟁적 측면.</span></li>
+      <li>Viñas, Ángel, <em>El escudo de la República. El oro de España, la apuesta soviética y los hechos de mayo de 1937</em>, Barcelona, 2007.<span class="ref-ko">공화국의 방패. 스페인의 금, 소련의 도박, 1937년 5월의 사건들.</span></li>
+      <li>Wingeate Pike, David, <em>Españoles en el holocausto: vida y muerte de los republicanos en Mauthausen</em>, Barcelona, 2003.<span class="ref-ko">홀로코스트의 스페인 사람들: 마우트하우젠에서 공화주의자들의 삶과 죽음.</span></li>
+    </ol>
+  </section>
+
+</main>
+
+<button class="back-to-top" onclick="window.scrollTo({top:0, behavior:'smooth'})" title="맨 위로">▲</button>
+
+<script>
+window.addEventListener('scroll', () => {
+  let current = '';
+  document.querySelectorAll('section[id]').forEach(s => {
+    if (s.getBoundingClientRect().top <= 80) current = s.id;
+  });
+  document.querySelectorAll('#sidebar nav a').forEach(a => {
+    a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+  });
+});
+
+document.querySelectorAll('#sidebar nav a').forEach(a => {
+  a.addEventListener('click', e => {
+    e.preventDefault();
+    const target = document.querySelector(a.getAttribute('href'));
+    if (target) target.scrollIntoView({ behavior: 'smooth' });
+  });
+});
+</script>
+</body>
+</html>
