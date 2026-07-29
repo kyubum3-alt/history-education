@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>스페인 학교의 역사 교과서 수용(19~20세기): 연구 현황 — Valls Montés (1998)</title>
+<style>
+:root {
+  --sidebar-width: 280px;
+  --accent: #8b4513;
+  --accent-light: #f5ebe0;
+  --accent-dark: #5c2e0a;
+  --text: #1a1a1a;
+  --muted: #555;
+  --border: #d4c4b0;
+  --bg: #faf7f2;
+  --white: #ffffff;
+  --table-head: #efe4d3;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans KR", "Malgun Gothic", sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.75;
+}
+
+#sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: var(--sidebar-width);
+  height: 100vh;
+  background: var(--white);
+  border-right: 1px solid var(--border);
+  overflow-y: auto;
+  padding: 24px 20px;
+  font-size: 14px;
+}
+
+#sidebar h2 {
+  margin: 0 0 6px 0;
+  font-size: 15px;
+  color: var(--accent-dark);
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 8px;
+}
+
+#sidebar .meta {
+  font-size: 12px;
+  color: var(--muted);
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+#sidebar nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#sidebar nav li { margin: 3px 0; }
+
+#sidebar nav a {
+  display: block;
+  padding: 6px 10px;
+  color: var(--text);
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 13.5px;
+  transition: all 0.15s;
+}
+
+#sidebar nav a:hover {
+  background: var(--accent-light);
+  color: var(--accent-dark);
+}
+
+#sidebar nav a.active {
+  background: var(--accent);
+  color: white;
+  font-weight: 600;
+}
+
+#sidebar nav ul ul {
+  padding-left: 14px;
+  margin-top: 2px;
+}
+
+#sidebar nav ul ul a {
+  font-size: 12.5px;
+  padding: 4px 8px;
+  color: var(--muted);
+}
+
+main {
+  margin-left: var(--sidebar-width);
+  padding: 50px 60px 100px 60px;
+  max-width: 900px;
+}
+
+.paper-header {
+  border-bottom: 3px solid var(--accent);
+  padding-bottom: 20px;
+  margin-bottom: 30px;
+}
+
+.paper-header h1 {
+  font-size: 26px;
+  margin: 0 0 6px 0;
+  color: var(--accent-dark);
+  line-height: 1.4;
+}
+
+.paper-header .original-title {
+  font-size: 15px;
+  color: var(--muted);
+  font-style: italic;
+  margin-bottom: 14px;
+}
+
+.paper-header .authors {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.paper-header .affiliation {
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 10px;
+}
+
+.paper-header .citation {
+  font-size: 13px;
+  color: var(--muted);
+  background: var(--accent-light);
+  padding: 10px 14px;
+  border-left: 3px solid var(--accent);
+  border-radius: 3px;
+}
+
+.abstract {
+  background: var(--accent-light);
+  padding: 20px 24px;
+  border-radius: 6px;
+  margin-bottom: 40px;
+}
+
+.abstract h3 {
+  margin: 0 0 10px 0;
+  font-size: 16px;
+  color: var(--accent-dark);
+}
+
+.abstract p { margin: 0 0 10px 0; }
+
+.abstract .original {
+  font-size: 13.5px;
+  color: var(--muted);
+  border-top: 1px dashed var(--border);
+  padding-top: 12px;
+  margin-top: 12px;
+  font-style: italic;
+}
+
+section {
+  margin-bottom: 40px;
+  scroll-margin-top: 24px;
+}
+
+section h2 {
+  font-size: 22px;
+  color: var(--accent-dark);
+  border-bottom: 2px solid var(--border);
+  padding-bottom: 8px;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+section h3 {
+  font-size: 18px;
+  color: var(--accent);
+  margin-top: 30px;
+  margin-bottom: 14px;
+}
+
+p { margin: 12px 0; text-align: justify; }
+
+.table-wrap {
+  margin: 24px 0;
+  overflow-x: auto;
+}
+
+.table-wrap .caption {
+  font-weight: 600;
+  color: var(--accent-dark);
+  margin-bottom: 8px;
+  font-size: 15px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--white);
+  font-size: 13.5px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+th, td {
+  padding: 8px 12px;
+  border: 1px solid var(--border);
+  text-align: left;
+}
+
+thead th {
+  background: var(--table-head);
+  color: var(--accent-dark);
+  font-weight: 600;
+}
+
+tbody tr:nth-child(even) { background: #fdf9f3; }
+
+.table-source {
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 6px;
+  font-style: italic;
+}
+
+.notes {
+  background: #fdf5e8;
+  border-left: 4px solid var(--accent);
+  padding: 20px 24px;
+  margin: 30px 0;
+  border-radius: 4px;
+}
+
+.notes ol {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.notes li {
+  margin: 12px 0;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.references {
+  background: var(--white);
+  padding: 20px 24px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+}
+
+.references ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.references li {
+  padding: 10px 0;
+  border-bottom: 1px dashed var(--border);
+  font-size: 14px;
+  padding-left: 20px;
+  text-indent: -20px;
+}
+
+.references li:last-child { border-bottom: none; }
+
+.back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: var(--accent);
+  color: white;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  text-decoration: none;
+  font-size: 20px;
+  transition: transform 0.2s;
+}
+
+.back-to-top:hover { transform: translateY(-3px); }
+
+em { color: var(--accent-dark); }
+
+.footnote-ref {
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 0.8em;
+  vertical-align: super;
+  text-decoration: none;
+}
+
+@media (max-width: 900px) {
+  #sidebar { display: none; }
+  main { margin-left: 0; padding: 30px 20px; }
+}
+</style>
+</head>
+<body>
+
+<aside id="sidebar">
+  <h2>📄 논문 정보</h2>
+  <div class="meta">
+    Rafael Valls Montés (1998)<br>
+    <em>Didáctica de las Ciencias<br>Experimentales y Sociales</em><br>
+    N.º 12, pp. 3-28
+  </div>
+  <nav>
+    <ul>
+      <li><a href="#abstract">초록 (Summary)</a></li>
+      <li><a href="#intro">1. 서론</a></li>
+      <li><a href="#recepcion">2. 스페인 초·중등 교육에서 역사 교과서의 수용</a>
+        <ul>
+          <li><a href="#fase1">2-1. 제1국면 (1836-1880)</a></li>
+          <li><a href="#fase2">2-2. 제2국면 (1880-1939)</a></li>
+          <li><a href="#fase3">2-3. 제3국면 (1939-1970)</a></li>
+          <li><a href="#fase4">2-4. 제4국면 (1970-1995)</a></li>
+        </ul>
+      </li>
+      <li><a href="#conclusion">3. 결론</a></li>
+      <li><a href="#notas">각주</a></li>
+      <li><a href="#referencias">참고문헌</a></li>
+    </ul>
+  </nav>
+</aside>
+
+<main>
+
+<div class="paper-header">
+  <h1>스페인 학교의 역사 교과서 수용(19~20세기): 연구 현황</h1>
+  <div class="original-title">Recepción de los manuales de historia en los centros escolares españoles (siglos XIX y XX): Estado de la cuestión</div>
+  <div class="authors">Rafael Valls Montés</div>
+  <div class="affiliation">발렌시아 대학교(Universitat de València)</div>
+  <div class="citation">
+    Valls Montés, R. (1998). Recepción de los manuales de historia en los centros escolares españoles (siglos XIX y XX): Estado de la cuestión. <em>Didáctica de las Ciencias Experimentales y Sociales</em>, N.º 12, pp. 3-28.
+  </div>
+</div>
+
+<section id="abstract">
+<h2>초록 (Summary)</h2>
+<div class="abstract">
+<h3>요약</h3>
+<p>본 논문은 자유주의 학교 체제 도입 이래 스페인 역사 교과서가 지녀왔던 <em>수용(reception)</em>과 소비를 아는 것의 중요성을 다룬다. 이 연구는 경험적 근거에 기반한 지식의 확대 필요성을 보여주는 학교 교과에 관한 현재의 연구 동향에 통합된다. 이러한 관점에서 역사 교과서는 교사·학생 그리고 그들의 교육 실천에 관한 풍부한 정보를 제공하기 때문에 일차적 문헌 자료가 된다.</p>
+<div class="original">
+<strong>원문(영어):</strong> This paper contemplates the importance of knowing the <em>reception</em> and consumption that spanish history textbooks have had since the implantation of the liberal school system. This contribution is integrated in present researches about the history of school disciplines wich show the need of increasing empirically based knowledge. From this perspective, history textbooks become a prior documental source because of the rich quantity of information wich they provide about teachers, students and their educational practises.
+</div>
+</div>
+</section>
+
+<section id="intro">
+<h2>1. 서론</h2>
+
+<p>수년간 역사 교육 연구에 몸담아 온 우리는(다른 어떤 학교 교과에 대해서도 마찬가지이지만), 현재적 차원에서든 과거의 실재로서든, 학교 교과서가 그러한 과업을 수행할 수 있는 기본 사료 중 하나임을 알고 있다. 또한 특정 시기에 존재했던 교과서를 파악하려는 시도에 수반되는 지난한 작업, 그리고 학교 현장에서의 교과서 사용 정도를 확실하게 파악하는 데 있어서도 같은 어려움이 있음을 잘 알고 있다. 이러한 작업이 최소한 근사적으로라도 이루어진 뒤에는, 그러한 교과서를 실제로 찾아내는 새로운 과제가 등장한다. 가장 중요한 도서관들에서조차 이와 관련된 큰 공백(<em>lagunas</em>)이 존재하며, 이번 세기가 끝나가는 시점의 1950년대 이전 학교 역사서지학(historiografía escolar)을 연구하고자 할 때 특히 그렇다.</p>
+
+<p>이 문제는 우리 주변국 대다수에서 유사한 방식으로 제기되어 왔으며, 이를 해소하기 위한 조치들은 적어도 시기적으로는 서로 달랐다. 이들 국가 대부분에서는 교과서 수집과 그 정비에 특화된 센터가 만들어져 연구자와 관심 있는 교사들이 이용할 수 있게 되었다. 이러한 기관들과 최근 몇 년간 교과서에 헌정된 연구의 양적 증가에 대해서는 존센(Johnsen)의 최근 저서를 참조할 수 있다(Johnsen, 1996).</p>
+
+<p>교과서 목록화의 가장 체계화된 사례는 프랑스의 <em>Institut National de la Recherche Pédagogique</em>가 진행한 것이다. <em>Emmanuelle</em>이라는 이름의 이 프로젝트는 1980년대 말에 시작되어 프랑스 전통 교육과정을 구성한 여러 교과의 목록을 이미 출판했다. 교과서에 대한 다관점적(multiperspectivista) 연구의 추동이라는 측면에서 가장 완성도 높은 모델은 의심의 여지 없이 브라운슈바이크(Braunschweig)의 독일 <em>Georg-Eckert-Institut</em>이 발전시킨 것이다.</p>
+
+<p>이 두 사례와 경험을 우선적으로 참조하여, <em>Manes</em>라는 이름의 스페인 프로젝트가 1992년 UNED(스페인 국립 원격교육대학교) 교육사 및 비교교육학과의 후원으로 탄생했고, 이후 여러 스페인 대학들이 여기에 합류했다. 최근 몇 년간 이 프로젝트는 라틴아메리카 국가들과 포르투갈로 확대되었다. 현재는 총 30개 대학이 참여하고 있다. 이 협력은 스페인 중등교육 기관들에도 개방되어 있다.</p>
+
+<p><em>Manes 프로젝트</em>의 주요 목표는 1808~1990년 사이에 스페인, 라틴아메리카, 포르투갈에서 생산된 교과서의 조사이다. 이러한 의도에서 일련의 선결 요건과 발전 단계가 도출된다. 우선, 가능한 한 완전한 인구조사·목록(censocatálogo)의 작성을 통한 교과서 출판에 관한 모든 정보의 수집이다. 이와 동일한 작업이 교과서에 관한 광범위한 입법 전체(교육과정, 질문지, 프로그램 관련 입법을 포함하여)에 대해서도 이루어져야 한다. 후속 단계에서 Manes 프로젝트는 학교 출판의 특징적인 여러 출판사의 역사, 그리고 이러한 교과서의 교수학적·교육학적 지향, 혹은 그 참조 학문들과의 상관관계와 같은 보다 부문별 연구 등 다른 관련 연구들을 다루게 될 것이다.</p>
+
+<p>주로 문헌적 성격의 우선 과제들은 이미 Manes 프로젝트에 참여한 여러 대학 학과에서 동시에 진행 중인 보다 구체적인 연구들과 함께 이루어지고 있다. 현재 단계에서는 이러한 연구 영역과 관련된 여러 문제들에 관한 박사 후 과정 프로그램과 박사학위 논문을 통해 기본적으로 이루어진다(초·중등에서의 교육과정 교수학적 진화 연구, 교수·텍스트 장르, 교과서와 학교 교과가 생산된 사회적·정치적·이데올로기적 맥락 분석 등). 프로젝트의 주요 목표와 직접적으로 연관된 첫 출판물이 방금 출간되었다(Villalaín, 1997). 가까운 미래에는 스페인 교과서 관련 입법에 관한 새로운 권, 1833~1996년 사이 스페인에서 승인된 교과서 목록을 담은 네 권, 1821~1990년 사이 스페인 초·중등 교육 질문지·계획·프로그램에 관한 두 권이 예고되어 있다.</p>
+
+<p>스페인 교과서의 목록화는 여전히 상당한 시간이 걸릴 작업이다. 약 4만 종의 기존 서목 중(재판본은 포함하지 않고, 항상 1800~1970년 사이에 출판된 것들을 기준으로), 약 1만 3천 종이 이미 등록되어 있다. 역사 과목과 관련된 서목은 필자의 계산과 현재까지 알려진 바에 따르면 약 1,600~2,000종이며, 그 목록화도 상당히 진행되어 있다<a href="#nota1" class="footnote-ref">[1]</a>. 이 서목은 1970~1995년 사이에 출판된 것을 포함하면 2,500종에 이를 수 있다.</p>
+
+<p>Manes 프로젝트의 핵심 프로그램에는 포함되어 있지 않지만, 프로젝트 참여자 중 일부와 이 주제에 관심이 있는 다른 연구자들은 이러한 교과서의 <em>수용(recepción)</em>과 소비에 관한 연구도 진행하고 있다<a href="#nota2" class="footnote-ref">[2]</a>. 이것이 본 논문의 근저에 있는 관심사이며, 본 논문은 필자 자신의 연구와 다른 연구자들이 이미 수행한 연구를 바탕으로 역사 교과서와 관련된 이 문제의 현재적 상태를 정립하고자 한다.</p>
+
+<p>이 교과서들의 유포 정도를 파악하는 것을 목표로 하는데, 어떤 교과서의 판(版) 수를 아는 것도 매우 관련성 있는 자료이지만, 그 교과서가 사용된 장소와 학교의 수(그리고 얼마나 오랫동안 사용되었는지)를 아는 것이 더욱 중요하기 때문이다. 각 판의 인쇄 부수를 확실히 아는 것은 통상 매우 어려운데, 이 자료는 교과서에 매우 예외적으로만 나타나기 때문이다. 게다가 항상 신뢰할 수 있는 것도 아니다<a href="#nota3" class="footnote-ref">[3]</a>. 권장 교과서의 공식 목록에 의존하는 것도 매우 유용한 자료원이지만, 그것이 실제로 교실에서 사용된 교과서와 직접적으로 부합하지 않는다는 점은 반복적으로 확인되어 왔다. 왜냐하면 승인 이전에 사용된 상당수의 교과서들이 있었고, 그러한 권장을 받지 않았음에도 사용된 다른 교과서들도 있었기 때문이다. 이러한 상황의 명백한 증거는 확립된 규범의 이행을 반복적으로 요구하는 행정 당국의 거듭된 경고인데, 이는 곧 그 실질적 이행이 미약했음을 보여준다<a href="#nota4" class="footnote-ref">[4]</a>.</p>
+
+<p>이 교과서들이 어떻게 사용되었거나 사용되고 있는지, 그 "실제 사용(uso real)"은 향후 연구에 남겨진 과제이다. 우리는 몇몇 질적 연구나 사례 연구의 자료만 가지고 있을 뿐, 오늘날 대조를 통해 확립된 방식으로 몇몇 일반화 이상을 확언할 만한 충분한 경험적 자료를 갖고 있지 않다<a href="#nota5" class="footnote-ref">[5]</a>.</p>
+
+<p>물론 교과서가 (어떤 역사서지학적 관점에서든) 교육 사상과 실천의 재구성을 위한 유일한 자료원은 아니지만, 이와 관련한 가장 의미 있는 저작들을 분석해 보면 확인할 수 있듯이, 의심의 여지 없이 그 모든 자료 중 주요한 것이다. 최근의 보다 개방적이고 새로운 연구들(예: Cuesta, 1997; Boyd, 1997; Maestro, 1997)조차도 교과서를 기본 정보원으로 삼을 수밖에 없었다. 물론 이는 다른 정보원(학교 시험, 학생 노트, 장학사 보고서, 교수학 매뉴얼, 이미지와 사진, 건축 도면, 학교 비품 목록 등)으로 보완된 것이다. 이러한 다른 자료들은 아직 복원 중이지만, 교과서가 동반되지 않으면 이 주제에 대해 매우 부분적인 접근만을 허용한다(Valls, 1997). 이렇게 말할 때 우리는 "가시적 텍스트(textos visibles)"에 관해 말하고 있는 것이며, 이 텍스트와 교실의 과거 혹은 현재 실재에서 실천된 "비가시적 텍스트(textos invisibles)" 사이에는 크고 작은 차이의 여지가 있을 수 있다는 점은 사실이다. 그러나 이 보다 "비가시적인" 부분에 도달하는 것은 기본적으로 "가시적 텍스트"를 통해서만 가능하다는 것도 사실이며, 이 가시적 텍스트는 교사와 학생 등 주역이나 수신자의 "비가시적" 부분의 특성이나 욕구를 고려하지 않고 만들어지지 않는다. 어쨌든 이는 그 어떤 다른 정보원도 배제하지 않고, 오히려 상호 보완적이며 각각의 문헌적 잠재력의 한계를 설정하는 방식으로 접근되어야 하는 험난한 발견학적·인식론적 과제이다.</p>
+
+<p>학교 교과에 관한 현재 역사(actual historia de las disciplinas escolares)의 매우 중요한 기여가 최종 목적을 달성하기 위해서는, 우리 모두가 강력한 이론적·방법론적 틀과, 학교 지식이 생성·유통되는 방식과 이 과정에 개입하는 다양한 사회적 행위자들이 상호작용하는 방식의 특수한 성격에 대한 깊은 성찰을 동반한 연구를 수행할 수 있어야 함은 명백하다(Viñao Frago, 1997, 1998). 그러나 의심의 여지 없이, 우리는 언제나 가능한 한 광범위한 경험적 기반, 이 학교 영역에서 일어났거나 일어나고 있는 것의 흔적이나 단서, 지표를 제공해 줄 기반을 필요로 할 것이다. 그리고 이런 의미에서, 서두에서 언급했듯이 Manes 프로젝트의 기여뿐 아니라 교과서 소비를 알게 해 줄 다른 기여들도 근본적인 양적·질적 진전을 가져올 것이며, 이미 그러한 진전을 이루고 있다.</p>
+
+<p>이 프로젝트 전반의 근저에 있는 또 하나의 목표는 그 못지않게 중요한데, 바로 교과서 개선에 기여하는 것이다. 이를 위해서는 이러한 학교적 <em>구성물(constructos)</em>이 담고 있는 거대한 복잡성을 보다 깊이 아는 것이 필수적이다. 물론 교과서가 유일한 교육과정 자료여야 할 이유는 없지만, 유감스럽게도 이것이 지배적인 관행임은 잘 알고 있다.</p>
+
+<div class="table-wrap">
+<div class="caption">표 0. 역사 교과서의 생산량 (1800-1970)</div>
+<table>
+<thead>
+<tr><th>시기</th><th>초등교육</th><th>중등교육</th><th>합계</th></tr>
+</thead>
+<tbody>
+<tr><td>1800-1880</td><td>64</td><td>424</td><td>468</td></tr>
+<tr><td>1880-1938</td><td>115</td><td>523</td><td>638</td></tr>
+<tr><td>1939-1970</td><td>103</td><td>309</td><td>412</td></tr>
+<tr><td><strong>합계</strong></td><td><strong>282</strong></td><td><strong>1,256</strong></td><td><strong>1,518</strong></td></tr>
+</tbody>
+</table>
+<div class="table-source">출처: Rafael Valls Montés, Joaquín Garcia Puchol, <em>Listado de los manuales escolares españoles de historia</em>. Valencia, 1996, 미간행.</div>
+</div>
+</section>
+
+<section id="recepcion">
+<h2>2. 스페인 초·중등 교육에서 역사 교과서의 수용</h2>
+
+<p>초등이든 중등이든, 공립이든 사립이든 여러 학교에서 이 교과서들의 유포와 사용을 파악하는 것은, 이러한 세부 사항을 조사하기 위해 요구되는 문서 상당 부분의 결여나 소실이라는 내재적 문제로 인해 어렵다. 우리가 도달한 결론은 우리 연구의 현재 상태를 나타낼 뿐이며, 이러한 잠정성 이상의 가치를 부여할 수 없다.</p>
+
+<p>뒤에서 상세히 다루겠지만, <em>초등교육(enseñanza primaria)</em>의 경우 기본적으로 대학 문서고에 의존해야 하는데, 여기에는 20세기 초까지 이루어진 장학 시찰 보고서가 보관되어 있기 때문이다. 이 문서고에는 19세기 후반 이후 만들어진 사립학교의 상당수와 모든 학교가 포함되어 있다. 이러한 보고서들이 항상 사용된 교과서에 관한 상세한 정보를 제공하지는 않지만, 상당히 체계적인 정보를 제공한다. 본 논문에서는 발렌시아 대학교(Universidad de Valencia)로부터의 정보를 활용했으며, 이 대학의 관할 영역은 19세기 후반에는 발렌시아 3개 지방(provincia)보다 더 넓었다.</p>
+
+<p><em>공립 중등교육 기관(Institutos públicos de segunda enseñanza)</em>의 경우, 19세기와 20세기 초에 관해서는 각 기관의 연례 보고서(memorias anuales)를 활용했으며, 이는 부처 문서고와, 경우에 따라서는 바첼레라토(Bachillerato) 기관 자체에도 소장되어 있다. 마찬가지로 보완적으로 역사 강좌(cátedras) 담당자들의 추적을 수행했는데, 이들은 그러한 학교에서 사용된 교과서의 빈번한 저자들이었다. 일반적으로 스페인 공립 중등교육 기관에서는 20세기 60년대 말까지 담당 교수(catedráticos titulares)가 집필한 교과서, 이것이 없을 경우 다른 스페인 기관의 강좌 담당자의 교과서가 사용되었다고 할 수 있다(Peiró, 1992).</p>
+
+<p><em>사립 중등교육 기관(Centros privados de secundaria)</em>에서 사용된 역사 교과서는(이 부분에 대해서는 발렌시아 학교만 분석했다), 주로 그들의 매우 다양한 종교적 소속과 이러한 수도회들이 자신들의 교과서와 출판사를 강화하려는 이해관계로 인해 훨씬 더 다양성을 보인다. 이미 규제된 교육이 이루어진 150년 이상에 걸쳐 스페인의 사립 중등교육을 말한다는 것은, 기본적으로 남녀 수도회가 주도한 교육을 언급하는 것이다. 엄격히 종교적이지 않은 사립 중등교육은 스페인 전체에서 양적으로 큰 의미를 갖지 못했다. 상대적으로 가까운 1960년의 통계가 예가 될 수 있다. 발렌시아 대학구의 51개 승인·인가 사립 중등학교 중 38개가 여러 남녀 수도회(경건학교회, 마리아회, 예수회, 프란치스코회, 도미니코회, 마리아형제회, 살레시오회, 아우구스티노회 등)에 소속되어 있었다. 초등교육의 승인·인가 사립학교의 경우에도 마찬가지이다(Ministerio de Educación Nacional, 1960). 사립 중등학교에서 사용된 중등 교과서에 관해서는 어쨌든 한 가지 주의사항이 있다. 국가 공인 시험(exámenes públicos estatales)의 존재인데, 이는 분석한 기간의 대부분 동안 공립 기관의 담당 교수의 손에 있었다. 이러한 사실은 사립 교육뿐 아니라 "자유(<em>libre</em>)" 교육에서도 상당수의 학생들이 자신들이 행정적으로 소속되어 있고 이 일반 시험에 포함될 문항과 문제를 출제하는 공립 기관 담당 교수의 교과서를 사용해야 했다.</p>
+
+<p>공·사립 초등학교에서 사용된 교과서를 파악하는 것은 중등학교보다 더욱 어렵다. 이 수준에서는 지역별 분석에 의존할 필요성이 확고하게 요청된다. 앞서 언급한 바와 같이 발렌시아 대학교 문서고에 보관된 정보가 이 경우 우리 연구의 주된 자료가 되었다. 이 문서고("초등교육 장학 시찰 보고서", "중등학교" 섹션 등)를 통해 우리는 이 문제에 관한 상당한 정보를 얻었으며, 이는 1860~1940년 시기를 부분적으로 커버한다. 실시한 표본조사는 대학 장학 시찰(사립 교육의 승인과 통제를 담당했음)이 1860년, 1900년, 1940년 전후에 수행한 보고서에 집중되었다(마지막 연도는 중등학교에만 해당). 이러한 표본조사는, 그 파편적이고 불완전하며 때로는 불확실한 정보에도 불구하고, 역사 교과서의 수용과 학교 소비의 몇 가지 기본적 특징을 확립할 수 있게 해 주었다.</p>
+
+<p>다음 절에서는 우리가 확립한 네 국면 각각에 대해 얻은 자료와 결론을 서술한다. 정치적 구분을 선호한 것은, 이것이 일어난 변화를 좀 더 정확히 하도록 해 주기 때문이다. 다른 구분(Boyd, 1997의 상당히 유사한 구분, 또는 Cuesta, 1997의 매우 다른 구분)도 마찬가지로 유효할 수 있으나, 본 연구의 구체적 목적에는 덜 부합한다.</p>
+
+<p>첫 번째 국면(1836~1880)은 학교 교과로서 역사가 역사·사회적으로 형성되기 시작한 시기에 해당한다.</p>
+
+<p>두 번째 국면(1880~1939)은 기본적으로 복고왕정기(Restauración) 및 그 온건 자유주의 체제와 동일시되며, 이 시기 교육 체제 수정을 위한 가톨릭 통합주의(integrismo católico)와 자유교육원(Institución Libre de Enseñanza)의 개혁주의의 체제 외적 투쟁도 포함한다. 이 국면에는 공화국 정부 시기와 내전 3년도 포함된다. 특히 첫 두 시기(공화국 시기)는 스페인의 정치·사회적 근대화 시도로 특징지어지는 시기이다. 교육은 초기 공화국 프로젝트의 주요 관심사 중 하나로 국가에 소속된 수많은 학교의 창설로 나타났으나, 교과서와 관련해서는 큰 변화가 없었다.</p>
+
+<p>세 번째 국면(1939~1970)은 기본적으로 프랑코 독재 시기 전체를 다루지만, 초등교육 전반, 그리고 특히 교과서에 이 시점이 가져온 큰 변화 때문에 1970년으로 마감하는 것을 선호했다. 이 시기 내에서는 교육과 관련하여 적어도 하나의 하위 구분이 가능하다. 처음 두 십년간 그 영감은 깊이 국가가톨릭적(nacional-católica)이었는데, 이는 <em>가톨릭적 존재(ser católico)</em>와 <em>스페인적 존재(ser español)</em>의 완전한 등치에 기반한 것이었다. 교육 부문은 복고왕정기와 유사한 특성을 다시 갖게 되었는데, 중등교육의 통제에 있어 가톨릭 통합주의 부문의 새로운 우위와, 이제는 자유교육원과 그 다양한 교육적 구체화를 통해 1900~1939년 시기에 그러했던 것과 달리, 조금이라도 근대화적인 교육 대안의 존재 가능성이 전혀 없다는 악화된 조건이 더해졌다. 1960년대 말부터, 취학률의 증가와 관련해서든 교육 내용에 대해 확립된 철옹성 같은 통제의 약화와 교수학적 혁신에 대한 개방과 관련해서든 어느 정도 변화가 시작되었다. 교과서가 겪은 두드러진 물리적 변화도 마찬가지였다.</p>
+
+<p>네 번째 시기(1970~현재)는 1975년부터 스페인의 정치적·민주적 정상화와 서유럽의 교육 방식·양식으로의 점진적 통합, 그리고 1990년 LOGSE(교육체제총괄법) 승인 이후 확립된 입법에 명확히 드러난 교육 체제 전반의 기본 특성과 우선적 기능에 관한 논쟁으로 특징지어진다.</p>
+
+<p>20세기 교육과 관련하여 가장 두드러진 세 가지 변화는, 첫째로 1938년의 변화로 이는 이전 교육적 경향의 유럽·진보적 부분과의 급진적 단절을 의미한다. 둘째로 1970~1975년부터 일어난 변화이며, 마지막으로 아직 전개 중이며 1990년에 새로운 초등교육과 중등의무교육(Educación Secundaria Obligatoria)과 함께 시작된 변화이다. 공화국 시기는 교과서에 대한 영향이 미미했는데, 심층적 쇄신을 목표로 했음에도 불구하고 그 지속 기간이 짧았고 이후 프랑코 체제에 의해 완전히 근절되었기 때문이다. 몇몇 새로운 교과서가 편찬되기는 했으나 그 영향은 매우 적었다.</p>
+
+<p>이 네 국면 각각의 보다 상세한 연구에 들어가기 전에, 확립된 처음 세 국면을 참조하여 현재까지의 우리 지식을 바탕으로 역사 교과서 생산 전체를 개관하는 양적 접근이 적절할 것으로 판단된다.</p>
+
+<h3 id="fase1">2-1. 제1국면(1836~1880) 교과서의 수용</h3>
+
+<p><em>초등교육</em>과 관련하여 활용된 주요 자료는 19세기 60년대의 보고서였다. 이 보고서들은 발렌시아의 100여 개 초등학교와 관련이 있다. 이들 보고서에서는 통상적으로 각 학교 과목에서 사용된 저자가 표시되어 있지만, 종종 저작의 제목은 표기되지 않는 경우가 있어 불완전한 형태이다. 여기서 우리가 언급하는 것은 오직 "상급(superior)" 초등교육, 즉 9세에서 11세 사이에 이루어지는 초등교육에 한한다는 점에 유의해야 한다. 1901년까지 역사는 초등교육 전체에서 교과로 포함되지 않았기 때문이다. 표 1은 이 첫 국면에 대해 얻은 결과를 보여준다.</p>
+
+<p>기록된 10종의 저작 중 오직 두 종만이 <em>발렌시아 저작</em>(저자에 의해서든 출판 지역에 의해서든)이다. 비센테 보익스(Vicente Boix)와 파스쿠알 페레스(Pascual Pérez)의 저작이다. 보익스의 저작이 다른 모든 것과 큰 차이로 가장 많이 사용된 것으로 나타난다. 따라서 그의 저작에 대한 상세한 연구는 19세기 중반 발렌시아 학생들이 받은 역사 교육을 깊이 파악하는 데 있어 불가결한 참조점이 된다.</p>
+
+<div class="table-wrap">
+<div class="caption">표 1. 1860년경 발렌시아 초등학교에서 사용된 역사 교과서</div>
+<table>
+<thead>
+<tr><th>저자</th><th>제목</th><th>비율(%)</th></tr>
+</thead>
+<tbody>
+<tr><td>Boix (Vicente)</td><td>(스페인사 개요, Nociones de Hª de España)</td><td>52</td></tr>
+<tr><td>Calonge (Ignacio)</td><td>(연대학 요소, Elementos de cronología)</td><td>2</td></tr>
+<tr><td>Flórez (J. Segundo)</td><td>(역사 초보 개념, Primeras nociones Hª)</td><td>11</td></tr>
+<tr><td>Gómez (Ranera, A.)</td><td>(스페인사 요소, Elementos Hª España)</td><td>6</td></tr>
+<tr><td>Hurtado (Tomás)</td><td>(스페인사 개요, Compendio Hª España)</td><td>5</td></tr>
+<tr><td>J.S.A.E. (1)</td><td>(1)</td><td>5</td></tr>
+<tr><td>Mariana</td><td>(2)</td><td>5</td></tr>
+<tr><td>Pérez (Pascual)</td><td>(스페인사 개요, Compendio Hª España)</td><td>4</td></tr>
+<tr><td>Pinos (José)</td><td>(스페인사 개요, Compendio Hª España)</td><td>4</td></tr>
+<tr><td>Terradillos (A. Mª)</td><td>(스페인사 편람, Prontuario Hª España)</td><td>6</td></tr>
+</tbody>
+</table>
+<div class="table-source">
+출처: 발렌시아 대학교 문서고. 초등교육(E.P.) 문서번호 68-107, 1005-1008.<br>
+비고: (1) 저자와 저작이 충분히 식별되지 않음. (2) 이는 자료의 부정확성으로 추정되는데, Mariana로 우리가 알고 있는 유일한 인물은 예수회 후안 데 마리아나(Juan de Mariana)이기 때문이다. 그의 기념비적이고 고전적인 「스페인 총사(Historia General de España)」는 학교용 저작이 아니며, 1938년까지 이 저작의 학교용 번안본이 만들어졌다고 알려진 바 없다(Mariana, 1938).
+</div>
+</div>
+
+<p>상대적으로 유사한 비율의 나머지 저자들은 첫 국면의 주요 저자들을 대표한다.</p>
+
+<ul>
+<li><strong>앙헬 마리아 테라디요스(Angel María Terradillos)</strong>는 호세 세군도 플로레스(José Segundo Flórez), 알레한드로 고메스 라네라(Alejandro Gómez Ranera)와 함께 이 첫 국면 스페인 학교 전체에서 가장 많이 사용된 세 저자에 속한다. 그들의 교과서의 매우 많은 재판본(테라디요스의 경우 20판 이상)이 이를 보여준다. 알레한드로 고메스 라네라도 상당한 성공을 거둔 저자였으며, 특히 중등교육용 교과서에서 두드러졌다<a href="#nota6" class="footnote-ref">[6]</a>.</li>
+<li><strong>이그나시오 칼롱헤(Ignacio Calonge)</strong>는 A. M. 테라디요스와 마찬가지로 역사 교육과는 다른 초등학교 여타 과목의 소규모 교과서 저자이다.</li>
+<li><strong>J. 피노스(J. Pinos)의 개요</strong>는 초등학교 역사 교과서에서 드물지 않게 그러했듯이 운문으로 되어 있다.</li>
+</ul>
+
+<p><em>발렌시아 공립 중등교육(secundaria pública valenciana)</em>에서 사용된 교과서는 발렌시아와 알리칸테에서는 <strong>비센테 보익스(Vicente Boix)</strong>의 것이었고, 카스테욘에서는 <strong>호세 에스파냐 예도(José España Lledó)</strong>와 <strong>호세 산스 브레몬(José Sanz Bremón)</strong>의 것이었다. 1880년 이후 1900년까지 V. 보익스의 교과서는 발렌시아에서는 <strong>마누엘 사발라 우르다니스(Manuel Zabala Urdániz)</strong>의 것으로, 알리칸테에서는 <strong>에밀리오 세난테 야우데스(Emilio Senante Llaudes)</strong>의 것으로 대체되었다.</p>
+
+<p><em>스페인 공립 중등교육(secundaria pública española)</em> 전체와 관련해서는, 이그나시오 페이로(Ignacio Peiró)의 연구(Peiró, 1993)가 바첼레라토 기관들의 자체 보고서를 바탕으로 19세기 후반 이 학교들에서 사용된 교과서를 매우 명확히 밝혀냈다. 우리 자신의 발렌시아 바첼레라토 기관에 대한 보다 상세한 연구로 확대하여 표 2를 확립할 수 있었는데, 이는 1842~1905년 사이에 존재했던 공립 바첼레라토 기관 64개소, 사실상 전부의 총 396건의 연례 보고서를 정리한 것이다<a href="#nota7" class="footnote-ref">[7]</a>. 이러한 연례 보고서는 통상 각 기관에서 사용된 교과서의 제목과 저자를 기록하고 있다. 1861~1901년 사이에는 이러한 기록이 빈번했다. 이 절에 기록된 다른 연도들, 즉 1861년 이전과 특히 1905년 이후에는 이러한 세심한 관행이 연구자에게 유감스럽게도 보다 불규칙해진다. 이것이 이 경우, 그리고 공립 중등교육과 관련해서, 전체 논문에서 사용된 연대적 틀을 변경한 근본적인 이유이다. 활용된 자료의 특성상 그 통일성을 깨지 않는 것이 바람직했다.</p>
+
+<p>이러한 통계는 각 교과서와 각 기록된 저자의 양적 중요성을 매우 수용할 만한 정도의 신뢰도로 확립할 수 있게 해준다. 그 질적 중요성은 별도의 후속 분석 장르에 속하며, 예를 들어 그 교수학적 혁신의 정도, 각 시기의 "학술적(sabia)" 역사서술의 상태와의 관계 정도, 또는 그것에 대한 이전 교과서 전통에의 의존과 애착 정도 등 다른 종류의 평가가 필요할 것이다. 이는 최근의 몇몇 연구에서 이미 시작된 바 있다(Boyd, 1997; Cuesta, 1997; Maestro, 1997).</p>
+
+<div class="table-wrap">
+<div class="caption">표 2. 19세기 후반 바첼레라토 기관에서 역사 교과서의 유포</div>
+<table>
+<thead>
+<tr><th>저자</th><th>1842-1874</th><th>1875-1887</th><th>1888-1905</th></tr>
+</thead>
+<tbody>
+<tr><td>Alfaro, M. Ibo</td><td>6.2</td><td>4.3</td><td>1.5</td></tr>
+<tr><td>Arenas, Anselmo</td><td></td><td></td><td>0.5</td></tr>
+<tr><td>Artero, Juan G.</td><td></td><td></td><td>1</td></tr>
+<tr><td>Baena, José</td><td></td><td>4</td><td></td></tr>
+<tr><td>Beltrán, Ricardo</td><td></td><td>0.5</td><td>1</td></tr>
+<tr><td>Boix, Vicente</td><td>2</td><td>0.5</td><td></td></tr>
+<tr><td>Cañizo, Juan</td><td></td><td>1.9</td><td>5.4</td></tr>
+<tr><td>Castro, Fernando</td><td>22.2</td><td>0.8</td><td></td></tr>
+<tr><td>Cid, Leoncio</td><td></td><td></td><td>1</td></tr>
+<tr><td>Cortada, Juan</td><td>2</td><td></td><td></td></tr>
+<tr><td>Diaz, Francisco</td><td></td><td></td><td>1.5</td></tr>
+<tr><td>Doporto, Severiano</td><td></td><td></td><td>1</td></tr>
+<tr><td>España, José</td><td></td><td>2.9</td><td>1</td></tr>
+<tr><td>Ferrán, Andrés</td><td></td><td></td><td>0.5</td></tr>
+<tr><td>Fornés, Antonio</td><td></td><td></td><td>0.5</td></tr>
+<tr><td>Gaite, Joaquín</td><td>0.8</td><td>1.3</td><td></td></tr>
+<tr><td>García García, S.</td><td>1.6</td><td>7.3</td><td>3.4</td></tr>
+<tr><td>García Moreno, A.</td><td></td><td>1.1</td><td>0.5</td></tr>
+<tr><td>Gil, José</td><td></td><td>0.5</td><td></td></tr>
+<tr><td>Gómez Ranera, A.</td><td>13.6</td><td>2.7</td><td>2.4</td></tr>
+<tr><td>Góngora, Manuel</td><td></td><td>4.8</td><td>1.5</td></tr>
+<tr><td>Izquierdo, Pedro</td><td></td><td></td><td>1.3</td></tr>
+<tr><td>Laita, Mariano</td><td>1.3</td><td>5.9</td><td></td></tr>
+<tr><td>Laplana, Luis</td><td></td><td>1.3</td><td></td></tr>
+<tr><td>López Amarante, J.</td><td>1.6</td><td>1.9</td><td>1</td></tr>
+<tr><td>López Correa, M.</td><td></td><td>0.2</td><td></td></tr>
+<tr><td>López Vicuña, J.</td><td>0.8</td><td>5.1</td><td></td></tr>
+<tr><td>Machiandiarena, R.</td><td></td><td>1.6</td><td>8.3</td></tr>
+<tr><td>Martín, Marcos</td><td></td><td></td><td>1.3</td></tr>
+<tr><td>Martínez Añibarro, J.</td><td></td><td>0.5</td><td>0.2</td></tr>
+<tr><td>Martínez Rives, J.</td><td>1.2</td><td></td><td></td></tr>
+<tr><td>Merelo, Manuel</td><td>8.2</td><td>2.9</td><td>2</td></tr>
+<tr><td>Mingote, Policarpo</td><td></td><td>2.9</td><td></td></tr>
+<tr><td>Molina, Isidro de</td><td></td><td>0.2</td><td></td></tr>
+<tr><td>Monreal, Bernardo</td><td>0.8</td><td>3.5</td><td>0.8</td></tr>
+<tr><td>Moraleda, Máximo</td><td></td><td></td><td>0.5</td></tr>
+<tr><td>Moreno Espinosa, A.</td><td>7</td><td>13.7</td><td>16.6</td></tr>
+<tr><td>Muro, José</td><td></td><td>0.5</td><td>3.7</td></tr>
+<tr><td>Orodea, Eduardo</td><td>8.2</td><td>3.5</td><td>2.7</td></tr>
+<tr><td>Ott, Augusto</td><td>0.4</td><td></td><td></td></tr>
+<tr><td>Palacio Fernández, P.</td><td>3.7</td><td>7.3</td><td>0.2</td></tr>
+<tr><td>Palacios, Joaquín</td><td></td><td>1.3</td><td></td></tr>
+<tr><td>Palma, Federico</td><td></td><td>0.5</td><td></td></tr>
+<tr><td>Parrilla, Manuel</td><td></td><td></td><td>0.5</td></tr>
+<tr><td>Pérez López, J.</td><td></td><td>0.5</td><td>1.3</td></tr>
+<tr><td>Picatoste, Felipe</td><td></td><td>0.5</td><td>4.4</td></tr>
+<tr><td>Pons, José Luis</td><td>0.8</td><td></td><td></td></tr>
+<tr><td>Ramírez, Remigio</td><td>2</td><td>1.9</td><td>0.2</td></tr>
+<tr><td>Rivera, Joaquín</td><td>16.5</td><td>0.8</td><td></td></tr>
+<tr><td>Rubió Ors, J.</td><td></td><td>5.6</td><td>1.5</td></tr>
+<tr><td>Sales Ferré, M.</td><td></td><td>8.6</td><td>2.4</td></tr>
+<tr><td>San Román, Teodoro</td><td></td><td></td><td>0.5</td></tr>
+<tr><td>Sánchez Casado, F.</td><td>0.2</td><td>3.8</td><td>1.5</td></tr>
+<tr><td>Sánchez Martínez, R.</td><td></td><td>1.1</td><td></td></tr>
+<tr><td>Sanz Bremón, J.</td><td></td><td>0.5</td><td>6.1</td></tr>
+<tr><td>Saz Berrio, B.</td><td></td><td>0.2</td><td>1</td></tr>
+<tr><td>Senante, Emilio</td><td></td><td></td><td>1.5</td></tr>
+<tr><td>Tárrega, Juan C.</td><td>0.2</td><td></td><td></td></tr>
+<tr><td>Torras, José</td><td></td><td></td><td>0.2</td></tr>
+<tr><td>Valero, Blas</td><td></td><td></td><td>0.5</td></tr>
+<tr><td>Velasco, Eduardo</td><td></td><td></td><td>1</td></tr>
+<tr><td>Vergara, Gabriel M.</td><td></td><td></td><td>0.5</td></tr>
+<tr><td>Vidal, Antonio</td><td></td><td>0.2</td><td>2.2</td></tr>
+<tr><td>Zabala Urdániz, M.</td><td></td><td>0.5</td><td>1.7</td></tr>
+<tr><td><strong>합계</strong></td><td><strong>100</strong></td><td><strong>100</strong></td><td><strong>100</strong></td></tr>
+</tbody>
+</table>
+<div class="table-source">출처: 바첼레라토 기관들의 연례 보고서.</div>
+</div>
+
+<p>이러한 양적 평가를 활용할 수 있다는 것은, 원칙적으로 각 시기의 가장 중요한 것으로 간주할 수 있는 저자 목록을 확립하고, 그럼으로써 가장 대표적인 교과서로서 그 저자들에 대한 관련 질적 연구에 집중할 수 있게 해준다. 이러한 방식으로, 예를 들어 표 2의 세 시기 구분을 참조할 때, 연구되어야 할 저자와 저작은—숫자를 하나 제시하자면—각 시기에서 유포 비율 5%를 넘는 것들로, 알파벳 순으로 다음과 같다.</p>
+
+<ul>
+<li>첫 구간: 마누엘 이보 알파로(Manuel Ibo Alfaro), 페르난도 데 카스트로(Fernando de Castro), 알레한드로 고메스 라네라, 마누엘 메렐로(Manuel Merelo), 알폰소 모레노 에스피노사(Alfonso Moreno Espinosa), 에두아르도 오로데아(Eduardo Orodea), 호아킨 페데리코 리베라(Joaquín Federico Rivera).</li>
+<li>두 번째 구간: 시몬 가르시아 가르시아(Simón García García), 다시 모레노 에스피노사, 그리고 파트리시오 팔라시오(Patricio Palacio), 호아킨 루비오 이 오르츠(Joaquín Rubió y Orts), 마누엘 살레스 페레(Manuel Sales Ferré). 살레스 페레는 페르난도 데 카스트로의 저작을 계승했다.</li>
+<li>세 번째 구간: 이전 구간과 같은 임의 비율 기준을 적용하면 후안 델 카니소(Juan del Cañizo)와, 앞 두 구간과 마찬가지로, 알폰소 모레노 에스피노사가 있다. 후자는 의심의 여지 없이 스페인 중등교육용 역사 교과서에 관해 19세기 후반 전체에서 가장 중요한 저자였다<a href="#nota8" class="footnote-ref">[8]</a>.</li>
+</ul>
+
+<h3 id="fase2">2-2. 제2국면(1880~1939) 교과서의 유포</h3>
+
+<p>발렌시아 대학 문서고에 존재하는 <em>20세기 초</em>의 보고서들은 사립·공립, 종교·세속을 포함한 약 50개의 발렌시아 초등학교에 관한 자료를 제공한다. 이미 분석한 60년대 보고서에서 그러했듯이, 각 학교 과목에서 사용된 저자가 일정 빈도로 표시되지만, 항상 그런 것은 아니며 이 경우 통상 저작의 이름은 표시되지 않는다는 점에서 불완전한 형태이다. 표 3에 제2국면의 이 초기 시점에 얻은 결과를 제시한다.</p>
+
+<p>기록된 15종의 저작 중 6종이 앞서 언급한 의미에서 <em>발렌시아 저작</em>이다. 암브로시오 세브리안(Ambrosio Cebrián), 페르난도 가리고스(Fernando Garrigós), 마리아 오르베라(María Orbera), 발타사르 페랄레스(Baltasar Perales), 파블로 솔라노(Pablo Solano), 프루덴시오 솔리스(Prudencio Solís)의 저작이다. 이러한 저자들의 집합은 분석된 표본의 66%를 차지하며, 이들 사이에 매우 유의미한 차이는 나타나지 않지만, 발렌시아 사범학교(escuela Normal de Valencia)와 연계된 교수 그룹(마리아 오르베라, 발타사르 페랄레스, 파블로 솔라노, 프루덴시오 솔리스)의 어느 정도 우위가 나타난다. 매우 단순화되고 거의 해석적이지 않은 열거·기술적 성격을 지닌 이들의 저작에 대한 세부 연구는, 큰 편차 없이 20세기 초 발렌시아 학생들이 받은 역사 교육을 깊이 파악할 수 있게 해줄 것이다. 이들의 저작은 19세기 말에 쓰였지만, 일부 재판본 연도를 살펴볼 때 학교 사용은 20세기 20년대까지 이어졌다. 상대적으로 유사한 비율의 나머지 저자들은 상당히 다양한 성격의 인물들을 대표한다.</p>
+
+<div class="table-wrap">
+<div class="caption">표 3. 1900년경 발렌시아 초등학교에서 사용된 역사 교과서</div>
+<table>
+<thead>
+<tr><th>저자</th><th>제목</th><th>비율(%)</th></tr>
+</thead>
+<tbody>
+<tr><td>Arañó (Miguel)</td><td>(스페인사 개요, Compendio Hª España)</td><td>4</td></tr>
+<tr><td>Bosch Cusí (Juan)</td><td>(스페인사, Historia de España)</td><td>4</td></tr>
+<tr><td>Calleja (Saturnino)</td><td>(스페인사 개요, Nociones Hª de España)</td><td>6</td></tr>
+<tr><td>Casanovas (C.: 경건학교회)</td><td>(1)</td><td>2</td></tr>
+<tr><td>J.C.C. (경건학교회)</td><td>(스페인사 요소, Elementos Hª España)</td><td>6</td></tr>
+<tr><td>Cebrián (Ambrosio)</td><td>(스페인사 개요, Nociones Hª de España)</td><td>6</td></tr>
+<tr><td>Chantrel</td><td>(1)</td><td>2</td></tr>
+<tr><td>Duchesne (J.B.)</td><td>(스페인사 개요, Compendio Hª España)</td><td>2</td></tr>
+<tr><td>Fernández (C.)</td><td>(1)</td><td>6</td></tr>
+<tr><td>Garrigós, F.</td><td>(스페인사 요약, Sumario Hª España)</td><td>12</td></tr>
+<tr><td>Orbera (María)</td><td>(스페인사 강의, Lecciones Hª España)</td><td>10</td></tr>
+<tr><td>Perales (Baltasar)</td><td>(스페인사 개요, Nociones Hª de España)</td><td>10</td></tr>
+<tr><td>Senties (C.)</td><td>(1)</td><td>2</td></tr>
+<tr><td>Solano, Pablo</td><td>(스페인사, Historia de España)</td><td>14</td></tr>
+<tr><td>Solís (Prudencio)</td><td>(스페인사 개요, Nociones Hª de España)</td><td>14</td></tr>
+</tbody>
+</table>
+<div class="table-source">출처: 발렌시아 대학교 문서고. E.M. 129-132, 136-138, 143, 148, 156-159 문서. 비고: (1) 저자와 저작이 충분히 식별되지 않음.</div>
+</div>
+
+<ul>
+<li><strong>가장 놀라운 사례는 예수회 장 밥티스트 뒤센(Jean Baptiste Duchesne)의 경우이다.</strong> 예수회 호세 프란시스코 데 이슬라(José Francisco de Isla)가 번역한 그의 「스페인사」는 18세기 중반의 것으로, 번역본이나 뒤센 저작의 각 장 첫머리를 장식한 운문 모두 매우 많은 판이 있었다. 20세기 초에도 여전히 사용되고 있다는 사실은—비록 의미 있는 방식은 아니지만—스페인 역사교과서 교육에서 가장 "장수한" 저작 중 하나로 만들어 준다(때로는 뒤센, 때로는 예수회 이슬라, 때로는 보다 정당하게 두 사람 모두에게 귀속되는 이 저작에 관한 더 자세한 내용은 Cuesta, 1997: 59-63, 73-74 참조).</li>
+<li><strong>후안 보슈 쿠시(Juan Bosch Cusí)</strong>의 교과서 역시 상당한 중요성을 획득했는데, 특히 헤로나의 달마우 카를레스(Dalmau Carles) 출판사에서의 출판 이후 그러했다.</li>
+<li><strong>사투르니노 카예하(Saturnino Calleja)</strong>의 교과서도 마찬가지였는데, 1876년 자신의 학교·아동용 자료 전문 출판사를 창설한 이후 이 출판 시장의 가장 두드러진 위치 중 하나를 점차 차지하게 되었다. 그의 역사 교과서 역시 오랜 생존과 이 출판사의 새롭고 변화하는 상황에 이를 적응시키는 능력의 표본이다. 연이은 확대와 라파엘 데 페나고스(Rafael de Penagos)를 비롯한 당대 가장 저명한 예술가들에 의해 디자인된 새로운 다색 표지가 이를 보여준다(더 자세한 내용은 Cuesta, 1997: 232-234; Boyd, 1997: 96-97 참조).</li>
+<li>저작을 찾아내지 못한 저자들에 대해서는 명백히 매우 적은 정보만 제공할 수 있다(경건학교회 C. Casanovas, Chantrel, C. Fernández, C. Senties). 그 식별과 특징 파악을 위한 노력을 강화해야 할 것이다. 다만 자료의 빈번한 부정확성과 그 서술의 간결함을 고려할 때, 이들의 이름이 자체 자료원에 잘못 기재되어 있을 가능성도 배제할 수 없다.</li>
+</ul>
+
+<p><em>공립 중등교육(secundaria pública)</em>과 관련해서는, 기관들의 연례 보고서가 저자와 사용 교과서의 이름을 기록하지 않게 되었다는 사실이 보다 지역적인 연구를 통해서만 극복할 수 있는 어려움을 야기한다. 교과서 저자인 경우 강좌 담당자의 추적이 몇 가지 단서를 제공할 수 있다. 예를 들어 1920년의 강좌 담당자의 40%가 그러했다(Boyd, 1997: 152). 새로운 정보원을 찾아야 할 것이나, 그 체계성이 현재로서는 보장되지 않는다.</p>
+
+<p>19세기 말 발렌시아 기관들에서 사용된 교과서는 발렌시아에서는 마누엘 사발라 우르다니스, 알리칸테에서는 에밀리오 세난테 야우데스, 카스테욘에서는 호세 산스 브레몬의 것이었다. 20세기 초 십년간 이 교과서들은 발렌시아 바첼레라토 기관에 새로 임명된 강좌 담당자들에 따라 다른 것들로 대체되었다<a href="#nota9" class="footnote-ref">[9]</a>. 20세기 초 십년간 발렌시아 중등학교에서 가장 대표적인 저자는, 발렌시아 시에서 내전 이전 시기 전체를 커버하는 <strong>모데스토 히메네스 데 벤트로사(Modesto Jiménez de Bentrosa)</strong>와, 알리칸테에서 제2공화국 시기에 사용된 교과서를 두드러지게 대표하는 <strong>호세 라푸엔테 비달(José Lafuente Vidal)</strong>의 교과서이다. <strong>후안 산 에메테리오 루이스(Juan San Emeterio Ruiz)</strong>의 경우도 연대기적으로 마찬가지이지만, 이 사람의 우선 사용 지역은 확인할 수 없다. <strong>루이스 델 아르코(Luis del Arco)</strong>와 <strong>페르난도 아란스 벨라르데(Fernando Arranz Velarde)</strong>의 교과서는 20세기 초 30년간 카스테욘 기관에서 교과서로 사용된 것들이다.</p>
+
+<p><em>사립 중등교육(secundaria privada)</em>에 관해서는 매우 부족한 자료만 가지고 있다. 그럼에도 불구하고 1900년경 오리우엘라(Orihuela)의 예수회 학교에서 사용된 교과서가 알리칸테 기관의 강좌 담당자 에밀리오 세난테 야우데스의 것이었다는 점은 유의미하다<a href="#nota10" class="footnote-ref">[10]</a>. 이는 세속 저자, 비록 강한 통합주의적 성향의 저자라 할지라도 그의 교과서를 사용한 종교 중등학교의 예외적인 사례로 보이지 않는다. 이미 서술했듯이 기관의 담당 교수가 통제하는 국가 시험은 사립 교육에서도 그들의 교과서를 상당히 두드러진 방식으로 사용하도록 강제했다. 반대로 초등에서는 수도회와 연계된 저자들의 교과서가 매우 빈번하게 사용되었다. 중등에서 이러한 일이 일어난 것은 이후 20세기 20년대에 이르러서였으며, 예를 들어 예수회 라몬 루이스 아마도(Ramón Ruiz Amado)의 성공적인 교과서와 함께였다.</p>
+
+<h3 id="fase3">2-3. 제3국면(1939~1970) 교과서의 유포</h3>
+
+<p>프랑코 체제, 특히 처음 두 십년간에 관해서는, <em>초등학교 교과서</em>와 관련하여 아직 충분한 설명을 찾지 못한 하나의 사실이 확인된다. 한편으로는 <em>백과사전(enciclopedias)</em>의 대단한 성장으로, 이는 여러 등급으로 초등학교의 거의 배타적인 교재로 자리 잡았다. 다른 한편으로는 주로 20세기 이전 십년들에 만들어진, 이 교육 수준을 위한 소규모 역사 전용 교과서의 판본과 재판본이 살아남았다는 점이다. 이 두 번째 종류의 교과서의 매우 대표적인 사례는 브루뇨(Bruño), 에델비베스(Edelvives) 또는 후속의 S.M. 출판사의 것들이다. 이 교과서들 중 일부에는 바첼레라토 입학시험 준비와의 연관성이 표시되어 있지만, 다른 것들은 초등교육의 특정 학년을 위한 교재로 제시되어 있어, 앞서 언급한 백과사전—여기에도 다른 학교 과목들과 함께 역사 부문이 포함되어 있었다—과 직접 경쟁 관계에 있었다. 소규모 역사 교과서는 거의 배타적으로 <em>사립 초등교육</em>에서 사용되었을 것으로 추정되는데, 이들 교과서를 출판한 출판사들이 거의 배타적으로 교육에 헌신하는 여러 수도회와 연계된 곳들이기 때문이다. 반대로 백과사전은 주로 공립학교에서 사용되었다. 아직 매우 부분적인 자료만 가지고 있지만, 그중 일부는 매우 유의미하다. 예를 들어 <em>알바레스 백과사전(Enciclopedia Álvarez)</em>이 50년대와 60년대의 상당 부분 이 학교 시장의 약 80%를 차지했다는 점이다(Boyd, 1997: 269).</p>
+
+<p><em>공립 중등교육</em>은 제2공화국 시기 창설된 몇몇 바첼레라토 기관의 폐지로 약화되었다. 이들 기관 담당 교수 중 소수 그룹이 교과서의 주요 집필자가 되었다. 발렌시아의 경우 이들 담당 교수는 기본적으로 <strong>루이스 케롤 로소(Luis Querol Roso)</strong>, <strong>후안 그리마 라이그(Juan Grima Reig)</strong>와 그 협력자들(<strong>후안 마시아 빌라노바(Juan Masiá Vilanova)</strong>와 <strong>마리아 앙헬레스 요피스(María Angeles Llopis)</strong>), <strong>비센테 카스칸트 나바로(Vicente Cascant Navarro)</strong>, <strong>후안 토르모 세르비노(Juan Tormo Cervino)</strong>, <strong>알베르토 콤프테 프레이하네트(Alberto Compte Freixanet)</strong>이었다.</p>
+
+<p>적어도 프랑코 체제 초기에는 <em>사립 중등교육</em>에서 같은 일이 일어난 것으로 보이지 않는다. "1941~1942학년도 발렌시아 대학구 인가 교재"의 목록에 언급된 25개 학교가 제공하는 자료를 바탕으로 살펴보면, 사용된 교과서는 표 4에 나타난 것들이었다.</p>
+
+<div class="table-wrap">
+<div class="caption">표 4. 1941~1942년 발렌시아 사립 중등학교에서 사용된 역사 교과서</div>
+<table>
+<thead>
+<tr><th>저자</th><th>제목</th><th>비율(%)</th></tr>
+</thead>
+<tbody>
+<tr><td>Arranz Velarde, F.</td><td>보편사 및 스페인사</td><td>3</td></tr>
+<tr><td>Asián Peña, J.L.</td><td>보편사 및 스페인사</td><td>3</td></tr>
+<tr><td>Bermejo Rica, A.</td><td>보편사 및 스페인사</td><td>3</td></tr>
+<tr><td>Castro, J. Ramón</td><td>보편사 및 스페인사</td><td>64</td></tr>
+<tr><td>F.T.D. 출판사</td><td>보편사 및 스페인사</td><td>9</td></tr>
+<tr><td>Martínez, Antonio</td><td>스페인사</td><td>3</td></tr>
+<tr><td>Montilla Benitez, R.</td><td>보편사 및 스페인사</td><td>3</td></tr>
+<tr><td>Pérez Bustamante, C.</td><td>보편사 및 스페인사</td><td>12</td></tr>
+</tbody>
+</table>
+<div class="table-source">출처: 발렌시아 대학교 문서고. E.M. 178 문서.</div>
+</div>
+
+<p>결과는 매우 놀라운데, 발렌시아 저자와 출판사의 부재와, 새로 임명된 담당 교수 <strong>호세 라몬 카스트로(José Ramón Castro)</strong>의 교과서의 두드러진 주역성 때문이다. 확실히 <strong>호세 루이스 아시안(José Luis Asián)</strong>의 교과서, <strong>안토니오 베르메호 데 라 리카(Antonio Bermejo de la Rica)</strong>나 <strong>시리아코 페레스 부스타만테(Ciriaco Pérez Bustamante)</strong>의 교과서, 그리고 이 목록에 등장하지 않는 몇몇 동시대 저자들(<strong>산티아고 안드레스 사파테로(Santiago Andrés Zapatero), 알바로 산타마리아(Alvaro Santamaría), 마리아 코마스(María Comas), 후스티니아노 가르시아 프라도(Justiniano García Prado), 데메트리오 라모스(Demetrio Ramos), 펠리시아노 세레세다(Feliciano Cereceda)</strong>)의 교과서 역시 스페인 영토 전체에서 매우 많이 사용되었다. 실시한 표본조사에 발렌시아 저자와 출판사가 나타나지 않는 이유는 아마도 자료가 1941~1942학년도에 해당하기 때문일 수 있는데, 이때는 아직 후안 그리마(1944년부터)나 비센테 카스칸트(1946년부터)의 교과서가 세상에 나오지 않았다<a href="#nota11" class="footnote-ref">[11]</a>.</p>
+
+<p>40년대 중반 무렵에 발렌시아 출판사 <em>Marfil</em>과 <em>ECIR-López Mezquida</em>가 학교 출판 관련 활동을 시작했다. 이후 저자와 사용 교과서의 변화 및 그 비율 분배에서의 변화 가설을 확증할 충분한 정보는 없지만, 가지고 있는 부분적 정보로부터 볼 때 적어도 프랑코 체제 말기까지는 두 발렌시아 출판사와 저자들 모두에게 유리한 방향으로 변화했을 가능성이 매우 높다고 판단된다.</p>
+
+<h3 id="fase4">2-4. 제4국면(1970~1995) 교과서의 유포</h3>
+
+<p>1970년 이후 역사 교과서 사용에 관한 전국 단위 연구는 존재하지 않지만, 중등과 관련하여 심각한 왜곡 없이 스페인 바첼레라토 기관 전체에 적용할 수 있는 몇몇 지역적 접근이 이루어졌다.</p>
+
+<p>이 연구들 중 첫 번째는 1982~1984년 사이 <em>카탈루냐 공·사립 중등학교</em>에서 이루어진 것으로, 사실상 전수(全數)에 가까운 표본을 대상으로 했다. 존재하는 122개 공립학교와 284개 사립학교로, 후자의 80%에 해당한다.</p>
+
+<p>이 연구가 제공하는 결과는 표 5에 나타난다.</p>
+
+<div class="table-wrap">
+<div class="caption">표 5. 1982~1984학년도 카탈루냐 중등학교에서 사용된 역사 교과서</div>
+<table>
+<thead>
+<tr><th>출판사</th><th>공립학교(바첼레라토) 비율(%)</th><th>사립학교(바첼레라토) 비율(%)</th></tr>
+</thead>
+<tbody>
+<tr><td>Akal</td><td>9.6</td><td>1.5</td></tr>
+<tr><td>Anaya</td><td>8.8</td><td>12</td></tr>
+<tr><td>Bruño</td><td>1.8</td><td>6.7</td></tr>
+<tr><td>Cymys</td><td>0.5</td><td>0</td></tr>
+<tr><td>Magisterio Español</td><td>0</td><td>4</td></tr>
+<tr><td>Marfil</td><td>0.8</td><td>0.1</td></tr>
+<tr><td>S.M.</td><td>0.8</td><td>2.5</td></tr>
+<tr><td>Santillana</td><td>3.5</td><td>4.5</td></tr>
+<tr><td>Serpa</td><td>1.9</td><td>0.9</td></tr>
+<tr><td>Teide</td><td>2</td><td>2.6</td></tr>
+<tr><td>Vicens Vives</td><td>53.1</td><td>35.1</td></tr>
+<tr><td>기타 출판사</td><td>6.9</td><td>10.6</td></tr>
+<tr><td>무응답</td><td>10.3</td><td>21.5</td></tr>
+</tbody>
+</table>
+<div class="table-source">출처: González, I. y G. Zaragoza, "El llibre de text d'història al batxillerat. La situació actual a Catalunya", <em>Actes de les 7enes Jornades d'història de l'educació als Països Catalans</em>. Eumo Editorial, Vic, 1985, pp. 67-84.</div>
+</div>
+
+<p>갈리시아와 카스티야-레온의 중등교육 자료를 제시하기 전에, 앞의 표에 반영된 카탈루냐 역사 교과서 소비의 주요 특징에 대해 간략히 언급하는 것이 적절할 것이다.</p>
+
+<p>가장 눈길을 끄는 것은 <em>Vicens Vives</em> 출판사의 매우 두드러진 우위인데, 공립과 사립 중등을 합치면 총 비율의 거의 절반을 차지한다. 이와 큰 차이는 있지만 다른 주목할 만한 출판사들은 중요도 순으로 <em>Anaya</em>(10%를 조금 넘음), <em>Akal</em>(약 6%, 이 구체적인 경우 고전적 유형의 교과서보다는 "작업 자료(materiales de trabajo)"에 가까워 매우 관련성 있는 비율을 의미함), <em>Bruño</em>와 <em>Santillana</em>(4% 정도)이다. 나머지 출판사들은 마지막 비율 아래에 있다. 이러한 수치는 두 종의 COU(대학진학 예비과정) 교과서(<em>현대사</em>와 <em>미술사</em>)의 경우에도 거의 동일하게 반복된다. 사립학교에서는 기원이나 지향이 보다 가톨릭적인 출판사(<em>Bruño, Magisterio Español, S.M.</em>)의 교과서 사용이 상당히 더 많은 것도 명확하다.</p>
+
+<p>또한 "대안(alternativos)" 교과서, 즉 보다 혁신적이며 고전적인 설명·닫힌 교과서 모델에서 벗어난 "학교 교재"의 의미에서의 교과서가 매우 적은 존재감을 갖는다는 점도 매우 유의미하다. <em>Akal</em>과 <em>Cymys</em>(후자는 <em>Grupo 13-16</em>이 준비함)의 교과서-교재만이 공립 중등에서 일정한 존재감을 확보했고, 특히 전자는 5%를 넘는 유일한 것이다. <em>Grupo Germania</em>나 <em>Grupo Sènia</em>의 다른 "교재"들은 <em>Grupo 13-16</em>보다도 낮은 비율을 얻고 있다.</p>
+
+<p>갈리시아 표본(표 6)은 카탈루냐 표본보다 완전성이 낮으며, 32개 중등학교와 약 4,000명의 학생을 분석한다. 자료는 1993~1994학년도의 것이며, BUP(통합바첼레라토) 3학년 교과서(<em>스페인사와 히스패닉 국가사</em>) 사용을 바탕으로 이루어졌다.</p>
+
+<div class="table-wrap">
+<div class="caption">표 6. 1993~1994학년도 갈리시아 중등학교에서 사용된 역사 교과서</div>
+<table>
+<thead>
+<tr><th>출판사</th><th>공·사립학교(BUP 3학년) 비율(%)</th></tr>
+</thead>
+<tbody>
+<tr><td>Anaya</td><td>18</td></tr>
+<tr><td>Bruño</td><td>6</td></tr>
+<tr><td>ECIR</td><td>21</td></tr>
+<tr><td>S.M.</td><td>6</td></tr>
+<tr><td>Santillana</td><td>18</td></tr>
+<tr><td>Vicens Vives</td><td>31</td></tr>
+</tbody>
+</table>
+<div class="table-source">출처: Ramón López Facal, <em>Análise do concepto de nación a través dos manuais escolares de Historia de España. A formación ideolóxica dos cidadans</em>. Universidad de Santiago, 1994. 저자가 친절히 사용을 허락한 등사본.</div>
+</div>
+
+<p>갈리시아의 경우 한편으로 스페인 중등교육에서 <em>Vicens Vives</em>의 강한 정착을 확인해 준다. 다른 한편으로는 카탈루냐 표본과 대조적으로, <em>Grupo Edetania</em>가 편찬한 교과서로 스페인 중등학교 상당수에서 명성을 얻은 발렌시아 출판사 <em>ECIR</em>이 두드러진 중요성으로 등장한다.</p>
+
+<p>마찬가지로 다른 두 국가 규모의 대형 출판사가 두드러진다. 한편으로는 <em>Anaya</em>, 다른 한편으로는 <em>Santillana</em>인데, 후자는 학교 궤적이 초등교육과 더 연계되어 시작되었지만 이후 중등교육에서도 두드러진 역할을 맡게 되었다. <em>Bruño</em>와 <em>S.M.</em>은 보다 겸손한 비율로 이 표본에 등장하는 출판사군을 마감한다. 카탈루냐와 달리 이 표본에는 "대안" 교재가 전혀 존재하지 않는다.</p>
+
+<p>이 갈리시아 표본은 중등교육에 헌신하는 스페인 출판 시장의 끊임없는 과점화(oligopolización) 과정이 특히 70년대 이후 더욱 강화되었음을 확인해 준다. 현재 착수된 교육 개혁이 이러한 지난 시기 상황을 변경할 수는 있겠으나 크게는 아닐 것이다. 사실 앞서 언급했듯이, 역사 교과서(또는 오늘날의 보다 광범위한 명칭인 <em>환경 지식(Conocimiento del Medio)</em>, <em>사회과, 지리 및 역사(Ciencias Sociales, Geografía e Historia)</em>)의 지역화 역시 앞서 언급한 출판사들과 원래 상표명과 같거나 변경된 명칭의 지역 확장 판본에 의해 주도되고 있다.</p>
+
+<p>수행된 세 번째 지역 연구는 카스티야-레온 지역에 관한 것으로, 카탈루냐와 갈리시아 사례에서 이미 본 바를 대체로 재확인해 준다. 다만 살라망카의 <em>Grupo Cronos</em>와 관련된 다른 "대안" 교과서의 존재와 같은 몇 가지 변형이 나타나는데, 이는 카탈루냐의 <em>Cymys-Grupo 13/16</em>을 대체하고 있으며, 오히려 훨씬 더 높은 비율을 보인다.</p>
+
+<div class="table-wrap">
+<div class="caption">표 7. 1995년 카스티야-레온 바첼레라토 기관에서 사용된 역사 교과서</div>
+<table>
+<thead>
+<tr><th>출판사</th><th>BUP 1학년(문명사) 비율(%)</th><th>BUP 3학년(스페인사) 비율(%)</th></tr>
+</thead>
+<tbody>
+<tr><td>Akal</td><td>3.1</td><td>—</td></tr>
+<tr><td>Anaya</td><td>19</td><td>30.1</td></tr>
+<tr><td>Bruño</td><td>1.5</td><td>—</td></tr>
+<tr><td>Cronos</td><td>—</td><td>6.3</td></tr>
+<tr><td>ECIR</td><td>12.8</td><td>12.6</td></tr>
+<tr><td>Esla</td><td>1.5</td><td></td></tr>
+<tr><td>S.M.</td><td>6.3</td><td>3.1</td></tr>
+<tr><td>Santillana</td><td>15.8</td><td>11.1</td></tr>
+<tr><td>Vicens Vives</td><td>36.5</td><td>30.1</td></tr>
+</tbody>
+</table>
+<div class="table-source">출처: Cuesta Fernández, R. (1998), <em>Clio en las aulas. La enseñanza de la Historia en España entre reformas, ilusiones y rutinas</em>. Barcelona, Pomares-Corredor, p. 196.</div>
+</div>
+
+<p>새로운 초등교육, 중등의무교육, 새로운 바첼레라토의 점진적 도입 이후 현재 상황은 어떠한가? 최소내용 시행령과 이들이 각 스페인 자치주(Comunidades Autónomas)의 특성에 맞게 여러 방식으로 적용되면서 발생한 큰 변화 중 하나는 출판물의 자치주별 다양화, 그리고 스페인 국가 전체에 존재하고자 하는 소형 출판사들이 직면한 경제적 존립 가능성의 중요한 문제이다. 아마도 한편으로는 명확히 지역적 성격의 출판사들이, 다른 한편으로는 보다 강력한 출판사들의 성장이 전개될 새로운 상황의 초입에 있다고 볼 수 있다. 후자는 70년대 EGB(기초일반교육) 도입 시기와 마찬가지로 중등에서 다시 영역을 확대할 가능성이 매우 높다. 왜냐하면 이들은 국가 전체 영토에 존재하기를 선택했고, 때로는 모(母) 출판사와는 다른 이름으로 등장하는 자치주 지사(支社)를 통해서도 그렇게 하기 때문이다. 여기서 "강력한 출판사(editoriales poderosas)"란 역사 교과서와 관련하여, 그리고 최근 25년을 참조하여, 분석된 마지막 세 표본에서 드러나듯이 <em>Vicens-Vives, Anaya, Santillana, Ecir</em>을 의미한다. 이들이 이 시장을 두드러지게 통제하고 있다. 초등에서 현재 <em>Anaya</em>와 <em>Santillana</em>가 이 시장의 60% 이상을 차지하고 있다면, 중등의무교육에서도 유사한 일이 일어날 수 있고, 현재의 30~35% 정도의 비율이 초등에서 이전에 일어난 일에 더 부합하는 수치로 이동할 수 있다고 가정할 수 있다.</p>
+
+<p>여러 차례 언급되었듯이, 실제 교과서 소비·판매 정보는 거의 공유되지 않는 비밀이다. 관련 출판사, 그 협회 또는 교육부 자체가 이 부문 총 판매량의 일반 자료만 제공할 뿐, 각 역사 또는 다른 학교 과목의 교과서 유포와 소비를 재구성할 수 있는 세부는 제공하지 않는다. 모든 학교의 연례 보고서가 의무적으로 도착해야 하는 지방 교육 장학 문서고들도 여러 가지 다소 합당한 이유로 이러한 보고서를 보관하지 않는다(적어도 발렌시아의 경우 그렇다). 따라서 우리는 유감스럽게도 교과서의 실제 사용 가능성 연구와 과거·현재 교사·학생에 대한 영향 연구의 이전 단계로서 이러한 학교 교과서 생산·유통 회로를 다소 엄밀하게 알기 위해서는, 상당히 지난하고 불완전한 재구성에 계속 의존해야 할 것이다.</p>
+</section>
+
+<section id="conclusion">
+<h2>3. 결론</h2>
+
+<p>확인할 수 있었듯이, 역사 교과서는 긴 궤적을 가진 학교적 장르이며, 그 궤적에서 여러 측면과 여러 시기에 다소 두드러진 방식으로 변화가 나타났다. 아마도 가장 큰 변화를 겪은 것은 파라텍스트적 측면(주로 구성과 이미지)일 것이다. 그러나 그 텍스트적·방법론적 내용의 상당한 변화가 뚜렷해지려면 20세기 70년대에 이르러야 하며, 이는 특히 여러 교수학 그룹이 편찬한 이른바 "작업 자료(materiales de trabajo)"에 나타난다. 가장 큰 변화는 따라서 매우 최근의 것이며, 최근 몇 년간의 교육 개혁에서 유래한 교과서에서 지역·자치주 역사의 현재적 강조로 (특히 내용과 관련하여, 방법론적 처리와 제안된 목적은 대체로 별로 변하지 않았다) 크게 증대되었다.</p>
+
+<p>이 출판물이 소수의 상업 기업 손에 집중되는 것 역시 상당히 최근의 사실이지만, 이 측면에서는 과정이 훨씬 더 길고 급격한 변화 없이 이루어졌다. 1950년 초등학교용 백과사전과 함께 일어난 변화, 그리고 1970년 25년의 기간 동안 이전의 주요 학교 출판사들을 밀어내는 데 성공한 몇몇 새로운 출판사의 등장을 제외하고는 그렇다. 매우 일반적인 노선에서 진행된 과정은 19세기 말부터 스페인 전체에서 몇몇 출판사의 존재는 저해하지 않았지만 기본적으로는 지역·지방적이었던 유포에서, 오늘날 두드러지게 국가적인 유포로 이어졌다. 그러나 이는 몇몇 보다 지역·자치주적 출판사를 완전히 밀어내지는 못했으며, 교과서와 기타 학교 교재 생산의 증가하는 과점화를 저해하지도 못했다.</p>
+
+<p>학교 역사서지학적 생산에 대한, 그 사용의 정도에 따라 뉘앙스가 부여된 상세한 지식은, 지금까지 대체로 이루어진 연구들, 곧 기존 교과서의 명백히 자의적이고 경험적으로 정당화되지 않은 선택에서 지나치게 자주 출발한 연구들보다 훨씬 더 과학적으로 견고한 후속 연구의 수행을 가능하게 할 것이다. 이것이 수행된 연구의 가장 중요한 기여 중 하나라고 판단한다. 스페인 학교 역사서지학의 광대한 <em>숲(bosque)</em>은 이제 가장 무성하고 사영(射影)이 가장 발달한 <em>나무(árboles)</em>-교과서의 시야를 방해할 이유가 없다. 같은 방식으로, 19세기와 20세기의 여러 십년간 라디오나 텔레비전 없이, 몇몇 일간지 독자만 있는 상태에서도 스페인 집단적 역사 기억의 창조와 형성에 주요하게 영향을 미친 저작들과 저자들을 개별화할 수 있었다.</p>
+
+<p>여러 유형의 학교 교과서의 유포와 소비에 대한 지식은, 교사의 취향과 선호, 그리고 그들의 역사 교육 목적에 대한 개념에 관해 더 많이 알기 위한 매우 유용한 지표이기도 하다. 학교 교과서가 실제로 어떻게 사용되고 사용되어 왔는지를 보다 깊이 알게 될 때, 우리는 그들이 전통적·관례적인 것에 대한 충실과 보다 혁신적인 제안에 대한 주저의 원인을 훨씬 더 잘 이해할 수 있을 것이다.</p>
+
+<p>사회·문화사의 이 중요한 측면을 심층적으로 알고자 한다면, 앞으로는 본 연구의 결과와, 아직 거의 알려지지 않은 이 교육 세계, 그리고 관념과 사회적 표상의 형성 세계를 더 깊이 파고들 후속 연구들의 결과를 고려해야 할 것이다. 그렇게 해야만 우리 현대적 기원의 특성, 그리고 우리 현재와 변화·개선의 합리적 가능성을 더 정확히 알 수 있을 것이다.</p>
+</section>
+
+<section id="notas">
+<h2>각주</h2>
+<div class="notes">
+<ol>
+<li id="nota1">이 근사치에는 <em>위대한 인물(grandes personajes)</em>의 생애와 관련된 학교용 저작이나, 역사·문화·지리적 여행으로 구성된 저작, 역사적 내용의 독본은 포함되어 있지 않다. 원한다면 제한적으로 <em>역사 교과서(manuales escolares de historia)</em>만을 계산에 넣었다.</li>
+<li id="nota2">필자는 <em>수용(recepción)</em>이라는 개념을 가장 단순한 의미로 사용했다. 이번에는 교과서의 "실제 사용(uso real)"과의 혼동을 피하기 위해 <em>사용(uso)</em>이라는 개념보다 이를 선호했다. 실제 사용은 훨씬 더 복잡한 측면이며 본 논문에서 상세히 다루지 않는다. 이런 의미에서 여기서 제시된 수용은 특히 독일 역사서술의 "Rezeptionsgeschichte(수용사)"라는 통상적 의미와는 관계가 적다. 이러한 이유로 이 개념에 <em>소비(consumo)</em> 개념을 병기했는데, 이 후자가 아마도 더 명확하되 우리가 지시하고자 하는 바를 덜 노골적으로 드러낼 것이다.</li>
+<li id="nota3">예를 들어, M. 포르셀 이 리에라(M. Porcel y Riera)가 자신의 「초등교육 완전 강좌—예비 학년(Curso completo de enseñanza primaria-grado preparatorio)」의 10판 표지에 제공한 인쇄본 78만 7천 부라는 수치는 신뢰할 만한가?(Palma de Mallorca, 1932). 또는 C. 보이드(C. Boyd)에 따르면 1928년 브루뇨 출판사가 인쇄한 300만 부의 학교 교과서라는 수치가 실제로 어떤 신뢰도를 가질 수 있는가?(Boyd, 1997: 116).</li>
+<li id="nota4">Manes 프로젝트의 향후 1833~1996년 인가 교재에 관한 출판물은 매우 중요한 자료가 될 것이다. 최근의 비얄라인(Villalaín, 1997)의 학교 교과서 관련 입법에 관한 출판물은 그 반복성, 그리고 실무에서 미이행된 상태에 대한 완전한 설명을 제공한다.</li>
+<li id="nota5">이 점에 관해 가장 시사적인 사례 연구 중 하나로 산티야나 출판사의 교과서 사용을 분석한 것은 니에베스 블랑코 가르시아(Nieves Blanco García)의 「보이지 않는 창살. 역사의 내용과 교육. 한 사례 연구(Las rejas invisibles. El contenido y la enseñanza de la Historia. Estudio de un caso)」이다. 미간행 박사학위 논문, 말라가 대학교, 1992. 이 연구의 종합은 같은 저자의 논문 "제도적 맥락과 교사 실천. 한 사례 연구(Contexto institucional y práctica docente. Estudio de un caso)", 「Revista de Educación」, no. 303, 1994, pp. 329-350에서 볼 수 있다. 지금까지 이루어진, 주로 유럽 규모의 가장 대표적인 양적 연구는 M. Angvik과 B. von Borries(1997)가 지휘한 「Youth and History. A comparative european survey on historical consciousness and political attitudes among adolescents(청소년과 역사: 청소년의 역사의식과 정치적 태도에 관한 유럽 비교조사)」이다. Hamburg, edition Körber-Stiftung, 2권. 우리가 다루는 주제와 관련하여 특히 관련성 있는 것은 A권의 pp. 95-105로, 중등 학생과 교사의 관점에서, 그리고 두 인식 사이의 불일치와 모순의 관점에서 교실에서의 교과서와 기타 학교 자료·자원의 실제 사용에 관한 논평에 헌정된 부분이다.</li>
+<li id="nota6">이 저자들과 그들의 가장 유의미한 교과서 일부는 라이문도 쿠에스타(Raimundo Cuesta)가 상세히 연구했다(Cuesta, 1997: 74, 84, 135, 152).</li>
+<li id="nota7">각 지방 수도에 있는 기관 집합에 그러한 조건이 없는 다른 도시에 창설된 16개 기관(Astorga, Baeza, Cabra, Carrión de los Condes, Casariego de Tapia, Figueras, Gijón, Játiva, Jerez de la Frontera, Lorca, Mahón, Osuna, Ponferrada, Reus, Tortosa, Tudela)이 추가되었다. 몇몇 경우, 예를 들어 하티바의 경우, 이 시기 동안 존속이 중단되었다.</li>
+<li id="nota8">이 저자들과 그들의 가장 유의미한 교과서 일부는 라이문도 쿠에스타가 상세히 연구했으며(Cuesta, 1997), 특히 언급된 출판물의 3장과 4장에서 다루어졌다.</li>
+<li id="nota9">발렌시아 기관의 연례 보고서를 통해 매우 흥미롭고 유의미한 몇 가지 관행을 확인할 수 있었다. 통상 이전 담당자의 은퇴나 전출로 담당 교수가 부재하고 아직 새로운 교수가 부임하지 않은 해에는, 단 한 학기 동안이라 하더라도 교과서가 바뀐다. 예를 들어 1880년과 1881년, 담당 교수 비센테 보익스의 사망 이후 그의 교과서는 M.I. 알파로, 알레호 가르시아 모레노, M. 공고라의 것으로 대체된다. 1883년부터 새로운 담당 교수인 마누엘 사발라가 자신의 교과서를 부과하고, 1898년 마드리드로 전출될 때까지 사용된다. 그 사이 새로운 담당 교수로 M. 히메네스 데 벤트로사가 임명될 때까지 다른 역사 교과서들이 사용되었고, 이는 새 담당 교수의 것으로 대체되어 1936년까지 지속되었다.</li>
+<li id="nota10">발렌시아 대학교 문서고: E.M. 문서, 148.</li>
+<li id="nota11">이 저자들과 그들의 가장 유의미한 교과서 일부는 C. Boyd(Boyd, 1997: 248-254)가 상세히 연구했으며, 보다 일반적으로는 R. Valls Montés(1984)의 「스페인사의 해석과 프랑코 체제 바첼레라토(1938-1953)에서의 이데올로기적 기원(La interpretación de la historia de España, y sus orígenes ideológicos, en el bachillerato franquista, 1938-1953)」, I.C.E. 발렌시아 대학교에서 다루어졌다.</li>
+</ol>
+</div>
+</section>
+
+<section id="referencias">
+<h2>참고문헌</h2>
+<div class="references">
+<ul>
+<li>ANGVIK, M. y B. von BORRIES (1997): <em>Youth and History. A comparative european survey on historical consciousness and political attitudes among adolescents</em> [청소년과 역사: 청소년의 역사의식과 정치적 태도에 관한 유럽 비교조사]. Hamburg, edition Körber-Stiftung, 2권.</li>
+<li>BLANCO GARCÍA, Nieves (1992): <em>Las rejas invisibles. El contenido y la enseñanza de la Historia. Estudio de un caso</em> [보이지 않는 창살: 역사의 내용과 교육—한 사례 연구]. 박사학위 논문, 말라가 대학교.</li>
+<li>BLANCO GARCÍA, Nieves (1994): "Contexto institucional y práctica docente. Estudio de un caso" [제도적 맥락과 교사 실천—한 사례 연구], <em>Revista de Educación</em>, n.º 303, pp. 329-350.</li>
+<li>BOYD, C.P. (1997): <em>Historia Patria. Politics, History and National Identity in Spain, 1875-1975</em> [조국의 역사: 스페인의 정치, 역사, 국가 정체성, 1875-1975]. Princeton University Press (Pomares-Corredor 출판사에서 곧 번역 예정).</li>
+<li>CUESTA FERNÁNDEZ, R. (1997): <em>Sociogénesis de una disciplina escolar: la Historia</em> [학교 교과의 사회발생: 역사]. Barcelona, Pomares-Corredor.</li>
+<li>CUESTA FERNÁNDEZ, R. (1998): <em>Clio en las aulas. La enseñanza de la Historia en España entre reformas, ilusiones y rutinas</em> [교실 속의 클리오: 개혁, 환상, 관행 사이의 스페인 역사 교육]. Barcelona, Pomares-Corredor.</li>
+<li>JOHNSEN, E.B. (1996): <em>Libros de texto en el caleidoscopio. Estudio crítico de la literatura y de la investigación sobre los textos escolares</em> [만화경 속의 교과서: 학교 교과서에 관한 문헌과 연구의 비판적 검토]. Barcelona, Pomares-Corredor.</li>
+<li>MARIANA, Padre Juan de (1938): <em>Juan de Mariana, cantor de España</em> [스페인의 찬양자 후안 데 마리아나]. 마누엘 바예스테로스 가이브루아(Manuel Ballesteros Gaibrois) 선정·연구. Ediciones Fe, s.l. 이 저작의 재판은 이미 <em>Historia de España</em>[스페인사]라는 제목을 달고 있다. Zaragoza, Editorial Ebro, 1944.</li>
+<li>MINISTERIO DE EDUCACIÓN NACIONAL (1960): <em>Cátedra 1960-1961. Prontuario del Profesor</em> [강좌 1960-1961: 교사 편람]. Madrid, Dirección General de Enseñanza Media, 1960, pp. 912-916.</li>
+<li>PEIRÓ, Ignacio (1993): "La difusión del libro de texto: autores y manuales de historia en los institutos del siglo XIX" [교과서의 유포: 19세기 중등학교의 역사 저자와 교과서], <em>Didáctica de las ciencias (experimentales y sociales)</em>, n.º 7, pp. 49-51.</li>
+<li>VALLS MONTÉS, R. (1984): <em>La interpretación de la historia de España, y sus orígenes ideológicos, en el bachillerato franquista (1938-1953)</em> [프랑코 체제 바첼레라토(1938-1953)에서 스페인사의 해석과 그 이데올로기적 기원]. I.C.E. 발렌시아 대학교.</li>
+<li>VALLS MONTÉS, R. (1997): "La historia enseñada y los manuales escolares españoles de historia" [가르쳐진 역사와 스페인 역사 교과서], VV.AA.: <em>La formación del profesorado y la didáctica de las Ciencias Sociales</em> [교사 양성과 사회과 교수학]. Sevilla, Diada editora, pp. 37-48.</li>
+<li>VILLALAÍN BENITO, J.L. (1997): <em>Manuales escolares en España. Tomo I: Legislación (1812-1939)</em> [스페인의 학교 교과서. 제1권: 입법(1812-1939)]. 마누엘 데 푸엘레스 베니테스(Manuel de Puelles Bénitez) 서문. Madrid, U.N.E.D., Serie Proyecto Manes, 392 pp.</li>
+</ul>
+</div>
+</section>
+
+</main>
+
+<a href="#" class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">▲</a>
+
+<script>
+window.addEventListener('scroll', () => {
+  let current = '';
+  document.querySelectorAll('section[id]').forEach(s => {
+    if (s.getBoundingClientRect().top <= 80) current = s.id;
+  });
+  document.querySelectorAll('#sidebar nav a').forEach(a => {
+    a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+  });
+});
+
+document.querySelectorAll('#sidebar nav a').forEach(a => {
+  a.addEventListener('click', e => {
+    e.preventDefault();
+    const target = document.querySelector(a.getAttribute('href'));
+    if (target) target.scrollIntoView({ behavior: 'smooth' });
+  });
+});
+</script>
+
+</body>
+</html>

@@ -17,6 +17,34 @@
   ],
   "spanish": [
     {
+      "title": "스페인 학교의 역사 교과서 수용(19~20세기): 연구 현황",
+      "authors": "Valls",
+      "year": 1998,
+      "url": "Valls_1998_스페인 학교의 역사 교과서 수용(19~20세기).html",
+      "uploadDate": "2026-07-30"
+    },
+    {
+      "title": "2013년 교육의 질 향상을 위한 조직법(LOMCE): 또 하나의 개혁인가?",
+      "authors": "Viñao",
+      "year": 2016,
+      "url": "Vinao_2016_2013년 교육의 질 향상을 위한 조직법(LOMCE).html",
+      "uploadDate": "2026-07-30"
+    },
+    {
+      "title": "중등교육에서의 스페인 내전: 학교 역사 속 논쟁적 주제 분석",
+      "authors": "Fernández",
+      "year": 2020,
+      "url": "Fernandez_2020_전체_한국어번역.html",
+      "uploadDate": "2026-07-30"
+    },
+    {
+      "title": "우익 지도자들의 파국론적 담론과 '공산주의 쿠데타' 신화의 확산",
+      "authors": "González Calleja",
+      "year": 2016,
+      "url": "GonzalezCalleja_2016_우익 지도자들의 파국론적 담론과.html",
+      "uploadDate": "2026-07-30"
+    },
+    {
       "title": "프랑코주의 억압 연구: 소진되지 않은 문제",
       "authors": "Mir Curcó",
       "year": 2001,
@@ -87,11 +115,11 @@
       "uploadDate": "2026-05-13"
     },
     {
-      "title": "학교의 역사적 기억",
-      "authors": "Diez",
-      "year": 2022,
-      "url": "Diez_2022_학교의_역사적_기억_한국어번역.html",
-      "uploadDate": "2026-05-13"
+      "title": "학교 교과서의 역사 기억",
+      "authors": "Díez Gutiérrez",
+      "year": 2014,
+      "url": "diez-gutierrez_학교 교과서의 역사 기억.html",
+      "uploadDate": "2026-07-30"
     },
     {
       "title": "스페인 사회과학 교수학의 발전과 국제적 맥락 비교",
@@ -167,8 +195,8 @@
       "title": "현대 스페인의 학교 역사서술: 역사 교과서에서 학교 교과의 역사로",
       "authors": "Valls",
       "year": 1999,
-      "url": "Valls_1999_현대 스페인의 학교 역사서술-역사 교과서에서 학교 교과의 역사로.html",
-      "uploadDate": "2026-05-15"
+      "url": "Valls_1999_현대 스페인의 학교 역사서술 역사 교과서에서 학교 교과의 역사로.html",
+      "uploadDate": "2026-07-30"
     },
     {
       "title": "교육 개혁과 역사 교과서 담론: 스페인의 사례",
@@ -179,6 +207,34 @@
     }
   ],
   "english": [
+    {
+      "title": "인식론적 유창성과 가짜 뉴스·역사 부정·경합하는 역사들의 교육적 도전",
+      "authors": "Parkes",
+      "year": 2024,
+      "url": "Parkes_2024_한국어번역.html",
+      "uploadDate": "2026-07-30"
+    },
+    {
+      "title": "교육을 통한 홀로코스트 부정·왜곡 대응: 교사 안내서 (1부: 서론~제2장)",
+      "authors": "UNESCO",
+      "year": 2025,
+      "url": "UNESCO_2025_홀로코스트부정왜곡_1부_서론~2장.html",
+      "uploadDate": "2026-07-30"
+    },
+    {
+      "title": "교육을 통한 홀로코스트 부정·왜곡 대응: 교사 안내서 (2부: 제3장~참고문헌)",
+      "authors": "UNESCO",
+      "year": 2025,
+      "url": "UNESCO_2025_홀로코스트부정왜곡_2부_3장~참고문헌.html",
+      "uploadDate": "2026-07-30"
+    },
+    {
+      "title": "현대 스페인에서 내전과 프랑코 독재를 가르치는 접근법",
+      "authors": "Magill",
+      "year": 2016,
+      "url": "Clrare Magill_현대 스페인에서 내전과 프랑코 독재를 가르치는 접근법.html",
+      "uploadDate": "2026-07-30"
+    },
     {
       "title": "중등 역사 교육과정에서 감정이입 교수·평가",
       "authors": "Harris & Foreman-Peck",

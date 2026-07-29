@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>파크스(Parkes, 2024) — 인식론적 유창성과 가짜 뉴스·역사 부정·경합하는 역사들의 교육적 도전</title>
+<style>
+:root {
+  --sidebar-width: 270px;
+  --accent: #2c5f8a;
+  --accent-light: #e8f1f8;
+  --text: #1a1a1a;
+  --muted: #555;
+  --border: #d0d7de;
+  --bg: #fafafa;
+  --white: #ffffff;
+  --table-head: #f0f4f8;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Noto Serif KR', 'Malgun Gothic', Georgia, serif; background: var(--bg); color: var(--text); line-height: 1.85; font-size: 15.5px; }
+
+/* 사이드바 */
+#sidebar {
+  position: fixed; top: 0; left: 0;
+  width: var(--sidebar-width); height: 100vh;
+  background: var(--white); border-right: 1px solid var(--border);
+  overflow-y: auto; padding: 24px 16px; z-index: 100;
+}
+#sidebar .logo { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: .08em; margin-bottom: 12px; }
+#sidebar .paper-title { font-size: 12.5px; font-weight: 700; color: var(--accent); line-height: 1.45; margin-bottom: 18px; border-bottom: 1px solid var(--border); padding-bottom: 14px; }
+#sidebar nav a {
+  display: block; font-size: 12.5px; color: var(--muted);
+  text-decoration: none; padding: 4px 8px; border-radius: 4px;
+  margin-bottom: 2px; transition: all .15s;
+}
+#sidebar nav a:hover { background: var(--accent-light); color: var(--accent); }
+#sidebar nav a.active { background: var(--accent-light); color: var(--accent); font-weight: 700; }
+#sidebar nav a.sub { padding-left: 20px; font-size: 11.5px; }
+
+/* 메인 */
+#main { margin-left: var(--sidebar-width); padding: 48px 56px 80px 56px; max-width: 860px; }
+
+/* 논문 헤더 */
+.paper-header { border-bottom: 2px solid var(--accent); padding-bottom: 24px; margin-bottom: 32px; }
+.paper-header .chapter-label { font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: .1em; margin-bottom: 8px; }
+.paper-header h1 { font-size: 22px; font-weight: 700; color: var(--accent); line-height: 1.4; margin-bottom: 6px; }
+.paper-header .orig-title { font-size: 14px; color: var(--muted); font-style: italic; margin-bottom: 14px; }
+.paper-header .author { font-size: 14px; font-weight: 700; margin-bottom: 4px; }
+.paper-header .affil { font-size: 13px; color: var(--muted); margin-bottom: 12px; }
+.paper-header .meta { font-size: 12.5px; color: var(--muted); line-height: 1.7; }
+.paper-header .meta span { margin-right: 16px; }
+
+/* 섹션 */
+section { scroll-margin-top: 24px; margin-bottom: 40px; }
+h2 { font-size: 18px; font-weight: 700; color: var(--accent); border-left: 4px solid var(--accent); padding-left: 12px; margin: 36px 0 16px 0; }
+h3 { font-size: 15.5px; font-weight: 700; color: #2a4a6a; margin: 28px 0 12px 0; }
+p { margin-bottom: 14px; }
+
+/* 인용 블록 */
+blockquote { background: var(--accent-light); border-left: 3px solid var(--accent); margin: 20px 0; padding: 14px 20px; font-size: 14.5px; color: #2a2a2a; border-radius: 0 4px 4px 0; }
+
+/* 참고문헌 */
+.references { margin-top: 16px; }
+.ref-item { font-size: 13.5px; margin-bottom: 10px; padding-left: 24px; text-indent: -24px; line-height: 1.7; }
+
+/* 맨 위로 버튼 */
+.back-top { position: fixed; bottom: 32px; right: 32px; background: var(--accent); color: #fff; border: none; border-radius: 50%; width: 42px; height: 42px; font-size: 18px; cursor: pointer; box-shadow: 0 2px 8px rgba(0,0,0,.2); }
+.back-top:hover { background: #1e4570; }
+
+/* 반응형 */
+@media (max-width: 900px) {
+  #sidebar { display: none; }
+  #main { margin-left: 0; padding: 24px 20px; }
+}
+</style>
+</head>
+<body>
+
+<nav id="sidebar">
+  <div class="logo">번역 논문</div>
+  <div class="paper-title">인식론적 유창성과 가짜 뉴스·역사 부정·경합하는 역사들의 교육적 도전</div>
+  <nav>
+    <a href="#header">📄 논문 정보</a>
+    <a href="#intro">1. 서론</a>
+    <a href="#historical-consciousness">2. 역사의식, 역사 문화, 해석학적 도전</a>
+    <a href="#epistemic-communities">3. 외부 전통은 없다 — 인식론적 공동체의 중요성</a>
+    <a href="#conclusion">4. 결론: 인식론적 유창성을 향하여</a>
+    <a href="#references">참고문헌</a>
+  </nav>
+</nav>
+
+<div id="main">
+
+<!-- 논문 헤더 -->
+<div class="paper-header" id="header">
+  <div class="chapter-label">제2장 · 제1부: 인식론과 맥락</div>
+  <h1>인식론적 유창성과 가짜 뉴스·역사 부정·경합하는 역사들의 교육적 도전</h1>
+  <div class="orig-title">Epistemic Fluency and the Pedagogical Challenge of Fake News, Historical Denial, and Rival Histories</div>
+  <div class="author">로버트 J. 파크스 (Robert J. Parkes)</div>
+  <div class="affil">뉴캐슬대학교, 캘러한, 뉴사우스웨일스, 오스트레일리아</div>
+  <div class="meta">
+    <span>📚 수록: Henrik Åström Elmersjö · Paul Zanazanian 편, <em>Teachers and the Epistemology of History</em></span><br>
+    <span>🏢 Palgrave Macmillan, 2024</span>
+    <span>📄 pp. 21~41</span>
+    <span>🔗 DOI: 10.1007/978-3-031-58056-7_2</span>
+  </div>
+</div>
+
+<!-- 서론 -->
+<section id="intro">
+<h2>서론</h2>
+<p>오늘날 역사교사들은 가짜 뉴스, 역사 부정, 자국 과거에 관한 경합하는 역사들을 학생들이 비판적으로 직면하도록 이끌어야 하는 과제를 안고 있다. 이 도전의 편재성(遍在性)은 현대 포스트모던 문화의 특수한 성격에서 비롯된 것으로 볼 수 있다. 이 문화에서는 사실과 허구의 경계가 의문시되고, 리얼리티 텔레비전(Hill, 2005), 사이비 과학 다큐멘터리(Wallace, 2019), 인포테인먼트(Photiou et al., 2019), 역사 영화의 불가피하지만 왜곡적인 관습(Rosenstone, 2006) 등을 통해 의도적으로 흐려진다. 타블로이드화된 시사 보도(Sparks, 2015), 다양한 형태의 역사 부정(Taylor, 2008), 음모론의 유통(Peters & Johannesen, 2020), 인터넷과 소셜 미디어를 통한 탈진실 선전의 정치적 활용(Fuller, 2018)도 마찬가지다. 아울러 자국 역사에 대한 "경합하는 역사들"의 출현과 그것의 사회적 공론화, 그리고 많은 현대 사회에서의 교육과정상 과제화 역시 중요한 맥락을 이룬다(Elmersjö et al., 2017). 특히 필자의 본국인 오스트레일리아에서도 예외가 아니다(Clark, 2004, 2008; Parkes, 2007, 2009, 2011; Taylor, 2004, 2009).</p>
+
+<p>이러한 도전적 맥락 속에서 사회과 교육에서의 미디어 리터러시 개발(Journell, 2017; Manfra & Holmes, 2018)과 역사적 사고 기능의 함양(Siebörger, 2017; Wineburg, 2018)은 강력한 지지자들을 확보하고 있다. 이러한 지지는 1970년대 사회사적 전환의 일환으로 처음 등장한 이래(Mathis & Parkes, 2020; Parkes & Donnelly, 2014), 역사적 사고(Peck & Seixas, 2008; Seixas & Morton, 2012; Seixas & Peck, 2004), 역사적 이해(Ashby & Lee, 1987; Lee & Ashby, 2000), 역사적 추론(Martin et al., 2021; van Boxtel & van Drie, 2004; Voss & Carretero, 1998), 역사적 역량(Körber, 2007, 2014; Körber & Meyer-Hamme, 2015), 역사적 리터러시(Virta, 2007) 등의 개념을 통해 증진되어 온 학교 역사의 학문적 접근법 채택의 중요성에 관한 국제적 합의를 반영한다. 이 개념들이 동일하지는 않지만, 학교 역사가 학생들로 하여금 전문 역사가의 지적 작업과 유사한 것을 실천하고 전유(專有)하도록 장려해야 한다는 생각과 연관되어 있다는 점에서는 공통점을 지닌다(Shemilt, 1987; VanSledright, 1996; Wineburg, 2001). 물론 역사적 역량은 학문적 틀을 넘어서는 역사적 의미 형성이라는 더 넓은 의제를 포함할 수 있다(Körber, 2016).</p>
+
+<p>분명히, "역사 지식의 학문적 형식으로서의 역사에 대한 이해, 즉 역사적 주장의 타당성을 확인하기 위한 특정 절차에 관한 이해"와 일치하는 인식론적 신념을 발전시키는 것은 연구 분야에서 중요한 과제가 되었다(Stoel et al., 2017, p. 120). 물론, 학생들의 그러한 발전을 촉진하기 위해서는, 역사교사들 자신이 역사 지식의 성격에 관한 정교하거나 "섬세한" 인식론적 신념을 가져야 한다고 볼 수 있다(Maggioni, 2010; Maggioni et al., 2009; Stoel et al., 2017). 그렇지 않으면 학생들에게 강력한 지식(학문적 사고)을 함양하는 대신, 단순히 강력한 자들의 지식(지배 담론)을 되풀이하고 재생산하는 함정에 빠지게 된다. 이는 교육이론가 마이클 영(Michael Young, 2007)이 제안한 구분을 빌린 것이다.</p>
+
+<p>역사 학생과 교사의 인식론적 신념을 연구한 결과, 학생과 교사 모두 인식론적 입장 사이에서 자주 "흔들린다(wobble)"는 공통된 발견이 있다(Stoel et al., 2017; VanSledright & Reddy, 2014). 반슬레드라이트와 마조니(VanSledright & Maggioni, 2016)는 관찰된 "흔들림"이 참여자들이 역사의 객관적 측면과 주관적 측면을 탐색하는 데 어려움을 겪은 데서 비롯된 것일 가능성이 높다고 제안했다. 엘메르쇠(Elmersjö, 2022)는 "인식론적 불일치"(p. 829)가 역사에 대한 교사의 신념 내부의 불일치가 아니라, 역사에 관한 그들의 사고와 특정 학생들에게 교과를 가르쳐야 한다는 그들의 사고 사이의 불일치에서 비롯될 수 있다고 추론했다(p. 835).</p>
+
+<p>이는 필자 자신의 의심과도 일치하며, 역사교사가 반드시 작동해야 하는 두 가지 이상의 교차하는 문화들의 영향을 시사한다. (1) 역사에 관한 그들의 인식론적 신념을 형성한 역사 문화 — 여기에는 그들이 성장해온 기억 공동체(Wertsch, 2002)와 학문적 교육 과정에서 입문했을 수 있는 인식 공동체(Holzner, 1972) 모두가 포함된다. (2) 그들의 교육과정 이념이 형성된 특정 교수(敎授) 문화들. 역사교사의 인식론적 신념은 원래 그것이 수업 실천에 미치는 영향을 파악하려는 목적으로 연구되었고(Maggioni, 2010), 역사 지식의 성격에 관한 교사의 신념, 이러한 신념이 역사 교수에 미치는 영향, 역사교사 교육에 대한 시사점에 초점을 맞춰 지속되어 왔다(Nitsche et al., 2022).</p>
+
+<p>그러나 역사교사들이 각각 특정 방식으로 신념과 실천을 형성하는 일련의 중첩되고 교차하는 문화적 장(場) 안에서 활동한다는 관점에서 인식론적 불일치의 문제에 접근하는 것이 더 생산적일 수 있다. 교실 실천을 형성하는 교수적 인식론으로서 교육과정 이념(Schiro, 2013)의 영향을 진지하게 받아들이는 접근법, 그리고 게르만 전통 내에서 이해되는 역사의식 개념 — "역사적 사고의 특수성과 그것이 인간 문화에서 수행하는 기능을 규정하는 정신적 조작의 일관된 집합"(Rüsen, 1987, p. 284) — 이 이 논의에 특히 유용할 수 있다.</p>
+</section>
+
+<!-- 역사의식 -->
+<section id="historical-consciousness">
+<h2>역사의식, 역사 문화, 해석학적 도전</h2>
+
+<p>"역사의식"의 개념은 피터 세이사스(Peter Seixas, 2004)가 편집한 『역사의식 이론화(Theorizing Historical Consciousness)』를 통해 영어권 역사교육 연구 공동체에 처음 소개되었다. 독일학자 요른 뤼젠(Jörn Rüsen, 1987, 1989)의 작업에서 영감을 받고, 그것을 포함하며, 그것에 역사적으로 빚을 진 이 편저는, 이미 디닥틱(didaktik) 문헌 내에서 개념으로서 충분히 자리잡고 있었던 독일어권 및 북유럽 세계 이외의 학문에서 역사의식을 진지하게 고찰하는 계기가 되었다(Ahonen, 2005).</p>
+
+<p>필자 자신의 접근 방식은 역사의식을 단순히 기억의 내용이나 일부 영어권 문헌에서처럼 "학문적 교과 내용"의 한 형태(Zanazanian & Nordgren, 2019, p. 773에서도 지적된 바 있음)로 이해하는 것을 넘어, 역사의식을 우리의 시간적 방향성 감각과 우리 자신이 역사적 존재라는 인식으로서 이해하는 것이다. 이 점에서 필자는 쾨르버(Körber, 2016)가 제시한 구분과 일치하는 입장을 취한다.</p>
+
+<p>정의상의 도전에도 불구하고, 역사교육 연구 분야에서 역사의식 개념의 광범위한 수용은, 세이사스의 편저 이후에 출판된 두 편의 추가적인 편저들에 의해 명확히 입증된다. 먼저, 세이사스의 편저 다음해에 출판된 위르겐 슈트라우프(Jürgen Straub, 2005b)의 『서사, 정체성, 역사의식(Narration, Identity, and Historical Consciousness)』은 심리학적 접근법을 채택하여, 역사적 사고, 서사 심리학, 도덕의식, 역사의식에 관한 작업들을 한데 모았다. 그 명시적 목적은 역사의식 연구에 심리학적 통찰을 가져오고, 사람들이 "실제로 어떻게 역사적으로 사고하며, 어떤 행위들이 그러한 [역사적] 사고에 의해 인도되고 있거나 인도되었는가"를 비교적·민족지학적으로 탐구하는 연구 프로그램을 구상하는 것이었다(Straub, 2005a, p. xiv).</p>
+
+<p>보다 최근에는, 메츠거와 맥아더 해리스(Metzger & McArthur Harris, 2018)가 편집한 『와일리 국제 역사 교수·학습 핸드북(The Wiley International Handbook of History Teaching and Learning)』에 역사의식에 관한 여러 논의가 포함되었다. 마찬가지로, 안나 클라크와 칼라 L. 펙(Anna Clark & Carla L. Peck, 2019a)의 『역사의식 성찰: 현장으로부터의 노트(Contemplating Historical Consciousness: Notes from the Field)』는 역사의식의 개념이 역사교육, 공공역사, 기억 연구, 유산 연구의 영역을 가로질러 학술 연구 분야에서 얼마나 중요해졌는가를 보여주었다. 이 편저는 "사람들과 공동체가 역사에 어떻게 관여하고 역사를 생산하는가"(Clark & Peck, 2019b, p. 2)에 초점을 이동시켰다. 이들은 이 연구 초점이 "역사 문화"에 대한 관심에 의해 추동된다고 적절히 선언하는데, 역사 문화는 다음과 같이 정의된다.</p>
+
+<blockquote>공공 기관, 관료제, 교육과정 개발자, 정부, 그리고 전문 및 학술 역사가들에 의해 생산된 역사들, 일상의 역사 담론들 … 공공 역사와 사적 역사, 그리고 학술적인 역사 학술도 포함한다. (Clark & Peck, 2019b, p. 2)</blockquote>
+
+<p>이는 게르만의 게쉬히츠쿨투어(Geschichtskultur, 역사 문화) 개념과, 그것이 북유럽 디닥틱 전통에서 수용된 방식에서 차용한 것이다. 이 전통에서 "역사 문화"는 개인, 집단, 기관, 사회가 역사의 형태로 과거와 만나는 것으로 이해되며, 공공역사의 활용으로 초점을 이동시킴으로써 유럽의 역사교육 및 연구에 영향을 미쳤다(Zanazanian & Nordgren, 2019의 논의 참조). 스요베리(Sjöberg, 2011)가 논한 바와 같이:</p>
+
+<blockquote>역사의식은 개인적 구성물이라는 노선에서 더 잘 이해되는 반면, 역사 문화는 개인적 경험, 기억, 또는 "의식"의 한계를 넘어 공공 영역으로 나아갈 가능성을 제공한다. (p. 8)</blockquote>
+
+<p>토르프(Thorp, 2016)는 역사 문화가 "역사가 어떻게 전파되는지, 그리고 역사에 관한 지식, 태도, 가치가 어떻게 개인들에게 의미를 부여하는지를 다룬다"(p. 24)고 지적하면서, 우리가 태어나는 역사적 맥락이 우리에 선행하지만, 우리는 역사를 직접 경험하는 것이 아니라 "말, 글, 또는 관습과 문화적 습관을 통해 전파되는 역사적 설명들을 통해" 경험하며, 따라서 "역사를 맨몸으로 만나는 것이 아니라 항상 문화적·사회적 환경을 통해 만난다"(p. 24)고 주장한다. 뤼젠(Rüsen, 2012)은 "[역사] 역사교수법(didactics)의 작업은 그 시대의 역사 문화에서 그것이 수행하는 역할에 대한 인식 없이는 이해되거나 추구될 수 없다"(p. 520)고 강조한다. 레베스크(Lévesque, 2016)가 주장한 바와 같이:</p>
+
+<blockquote>우리는 학생들의 역사의식 발달을 공공 기억의 실천이나 학문적 역량의 집합으로만이 아니라, 역사 문화, 공공 기억, 실천적 삶, 교육, 그리고 학문으로서의 역사 실천 사이의 상호작용의 효과적 결과로서 (재)개념화할 필요가 있다.</blockquote>
+
+<p>따라서, 우리가 속해 있는 역사 문화들을 통해 만나는 역사적 서사들은 역사의식 — 즉 역사적 존재로서의 우리 자신에 대한 인식과 수용 — 을 생산하는 동시에 그것에 의해 생산된다. 바로 이러한 이해와 그것이 반영하는 시대정신(zeitgeist)의 포착이, 필자가 2014년에 역사의식, 역사 문화, 역사교육 사이의 관계를 다양한 방식으로 탐구하는 학문을 위한 학술지 『역사적 만남들(Historical Encounters)』을 창간한 배경이자 의의이기도 하다.</p>
+
+<p>역사의식이 출현한 독일 철학적 해석학 전통에서, 이 개념은 가다머(Gadamer, 1975)에 의해 "현재의 모든 것의 역사성에 대한 완전한 인식"(p. 8)으로 서술되었다. 그레버(Grever, 2019)는 가다머의 해석학이 "인간 존재의 역사성"을 강조하며, "세계는 역사적으로 영향을 받으며" 따라서 "항상 시간 속에 자리한다"고 이해한다고 지적한다(p. 225, 강조는 원문). 중요하게도, 그레버(2019)는 해석학 전통 내에서 다음과 같이 명확히 한다:</p>
+
+<blockquote>역사의식은 세계에서 인간의 행동, 지식, 제도, 사건, 그리고 발전들의 근본적인 역사적 성격에 대한 인식을 의미하며, 여기에는 자신의 위치도 포함된다 … 변화하는 때로는 중첩되는 기억 공동체들에 관여하는 인간의 시간 지향 상태에 관한 변화하는 심리 상태의 일시적 결과. (p. 225, 강조는 원문)</blockquote>
+
+<p>가다머적 의미에서의 역사의식은 따라서 다음과 같다:</p>
+
+<blockquote>모든 지식이 불완전하다는 인식 — 지식이 역사적으로 매개된 의미들의 지평에 자리하고 있으며, 그것의 기능이며, 따라서 그것에 의해 가능해지기 때문이다. 이 지평은 우리가 우리의 해석적 존재를 통해 세계와 역사를 헤쳐나가는 불가피한 플랫폼을 구성한다. (Van Niekerk, 2005, p. 235)</blockquote>
+
+<p>해석학적 활동에 대한 가다머의 이해는 역사적 영향들의 영향 너머에 있는, "위치 없는 이성"의 개념(Van Niekerk, 2005, p. 236)인 이성의 초월적 개념에 대한 반응을 나타낸다. 이를 진지하게 받아들이면, 역사의식에 대한 이러한 이해는 역사적 시간 밖에 어떻게든 위치한 불변하는 방법론들이나 인지적 조작들의 집합을 갖고 작동하는 역사 학문이라는 어떤 개념에도 도전한다. 대신, 특히 역사의 교사와 학생으로서 어떤 인습적·방법론적 실천들이, 누구의 담론이, 누구의 기준이, 그리고 "누구의 과거"가 작동 중인지를 항상 주목하는 것이 필수적이 되는데, 이는 학문 자체가 사회적으로 구성된다는 것을 인식하는 것이다(Segall, 2006, p. 138). 혹은 자나자니안(Zanazanian)이 주장한 것처럼, 학습자로 하여금 자신이 사용하고 있는 개념적 틀을 인정하고 그것을 그것이 출현한 더 넓은 사회적·문화적·역사적 맥락과 연결하는 자기성찰적 움직임에 관여하게 하는 것이 필요하다. 그는 이를 해석적 필터로서의 역사(history-as-interpretive-filter)라고 부른다.</p>
+
+<p>다른 글에서, 필자는 역사와 역사적으로 영향을 받은 존재로서의 우리 자신을 진지하게 받아들인다면, 우리가 역사를 사학사(historiography)로서 가르치는 방향으로 전환하는 것이 정확히 요구된다고 주장했다(Parkes, 2009). 이를 통해 우리 자신이나 다른 사람들의 어떤 역사적 지식 주장들에 대해서도 사학사적 시각을 채택하도록 장려하는 것이다. 가다머(Gadamer, 1987)에게 역사의식이란 다음과 같다:</p>
+
+<blockquote>전통에 의해 전해 내려온 모든 것에 관한 성찰적 입장이다. 역사의식은 더 이상 과거로부터 뻗어 나오는 목소리에 경건하게 귀를 기울이지 않고, 성찰 속에서 그것을 뿌리를 내린 맥락에 되돌려 놓음으로써 그것에 고유한 의미와 상대적 가치를 파악한다. (p. 89)</blockquote>
+
+<p>이와 같이 이해된 역사의식은, 우리 자신을 시간 속에 위치시키는 일반적인 인간의 능력 또는 성향, 즉 "실천적 삶에 시간적 틀과 행렬을 부여하는 것"(Rüsen, 2004, p. 67)으로서, 그리고 특정한 "심리적 역량"(Straub, 2005c, p. 49) 또는 인식 방식, 일종의 인식론적 성찰성(Mathis & Parkes, 2020), 혹은 역사적 (자기)의식(Parkes, 2022)으로서 모두 개념화될 수 있다. 이 역사적 (자기)의식을 통해 우리는 우리 자신과 모든 형태의 인간 문화와 전통의 역사성을 인식한다.</p>
+</section>
+
+<!-- 인식론적 공동체 -->
+<section id="epistemic-communities">
+<h2>외부 전통은 없다 — 인식론적 공동체의 중요성</h2>
+
+<p>필자의 저서 『역사 중단하기: "역사의 종말" 이후 역사 교육과정 재사고(Interrupting History: Rethinking History Curriculum After "the End of History")』(Parkes, 2011)에서, 필자는 역사 교육자가 "역사가 자신을 포함해 모든 것에 역사가의 시각을 확장하여 모든 형태의 역사 지식과 실천의 역사적 특수성을 드러내는" 사학사적 관점을 채택해야 한다고 제안했다(p. 102). 역사가의 시각을 자기 자신에게까지 확장함으로써, 나는 역사가 또는 역사 교육자가 일종의 사학자로서 기능하기 시작한다고 상상했다.</p>
+
+<p>필자의 주장은, 역사성의 개념이 진지하게 받아들여질 때, 역사가의 시각이 범시각적(panoptical)이 되어 "역사를 고통스러운 성찰성으로 몰아붙여, 역사적 재현을 역사화한 결과로서 역사가(또는 역사 학생)가 역사 담론에서 벗어날 가능성을 역설적으로 제공한다"(p. 130)는 것이었다. 니체적 방식으로, 필자는 사학사적 시각과의 만남을 통해 역사 담론이 중단되어, 제한적인 역사 서사의 효과를 교란할 수 있는 비판적 해석학적 거리의 한 유형이 된다고 주장했다(Nietzsche, 1874/1983 참조). 결론적으로 필자는 우리가 "역사를 삭제 아래서 가르쳐야" 한다고 주장했다. 여기서 "역사의 종말"은 사학자의 시각의 손에 의해 오며, 우리는 이후 유령들로서 우리의 삶을 따라다니는 역사들이 같은 수업에서 제시되는 동시에 해체되는 교육적 상황을 불러낸다.</p>
+
+<p>사학사적 시각의 개념은 역사적 재현을 교육과정의 중심에 놓고, 역사적 재현이 — 페미니즘적, 마르크스주의적, 사회적, 지성사적, 문화적, 그리고 여러 다른 — 사학사적 전통들 안에서 출현하며, 따라서 그 전통들의 방법론적 편향들에 의해 역사적으로 표지(標識)된다는 이해를 촉발하는 것을 목표로 했다. 가다머의 해석학에서 역사 해석의 행위는 하나 또는 그 이상의 사학사적 전통들에의 참여를 통해 우리가 발전시키는 편견들이나 선판단들에 의존한다. 사학사적 시각의 개념은 역사교사에게 우리 자신의 읽기와 해석 행위가 우리가 입문한 사학사적 전통들의 방법론적 편향들에 의해 편향되어 있다는 것을 인식하도록 요청했으며, 따라서 역사적 사고와 서사, 역사교사의 인식론적 신념을 포함하여, 이것들의 사용과 생산의 맥락에서 이해하는 것의 중요성을 시사한다.</p>
+
+<p>20여 년 전, 캐서린 해리스-하트(Catherine Harris-Hart, 2002)는 뉴사우스웨일스에서 교육과정 개정 기간 동안, 역사교사의 실천에 대한 가장 강력한 매개 세력이 교과 교사실 또는 교과 부서의 문화라는 것을 발견했다. 이는 개인적인 인식론적 인지에만 집중하는 것 대신, 학교 기반 역사 학과를 인식론적 공동체로서 탐구하는 것이 유용할 수 있다는 것을 시사한다.</p>
+
+<p>이 제안을 위한 두 가지 출발점이 있다. 첫 번째 출발점은 이미 자나자니안(Zanazanian, 2015, 2017, 2019)이 다양하고 새로운 생성적 방식으로 수용한 제임스 웨르치(James Wertsch, 2002)의 "기억 공동체"와 "서사 틀"에 관한 작업이다. 웨르치(2012)에 따르면, "우리가 과거를 이해하기 위해 사용하는 서사 도구들은 특정 관점"이나 우리로 하여금 과거를 편향된 방식으로 바라보도록 동기를 부여하는 "에스노센트리즘"을 도입한다(p. 11). 그는 과거에 대한 우리의 인식과 이해가 적어도 부분적으로는 우리의 민족 집단 정체화를 통해 형성되며, 이러한 "부족적" 소속과 민족적 헌신이 우리를 특정 기억 공동체의 참여자로 만들어 우리가 만나는 서사들을 읽는 방식에 영향을 미친다고 주장한다. 그는 경쟁하는 "기억 공동체들이 과거의 결정적 사건들에서 '실제로 무슨 일이 일어났는지'에 대해 일상적으로 다툰다"(Wertsch, 2008, p. 145)고 지적하며, 기억 공동체 내에서 공유되는 집단 기억의 많은 부분이 공통된 "서사 틀"(일종의 정기적으로 등장하는 전형적인 줄거리)에 의해 뒷받침된다고 주장한다. 이 서사 틀은 과거에 대한 인식을 형성하는 문화적 도구로서 작용하며 변화에 상대적으로 저항적이다(Wertsch, 2002).</p>
+
+<p>도널드 트럼프와 그의 지지자들, 그리고 2020년 미국 대선을 생각하면 이를 실천 속에서 볼 수 있다. 저넬(Journell, 2017)이 주장하듯이, 트럼프의 논리는 "자신의 이념과 모순되는 어떤 정보도 자동으로 불법이거나 가짜"라는 이해로 이어진다(p. 8). 마찬가지로, 트럼프와 그의 행정부는 현실이 자신들의 정치적 의제를 뒷받침하지 않을 때마다 "대안적 사실들"을 옹호하려는 의지를 자주 보여주었다(Journell, 2017, p. 9). 이는 단순히 역사적 사고 기능만을 가르치는 것이 그것들의 보편적 적용을 장려하기에 충분하지 않을 수 있다는 의심을 낳으며, 개인의 인식론에 대한 기억 공동체의 영향력의 강도를 강조한다.</p>
+
+<p>인식론적 공동체가 개인적 인식론적 신념에 미치는 영향에 대한 관심의 두 번째 준거점은 고틀리브와 위네버그(Gottlieb & Wineburg, 2012)가 수행한 연구다. 이 연구는 분석하도록 주어진 텍스트의 종류(세속적 또는 종교적)에 따른 종교 역사가들 사이의 "인식론적 전환"의 결정적인 사례를 제시했는데, 이는 연구에서 비종교 역사가들에게서는 보이지 않았다. 비종교 역사가들은 두 세트의 텍스트 모두에 동일한 역사적 사고 사고방식을 적용했다. 니체 등(Nitsche et al., 2022)은 이것이 "역사에서의 인식론적 인지는 맥락 속에 상황 지워진다"(p. 3)는 것을 나타낸다고 본다.</p>
+
+<p>인식론적 공동체에 관한 그의 기념비적 작업에서, 버크하르트 홀츠너(Burkhard Holzner, 1972)는 특수화된 노동자들의 인식론적 공동체를 이념적으로 결속된 신앙 공동체들과 대비시켰다(Holzner, 1972, p. 122). 고틀리브와 위네버그(2012)의 연구에서 서로 다른 인식론적 기준들의 집합의 적용은 정확히 "검토 중인 문서에 의해 촉발된 [인식론적·이념적 공동체들에 대한] 충성심들"에 의해 매개되었다(p. 84). 자나자니안(Zanazanian, 2019)은 웨르치(Wertsch, 1998, 2002)의 서사 틀 개념과 뤼젠(Rüsen, 2005, 2017)의 역사의식에 대한 인간중심적 접근법을 바탕으로, 역사의 성격 자체에 관한 특정 인식론적 입장들이 "개인들의 역사적 의미 형성 과정을 매개하는 문화적 도구"(p. 865)로서 작동하며 "사회적 현실을 이해하는 객관주의적, 주관주의적, 섬세한 접근법들을 가로지른다"(p. 850)고 주장했다.</p>
+
+<p>1970년대 중반, 푸코(Foucault, 1966/1994)의 에피스테메(episteme) 개념 — "상호 사회화와 공유된 지식에서 비롯된 공유된 세계관"(Cross, 2013, p. 10) — 에 기초하여, 존 제라드 루기(John Gerard Ruggie, 1975)는 인식론적 공동체들이 "관료적 위치, 기술관료적 훈련, 과학적 관점의 유사성, 공유된 학문적 패러다임"에서 비롯된 의도들, 기대들, 상징들, 행동 규칙들, 그리고 준거점들을 공유한다고 주장했다(pp. 569~570). 인식론적 공동체를 구성하는 것에 대한 정의 기준은 하스(Haas, 1992)에 의해 다음과 같이 제시되었다:</p>
+
+<blockquote>특정 영역이나 쟁점 영역에서 인정된 전문성과 역량을 가진 전문가 네트워크 … [로서] (1) 사회적 행동을 위한 가치 기반의 근거를 제공하는 규범적·원칙적 신념들의 공유된 집합을 갖고 있으며 … (2) 자신들의 영역에서 핵심 문제들의 집합으로 이어지거나 기여하는 실천들의 분석에서 도출된 공유된 인과적 신념들 … (3) 자신들의 전문성 영역에서 타당성에 관한 공유된 개념들 … (4) 자신들의 전문 역량이 지향되는 문제들의 집합과 관련된 일련의 공통적 실천들을 갖고 있다. (p. 3)</blockquote>
+
+<p>하스(1992)는 인식론적 공동체를 그것들을 수용하는 직업들 및 학문들과 구별했다. 왜냐하면 "특정 직업이나 학문의 구성원들이 일련의 인과적 접근들이나 방향들을 공유하고 합의적 지식 기반을 가질 수 있지만, 그들은 인식론적 공동체 구성원들의 공유된 규범적 헌신을 결여하고 있기"(p. 19) 때문이다. 하스는 이를 명확히 하기 위해 예를 제시한다:</p>
+
+<blockquote>경제학자들 전체가 하나의 직업을 구성하는 반면, 경제학자들의 특정 하위 집단의 구성원들 — 예를 들어, 케인즈주의자들 … — 은 자신들만의 인식론적 공동체를 구성하고, 자신들이 선호하는 관점들, 신념들, 그리고 생각들에 의해 안내된 구체적인 프로젝트들의 집합에 체계적으로 기여할 수 있다. (Haas, 1992, p. 19)</blockquote>
+
+<p>역사학 분야에서, 이는 우리로 하여금 재구성주의자들, 구성주의자들, 또는 해체주의자들(Jenkins & Munslow, 2004)을 생각하게 할 수도 있고, 다른 도식을 사용하자면 실증주의자들, 마르크스주의자들, 페미니스트들, 포스트모더니스트들 등을 생각하게 할 수도 있다(Green & Troup, 1999). 교육과정 분야에서는 학문-교과 중심주의자들, 기술-합리주의자들, 직업주의자들, 진보주의자들, 발달주의자들, 재개념주의자들, 사회 재건주의자들을 생각하게 할 수도 있다(Adamson & Morris, 2007; Aoki, 2005; Kliebard, 1987; Marsh & Willis, 2003; Schiro, 2013).</p>
+
+<p>하스(1992)에게 인식론적 공동체 개념을 활용하는 것은 "특정 전문성 영역 내에서 합의가 도달되는 과정과 합의적 지식이 다른 행위자들에게 확산되고 전달되는 과정"에 초점을 맞추는 데 유용하다(p. 23). 크로스(Cross, 2013)는 하스를 반향하며, 인식론적 공동체들을 "전문적 지식의 덕택으로 다른 사람들을 자신들의 공유된 인과적 신념들과 정책 목표들로 설득하는 전문가 네트워크들"로 서술한다(p. 5). 세더드 피셔(Sethard Fisher, 1969)는 "[일단] 인식론적 공동체들이 권력 구조로서 확립되면, 그들은 구성원들의 지향들을 규제한다"(p. 562)고 덧붙였다.</p>
+
+<p>이미 주장한 바와 같이, 교과 부서들은 교사들이 역사 교수 주변에서 채택하는 실천적 인식론들에 대한 잠재적 형성 세력이며, 이는 교사가 역사의 성격 자체에 관해 갖고 있는 공식적 인식론들과 대비될 수 있다(Wilke et al., 2022). 따라서, 특정 교과 부서에서 실천에 관한 합의가 나타나는 경우, 그 구성원들은 일종의 인식론적 공동체로서 기능하기 시작할 수 있으며, 개인 역사교사의 인식론적 인지를 이해하기 위해서는 그들의 신념을 전문적 환경의 맥락에서 탐구하는 것이 유리해진다.</p>
+
+<p>교육과정 연구 분야에서는, 다양한 이념들과 인식론들이 교사들의 교수법적 실천을 형성한다고 이론화된다. 교사들의 교육과정 이론에 관한 쉬로(Schiro, 2013)의 작업은 이 문헌에서 돋보이는데, 이는 네 가지 지배적인 교육과정 이념을 제안하는 그 틀의 명확성 때문만이 아니라, 특히 교사들이 갈등하는 이념들을 어떻게 탐색하는지에 관한 논의에 대한 그것의 독창적인 기여 때문이기도 하다.</p>
+
+<p>쉬로에게, 이념이란 "생각들의 집합, 포괄적 비전, 사물을 바라보는 방식, 또는 어떤 사람이나 집단이 세계가 어떻게 조직되고 기능해야 한다고 믿는 세계관"이다(p. 8). 그는 또한 이념이 "권력을 쥐고 있는 집단이 최소한의 갈등으로 최대한의 통제권을 가질 수 있도록 문화들이 구조화되는 방식"을 서술하는 단어라고 지적한다(p. 8). 쉬로는 이념이 권력의 행사를 통해 공유되는 인식론이라고 말하는 것 같다.</p>
+
+<p>쉬로의 교육과정 이념들은 각각 교육과정 설계, 교수법적 실천, 교사의 교실 내 성향, 그리고 평가의 목적과 방식을 추동하는 특정 인식론들을 포함한다. 쉬로는 먼저 학자-학문 이념(Scholar Academic Ideology)을 확인하는데, 이는 "수 세기에 걸쳐 우리 문화가 대학에서 발견되는 학문 분야로 조직된 중요한 지식을 축적해왔다"는 신념을 나타내며, 교육의 목표는 "우리 문화의 축적된 지식, 즉 학문 분야들의 지식을 아이들이 배울 수 있도록 돕는 것"이어야 한다고 본다(p. 4). 이런 사고방식에서 학문 분야는 다음과 같이 구성된 위계적 공동체로서 기능한다:</p>
+
+<blockquote>진리의 탐구자들(위계의 정점에 있는 학자들), 진리의 교사들(학자들이 발견한 진리를 전파하는 자들), 그리고 진리의 학습자들(학문의 숙련된 구성원이 되도록 배우는 것이 일인 학생들). (p. 4)</blockquote>
+
+<p>학문적 이념의 궁극적 목표는 교육자들(학교와 대학 모두)의 매개를 통해 학습자들을 학자들로 변환시키는 것이다. 이 관점은 대학들에서 지배적이며, 분명히 학교 역사에 영향을 미쳐왔다. 쉬로가 확인하는 두 번째 교육과정 이념은 사회 효율성 옹호자(Social Efficiency Advocate)인데, 이는 청소년들이 성인 직장에서 필요로 할 것으로 예상되는 특정 기능들, 역량들, 활동들, 그리고 절차들에서 훈련시키는 데 초점을 맞춤으로써 현대 사회의 필요를 효율적으로 충족시키는 방법을 찾고자 한다. 세 번째 입장은 학습자 중심 이념(Learner-Centred Ideology)으로, 사회의 필요나 교과 내용의 특수성보다 학생의 "필요와 관심사"를 특권화하며(p. 5), 개인들이 지적·사회적·정서적·신체적 잠재력을 최대로 실현하도록 돕는 것을 목표로 한다. 쉬로가 확인하는 마지막 입장은 사회 재건주의 이념(Social Reconstructionist Ideology)으로, "사회 재건주의자들은 우리 사회의 문제들과 인종, 계급, 젠더, 성(sexuality), 또는 민족성과 같은 범주들을 기반으로 그 구성원들 일부에게 자행된 불의들을 의식한다"(p. 6)고 본다.</p>
+
+<p>쉬로의 작업이 특히 유용해질 수 있는 곳 — 인식론적 인지 문헌에서 아이디어를 빌리자면 — 은 교사들의 서로 다른 교육과정 이념들 사이의 이념적 전환 또는 흔들림 탐구에서다. 쉬로는 자신이 연구한 교사들이 경력 전반에 걸쳐, 그리고 특정 하루 중 서로 다른 시점에서도 그들이 가진 교육과정 신념들에서 불일치를 보였다고 주목했다(Schiro, 2013, p. 256). 이러한 불일치를 탐구하면서, 쉬로는 교사들이 네 가지 서로 다른 성향 중 하나를 채택했다는 것을 발견했다. 첫 번째 성향은 "하나의 이념만을 믿고, 이해하며, 가치 있게 여기며", 자신의 것과 "일치하는 교육과정 신념들을 옳은 것으로 … 그리고 다른 것들을 부정확한 것으로 보는" 교사들에게서 발견되는 이원론적 태도였다(p. 256). 쉬로가 확인하는 두 번째 성향은 상대주의적 태도로, 각 교육과정 이념들에 동등한 가치를 부여하며, 어떤 것도 다른 것보다 낫다고 보지 않는 교사들이 가진다. 세 번째 가능성을 쉬로는 맥락적 태도라고 부르는데, "특정 목표나 목적을 달성하는 데 최선이라고 믿는" 교육과정 접근법을 채택하는 교사들이 가지며, "자신이 관여하는 교육과정 과제의 성격이나 자신이 대화하는 집단 또는 개인의 이념에 따라" 이념을 전환한다(p. 257). 쉬로가 확인한 마지막 가능성은 "다양하고 잘 정의된 실행 가능한 이념들 사이를 구별하면서 오직 하나에만 개인적이고 사려 깊은 헌신을 하는" 위계적 태도였다(p. 257).</p>
+
+<p>쉬로는 "서로 다른 이념들의 존재에 대해 상대주의적 또는 맥락적 입장을 취하는 교육자들이 하나 이상을 동시에 믿을 수 있으며, 독특한 (그리고 종종 일치하지 않는) 방식들로 이념들을 결합할 수 있다"고 지적한다(p. 257). 반면 위계적 입장을 취하는 교육자들은 "단일 이념을 증진하는 서비스로 서로 다른 이념들을 사용"할 수 있는 경우가 많다(p. 257). 이원론적 입장을 취하는 교사들은 쉬로가 자신의 작업에서 확인한 단일한 성향들과 가장 가깝게 일치하는 사람들이며, 기능 대 내용과 같은 쟁점들에 관한 교육과정 논쟁들에 자주 관여하는 사람들이다.</p>
+
+<p>역사교사들의 역사와 역사 교수법 모두에 관한 인식론적 신념들을 탐구하는 데 있어서, 인식론적 전환, 인식론적 흔들림, 또는 문헌에서 우려의 대상이 되어온 "인식론적 이중 기준"(Maggioni, 2010, p. 310)에 관한 질문들을 생각하기 위한 유용한 발견술을 제공할 수 있는 것은 정확히 이러한 관계적 틀의 유형이다. 최소한, 이것은 빌케 등(Wilke et al., 2022)이 개별 역사교사의 공식적 인식론과 실천적 인식론이라고 명명한 것 사이의 불일치에 대한 설명을 제공할 수 있을 것이다.</p>
+
+<p>마지막으로, 교수법적 기법들 자체가 특정 인식론적 공동체들의 산물이며, 아마도 체현된 인식론의 형태로서 작동한다는 것을 기억하자. "개념들"과 마찬가지로, 필자는 "기법들" 또는 "실천들"이 코젤렉(Koselleck, 2000, 2018)이 차이트쉬히텐(Zeitschichten, 시간 지층, 시간의 침전물 또는 층위)이라고 묘사한 것의 대상이라고 주장한다. 즉, 그것들은 서로 다른 에피스테메들 안에서의 활용으로부터 침전물처럼 축적되는 의미의 층위들을 지닌다. 교육적 예시는 프로젝트 기반 학습과 같은 것일 수 있는데, 이는 원래 1930년대에 존 듀이(John Dewey)에 의해 주창되었고, 미국 실용주의자들과 진보주의자들의 인식론적 공동체들 안에 위치했다. 오늘날, 같은 유형의 교수법적 접근법은 21세기 기능 패러다임 내에서 재맥락화되었다. 따라서, 프로젝트 기반 학습은 두 시대 모두로부터 의미의 층위들에 의해 물들어 있을 수 있다. 만약 그렇다면, 이것은 실천 속에 있는 차이트쉬히텐의 좋은 예가 될 것이다. 이러한 시간의 침전물들을 결정하기 위해, 코젤렉(2018)은 "구조들의 반복"을 생각하면서 "역사적 변화와 역사적 지속 모두를 동시에" 찾아볼 것을 권고한다(p. 18) — 낡은 것의 복제와 진정으로 독창적이고 고유한 것의 구현 모두를. 이는 교사들의 실천적 인식론들 연구에 또 하나의 시간적 차원을 더해준다.</p>
+</section>
+
+<!-- 결론 -->
+<section id="conclusion">
+<h2>결론: 인식론적 유창성을 향하여</h2>
+
+<p>결론적으로, 연구와 훈련 모두의 관점에서, 역사교사들을 항상 특정 문화와 사회 내에서 태어남으로써 기억 공동체의 구성원으로; 특정 사학사적 전통들 내에서의 학문적 교육을 통해 하나 또는 그 이상의 인식론적 공동체들의 구성원으로; 그리고 교원교육 프로그램 참여, 특정 직업 협회 내 참여, 그리고 특정 교과 부서 내 위치를 통해 서로 다른 교육과정 이념들에 노출되고 채택함으로써 인식론적으로 부하된 교수법적 실천들의 상속자로 항상 접근하고 기억하는 것이 유용하다는 것을 지적하겠다.</p>
+
+<p>이러한 각 공동체 내에서 순환하는 인식론들은 모두 교사의 신념들과 실천들에 대해 영향력을 가질 가능성이 있다. 마찬가지로, 역사교사들은 특정 공동체들과 그들의 인식론적 신념들에 대해 다양한 정도의 충성심이나 헌신을 가질 수 있으며, 교육적 맥락에서 하나의 형태의 공동체의 인식론적 신념들이 다른 것보다 우세한지 이해하는 것이 분명히 유용할 것이다. 분명히, 특정 전통의 역사적 사고 역량들을 적용하는 능력은 의심할 여지없이 역사적 리터러시의 표시이며(Mathis & Parkes, 2020, p. 192 참조), "다양한 앎의 방식들에 관해 유연하고 능숙한" 교사들, 즉 이 경우 서로 다른 역사적 사고 학파들에 관해 그런 교사들은 "인식론적 유창성을 갖고 있다고 할 수 있으며"(Markauskaite & Goodyear, 2016, p. 1), 이는 "지식 있는 전문적 행동과 혁신을 뒷받침하는 역량"으로 주장된다(뒷표지).</p>
+
+<p>따라서, 단순히 역사교사의 인식론적 입장들을 결정하거나 그들의 전환 및/또는 흔들림의 정도를 결정하는 것보다, 그들이 인식론적 유창성을 발전시킬 수 있도록 돕는 데 어느 정도의 가능성이 있을 수 있다. 그리하여 그들이 채택하는 공식적·실천적 인식론들이 단순히 운명의 산물이 아니라, 역사의 (자기)의식에서 비롯되는 비판적 통찰과 공감과 함께, 교실에서 역사 담론을 탐구하기 위한 자원들이 될 수 있다.</p>
+</section>
+
+<!-- 참고문헌 -->
+<section id="references">
+<h2>참고문헌</h2>
+<div class="references">
+
+<div class="ref-item">Adamson, B., & Morris, P. (2007). Comparing curricula [교육과정 비교]. In M. Bray, B. Adamson, & M. Mason (Eds.), <em>Comparative education research: Approaches and methods</em> [비교교육 연구: 접근법과 방법] (pp. 263–282). Springer.</div>
+
+<div class="ref-item">Ahonen, S. (2005). Historical consciousness: A viable paradigm for history education? [역사의식: 역사교육을 위한 실행 가능한 패러다임인가?] <em>Journal of Curriculum Studies</em>, 37(6), 697–707.</div>
+
+<div class="ref-item">Aoki, T. T. (2005). Toward curriculum inquiry in a new key (1978/1980) [새로운 열쇠에서의 교육과정 탐구를 향하여]. In W. F. Pinar & R. L. Irwin (Eds.), <em>Curriculum in a new key: The collected works of Ted T. Aoki</em> [새로운 열쇠의 교육과정] (pp. 89–110). Lawrence Erlbaum Associates.</div>
+
+<div class="ref-item">Ashby, R., & Lee, P. (1987). Children's concepts of empathy and understanding in history [역사에서 어린이의 공감 및 이해 개념]. In C. Portal (Ed.), <em>The history curriculum for teachers</em> [교사를 위한 역사 교육과정] (pp. 62–68). The Falmer Press.</div>
+
+<div class="ref-item">Clark, A. (2004). <em>Teaching the nation: Politics and pedagogy in Australian history</em> [국가 가르치기: 오스트레일리아 역사의 정치학과 교수법]. Melbourne University Press.</div>
+
+<div class="ref-item">Clark, A. (2008). <em>History's children: History wars in the classroom</em> [역사의 아이들: 교실에서의 역사 전쟁]. University of New South Wales Press.</div>
+
+<div class="ref-item">Clark, A., & Peck, C. L. (Eds.). (2019a). <em>Contemplating historical consciousness: Notes from the field</em> [역사의식 성찰: 현장으로부터의 노트]. Berghahn Books.</div>
+
+<div class="ref-item">Clark, A., & Peck, C. L. (2019b). Introduction—Historical consciousness: Theory and practice [서론 — 역사의식: 이론과 실천]. In A. Clark & C. L. Peck (Eds.), <em>Contemplating historical consciousness</em> (pp. 1–15). Berghahn Books.</div>
+
+<div class="ref-item">Cross, M. K. D. (2013). Re-thinking epistemic communities twenty years later [20년 후 인식론적 공동체 재고]. <em>Review of International Studies</em>, 39(1), 137–160.</div>
+
+<div class="ref-item">Elmersjö, H. Å. (2022). Genre positions and epistemic cognition: Swedish upper secondary school history teachers and the nature of history [장르 위치와 인식론적 인지: 스웨덴 고등학교 역사교사와 역사의 성격]. <em>Scandinavian Journal of Educational Research</em>, 66(5), 824–837.</div>
+
+<div class="ref-item">Elmersjö, H. Å., Clark, A., & Vinterek, M. (Eds.). (2017). <em>International perspectives on teaching rival histories: Pedagogical responses to contested narratives and the history wars</em> [경합하는 역사 교수에 대한 국제적 관점]. Palgrave Macmillan.</div>
+
+<div class="ref-item">Fisher, S. (1969). Reality construction in society by Burkhart Holzner [서평]. <em>American Sociological Review</em>, 34(4), 561–563.</div>
+
+<div class="ref-item">Foucault, M. (1966/1994). The order of things [사물의 질서] (J. Johnston, Trans.). In J. D. Faubion (Ed.), <em>Essential works of Foucault 1954–1984</em> (Vol. 2, pp. 261–267). Penguin Books.</div>
+
+<div class="ref-item">Fuller, S. (2018). <em>Post-truth: Knowledge as a power game</em> [탈진실: 권력 게임으로서의 지식]. Anthem.</div>
+
+<div class="ref-item">Gadamer, H.-G. (1975). The problem of historical consciousness [역사의식의 문제]. <em>Graduate Faculty Philosophy Journal</em>, 5(1), 8–52.</div>
+
+<div class="ref-item">Gadamer, H.-G. (1987). The problem of historical consciousness [역사의식의 문제]. In P. Rabinow & W. M. Sullivan (Eds.), <em>Interpretive social science: A second look</em> [해석적 사회과학] (pp. 82–140). University of California Press.</div>
+
+<div class="ref-item">Gottlieb, E., & Wineburg, S. (2012). Between veritas and communitas: Epistemic switching in the reading of academic and sacred history [베리타스와 코뮤니타스 사이: 학문적·성스러운 역사 읽기에서의 인식론적 전환]. <em>Journal of the Learning Sciences</em>, 21(1), 84–129.</div>
+
+<div class="ref-item">Green, A., & Troup, K. (1999). <em>The houses of history: A critical reader in twentieth-century history and theory</em> [역사의 집들: 20세기 역사와 이론 비판적 독본]. Manchester University Press.</div>
+
+<div class="ref-item">Grever, M. (2019). Epilogue: Why historical consciousness? [에필로그: 왜 역사의식인가?] In A. Clark & C. L. Peck (Eds.), <em>Contemplating historical consciousness</em> (pp. 224–232). Berghahn Books.</div>
+
+<div class="ref-item">Haas, P. M. (1992). Introduction: Epistemic communities and international policy coordination [서론: 인식론적 공동체와 국제 정책 조정]. <em>International Organization</em>, 46(1), 1–35.</div>
+
+<div class="ref-item">Harris, C. R. (2002). <em>History teachers and syllabus change: Examining the middle ground of curriculum</em> [역사교사와 교육과정 개정] [박사학위논문]. University of Sydney.</div>
+
+<div class="ref-item">Hill, A. (2005). <em>Reality TV: Audiences and popular factual television</em> [리얼리티 TV: 시청자와 대중적 사실 텔레비전]. Routledge.</div>
+
+<div class="ref-item">Holzner, B. (1972). <em>Reality construction in society</em> [사회에서의 현실 구성]. Schenkman.</div>
+
+<div class="ref-item">Jenkins, K., & Munslow, A. (2004). Introduction [서론]. In K. Jenkins & A. Munslow (Eds.), <em>The nature of history reader</em> [역사의 성격 독본] (pp. 1–18). Routledge.</div>
+
+<div class="ref-item">Journell, W. (2017). Fake news, alternative facts, and Trump: Teaching social studies in a post-truth era [가짜 뉴스, 대안적 사실, 트럼프: 탈진실 시대의 사회과 교육]. <em>Social Studies Journal</em>, 37, 8–21.</div>
+
+<div class="ref-item">Kliebard, H. M. (1987). <em>The struggle for the American curriculum 1893–1958</em> [미국 교육과정을 위한 투쟁]. Routledge.</div>
+
+<div class="ref-item">Körber, A. (2007). <em>Kompetenzen historischen Denkens</em> [역사적 사고의 역량들]. Ars Una.</div>
+
+<div class="ref-item">Körber, A. (2014). Historical thinking and historical competencies as didactic core concepts [역사적 사고와 역사적 역량들을 핵심 교수법 개념들로서]. In H. Bjerg et al. (Eds.), <em>Teaching historical memories in an intercultural perspective</em> (pp. 69–96). Metropol.</div>
+
+<div class="ref-item">Körber, A. (2016). Translation and its discontents II: A German perspective [번역과 그것의 불만들 II: 독일적 관점]. <em>Journal of Curriculum Studies</em>, 48(4), 440–456.</div>
+
+<div class="ref-item">Körber, A., & Meyer-Hamme, J. (2015). Historical thinking, competencies and their measurement [역사적 사고, 역량들과 그것들의 측정]. In K. Ercikan & P. Seixas (Eds.), <em>New directions in assessing historical thinking</em> (pp. 89–101). Routledge.</div>
+
+<div class="ref-item">Koselleck, R. (2000). <em>Zeitschichten: Studien zur historik</em> [시간 지층: 역사학 연구]. Suhrkamp.</div>
+
+<div class="ref-item">Koselleck, R. (2018). <em>Sediments of time: On possible histories</em> [시간의 침전물: 가능한 역사들에 대하여]. Stanford University Press.</div>
+
+<div class="ref-item">Lee, P., & Ashby, R. (2000). Progression in historical understanding ages 7–14 [7~14세 역사적 이해의 발달]. In P. N. Stearns, P. Seixas, & S. Wineburg (Eds.), <em>Knowing, teaching, and learning history</em> (pp. 199–222). New York University Press.</div>
+
+<div class="ref-item">Lévesque, S. (2016). Going beyond "Narratives" vs. "Competencies": A model for understanding history education ["서사" 대 "역량"을 넘어서]. <em>Public History Weekly</em>, 4(12).</div>
+
+<div class="ref-item">Maggioni, L. (2010). <em>Studying epistemic cognition in the history classroom: Cases of teaching and learning to think historically</em> [역사 교실에서의 인식론적 인지 연구] [박사학위논문]. University of Maryland.</div>
+
+<div class="ref-item">Maggioni, L., VanSledright, B. A., & Alexander, P. A. (2009). Walking on the borders: A measure of epistemic cognition in history [경계를 걷다: 역사에서의 인식론적 인지 측정]. <em>The Journal of Experimental Education</em>, 77(3), 187–214.</div>
+
+<div class="ref-item">Manfra, M. M., & Holmes, C. (2018). Media literacy and fake news in the social studies [사회과에서의 미디어 리터러시와 가짜 뉴스]. <em>Social Education</em>, 82(2), 91–95.</div>
+
+<div class="ref-item">Markauskaite, L., & Goodyear, P. (2016). <em>Epistemic fluency and professional education: Innovation, knowledgeable action, and actionable knowledge</em> [인식론적 유창성과 전문 교육]. Springer.</div>
+
+<div class="ref-item">Marsh, C. J., & Willis, G. (2003). <em>Curriculum: Alternative approaches, ongoing issues</em> [교육과정: 대안적 접근들, 지속되는 쟁점들] (3rd ed.). Merrill/Prentice Hall.</div>
+
+<div class="ref-item">Martin, B., Huijgen, T., & Henkes, B. (2021). Listening like a historian? A framework of "oral historical thinking" [역사가처럼 듣기?]. <em>Historical Encounters</em>, 8(1), 120–138.</div>
+
+<div class="ref-item">Mathis, C., & Parkes, R. J. (2020). Historical thinking, epistemic cognition, and history teacher education [역사적 사고, 인식론적 인지, 역사교사 교육]. In C. Berg & T. Christou (Eds.), <em>The Palgrave handbook of history and social studies education</em> (pp. 189–212). Palgrave Macmillan.</div>
+
+<div class="ref-item">Metzger, S. A., & McArthur Harris, L. (Eds.). (2018). <em>The Wiley international handbook of history teaching and learning</em> [와일리 국제 역사 교수·학습 핸드북]. Wiley-Blackwell.</div>
+
+<div class="ref-item">Nietzsche, F. (1874/1983). On the uses and disadvantages of history for life [역사의 삶에 대한 유용성과 불이익에 대하여] (R. J. Hollingdale, Trans.). In D. Breazeale (Ed.), <em>Untimely meditations</em> (pp. 57–123). Cambridge University Press.</div>
+
+<div class="ref-item">Nitsche, M., Mathis, C., & O'Neill, D. K. (2022). Epistemic cognition in history education [역사교육에서의 인식론적 인지] [특집호]. <em>Historical Encounters</em>, 9(1).</div>
+
+<div class="ref-item">Parkes, R. J. (2007). Reading history curriculum as postcolonial text [탈식민지 텍스트로서 역사 교육과정 읽기]. <em>Curriculum Inquiry</em>, 37(4), 383–400.</div>
+
+<div class="ref-item">Parkes, R. J. (2009). Teaching history as historiography [사학사로서의 역사 교수]. <em>International Journal of Historical Learning, Teaching and Research</em>, 8(2), 118–132.</div>
+
+<div class="ref-item">Parkes, R. J. (2011). <em>Interrupting history: Rethinking history curriculum after "the end of history"</em> [역사 중단하기: "역사의 종말" 이후 역사 교육과정 재사고]. Peter Lang.</div>
+
+<div class="ref-item">Parkes, R. J. (2022). Four approaches to the knowledge versus skills problem in the teaching of history [역사 교수에서의 지식 대 기능 문제에 대한 네 가지 접근법]. <em>Ágora</em>, 57, 3–6.</div>
+
+<div class="ref-item">Parkes, R. J., & Donnelly, D. (2014). Changing conceptions of historical thinking in history education: An Australian case study [역사교육에서의 역사적 사고 개념 변화: 오스트레일리아 사례 연구]. <em>Revista Tempo e Argumento</em>, 6(11), 113–136.</div>
+
+<div class="ref-item">Peck, C., & Seixas, P. (2008). Benchmarks of historical thinking: First steps [역사적 사고의 벤치마크: 첫걸음]. <em>Canadian Journal of Education</em>, 31(4), 1015–1038.</div>
+
+<div class="ref-item">Peters, R. A., & Johannesen, H. J. (2020). What is actually true? Approaches to teaching conspiracy theories and alternative narratives [실제로 무엇이 사실인가? 음모론과 대안적 서사 교수 접근법]. <em>Acta Didactica Norden</em>, 14(4), 1–26.</div>
+
+<div class="ref-item">Photiou, I., Papadopoulou, L., Eleftheriadou, A., & Maniou, T. A. (2019). Visual Infotainment in the political news [정치 뉴스에서의 시각적 인포테인먼트]. <em>Journal of Media and Communication Research</em>, 66, 75–100.</div>
+
+<div class="ref-item">Rosenstone, R. A. (2006). <em>History on film/Film on history</em> [필름 위의 역사/역사 위의 필름]. Longman.</div>
+
+<div class="ref-item">Ruggie, J. G. (1975). International responses to technology: Concepts and trends [기술에 대한 국제적 반응]. <em>International Organization</em>, 29(3), 569–570.</div>
+
+<div class="ref-item">Rüsen, J. (1987). The didactics of history in West Germany [서독의 역사 교수법]. <em>History and Theory</em>, 26(3), 275–286.</div>
+
+<div class="ref-item">Rüsen, J. (1989). The development of narrative competence in historical learning [역사 학습에서의 서사 역량 발달]. <em>History and Memory</em>, 1(2), 35–59.</div>
+
+<div class="ref-item">Rüsen, J. (2004). Historical consciousness: Narrative structure, moral function, and ontogenetic development [역사의식: 서사 구조, 도덕적 기능, 존재발생론적 발달]. In P. Seixas (Ed.), <em>Theorizing historical consciousness</em> (pp. 63–85). University of Toronto Press.</div>
+
+<div class="ref-item">Rüsen, J. (2005). <em>History: Narration, interpretation, orientation</em> [역사: 서사, 해석, 지향]. Berghahn Books.</div>
+
+<div class="ref-item">Rüsen, J. (2012). Forming historical consciousness: Towards a humanistic history didactics [역사의식 형성: 인문주의적 역사 교수법을 향하여]. <em>Antiteses</em>, 5(10), 519–536.</div>
+
+<div class="ref-item">Rüsen, J. (2017). <em>Evidence and meaning: A theory of historical studies</em> [증거와 의미: 역사 연구 이론]. Berghahn Books.</div>
+
+<div class="ref-item">Schiro, M. S. (2013). <em>Curriculum theory: Conflicting visions and enduring concerns</em> [교육과정 이론: 갈등하는 비전들과 지속되는 관심사들] (2nd ed.). SAGE Publications.</div>
+
+<div class="ref-item">Segall, A. (2006). What's the purpose of teaching a discipline, anyway? [학문을 가르치는 목적은 무엇인가?] In A. Segall, E. E. Heilman, & C. H. Cherryholmes (Eds.), <em>Social studies—The next generation</em> (pp. 125–139). Peter Lang.</div>
+
+<div class="ref-item">Seixas, P. (Ed.). (2004). <em>Theorizing historical consciousness</em> [역사의식 이론화]. University of Toronto Press.</div>
+
+<div class="ref-item">Seixas, P., & Morton, T. (2012). <em>The big six historical thinking concepts</em> [역사적 사고의 여섯 가지 핵심 개념들]. Nelson.</div>
+
+<div class="ref-item">Seixas, P., & Peck, C. (2004). Teaching historical thinking [역사적 사고 가르치기]. In A. Sears & I. Wright (Eds.), <em>Challenges and prospects for Canadian social studies</em> (pp. 109–117). Pacific Educational Press.</div>
+
+<div class="ref-item">Shemilt, D. (1987). <em>The history curriculum for teachers</em> [교사를 위한 역사 교육과정]. Falmer Press.</div>
+
+<div class="ref-item">Siebörger, R. (2017). Fake news, alternative facts, history education [가짜 뉴스, 대안적 사실, 역사교육]. <em>Public History Weekly</em>, 5, 8.</div>
+
+<div class="ref-item">Sjöberg, E. (2011). <em>Battlefields of memory: The Macedonian conflict and Greek historical culture</em> [기억의 전장들]. Umeå University.</div>
+
+<div class="ref-item">Sparks, C. (2015). Introduction: Panic over tabloid news [서론: 타블로이드 뉴스에 대한 공황]. In C. Sparks & J. Tullock (Eds.), <em>Tabloid tales: Global debates over media standards</em> (pp. 1–40). Rowman and Littlefield.</div>
+
+<div class="ref-item">Stoel, G., Logtenberg, A., Wansink, B., Huijgen, T., van Boxtel, C., & van Drie, J. (2017). Measuring epistemological beliefs in history education [역사교육에서의 인식론적 신념 측정]. <em>International Journal of Educational Research</em>, 83, 120–134.</div>
+
+<div class="ref-item">Straub, J. (2005a). Foreword [서문]. In J. Straub (Ed.), <em>Narration, identity, and historical consciousness</em> (pp. xiii–xvi). Berghahn Books.</div>
+
+<div class="ref-item">Straub, J. (Ed.). (2005b). <em>Narration, identity, and historical consciousness</em> [서사, 정체성, 역사의식]. Berghahn Books.</div>
+
+<div class="ref-item">Straub, J. (2005c). Telling stories, making history [이야기하기, 역사 만들기]. In J. Straub (Ed.), <em>Narration, identity, and historical consciousness</em> (pp. 44–98). Berghahn Books.</div>
+
+<div class="ref-item">Taylor, T. (2004). Disputed territory: The politics of historical consciousness in Australia [분쟁 지역: 오스트레일리아의 역사의식의 정치학]. In P. Seixas (Ed.), <em>Theorizing historical consciousness</em> (pp. 217–239). University of Toronto Press.</div>
+
+<div class="ref-item">Taylor, T. (2008). <em>Denial: History betrayed</em> [부정: 배반당한 역사]. Melbourne University Press.</div>
+
+<div class="ref-item">Taylor, T. (2009). Howard's End: A narrative memoir of political contrivance [하워드의 끝]. <em>Curriculum Journal</em>, 20(4), 317–329.</div>
+
+<div class="ref-item">Thorp, R. (2016). <em>Uses of history in history education</em> [역사교육에서의 역사 활용]. Umeå University & Dalarna University.</div>
+
+<div class="ref-item">van Boxtel, C., & van Drie, J. (2004). Historical reasoning: A comparison of how experts and novices contextualise historical sources [역사적 추론: 전문가와 초보자의 역사 사료 맥락화 비교]. <em>International Journal of Historical Learning, Teaching and Research</em>, 4(2), 89–97.</div>
+
+<div class="ref-item">Van Niekerk, A. A. (2005). Hermeneutics and historical consciousness [해석학과 역사의식]. <em>South African Journal of Philosophy</em>, 21(4), 228.</div>
+
+<div class="ref-item">VanSledright, B. A. (1996). Closing the gap between school and disciplinary history? [학교 역사와 학문적 역사 사이의 간극 좁히기?] In J. Brophy (Ed.), <em>Advances in research on teaching</em> (Vol. 6, pp. 257–289). JAI Press.</div>
+
+<div class="ref-item">VanSledright, B., & Maggioni, L. (2016). Epistemic cognition in history [역사에서의 인식론적 인지]. In J. A. Greene, W. A. Sandoval, & I. Bråten (Eds.), <em>Epistemic cognition in education</em> (pp. 128–146). Routledge.</div>
+
+<div class="ref-item">VanSledright, B., & Reddy, K. (2014). Changing epistemic beliefs? An exploratory study of cognition among prospective history teachers [인식론적 신념의 변화?]. <em>Tempo & Argumento</em>, 6(11), 28–68.</div>
+
+<div class="ref-item">Virta, A. (2007). Historical literacy: Thinking, reading and understanding history [역사적 리터러시]. <em>Journal of Research in Teacher Education</em>, 14(4), 11–25.</div>
+
+<div class="ref-item">Voss, J. F., & Carretero, M. (Eds.). (1998). <em>Learning and reasoning in history</em> [역사에서의 학습과 추론]. Routledge.</div>
+
+<div class="ref-item">Wallace, P. (2019). Phony facts and eco-media: Fake nature and the call for widespread media literacy [가짜 사실과 에코 미디어]. <em>Environmental Communication</em>, 13(6), 790–803.</div>
+
+<div class="ref-item">Wertsch, J. V. (1998). <em>Mind as action</em> [행동으로서의 마음]. Oxford University Press.</div>
+
+<div class="ref-item">Wertsch, J. V. (2002). <em>Voices of collective remembering</em> [집단 기억의 목소리들]. Cambridge University Press.</div>
+
+<div class="ref-item">Wertsch, J. V. (2008). Collective memory and narrative templates [집단 기억과 서사 틀]. <em>Social Research: An International Quarterly</em>, 75(1), 133–156.</div>
+
+<div class="ref-item">Wertsch, J. V. (2012). Texts of memory and texts of history [기억의 텍스트와 역사의 텍스트]. <em>L2 Journal</em>, 4(1), 9–20.</div>
+
+<div class="ref-item">Wilke, M., Depaepe, F., & Van Nieuwenhuyse, K. (2022). The interplay between historical thinking and epistemological beliefs [역사적 사고와 인식론적 신념의 상호작용]. <em>Historical Encounters</em>, 9(1), 196–219.</div>
+
+<div class="ref-item">Wineburg, S. S. (2001). <em>Historical thinking and other unnatural acts</em> [역사적 사고와 다른 부자연스러운 행위들]. Temple University Press.</div>
+
+<div class="ref-item">Wineburg, S. S. (2018). <em>Why learn history (When it's already on your phone)</em> [왜 역사를 배우는가]. The University of Chicago Press.</div>
+
+<div class="ref-item">Young, M. (2007). <em>Bringing knowledge back in: From social constructivism to social realism in the sociology of education</em> [지식을 되돌려 놓기]. Routledge.</div>
+
+<div class="ref-item">Zanazanian, P. (2015). Historical consciousness and being Quebecois [역사의식과 퀘벡인 됨]. <em>Canadian Ethnic Studies/Études ethniques au Canada</em>, 47(2), 113–135.</div>
+
+<div class="ref-item">Zanazanian, P. (2017). Teaching history for narrative space and vitality [서사 공간과 활력을 위한 역사 교수]. In H. Å. Elmersjö, A. Clark, & M. Vinterek (Eds.), <em>International perspectives on teaching rival histories</em> (pp. 107–131). Palgrave Macmillan.</div>
+
+<div class="ref-item">Zanazanian, P. (2019). Examining historical consciousness through history-as-interpretive-filter templates [해석적 필터로서의 역사 틀을 통한 역사의식 검토]. <em>Journal of Curriculum Studies</em>, 51(6), 850–868.</div>
+
+<div class="ref-item">Zanazanian, P., & Nordgren, K. (2019). Introduction [서론] [특집호]. <em>Journal of Curriculum Studies</em>, 51(6), 771–778.</div>
+
+</div>
+</section>
+
+</div><!-- /#main -->
+
+<button class="back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">▲</button>
+
+<script>
+window.addEventListener('scroll', () => {
+  let current = '';
+  document.querySelectorAll('section[id]').forEach(s => {
+    if (s.getBoundingClientRect().top <= 80) current = s.id;
+  });
+  document.querySelectorAll('#sidebar nav a').forEach(a => {
+    a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+  });
+});
+document.querySelectorAll('#sidebar nav a').forEach(a => {
+  a.addEventListener('click', e => {
+    e.preventDefault();
+    const target = document.querySelector(a.getAttribute('href'));
+    if (target) target.scrollIntoView({ behavior: 'smooth' });
+  });
+});
+</script>
+</body>
+</html>

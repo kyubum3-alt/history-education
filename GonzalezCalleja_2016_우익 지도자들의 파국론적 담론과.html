@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>우익 지도자들의 파국론적 담론과 '공산주의 쿠데타' 신화의 확산 — González Calleja (2016)</title>
+<style>
+:root {
+  --sidebar-width: 270px;
+  --accent: #2c5f8a;
+  --accent-light: #e8f1f8;
+  --text: #1a1a1a;
+  --muted: #555;
+  --border: #d0d7de;
+  --bg: #fafafa;
+  --white: #ffffff;
+  --table-head: #f0f4f8;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Noto Serif KR', Georgia, serif; background: var(--bg); color: var(--text); line-height: 1.8; font-size: 16px; }
+
+/* 사이드바 */
+#sidebar {
+  position: fixed; top: 0; left: 0; width: var(--sidebar-width);
+  height: 100vh; overflow-y: auto; background: var(--white);
+  border-right: 1px solid var(--border); padding: 20px 0; z-index: 100;
+}
+#sidebar .logo { padding: 0 18px 14px; border-bottom: 1px solid var(--border); margin-bottom: 12px; }
+#sidebar .logo span { display: block; font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px; }
+#sidebar .logo strong { font-size: 13px; color: var(--accent); line-height: 1.4; }
+#sidebar nav a {
+  display: block; padding: 6px 18px; font-size: 13px; color: var(--muted);
+  text-decoration: none; border-left: 3px solid transparent; transition: all .2s;
+}
+#sidebar nav a:hover { color: var(--accent); background: var(--accent-light); }
+#sidebar nav a.active { color: var(--accent); border-left-color: var(--accent); background: var(--accent-light); font-weight: 600; }
+#sidebar nav a.sub { padding-left: 32px; font-size: 12px; }
+#sidebar nav .section-label { padding: 10px 18px 4px; font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: #aaa; font-weight: 700; }
+
+/* 메인 */
+#main { margin-left: var(--sidebar-width); padding: 40px 48px 80px; max-width: 900px; }
+
+/* 논문 헤더 */
+.paper-header { border-bottom: 2px solid var(--accent); padding-bottom: 24px; margin-bottom: 30px; }
+.paper-header .journal-tag { display: inline-block; background: var(--accent); color: #fff; font-size: 11px; padding: 3px 10px; border-radius: 3px; margin-bottom: 12px; letter-spacing: .5px; }
+.paper-header h1 { font-size: 22px; line-height: 1.5; color: var(--accent); margin-bottom: 6px; }
+.paper-header .original-title { font-size: 14px; color: var(--muted); font-style: italic; margin-bottom: 14px; }
+.paper-header .meta { font-size: 13px; color: var(--muted); }
+.paper-header .meta span { margin-right: 16px; }
+.paper-header .doi { margin-top: 8px; font-size: 12px; color: var(--muted); }
+
+/* 초록 */
+.abstract-box { background: var(--accent-light); border-left: 4px solid var(--accent); padding: 20px 24px; margin-bottom: 36px; border-radius: 0 6px 6px 0; }
+.abstract-box h2 { font-size: 13px; text-transform: uppercase; letter-spacing: 1px; color: var(--accent); margin-bottom: 10px; }
+.abstract-box p { font-size: 15px; }
+
+/* 섹션 */
+section { scroll-margin-top: 24px; margin-bottom: 48px; }
+section h2 { font-size: 19px; color: var(--accent); border-bottom: 1px solid var(--border); padding-bottom: 8px; margin-bottom: 20px; }
+section h3 { font-size: 16px; color: #333; margin: 24px 0 12px; }
+p { margin-bottom: 16px; }
+
+/* 인용 블록 */
+blockquote { border-left: 3px solid var(--accent); margin: 20px 0; padding: 12px 20px; background: #f5f8fb; font-style: italic; color: #444; }
+blockquote cite { display: block; margin-top: 8px; font-size: 12px; color: var(--muted); font-style: normal; }
+
+/* 각주 */
+.footnotes { border-top: 1px solid var(--border); margin-top: 40px; padding-top: 20px; }
+.footnotes h3 { font-size: 14px; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 14px; }
+.footnotes ol { padding-left: 20px; }
+.footnotes li { font-size: 13px; color: var(--muted); margin-bottom: 8px; line-height: 1.6; }
+
+/* 참고문헌 */
+.ref-list { list-style: none; padding: 0; }
+.ref-list li { font-size: 14px; color: var(--text); margin-bottom: 10px; padding-left: 20px; text-indent: -20px; line-height: 1.6; border-bottom: 1px dashed #eee; padding-bottom: 8px; }
+
+/* 맨 위로 */
+.back-top { position: fixed; bottom: 30px; right: 30px; background: var(--accent); color: #fff; border: none; border-radius: 50%; width: 44px; height: 44px; font-size: 18px; cursor: pointer; box-shadow: 0 2px 8px rgba(0,0,0,.2); display: flex; align-items: center; justify-content: center; text-decoration: none; }
+
+/* 반응형 */
+@media (max-width: 900px) {
+  #sidebar { display: none; }
+  #main { margin-left: 0; padding: 24px 20px 60px; }
+}
+
+sup { font-size: 11px; color: var(--accent); }
+</style>
+</head>
+<body>
+
+<!-- 사이드바 -->
+<aside id="sidebar">
+  <div class="logo">
+    <span>번역 논문</span>
+    <strong>González Calleja (2016)</strong>
+  </div>
+  <nav>
+    <div class="section-label">목차</div>
+    <a href="#header">📄 논문 정보</a>
+    <a href="#abstract">초록</a>
+    <a href="#intro">1. 도입</a>
+    <a href="#orden">2. 질서 공공 논쟁</a>
+    <a href="#mito">3. '공산주의 쿠데타' 신화</a>
+    <a href="#balance">4. 결산: 공포의 작용</a>
+    <a href="#notas">각주</a>
+  </nav>
+</aside>
+
+<!-- 메인 -->
+<main id="main">
+
+  <!-- 논문 헤더 -->
+  <div class="paper-header" id="header">
+    <div class="journal-tag">El Argonauta español, 13 | 2016</div>
+    <h1>우익 지도자들의 파국론적 담론과 '공산주의 쿠데타' 신화의 확산</h1>
+    <div class="original-title">Los discursos catastrofistas de los líderes de la derecha y la difusión del mito del «golpe de Estado comunista»</div>
+    <div class="meta">
+      <span><strong>저자:</strong> Eduardo González Calleja</span>
+      <span><strong>소속:</strong> Universidad Carlos III de Madrid</span>
+    </div>
+    <div class="doi">DOI: https://doi.org/10.4000/argonauta.2412 | 온라인 게재: 2016년 10월 20일</div>
+  </div>
+
+  <!-- 초록(논문에 별도 초록 없음 — 도입부로 대체) -->
+  <div class="abstract-box" id="abstract">
+    <h2>논지 요약</h2>
+    <p>이 논문은 1936년 봄, 스페인 제2공화국 시기 우익 지도자들이 의회 연설과 언론 캠페인을 통해 어떻게 '공산주의 혁명 임박'이라는 신화를 구축하고 확산시켰는지를 분석한다. 저자는 칼보 소텔로·힐 로블레스 등 우익 대변인들의 파국론적 담론이 '집단 행동 프레이밍'의 일환으로서 내전에 앞서 의회에서 먼저 선언되었으며, 이 담론이 7월 18일 군사 쿠데타를 정당화하는 문화적 기반을 제공했음을 보인다. 또한 우익 측이 유포한 위조 문서들('코민테른 지령서' 등)의 기원과 전파 경로를 실증적으로 추적하여, 이른바 '볼셰비키 쿠데타 음모'가 역사적 사실이 아닌 반혁명적 선전의 산물임을 논증한다.</p>
+  </div>
+
+  <!-- 1. 도입 -->
+  <section id="intro">
+    <h2>1. 도입</h2>
+
+    <p>1936년 봄, 특정 집단들이 무장 대응이라는 신속하고 타협 없는 방식을 선택하도록 하기 위해서는, 폭력이 자신들의 신체적·사회적·정치적 온전성에 대한 임박한 위협으로 재정의되는 과정이 필요했다.<sup>1</sup> 공포는 도구화되어 선동의 수단으로 활용되었고, 때로는 사람들이 실제로 겪은 폭력의 정도와 긴장된 상황 속에서 그것을 인식하는 방식 사이의 괴리를 인식하지 못하게 만들었다. 두려움과 불안의 만연한 상태가 불확실성에 의해 생성되면서, 보복과 맞보복의 역학을 가속화하고 정치적 문제를 무력으로 해결하라는 끊임없는 호소가 이어졌다.</p>
+
+    <p>반혁명적 행동은 공화국 체제의 취약성이나 우익 다양한 집단들의 조직력만의 결과가 아니었다. 그것은 또한 하나의 문화적 구성물이기도 했다.<sup>2</sup> 사회적 혼란이라는 허구적 상태와 '공산주의 쿠데타 신화'로 구체화된 '적색 위협'에 맞서 군사 반란을 정당화하는 것은, 우익이 선거 동원을 선동하고 나아가 반혁명적 행동에 착수하기 위해 지지를 결집하는 데 활용한 두드러진 문화적 프레이밍 과정의 산물이었다.<sup>3</sup></p>
+
+    <p>인민전선을 공산주의 혁명의 전주로 작용하는 혼란 또는 독재로 규정하고 동일시하는 우익 대변인들의 담론은, 공포에 부채질된 결과, 시민적 대결을 조장하는 데 필요한 문화적 분위기를 조성하는 데 실질적 효과를 발휘했다. 1936년 봄 내내, 우익 다양한 세력의 대변인들은 1930년대 스페인 보수주의 사고방식에서 긴밀히 연결된 두 가지 핵심 측면을 고발함으로써 공화국 체제의 행사 정당성의 결여를 부각시켰다. 바로 공공 질서 문제를 해결할 능력의 부재, 그리고 공산주의적 성격의 혁명적 행동을 위한 전실(前室)로서의 역할이었다. 이러한 프레이밍 과정은 7월 18일 쿠데타에 광범위한 기반의 동원을 제공하고, 이후 프랑코 체제를 사후적으로 정당화하는 데 핵심적이었다.</p>
+  </section>
+
+  <!-- 2. 공공 질서 논쟁 -->
+  <section id="orden">
+    <h2>2. 의회에서의 공공 질서 논쟁</h2>
+
+    <p>2월의 선거 패배 이후, 다양한 경향의 왕당파 언론은 혁명과 내전의 유령을 끊임없이 부추기는 것을 그치지 않았다.<sup>4</sup> 그들의 견해에 따르면, 민주 공화국에 대한 힐 로블레스식의 '합법주의적' 전술은 1933년 우익의 승리를 무위로 돌리고 혁명에게 1934년 10월의 타격으로부터 회복할 시간을 허용했을 뿐이었다. 합법성에 관한 '시대착오적 개념'을 버린 새로운 전술이 필요했다.</p>
+
+    <blockquote>
+      「에포카」는 이렇게 말했다. "스페인은 최고의 노력을 기울여 모든 시민들의 에너지를 총합하든가, 아니면 국민으로서 사라지고, 먼저 혁명과 타협하려는 시민들을 희생양으로 삼을 모스크바의 붉은 물결 아래 묻히든가 해야 한다."<sup>5</sup>
+      <cite>— La Época, 1936년 3월 3일자 사설 「미온성에 반대하고 반혁명적 행동을 위하여」</cite>
+    </blockquote>
+
+    <p>바로 이때 2월 선거운동 중 '반혁명'과 '반동'을 거리낌 없이 이야기했던 극우의 정치 담론이 전쟁과 전후를 통해 유지될 그 결정적 특성을 확립했다. 상징들의 이분법적 대립에 기반한 서사였다. "문명이냐 야만이냐", "스페인을 위해서냐 러시아를 위해서냐", "스페인 국기 대 붉은 깃발", "한편에는 십자가, 다른 편에는 낫과 망치", "투표 대 주먹" 등.<sup>6</sup> 민주적 정상 상태를 파괴할 내전적 분위기를 주입하는 것이 이들의 주된 사명이었다.</p>
+
+    <p>이처럼 수사학적으로 정상성을 깨뜨리는 파국론적 담론의 생산은 우익의 가장 자격 있는 대변인들의 우선적 임무였다. 이들은 의회를 논증·화해·심의의 공간이 아닌 정반대로 바꿔놓았다. 의회는 사회 전체를 분열시키는 적대감을 증폭시키는 공명함이 되었고, 내전은 거리에서보다 먼저 의회에서 선포되었다.<sup>8</sup></p>
+
+    <p>힐 로블레스의 참패, 「혁신 스페인」 지도자 안토니오 고이코에체아의 의원직 상실, 그리고 블로케 나시오날 소속 의원 열 명의 의회 진입과 함께, 호세 칼보 소텔로는 반혁명 우익의 가장 영향력 있는 대변인이 되었고, 자신의 의석을 쿠데타를 지지하도록 우익 대중의 심리를 준비시키기 위한 폭력적 선전의 확성기로 변모시켰다. 2월 21일, 그는 현재의 운동이 1931년과 달리 더 이상 정치적이 아니라 사회적이라고 지적했다.<sup>9</sup></p>
+
+    <p>이 봄 내내, 보수 언론에는 「공공 질서 교란」, 「징조들」, 「사회 문제들」, 「노동 분쟁」 등 모든 종류의 공공 무질서를 과장하는 고정 섹션들이 다시 등장했다.<sup>17</sup> 보수 영국 언론도 스페인 사태에 대한 영국 외무부의 이미지를 강화했다. 『더 타임스』, 『데일리 메일』, 『데일리 텔레그래프』 등의 신문들은 칼보 소텔로와 힐 로블레스가 의회에서 정기적으로 제공하는 스페인의 폭력 행위 통계 보고를 실었다.<sup>18</sup></p>
+
+    <p>미국 대사 클로드 바우어스는 초보수 언론이 전개한 전략을 매우 생생하게 설명한다.</p>
+
+    <blockquote>
+      "이 모든 사건들은 반민주적 신문들에 의해 매일 신중하고 체계적으로 정리되어 「스페인의 사회적 무질서」라는 고정 제목 아래 실렸다. 외국 언론은 이것을 매우 중요하게 다루었다. 마치 미국에서 예를 들어, 모든 싸움, 모든 죽음, 모든 도둑질, 범죄, 파업이 아무리 사소해도 모두 기록되어 『뉴욕 타임스』 1면에 「미국의 사회적 무질서」라는 고정 제목 아래 실리는 것과 같았다."<sup>15</sup>
+      <cite>— Claude G. Bowers, 『스페인 사절로서의 임무』, 바르셀로나, Grijalbo, 1977, p. 206</cite>
+    </blockquote>
+
+    <p>의회 토론이 사회에 대한 정당성 부여 능력을 점진적으로 잃어가는 현상은 일간 언론에서 가장 완성된 형태로 나타났다. 칼보 소텔로와 힐 로블레스가 의회에서 폭로한 불법 행위 목록들은 우익 정당들이 특별히 구성한 정보원 네트워크에서 나온 것으로 보인다.<sup>16</sup></p>
+
+    <p>4월 25일 ABC 인터뷰에서 칼보 소텔로는 스페인을 위협하는 이분법적 대안을 다시 한번 제시했다. 공산주의냐, 아니면 그의 말에서 뚜렷이 전체주의적 특성을 띠는 '민족적' 국가냐.<sup>21</sup></p>
+
+    <p>5월 19일, 신임 총리 산티아고 카사레스 키로가는 "공화국의 명백하거나 은밀한 적들에 대한 모든 타협은 끝났다"고 도전적으로 선언했다. 파시즘에 맞서 정부는 교전자가 되겠다는 것이었다.<sup>22</sup></p>
+
+    <p>이에 칼보 소텔로는 정부가 교전자가 될 수 없으며 법을 모두에게 가차 없이 적용해야 한다고 응수했다. 이어 이탈리아와 독일의 코퍼러티브 경제 조치의 스페인 도입을 촉구한 후, 군의 애국적 의무에 대한 호소로 연설을 마쳤다.<sup>24</sup></p>
+
+    <p>6월 16일 또 다른 역사적인 공공 질서 토론에서, 힐 로블레스는 정부가 스페인을 지배하는 혁명적 상황을 종식시키기 위한 '필요한 조치들'을 강구할 것을 촉구했다.<sup>25</sup></p>
+
+    <blockquote>
+      "나는 권위의 원칙을 옹호한다. 그것의 가장 숭고한 구현이 군대다. [...] 군인이 군주제를 지지하고 공화국에 반대하여 반란을 일으키려 한다면 미치광이일 것이다. [...] 그러나 무정부 상태가 발생한다면, 스페인을 위해 그리고 무정부 상태에 반대하여 반란을 일으킬 준비가 되어 있지 않은 군인이 있다면, 그 역시 미치광이일 것이다."<sup>28</sup>
+      <cite>— 칼보 소텔로, 1936년 6월 16일 의회 연설 (DSC)</cite>
+    </blockquote>
+
+    <p>7월 1일 마지막 도발에서 칼보 소텔로는 파시즘이 임박한 마르크스주의 혁명과 그에 따른 프롤레타리아화 위험에 맞선 부르주아지의 본능적 반응이라는 자신의 잘 알려진 테제를 재차 밝혔다.<sup>30</sup></p>
+
+    <p>우익 대변인들이 스페인의 무정부 상태에 대해 늘어놓은 섬뜩한 연설들이 중간 계급과 상층 계급의 공황을 부추기고, 군대만이 그들을 구할 수 있다고 믿도록 유도했다는 것은 의심할 여지가 없다.<sup>31</sup></p>
+
+    <p>우익이 '교전적인' 우익의 공개적 의지로 선포되는 가장 극적인 장면은 7월 15일 의회 상설위원회의 극적인 회의에서였다. 힐 로블레스는 칼보 소텔로의 사망에서 자신의 마지막 개입까지의 기간에 64명의 사망자와 224명의 부상자를 추가하며 경계령 연장에 반대 논거를 제시했다.<sup>32</sup></p>
+
+    <p>무엇이 음모에 완전히 가담한 '우발주의적' 우익이 공공 질서 문제를 민주적 방법으로 해결할 생각이었는지는 영원히 알 수 없을 것이다. 분명한 것은, 우익 대변인들의 묵시록적 연설들이 보수 계층의 불안한 심리에 깊이 침투하여 그들의 불안정감을 고조시키고, 군대의 '구원적' 개입을 지지하고 정당화하는 데 필요한 심리적 토대를 놓았다는 것이다.<sup>33</sup></p>
+  </section>
+
+  <!-- 3. 공산주의 쿠데타 신화 -->
+  <section id="mito">
+    <h2>3. '공산주의 쿠데타' 신화: 문서 위조와 확산</h2>
+
+    <p>이 신화는 단지 스페인만의 발명품이 아니었다. 1920년대 이후 공산주의 혁명의 공포가 유럽 전역의 보수주의적 사고를 관통하고 있었다.<sup>36</sup> 그리하여 독일에서 나치즘 등장과 함께 강화된 '볼셰비키 쿠데타 위협' 담론이 스페인으로 이식되었다.<sup>37·38·39</sup></p>
+
+    <p>1936년 1월부터 우익 언론은 사회주의자·아나키스트·공산주의자들의 '미래 혁명'이 모스크바에 의해 지도되고 자금을 지원받고 있다고 주장했다.<sup>40·41</sup></p>
+
+    <p>2월 선거 이후, 이 생각은 ABC와 같은 신문들의 지면에 광범위하게 반영되었다. 3월 말에는 우익 언론이 헝가리 혁명가 벨라 쿤이 공산주의 혁명 자금을 위해 파리에서 백만 페세타를 가지고 바르셀로나에 도착했다고 확언했다. 이 모든 캠페인은 극우의 가장 자격 있는 대변인들의 의회적 파국주의와 완벽히 공명하고 있었다.<sup>42</sup> 아사냐가 4월 4일 '소문 유포자들'을 비판하고 마르크스주의 성격의 임박한 반란 가능성을 '허구'라고 규정한 이후, 칼보 소텔로는 '공산주의 위험'과 소련의 이익과 인민전선의 동일시 테제를 자신의 것으로 만들었다.<sup>43</sup></p>
+
+    <p>프랑코 장군과 몰라 장군이 모로코에서, 고데드 장군이 마드리드와 발레아레스 제도에서 시작한 반공 선동 캠페인이 보수 언론의 적극적 협력 속에 젊은 장교단 전반에 깊이 침투하여 사실상 전원이 쿠데타에 합류했다.<sup>45</sup></p>
+
+    <h3>위조 문서들의 등장과 전파</h3>
+
+    <p>4월에는 우익 암살 대상 목록이 포함된 상세한 좌파 혁명 계획을 담은 가짜 팸플릿들이 난무하기 시작했다. 이 시점부터 「클라리다드」 등의 신문들이 이를 즉각 폭로했다.<sup>46</sup> 이 문서들의 정체를 최초로 밝힌 것은 허버트 R. 사우스워스였다.<sup>47</sup></p>
+
+    <p><strong>제1문서</strong>: '기밀 보고서 3호'로, 1936년 5월 10일~6월 29일 사이에 개시될 반란에 대한 '지방 지도자들을 위한 지침과 암호'를 담은 것으로 되어 있다.<sup>49</sup></p>
+
+    <p><strong>제2문서</strong>: '기밀 보고서 11호'로, 프란시스코 라르고 카바예로가 주재하는 '민족 소비에트' 구성원 명단, 지역 연락망, 산티아고 카리요가 이끄는 민병대 조직 등을 담고 있다.<sup>50</sup></p>
+
+    <p><strong>제3문서</strong>: '극비 보고서'로, 1936년 5월 16일 발렌시아 인민의 집에서 코민테른 대표, 프랑스 노동조합주의자, 소련 대표 및 스페인 혁명 중앙위원회 대표들이 참석한 예비 쿠데타 회의를 서술하고 있다.<sup>49</sup></p>
+
+    <p><strong>제4문서</strong>: 군대와 그 장교들을 '중립화'하기 위한 지침들이다.</p>
+
+    <p>리카르도 데 라 시에르바는 1969년에 이 소위 공산주의 문서들의 저자가 팔랑헤 기자 토마스 보라스로, 국방부에서 일하는 타이피스트의 도움을 받아 이를 복사한 후 팔랑헤 및 군부 채널을 통해 배포했음을 인정했다.<sup>51</sup></p>
+
+    <p>이 '공산주의 쿠데타' 신화는 1936년 봄의 가짜 문서들에서 시작하여 독일에서 스페인으로 이식된 후 같은 해 여름 프랑스로도 건너갔다.<sup>53·54</sup></p>
+
+    <h3>신화의 문화적 뿌리내림</h3>
+
+    <p>7월 18일 권력 행사의 불법성에 관한 위원회의 작업에서, 코민테른이 1936년 2월 27일 모스크바에서 준비했다는 소위 혁명 계획이 발굴되었다.<sup>57</sup></p>
+
+    <p>프랑코 자신도 전후에 이 거짓말을 계속 신봉했다.</p>
+
+    <blockquote>
+      "5월에 터질 예정이었던 공산주의 혁명은 6월로, 그리고 결국 7월 말로 연기되었다. 제때 정보를 입수한 우리는 순전히 방어적 성격의 봉기로 그것을 좌절시켰다."<sup>60</sup>
+      <cite>— 프란시스코 프랑코, 「La Revue Belge」, 1947년 8월 15일</cite>
+    </blockquote>
+
+    <p>이 신화의 문화적 뿌리내림은, 프랑코 체제 최초의 선전가들에서부터 다소간 학문적 형태를 띤 현재의 수정주의에 이르기까지 그것이 끊임없이 재생산된다는 사실에서 분명히 드러난다.<sup>61</sup></p>
+  </section>
+
+  <!-- 4. 결산: 공포의 작용 -->
+  <section id="balance">
+    <h2>4. 결산: 공포의 작용</h2>
+
+    <p>지금까지 살펴본 모든 선행 요인들(공공 질서 위기, 정치 지도자들의 묵시록적 메시지, 터무니없는 소문의 확산, 도발적 문서들의 유포)을 바탕으로, 1936년 7월 중순 스페인 사회에서 가장 동원된 부문들의 심리적 상황은 공포의 반사를 폭력 촉발 요소로 요약할 수 있다.</p>
+
+    <p>공포는 강압 잠재력이 매우 강렬하고, 위협의 근원이 완벽히 규정되지 않으며, 그것에 맞설 강압적 자원을 확보하고 있는지 확신할 수 없을 때 동원을 억제하거나 저지한다. 이것이 1934년 사태 이후 좌익 노동자 대중이 받은 인상이었다. 그러나 공포는 위협의 근원과 잠재력을 알고, 폭력적 선제 행동을 통해 그것을 제거할 수 있다고 생각할 때 동원을 유발할 수 있다. 이것이 1936년 봄 우익의 많은 부분이 채택한 독재에 대한 저항 테제였다.</p>
+
+    <p>만연한 공포와 불안의 상태는 양극화를 가속화하고, 정치적 문제를 무력으로 해결하라는 끊임없는 호소 속에 보복과 맞보복의 역학을 촉진했다. 혁명과 내전에 대한 두려움은 일방의 예방적 폭력과 타방의 방어적 반응을 유발했고, 이 나선은 결국 특히 불길한 자기충족적 예언(self-fulfilling prophecy)으로서 의도하지 않은 이 결말에 이르게 했다.</p>
+
+    <p>아사냐는 1937년에 다음과 같이 인정했다. "반란의 정치적 사실은 공포의 열기 속에서 부화했다. 독재의 선전가들이 조종한 사회혁명의 허수아비가 많은 평화로운 사람들의 잠을 앗아갔다."<sup>63</sup></p>
+
+    <p>전직 공산주의자 엔리케 카스트로 델가도는 1936년 봄을 이렇게 회상한다.</p>
+
+    <blockquote>
+      "스페인 전체는 공포였다. 인간 형상의 내면 깊숙이 숨겨지고 분산된 공포. 낮은 내면의 떨림, 비스듬한 시선, 입가에 맴도는 저주, 기도, 살아가면서 죽음에 대해 생각하는 것의 고문이었다. 저물 무렵... 저물 무렵 공포는 스페인의 주인이었다."<sup>64</sup>
+      <cite>— Enrique Castro Delgado, 『모스크바에서 만들어진 인간들』, 바르셀로나, Luis de Caralt, 1963, p. 232</cite>
+    </blockquote>
+
+    <p>7월 17일부터, 군대는 상호 불신의 고르디우스의 매듭을 가차 없이 잘라버렸다. 그때부터 이념적 적대자들에 대한 '공포'는 물리적 제거를 겨냥한 정치적 적들에 대한 '공포정치'로 바뀌었다. 1936-39년의 분쟁은 양 진영에 공통된 이 현실로 인해 양 진영 모두 무자비한 전쟁으로 치달은 청산과 절멸의 전쟁이었다. 이 현실은 반란군 지역에서 시민들의 집단에 대한 위협적 폭력의 체계적 사용과 점점 더 잔인한 행동을 촉진하는 개인 및 집단 행동의 '야만화'를 낳은 특수한 특성들을 지녔다.<sup>66</sup></p>
+
+    <p>반군 파시스트들을 지지한 인구 부문의 지배적 정치 문화는 폭력을 단순한 도구가 아닌 자신들의 도덕적·정치적 행동을 인도하는 가치 그 자체로 보았다. 군사 쿠데타에 의해 확인되고 7월 28일 명령에 의해 프랑코의 지휘하에 있는 영토로 확대된 전쟁 상태 선언과 1936년 8월 31일 칙령으로 확립된 군사 관할권의 우선성에 의거하여, 반군은 광범위한 인구층에 대한 협박과 위협의 정책을 전개했으며, 그 최후의 수단은 체계적 폭력의 사용이었다. 전쟁에서 패배한 자들을 정치적으로 무력화하기 위한 공포 적용 전략은 독재의 마지막 단말마까지 활발하게 유지되었으며, 그 이후 내전과 기억 및 망각에 연결된 공포의 오래도록 지속되는 파문을 낳았다.</p>
+  </section>
+
+  <!-- 각주 -->
+  <div class="footnotes" id="notas">
+    <h3>각주 (원문 번호 순)</h3>
+    <ol>
+      <li><strong>1.</strong> CRUZ, Rafael, <em>En el nombre del pueblo. República, rebelión y guerra en la España de 1936</em>, Madrid, Siglo XXI, 2006, p. 191.</li>
+      <li><strong>2.</strong> «Introduction: Opportunities, Mobilizing Structures, and Framing Processes. Toward a Synthetic, Comparative Perspective on Social Movements», in Doug McADAM, John D. McCARTHY y Mayer N. ZALD (eds.), <em>Comparative Perspectives on Social Movements</em>, Cambridge, Cambridge University Press, 1996, p. 6.</li>
+      <li><strong>3.</strong> GAMSON, William A., <em>Talking Politics</em>, Cambridge, University of Cambridge Press, 1992, p. 7; LORENZO CADARSO, Pedro Luis, <em>Fundamentos teóricos del conflicto social</em>, Madrid, Siglo XXI, 2001, p. 49.</li>
+      <li><strong>4.</strong> P. Manuel VÉLEZ, «Después de la batalla electoral, cap. II: Las causas», in <em>Acción Española</em>, nº 85, marzo 1936, p. 562.</li>
+      <li><strong>5.</strong> Editorial «Contra la tibieza y por la acción contrarrevolucionaria», in <em>La Época</em>, 3-III-1936, p. 1.</li>
+      <li><strong>6.</strong> CRUZ, op. cit., 2006, p. 93.</li>
+      <li><strong>7.</strong> VIGÓN SUERODÍAZ, Jorge, <em>Milicia y Política</em>, Madrid, Instituto de Estudios Políticos, 1947, p. 402.</li>
+      <li><strong>8.</strong> GONZÁLEZ CUEVAS, Pedro Carlos, <em>Acción Española. Teología política y nacionalismo autoritario en España (1913-1936)</em>, Madrid, Tecnos, 1998, p. 324.</li>
+      <li><strong>9.</strong> 칼보 소텔로의 ABC 인터뷰, 1936년 2월 21일, GALLEGO, Ferrán, <em>Barcelona, mayo de 1937</em>, Barcelona, Debate, 2007, p. 228에서 재인용.</li>
+      <li><strong>10.</strong> LLEIXÀ, Joaquim, <em>Cien años de militarismo en España</em>, Barcelona, Anagrama, 1986, p. 54에서 재인용.</li>
+      <li><strong>11.</strong> Sir Henry S. Chilton → Anthony Eden (Madrid, 31-III-1936), in TNA.FO, General Correspondence, Political, Spain, leg. 371/20.520, pp. 249-250.</li>
+      <li><strong>12.</strong> DSC, 15-IV-1936, pp. 309-310. 칼보 소텔로에 따르면 2월 16일~4월 2일 사이 74명 사망, 345명 부상 등 각종 사건 통계.</li>
+      <li><strong>13.</strong> 칼보 소텔로가 의회에서 낭독한 재앙 데이터(2월 16일~4월 15일), 「La Época」, 1936년 4월 17일, pp. 2-3.</li>
+      <li><strong>15.</strong> BOWERS, Claude G., <em>Misión en España</em>, Barcelona, Grijalbo, 1977, p. 206.</li>
+      <li><strong>16.</strong> 1936년 4~5월의 폭력 관련 기록들, in CDMH, PS Madrid, carp. 1.626, leg. 1.326.</li>
+      <li><strong>17.</strong> BARREIRO GORDILLO, Cristina, <em>La prensa monárquica en la segunda República</em>, Bilbao, Grafite Ediciones, 2004, p. 144.</li>
+      <li><strong>21.</strong> ABC, 15-VII-1936, p. 22. "마르크스주의는 어떤 통치 정당의 범죄적 배신이 있어야만 권력을 장악할 수 있으며, 그것도 일시적 성공에 그칠 것이다."</li>
+      <li><strong>22.</strong> <em>El Socialista</em>, 20-V-1936, p. 2.</li>
+      <li><strong>25.</strong> 힐 로블레스에 따르면 2월 16일~6월 15일 사이: 교회 160채 파괴, 251채 습격, 사망 269명, 부상 1,287명, 파업 341회, 강도 161건, 기타 폭력 863건 (DSC, 16-VI-1936, p. 1.374).</li>
+      <li><strong>28.</strong> DSC, 16-VI-1936, pp. 1.384-1.386.</li>
+      <li><strong>30.</strong> DSC, 1-VII-1936, pp. 1.765-1.776.</li>
+      <li><strong>31.</strong> PRESTON, Paul, «Teoría y práctica del fascismo español», in <em>Cultura, sociedad y política en el mundo actual</em>, Madrid, Universidad Internacional Menéndez Pelayo, 1981, p. 225.</li>
+      <li><strong>33.</strong> MALEFAKIS, Edward, <em>Reforma agraria y revolución campesina en la España del siglo XX</em>, 5ª ed., Barcelona, Ariel, 1982, pp. 428-430.</li>
+      <li><strong>36.</strong> GARCÍA FERNÁNDEZ, Hugo, «Historia de un mito político: el peligro comunista en el discurso de las derechas españolas (1918-1936)», in <em>Historia Social</em>, nº 51, 2005, pp. 3-20.</li>
+      <li><strong>40.</strong> «La futura revolución de socialistas, anarquistas y comunistas está dirigida y financiada desde Moscú», <em>La Nación</em>, 4-I-1936, p. 3.</li>
+      <li><strong>42.</strong> MINA APAT, María Cruz, «ABC en la preparación ideológica del 18 de julio», in <em>Comunicación, cultura y política durante la II República y la Guerra Civil</em>, Bilbao, Universidad del País Vasco, 1990, tomo II, pp. 15-23.</li>
+      <li><strong>45.</strong> PUELL DE LA VILLA, Fernando, «La trama militar de la conspiración», in Francisco SÁNCHEZ PÉREZ (coord.), <em>Los mitos del 18 de julio</em>, Barcelona, Crítica, 2013, p. 76.</li>
+      <li><strong>46.</strong> <em>Claridad</em>, 6-IV; 10 y 30-V-1936.</li>
+      <li><strong>47.</strong> SOUTHWORTH, Herbert R., <em>La destrucción de Guernica</em>, Barcelona, Ibérica de Ediciones y Publicaciones, 1977; «Conspiración contra la República», in <em>Historia 16</em>, nº 26, junio 1978, pp. 41-57; <em>El mito de la Cruzada de Franco</em>, Madrid, Plaza & Janés, 1986, pp. 195-213.</li>
+      <li><strong>51.</strong> CIERVA, op. cit., 1969, vol. I, p. 709. 1974년 9월 26일 Comín Colomer도 로널드 프레이저에게 공산주의 음모 거짓말을 알면서도 지지했음을 인정했다.</li>
+      <li><strong>57.</strong> ESTADO ESPAÑOL, <em>Dictamen de la Comisión sobre ilegitimidad de poderes actuantes en 18 de Julio de 1936</em>, Madrid, Editora Nacional, 1939, pp. 67-68.</li>
+      <li><strong>60.</strong> «¿Dónde Estamos?», in <em>La Revue Belge</em>, 15-VIII-1947; in FRANCO BAHAMONDE, Francisco, <em>Palabras del caudillo</em>, Madrid, Editora Nacional, 1943, pp. 414-415.</li>
+      <li><strong>61.</strong> 코민테른이 1936년 2월 27일에 채택했다고 주장되는 조치들(알칼라 사모라 대통령 제거, 농지 수용, 종교 건물 파괴, 부르주아 절멸, 전반적 공포 정치, 민병대 창설, 프롤레타리아 독재, 모로코 독립, 포르투갈과의 전쟁)은 ARRARÁS, Joaquín et alii, <em>Historia de la Cruzada Española</em>, Madrid, 1939-1944, vol. II, p. 451 등에서 사실로 주장된다. 볼셰비키 음모 이론은 CRUZ, Rafael, «¡Luzbel vuelve al mundo!», in <em>Cultura y movilización en la España contemporánea</em>, Madrid, Alianza, 1997, pp. 298-301에서 잘 분석된다.</li>
+      <li><strong>63.</strong> AZAÑA, Manuel, <em>Obras Completas</em>, México, Oasis, 1966-1968, vol. III, p. 406.</li>
+      <li><strong>64.</strong> CASTRO DELGADO, Enrique, <em>Hombres made in Moscú</em>, Barcelona, Luis de Caralt, 1963, p. 232.</li>
+      <li><strong>65.</strong> ROMERO PÉREZ, Luis, «Fracasos y triunfos del levantamiento», in Edward MALEFAKIS (dir.), <em>La Guerra Civil Española</em>, Madrid, Taurus, 2006, p. 75.</li>
+      <li><strong>66.</strong> ELAHAM, Chris, <em>La lucha por Barcelona. Clase, cultura y conflicto, 1898-1937</em>, Madrid, Alianza, 2005, p. 239.</li>
+    </ol>
+  </div>
+
+</main>
+
+<!-- 맨 위로 버튼 -->
+<a class="back-top" href="#header" title="맨 위로">↑</a>
+
+<script>
+// 스크롤 추적
+window.addEventListener('scroll', () => {
+  let current = '';
+  document.querySelectorAll('section[id], div[id]').forEach(s => {
+    if (s.getBoundingClientRect().top <= 80) current = s.id;
+  });
+  document.querySelectorAll('#sidebar nav a').forEach(a => {
+    a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+  });
+});
+
+// 부드러운 스크롤
+document.querySelectorAll('#sidebar nav a, .back-top').forEach(a => {
+  a.addEventListener('click', e => {
+    e.preventDefault();
+    const target = document.querySelector(a.getAttribute('href'));
+    if (target) target.scrollIntoView({ behavior: 'smooth' });
+  });
+});
+</script>
+</body>
+</html>
