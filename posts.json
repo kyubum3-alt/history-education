@@ -96,6 +96,84 @@
   ],
   "spanish": [
     {
+      "title": "등거리의 함정: 스페인의 신보수주의 역사서술에 관하여",
+      "authors": "Alejandro Quiroga",
+      "url": "Alejandro Quiroga_등거리의 함정.html",
+      "uploadDate": "2026-11-03"
+    },
+    {
+      "title": "오늘날 스페인의 급진우파와 역사교육 담론",
+      "authors": "Ander Delgado",
+      "url": "Ander Delgado_스페인 급진우파와 역사교육 담론.html",
+      "uploadDate": "2026-11-03"
+    },
+    {
+      "title": "스페인의 역사서술적 포퓰리즘에 관한 성찰: 현재의 역사서술을 실천하기",
+      "authors": "Edgar Straehle Porras",
+      "url": "Edgar Straehle Porras_스페인의 역사서술적 포퓰리즘에 관한 성찰.html",
+      "uploadDate": "2026-11-03"
+    },
+    {
+      "title": "스페인의 수정주의에 대한 접근: 피오 모아 현상",
+      "authors": "Fernando Ampudia de Haro",
+      "url": "Fernando Ampudia de Haro_스페인의 수정주의와 피오 모아 현상.html",
+      "uploadDate": "2026-11-03"
+    },
+    {
+      "title": "공화국을 위하여: ‘진보적’ 역사서술에 드리운 프랑코주의의 그림자",
+      "authors": "Fernando del Rey",
+      "url": "Fernando del Rey_공화국을 위하여.html",
+      "uploadDate": "2026-11-03"
+    },
+    {
+      "title": "사악한 공화국에 맞선 ‘영웅’",
+      "authors": "Francisco Sánchez Pérez",
+      "url": "Francisco Sánchez Pérez_사악한 공화국에 맞선 영웅.html",
+      "uploadDate": "2026-11-03"
+    },
+    {
+      "title": "프랑코와 내전의 폭력들: 프랑코주의 탄압을 온화하게 그려내는 사용 설명서",
+      "authors": "José Luis Ledesma",
+      "url": "José Luis Ledesma_프랑코와 내전의 폭력들.html",
+      "uploadDate": "2026-11-03"
+    },
+    {
+      "title": "스페인 민족주의의 역사서술적 포퓰리즘들: 21세기의 과거 이용과 역사학의 문제",
+      "authors": "José Tébar Gómez",
+      "url": "José Tébar Gómez_스페인 민족주의의 역사서술적 포퓰리즘.html",
+      "uploadDate": "2026-11-03"
+    },
+    {
+      "title": "페인과 팔라시오스가 보는 음모와 내전",
+      "authors": "Juan Carlos Losada",
+      "url": "Juan Carlos Losada_페인과 팔라시오스의 음모와 내전.html",
+      "uploadDate": "2026-11-03"
+    },
+    {
+      "title": "국가 주도 수정주의와 스페인의 첫 번째 ‘제로 아워’, 1936~1943",
+      "authors": "Miquel Àngel Marín Gelabert",
+      "url": "Miquel Àngel Marín Gelabert_국가 주도 수정주의와 제로 아워.html",
+      "uploadDate": "2026-11-03"
+    },
+    {
+      "title": "스페인의 역사 대중화에서 나타나는 반학계주의, 민족주의와 극우(2010–2023): 서지계량 분석과 사례연구",
+      "authors": "Pablo Molejón 외",
+      "url": "Pablo Molejón 외_스페인 역사 대중화의 반학계주의와 극우.html",
+      "uploadDate": "2026-11-03"
+    },
+    {
+      "title": "내전 전야의 과학적 역사 대 투쟁적 역사",
+      "authors": "Ricardo Robledo",
+      "url": "Ricardo Robledo_내전 전야의 과학적 역사와 투쟁적 역사.html",
+      "uploadDate": "2026-11-03"
+    },
+    {
+      "title": "스페인 현대사에서의 이데올로기적 전환: “좌파도 그만큼, 아니 그 이상으로 유죄였다”",
+      "authors": "Ricardo Robledo",
+      "url": "Ricardo Robledo_스페인 현대사의 이데올로기적 전환.html",
+      "uploadDate": "2026-11-03"
+    },
+    {
       "title": "논쟁적 주제와 그 교수학적 활용: 이탈리아와 스페인 교과서에 수록된 활동 분석",
       "authors": "Mario Ferreras-Listán 외",
       "url": "Mario Ferreras-Listán 외_논쟁적 주제와 교과서 학습활동.html",
@@ -306,6 +384,24 @@
     }
   ],
   "english": [
+    {
+      "title": "비판적 역사 재검토와 정치적 수정주의",
+      "authors": "Enrique Moradiellos",
+      "url": "Enrique Moradiellos_비판적 역사 재검토와 정치적 수정주의.html",
+      "uploadDate": "2026-11-03"
+    },
+    {
+      "title": "다리인가, 샛길인가? 미국사 수업에서 역사적 읽기와 시민적 온라인 추론 가르치기",
+      "authors": "Sarah McGrew",
+      "url": "Sarah McGrew_역사적 읽기와 시민적 온라인 추론.html",
+      "uploadDate": "2026-11-03"
+    },
+    {
+      "title": "역사수정주의의 개념: 1930년대 이후의 스페인",
+      "authors": "Sebastian Balfour",
+      "url": "Sebastian Balfour_역사수정주의의 개념.html",
+      "uploadDate": "2026-11-03"
+    },
     {
       "title": "역사교육, 국민 정체성, 그리고 브렉시트로 가는 길",
       "authors": "Eleni Karayianni·Stuart Foster",
@@ -529,6 +625,36 @@
     }
   ],
   "spanish-study-RTVE뉴스": [
+    {
+      "title": "2026년 10월 24일 - RTVE 10분뉴스",
+      "date": "2026년 10월 24일",
+      "url": "RTVE_2026-10-24_final.html",
+      "uploadDate": "2026-11-03"
+    },
+    {
+      "title": "2026년 10월 22일 - RTVE 10분뉴스",
+      "date": "2026년 10월 22일",
+      "url": "RTVE_2026-10-22_final.html",
+      "uploadDate": "2026-11-03"
+    },
+    {
+      "title": "2026년 10월 21일 - RTVE 10분뉴스",
+      "date": "2026년 10월 21일",
+      "url": "RTVE_2026-10-21_final.html",
+      "uploadDate": "2026-11-03"
+    },
+    {
+      "title": "2026년 10월 20일 - RTVE 10분뉴스",
+      "date": "2026년 10월 20일",
+      "url": "RTVE_2026-10-20_final.html",
+      "uploadDate": "2026-11-03"
+    },
+    {
+      "title": "2026년 10월 19일 - RTVE 10분뉴스",
+      "date": "2026년 10월 19일",
+      "url": "RTVE_2026-10-19_final.html",
+      "uploadDate": "2026-11-03"
+    },
     {
       "title": "2026년 10월 14일 - RTVE 10분뉴스",
       "date": "2026년 10월 14일",
