@@ -1081,5 +1081,42 @@
       "url": "RTVE_10minutos_09062026_final.html",
       "uploadDate": "2026-06-09"
     }
+  ],
+  "spanish-textbooks": [
+    {
+      "title": "Historia de España(Anaya) · 제10단원",
+      "url": "Anaya_제10단원.html",
+      "uploadDate": "2026-11-07"
+    },
+    {
+      "title": "Historia de España(Anaya) · 제11단원",
+      "url": "Anaya_제11단원.html",
+      "uploadDate": "2026-11-07"
+    },
+    {
+      "title": "Historia de España(Anaya) · 제12단원",
+      "url": "Anaya_제12단원.html",
+      "uploadDate": "2026-11-07"
+    },
+    {
+      "title": "Historia de España(Vicens Vives) · 제10단원",
+      "url": "Vicens Vives_제10단원.html",
+      "uploadDate": "2026-11-07"
+    },
+    {
+      "title": "Historia de España(Vicens Vives) · 제11단원",
+      "url": "Vicens Vives_제11단원.html",
+      "uploadDate": "2026-11-07"
+    },
+    {
+      "title": "Historia de España(Vicens Vives) · 제12단원",
+      "url": "Vicens Vives_제12단원.html",
+      "uploadDate": "2026-11-07"
+    },
+    {
+      "title": "Historia de España(Vicens Vives) · 제13단원",
+      "url": "Vicens Vives_제13단원.html",
+      "uploadDate": "2026-11-07"
+    }
   ]
 }
